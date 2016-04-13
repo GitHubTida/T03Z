@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This will store region and maximum demo period</description>
+    <fields>
+        <fullName>Express_Pool_Id__c</fullName>
+        <label>Express Pool Id</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Mamximum_quantity__c</fullName>
+        <description>This will store maximum qunatity</description>
+        <label>Mamximum quantity</label>
+        <length>1</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Maximum_Period__c</fullName>
+        <label>Maximum Period</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>DD_DemoPeriod</label>
+</CustomObject>

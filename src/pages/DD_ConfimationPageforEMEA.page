@@ -1,0 +1,50 @@
+<!--
+**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Nikhil Kumar
+    Date        : 09-SEPT-15
+    Revision History
+    Ver       Date        Author            Modification
+    ---       ---------   -----------       -------------------------
+    V0.1      09-SEPT-15   Nikhil Kumar         Initial Code  
+ ***************************************************************
+ -->
+
+<apex:page standardcontroller="DD_Demo__c" Extensions="DD_ConfimationPageforEMEA" rendered="{!Display}">
+<apex:sectionHeader title="Demo request" subtitle="{!demo.name}"/>
+<head>
+    <style>
+        th.labelCol.vfLabelColTextWrap.first{
+            width:37%;
+        }
+        body .bRelatedList .pbTitle h3, body .bPageBlock .pbTitle h2, body .bPageBlock .pbTitle h3, body .bSubBlock h3.lbHeader {
+          color: red;
+          font-size: 1em;
+          width:200%;
+          height:6px;
+          
+       }
+       .pbHeader{
+       height:25px;
+       }
+       .changecolor{
+           color:red;
+       }
+    </style>
+</head>
+    <apex:form >   
+    <apex:messages styleClass="changecolor" style="list-style: none;font-size: 1em;font-weight: bold;" />
+        <apex:pageblock title="Once you completed this section,a return document will be available for consolidation point" id="Pgblock"  rendered="{!NOT(demo.Confirm_checkbox__c)}">
+            <apex:pageBlockSection columns="1"> 
+                <apex:inputField value="{!demo.Confirm_checkbox__c}" Label="Please tick the box to confirm you have receive items back from Customer"/>
+                 <apex:inputfield value="{!demo.Detail_about_WriteOff__c}" Label="If any products are damaged or missing please state" style="width:400px;"/>
+                <apex:commandbutton value="Please confirm" action="{!save}" style="margin-left:37%;"  />
+            </apex:pageBlockSection>
+        </apex:pageblock>
+        <apex:pageblock rendered="{!demo.Confirm_checkbox__c}" id="Pgblock1">
+           <apex:outputText >Item recieved By<span class="changecolor"> {!demo.Received_By__c}</span> on <span class="changecolor">{!Returndate}</span></apex:outputText>
+            <br/><br/><apex:outputText >Furthur information: <span class="changecolor">{!demo.Detail_about_WriteOff__c}</span></apex:outputText>
+            <br/><br/><apex:commandLink action="{!redirect}" ><span>Print Return Address</span></apex:commandlink>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

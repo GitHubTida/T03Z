@@ -1,0 +1,77 @@
+<apex:page standardController="Account" extensions="PC_CaseRelatedListExtension" showHeader="false" >
+    <script>
+        window.onload=adjustHeight;
+
+        function adjustHeight(){
+            var iframeId = getIframeID();
+            console.log("iframeId",iframeId);
+            var if1 = parent.document.getElementById(iframeId);
+            console.log("if1",if1);
+            var ca = document.getElementById("j_id0:j_id2:caseList");
+            console.log("ca",ca);
+            if1.height = ca.offsetHeight;
+            document.body.width = if1.offsetWidth;
+            ca.width = if1.offsetWidth;
+            console.log("if1.height",if1.height);
+            console.log("ca.offsetHeight",ca.offsetHeight);
+            console.log("document.body.width",document.body.width);
+            console.log("if1.offsetWidth",if1.offsetWidth);
+            console.log("ca.width",ca.width);
+        }
+        
+        function getIframeID(el){
+            var myTop = top;
+            var myTitle = 'PC_CaseRelatedListInAccount';
+            var iFs = top.document.getElementsByTagName('iframe');
+            console.log("iFs",iFs);
+            var x, i = iFs.length;
+            console.log("i",i);
+            while ( i-- ){
+                x = iFs[i];
+                console.log("x",x);
+                if (x.title == myTitle){
+                    return x.id;
+                }
+            }
+            return 'Couldn\'t find the iframe';
+        }
+    </script>
+    <apex:form >
+        <apex:pageBlock tabStyle="Case" title="Cases" id="caseList">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="New Case" action="{!newCase}"/>
+                <apex:outputPanel id="newCase">
+                    <apex:outputText rendered="{!shouldRedirect}">
+                        <script type="text/javascript">
+                            window.top.location.href = '{!caseCreationURL}';
+                        </script>
+                    </apex:outputText>
+                </apex:outputPanel>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1">
+                <apex:outputText value="No records to display" rendered="{!noRecordFlag}"></apex:outputText>
+                <apex:pageBlockTable value="{!communityCasesInAccount}" var="cas" rendered="{!!noRecordFlag}" rows="5">
+                    <!--apex:column headerValue="Action">
+                        <a href="/Partners/{!cas.Id}/e?retURL=%2F{!cas.AccountId}">Edit</a>
+                        &nbsp;|&nbsp;
+                        <a href="/Partners/{!cas.Id}/s?retURL=%2F{!cas.AccountId}">Cls</a>
+                    </apex:column-->
+                    <apex:column headerValue="Case">
+                        <!--a href="/Partners/{!cas.Id}">{!cas.CaseNumber}</a-->
+                        <apex:outputLink value="{!URLFOR($Action.Case.View,cas.Id)}" target="_top">{!cas.CaseNumber}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Subject">
+                        <!--a href="/Partners/{!cas.Id}">{!cas.Subject}</a-->
+                        <apex:outputLink value="{!URLFOR($Action.Case.View,cas.Id)}" target="_top">{!cas.Subject}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Date/Time Opened" value="{!cas.CreatedDate}" />
+                    <apex:column headerValue="Date/Time Closed" value="{!cas.ClosedDate}" />
+                    <apex:column headerValue="Status" value="{!cas.Status}" />
+                    <apex:column headerValue="Owner" value="{!cas.Owner.name}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <!--apex:commandLink action="{!completeList}" value="Go to List"/-->
+            <apex:outputLink value="{!URLFOR($Page.PC_CommunityCaseList)}" target="_top" >Go to List</apex:outputLink>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

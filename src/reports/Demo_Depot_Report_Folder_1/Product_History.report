@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>DD_Reserved_Product__c.Serialnumber__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Total_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Written_Off_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Used__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Reserved_Product_Quantity__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Product History</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$DD_Demo__c$DD_Reserved_Product__c@DD_Reserved_Product__c.Material__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>DD_Demo__c.X1st_Audit_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

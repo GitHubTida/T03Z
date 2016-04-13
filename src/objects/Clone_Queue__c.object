@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Opp_Line_Item__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Opp_Line_Item</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Clone Queue</relationshipLabel>
+        <relationshipName>Clone_Queue</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partners__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Partners</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Team__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Sales Team</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Clone Queue</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>CQ-{000000000}</displayFormat>
+        <label>Clone Queue Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Clone Queue</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

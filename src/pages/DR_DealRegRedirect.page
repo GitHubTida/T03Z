@@ -1,0 +1,16 @@
+<!--
+/*******************************************************************************
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author      : Shanthi Latharani
+Date        : 22-Sep-15
+Description : This VF page is used to override the New Button in the DealProduct Object,
+              which will redirect us o the page where we can add the product to the Deal Registration.
+Revision History 
+Ver       Date        Author             Modification 
+---       ---------   -----------        -------------------------
+V0.1      22-Sep-15   Shanthi Latharani    Initial Code
+********************************************************************************/
+-->
+<apex:page standardController="DealProduct__c" extensions="DR_dealRegRedirectExtension" action="{!redirect}">
+<apex:messages style="color:red"/>
+</apex:page>

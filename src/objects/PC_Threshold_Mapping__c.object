@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Named_Product_Family__c</fullName>
+        <label>Named Product Family</label>
+        <referenceTo>Named_Product_Family__c</referenceTo>
+        <relationshipName>Named_Product_Family</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PE1__c</fullName>
+        <label>PE1%</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PE2__c</fullName>
+        <label>PE2%</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <label>Product Line</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>PC Threshold Mapping</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Named_Product_Family__c</columns>
+        <columns>Product_Line__c</columns>
+        <columns>PE1__c</columns>
+        <columns>PE2__c</columns>
+        <columns>Region__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PCTM-{0000}</displayFormat>
+        <label>PC Threshold Mapping</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PC Threshold Mapping</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

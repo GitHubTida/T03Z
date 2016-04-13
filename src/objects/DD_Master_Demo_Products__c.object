@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***Demo Depot application*** 
+This will store all the serialized Parts and Accessories detail.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Additional_information__c</fullName>
+        <label>Additional Information</label>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Alternative_Part_Number__c</fullName>
+        <label>Alternative Part Number</label>
+        <length>50</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Available_Quantity__c</fullName>
+        <formula>Total_Quantity__c - (Reserved_Product_Quantity__c +  Write_Off_Quantity_NA__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Available Quantity</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Bin__c</fullName>
+        <label>Bin</label>
+        <length>80</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Cost_Price__c</fullName>
+        <label>Cost Price</label>
+        <precision>8</precision>
+        <scale>2</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Cycle__c</fullName>
+        <label>Cycle</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>21</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>22</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>23</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>24</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>26</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>27</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>28</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>29</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>31</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>32</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>33</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>34</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>35</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>36</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>37</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>38</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>39</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>40</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>41</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>42</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>43</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>44</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>45</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>46</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>47</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>48</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>49</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>51</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>52</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>53</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>54</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>55</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>56</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>57</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>58</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>59</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DD_Demo_Pool__c</fullName>
+        <label>Demo Pool</label>
+        <referenceTo>DD_Demo_Pool__c</referenceTo>
+        <relationshipLabel>Demo Pool Equipment</relationshipLabel>
+        <relationshipName>Demo_Pool_Equipment</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Demand__c</fullName>
+        <description>Total Number of register an interest for the product.</description>
+        <label>Demand</label>
+        <summaryForeignKey>DD_Backlog_Item__c.Material__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Master__c</fullName>
+        <label>Demo Master</label>
+        <picklist>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Exclude_ReStock__c</fullName>
+        <label>Exclude ReStock</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ExternalId__c</fullName>
+        <externalId>true</externalId>
+        <label>ExternalId</label>
+        <length>50</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Maximum_Units__c</fullName>
+        <label>Maximum Units</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>MinMaxFixed_Flag__c</fullName>
+        <label>MinMaxFixed Flag</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MinMaxManual_Date__c</fullName>
+        <label>MinMaxManual Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>MinMaxManual_Flag__c</fullName>
+        <label>MinMaxManual Flag</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Y</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Minimum_Units__c</fullName>
+        <label>Minimum Units</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Part_Name__c</fullName>
+        <label>Part Name</label>
+        <length>50</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Pool_Location__c</fullName>
+        <label>Pool Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>India</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Texas</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brno</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Germany</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ProductUniqueID__c</fullName>
+        <externalId>true</externalId>
+        <label>ProductUniqueID</label>
+        <length>100</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Indicator__c</fullName>
+        <formula>IMAGE(If(Available_Quantity__c=0, 
+&quot;/resource/1446904840000/DD_Unavailable&quot;, 
+&quot;/resource/1446904840000/DD_Available&quot;), 
+&quot;Test&quot;,15,30
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Indicator</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Location__c</fullName>
+        <label>Product Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Prod Loc 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prod Loc 8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Status__c</fullName>
+        <label>Product Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Available</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Register an Interest</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <label>Product Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Serialized Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accessory</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reserved_Product_Quantity__c</fullName>
+        <description>Contains total number of products reserved in all demo requests</description>
+        <label>Reserved Quantity</label>
+        <summaryFilterItems>
+            <field>DD_Reserved_Product__c.Product_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Returned</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DD_Reserved_Product__c.Material__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Stock_Take_Date__c</fullName>
+        <label>Stock Take Date</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity_Allocated__c</fullName>
+        <label>Total Quantity Allocated</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity_Bad__c</fullName>
+        <label>Total Quantity Bad</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>This will store total quantity</description>
+        <label>Total Quantity</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Used__c</fullName>
+        <label>Used Qty.</label>
+        <summaryForeignKey>DD_Reserved_Product__c.Material__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Write_Off_Quantity_NA__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Write Off Quantity NA</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Written_Off_Quantity__c</fullName>
+        <label>Written Off Quantity</label>
+        <summaryFilterItems>
+            <field>DD_Reserved_Product__c.Product_Status__c</field>
+            <operation>equals</operation>
+            <value>Write Off</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DD_Reserved_Product__c.Material__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <label>Master Demo Product</label>
+    <listViews>
+        <fullName>Products_in_ALL_Demo_Pool</fullName>
+        <columns>NAME</columns>
+        <columns>DD_Demo_Pool__c</columns>
+        <columns>Demo_Master__c</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Product_Type__c</columns>
+        <columns>Demand__c</columns>
+        <columns>Total_Quantity__c</columns>
+        <columns>Available_Quantity__c</columns>
+        <columns>Product_Indicator__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Products in ALL Demo Pool</label>
+    </listViews>
+    <listViews>
+        <fullName>Products_in_APAC_Demo_Pool</fullName>
+        <columns>NAME</columns>
+        <columns>DD_Demo_Pool__c</columns>
+        <columns>Demo_Master__c</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Product_Type__c</columns>
+        <columns>Demand__c</columns>
+        <columns>Total_Quantity__c</columns>
+        <columns>Available_Quantity__c</columns>
+        <columns>Product_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DD_Demo_Pool__c</field>
+            <operation>startsWith</operation>
+            <value>APAC</value>
+        </filters>
+        <label>Products in APAC Demo Pool</label>
+    </listViews>
+    <listViews>
+        <fullName>Products_in_EMEA_Demo_Pool</fullName>
+        <columns>NAME</columns>
+        <columns>DD_Demo_Pool__c</columns>
+        <columns>Demo_Master__c</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Product_Type__c</columns>
+        <columns>Demand__c</columns>
+        <columns>Total_Quantity__c</columns>
+        <columns>Available_Quantity__c</columns>
+        <columns>Product_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DD_Demo_Pool__c</field>
+            <operation>startsWith</operation>
+            <value>EMEA</value>
+        </filters>
+        <label>Products in EMEA Demo Pool</label>
+    </listViews>
+    <listViews>
+        <fullName>Products_in_LATAM_Demo_Pool</fullName>
+        <columns>NAME</columns>
+        <columns>DD_Demo_Pool__c</columns>
+        <columns>Demo_Master__c</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Product_Type__c</columns>
+        <columns>Demand__c</columns>
+        <columns>Total_Quantity__c</columns>
+        <columns>Available_Quantity__c</columns>
+        <columns>Product_Indicator__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DD_Demo_Pool__c</field>
+            <operation>startsWith</operation>
+            <value>LA</value>
+        </filters>
+        <label>Products in LATAM Demo Pool</label>
+    </listViews>
+    <listViews>
+        <fullName>Products_in_NA_Demo_Pool</fullName>
+        <columns>NAME</columns>
+        <columns>DD_Demo_Pool__c</columns>
+        <columns>Product_Type__c</columns>
+        <columns>Demand__c</columns>
+        <columns>Total_Quantity__c</columns>
+        <columns>Available_Quantity__c</columns>
+        <columns>Product_Indicator__c</columns>
+        <columns>Bin__c</columns>
+        <columns>Additional_information__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>DD_Demo_Pool__c</field>
+            <operation>startsWith</operation>
+            <value>NA</value>
+        </filters>
+        <label>Products in NA Demo Pool</label>
+    </listViews>
+    <nameField>
+        <label>Material</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Information</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>DD_Demo_Pool__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cost_Price__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Available_Quantity__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Demand__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>DD_Demo_Pool__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cost_Price__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Available_Quantity__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Demand__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>DD_Demo_Pool__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Cost_Price__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Available_Quantity__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Demand__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>DD_Demo_Pool__c</searchFilterFields>
+        <searchFilterFields>Cost_Price__c</searchFilterFields>
+        <searchFilterFields>Description__c</searchFilterFields>
+        <searchFilterFields>Available_Quantity__c</searchFilterFields>
+        <searchFilterFields>Demand__c</searchFilterFields>
+        <searchResultsAdditionalFields>DD_Demo_Pool__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cost_Price__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Available_Quantity__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Demand__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Accessories</fullName>
+        <availability>online</availability>
+        <description>Redirect to master demo product</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add Accessories</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var validProductUploadUser= sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;isValidProductUploadUser&quot;,{}); 
+
+if(&apos;{!DD_Demo_Pool__c.Region__c}&apos;== &apos;NA&apos; || &apos;{!DD_Demo_Pool__c.Region__c}&apos; == &apos;EMEA&apos;){ 
+alert(&apos;You cannot upload the Products for NA/EMEA using this feature, Product for NA/EMEA are uploaded directly from DFW and Tesseract systems.&apos;); 
+} 
+else if(validProductUploadUser==&apos;true&apos;){ 
+window.open(&apos;/a3c/e?00Ni000000GV9hC=Accessory&amp;CF00Ni000000GV9en={!DD_Demo_Pool__c.Name}&amp;CF00Ni000000GV9en_lkid={!DD_Demo_Pool__c.Id}&amp;retURL={!DD_Demo_Pool__c.Id}&apos;,&apos;_top&apos;); 
+}else{ 
+alert(&apos;Insufficient Privilege, You do not have required permission to upload products.&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_Serial_Part</fullName>
+        <availability>online</availability>
+        <description>Redirect to Serial Part Management</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add Serial Part</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var validProductUploadUser= sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;isValidProductUploadUser&quot;,{}); 
+
+if(&apos;{!DD_Demo_Pool__c.Region__c}&apos;== &apos;NA&apos; || &apos;{!DD_Demo_Pool__c.Region__c}&apos; == &apos;EMEA&apos;){ 
+alert(&apos;You cannot upload the Products for NA/EMEA using this feature, Product for NA/EMEA are uploaded directly from DFW and Tesseract systems.&apos;); 
+} 
+else if(validProductUploadUser==&apos;true&apos;){ 
+window.open(&apos;/a3h/e?CF00Ni000000GV9hx={!DD_Demo_Pool__c.Name}&amp;CF00Ni000000GV9hx_lkid={!DD_Demo_Pool__c.Id}&amp;retURL={!DD_Demo_Pool__c.Id}&apos;,&apos;_top&apos;); 
+}else{ 
+alert(&apos;Insufficient Privilege, You do not have required permission to upload products.&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Bulk_Upload_Master_Products</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Bulk Upload Master Products</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/DD_MasterPartsUploadPage</url>
+    </webLinks>
+</CustomObject>

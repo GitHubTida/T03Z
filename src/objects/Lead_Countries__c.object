@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting is used to populate Theater, Region &amp; Sub-Region fields on Leads based on the Country Code</description>
+    <fields>
+        <fullName>CountryCode__c</fullName>
+        <label>CountryCode</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>This field will contain the country name</description>
+        <label>Country</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>This field will capture the corresponding Region based on the Country</description>
+        <label>Region</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Region__c</fullName>
+        <description>This field will capture the corresponding Sub-Region based on the Country</description>
+        <label>Sub-Region</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Theater__c</fullName>
+        <description>This field will capture the corresponding theater based on the country</description>
+        <label>Theater</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <label>Lead Countries</label>
+</CustomObject>

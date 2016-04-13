@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>DD_Master_Demo_Products__c$Name</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c$Used__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Displays top 25 Most Requested Products</description>
+    <format>Tabular</format>
+    <name>Top 25 Most Requested Products</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>DD_Top_25_Most_Request_Product__c</reportType>
+    <rowLimit>25</rowLimit>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>DD_Master_Demo_Products__c$Used__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>DD_Master_Demo_Products__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

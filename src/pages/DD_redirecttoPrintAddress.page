@@ -1,0 +1,3 @@
+<apex:page standardcontroller="DD_Demo__c" extensions="DD_redirecttoPrintAddress" action="{!Redirect}">
+
+</apex:page>

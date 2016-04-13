@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>파트너 홍보 자료</value>
+    </caseValues>
+    <fields>
+        <label>계정</label>
+        <name>Account__c</name>
+        <relationshipLabel>파트너 홍보 자료</relationshipLabel>
+    </fields>
+    <fields>
+        <label>첨부 파일</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>요청</label>
+        <name>Case__c</name>
+        <relationshipLabel>파트너 홍보 자료</relationshipLabel>
+    </fields>
+    <fields>
+        <label>설명</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>문서 유형</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>비즈니스/마케팅 계획</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>고객사례</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>고객사 레퍼런스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>기타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>지브라 솔루션 레퍼런스</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>파일 이름</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>보기</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>로고가 있습니까?</label>
+        <name>isLogo__c</name>
+    </fields>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>파트너 홍보 자료</nameFieldLabel>
+    <webLinks>
+        <label>문서 업로드</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>로고/문서 업로드</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>로고 업로드</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

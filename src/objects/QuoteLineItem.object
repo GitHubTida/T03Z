@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Cancel_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Cancel Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DATA_LOAD_CHECK__c</fullName>
+        <label>DATA LOAD CHECK</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Direct_Account_Currency__c</fullName>
+        <label>Direct Account Currency</label>
+        <length>3</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Dist_Margin_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Dist Margin Approval</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Disti_Margin__c</fullName>
+        <label>Disti Margin</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Disti_Special_Discount__c</fullName>
+        <formula>IF( Siebel_List_Price__c== 0, 0,((1 - Disti_Special_Price__c/Siebel_List_Price__c)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Disti. Special Discount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Disti_Special_Price__c</fullName>
+        <formula>Reseller_Unit_Special_Price__c  * (1- Disti_Margin__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Disti. Special Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Disti_Special_Total__c</fullName>
+        <formula>Disti_Special_Price__c *  Quantity</formula>
+        <label>Disti. Special Total</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Disti_Std_Discount__c</fullName>
+        <formula>IF(Siebel_List_Price__c &lt;&gt; 0,((Siebel_List_Price__c -Standard_Net_Price__c)/Siebel_List_Price__c),null)</formula>
+        <label>Disti Std Discount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Disti_Total__c</fullName>
+        <label>Disti Total</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Extra_Disc__c</fullName>
+        <label>Extra Disc%</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>IsCreatedFromOLI__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>IsCreatedFromOLI</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Min_First_Order__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Min First Order</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Min_Qty__c</fullName>
+        <label>Min Qty</label>
+        <precision>16</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>OLIAutoNumber__c</fullName>
+        <label>OLIAutoNumber</label>
+        <precision>10</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Currency_Code__c</fullName>
+        <formula>text(Quote.Opportunity.CurrencyIsoCode)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Currency Code</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opp_Price_book__c</fullName>
+        <formula>CASESAFEID(Quote.Opportunity.Pricebook2Id)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opp Price book</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_ID__c</fullName>
+        <formula>Quote.Opportunity.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity ID</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Line_Item_ID__c</fullName>
+        <description>Stores the Opportunity Line Item ID from the Line item which the Quote line item is getting created for. 
+This is applicable for Primary and First Quote only</description>
+        <label>Opportunity Line Item ID</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PC_Discount__c</fullName>
+        <label>PC Discount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Line_Item_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>EVM PC Line Item ID</label>
+        <length>50</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>PC_Margin__c</fullName>
+        <label>PC Margin</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Price__c</fullName>
+        <label>PC Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Reseller_Rec_ID__c</fullName>
+        <description>Delete after Data load</description>
+        <label>PC Reseller Rec ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Line_Item_Distributor__c</fullName>
+        <label>Parent Line Item Distributor</label>
+        <referenceTo>QuoteLineItem</referenceTo>
+        <relationshipLabel>Quote Line Items</relationshipLabel>
+        <relationshipName>Quote_Line_Items</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Pc_Quote_Line_SF_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Pc Quote Line SF ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <formula>Product2.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product_Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Quantity_Factor__c</fullName>
+        <label>Quantity Factor</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Reseller_Margin__c</fullName>
+        <label>Reseller Margin</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Reseller_Std_Disc__c</fullName>
+        <formula>IF(Siebel_List_Price__c &lt;&gt; 0,((Siebel_List_Price__c -Reseller_Unit_Special_Price__c)/Siebel_List_Price__c),null)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Reseller Std Disc</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Reseller_Unit_Special_Price__c</fullName>
+        <label>Reseller Unit Special Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_Line_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Siebel Line Id</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_List_Price__c</fullName>
+        <label>Siebel List Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Standard_Margin__c</fullName>
+        <label>Standard Margin</label>
+        <precision>5</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Standard_Net_Price__c</fullName>
+        <label>Standard Net Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Suggested_End_User_Price__c</fullName>
+        <label>Suggested End User Price</label>
+        <precision>14</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Suggested_Reseller_Buy_Price__c</fullName>
+        <label>Suggested Reseller Buy Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Discount__c</fullName>
+        <label>Total Discount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Disti_Cost__c</fullName>
+        <formula>Uplifted_Cost__c  *  Quantity</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Disti Cost</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Special_Price__c</fullName>
+        <label>Unit Special Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Uplifted_Cost__c</fullName>
+        <label>Uplifted Cost</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <validationRules>
+        <fullName>AIT_Product_Only</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND($User.Alias&lt;&gt;&apos;zzebi&apos;,ISPICKVAL(Product2.Product_Conversion_Source__c,&apos;EVM&apos;), Quote.Justification__c &lt;&gt; null,  Quote.Opportunity.Owner_Theater__c &lt;&gt; &apos;APAC&apos;,NOT( $Setup.RulesDeactivateSwitch__c.PC_Switch__c))</errorConditionFormula>
+        <errorMessage>Only AIT Products can be added to the Quote.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_Edit_Line_Item_Locked_Quote</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Quote.IsInApproval__c,NOT( Quote.isDistiManagerApproval__c &gt; 0), OR(ISCHANGED(UnitPrice),ISCHANGED(Quantity)),NOT( $Setup.RulesDeactivateSwitch__c.PC_Switch__c),($User.Alias &lt;&gt; &apos;zzebi&apos;))</errorConditionFormula>
+        <errorMessage>Quote is locked and cannot be edited.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_add_new_Line_Item_Locked_Quote</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND( Quote.IsInApproval__c, ISNEW(),NOT( $Setup.RulesDeactivateSwitch__c.PC_Switch__c),($User.Alias &lt;&gt; &apos;zzebi&apos;))</errorConditionFormula>
+        <errorMessage>Quote is locked and no new items can be added.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EVM_Product_Only</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(($User.Alias &lt;&gt; &apos;zzebi&apos;), ISPICKVAL(Product2.Product_Conversion_Source__c,&apos;EVM&apos;),NOT( $Setup.RulesDeactivateSwitch__c.PC_Switch__c), Quote.PC_Opp_Owner_Theater__c = &apos;APAC&apos;, 
+Product2.Is_Service_Product__c = true)</errorConditionFormula>
+        <errorMessage>The EVM SKU is Service SKU and cannot be added to the Quote. Please select a different SKU.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SKU_Orderable</fullName>
+        <active>true</active>
+        <errorConditionFormula>($User.Alias &lt;&gt; &apos;zzebi&apos;) &amp;&amp;(ISPICKVAL(Product2.Product_Conversion_Source__c,&apos;AIT&apos;) &amp;&amp; Product2.Orderable_SKU__c = false &amp;&amp; ISNEW() &amp;&amp; NOT( $Setup.RulesDeactivateSwitch__c.PC_Switch__c))</errorConditionFormula>
+        <errorMessage>The SKU is Non Orderable and cannot be added to the Quote, please select a different SKU.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Calculate_Disti_Margin</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Calculate Disti Margin</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/26.0/integration.js&quot;)} 
+
+var DirectDistributor= &apos;{!Quote.Direct_Distributor__c}&apos;;
+//alert(DirectDistributor);
+
+if(DirectDistributor == 1 ){
+
+
+var btnVal; 
+var btnValModified; 
+
+//btnVal = $(this).val(); 
+//btnValModified = btnVal + &quot; : Processing. Please Wait.&quot;; 
+//$(this).attr(&quot;value&quot;,btnValModified); 
+//$(this).attr(&quot;title&quot;,btnValModified); 
+//$(this).css(&quot;color&quot;,&quot;#FFFFFF&quot;); 
+//$(this).css(&quot;background&quot;,&quot;#1797C0&quot;); 
+
+btnVal = element.value; 
+btnValModified = btnVal + &quot; : Processing... please wait.&quot;; 
+element.value = btnValModified; 
+element.title = btnValModified; 
+element.style.background=&quot;#1797C0&quot;; 
+element.style.color=&quot;#FFFFFF&quot;; 
+element.disabled=true; 
+
+
+setTimeout(function() { 
+// call apex webservice method 
+var result = sforce.apex.execute( 
+&quot;ZEBQuoteLineItemCalculation&quot;, //class name 
+&quot;calculateExtraDiscount&quot;, //method name 
+{	QuoteId: &apos;{!Quote.Id}&apos; 
+
+} 
+); 
+
+if(result[0] != null &amp;&amp; result[0] != &apos;&apos; &amp;&amp; result[0] != &apos;SUCCESS&apos;) { 
+alert(result[0]); 
+} 
+
+
+if(sforce.console.isInConsole()) { 
+refreshPrimaryTab(); 
+} else { 
+window.location.reload(); 
+} 
+
+},1); 
+
+}
+else
+{
+alert(&apos;Please check Direct Distributor&apos;);
+}
+
+function refreshPrimaryTab() { 
+sforce.console.getFocusedPrimaryTabId(initiateRefreshPrimaryTab); 
+} 
+
+function initiateRefreshPrimaryTab(result) { 
+sforce.console.refreshPrimaryTabById(result.id, true); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Edit_All_Modified</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Edit All</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+if({!ISPICKVAL( $User.Theater__c , &apos;LATAM&apos;)}){
+window.open(&apos;apex/PCResellerGrid?quoteId={!Quote.Id}&amp;id={!Quote.Id}&apos;,&quot;target=_self&quot;);
+}else{
+window.open(&apos;apex/PCDistributorGrid?quoteId={!Quote.Id}&amp;id={!Quote.Id}&apos;,&quot;target=_self&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Price_All</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Price All</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/26.0/integration.js&quot;)} 
+var resultCheck = sforce.connection.query(&quot;Select Id, End_User_Financial_Status__c, Distributor_Financial_Status__c, AIT_Distributor_Financial_Status__c,Reseller_Financial_Status__c,  AIT_Reseller_Financial_Status__c, Fulfillment_Type__c From Opportunity where Id = &apos;&quot; + &apos;{!QuoteLineItem.Opportunity_ID__c}&apos;+ &quot;&apos; &quot;);
+console.log(records);
+var records = resultCheck.getArray(&apos;records&apos;);
+console.log(records);
+var checkbreak = false;
+
+
+
+
+for (var i=0; i&lt;records.length; i++) {
+	if (records[i].Fulfillment_Type__c == &apos;Direct to End User&apos; &amp;&amp; records[i].End_User_Financial_Status__c == &apos;false&apos; ) {
+		alert(&apos;The Direct to End User is not a Financial Account, thus cannot make a pricing call&apos;);
+		checkbreak = true;
+		break;	
+	}
+	if (records[i].Fulfillment_Type__c == &apos;Direct to Partner&apos; &amp;&amp; records[i].Reseller_Financial_Status__c == &apos;false&apos;) {
+		alert(&apos;The Primary Channel Partner is not a Financial Account, thus cannot make a pricing call&apos;);
+		checkbreak = true;
+		break;	
+	}
+	if (records[i].Fulfillment_Type__c == &apos;Direct to Partner&apos; &amp;&amp; records[i].AIT_Reseller_Financial_Status__c == &apos;false&apos;) {
+		alert(&apos;The Primary Channel Partner AIT is not a Financial Account, thus cannot make a pricing call&apos;);
+		checkbreak = true;
+		break;	
+	}
+	if (records[i].Fulfillment_Type__c == &apos;Distributor Sales Out&apos; &amp;&amp; records[i].Distributor_Financial_Status__c == &apos;false&apos;) {
+		alert(&apos;The Primary Distributor is not a Financial Account, thus cannot make a pricing call&apos;);
+		checkbreak = true;
+		break;	
+	}
+	if (records[i].Fulfillment_Type__c == &apos;Distributor Sales Out&apos; &amp;&amp; records[i].AIT_Distributor_Financial_Status__c == &apos;false&apos;) {
+		alert(&apos;The Primary Distributor AIT is not a Financial Account, thus cannot make a pricing call&apos;);
+		checkbreak = true;
+		break;	
+	}
+}	
+if(checkbreak == false){
+	var btnVal; 
+	var btnValModified; 
+
+	//btnVal = $(this).val(); 
+//btnValModified = btnVal + &quot; : Processing. Please Wait.&quot;; 
+//$(this).attr(&quot;value&quot;,btnValModified); 
+//$(this).attr(&quot;title&quot;,btnValModified); 
+//$(this).css(&quot;color&quot;,&quot;#FFFFFF&quot;); 
+//$(this).css(&quot;background&quot;,&quot;#1797C0&quot;); 
+
+btnVal = element.value; 
+btnValModified = btnVal + &quot; : Processing... please wait.&quot;; 
+element.value = btnValModified; 
+element.title = btnValModified; 
+element.style.background=&quot;#1797C0&quot;; 
+element.style.color=&quot;#FFFFFF&quot;; 
+element.disabled=true; 
+
+
+	setTimeout(function() { 
+	// call apex webservice method 
+	var result = sforce.apex.execute( 
+	&quot;ZEBSfdcToSiebelResellerPriceCallout&quot;, //class name 
+	&quot;getSFDCtoSiebelResellerPrice&quot;, //method name 
+	{	QuoteId: &apos;{!Quote.Id}&apos; 
+
+	} 
+	); 
+
+	if(result[0] != null &amp;&amp; result[0] != &apos;&apos; &amp;&amp; result[0] != &apos;SUCCESS&apos;) { 
+	alert(result[0]); 
+	} 
+
+
+
+	if(sforce.console.isInConsole()) { 
+	refreshPrimaryTab(); 
+	} else { 
+	window.location.reload(); 
+	} 
+
+	},1); 
+
+
+
+	function refreshPrimaryTab() { 
+	sforce.console.getFocusedPrimaryTabId(initiateRefreshPrimaryTab); 
+	} 
+
+	function initiateRefreshPrimaryTab(result) { 
+	sforce.console.refreshPrimaryTabById(result.id, true); 
+	}
+}</url>
+    </webLinks>
+</CustomObject>

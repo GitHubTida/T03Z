@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account$Id</field>
+    </columns>
+    <columns>
+        <field>Account$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Partners4_del__r$Account_Parent_Record__c</field>
+    </columns>
+    <columns>
+        <field>Account.Partners4_del__r$Name</field>
+    </columns>
+    <columns>
+        <field>Account.Partners4_del__r$Company_Name_Potential_Partner__c</field>
+    </columns>
+    <columns>
+        <field>Account.Partners4_del__r$Company_Trading_Name__c</field>
+    </columns>
+    <columns>
+        <field>Account.Partners4_del__r.Activities$Subject</field>
+    </columns>
+    <description>Account with Partner Profiles 6.30</description>
+    <format>Tabular</format>
+    <name>Account with Partner Profiles 6.30</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Accounts_with_Partner_Profiles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Account.Partners4_del__r$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURFY</interval>
+    </timeFrameFilter>
+</Report>

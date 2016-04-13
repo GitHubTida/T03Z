@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SSO Adm Role Resp Countrywise</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SSO Adm Role Resp Countrywise</value>
+    </caseValues>
+    <fields>
+        <label><!-- CountryUrl --></label>
+        <name>CountryUrl__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

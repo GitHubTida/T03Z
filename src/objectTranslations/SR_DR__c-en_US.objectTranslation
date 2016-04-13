@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Customer Project Registration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customer Project Registration</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account_LU__c</name>
+        <relationshipLabel><!-- Customer Project Registration (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name_del__c</name>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are there any known issues yet to be resolved? --></help>
+        <label><!-- Any known issues yet to be resolved? --></label>
+        <name>Any_known_issues_yet_to_be_resolved__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Any other relevant information / comments? --></help>
+        <label><!-- Any other relevant information / comment --></label>
+        <name>Any_other_comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are all Partner certifications current? --></help>
+        <label><!-- Are all Partner certifications current? --></label>
+        <name>Are_all_Partner_certifications_current__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the business impact of the proposed solution? --></help>
+        <label><!-- Business impact of the proposal? --></label>
+        <name>Business_impact_of_the_proposal__c</name>
+    </fields>
+    <fields>
+        <help><!-- Can the Partner/ISV supply a named contact at the customer who can verify the Partner/ISV claims? --></help>
+        <label><!-- Can the Customer validate? --></label>
+        <name>Can_the_Customer_validate__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How are we (Motorola EMB and the Partner) placed to satisfy the customer requirements? --></help>
+        <label><!-- Can we satisfy customer requirements? --></label>
+        <name>Can_we_satisy_customer_requirements__c</name>
+        <picklistValues>
+            <masterLabel>Bespoke solution required</masterLabel>
+            <translation><!-- Bespoke solution required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Significant development Required</masterLabel>
+            <translation><!-- Significant development Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Exists</masterLabel>
+            <translation><!-- Solution Exists --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Some development required</masterLabel>
+            <translation><!-- Some development required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Close Date --></label>
+        <name>Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Project Registration ID 18 --></label>
+        <name>Customer_Project_Registration_ID_18__c</name>
+    </fields>
+    <fields>
+        <help><!-- Did the Partner/ISV recommend specifically to the customer to consider Motorola devices? --></help>
+        <label><!-- Did Partner recommend EMb devices? --></label>
+        <name>Did_Partner_recommend_EMb_devices__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Are all the approval levels available to approve in the committed timescales? --></help>
+        <label><!-- Do the approvals fit the time line? --></label>
+        <name>Do_the_approvals_fit_the_time_line__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the application deployable on a Motorola EMB released product? --></help>
+        <label><!-- Does the solution use current products? --></label>
+        <name>Does_the_solution_use_current_products__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the Account a Zebra customer? --></help>
+        <label><!-- Is the Account a Zebra customer? --></label>
+        <name>Existing_EMb_Customer__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Explain level of engagement that Partner has had with End User to date? --></help>
+        <label><!-- Extent of Partner involvement? --></label>
+        <name>Extent_of_Partner_involvement__c</name>
+    </fields>
+    <fields>
+        <help><!-- When did the Partner/ISV alert Motorola to this opportunity? --></help>
+        <label><!-- First EMb notification? --></label>
+        <name>First_EMb_notification__c</name>
+    </fields>
+    <fields>
+        <help><!-- When did the Partner/ISV first have contact with the customer about this opportunity? --></help>
+        <label><!-- First Partner/ISV contact date? --></label>
+        <name>First_Partner_ISV_contact_date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Have dependancies for demo/trial kit been fulfilled? --></help>
+        <label><!-- Has a demo taken place? --></label>
+        <name>Has_a_demo_taken_place__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Has a proposal been tested by a customer? --></help>
+        <label><!-- Has proposal been tested by a customer? --></label>
+        <name>Has_proposal_been_tested_by_a_customer__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Have we sold the value of the deal to all levels of the approval chain?, Have we completed a Value Prompter? --></help>
+        <label><!-- Have we completed a Value Prompter? --></label>
+        <name>Have_we_completed_a_Value_Prompter__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How is our technical solution rated? --></help>
+        <label><!-- How is our technical solution rated? --></label>
+        <name>Haw_is_our_technical_solution_rated__c</name>
+        <picklistValues>
+            <masterLabel>Competitor Preferred</masterLabel>
+            <translation><!-- Competitor Preferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neutral</masterLabel>
+            <translation><!-- Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Preferred</masterLabel>
+            <translation><!-- Preferred --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- How long has the Partner been active in the Account? --></help>
+        <label><!-- How long has the Partner been active? --></label>
+        <name>How_long_has_the_Partner_been_active_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- ISV Partner --></label>
+        <name>ISV_Partner_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- If there is an App. Partner, who is it ? --></help>
+        <label><!-- If there is an App. Partner, who is it ? --></label>
+        <name>If_there_is_an_ISV_who_is_it__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is a PE or Deals Desk request required to close the deal? --></help>
+        <label><!-- Is a PE required at this time? --></label>
+        <name>Is_a_PE_required_at_this_time__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Has the Partner/ISV supply written evidence (eg. Email) to back up their claims for any of the above questions? --></help>
+        <label><!-- Is hard copy documentation available? --></label>
+        <name>Is_hard_copy_documentation_available__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Engagement is strategic or tactical with this client? --></help>
+        <label><!-- Is the Engagement strategic or tactical? --></label>
+        <name>Is_the_Engagement_strategic_or_tactical__c</name>
+        <picklistValues>
+            <masterLabel>Strategic</masterLabel>
+            <translation><!-- Strategic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tactical</masterLabel>
+            <translation><!-- Tactical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the Project capital funded in the customer’s budget? --></help>
+        <label><!-- Is the project funded? --></label>
+        <name>Is_the_project_funded__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Where does it stand in test and in validation? --></help>
+        <label><!-- Is the solution tested? --></label>
+        <name>Is_the_solution_tested__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the Application Partner engaging an ISV in delivering the Solution --></help>
+        <label><!-- Is there an Application Partner engaged? --></label>
+        <name>Is_there_a_ISV_engaged__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is there a Price Exception? --></label>
+        <name>Is_there_a_Price_Exception_with_this_dea__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is there a clearly defined requirement? --></help>
+        <label><!-- Is there a clearly defined requirement? --></label>
+        <name>Is_there_a_clearly_defined_requirement__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Has the Partner identified the key technical decision maker? --></help>
+        <label><!-- Key technical decision makers? --></label>
+        <name>Key_technical_decision_makers__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Amount --></label>
+        <name>Opportunity_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Customer Project Registration (EMEA Only) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Is the partner compliant with PE processes? --></help>
+        <label><!-- Partner compliant with PE process? --></label>
+        <name>Partner_compliant_with_PE_process__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Has the Partner delivered a similar solution to other customers --></help>
+        <label><!-- Partner delievered a similar solution? --></label>
+        <name>Partner_delievered_a_similar_solution__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- At what level in the customer&apos;s organisation is the Partners contacts? Are they at the decision maker level? --></help>
+        <label><!-- Partner level in customer organisation? --></label>
+        <name>Partner_level_in_customer_organisation__c</name>
+    </fields>
+    <fields>
+        <help><!-- Is the Partner technically qualified to deliver the solution? --></help>
+        <label><!-- Partner technicall qualified? --></label>
+        <name>Partner_technicall_qualified__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If the Partner is purchasing direct, is their payment history in accordance with policy? --></help>
+        <label><!-- Payment history within policy? --></label>
+        <name>Payment_history_within_policy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Channel Partner --></label>
+        <name>Primary_Channel_Partner_LU__c</name>
+        <relationshipLabel><!-- Customer Project Registration (Primary Channel Partner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Primary Channel Partner 2 --></label>
+        <name>Primary_Channel_Partner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Requested Fee Level? --></help>
+        <label><!-- Requested fee level --></label>
+        <name>Requested_fee_level__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do we believe the Partner is recommending the right technical solution? --></help>
+        <label><!-- Right solution recommended by partner? --></label>
+        <name>Right_solution_recommended_by_partner__c</name>
+    </fields>
+    <fields>
+        <help><!-- What are the key technical milestones &amp;  dates for the project? --></help>
+        <label><!-- Key technical milestones? --></label>
+        <name>Significant_technical_milestones__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>StageName_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Submitting_for__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Project Registration</masterLabel>
+            <translation><!-- Customer Project Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solution Rewards</masterLabel>
+            <translation><!-- Solution Rewards --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What is the time line for completing the project? i.e. what is the expiry date of the proposed Deal Registration? (note this is generally expected to be six months from current date, but can be extended if necessary) --></help>
+        <label><!-- Time line for completing the project? --></label>
+        <name>Time_line_for_completing_the_project__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Status --></label>
+        <name>Tracking_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does the Partner have the trust and support of the Account? Please provide comments --></help>
+        <label><!-- Account trust and support the partner? --></label>
+        <name>Trust_and_support_Partner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are there any known unresolved technical issues? --></help>
+        <label><!-- Unresolved technical issues? --></label>
+        <name>Unresolved_technical_issues__c</name>
+    </fields>
+    <fields>
+        <help><!-- Was the customer already considering Motorola for this opportunity? --></help>
+        <label><!-- Was customer already looking at EMb? --></label>
+        <name>Was_customer_already_looking_at_EMb__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Was this opportunity previously unknown to Motorola? --></help>
+        <label><!-- Was it previously unknown to Motorola? --></label>
+        <name>Was_it_previously_unknown_to_Motorola__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Did the Partner/ISV demontrate their solution/software to the customer on a Motorola device? --></help>
+        <label><!-- Were Demo&apos;s on EMb devices? --></label>
+        <name>Were_Demo_s_on_EMb_devices__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What are the customers buying criteria? --></help>
+        <label><!-- What are the customers buying criteria? --></label>
+        <name>What_are_the_customers_buying_criteria__c</name>
+        <picklistValues>
+            <masterLabel>Functionality</masterLabel>
+            <translation><!-- Functionality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid/Long Term ROI</masterLabel>
+            <translation><!-- Mid/Long Term ROI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price</masterLabel>
+            <translation><!-- Price --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Compatibility</masterLabel>
+            <translation><!-- System Compatibility --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What customer approval level is required to give final approval and have we sold the value of the deal to all levels of the approval chain? --></help>
+        <label><!-- What customer approval is required? --></label>
+        <name>What_customer_approval_is_required__c</name>
+        <picklistValues>
+            <masterLabel>Business Unit Decision</masterLabel>
+            <translation><!-- Business Unit Decision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive/Board Sign Off</masterLabel>
+            <translation><!-- Executive/Board Sign Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Line Function Decision</masterLabel>
+            <translation><!-- Line Function Decision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Known</masterLabel>
+            <translation><!-- Not Known --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- What has the Partner previously sold into the Account? --></help>
+        <label><!-- What has the Partner previously sold in? --></label>
+        <name>What_has_the_Partner_previously_sold_in__c</name>
+    </fields>
+    <fields>
+        <help><!-- What are the steps in the selection process? --></help>
+        <label><!-- Selection process steps? --></label>
+        <name>What_is_the_selection_process__c</name>
+    </fields>
+    <fields>
+        <help><!-- Who is the prime integrator? --></help>
+        <label><!-- Who is the prime integrator? --></label>
+        <name>Who_is_the_prime_interagtor__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola EMb</masterLabel>
+            <translation><!-- Motorola EMb --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None Required</masterLabel>
+            <translation><!-- None Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other Partner</masterLabel>
+            <translation><!-- Other Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Why does the Customer want to engage with this Partner? --></help>
+        <label><!-- Why engage with this partner? --></label>
+        <name>Why_engage_with_this_partner__c</name>
+    </fields>
+    <fields>
+        <help><!-- Are there any roadmap/feature dependancies involved? --></help>
+        <label><!-- Roadmap/feature dependancies? --></label>
+        <name>roadmap_feature_dependancies__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Have we sold the value of the deal to all levels of the approval chain?, Have we completed a Value Prompter? --></help>
+        <label><!-- Have we sold across the organisation? --></label>
+        <name>sold_across_org__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Deal Registration Approval</layout>
+        <sections>
+            <label><!-- Approval Information --></label>
+            <section>Approval Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Qualifying Questions for Requestor --></label>
+            <section>Qualifying Questions for Requestor</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Deal Registration Page Layout</layout>
+        <sections>
+            <label><!-- Approval Information --></label>
+            <section>Approval Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Qualifying Questions for Requestor --></label>
+            <section>Qualifying Questions for Requestor</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- N_SE --></label>
+        <name>N_SE</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- NewCPR --></label>
+        <name>NewCPR</name>
+    </webLinks>
+</CustomObjectTranslation>

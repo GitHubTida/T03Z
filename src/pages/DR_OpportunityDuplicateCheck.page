@@ -1,0 +1,45 @@
+<apex:page standardController="Deal_Registration__c" extensions="DR_dealDupeCheckerExtension">
+ <apex:sectionHeader title="Deal Registration" subtitle="{!$Label.Zeb_DR_Checker_Search_Opp}" />
+    
+    <apex:form >
+ <b>   « <apex:commandLink action="{!Cancel}" value="{!$Label.Zeb_DR_Checker_Back_To_deal}" style="font-size:9pt"/><br/><br/><br/></b>
+    <apex:pageMessages />
+    
+    <apex:outputPanel rendered="{!errorMsg == '' || errorMsg == null}">
+    <apex:outputText value="{!$Label.Zeb_DR_Checker_PARA1}" escape="false"/><br/>
+    <br/>
+    
+    </apex:outputPanel>
+    
+    <apex:pageBlock rendered="{!errorMsg == '' || errorMsg == null}">
+        <apex:pageBlockTable value="{!duplicateOppList}" var="o">
+            <apex:column headerValue="{!$Label.Zeb_DR_Checker_Account}">
+                <a href="/{!o.AccountId}" target="_self">{!o.Account.Name}</a>
+            </apex:column>
+            <apex:column headerValue="{!$Label.Zeb_DR_Checker_Opportunity_Name}">
+                <a href="/{!o.Id}" target="_self">{!o.Name}</a>
+            </apex:column>
+            <apex:column value="{!o.Owner.Name}" headerValue="{!$Label.Zeb_DR_Checker_Account_Manager}"/>
+            <apex:column value="{!o.StageName}" headerValue="{!$Label.Zeb_DR_Checker_Stage}"/>
+            <apex:column value="{!o.Amount}" headerValue="{!$Label.Zeb_DR_Checker_Amount}"/>
+            <apex:column value="{!o.Opportunity_Distributor__c}" headerValue="{!$Label.Zeb_DR_Checker_Primary_Distributor}"/>
+            <apex:column value="{!o.CreatedDate}" headerValue="{!$Label.Zeb_DR_checker_Created_Date}"/>
+            <apex:column value="{!o.CloseDate}" headerValue="{!$Label.Zeb_DR_Checker_Close_Date}"/>
+            <apex:column value="{!o.Application__c}" headerValue="{!$Label.Zeb_DR_Checker_Application}"/>
+            
+        </apex:pageBlockTable>
+        
+        <apex:outputText rendered="{!noResults}">
+            <br/>
+            {!$Label.Zeb_DR_Checker_PARA2}
+        </apex:outputText>
+        
+    </apex:pageBlock>
+    
+    <apex:outputPanel rendered="{!wasTruncated && (errorMsg == '' || errorMsg == null)}">
+        <br/>{!$Label.Zeb_DR_Checker_PARA3}
+    </apex:outputPanel>
+    
+    </apex:form>
+
+    </apex:page>

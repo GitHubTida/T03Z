@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>TYPE</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Product_Description__c</field>
+    </columns>
+    <columns>
+        <field>CLOSED_DATE</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Item_Product_Sub_Family__c</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Sub_Type__c</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case.Case_Organization__c</field>
+    </columns>
+    <description>ClosedCased for Dashboard with Warranty Rptg</description>
+    <filter>
+        <criteriaItems>
+            <column>TYPE</column>
+            <operator>contains</operator>
+            <value>Activation,Application/Device Non-Zebra,Application Zebra (Programming),Card Error Codes,Customer Purchase Error,Documentation Errors,Feature Request,Firmware Support,Maintenance or Cleaning,Media and Handling,Parts,PreSale Questions,Printer Failure Electronic,Printer Failure Mechanical,Printhead Failure,Setup Driver,Setup Network,Setup Printer Calibration,Setup Printer Comms,Setup Printer Print Quality,Shipping Damage,Software Support,Where Do I Find,Zebra Service</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>TomCurtin_ClosedCases</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CLOSED_DATEONLY</dateColumn>
+        <endDate>2015-03-04</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-01-30</startDate>
+    </timeFrameFilter>
+</Report>

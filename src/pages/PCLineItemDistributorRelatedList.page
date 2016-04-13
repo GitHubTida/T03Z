@@ -1,0 +1,81 @@
+<apex:page standardController="Quote" extensions="PCLineItemDistributorListController" action="{!quoteLineList}"  >
+  <apex:stylesheet value="{!$Resource.PCCommonStyles}" />  
+  <head>
+   </head>
+  <body>
+  <apex:form id="formRelatedList">
+         <apex:includeScript value="//code.jquery.com/jquery-1.11.0.min.js"/> 
+       <script>
+          var j$ = jQuery.noConflict();
+         function priceAllWaitingMsg(idComp) {
+            var btnVal; 
+            
+            var btnValModified=j$(document.getElementById(idComp));
+
+            btnValModified.text("Price All: Processing. Please Wait.");
+            btnValModified.css("color","#FFFFFF"); 
+            btnValModified.css("background","#1797C0");
+           }
+                               
+       </script>
+    <apex:pageBlock title="Line Item Distributors (Zebra NALA)">
+<apex:messages style="color:red;" />
+        <apex:actionFunction action="{!priceAll}" name="submitAction" /> 
+        <apex:pageBlockButtons location="top">
+             <apex:commandLink styleClass="btn" style="text-decoration: none;" value="Add Line Item" action="{!addRedirectPage}" target="_top" rendered="{!NOT(readOnlyFlag) && if((Quote.Opportunity.Owner_Theater__c=='NA' || Quote.Opportunity.Owner_Theater__c=='LATAM'),true,false)}"/>
+            
+           <apex:outputLabel rendered="{!NOT(readOnlyFlag) && if((Quote.Opportunity.Owner_Theater__c=='NA' || Quote.Opportunity.Owner_Theater__c=='LATAM'),true,false)}">
+            <apex:commandLink styleClass="btn" id="btnPriceAllId" style="text-decoration: none;"   onclick="priceAllWaitingMsg('{!$Component.this}');"  value="Price All"  action="{!priceAll}" rendered="{!NOT(readOnlyFlag)}" oncomplete="top.location.href ='/{!quote.id}'"/>
+           </apex:outputLabel> 
+            <apex:commandLink styleClass="btn" style="text-decoration: none;"  value="Edit All" action="{!editAllRedirectPage}" target="_top" rendered="{!NOT(readOnlyFlag) && (Quote.PC_PriceAll__c) && if((Quote.Opportunity.Owner_Theater__c=='NA' || Quote.Opportunity.Owner_Theater__c=='LATAM'),true,false)}"/>
+            <apex:commandLink styleClass="btn" style="text-decoration: none;"  value="Edit All" action="{!editAllRedirectPage}" rendered="{!NOT(readOnlyFlag) && NOT(Quote.PC_PriceAll__c) && if((Quote.Opportunity.Owner_Theater__c=='NA' || Quote.Opportunity.Owner_Theater__c=='LATAM'),true,false)}"/>
+            <!-- Added by Nikhil-->
+            <apex:commandButton value="Back to Price Concession" action="{!BacktoQuote}"  rendered="{!NOT(Gotolist)}"/> 
+             
+        </apex:pageBlockButtons>
+        <apex:pageBlockTable value="{!quoteLineItemList}" var="quoteLineItem" rendered="{!quoteLineItemList.size==0}" >
+            <apex:column headerValue="No records to display" headerClass="headerStyle"/>
+        </apex:pageBlocktable>
+        <!-- Below Styling chagnged By Nikhil-->
+          <div style="{!IF(Gotolist=false,'overflow:scroll;width:100%;height:100%','overflow:scroll;width:100%;height:186px;')}"> 
+            <apex:pageBlockTable value="{!quoteLineItemList}"  var="quoteLineItem" rendered="{!quoteLineItemList.size > 0}" >
+              <apex:column headerValue="Action" styleClass="width"  rendered="{!NOT(readOnlyFlag)}">
+                    <apex:outputLink style="color:#015ba7;" styleclass="actionLink" value="/{!quoteLineItem.Id}/e?retURL={!quoteLineItemID}" target="_top">Edit</apex:outputLink>&nbsp;<!--|-->
+                 <!--   <apex:commandLink style="color:#015ba7;"  styleclass="actionLink" action="{!deleteLinetItem}" target="_top" onclick="if(!confirm('Are you sure?')) return false;"   value="Del">
+                        <apex:param value="{!quoteLineItem.Id}" name="idToDel" assignTo="{!delID }"/>
+                    </apex:commandLink>-->
+                </apex:column>
+                <apex:column headerValue="Product">
+                    <apex:outputLink value="/{!quoteLineItem.id}" title="{!quoteLineItem.Product2id}" target="_top">{!quoteLineItem.Product_Name__c}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Disti Margin" value="{!quoteLineItem.Disti_Margin__c}"/>
+                <apex:column headerValue="Dist Margin Approval" value="{!quoteLineItem.Dist_Margin_Approval__c}"/>
+                <apex:column headerValue="Standard Net Price" value="{!quoteLineItem.Standard_Net_Price__c}"/>
+                <apex:column headerValue="Disti Std Discount" value="{!quoteLineItem.Disti_Std_Discount__c}"/>
+                <apex:column headerValue="Disti. Special Price" value="{!quoteLineItem.Disti_Special_Price__c}"/>
+                <apex:column headerValue="Disti. Special Discount" value="{!quoteLineItem.Disti_Special_Discount__c}" />              
+              </apex:pageBlockTable>
+              <!--</apex:outputPanel>-->
+           </div>
+           <apex:outputPanel >
+               <apex:outputPanel style="float:left;margin-top:20px;">
+                    <apex:Outputlink value="/apex/PCLineItemDistributorRelatedList?id={!Quote.id}&List=1" target="_top" rendered="{!quoteLineItemList.size>=1 && Gotolist==true}" style="font-weight:bold;">
+                    Go to list ({!totalRec})»
+                </apex:Outputlink>
+           </apex:outputPanel>  
+           <apex:outputPanel style="float:right;margin-top:20px;" rendered="{!AllowShowMore && Gotolist==true}">
+                <apex:commandButton value="First" rerender="formRelatedList" action="{!FirstPage}" disabled="{!prev}"/> &nbsp;
+                <apex:commandButton value="Previous" rerender="formRelatedList" action="{!previous}" disabled="{!prev}"/> &nbsp;
+                 <apex:outputLabel Value="{!counter}" style="display: inline-block;width: 2em;
+                                                            margin: 0 3px;font-size: 98%; text-align: center;vertical-align: 
+                                                            middle;border: 1px inset;background-color: white;"/>
+               <b> <apex:outputLabel Value="of {!totalPages}"/></b>&nbsp;
+                <apex:commandButton value="Next" rerender="formRelatedList" action="{!next}" disabled="{!nxt}"/>&nbsp;
+                <apex:commandButton value="Last" rerender="formRelatedList" action="{!lastPage}" disabled="{!nxt}"/>
+                </apex:outputPanel>
+            <!--</apex:pageblockButtons> -->
+            </apex:outputPanel>
+          </apex:pageBlock>
+       </apex:form>
+       </body>
+</apex:page>

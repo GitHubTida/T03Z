@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>EVM Price Concession Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EVM Price Concession Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Data Load Check --></label>
+        <name>Data_Load_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Discount --></label>
+        <name>PC_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy SB PC Created By --></label>
+        <name>PC_Legacy_SB_PC_Created_By__c</name>
+        <relationshipLabel><!-- EVM Price Concession Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Legacy SB Quote ID --></label>
+        <name>PC_Legacy_SB_Quote_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Oracle Price --></label>
+        <name>PC_Oracle_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE1 --></label>
+        <name>PC_PE1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE2 --></label>
+        <name>PC_PE2__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Product Family --></label>
+        <name>PC_Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Total Cost --></label>
+        <name>PC_Total_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Total Margin --></label>
+        <name>PC_Total_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Exception --></label>
+        <name>Price_Exception__c</name>
+        <relationshipLabel><!-- EVM Price Concession Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Promote Flag --></label>
+        <name>Promote_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Line Item ID --></label>
+        <name>Quote_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SKU Name --></label>
+        <name>SKU_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price --></label>
+        <name>Total_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit List Price --></label>
+        <name>Unit_List_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Sell Price --></label>
+        <name>Unit_Sell_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Std Price --></label>
+        <name>Unit_Std_Price__c</name>
+    </fields>
+    <layouts>
+        <layout>EVM Price Concession Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Price Exception Line Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

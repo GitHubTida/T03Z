@@ -1,0 +1,328 @@
+<apex:page id="page" title="Search" showHeader="false" sideBar="false" tabStyle="Account" controller="CustomPartnerLookupController">
+        <apex:includeScript value="{!URLFOR($Resource.jquery, 'js/jquery-1.7.1.min.js')}" />
+        <apex:includeScript value="{!URLFOR($Resource.datatables,'DataTables-1.8.2/media/js/jquery.dataTables.js')}" />
+        <script>
+        
+            var oTable;
+            var j$ = jQuery.noConflict();
+            j$(document).ready(function(){
+                j$('#pb').hide();
+                searchAcc();
+            });
+           
+            function searchAcc(){
+                j$('#showPreload').show();
+                var searchText = document.getElementById('page:form:pb:searchId').value;
+                var MSIAccNo = '';
+                var org = '';
+                var MPETech = '';
+                var MPETechStatus = '';
+                var MPELevel = '';
+                
+                MSIAccNo = document.getElementById('page:form:pb:pbs:pbsi1:MSIAccNo').value;
+                MPETech = document.getElementById('page:form:pb:pbs:pbsi2:MPETech').value;
+                MPETechStatus = document.getElementById('page:form:pb:pbs:pbsi3:MPETechStatus').value;
+                MPELevel = document.getElementById('page:form:pb:pbs:pbsi4:MPELevel').value;
+                var OwnerName = document.getElementById('page:form:pb:pbs:pbsi6:OwnerName').value;
+                var AITMemb = document.getElementById('page:form:pb:pbs:pbsi7:AITMemb').value;
+                var AITProgName = document.getElementById('page:form:pb:pbs:pbsi8:AITProgName').value;
+                var AITMembStatus = document.getElementById('page:form:pb:pbs:pbsi9:AITMembStatus').value;
+                var Country = document.getElementById('page:form:pb:pbs:pbsi13:Country').value;
+                
+                CustomPartnerLookupController.searchAccount(searchText,'{!selectedRole}','{!theater}', org,MSIAccNo,OwnerName,AITMemb,AITProgName,AITMembStatus,Country,
+                function(result,event){
+                        if(event.status && result){
+                            var javTable = new Array();
+                            for(i = 0; i<result.length; i++){
+                                var flag = 0;
+                                javTable[i] = new Array(13);
+                                javTable[i][0] = '<a href="javascript:top.window.opener.lookupPick2(\'{!FormTag}\',\'{!TextBox}_lkid\',\'{!TextBox}\',\''+result[i].account.Id+'\',\'{!JSENCODE(' + result[i].account.Name +')}\', false)">'+result[i].account.Name+'</a>';javTable[i][1] = String(result[i].account.Account_Type__c).replace('undefined',' ');
+                                javTable[i][2] = String(result[i].account.AccountNumber).replace('undefined',' ') + ' ';
+                                javTable[i][3] = String(result[i].account.MSI_E_Account__c).replace('undefined',' ');
+                                javTable[i][4] = String(result[i].account.Owner.Name).replace('undefined',' ') + ' ';
+                                var concatRes = '';
+                                for(j=0; j<result[i].TechSpec.length;j++){                               
+                                    concatRes += String(result[i].TechSpec[j].Partner_Program_Name__c).replace('undefined',' ') +'&nbsp;'+ '<br/>';
+                                }
+                                if(concatRes !='')
+                                    javTable[i][5] = concatRes;
+                                else
+                                    javTable[i][5] = '&nbsp;';
+                                
+                                var concatRes = '';
+                                for(j=0; j<result[i].TechSpec.length;j++){
+                                    concatRes += String(result[i].TechSpec[j].Purchasing_Method__c).replace('undefined',' ') + '&nbsp;' +'<br/>';
+                                }
+                                if(concatRes != '')
+                                    javTable[i][6] = concatRes;
+                                else
+                                    javTable[i][6] = '&nbsp;';
+        
+                                var concatRes = '';
+                                for(j=0; j<result[i].TechSpec.length;j++){
+                                    concatRes += String(result[i].TechSpec[j].Member_Status__c).replace('undefined',' ') + '&nbsp;' + '<br/>';
+                                }
+                                if(concatRes != '')
+                                    javTable[i][7] = concatRes;
+                                else
+                                    javTable[i][7] = '&nbsp;';    
+                                var concatRes = '';
+                                for(j=0; j<result[i].TechSpec.length;j++){
+                                    concatRes += String(result[i].TechSpec[j].Category__c).replace('undefined',' ')+ '&nbsp;'+'<br/>';
+                                }
+                                if(concatRes != '')
+                                    javTable[i][8] = concatRes;
+                                else
+                                    javTable[i][8] = '&nbsp;';
+
+                                var concatRes = '';
+                                for(j=0; j<result[i].TechSpec.length;j++){
+                                    concatRes += String(result[i].TechSpec[j].Tier_Level__c).replace('undefined',' ')+ '&nbsp;'+'<br/>';
+                                }
+                                if(concatRes != '')
+                                    javTable[i][9] = concatRes;
+                                else
+                                    javTable[i][9] = '&nbsp;';
+                                
+                                javTable[i][10] = String(result[i].account.Currency__c).replace('undefined',' ') + ' ';
+                                javTable[i][11] = String(result[i].account.ZEB_FinStat_Calc__c).replace('undefined',' ') + ' ';
+                                javTable[i][12] = String(result[i].account.BillingCountry).replace('undefined',' ') + ' ';
+                                javTable[i][13] = String(result[i].account.Organization__c).replace('undefined',' ') + ' ';
+                                
+
+                            }
+                        }
+
+                        oTable=j$('#accountTable').dataTable( {
+                            "bAutoWidth":false,
+                            "bPaginate":true,
+                            "bScrollCollapse":true,
+                            "bSort":true,
+                            "overflow": "hidden",
+                            "responsive": true,
+                            "bDestroy":true,
+                            "iDisplayLength":10,
+                            "bFilter":true,
+                            "sPaginationType": "full_numbers",
+                            "sDom" : "lrtip",
+                            "sStripeEven" : "dataRow even  first smallFont",
+                            "sStripeOdd" : "dataRow even  first smallFont",
+                            "aaData":javTable,
+                            "fnDrawCallback" : function(){
+                                  j$('table#accountTable td').bind('mouseenter', function () {j$(this).parent().children().each(function(){j$(this).addClass('datatablerowhighlight');}); });
+                                  j$('table#accountTable td').bind('mouseleave', function () { j$(this).parent().children().each(function(){j$(this).removeClass('datatablerowhighlight');}); });
+                            },
+                            "fnInitComplete":function(){
+                                j$('#pb').show();
+                                j$('#showPreload').hide();
+                                
+                            }
+                        } );
+                        
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi7:AITMemb').value, '2' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi1:MSIAccNo').value, '3' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi6:OwnerName').value, '4' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi2:MPETech').value, '5' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi8:AITProgName').value, '6' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi3:MPETechStatus').value, '7' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi9:AITMembStatus').value, '8' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi4:MPELevel').value, '9' );
+                        oTable.fnFilter( document.getElementById('page:form:pb:pbs:pbsi13:Country').value, '12' );
+                        
+                        
+                        oTable.fnAdjustColumnSizing();
+                        oTable.fnStandingRedraw();
+                });
+            }
+        </script>
+       
+        <apex:form id="form">
+            <apex:pageBlock id="pb" title="Lookup">
+                <apex:panelGrid columns="3">
+                    
+                    <apex:outputPanel >
+                        <apex:outputLabel style="font-weight:bold;">Account Name</apex:outputLabel>
+                    </apex:outputPanel>
+                    <apex:outputPanel >
+                        <apex:inputText id="searchId" value="{!searchString1}"/>
+                    </apex:outputPanel>
+                    <apex:outputPanel >
+                        <apex:commandButton value="Go!" onclick="searchAcc();" reRender="false"/>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <apex:outputText rendered="{!IF(((selectedRole ='Primary Distributor') && (theater != 'APAC')),True,False)}" value="The results will show Distributors from AIT and EVM who have been merged together or those who are EVM only Distributors">
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(((selectedRole ='Primary Channel Partner') && (theater != 'APAC')),True,False)}" value="The results will show Partners from AIT and EVM who have been merged together or those who are EVM only Partners">
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(((selectedRole ='Primary Distributor AIT') && (theater != 'APAC')),True,False)}" value="The results will show Distributors from AIT only where a EVM distributor does not exist">
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(((selectedRole ='Primary Channel Partner AIT') && (theater != 'APAC')),True,False)}" value="The results will show Partners from AIT only where a EVM partner does not exist">
+                        </apex:outputText>
+                    </apex:outputPanel>
+                </apex:panelGrid>
+                
+                    <br/>
+                <br/>
+                
+                <br/>
+                <div id="lessopt">                                                                                                                                 
+                    <div class="showMore" id="showmore">
+                        <a href="javascript:void(0)" onclick='document.getElementById("extra").style.display="block";document.getElementById("showmore").style.display="none";'>Show Filters</a>  
+                    </div>                                            
+                </div>
+                 
+                <!-- Start of Filter options that opens on click of show filters link -->            
+                <div class="extraOptions" id="extra" style="display:none">
+                    <apex:pageBlockSection id="pbs">              
+                         <apex:pageBlockSectionItem id="pbsi6">
+                             <apex:outputLabel value="Owner Name" for="OwnerName"/>
+                             <apex:inputText id="OwnerName"/>
+                         </apex:pageBlockSectionItem>
+                                            
+                         <apex:pageBlockSectionItem id="pbsi1">
+                             <apex:outputLabel value="EVM Account #" for="MSIAccNo"/>
+                             <apex:inputText id="MSIAccNo"/>
+                         </apex:pageBlockSectionItem>
+                         
+                         <apex:pageBlockSectionItem id="pbsi7">
+                             <apex:outputLabel value="AIT Account #" for="AITMemb"/>
+                             <apex:inputText id="AITMemb"/> 
+                         </apex:pageBlockSectionItem>
+                         
+                         <apex:pageBlockSectionItem id="pbsi2">
+                              <apex:outputLabel value="Program Name" for="MPETech"/>
+                              <apex:inputText id="MPETech"/>
+                         </apex:pageBlockSectionItem>
+                         
+                         <apex:pageBlockSectionItem id="pbsi8">
+                             <apex:outputLabel value="Purchasing Method" for="AITProgName"/>
+                             <apex:inputText id="AITProgName"/>
+                         </apex:pageBlockSectionItem>
+                         
+                         <apex:pageBlockSectionItem id="pbsi3">
+                              <apex:outputLabel value="Member Status" for="MPETechStatus"/>
+                              <apex:inputText id="MPETechStatus"/>
+                         </apex:pageBlockSectionItem>
+                         
+                         <apex:pageBlockSectionItem id="pbsi9">
+                             <apex:outputLabel value="Category" for="AITMembStatus"/>
+                             <apex:inputText id="AITMembStatus"/>
+                         </apex:pageBlockSectionItem>
+                         
+                         <apex:pageBlockSectionItem id="pbsi4">
+                             <apex:outputLabel value="Tier" for="MPELevel"/>
+                             <apex:inputText id="MPELevel"/>
+                         </apex:pageBlockSectionItem>
+                                                                   
+                                               
+
+                        <apex:pageBlockSectionItem id="pbsi13">
+                             <apex:outputLabel value="Country" for="Country"/>
+                             <apex:inputText id="Country"/>
+                         </apex:pageBlockSectionItem>  
+
+                         
+                       <span style="padding-left:5px">                                              
+                          <apex:commandButton value="Apply Filters" onclick="searchAcc();" rerender="false"/>
+                       </span>
+                       
+                    </apex:pageBlockSection>
+                    
+                    <div class="hideMore" id="showless">
+                        <a href="javascript:void(0)" onclick='document.getElementById("extra").style.display="none";document.getElementById("showmore").style.display="block";'>Hide Filters</a>
+                    </div>
+                </div> 
+                <br/>
+                
+                <table id="accountTable" class="list" border="0" cellpadding="0" cellspacing="0" >
+                    <thead class="rich-table-thead">
+                        <tr class="headerRow middleAlign">
+                            <th class="headerRow ">{!$Label.Account_Name}</th> 
+                            <th class="headerRow ">{!$Label.Account_Type}<br/></th> 
+                            <th class="headerRow ">{!$Label.AIT_Account}</th>
+                            <th class="headerRow ">{!$Label.EVM_Account}<br/></th>
+                            <th class="headerRow ">{!$Label.Owner_Name}</th>
+                            <th class="headerRow " style="white-space:nowrap;width:300px">{!$Label.MPE_Technology}</th> 
+                            <th class="headerRow " style="white-space:nowrap;width:300px">{!$Label.MPE_Community}</th>
+                            <th class="headerRow " style="white-space:nowrap;width:300px">{!$Label.MPE_Technology_Status}</th>
+                            <th class="headerRow " style="white-space:nowrap;width:300px">{!$Label.MPE_Specialization_Level}</th> 
+                            <th class="headerRow " style="white-space:nowrap;width:300px">{!$Label.PF_Program_Name}</th>
+                            <th class="headerRow ">Currency</th>
+                            <th class="headerRow ">Status</th>
+                            <th class="headerRow ">Country</th>
+                            <th class="headerRow ">Organization</th>
+                        </tr>
+                    </thead>
+                </table>
+            </apex:pageBlock>
+             <div style="display:none;" id="showPreload">
+                        <div id="searchOverlay"><img src="{!$Resource.MM_Searching}" class="searchPreload" /></div>
+             </div>
+        </apex:form>
+        <style>
+        
+.td-limit {
+    max-width: 70px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#searchOverlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 2000px;
+    z-index: 20;
+    background-image:url('{!URLFOR($Resource.SearchOverlay)}');
+}
+
+.searchPreload {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    background: #555555;
+    padding: 30px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.9;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+            .dataTables_paginate {
+                width: 44px;
+                * width: 50px;
+                float: left;
+                text-align: right;
+            }
+            .paging_full_numbers {
+                height: 22px;
+                line-height: 22px;
+                padding-top:15px;
+                }
+            .paging_full_numbers span.paginate_button,
+                .paging_full_numbers span.paginate_active {
+                border: 1px solid #aaa;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                padding: 2px 5px;
+                margin: 0 3px;
+                cursor: pointer;
+                *cursor: hand;
+            }
+            .paging_full_numbers span.paginate_button {
+                background-color: white;
+            }
+            .paging_full_numbers span.paginate_button:hover {
+                background-color: #ccc;
+            }
+            .paging_full_numbers span.paginate_active {
+                background-color: #99B3FF;
+            }
+            .datatablerowhighlight {
+                background-color: #E0F2F7 !important;
+            }
+        </style>
+    </apex:page>

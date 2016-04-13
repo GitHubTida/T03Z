@@ -1,0 +1,49 @@
+<apex:page showHeader="false"  sidebar="false"  language="{!appLang}" controller="ZEBThankYouController">
+    <apex:pageMessages />
+     <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+        <div class="ztopbanner">
+            <apex:define name="header">
+                 <c:testheader />
+            </apex:define>
+        </div>
+     <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+     
+     <!--<div style="width: 960px; margin: 0 auto;">-->
+     <div class="zmainbody">  
+    
+        <apex:outputText >
+        <apex:outputText value="{!$Label.zeb_application_declined_5}" style="font-size:2em;margin: 1px 2px 1 1;text-align:center" escape="false"/>
+        <!--   <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center"><b>{!$Label.Confirmation_Declining_all_Addendum_New_Partners2}</b> 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Confirmation_Declining_all_Addendum_New_Partners} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Confirmation_Declining_all_Addendum_New_Partners_1}&nbsp;<a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted4}
+        </p>
+       <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Legal_Already_Submitted1}<br/> <a href="https://www.zebra.com/us/en/partners/partnerempower-partners/partner-interaction-center.html" target="_blank"  style="font-weight:bold;color:#07f;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>-->
+        </apex:outputText>
+ 
+    </div>
+    <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+    
+    </div>
+</apex:page>

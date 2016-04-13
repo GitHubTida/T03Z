@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Partner Program Membership</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partner Program Memberships</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Partner Program Memberships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- BIP Begin Date --></label>
+        <name>BIP_Begin_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BIP End Date --></label>
+        <name>BIP_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- BIP Plan Name --></label>
+        <name>BIP_Plan_Name__c</name>
+        <picklistValues>
+            <masterLabel>Development - Competitive</masterLabel>
+            <translation><!-- Development - Competitive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Development - Volume</masterLabel>
+            <translation><!-- Development - Volume --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BIP --></label>
+        <name>BIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- BO Error --></label>
+        <name>BO_Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Begin Date --></label>
+        <name>Begin_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Geographical Coverage Areas --></label>
+        <name>Company_Geographical_Coverage_Areas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Trading Name --></label>
+        <name>Company_Trading_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- GSA Enabled --></label>
+        <name>GSA_Enabled__c</name>
+    </fields>
+    <fields>
+        <label><!-- HQ Address --></label>
+        <name>HQ_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Status --></label>
+        <name>Member_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved Member</masterLabel>
+            <translation><!-- Approved Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Current Member</masterLabel>
+            <translation><!-- Current Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Grace Period</masterLabel>
+            <translation><!-- In Grace Period --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewed</masterLabel>
+            <translation><!-- Renewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Membership # --></label>
+        <name>Membership__c</name>
+    </fields>
+    <fields>
+        <label><!-- PF Program Type --></label>
+        <name>PF_Program_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Name --></label>
+        <name>Partner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Profile --></label>
+        <name>Partner_Profile__c</name>
+        <relationshipLabel><!-- Partner Program Memberships --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Tier --></label>
+        <name>Partner_Tier__c</name>
+        <picklistValues>
+            <masterLabel>ASP</masterLabel>
+            <translation><!-- ASP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advanced</masterLabel>
+            <translation><!-- Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate</masterLabel>
+            <translation><!-- Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate Development</masterLabel>
+            <translation><!-- Associate Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Reseller</masterLabel>
+            <translation><!-- Authorised Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Development</masterLabel>
+            <translation><!-- Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card</masterLabel>
+            <translation><!-- Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Specialist</masterLabel>
+            <translation><!-- Card Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Technology</masterLabel>
+            <translation><!-- Card Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor BARCODE</masterLabel>
+            <translation><!-- Distributor BARCODE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor CARDS</masterLabel>
+            <translation><!-- Distributor CARDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESP</masterLabel>
+            <translation><!-- ESP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Service</masterLabel>
+            <translation><!-- Full Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Brazil</masterLabel>
+            <translation><!-- ISV Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Influencer</masterLabel>
+            <translation><!-- ISV Influencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Partner</masterLabel>
+            <translation><!-- ISV Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Reseller</masterLabel>
+            <translation><!-- ISV Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA - ZASP</masterLabel>
+            <translation><!-- LACA - ZASP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Workforce</masterLabel>
+            <translation><!-- Mobile Workforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Classified Reseller</masterLabel>
+            <translation><!-- Non-Classified Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX Authorized</masterLabel>
+            <translation><!-- PAX Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX Partner</masterLabel>
+            <translation><!-- PAX Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier</masterLabel>
+            <translation><!-- Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier Plus</masterLabel>
+            <translation><!-- Premier Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print and Apply</masterLabel>
+            <translation><!-- Print and Apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID - North America</masterLabel>
+            <translation><!-- RFID - North America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Enablement</masterLabel>
+            <translation><!-- RFID Enablement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Solutions Provider</masterLabel>
+            <translation><!-- RFID Solutions Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Specialist</masterLabel>
+            <translation><!-- RFID Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service</masterLabel>
+            <translation><!-- Self Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single Product Partner</masterLabel>
+            <translation><!-- Single Product Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Service</masterLabel>
+            <translation><!-- Standard Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPP Referral</masterLabel>
+            <translation><!-- TPP Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TPP Reseller</masterLabel>
+            <translation><!-- TPP Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP PAX</masterLabel>
+            <translation><!-- ZASP PAX --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Type --></label>
+        <name>Partner_Type__c</name>
+        <picklistValues>
+            <masterLabel>Alliance</masterLabel>
+            <translation><!-- Alliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Specialist</masterLabel>
+            <translation><!-- Card Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Partner</masterLabel>
+            <translation><!-- Direct Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IHV Partner</masterLabel>
+            <translation><!-- IHV Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Partner</masterLabel>
+            <translation><!-- ISV Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IZASP</masterLabel>
+            <translation><!-- IZASP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Specialist</masterLabel>
+            <translation><!-- Kiosk Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Specialist</masterLabel>
+            <translation><!-- RFID Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Card Specialist</masterLabel>
+            <translation><!-- Security Card Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subsidiary</masterLabel>
+            <translation><!-- Subsidiary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplies Specialist</masterLabel>
+            <translation><!-- Supplies Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Partner</masterLabel>
+            <translation><!-- Technology Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP</masterLabel>
+            <translation><!-- ZASP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program Category --></label>
+        <name>Program_Category__c</name>
+        <picklistValues>
+            <masterLabel>Main Track</masterLabel>
+            <translation><!-- Main Track --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub-Track</masterLabel>
+            <translation><!-- Sub-Track --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Program Name --></label>
+        <name>Program_Name__c</name>
+        <picklistValues>
+            <masterLabel>APAC Advanced Card Partner</masterLabel>
+            <translation><!-- APAC Advanced Card Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Advanced Partner</masterLabel>
+            <translation><!-- APAC Advanced Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Associate Partner</masterLabel>
+            <translation><!-- APAC Associate Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Authorised Distributor</masterLabel>
+            <translation><!-- APAC Authorised Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Authorised Reseller</masterLabel>
+            <translation><!-- APAC Authorised Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Card Distributor</masterLabel>
+            <translation><!-- APAC Card Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Card Reseller</masterLabel>
+            <translation><!-- APAC Card Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Card Specialist</masterLabel>
+            <translation><!-- APAC Card Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ISV Partner</masterLabel>
+            <translation><!-- APAC ISV Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ISV Partner Subtrack</masterLabel>
+            <translation><!-- APAC ISV Partner Subtrack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Kiosk Specialist</masterLabel>
+            <translation><!-- APAC Kiosk Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Master Dealer</masterLabel>
+            <translation><!-- APAC Master Dealer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Pax Partner</masterLabel>
+            <translation><!-- APAC Pax Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Platinum Premier Partner</masterLabel>
+            <translation><!-- APAC Platinum Premier Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Premier Card Partner</masterLabel>
+            <translation><!-- APAC Premier Card Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Premier Partner</masterLabel>
+            <translation><!-- APAC Premier Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC RFID Specialist</masterLabel>
+            <translation><!-- APAC RFID Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC Supplies Specialist</masterLabel>
+            <translation><!-- APAC Supplies Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ZASP Barcode Printers</masterLabel>
+            <translation><!-- APAC ZASP Barcode Printers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ZASP Barcode Printers Indirect</masterLabel>
+            <translation><!-- APAC ZASP Barcode Printers Indirect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ZASP Card Printers</masterLabel>
+            <translation><!-- APAC ZASP Card Printers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ZASP Mobile Printers</masterLabel>
+            <translation><!-- APAC ZASP Mobile Printers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>APAC ZASP Print Engine</masterLabel>
+            <translation><!-- APAC ZASP Print Engine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ASP</masterLabel>
+            <translation><!-- ASP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Access Partner - EMEA</masterLabel>
+            <translation><!-- Access Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advanced Partner - EMEA</masterLabel>
+            <translation><!-- Advanced Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associate Partner - EMEA</masterLabel>
+            <translation><!-- Associate Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Card Distributor - EMEA</masterLabel>
+            <translation><!-- Authorised Card Distributor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Distributor - EMEA</masterLabel>
+            <translation><!-- Authorised Distributor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Distributor - SPA scheme - EMEA</masterLabel>
+            <translation><!-- Authorised Distributor - SPA scheme - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Kiosk Distributor - EMEA</masterLabel>
+            <translation><!-- Authorised Kiosk Distributor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Label Distributor - EMEA</masterLabel>
+            <translation><!-- Authorised Label Distributor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorised Supplies Distributor - EMEA</masterLabel>
+            <translation><!-- Authorised Supplies Distributor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barcode Reseller - Advanced</masterLabel>
+            <translation><!-- Barcode Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barcode Reseller - Associate</masterLabel>
+            <translation><!-- Barcode Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barcode Reseller - Business Development</masterLabel>
+            <translation><!-- Barcode Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barcode Reseller - Premier</masterLabel>
+            <translation><!-- Barcode Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil - Associate</masterLabel>
+            <translation><!-- Brazil - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil - Distributors</masterLabel>
+            <translation><!-- Brazil - Distributors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil Advanced</masterLabel>
+            <translation><!-- Brazil Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil Associate</masterLabel>
+            <translation><!-- Brazil Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil Premier</masterLabel>
+            <translation><!-- Brazil Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil Resellers- Card &amp; Barcode Associate</masterLabel>
+            <translation><!-- Brazil Resellers- Card &amp; Barcode Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil Resellers- Card &amp; Barcode Business Develop</masterLabel>
+            <translation><!-- Brazil Resellers- Card &amp; Barcode Business Develop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card National Reseller Organization</masterLabel>
+            <translation><!-- Card National Reseller Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Advanced</masterLabel>
+            <translation><!-- Card Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Associate</masterLabel>
+            <translation><!-- Card Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Associate Development</masterLabel>
+            <translation><!-- Card Reseller - Associate Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Business Development</masterLabel>
+            <translation><!-- Card Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Card Technology</masterLabel>
+            <translation><!-- Card Reseller - Card Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Premier</masterLabel>
+            <translation><!-- Card Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller - Premier Plus</masterLabel>
+            <translation><!-- Card Reseller - Premier Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Specialist L1 - EMEA</masterLabel>
+            <translation><!-- Card Specialist L1 - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Specialist L2 - EMEA</masterLabel>
+            <translation><!-- Card Specialist L2 - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Certified Zebra Service Centre - EMEA</masterLabel>
+            <translation><!-- Certified Zebra Service Centre - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Advanced Partner</masterLabel>
+            <translation><!-- China Advanced Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Associate Partner</masterLabel>
+            <translation><!-- China Associate Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Authorised Distributor</masterLabel>
+            <translation><!-- China Authorised Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Authorised Reseller</masterLabel>
+            <translation><!-- China Authorised Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Card Distributor</masterLabel>
+            <translation><!-- China Card Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Platinum Premier Partner</masterLabel>
+            <translation><!-- China Platinum Premier Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Premier Card Partner</masterLabel>
+            <translation><!-- China Premier Card Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Premier Partner</masterLabel>
+            <translation><!-- China Premier Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China Supplies Specialist</masterLabel>
+            <translation><!-- China Supplies Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China ZASP Barcode Printers</masterLabel>
+            <translation><!-- China ZASP Barcode Printers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China ZASP Barcode Printers Indirect</masterLabel>
+            <translation><!-- China ZASP Barcode Printers Indirect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China ZASP Card Printers</masterLabel>
+            <translation><!-- China ZASP Card Printers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial National Reseller Organization</masterLabel>
+            <translation><!-- Commercial National Reseller Organization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Reseller - Advanced</masterLabel>
+            <translation><!-- Commercial Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Reseller - Associate</masterLabel>
+            <translation><!-- Commercial Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Reseller - Associate Development</masterLabel>
+            <translation><!-- Commercial Reseller - Associate Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Reseller - Business Development</masterLabel>
+            <translation><!-- Commercial Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Reseller - Premier</masterLabel>
+            <translation><!-- Commercial Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop/Tabletop Reseller - Advanced</masterLabel>
+            <translation><!-- Desktop/Tabletop Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop/Tabletop Reseller - Associate</masterLabel>
+            <translation><!-- Desktop/Tabletop Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop/Tabletop Reseller - Business Development</masterLabel>
+            <translation><!-- Desktop/Tabletop Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop/Tabletop Reseller - Premier</masterLabel>
+            <translation><!-- Desktop/Tabletop Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor - Card</masterLabel>
+            <translation><!-- Distributor - Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor LACA</masterLabel>
+            <translation><!-- Distributor LACA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ESP</masterLabel>
+            <translation><!-- ESP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Reseller - Advanced</masterLabel>
+            <translation><!-- Government Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Reseller - Associate</masterLabel>
+            <translation><!-- Government Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Reseller - Business Development</masterLabel>
+            <translation><!-- Government Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Reseller - Premier</masterLabel>
+            <translation><!-- Government Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare Specialist (LaserBand) - EMEA</masterLabel>
+            <translation><!-- Healthcare Specialist (LaserBand) - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare Specialist (Solution) - EMEA</masterLabel>
+            <translation><!-- Healthcare Specialist (Solution) - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare Specialist (Solution) - EMEA - subtrack</masterLabel>
+            <translation><!-- Healthcare Specialist (Solution) - EMEA - subtrack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Brazil</masterLabel>
+            <translation><!-- ISV Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Influencer</masterLabel>
+            <translation><!-- ISV Influencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Partner</masterLabel>
+            <translation><!-- ISV Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Partner - EMEA</masterLabel>
+            <translation><!-- ISV Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Partner subtrack - EMEA</masterLabel>
+            <translation><!-- ISV Partner subtrack - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Reseller</masterLabel>
+            <translation><!-- ISV Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV Subtrack</masterLabel>
+            <translation><!-- ISV Subtrack --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Hardware Vendor - EMEA</masterLabel>
+            <translation><!-- Independent Hardware Vendor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect ZASP - Card Printers - EMEA</masterLabel>
+            <translation><!-- Indirect ZASP - Card Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect ZASP - Kiosk Printers - EMEA</masterLabel>
+            <translation><!-- Indirect ZASP - Kiosk Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect ZASP - Label Printers - EMEA</masterLabel>
+            <translation><!-- Indirect ZASP - Label Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect ZASP - Mobile Printers - EMEA</masterLabel>
+            <translation><!-- Indirect ZASP - Mobile Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect ZASP - Print &amp; Apply - EMEA</masterLabel>
+            <translation><!-- Indirect ZASP - Print &amp; Apply - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International Distributor - EMEA</masterLabel>
+            <translation><!-- International Distributor - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Only Partner - EMEA</masterLabel>
+            <translation><!-- Kiosk Only Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Reseller - Advanced</masterLabel>
+            <translation><!-- Kiosk Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Reseller - Associate</masterLabel>
+            <translation><!-- Kiosk Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Reseller - Business Development</masterLabel>
+            <translation><!-- Kiosk Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Reseller - Premier</masterLabel>
+            <translation><!-- Kiosk Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk Specialist - EMEA</masterLabel>
+            <translation><!-- Kiosk Specialist - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA - ZASP</masterLabel>
+            <translation><!-- LACA - ZASP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA - ZASP BARCODE</masterLabel>
+            <translation><!-- LACA - ZASP BARCODE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA - ZASP CARD</masterLabel>
+            <translation><!-- LACA - ZASP CARD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA - ZASP MOBILE</masterLabel>
+            <translation><!-- LACA - ZASP MOBILE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA BARCODE SPS - Advanced</masterLabel>
+            <translation><!-- LACA BARCODE SPS - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA BARCODE SPS - Associate</masterLabel>
+            <translation><!-- LACA BARCODE SPS - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA BARCODE SPS - Business Development</masterLabel>
+            <translation><!-- LACA BARCODE SPS - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA BARCODE SPS - Premier</masterLabel>
+            <translation><!-- LACA BARCODE SPS - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA CARDS CPS - Advanced</masterLabel>
+            <translation><!-- LACA CARDS CPS - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA CARDS CPS - Business Development</masterLabel>
+            <translation><!-- LACA CARDS CPS - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA CARDS CPS - Premier</masterLabel>
+            <translation><!-- LACA CARDS CPS - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Card Reseller - Advanced</masterLabel>
+            <translation><!-- LACA Card Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Card Reseller - Associate</masterLabel>
+            <translation><!-- LACA Card Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Card Reseller - Business Development</masterLabel>
+            <translation><!-- LACA Card Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Card Reseller - Premier</masterLabel>
+            <translation><!-- LACA Card Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Distributor - BARCODE</masterLabel>
+            <translation><!-- LACA Distributor - BARCODE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Distributor - CARDS</masterLabel>
+            <translation><!-- LACA Distributor - CARDS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA ID Distributors</masterLabel>
+            <translation><!-- LACA ID Distributors --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA PAX - Authorized</masterLabel>
+            <translation><!-- LACA PAX - Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA Print - Apply</masterLabel>
+            <translation><!-- LACA Print - Apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA-Distributor ZASP Barcode</masterLabel>
+            <translation><!-- LACA-Distributor ZASP Barcode --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA-Distributor ZASP Card</masterLabel>
+            <translation><!-- LACA-Distributor ZASP Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACA-Distributor ZASP Mobile</masterLabel>
+            <translation><!-- LACA-Distributor ZASP Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Reseller - Associate</masterLabel>
+            <translation><!-- Mobile Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Reseller - Business Development</masterLabel>
+            <translation><!-- Mobile Reseller - Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Reseller - Premier</masterLabel>
+            <translation><!-- Mobile Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Workforce</masterLabel>
+            <translation><!-- Mobile Workforce --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX Authorized</masterLabel>
+            <translation><!-- PAX Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX Authorized Non-Classified Reseller</masterLabel>
+            <translation><!-- PAX Authorized Non-Classified Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX OEM Advanced</masterLabel>
+            <translation><!-- PAX OEM Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX OEM Associate</masterLabel>
+            <translation><!-- PAX OEM Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX OEM Business Development</masterLabel>
+            <translation><!-- PAX OEM Business Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX OEM Premier</masterLabel>
+            <translation><!-- PAX OEM Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX Partner</masterLabel>
+            <translation><!-- PAX Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner Subsidiary Office - EMEA</masterLabel>
+            <translation><!-- Partner Subsidiary Office - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passive RFID Solutions Provider</masterLabel>
+            <translation><!-- Passive RFID Solutions Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passive RFID Specialist</masterLabel>
+            <translation><!-- Passive RFID Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier Partner - EMEA</masterLabel>
+            <translation><!-- Premier Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print &amp; Apply Specialist - EMEA</masterLabel>
+            <translation><!-- Print &amp; Apply Specialist - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print – Apply</masterLabel>
+            <translation><!-- Print – Apply --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID - North America</masterLabel>
+            <translation><!-- RFID - North America --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Enablement</masterLabel>
+            <translation><!-- RFID Enablement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Specialist</masterLabel>
+            <translation><!-- RFID Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID Specialist - EMEA</masterLabel>
+            <translation><!-- RFID Specialist - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller - EMEA</masterLabel>
+            <translation><!-- Reseller - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Card Specialist L1 - EMEA</masterLabel>
+            <translation><!-- Security Card Specialist L1 - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security Card Specialist L2 - EMEA</masterLabel>
+            <translation><!-- Security Card Specialist L2 - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service</masterLabel>
+            <translation><!-- Self Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spare Parts &amp; Supplies Only Partner - EMEA</masterLabel>
+            <translation><!-- Spare Parts &amp; Supplies Only Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Alliance Partner - EMEA</masterLabel>
+            <translation><!-- Strategic Alliance Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplies Elite Partner - EMEA</masterLabel>
+            <translation><!-- Supplies Elite Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplies Partner - EMEA</masterLabel>
+            <translation><!-- Supplies Partner - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplies Specialist - EMEA</masterLabel>
+            <translation><!-- Supplies Specialist - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Partner - Influencer - EMEA</masterLabel>
+            <translation><!-- Technology Partner - Influencer - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Partner Referral/Influencer</masterLabel>
+            <translation><!-- Technology Partner Referral/Influencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Partner Reseller - Advanced</masterLabel>
+            <translation><!-- Technology Partner Reseller - Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Partner Reseller - Associate</masterLabel>
+            <translation><!-- Technology Partner Reseller - Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Partner Reseller - Premier</masterLabel>
+            <translation><!-- Technology Partner Reseller - Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP - Card Printers - EMEA</masterLabel>
+            <translation><!-- ZASP - Card Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP - Kiosk Printers - EMEA</masterLabel>
+            <translation><!-- ZASP - Kiosk Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP - Label Printers - EMEA</masterLabel>
+            <translation><!-- ZASP - Label Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP - Mobile Printers - EMEA</masterLabel>
+            <translation><!-- ZASP - Mobile Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP - Print &amp; Apply - EMEA</masterLabel>
+            <translation><!-- ZASP - Print &amp; Apply - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP Card</masterLabel>
+            <translation><!-- ZASP Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP Full Service</masterLabel>
+            <translation><!-- ZASP Full Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP PAX</masterLabel>
+            <translation><!-- ZASP PAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZASP Standard Service</masterLabel>
+            <translation><!-- ZASP Standard Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iZASP - Card Printers - EMEA</masterLabel>
+            <translation><!-- iZASP - Card Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iZASP - EMEA</masterLabel>
+            <translation><!-- iZASP - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iZASP - Kiosk Printers - EMEA</masterLabel>
+            <translation><!-- iZASP - Kiosk Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iZASP - Label Printers - EMEA</masterLabel>
+            <translation><!-- iZASP - Label Printers - EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iZASP - Mobile Printers - EMEA</masterLabel>
+            <translation><!-- iZASP - Mobile Printers - EMEA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Renewal Begin Date --></label>
+        <name>Renewal_Begin_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal End Date --></label>
+        <name>Renewal_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Ineligible --></label>
+        <name>Renewal_Ineligible__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Period --></label>
+        <name>Renewal_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <layouts>
+        <layout>Partner Program Membership Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Application Specialist --></label>
+        <name>Application_Specialist</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Partner Reseller --></label>
+        <name>Partner_Reseller</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

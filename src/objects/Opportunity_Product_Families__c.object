@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This is a custom junction object created to maintain the relationship between an Opportunity and a Named Product Family</description>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>EVM_Opportunity_Product_Family_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>It is used as a Place holder for Opportunity LineItem ID of MSI SFDC.</description>
+        <externalId>true</externalId>
+        <label>EVM Opportunity Product Family ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Named_Product_Family__c</fullName>
+        <label>Named Product Family</label>
+        <referenceTo>Named_Product_Family__c</referenceTo>
+        <relationshipName>Opportunity_Product_Families</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Opportunity_Product_Families</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Price__c</fullName>
+        <label>Sales Price</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <formula>text(Named_Product_Family__r.Product_Family_Source__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Source</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <formula>Quantity__c *  Sales_Price__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <label>Opportunity Product Family</label>
+    <nameField>
+        <displayFormat>OPF - {0000000}</displayFormat>
+        <label>Opportunity Product Families Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity Product Families</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>CurrencyCode_should_be_same_as_Oppty</fullName>
+        <active>false</active>
+        <description>The Currency</description>
+        <errorConditionFormula>( $User.Alias  &lt;&gt; &apos;zzebi&apos;) &amp;&amp;  ( text(CurrencyIsoCode) &lt;&gt; text(Opportunity__r.CurrencyIsoCode) )</errorConditionFormula>
+        <errorMessage>The CurrencyCode should be same as Opportunity Currency</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Product_Family_Opportunity_Stage</fullName>
+        <active>false</active>
+        <description>Validate that the Product Family is added only till the stage is &apos;Qualify&apos;</description>
+        <errorConditionFormula>($User.Alias &lt;&gt; &apos;zzebi&apos;)&amp;&amp; ((ISPICKVAL( Opportunity__r.StageName, &apos;Validate&apos;) || ISPICKVAL( Opportunity__r.StageName, &apos;Secure&apos;) || ISPICKVAL( Opportunity__r.StageName, &apos;Closed - Won&apos;)) &amp;&amp;  ISNEW())</errorConditionFormula>
+        <errorMessage>The Product Families can be added only till the Opportunity Stage is &apos;Qualify&apos;</errorMessage>
+    </validationRules>
+</CustomObject>

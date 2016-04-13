@@ -1,0 +1,13 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" extensions="APTS_SendToSecurityController" action="{!initSend}">
+    <apex:form >
+        <apex:pageBlock title="Send To Security" mode="edit">
+            <apex:pageBlockButtons >
+                
+                <apex:commandButton action="{!backToAgreement}" value="Go Back"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageMessages />
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

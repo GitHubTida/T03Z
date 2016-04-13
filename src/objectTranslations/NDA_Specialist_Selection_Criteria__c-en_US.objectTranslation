@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>NDA Specialist Selection Criteria</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>NDA Specialist Selection Criteria</value>
+    </caseValues>
+    <fields>
+        <label><!-- Business Unit --></label>
+        <name>Business_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer/Supplier --></label>
+        <name>Customer_Supplier__c</name>
+    </fields>
+    <fields>
+        <label><!-- NDA Specialist Id --></label>
+        <name>NDA_Specialist_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

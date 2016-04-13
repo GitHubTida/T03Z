@@ -1,0 +1,30 @@
+<apex:page standardController="DD_Demo__c" extensions="DD_EditDemoStatus" >
+<apex:form >
+     <apex:pageBlock title="Demo Edit" mode="edit">
+         <apex:messages Styleclass="pbError" style="list-style-type: none;" id="showerror"/>
+         <apex:pageBlockButtons >
+             <apex:commandButton value="Save" action="{!save}"/>
+             <apex:commandButton value="Cancel" action="{!Cancel}"/>
+         </apex:pageBlockButtons>
+             
+         <apex:pageblockSection title="Opportunity" id="Oppid" rendered="{!demo.Opportunity__c!=Null}" >
+              <apex:Outputfield value="{!demo.Opportunity__c}"/>
+         </apex:pageblockSection>
+         <apex:pageBlockSection title="Contact details" columns="2">
+             <apex:pageblocksection columns="1">
+                 <apex:outputField value="{!demo.Customer_Name__c}" />
+                 <apex:outputField value="{!demo.Contact1__c}" />
+                 <apex:outputField value="{!demo.Contact_Email__c}" />
+                 <apex:outputField value="{!demo.Telephone__c}" />
+             </apex:pageblocksection> 
+            <apex:pageblocksection columns="1">  
+                <apex:outputField value="{!demo.Country__c}" />
+                <apex:outputField value="{!demo.Street__c}"/>
+                <apex:outputField value="{!demo.City__c}" />
+                <apex:outputField value="{!demo.State_Province__c}" />
+                <apex:outputField value="{!demo.Post_Code_ZIP__c}" />
+            </apex:pageblocksection>    
+         </apex:pageBlockSection>
+     </apex:pageBlock>    
+</apex:form>
+</apex:page>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Additional_Approver_1__c</fullName>
+        <label>Additional Approver 1</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PC_Approver_Mapping</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Approver_2__c</fullName>
+        <label>Additional Approver 2</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>PC_Approver_Mapping1</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Aftermarket_Approver__c</fullName>
+        <label>Aftermarket Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Aftermarket_Approver</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Aftermarket_Services_Approver__c</fullName>
+        <label>Aftermarket Services Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>AftermarketServiceApprover</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Barcode_Supplies_Approver__c</fullName>
+        <label>Barcode Supplies Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Barcode_Approver</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Card_Approver__c</fullName>
+        <label>Card Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>CardApprover</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Delegated_Approver__c</fullName>
+        <label>Delegated Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Delegated_Approver</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Effective_From__c</fullName>
+        <label>Effective From</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_To__c</fullName>
+        <label>Effective To</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>L1_Passthrough_Manager__c</fullName>
+        <label>L1 Passthrough Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>L1_Passthrough_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>L2_Passthrough_Manager__c</fullName>
+        <label>L2 Passthrough Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>L2_Passthrough_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>L3_Passthrough_Manager__c</fullName>
+        <label>L3 Passthrough Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>L3_Passthrough_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>L4_Passthrough_Manager__c</fullName>
+        <label>L4 Passthrough Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>L4_Passthrough_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Level_1_Manager__c</fullName>
+        <label>Level 1 Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Level_1_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Level_2_Manager__c</fullName>
+        <label>Level 2 Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Level_2_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Level_3_Manager__c</fullName>
+        <label>Level 3 Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Level_3_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Level_4_Manager__c</fullName>
+        <label>Level 4 Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Level_4_Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Manager__c</fullName>
+        <label>Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Manager</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>User_Theater__c</fullName>
+        <formula>TEXT(User__r.Theater__c)</formula>
+        <label>User Theater</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <label>User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Logged_In_User</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <label>PC Approver Mapping</label>
+    <listViews>
+        <fullName>All_Records</fullName>
+        <columns>NAME</columns>
+        <columns>User__c</columns>
+        <columns>Level_1_Manager__c</columns>
+        <columns>L1_Passthrough_Manager__c</columns>
+        <columns>L2_Passthrough_Manager__c</columns>
+        <columns>Level_2_Manager__c</columns>
+        <columns>Level_3_Manager__c</columns>
+        <columns>Level_4_Manager__c</columns>
+        <columns>Delegated_Approver__c</columns>
+        <columns>User_Theater__c</columns>
+        <columns>Effective_From__c</columns>
+        <columns>Effective_To__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Records</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PC-{00000}</displayFormat>
+        <label>PC Approver Mapping Name</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PC Approver Mapping</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>L1_Manager_Required</fullName>
+        <active>false</active>
+        <errorConditionFormula>$User.Alias &lt;&gt; &apos;zzebi&apos; &amp;&amp;  ISBLANK(Level_1_Manager__c)</errorConditionFormula>
+        <errorDisplayField>Level_1_Manager__c</errorDisplayField>
+        <errorMessage>Please provide L1 Manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>L2_Manager_Required</fullName>
+        <active>false</active>
+        <errorConditionFormula>$User.Alias &lt;&gt; &apos;zzebi&apos; &amp;&amp;  ISBLANK(Level_2_Manager__c )</errorConditionFormula>
+        <errorDisplayField>Level_2_Manager__c</errorDisplayField>
+        <errorMessage>Please provide L2 Manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>L3_Manager_Required</fullName>
+        <active>false</active>
+        <errorConditionFormula>$User.Alias &lt;&gt; &apos;zzebi&apos; &amp;&amp; ISBLANK(Level_3_Manager__c)</errorConditionFormula>
+        <errorDisplayField>Level_3_Manager__c</errorDisplayField>
+        <errorMessage>Please provide L3 Manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>L4_Manager_Required</fullName>
+        <active>true</active>
+        <errorConditionFormula>$User.Alias &lt;&gt; &apos;zzebi&apos; &amp;&amp; ISBLANK(Level_4_Manager__c)</errorConditionFormula>
+        <errorDisplayField>Level_4_Manager__c</errorDisplayField>
+        <errorMessage>Please provide L4 Manager.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_Effective_From_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>Effective_From__c &gt; Effective_To__c</errorConditionFormula>
+        <errorDisplayField>Effective_From__c</errorDisplayField>
+        <errorMessage>&quot;Effective From date&quot; should be lesser than &quot;Effective To Date&quot;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PC_Effective_To_Validation</fullName>
+        <active>true</active>
+        <errorConditionFormula>Effective_To__c &lt; Effective_From__c</errorConditionFormula>
+        <errorDisplayField>Effective_To__c</errorDisplayField>
+        <errorMessage>&quot;Effective To Date&quot; should be greater than &quot;Effective From Date&quot;</errorMessage>
+    </validationRules>
+</CustomObject>

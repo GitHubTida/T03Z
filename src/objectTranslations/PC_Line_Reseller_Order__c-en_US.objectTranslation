@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>PC Line Reseller Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PC Line Reseller Order</value>
+    </caseValues>
+    <fields>
+        <label><!-- Line Item Reseller --></label>
+        <name>Line_Item_Reseller__c</name>
+        <relationshipLabel><!-- PC Line Reseller Order --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Order Line ID --></label>
+        <name>Order_Line_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Number --></label>
+        <name>Order_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Revision --></label>
+        <name>Order_Revision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Original Line ID --></label>
+        <name>Original_Line_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Line ID --></label>
+        <name>PC_Line_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Update Type --></label>
+        <name>PC_Update_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Row ID --></label>
+        <name>Siebel_Row_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Qty --></label>
+        <name>Used_Qty__c</name>
+    </fields>
+    <layouts>
+        <layout>PC Line Reseller Order Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

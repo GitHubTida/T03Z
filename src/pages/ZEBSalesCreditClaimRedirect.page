@@ -1,0 +1,3 @@
+<apex:page standardController="Sales_Credit_Claim__c" extensions="ZEBSalesCreditClaimRedirectExtension" standardStylesheets="true" action="{!redirect}">
+
+</apex:page>

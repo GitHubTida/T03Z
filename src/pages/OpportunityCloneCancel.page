@@ -1,0 +1,13 @@
+<!--
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author      : Kushal_Soni01@infosys.com
+Date        : 10-Mar-15 
+Description : VF Page which will call the method of 'OpportunityCloneCancelController' to remove the records from Clone Queue when user hits the Cancel button
+Revision History 
+Ver       Date        Author           Modification 
+---       ---------   -----------      -------------------------
+V0.1      10-Mar-15   Kushal Soni      Initial Code
+-->
+<apex:page tabStyle="Opportunity" controller="OpportunityCloneCancelController" action="{!removeAndGo}">
+    <apex:messages style="color:red"/>
+</apex:page>

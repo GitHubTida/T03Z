@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>DD_DemoPeriod</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DD_DemoPeriod</value>
+    </caseValues>
+    <fields>
+        <label><!-- Express Pool Id --></label>
+        <name>Express_Pool_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mamximum quantity --></label>
+        <name>Mamximum_quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Period --></label>
+        <name>Maximum_Period__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

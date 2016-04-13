@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Region Wise Field Operations Team</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Region Wise Field Operations Team</value>
+    </caseValues>
+    <fields>
+        <help><!-- Please provide the 18 digit user id --></help>
+        <label><!-- Approver User Id --></label>
+        <name>Approver_User_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

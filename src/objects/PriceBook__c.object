@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <fields>
+        <fullName>Price_Book_ID__c</fullName>
+        <label>Price Book ID</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <label>PriceBook</label>
+</CustomObject>

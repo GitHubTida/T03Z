@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <fields>
+        <fullName>Class_Name__c</fullName>
+        <description>Name of the class where the error occured</description>
+        <label>Class Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ContactId__c</fullName>
+        <label>ContactId</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>EmailId__c</fullName>
+        <label>EmailId</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Error_Log_text__c</fullName>
+        <description>Stores the actual error that is traced for the exception occured</description>
+        <label>Error Log text</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Method_Name__c</fullName>
+        <description>Stores the method name</description>
+        <label>Method Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>WorkflowId__c</fullName>
+        <label>WorkflowId</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <label>SSO Error Log</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Class_Name__c</columns>
+        <columns>Error_Log_text__c</columns>
+        <columns>Method_Name__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Er-{000}</displayFormat>
+        <label>SSO Error Log Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SSO Error Logs</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

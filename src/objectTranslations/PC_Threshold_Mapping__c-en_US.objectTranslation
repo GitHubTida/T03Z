@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>PC Threshold Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PC Threshold Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Named Product Family --></label>
+        <name>Named_Product_Family__c</name>
+        <relationshipLabel><!-- PC Threshold Mapping --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PE1% --></label>
+        <name>PE1__c</name>
+    </fields>
+    <fields>
+        <label><!-- PE2% --></label>
+        <name>PE2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>PC Threshold Mapping Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

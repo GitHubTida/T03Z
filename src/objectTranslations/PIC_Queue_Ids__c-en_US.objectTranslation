@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>PIC Queue Ids</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PIC Queue Ids</value>
+    </caseValues>
+    <fields>
+        <label><!-- Queue Id --></label>
+        <name>Queue_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This will store the list of status that will update status on Reserve product.</description>
+    <fields>
+        <fullName>Product_Status__c</fullName>
+        <description>This will store the Reserve product status crossponding to demo request status</description>
+        <label>Product Status</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <label>DD_UpdateReserveProductStatus</label>
+</CustomObject>

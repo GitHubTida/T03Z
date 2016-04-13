@@ -1,0 +1,446 @@
+<apex:page sidebar="false" showHeader="false" standardController="contact" docType="html-5.0">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<apex:stylesheet value="{!URLFOR($Resource.jquery,'jquery.mobile-1.2.0.min.css')}" />
+<apex:includeScript value="{!URLFOR($Resource.jquery,'jquery-1.8.3.min.js')}" />
+<apex:includeScript value="{!URLFOR($Resource.jquery,'jquery.mobile-1.2.0.min.js')}" />
+
+<style type="text/css">
+	.ui-corner-all {
+	    border-radius: 5px !important;
+	    border: 1px solid #cfd0d2;
+	}
+	
+	.ui-focus, .ui-body-c, .ui-overlay-c{
+		 -moz-box-shadow: none !important;
+		 -webkit-box-shadow: none !important;
+		 box-shadow: none !important;
+	}
+	
+	select {
+		border-radius: 0 !important;
+	}
+	
+	input.ui-input-text, textarea.ui-input-text {
+		line-height: 1.8;
+		font-size: 13px;
+	}
+	
+	@media all and (max-width: 50em) {
+		.my-breakpoint .ui-block-a, 
+		.my-breakpoint .ui-block-b { 
+			width: 100%; 
+			margin: 5px 5px 5px 5px;
+			padding: 5px 5px 5px 5px;
+			float:none; 
+		}
+		
+		.ui-block-b {
+			padding-left:10px;
+		}
+	}
+	
+	.subTitle {
+		height:20px;
+		font-size: 13px;
+		padding: 8px 14px;
+		font-weight: normal;
+		text-transform: uppercase;
+		background-color: #e8eaeb;
+		color: #3c3d3e;
+	}
+	
+	.pageBody {
+		background:#F0F1F2;
+	}
+	
+	.x-fieldLabel {
+		font-size:13px;
+		color:#717779;
+		margin-bottom:6px;
+	}
+	
+	.fieldRequired {
+		color:#006EB3;
+		font-size:13px;
+		font-weight:bold;
+	}
+	
+	.fieldValue {
+		color: #3c3d3e;
+		font-size:13px;
+	}
+	
+	.fieldDefaultValue {
+		color:#A9A9A9;
+		font-size:13px;
+	}
+	
+	.fieldBlur {
+		background:#E8EAEB;
+	}
+	
+</style>
+
+<div data-role="page">
+	<!-- <div data-role="header">
+		<h1>Welcome To My Homepage</h1>
+	</div>-->
+
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tr><td class="subTitle">CONTACT INFORMATION</td></tr>
+	<tr><td class="pageBody">
+	<div data-role="main" class="ui-content">
+
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Name <span class="fieldRequired">*</span></div>
+							<select name="select-choice-1" id="salutation" data-mini="true">
+								<option value="">- None -</option>
+								<option value="mr">Mr.</option>
+								<option value="ms">Ms.</option>
+								<option value="mrs">Mrs.</option>
+								<option value="dr">Dr.</option>
+								<option value="prof">Prof.</option>
+							</select>
+							<input type="text" id="firstname" class="waterMarkEl" title="First Name" data-clear-btn="true" data-mini="true" value="" />
+							<input type="text" id="lastname" class="waterMarkEl" title="Last Name" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Contact Owner</div>
+							<div class="fieldValue">Shakti Mehtani</div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Account Name <span class="fieldRequired">*</span></div>
+							<input type="text" id="account_name" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Reports To</div>
+							<input type="text" id="reports_to" data-clear-btn="true" data-mini="true" value="" />
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Title</div>
+							<input type="text" id="title" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Department</div>
+							<input type="text" id="department" data-clear-btn="true" data-mini="true" value="" />
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true"/>
+    						<label for="checkbox-mini-0">Principal</label>
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Commitment Level</div>
+							<select name="select-choice-1" id="salutation" data-mini="true">
+								<option value="">- None -</option>
+								<option value="mr">Low</option>
+								<option value="ms">Medium</option>
+								<option value="mrs">High</option>
+							</select>
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Contact Role</div>
+							<select name="select-choice-1" id="salutation" data-mini="true" multiple="multiple" data-native-menu="false">
+								<option value="">Business User</option>
+								<option value="mr">Decision Maker</option>
+								<option value="ms">Economic Buyer</option>
+								<option value="mrs">Economic Decision Maker</option>
+								<option value="mrs">Evaluator</option>
+								<option value="mrs">Executive Sponsor</option>
+								<option value="mrs">Technical Buyer</option>
+								<option value="mrs">Other</option>
+							</select>
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Email</div>
+							<input type="text" id="email" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Phone</div>
+							<input type="text" id="phone" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Extension</div>
+							<input type="text" id="extension" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Mobile</div>
+							<input type="text" id="mobile" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<div class="x-fieldLabel">Fax</div>
+							<input type="text" id="fax" data-clear-btn="true" data-mini="true" value="" />
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		<div class="ui-grid-a my-breakpoint">
+			<div class="ui-block-a">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+					   <fieldset data-role="controlgroup">
+							<input type="checkbox" name="checkbox-mini-0" id="checkbox-mini-0" data-mini="true"/>
+    						<label for="checkbox-mini-0" class="x-fieldLabel">Change_Restricted__contact</label>
+					   </fieldset>
+					</td></tr>
+				</table>
+			</div>
+			
+			<div class="ui-block-b">
+				<table border="0" cellspacing="0" cellpadding="0"  width="100%">
+					<tr><td style="padding:10px 10px 10px 10px;">
+						<fieldset data-role="controlgroup">
+							<div ></div>
+							<div ></div>
+				   		</fieldset>
+				   	</td></tr>
+				</table>
+			</div>
+		</div>
+		
+		
+		
+	</div>
+	</td></tr>
+	<tr><td class="subTitle">ADDITIONAL INFORMATION</td></tr>
+	<tr><td>
+	</td></tr>
+	</table>	
+			
+	<!--<div data-role="footer">
+	  <h1>Footer Text</h1>
+	</div>-->
+</div>
+
+<script type="text/javascript">
+	var inputEls = $('input');
+	
+	for(i=0;i<inputEls.length;i++) {
+		$(inputEls[i]).addClass('fieldDefaultValue fieldBlur');
+			
+		if(inputEls[i].value == '' && inputEls[i].className.indexOf('waterMarkEl') != -1) {
+			$(inputEls[i]).val(inputEls[i].title);
+		}
+	}
+	
+	$(inputEls).focus(function() {
+		  if ($(this).val()==$(this).attr("title") && this.className.indexOf('waterMarkEl') != -1) { 
+		  	$(this).val("");
+		  }
+		  $(this).removeClass('fieldDefaultValue fieldBlur');
+	}).blur(function() {
+		  if ($(this).val()=="" && this.className.indexOf('waterMarkEl') != -1) {
+		  	$(this).val($(this).attr("title")); 
+		  	$(this).addClass('fieldDefaultValue');
+		  }
+			$(this).addClass('fieldBlur');
+	});
+</script>
+</apex:page>

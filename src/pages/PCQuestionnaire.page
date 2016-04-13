@@ -1,0 +1,407 @@
+<apex:page standardController="Quote" extensions="PCQuestionnaireController" sidebar="false">
+<apex:form >
+<apex:includeScript value="//code.jquery.com/jquery-1.11.0.min.js"/>
+<apex:pageMessages />
+<apex:pageBlock >
+<apex:outputLabel value="Please complete the assessment questions below or your request will be deemed incomplete." 
+                    style="font-weight:bold;align:center;margin-left:350px; font-size:1.2em;"/><br/><br/>
+ <apex:outputLabel value="Submission of Assessment is mandatory for Submitting PC for approvals "
+                 style="font-weight:bold;align:center;margin-left:480px; font-style:italic; font-size:1em;"/><br/><br/>
+
+<center>
+
+<!--<apex:commandButton value="Save" action="{!savePCQues}" style="width:45px;" disabled="{!disableFlag}"/>-->
+<apex:commandButton value="Submit" action="{!submitPCQues}"  disabled="{!disableFlag}"/>
+<apex:outputpanel rendered="{!disableFlag == false}">
+<apex:commandButton value="Cancel" action="{!cancel}" style="margin-left:10px;" />
+</apex:outputpanel>
+<apex:outputpanel rendered="{!disableFlag == true}">
+<apex:commandButton value="Back" action="{!cancel}" style="margin-left:10px;" />
+</apex:outputpanel>
+
+</center><br/>
+<apex:actionFunction name="subpnlmethod" />
+<apex:outputPanel id="mainPnl">
+   <table>
+   <thead>
+  <tr>
+      <th style="width:40%;"></th>
+      <th style="width:20%;text-align:left;padding-left:5%; font-size:11px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Not<br/>Answered &nbsp;No &nbsp; Yes</th>
+      <th style="width:40%;text-align:center;font-size:11px">Response Comments (Optional)</th>
+   </tr>
+    <!-- <tr>
+      <th></th>
+      <th>Answered</th>
+      <th></th>
+   </tr> -->
+   </thead>
+   <tbody>
+   <tr>
+       <td>
+            <apex:outputLabel value="{!$Label.PC_MultiNational_or_Global_Account}" escape="false" />
+       </td>
+       <td align="center"> 
+            <apex:selectRadio value="{!pcQ.MultiNational_or_Global_Account__c}" style="width:30%;" disabled="{!disableFlag}">
+                    <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.MultiNational_or_Global_Account_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Unreleased_Products}" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Unreleased_Products__c}" style="width:30%;" disabled="{!disableFlag}">
+                <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Unreleased_Products_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Contract_Exist}" escape="false" />
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Contract_Exist__c}" style="width:30%;" disabled="{!disableFlag}" onchange="subpnlmethod()">
+                    <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            
+        </td>
+   </tr>
+   <apex:outputPanel rendered="{!pcQ.Contract_Exist__c == 'Yes'}" >
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Executed_Contract}" style="margin-left:20px;" escape="false" />
+        </td>
+        <td align="center">
+           <apex:selectRadio value="{!pcQ.Executed_Contract__c}" style="width:30%;" disabled="{!disableFlag}">
+           <apex:selectOptions value="{!QuesOptions}" />
+           </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Executed_Contract_Comments__c}" style="width:450px;" disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Contract_Under_Negotiation}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Contract_Under_Negotiation__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Contract_Under_Negotiation_Comments__c}" style="width:450px;" disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   </apex:outputPanel>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Requesting_Lease}" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Requesting_Lease__c}" style="width:30%;" disabled="{!disableFlag}" onchange="subpnlmethod()">
+            <apex:selectOptions value="{!QuesOptions}" />
+            <apex:actionSupport event="oncomplete" reRender="subpnl2" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            
+        </td>
+   </tr>
+   <apex:outputPanel id="subpnl2"  rendered="{!pcQ.Customer_Requesting_Lease__c == 'Yes'}" >
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Approved_Credit_Line}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Approved_Credit_Line__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Approved_Credit_Line_Comments__c}" style="width:450px;"  disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Requesting_Payment_Terms}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Requesting_Payment_Terms__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Requesting_Payment_Terms_Commen__c}" style="width:450px;" disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Planning_Lease_Equipment}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Planning_Lease_Equipment__c}" style="width:30%;" disabled="{!disableFlag}" >
+                <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Planning_Lease_Equipment_Commen__c}" style="width:450px;" disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Requesting_Delivery_Terms}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Requesting_Delivery_Terms__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Requesting_Delivery_Terms_Comme__c}" style="width:450px;" disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   </apex:outputpanel>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Tradein_Other_Financial_Incentive}" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Tradein_Other_Financial_Incentive__c}" style="width:30%;" disabled="{!disableFlag}" onchange="subpnlmethod()">
+            <apex:selectOptions value="{!QuesOptions}" />
+            <apex:actionSupport event="oncomplete" reRender="subpnl3" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            
+        </td>
+   </tr>
+   <apex:outputPanel id="subpnl3"  rendered="{!pcQ.Tradein_Other_Financial_Incentive__c == 'Yes'}" >
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Tradein_3rdParty_Products}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Tradein_3rdParty_Products__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Tradein_3rdParty_Products_Comments__c}" style="width:450px;"  disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Tradein_product_Reused_Service}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+               <apex:selectRadio value="{!pcQ.Tradein_product_Reused_Service__c}" style="width:30%;" disabled="{!disableFlag}">
+                <apex:selectOptions value="{!QuesOptions}" />
+                </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Tradein_product_Reused_Service_Comments__c}" style="width:450px;"  disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Solution_Reward_Associated}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Solution_Reward_Associated__c}" style="width:30%;" disabled="{!disableFlag}">
+                <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Solution_Reward_Associated_Comments__c}" style="width:450px;"  disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   </apex:outputpanel>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Service_Contract_Specialterms}" escape="false"/>
+        </td>
+        <td align="center">
+             <apex:selectRadio value="{!pcQ.Service_Contract_Specialterms__c}" style="width:30%;" disabled="{!disableFlag}" onchange="subpnlmethod()">
+                <apex:selectOptions value="{!QuesOptions}" />
+                <apex:actionSupport event="oncomplete" reRender="subpnl4" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            
+        </td>
+   </tr>
+   <apex:outputPanel id="subpnl4" rendered="{!pcQ.Service_Contract_Specialterms__c == 'Yes'}" >
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Service_Include_Integration}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Service_Include_Integration__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Service_Include_Integration_Comments__c}" style="width:450px;"  disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Requesting_Hardware}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Requesting_Hardware__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Requesting_Hardware_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Seeking_Warranty}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Seeking_Warranty__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Seeking_Warranty_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Service_Customized_Invoice}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+             <apex:selectRadio value="{!pcQ.Service_Customized_Invoice__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Service_Customized_Invoice_comments__c}" style="width:450px;"  disabled="{!disableFlag}"/>
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Requesting_Terms}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Requesting_Terms__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Requesting_Terms_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Opportunity_Transaction_Reengaged}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Opportunity_Transaction_Reengaged__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Opportunity_Transaction_Reengaged_Commen__c}" style="width:450px;"  disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   </apex:outputpanel>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Request_Acceptance}" escape="false"/>
+        </td>
+        <td align="center">
+             <apex:selectRadio value="{!pcQ.Customer_Request_Acceptance__c}" style="width:30%;" disabled="{!disableFlag}" onchange="subpnlmethod()">
+            <apex:selectOptions value="{!QuesOptions}" />
+            <apex:actionSupport event="oncomplete" reRender="subpnl5" />
+            </apex:selectRadio>
+        </td>
+        <td>
+
+        </td>
+   </tr>
+   <apex:outputPanel id="subpnl5"  rendered="{!pcQ.Customer_Request_Acceptance__c == 'Yes'}" >
+      <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Required_Transaction}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Required_Transaction__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Required_Transaction_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Customer_Penalities_Performance}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Customer_Penalities_Performance__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Customer_Penalities_Performance_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Non_Symbol_Banded_Product}" style="margin-left:20px;" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Non_Symbol_Banded_Product__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Non_Symbol_Banded_Product_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   </apex:outputpanel>
+    <tr>
+        <td>
+            <apex:outputLabel value="{!$Label.PC_Non_Standard_Commitments}" escape="false"/>
+        </td>
+        <td align="center">
+            <apex:selectRadio value="{!pcQ.Non_Standard_Commitments__c}" style="width:30%;" disabled="{!disableFlag}">
+            <apex:selectOptions value="{!QuesOptions}" />
+            </apex:selectRadio>
+        </td>
+        <td>
+            <apex:inputTextarea value="{!pcQ.Non_Standard_Commitments_Comments__c}" style="width:450px;" disabled="{!disableFlag}" />
+        </td>
+   </tr>
+   </tbody>
+</table> 
+</apex:outputpanel>
+<center>
+<!--<apex:commandButton value="Save" action="{!savePCQues}" style="width:45px;" disabled="{!disableFlag}"/>-->
+<apex:commandButton value="Submit" action="{!submitPCQues}"  disabled="{!disableFlag}"/>
+<apex:outputpanel rendered="{!disableFlag == false}">
+<apex:commandButton value="Cancel" action="{!cancel}" style="margin-left:10px;" />
+</apex:outputpanel>
+<apex:outputpanel rendered="{!disableFlag == true}">
+<apex:commandButton value="Back" action="{!cancel}" style="margin-left:10px;" />
+</apex:outputpanel>
+</center>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

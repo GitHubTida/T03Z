@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Attribute_Mapping_1__c</fullName>
+        <label>Attribute Mapping 1</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Mapping_2__c</fullName>
+        <label>Attribute Mapping 2</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Mapping_3__c</fullName>
+        <label>Attribute Mapping 3</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Line_Item_ID__c</fullName>
+        <label>Opportunity Line Item ID</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>SB Catalog Products</relationshipLabel>
+        <relationshipName>SB_Catalog_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <label>Product Name</label>
+        <length>200</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Related_Product__c</fullName>
+        <label>Related Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>SB Catalog Products</relationshipLabel>
+        <relationshipName>SB_Catalog_Products</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SB_List_Price__c</fullName>
+        <label>SB List Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <label>SB Catalog Product</label>
+    <nameField>
+        <displayFormat>CP-{000000}</displayFormat>
+        <label>SB Catalog Products Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SB Catalog Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Indicates Profiles completed but not necessarily submitted.</description>
+    <format>MultiBlock</format>
+    <name>Partner Profiles- East</name>
+    <reportType>Partner_User_Activity__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

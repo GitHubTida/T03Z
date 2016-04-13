@@ -1,0 +1,100 @@
+<!--
+**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Nikhil Kumar
+    Date        : 07-Aug-15
+    Revision History
+    Ver       Date        Author            Modification
+    ---       ---------   -----------       -------------------------
+    V0.1      07-Aug-15   Nikhil Kumar         Initial Code  
+ ***************************************************************
+ -->
+<apex:page standardcontroller="DD_Demo__c" extensions="DD_ShippingAddress">
+<head>
+<style>
+th.labelCol.vfLabelColTextWrap.first {
+  width: 30%;
+}
+</style>
+<apex:includeScript value="{!$Resource.DD_SearchQuery}"/>
+<script>
+$ = jQuery.noConflict();
+$(document).ready(function(){
+     searchaddrs();
+     
+});
+function searchaddrs(){
+    $("[id$=filter]").keyup(function(){
+        // Retrieve the input field text and reset the count to zero
+        var filter = $(this).val();
+ 
+        // Loop through the comment list
+        $("[id$=mytable] tbody tr").each(function(){
+ 
+            // If the list item does not contain the text phrase fade it out
+            if ($(this).text().search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+            } else {
+                $(this).show();
+            }
+        });
+    });
+}
+</script>
+</head>    
+    <apex:form >
+        <apex:pageblock id="Pgblock">
+           <apex:pageBlockSection >
+                <apex:inputField value="{!demo.Shipping_Location__c}" Rendered="{!Set1Address}">
+                    <apex:actionSupport event="onchange"  action="{!AddressToSelect}" reRender="Pgblock" oncomplete="if('{!demo.Shipping_Location__c}'=='Customer'){top.location.href ='/{!demo.id}'}else{searchaddrs()}"/>
+                </apex:inputField>
+                
+                <apex:outputField value="{!demo.Shipping_Location__c}" Rendered="{!DisAddress}"/>
+                <apex:commandLink value="Add Alternate Address" style="color:blue;" Rendered="{!disAlternatelink}" onclick="window.open('/{!AltAddressObjectprefix}/e?retURL='+'{!demo.id}'+'&RecordType={!Rectype}&ent={!AddreeObjid}'+'&{!AccManagerFieldid}='+'{!demo.Account_Manager__r.Name}'+'&{!AccManagerFieldid}_lkid='+'{!demo.Account_Manager__c}','_blank');" />
+    
+                <apex:commandLink action="{!CreateNewAddress}" value="Change Shipping Address" Rendered="{!disLink}" style="color:blue;"/>
+                <apex:inputtext Rendered="{!ShowSearchTxt}" title="Search"  label="Search Text" id="filter" value="{!SearchTxt}"/>
+              
+           </apex:pageBlockSection>
+           <apex:pageBlockSection title="Select Shipping Address" Rendered="{!SetAddress}" id="ShowAddress">
+                 <apex:datatable value="{!AddressList}" var="temp" style="width:800px" id="mytable">
+                    <apex:column style="width:200px">
+                        <apex:facet name="header">Name</apex:facet>
+                        <div class="filteraddress">
+                        <apex:commandLink action="{!SelectCountry}" value="{!temp.name}" style="color:blue;margin-right: 30px;padding-right: 30px;" oncomplete="top.location.href ='/{!demo.id}'">
+                            <apex:param name="Addressid" value="{!temp.id}" assignTo="{!Addressid}"/>
+                        </apex:commandLink>
+                        </div>
+                    </apex:column>   
+                    <apex:column style="width:500px">   
+                        <apex:facet name="header">Address</apex:facet> 
+                         <div class="filteraddress">      
+                        <apex:outputText >{!temp.Address__c}</apex:outputText>
+                        </div>
+                    </apex:column> 
+                    <apex:column style="width:100px" Rendered="{!disAlternatelink}">   
+                        <apex:facet name="header">Modify Address</apex:facet>        
+                        <apex:commandLink action="{!RedirectEdit}" value="Edit/Delete" style="color:blue;margin-right: 30px;padding-right: 30px;" onclick="window.open('/'+'{!temp.id}','_blank');" /> 
+                    </apex:column>   
+                 </apex:datatable>
+             </apex:pageBlockSection>
+             <apex:pageBlockSection title="Shipping Location" Rendered="{!DisAddress}" columns="2" collapsible="False">
+                 <apex:pageBlocksection columns="1">
+                     <apex:outputfield value="{!Shipadd.Company__c}"/>
+                     <apex:outputfield value="{!Shipadd.Street__c}"/>
+                     <apex:outputfield value="{!Shipadd.City__c}"/>
+                     <apex:outputfield value="{!Shipadd.State_Province__c}"/>
+                     <apex:outputfield value="{!Shipadd.Country__c}"/>
+                     <apex:outputfield value="{!Shipadd.Post_Code_ZIP__c }"/>
+                 </apex:pageBlocksection>
+                 <apex:pageBlockSection columns="1" rendered="{!ShowContactinfo}">
+                     <apex:outputfield value="{!Shipadd.Contact__c}"/>
+                     <apex:outputfield value="{!Shipadd.Phone__c}"/>
+                </apex:pageBlockSection> 
+                <apex:pageBlockSection columns="1" rendered="{!ShowTelephoneNumber}">
+                     <apex:outputfield value="{!Shipadd.Office_Telephone__c}"/>                     
+                </apex:pageBlockSection>             
+             </apex:pageBlockSection>
+        </apex:pageblock>    
+    </apex:form>
+</apex:page>

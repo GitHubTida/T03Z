@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CHILD_NAME</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c.Description__c</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c.Total_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c.Available_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c.Used__c</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c.Written_Off_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>DD_Master_Demo_Products__c.Bin__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>EMEA Demo Depot Material</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$DD_Demo_Pool__c$DD_Master_Demo_Products__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CHILD_NAME</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Language - Locale Map</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Language - Locale Map</value>
+    </caseValues>
+    <fields>
+        <label><!-- Language Locale --></label>
+        <name>Language_Locale__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

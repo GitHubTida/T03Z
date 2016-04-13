@@ -1,0 +1,249 @@
+<apex:page standardController="Partner_Application__c" extensions="ZEBPartnerController" showHeader="false" sidebar="false" cache="false" title="{!$Label.Application_Head}" tabstyle="Partner_Application__c" action="{!onLoad}" language="{!languageLocale}">
+
+        <head>
+        <!-- <title>{!$Label.Application_Title}</title>-->
+        </head>
+        
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+                
+        <apex:includeScript value="{!URLFOR($Resource.appprocess,'appprocess.js')}"/>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        
+        <!--Highlight styles start-->
+         <style>
+            li.done1,li.done2,li.done3,li.done4,li.done5,li.done6{
+                background: #0077FF ! Important;
+                color: #FFFFFF ! Important;
+            }
+            #crumbs li.done1:after,#crumbs li.done2:after,#crumbs li.done3:after,#crumbs li.done4:after,#crumbs li.done5:after,#crumbs li.done6:after {
+                  content: "";
+                  border-top: 20px solid transparent;
+                  border-bottom: 20px solid transparent;
+                  border-left: 40px solid #0077FF;
+                  position: absolute;
+                  right: -40px;
+                  top: 0;
+                  z-index: 1;
+            }
+         </style>
+         <!--Highlight styles End-->
+        
+        <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+        
+        <div class="ztopbanner">     
+            <apex:define name="header">
+                 <c:testheader />
+            </apex:define>
+        </div>
+        
+         <!--Chevron styles start-->
+        <div class="chevron">
+            <apex:define name="Chevron">
+                <c:ChevronComponent />
+            </apex:define>
+        </div>
+        <!--Chevron styles end-->
+        
+        <!--<div style="width: 960px; margin: 0 auto;">-->
+        <div class="zmainbody">            
+        
+        <apex:outputPanel >
+            <!-- <apex:outputLabel value="{!$Label.Application_Title}" style="font-weight:bold; font-family:Arial,Helvetica,sans-serif; font-size: 2em; color: #000000;"> </apex:outputLabel>
+            <br/><br/> -->
+        </apex:outputPanel>
+        
+        
+        <apex:form >
+        <apex:pageBlock id="pageblock" tabStyle="Account" helptitle="{!$Label.Help_Title}" helpUrl="{!ZEB.MPE_Help_PDF__c}">
+                        
+                <!-- Show page messages -->
+                <apex:PageMessages />                
+                
+                  <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="{!$Label.App_Previous}" immediate="true" action="{!prevPage8}"/>
+                         <apex:commandButton value="{!$Label.App_Finish_Later}" immediate="true" action="{!FinishLater}" onclick="if(!confirm('{!$Label.PopUp_Finish_Later}')){return false;}" 
+                         title="{!$Label.OnMouse_Finish_Later}" onmouseover="{!$Label.OnMouse_Finish_Later}"/>
+                        <apex:commandButton id="ENTER_BUTTON" value="{!$Label.Submit}" action="{!onSubmit}" />
+                  </apex:pageBlockButtons>
+                 <apex:pageBlockSection id="pageBlockSection1" showHeader="true" title="{!$Label.Instructions}" collapsible="false" columns="1"> 
+               <apex:outputPanel id="outputPanel12" layout="block" style="text-align: left;">  
+                                  <apex:outputText value="{!$Label.Due_Diligence_Instructions}" escape="false"/>                                            
+                   </apex:outputPanel>                                                         
+            </apex:pageBlockSection>
+             <apex:pageBlockSection id="pageBlockSection2" showHeader="true" title="{!$Label.Due_Diligence_Questionnaire_Label}" collapsible="false" columns="1">
+                <apex:outputPanel id="outputPanel1" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput" rendered="{!NOT(ZEB.ISV_Only__c)}"> 
+                                 <b>{!$Label.Due_Diligence_Resell_Label}</b>    
+                                <b>
+                                 <apex:actionRegion >
+                                 <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                  <apex:selectRadio value="{!ZEB.Due_Diligence_Resell__c}" required="true"> 
+                                   <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                                  <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/>  
+                                    <apex:actionsupport event="onchange"/>
+                                  </apex:selectRadio>
+                                  </apex:actionRegion></b>
+                   </apex:outputPanel>
+                <apex:outputPanel id="outputPanel2" layout="block" style="text-align: left; font-weight:bold;" rendered="{!IF(NOT(ISNULL(ZEB.Region_Requested__c)),true,false)}">  
+                                 <b>{!$Label.Due_Diligence_Countries_Label}</b>    
+                                <b>
+                                <apex:outputPanel id="outputPanelh" layout="block" styleClass="requiredInput"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Countries__c}" rendered="{!IF(ZEB.Region_Requested__c='NA',true,false)}"/>
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Countries_APAC__c}" rendered="{!IF(ZEB.Region_Requested__c='APAC',true,false)}"  />
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Countries_EMEA__c}" rendered="{!IF(ZEB.Region_Requested__c='EMEA',true,false)}"  />
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Countries_LA__c}" rendered="{!IF(ZEB.Region_Requested__c='LATAM',true,false)}"  />
+                                 </apex:outputPanel>
+                                 </b>
+                   </apex:outputPanel>
+                   <apex:outputPanel id="outputPanel3" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput">  
+                                 <b>{!$Label.Due_Diligence_Conduct_Code_Label}</b>    
+                                 <b>
+                                <apex:actionRegion >
+                                <apex:outputPanel id="outputPanele" layout="block" styleClass="requiredInput"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                  <apex:selectRadio value="{!ZEB.Due_Diligence_Conduct_Code__c}"> 
+                                   <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                                  <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/>  
+                                    <apex:actionsupport event="onchange" rerender="outputPanel4"/>
+                                  </apex:selectRadio></apex:outputPanel>
+                                   </apex:actionRegion></b>
+                   </apex:outputPanel> 
+                 
+                 <apex:outputPanel id="outputPanel4" layout="block" style="text-align: left; font-weight:bold;">  
+                                <table>
+                                <tr><td> <b>{!$Label.Due_Diligence_Conduct_Code_Train_Label}</b>   </td><td> 
+                                <b>
+                                <apex:outputPanel id="outputPanel1c" layout="block" styleClass="{!IF(ZEB.Due_Diligence_Conduct_Code__c,'requiredInput', '')}"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Conduct_Code_Train__c}"/>
+                                 </apex:outputPanel>
+                                 </b></td></tr>
+                   </table>
+                   </apex:outputPanel>
+                   
+                <apex:outputPanel id="outputPanel5" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput">  
+                                 <b>{!$Label.Due_Diligence_Govt_Owner_Label}</b>     
+                                 <b>
+                                <apex:actionRegion >
+                                <apex:outputPanel id="outputPaneld" layout="block" styleClass="requiredInput"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                  <apex:selectRadio value="{!ZEB.Due_Diligence_Govt_Owner__c}" > 
+                                   <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                                  <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/> 
+                                    <apex:actionsupport event="onchange" rerender="outputPanel6"/>
+                                  </apex:selectRadio></apex:outputPanel>
+                                   </apex:actionRegion></b>
+                   </apex:outputPanel> 
+                  <apex:outputPanel id="outputPanel6" layout="block" style="text-align: left; font-weight:bold;">  
+                         <table>
+                               <tr><td> <b>{!$Label.Due_Diligence_Govt_Owner_Pct_label}</b>  </td><td>  
+                                <b>
+                                <apex:outputPanel id="outputPanel1g" layout="block" styleClass="{!IF(ZEB.Due_Diligence_Govt_Owner__c,'requiredInput', '')}"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                                <apex:inputField value="{!ZEB.Due_Diligence_Govt_Owner_Pct__c}">
+                                     <apex:actionSupport event="onblur" rerender="outputPanel1g"/>
+                                 </apex:inputField>
+                   </apex:outputPanel>
+                                 </b></td></tr>
+                   </table>
+                   </apex:outputPanel>  
+                    <apex:outputPanel id="outputPanel7" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput">  
+                                <b>{!$Label.Due_Diligence_Govt_Emp_Label}</b>   
+                                <b>
+                                <apex:actionRegion >
+                                <apex:outputPanel id="outputPanelb" layout="block" styleClass="requiredInput"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                  <apex:selectRadio value="{!ZEB.Due_Diligence_Govt_Emp__c}"> 
+                                   <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                                  <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/>   
+                                    <apex:actionsupport event="onchange" rerender="outputPanel8"/>
+                                  </apex:selectRadio></apex:outputPanel>
+                                  </apex:actionRegion></b>
+                   </apex:outputPanel>
+                   <apex:outputPanel id="outputPanel8" layout="block" style="text-align: left; font-weight:bold;">  
+                                 <table>
+                                <tr><td><b>{!$Label.Due_Diligence_Govt_Emp_Name_Label}</b>    </td><td>
+                                <b>
+                                <apex:outputPanel id="outputPanel1f" layout="block" styleClass="{!IF(ZEB.Due_Diligence_Govt_Emp__c,'requiredInput', '')}"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>  
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Govt_Emp_Name__c}" />
+                                 </apex:outputPanel>
+                                 </b></td></tr>
+                   </table>
+                   </apex:outputPanel> 
+                   <apex:outputPanel id="outputPanel9" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput">  
+                                <b>{!$Label.Due_Diligence_Purch_Influence_Label}</b>  
+                                <b>
+                                <apex:actionRegion >
+                                <apex:outputPanel id="outputPanela" layout="block" styleClass="requiredInput"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                  <apex:selectRadio value="{!ZEB.Due_Diligence_Purch_Influence__c}"> 
+                                  <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                                  <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/>  
+                                        <apex:actionsupport event="onchange" rerender="outputPanel10"/>
+                                  </apex:selectRadio></apex:outputPanel>
+                                  </apex:actionRegion></b>
+                   </apex:outputPanel>
+                   <apex:outputPanel id="outputPanel10" layout="block" style="text-align: left; font-weight:bold;">  
+                                 <table>
+                                <tr><td><b>{!$Label.Due_Diligence_Purch_Influence_Name_Label}</b>  </td><td>  
+                                <b>
+                                <apex:outputPanel id="outputPanel111" layout="block" styleClass="{!IF(ZEB.Due_Diligence_Purch_Influence__c,'requiredInput', '')}"> 
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>  
+                                 <apex:inputField value="{!ZEB.Due_Diligence_Purch_Influence_Name__c}" />
+                                </apex:outputPanel>
+                                 </b></td></tr>
+                   </table>
+                   </apex:outputPanel> 
+            </apex:pageBlockSection>
+        <apex:pageBlockSection id="pageBlockSection3" showHeader="true" title="{!$Label.Anti_Corruption_Certification}" collapsible="false" columns="1"> 
+               <apex:outputPanel id="outputPanel11" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput">  
+                         <table>                              
+                              <tr>
+                                <td width="1%"><b>
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                  <apex:selectRadio value="{!ZEB.Anti_Corruption_Certified__c}" > 
+                                      <apex:selectOption itemLabel="" itemValue="true" />               
+                                  </apex:selectRadio></b>
+                                 </td> 
+                               <td width="99%">
+                                 <b><apex:outputText value="{!$Label.Anti_Corruption_Certified}" escape="false"/><br/><br/>
+                                 <apex:outputText value="{!$Label.Anti_Corruption_Certified_1}" escape="false"/><br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <apex:outputText value="{!$Label.Anti_Corruption_Certified_Part_1}" escape="false"/></b>    
+                                 </td>
+                                 </tr>
+                           </table>                               
+                   </apex:outputPanel>                                                          
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        </apex:form>
+        </div>
+       
+     <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+    
+    </div>
+</apex:page>

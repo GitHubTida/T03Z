@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This Custom Setting will map the Fulfilment values between the Solution builder and SFDC</description>
+    <fields>
+        <fullName>SB_Fulfillment__c</fullName>
+        <label>SB Fulfillment</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <label>SB SFDC Fulfilment Mapping</label>
+</CustomObject>

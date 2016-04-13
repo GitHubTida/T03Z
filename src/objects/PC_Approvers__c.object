@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Stores the ID of PC approvers</description>
+    <fields>
+        <fullName>LoginId__c</fullName>
+        <description>stores the loginId of approvers</description>
+        <label>LoginId</label>
+        <length>25</length>
+        <type>Text</type>
+    </fields>
+    <label>PC Approvers</label>
+</CustomObject>

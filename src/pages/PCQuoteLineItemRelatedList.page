@@ -1,0 +1,200 @@
+<apex:page standardController="Quote" extensions="PCQuoteLineItemRelatedListController" action="{!quoteLineList}"  id="Pageid" >
+  <apex:stylesheet value="{!$Resource.PCCommonStyles}" />  
+
+  <apex:form id="Pgform">
+       <apex:includeScript value="//code.jquery.com/jquery-1.11.0.min.js"/> 
+       <script>
+          var j$ = jQuery.noConflict();
+         function priceAllWaitingMsg(idComp) {
+            var btnVal; 
+            
+            var btnValModified=j$(document.getElementById(idComp));
+
+            btnValModified.text("Price All: Processing. Please Wait.");
+            btnValModified.css("color","#FFFFFF"); 
+            btnValModified.css("background","#1797C0");
+           }
+                               
+       </script>
+       <style>
+           .headerWrap{
+               width: 51px !important; 
+               //border: 1px solid #000000;
+               word-wrap: break-word;
+              }
+       </style>
+   <apex:actionFunction action="{!priceAll}" name="submitActionFnc"  /> 
+    <apex:pageBlock title="Line Items Reseller">
+    <apex:outputPanel id="msg" >
+   
+    <apex:messages style="color:red;"/>
+     <apex:outputPanel rendered="{!target}" >
+           <script>
+                window.top.location='/{!quoteID}';
+           </script>
+       </apex:outputPanel>
+    </apex:outputPanel>
+    <!--<apex:messages style="color:red;" />-->
+             <apex:pageBlockButtons location="top">
+             <apex:commandLink styleClass="btn" style="text-decoration: none;" value="Add Line Item" action="{!addRedirectPage}" target="_top" rendered="{!NOT(readOnlyFlag) && if((Quote.Opportunity.Owner_Theater__c=='EMEA' || Quote.Opportunity.Owner_Theater__c=='APAC'),true,false)}"/>
+            
+             <apex:outputLabel rendered="{!NOT(readOnlyFlag) && if((Quote.Opportunity.Owner_Theater__c=='EMEA' || Quote.Opportunity.Owner_Theater__c=='APAC'),true,false)}">
+             <apex:commandLink styleClass="btn" id="btnPriceAllId" style="text-decoration: none;"   onclick="priceAllWaitingMsg('{!$Component.this}');"  value="Price All"  action="{!priceAll}" rendered="{!NOT(readOnlyFlag) && if((Quote.Opportunity.Owner_Theater__c=='EMEA' || Quote.Opportunity.Owner_Theater__c=='APAC'),true,false)}"  oncomplete="top.location.href ='/{!quote.id}'" />
+             </apex:outputLabel>
+              <apex:commandLink styleClass="btn" style="text-decoration: none;"  value="Edit All"  action="{!editAllRedirectPage}"   target="_top" rendered="{!NOT(readOnlyFlag) && (Quote.PC_PriceAll__c) && if((Quote.Opportunity.Owner_Theater__c=='EMEA' || Quote.Opportunity.Owner_Theater__c=='APAC'),true,false)}" />
+              <apex:commandLink styleClass="btn" style="text-decoration: none;"  value="Edit All"  action="{!editAllRedirectPage}"  rendered="{!NOT(readOnlyFlag) && NOT (Quote.PC_PriceAll__c) && if((Quote.Opportunity.Owner_Theater__c=='EMEA' || Quote.Opportunity.Owner_Theater__c=='APAC'),true,false)}" />
+            <apex:commandButton value="Back to Price Concession" action="{!BacktoQuote}"  rendered="{!NOT(Gotolist)}"/>
+             <apex:actionStatus id="updateStatus">
+                <apex:facet name="start" >
+                    <apex:image url="/img/loading32.gif" height="10px" width="10px"/>
+                </apex:facet>
+            </apex:actionStatus>                  
+        </apex:pageBlockButtons>
+     
+        <apex:outputpanel id="quotePnl" >
+        <apex:pageBlockTable value="{!quoteLineItemList}" var="quoteLineItem" rendered="{!quoteLineItemList.size==0}" >
+            <apex:column headerValue="No records to display" headerClass="headerStyle" />
+        </apex:pageBlocktable>
+         <div style="{!IF(Gotolist=false,'overflow:scroll;width:100%;height:100%','overflow:scroll;width:100%;height:186px;')}" > 
+            <apex:pageBlockTable value="{!quoteLineItemList}"  var="quoteLineItem" rendered="{!quoteLineItemList.size > 0}" >
+              <apex:column headerValue="Action" styleClass="width" rendered="{!NOT(readOnlyFlag)}">
+                    <apex:outputLink style="color:#015ba7;" styleclass="actionLink" value="/{!quoteLineItem.Id}/e?retURL={!quoteLineItemID}" target="_top" >Edit</apex:outputLink>&nbsp;|
+                    <apex:commandLink style="color:#015ba7;"  styleclass="actionLink" 
+                    action="{!deleteLinetItem}"  onclick="if(!confirm('Are you sure?')) return false;"   value="Del" status="updateStatus"   reRender="msg">
+                        <apex:param value="{!quoteLineItem.Id}" name="idToDel" assignTo="{!delID }"/>
+                    </apex:commandLink>
+                </apex:column>
+                
+                <apex:column >                
+                <apex:facet name="header">
+                      <apex:outputText value="{!$Label.PC_Product}" escape="false"/>
+                    </apex:facet>
+                    <apex:outputLink value="/{!quoteLineItem.id}" title="{!quoteLineItem.Name}" target="_top">{!quoteLineItem.Name}</apex:outputLink>
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.Min_First_Order__c}" >
+                    <apex:facet name="header">
+                      <apex:outputText value="{!$Label.PC_Min_First_Order}" escape="false"/>
+                    </apex:facet>
+                </apex:column>    
+                                         
+                <apex:column value="{!quoteLineItem.Min_Qty__c}">
+                <apex:facet name="header">
+                      <apex:outputText value="{!$Label.PC_Min_Qty}" escape="false"/>
+                    </apex:facet>
+                </apex:column> 
+                
+                <apex:column value="{!quoteLineItem.Max_Qty__c}">                
+                <apex:facet name="header">
+                      <apex:outputText value="{!$Label.PC_Max_Qty}" escape="false"/>
+                    </apex:facet>
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.Available_Quantity__c}">
+                     <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Available_Quantity}" escape="false"/>
+                    </apex:facet>     
+                </apex:column>  
+                
+                <apex:column value="{!quoteLineItem.List_Price__c}">
+                 <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Siebel_List_Price}" escape="false"/>
+                    </apex:facet>     
+                </apex:column> 
+                
+                <apex:column >                
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Discount}" escape="false"/>
+                    </apex:facet> 
+                       <apex:outputText value="{!quoteLineItem.Discount__c}" /> 
+                </apex:column>
+                
+                <apex:column rendered="{!if(fieldVisibleFlag== true && fieldVisibleFlagSM=true,true,false)}">                
+                 <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_PE1}" escape="false"/>
+                    </apex:facet>  
+                    <apex:outputText value="{!quoteLineItem.PC_PE1__c}" />   
+                </apex:column>
+                
+                <apex:column rendered="{!if(fieldVisibleFlag== true && fieldVisibleFlagSM=true,true,false)}">                
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_PE2}" escape="false"/>
+                </apex:facet>  
+                  <apex:outputText value="{!quoteLineItem.PC_PE2__c}" />     
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.Standard_Net_Price__c}">
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Std_Net_Price}" escape="false"/>
+                    </apex:facet>     
+                </apex:column> 
+                
+                <apex:column >                
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Extra_Disc}" escape="false"/>
+                    </apex:facet> 
+                   <apex:outputText value="{!quoteLineItem.Extra_Disc__c}"/>
+                </apex:column>
+                
+                <apex:column >                
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Total_Disc}" escape="false"/>
+                    </apex:facet> 
+                    <apex:outputText value="{!quoteLineItem.Total_Discount__c}"/>    
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.Unit_Special_Price__c}">
+                 <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Unit_Special_Price}" escape="false"/>
+                    </apex:facet>     
+                </apex:column> 
+                
+                <apex:column value="{!quoteLineItem.Uplifted_Cost__c}" rendered="{!fieldVisibleFlag}">                
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Uplifted_Cost}" escape="false"/>
+                    </apex:facet>     
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.PC_Margin__c}" rendered="{!fieldVisibleFlag}">
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Margin}" escape="false"/>
+                    </apex:facet>     
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.Total_Net_Price__c}"> 
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Total_Net_Price}" escape="false"/>
+                    </apex:facet>     
+                </apex:column>
+                
+                <apex:column value="{!quoteLineItem.PC_Error_Message__c}">
+                <apex:facet name="header">
+                        <apex:outputText value="{!$Label.PC_Siebel_Error_Message}" escape="false"/>
+                    </apex:facet>     
+                </apex:column>
+                
+                   
+              </apex:pageBlockTable>
+           </div>
+           </apex:outputPanel>
+           <apex:outputPanel >
+           <apex:outputPanel style="float:left;margin-top:20px;">
+            <apex:Outputlink value="/apex/PCQuoteLineItemRelatedList?id={!Quote.id}&List=1" target="_top" rendered="{!quoteLineItemList.size>=1 && Gotolist==true}" style="font-weight:bold;">
+            Go to list ({!totalRec})»
+            </apex:Outputlink>
+            </apex:outputPanel>
+               <apex:outputPanel style="float:right;margin-top:20px;" rendered="{!AllowShowMore && Gotolist==true}">
+                <apex:commandButton value="First" rerender="Pgform" action="{!FirstPage}" disabled="{!prev}"/> &nbsp;
+                <apex:commandButton value="Previous" rerender="Pgform" action="{!previous}" disabled="{!prev}"/> &nbsp;
+                 <apex:outputLabel Value="{!counter}" style="display: inline-block;width: 2em;
+                                                            margin: 0 3px;font-size: 98%; text-align: center;vertical-align: 
+                                                            middle;border: 1px inset;background-color: white;"/>
+                <b><apex:outputLabel Value="of {!totalPages}"/></b>&nbsp;
+                <apex:commandButton value="Next" rerender="Pgform" action="{!next}" disabled="{!nxt}"/>&nbsp;
+                <apex:commandButton value="Last" rerender="Pgform" action="{!lastPage}" disabled="{!nxt}"/>
+                </apex:outputPanel>
+          </apex:outputPanel>
+          </apex:pageBlock>
+          
+       </apex:form>
+       </apex:page>

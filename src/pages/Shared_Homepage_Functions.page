@@ -1,0 +1,67 @@
+<apex:page >
+  <script type="text/javascript"> 
+
+
+function resizeframe(frameid) { 
+
+
+///// FUNCTION USED TO RESIZE THE IFRAME IN WHICH THE SCONTROL SITS 
+
+var itarget=top.document.getElementById(frameid); 
+var content; 
+
+if(itarget.contentDocument) 
+content=itarget.contentDocument; 
+else 
+content=top.document.frames[frameid].document; 
+
+
+itarget.style.height=content.body.clientHeight + "px"; 
+
+} 
+
+function monthText(num){ 
+
+switch(num){ 
+
+case 0: 
+return "January"; 
+break; 
+case 1: 
+return "February"; 
+break; 
+case 2: 
+return "March"; 
+break; 
+case 3: 
+return "April"; 
+break; 
+case 4: 
+return "May"; 
+break; 
+case 5: 
+return "June"; 
+break; 
+case 6: 
+return "July"; 
+break; 
+case 7: 
+return "August"; 
+break; 
+case 8: 
+return "September"; 
+break; 
+case 9: 
+return "October"; 
+break; 
+case 10: 
+return "November"; 
+break; 
+case 11: 
+return "December"; 
+break; 
+} 
+} 
+
+  </script>
+</apex:page>

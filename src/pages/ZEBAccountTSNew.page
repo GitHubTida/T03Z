@@ -1,0 +1,97 @@
+<!-- This Custom VF page for New Account creation-->
+<!-- Created RM, 27-May-2014 -->
+<!-- Account Type is now an editable field 4-Sep-2014 -->
+<apex:page standardController="Account" >
+
+    <img src="{!$Resource.zeblogotopdecor}"/>
+
+    <apex:sectionHeader title="New Account"  subtitle="New Account" />
+    
+   
+    
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <apex:includeScript value="/support/console/23.0/integration.js"/>
+    <apex:includeScript value="/support/console/28.0/integration.js"/>
+    <apex:includeScript value="/support/console/30.0/integration.js"/> 
+
+    <script type="text/javascript">
+            sforce.console.setTabTitle('New Account');
+            sforce.console.setTabUnsavedChanges(true);
+            
+            var callCloseTab= function callCloseTab(result) {
+                sforce.console.closeTab(result.id);
+            }
+        
+            function closeTab() {
+                
+                sforce.console.getEnclosingTabId(callCloseTab);
+                
+                if (sforce.console.isInConsole()) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+    </script>    
+    
+    <apex:form >
+    
+        <apex:pageBlock mode="Edit" title="New Account">
+        
+            <apex:pageBlockButtons >
+            
+                <apex:commandButton action="{!save}" value="Save"/>
+                
+              <apex:commandButton action="{!cancel}"  onclick="return closeTab()" value="Cancel"/>
+                 
+            </apex:pageBlockButtons>
+                        
+            <apex:pageBlockSection title="Account Information" columns="2" >
+                <apex:inputField value="{!Account.Name}"/>
+                <!--<apex:outputField value="{!Account.Account_Type__c}"/> -->
+                <apex:inputField value="{!Account.Account_Type__c}" required="true"/>
+                <!--<apex:outputField value="{!Account.AccountNumber}"/>-->
+                <apex:outputField value="{!Account.Account_Status__c}"/>
+                <apex:inputField value="{!Account.Phone}"/>
+                <!--<apex:outputField value="{!Account.Financial_Customer__c}"/>-->
+                <apex:inputField value="{!Account.Fax}"/>
+                <apex:inputField value="{!Account.ParentId}"/>
+                <!--<apex:inputField value="{!Account.Website}"/>-->
+            </apex:pageBlockSection>
+            
+            <apex:pageBlock id="thePageBlock" mode="Edit">
+                <apex:pageMessages />
+                
+                <apex:actionRegion >
+                    <apex:pageBlockSection title="Account Address Information" columns="1">
+                        <apex:inputField value="{!Account.BillingCountryCode}" required="true">
+                            <apex:actionSupport event="onchange" rerender="thePageBlock" status="status"/>
+                        </apex:inputField>
+                    </apex:pageBlockSection>
+                </apex:actionRegion> 
+                
+                 <apex:pageBlockSection columns="1" >                
+                    <apex:inputField value="{!Account.BillingStreet}" required="true"/>
+                    <apex:inputField value="{!Account.BillingCity}"  required="true"/>
+                    <apex:inputField value="{!Account.BillingStateCode}"   required="true"/>
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection columns="1" rendered="{!Account.BillingCountryCode == 'US' }">
+                    <apex:inputField value="{!Account.Primary_County__c}"/>
+                </apex:pageBlockSection>   
+                
+                <apex:pageBlockSection columns="1">
+                    <apex:inputField value="{!Account.BillingPostalCode}" required="true"/>                                
+                </apex:pageBlockSection>                          
+                
+            </apex:pageBlock>              
+        </apex:pageBlock>
+
+    </apex:form>
+    
+    <div style="position:relative; float:right; bottom: 200px; right: 15px;">
+        <img align="left" src="{!$Resource.zprinters}"/>
+    </div>    
+
+</apex:page>

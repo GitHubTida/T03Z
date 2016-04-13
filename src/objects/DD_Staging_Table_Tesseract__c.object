@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***Demo Depot application*** 
+This is the staging table for Tesseract(This object will be used  for integration between tesseract andSFDC)</description>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Call_ADate__c</fullName>
+        <label>Call_ADate</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Call_Num__c</fullName>
+        <externalId>true</externalId>
+        <label>Call_Num</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Call_Status__c</fullName>
+        <label>Call_Status</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <description>City for demo Request Object</description>
+        <label>Demo City</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Completion_Date_Formula__c</fullName>
+        <formula>DATEVALUE(Completion_Date__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Completion Date - Formula</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Completion_Date__c</fullName>
+        <description>Completion Date for Reserve Products</description>
+        <label>Completion Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Contact1__c</fullName>
+        <description>Contact for Demo Request</description>
+        <label>Customer Contact</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <description>Contact Email for Demo Request</description>
+        <label>Contact Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <description>Customer Name for Demo Request</description>
+        <label>Customer Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>DD_Demo_Approved_Date__c</fullName>
+        <description>Approve Date for Demo Request.</description>
+        <label>Approved Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <description>Fax for demo request.</description>
+        <label>Fax</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Approved_Date_Formula__c</fullName>
+        <formula>DateValue( DD_Demo_Approved_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Job Approved Date - Formula</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Job_Preapproval_Part_Num__c</fullName>
+        <description>&quot;Job Preapproval Part Num&quot; for demo request.</description>
+        <label>Job Preapproval Part Num</label>
+        <length>24</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Preapproval_Prod_Num__c</fullName>
+        <description>&quot;Job Preapproval Prod Num&quot; for Demo Request.</description>
+        <label>Job Preapproval Prod Num</label>
+        <length>24</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Preapproval_Ser_Num__c</fullName>
+        <description>Job Preapproval Ser Num for Demo Request.</description>
+        <label>Job Preapproval Ser Num</label>
+        <length>24</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Ref4__c</fullName>
+        <label>Tracking #</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Return_Site_Num__c</fullName>
+        <description>&quot;Job Return Site Num&quot; for demo Request.</description>
+        <label>Job Return Site Num</label>
+        <length>12</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Ship_Ref__c</fullName>
+        <label>Job_Ship_Ref</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Job_Source_Site_Num__c</fullName>
+        <description>Job Source Site Num for demo request</description>
+        <label>Job Source Site Num</label>
+        <length>12</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Material__c</fullName>
+        <description>Material for  Selected Products</description>
+        <label>Part Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <description>Demo Request Number</description>
+        <label>Demo Ref #</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Post_Code_ZIP__c</fullName>
+        <description>Postal Code for Demo Request Object</description>
+        <label>Demo Postal Code</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Received_Date__c</fullName>
+        <description>Receive Date for Demo Request.</description>
+        <label>Received Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Serialnumber__c</fullName>
+        <description>Serial Number for Reserve Products</description>
+        <label>Serial number</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_Date__c</fullName>
+        <description>Shipped Date for Demo Request.</description>
+        <label>Shipped Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <description>Street for Demo Request Object</description>
+        <label>Demo Street</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Telephone__c</fullName>
+        <description>Telephone  field from Demo request</description>
+        <label>Contact Telephone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <description>Tracking Number for demo Request.</description>
+        <label>Tracking Number</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <label>Staging Table</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{0000000000}</displayFormat>
+        <label>Record Count.</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Staging Tables</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

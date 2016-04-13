@@ -1,0 +1,2360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value><!-- Partner Profile --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Number Formula --></label>
+        <name>Account_Number_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Owner --></label>
+        <name>Account_Owner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Parent Record --></label>
+        <name>Account_Parent_Record__c</name>
+        <relationshipLabel><!-- Partner Profiles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>パートナー</label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Partner Profiles (Account) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Additional Company Websites --></label>
+        <name>Additional_Company_Websites__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Duplicate</masterLabel>
+            <translation><!-- Duplicate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Process</masterLabel>
+            <translation><!-- In Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Asset Management % --></label>
+        <name>Asset_Management__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you advertise/promote Zebra product on any public auction site or third-party marketplaces,  indicate which sites. (select all that apply) --></help>
+        <label><!-- Auction or 3rd Party Marketplaces --></label>
+        <name>Auction_or_3rd_Party_Marketplaces__c</name>
+        <picklistValues>
+            <masterLabel>Amazon</masterLabel>
+            <translation><!-- Amazon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonanza</masterLabel>
+            <translation><!-- Bonanza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Craigslist</masterLabel>
+            <translation><!-- Craigslist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ebay</masterLabel>
+            <translation><!-- Ebay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecrater</masterLabel>
+            <translation><!-- Ecrater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google</masterLabel>
+            <translation><!-- Google --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newegg</masterLabel>
+            <translation><!-- Newegg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oodle</masterLabel>
+            <translation><!-- Oodle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overstock.com</masterLabel>
+            <translation><!-- Overstock.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricegrabber</masterLabel>
+            <translation><!-- Pricegrabber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rakuten</masterLabel>
+            <translation><!-- Rakuten --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sears</masterLabel>
+            <translation><!-- Sears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wal-Mart</masterLabel>
+            <translation><!-- Wal-Mart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yahoo Shopping</masterLabel>
+            <translation><!-- Yahoo Shopping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Auto ID/POS/ID HW or complementary sw% --></label>
+        <name>Auto_ID_POS_ID_HW_or_complementary_sw__c</name>
+    </fields>
+    <fields>
+        <label><!-- BARCODE PRINTER REVENUE TOTAL --></label>
+        <name>BARCODE_PRINTER_REVENUE_TOTAL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Barcode and/or Card Printer Revenue % --></label>
+        <name>Barcode_Printer_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Blue Star % --></label>
+        <name>Blue_Star__c</name>
+    </fields>
+    <fields>
+        <label><!-- Business Model --></label>
+        <name>Business_Model__c</name>
+        <picklistValues>
+            <masterLabel>Application partner / Developer Integrator</masterLabel>
+            <translation>アプリケーションパートナー/開発インテグレーター</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier / Service Provider</masterLabel>
+            <translation>キャリアー/サービスプロバイダー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting Services Provider</masterLabel>
+            <translation>コンサルティングサービス</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Marketer</masterLabel>
+            <translation>ダイレクトマーケティング</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-Tailer</masterLabel>
+            <translation>ネットでの小売業</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ISV</masterLabel>
+            <translation>ISV</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Installation Service Provider</masterLabel>
+            <translation>インストールサービスプロバイダー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet Service Provider</masterLabel>
+            <translation>インターネットサービスプロバイダー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network / System Integrator</masterLabel>
+            <translation>ネットワーク/システムインテグレーター</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Store</masterLabel>
+            <translation>小売店</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Added Reseller</masterLabel>
+            <translation>付加価値リセラー</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless Service Provider</masterLabel>
+            <translation>無線サービスプロバイダー</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CUSTOMER MIX TOTAL --></label>
+        <name>CUSTOMER_MIX_TOTAL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Card/ID HW or complementary software % --></label>
+        <name>Card_ID_HW_or_complementary_software__c</name>
+    </fields>
+    <fields>
+        <label><!-- Citizen % --></label>
+        <name>Citizen__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cloud-Based Solutions Revenue % --></label>
+        <name>Cloud_Based_Solutions_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please indicate if you offer any of the following cloud business models. --></help>
+        <label><!-- Cloud Business Models --></label>
+        <name>Cloud_Business_Models__c</name>
+        <picklistValues>
+            <masterLabel>Infrastructure as a Service (IaaS)</masterLabel>
+            <translation><!-- Infrastructure as a Service (IaaS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not applicable</masterLabel>
+            <translation><!-- Not applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Platform as a Service (PaaS)</masterLabel>
+            <translation><!-- Platform as a Service (PaaS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software as a Service (SaaS)</masterLabel>
+            <translation><!-- Software as a Service (SaaS) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Description --></label>
+        <name>Company_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Develops Software/Firmware --></label>
+        <name>Company_Develops_Software_Firmware__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation>いいえ</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation>はい</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Identify your company&apos;s geographical coverage areas by state/providence and country through field sales efforts only (excludes web, catalog, and inside sales) --></help>
+        <label><!-- Company Geographical Coverage Areas --></label>
+        <name>Company_Geographical_Coverage_Areas__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company ID --></label>
+        <name>Company_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company ID Type --></label>
+        <name>Company_Id_Type__c</name>
+        <picklistValues>
+            <masterLabel>Government ID</masterLabel>
+            <translation><!-- Government ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tax Registration ID</masterLabel>
+            <translation><!-- Tax Registration ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VAT Registration ID</masterLabel>
+            <translation><!-- VAT Registration ID --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Legal Name --></label>
+        <name>Company_Legal_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name Lookup Formula --></label>
+        <name>Company_Name_Lookup_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name --></label>
+        <name>Company_Name_Potential_Partner__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Name Lookup --></label>
+        <name>Company_Name__c</name>
+        <relationshipLabel><!-- Partner Profiles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Company ID --></label>
+        <name>Company_Tax_Registration_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company DBA/Trading Name --></label>
+        <name>Company_Trading_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Website --></label>
+        <name>Company_Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compliance Labeling % --></label>
+        <name>Compliance_Labeling__c</name>
+    </fields>
+    <fields>
+        <help><!-- Consumer Goods is focused on consumer products, electronics, and textiles (not retail or manufacturing). --></help>
+        <label><!-- Consumer Goods % --></label>
+        <name>Consumer_Goods__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Custom Software as % of application sw is &gt;0, describe custom software offering --></help>
+        <label><!-- Custom Software Offering --></label>
+        <name>Custom_Software_Offering__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom Software as % of application sw --></label>
+        <name>Custom_Software_as_of_application_sw__c</name>
+    </fields>
+    <fields>
+        <label><!-- DIS/Matica % --></label>
+        <name>DIS_Matica__c</name>
+    </fields>
+    <fields>
+        <label><!-- DataCard % --></label>
+        <name>DataCard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Datamax-O&apos;Neil % --></label>
+        <name>Datamax_O_Neil__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other Customer Mix % is &gt; 0, describe what else makes up your customer mix. --></help>
+        <label><!-- Describe Other Customer Mix % --></label>
+        <name>Describe_Other_Customer_Mix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe Other Printer Sales % --></label>
+        <name>Describe_Other_Printer_Sales_Pct__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other Printer Sales % is &gt; 0, describe what other printer brands you sell. --></help>
+        <label><!-- Describe Other Printer Sales --></label>
+        <name>Describe_Other_Printer_Sales__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other Revenue Activities % is &gt; 0, describe what other activities exist. --></help>
+        <label><!-- Describe Other Revenue Activities % --></label>
+        <name>Describe_Other_Revenue_Activities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe Other Revenue Sources % --></label>
+        <name>Describe_Other_Revenue_Sources_Pct__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other Revenue Sources % is &gt; 0, describe what other revenue sources you have. --></help>
+        <label><!-- Describe Other Revenue Sources --></label>
+        <name>Describe_Other_Revenue_Sources__c</name>
+    </fields>
+    <fields>
+        <label><!-- Describe Other Vertical Markets --></label>
+        <name>Describe_Other_Vertical_Markets__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document &amp; Records Management % --></label>
+        <name>Document_Records_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- EMS/WMS Integration % --></label>
+        <name>EMS_WMS_Integration__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please indicate total employees at the company. In the other fields, please specify the dedicated full-time employees for each role. --></help>
+        <label><!-- Employees --></label>
+        <name>Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- End User Customer Mix % --></label>
+        <name>End_User_Customer_Mix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Epson % --></label>
+        <name>Epson__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evolis % --></label>
+        <name>Evolis__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fargo % --></label>
+        <name>Fargo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field Sales % --></label>
+        <name>Field_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Customer --></label>
+        <name>Financial_Customer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Includes Federal, State &amp; Local, Education, and Public Administration &amp; Safety. --></help>
+        <label><!-- Government % --></label>
+        <name>Government__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate your company headquarter&apos;s mailing address. --></help>
+        <label><!-- HQ Address --></label>
+        <name>HQ_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handle in-house % --></label>
+        <name>Handle_in_house__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hardware Revenue % --></label>
+        <name>Hardware_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Healthcare % --></label>
+        <name>Healthcare__c</name>
+    </fields>
+    <fields>
+        <label><!-- In-house Professional Services % --></label>
+        <name>In_house_Professional_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- # In-house Software Program/Developers --></label>
+        <name>In_house_Software_Program_Developers__c</name>
+    </fields>
+    <fields>
+        <label><!-- In-house dev as % of custom offering --></label>
+        <name>In_house_dev_as_of_custom_offering__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other Applications % is &gt; 0, indicate other applications that make up total revenue. --></help>
+        <label><!-- Indicate Other Applications --></label>
+        <name>Indicate_Other_Applications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Information Labels % --></label>
+        <name>Information_Labels__c</name>
+    </fields>
+    <fields>
+        <label><!-- Information enclosed herein is accurate --></label>
+        <name>Information_enclosed_herein_is_accurate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ingram/Nimax % --></label>
+        <name>Ingram_Nimax__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Inside Sales Reps --></label>
+        <name>Inside_Sales_Reps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Intermec/Honeywell % --></label>
+        <name>Intermec_Honeywell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Internet Total Revenue % --></label>
+        <name>Internet_Total_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inventory Management % --></label>
+        <name>Inventory_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invoice/Receipt Printing/ Receipts % --></label>
+        <name>Invoice_Receipt_Printing_Receipts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Kiosk or complementary software % --></label>
+        <name>Kiosk_or_complementary_software__c</name>
+    </fields>
+    <fields>
+        <label><!-- Magicard % --></label>
+        <name>Magicard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manufacturing % --></label>
+        <name>Manufacturing__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Marketing Resources --></label>
+        <name>Marketing_Resources__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobility % --></label>
+        <name>Mobility__c</name>
+    </fields>
+    <fields>
+        <label><!-- New printer/existing application % --></label>
+        <name>New_printer_existing_application__c</name>
+    </fields>
+    <fields>
+        <label><!-- New printer/new application % --></label>
+        <name>New_printer_new_application__c</name>
+    </fields>
+    <fields>
+        <label><!-- OEMs Customer Mix % --></label>
+        <name>OEMs_Customer_Mix__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Off-the-shelf software % is &gt; 0, provide OTS software brand name --></help>
+        <label><!-- OTS software brand name --></label>
+        <name>OTS_software_brand_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Off-the-shelf (OTS) sw as % of applic sw --></label>
+        <name>Off_the_shelf_OTS_sw_as_of_applic_sw__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field will populate the email sent to the prospect when an on-boarding profile is rejected. --></help>
+        <label><!-- On-boarding reject reason --></label>
+        <name>On_boarding_reject_reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Online Sales % --></label>
+        <name>Online_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operating Systems --></label>
+        <name>Operating_Systems__c</name>
+        <picklistValues>
+            <masterLabel>Android</masterLabel>
+            <translation><!-- Android --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linux</masterLabel>
+            <translation><!-- Linux --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mac OS/X</masterLabel>
+            <translation><!-- Mac OS/X --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unix</masterLabel>
+            <translation><!-- Unix --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Browser</masterLabel>
+            <translation><!-- Web Browser --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows CE/Mobile</masterLabel>
+            <translation><!-- Windows CE/Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows PC</masterLabel>
+            <translation><!-- Windows PC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Server</masterLabel>
+            <translation><!-- Windows Server --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>iOS</masterLabel>
+            <translation><!-- iOS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ordering, Order Entry/Fulfillment % --></label>
+        <name>Ordering_Order_Entry_Fulfillment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Applications % --></label>
+        <name>Other_Applications__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you selected other for Auction or 3rd Party Marketplaces, please describe. --></help>
+        <label><!-- Other Auction or 3rd Party Marketplaces --></label>
+        <name>Other_Auction_or_3rd_Party_Marketplaces__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you selected other for Cloud Business Models, please describe. --></help>
+        <label><!-- Other Cloud Business Models --></label>
+        <name>Other_Cloud_Business_Models__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Customer Mix % --></label>
+        <name>Other_Customer_Mix__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Other Distributor % is &gt; 0, indicate distributor names. --></help>
+        <label><!-- Other Distributor --></label>
+        <name>Other_Distributor_Define__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Distributor % --></label>
+        <name>Other_Distributor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Operating System --></label>
+        <name>Other_Operating_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Platform --></label>
+        <name>Other_Platform__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Printer Sales % --></label>
+        <name>Other_Printer_Sales__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you selected other for professional services, please describe. --></help>
+        <label><!-- Other Professional Services --></label>
+        <name>Other_Professional_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Programming Language --></label>
+        <name>Other_Programming_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Revenue Activities % --></label>
+        <name>Other_Revenue_Activities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Revenue Sources % --></label>
+        <name>Other_Revenue_Sources__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you selected other for Technology Offerings, please describe. --></help>
+        <label><!-- Other Technology Offerings --></label>
+        <name>Other_Technology_Offerings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other Vertical Market % --></label>
+        <name>Other_Vertical_Market__c</name>
+    </fields>
+    <fields>
+        <help><!-- If other vertical markets % &gt; 0, indicate those vertical markets. --></help>
+        <label><!-- Other Vertical Markets --></label>
+        <name>Other_Vertical_Markets__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Outside/Field Sales Reps --></label>
+        <name>Outside_Field_Sales_Reps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outside/Field Sales Total Revenue % --></label>
+        <name>Outside_Field_Sales_Total_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outsourced dev as % of custom offering --></label>
+        <name>Outsourced_dev_as_of_custom_offering__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Outsourced development &gt;0, provide outsourcing company name. --></help>
+        <label><!-- Outsourcing Company Name --></label>
+        <name>Outsourcing_Company_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PF Program Name --></label>
+        <name>PF_Program_Name__c</name>
+        <picklistValues>
+            <masterLabel>AIDC Technology Specialist Advanced</masterLabel>
+            <translation><!-- AIDC Technology Specialist Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIDC Technology Specialist Associate</masterLabel>
+            <translation><!-- AIDC Technology Specialist Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AIDC Technology Specialist Premier</masterLabel>
+            <translation><!-- AIDC Technology Specialist Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Specialist Advanced</masterLabel>
+            <translation><!-- Application Specialist Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Specialist Premier</masterLabel>
+            <translation><!-- Application Specialist Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Broadline Technology Marketer</masterLabel>
+            <translation><!-- Broadline Technology Marketer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller Advanced</masterLabel>
+            <translation><!-- Card Reseller Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller Associate</masterLabel>
+            <translation><!-- Card Reseller Associate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller Premier</masterLabel>
+            <translation><!-- Card Reseller Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card Reseller Premier Plus</masterLabel>
+            <translation><!-- Card Reseller Premier Plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print &amp; Apply Specialist</masterLabel>
+            <translation><!-- Print &amp; Apply Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service Specialist</masterLabel>
+            <translation><!-- Self Service Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Solutions Architect Advanced</masterLabel>
+            <translation><!-- Technology Solutions Architect Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology Solutions Architect Premier</masterLabel>
+            <translation><!-- Technology Solutions Architect Premier --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PF Program Type --></label>
+        <name>PF_Program_Type__c</name>
+        <picklistValues>
+            <masterLabel>Application Specialist</masterLabel>
+            <translation><!-- Application Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PREVIOUS YEARS REVENUE TOTAL --></label>
+        <name>PREVIOUS_YEARS_REVENUE_TOTAL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Account --></label>
+        <name>Parent_Account__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner First ID --></label>
+        <name>Partner_First_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Locator Permisson Granted --></label>
+        <name>Partner_Locator_Permisson_Granted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Program Membership --></label>
+        <name>Partner_Program_Membership__c</name>
+        <relationshipLabel><!-- Partner Profiles --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Website --></label>
+        <name>Partner_Website_del__c</name>
+    </fields>
+    <fields>
+        <help><!-- What percentage of End Users are part of your overall revenue? --></help>
+        <label><!-- Percentage of End Users --></label>
+        <name>Percentage_of_End_Users__c</name>
+        <picklistValues>
+            <masterLabel>10%</masterLabel>
+            <translation><!-- 10% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>100%</masterLabel>
+            <translation><!-- 100% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20%</masterLabel>
+            <translation><!-- 20% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25%</masterLabel>
+            <translation><!-- 25% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30%</masterLabel>
+            <translation><!-- 30% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40%</masterLabel>
+            <translation><!-- 40% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50%</masterLabel>
+            <translation><!-- 50% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60%</masterLabel>
+            <translation><!-- 60% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>70%</masterLabel>
+            <translation><!-- 70% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>75%</masterLabel>
+            <translation><!-- 75% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>80%</masterLabel>
+            <translation><!-- 80% --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>90%</masterLabel>
+            <translation><!-- 90% --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Personal ID/Access Control % --></label>
+        <name>Personal_ID_Access_Control__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pharmacy/Patient Wristband % --></label>
+        <name>Pharmacy_Patient_Wristband__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Platform --></label>
+        <name>Platform__c</name>
+        <picklistValues>
+            <masterLabel>NetBeans</masterLabel>
+            <translation><!-- NetBeans --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Openstream CueMe</masterLabel>
+            <translation><!-- Openstream CueMe --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RhoMobile</masterLabel>
+            <translation><!-- RhoMobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spring</masterLabel>
+            <translation><!-- Spring --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Titanium</masterLabel>
+            <translation><!-- Titanium --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Xamarin</masterLabel>
+            <translation><!-- Xamarin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zatar</masterLabel>
+            <translation><!-- Zatar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- What was your overall company/division revenue for the previous year? --></help>
+        <label><!-- Previous Year Revenue --></label>
+        <name>Previous_Year_Revenue__c</name>
+        <picklistValues>
+            <masterLabel>$10,000-$99,000</masterLabel>
+            <translation><!-- $10,000-$99,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$1M-$5M</masterLabel>
+            <translation><!-- $1M-$5M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$250,000-$500,000</masterLabel>
+            <translation><!-- $250,000-$500,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$500,001-$1M</masterLabel>
+            <translation><!-- $500,001-$1M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$99,001-$250,000</masterLabel>
+            <translation><!-- $99,001-$250,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>&lt; $10,000</masterLabel>
+            <translation><!-- &lt; $10,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Over $5M</masterLabel>
+            <translation><!-- Over $5M --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Solution Revenue --></label>
+        <name>Primary_Segment_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Solution --></label>
+        <name>Primary_Solution__c</name>
+        <picklistValues>
+            <masterLabel>Autonomous Mining</masterLabel>
+            <translation><!-- Autonomous Mining --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campus Security</masterLabel>
+            <translation><!-- Campus Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Citizen Engagement</masterLabel>
+            <translation><!-- Citizen Engagement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Collection and Tracking</masterLabel>
+            <translation><!-- Collection and Tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Command and Control</masterLabel>
+            <translation><!-- Command and Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected Agent</masterLabel>
+            <translation><!-- Connected Agent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected First Responder</masterLabel>
+            <translation><!-- Connected First Responder --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected Government Service Worker</masterLabel>
+            <translation><!-- Connected Government Service Worker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected Guest and Self-Service</masterLabel>
+            <translation><!-- Connected Guest and Self-Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected Shopper and Self-Service</masterLabel>
+            <translation><!-- Connected Shopper and Self-Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected Soldier</masterLabel>
+            <translation><!-- Connected Soldier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connected Traveler</masterLabel>
+            <translation><!-- Connected Traveler --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Facing</masterLabel>
+            <translation><!-- Customer Facing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Device and Asset Management</masterLabel>
+            <translation><!-- Device and Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispatch and Workflow Management</masterLabel>
+            <translation><!-- Dispatch and Workflow Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Medical Safety and Efficiency</masterLabel>
+            <translation><!-- Emergency Medical Safety and Efficiency --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise Asset Management</masterLabel>
+            <translation><!-- Enterprise Asset Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Communications and Management</masterLabel>
+            <translation><!-- Field Communications and Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Sales</masterLabel>
+            <translation><!-- Field Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Service</masterLabel>
+            <translation><!-- Field Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fire Accountability and Credentialing</masterLabel>
+            <translation><!-- Fire Accountability and Credentialing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firehouse</masterLabel>
+            <translation><!-- Firehouse --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>First Responder Life Safety</masterLabel>
+            <translation><!-- First Responder Life Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fleet Management and Delivery</masterLabel>
+            <translation><!-- Fleet Management and Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Front Line Command</masterLabel>
+            <translation><!-- Front Line Command --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guest Wi-Fi</masterLabel>
+            <translation><!-- Guest Wi-Fi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Health, Human and Social Services</masterLabel>
+            <translation><!-- Health, Human and Social Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Wireless Comms Infrastructure</masterLabel>
+            <translation><!-- Industrial Wireless Comms Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intelligent Transportation System</masterLabel>
+            <translation><!-- Intelligent Transportation System --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Life Safety</masterLabel>
+            <translation><!-- Life Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Material and Inventory Management</masterLabel>
+            <translation><!-- Material and Inventory Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchandising and Inventory Management</masterLabel>
+            <translation><!-- Merchandising and Inventory Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metering and Distribution Automation</masterLabel>
+            <translation><!-- Metering and Distribution Automation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mining Command and Control</masterLabel>
+            <translation><!-- Mining Command and Control --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Operator</masterLabel>
+            <translation><!-- Mobile Operator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Infrastructure Management</masterLabel>
+            <translation><!-- Network Infrastructure Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nurse Call</masterLabel>
+            <translation><!-- Nurse Call --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ordering and Payment</masterLabel>
+            <translation><!-- Ordering and Payment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passenger Service</masterLabel>
+            <translation><!-- Passenger Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physical Security and Personnel Access</masterLabel>
+            <translation><!-- Physical Security and Personnel Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plant Communications and Management</masterLabel>
+            <translation><!-- Plant Communications and Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Point Of Care</masterLabel>
+            <translation><!-- Point Of Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Point-Of-Sale</masterLabel>
+            <translation><!-- Point-Of-Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Practice Administration</masterLabel>
+            <translation><!-- Practice Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality and Traceability</masterLabel>
+            <translation><!-- Quality and Traceability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safety and Environmental</masterLabel>
+            <translation><!-- Safety and Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Security and Resilience</masterLabel>
+            <translation><!-- Security and Resilience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipboard Communication</masterLabel>
+            <translation><!-- Shipboard Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Soldier Life Safety</masterLabel>
+            <translation><!-- Soldier Life Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff Communications and Management</masterLabel>
+            <translation><!-- Staff Communications and Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video Surveillance and Streaming</masterLabel>
+            <translation><!-- Video Surveillance and Streaming --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Video and Real Time Crime Center</masterLabel>
+            <translation><!-- Video and Real Time Crime Center --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehouse Management</masterLabel>
+            <translation><!-- Warehouse Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless Communications Infrastructure</masterLabel>
+            <translation><!-- Wireless Communications Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yard Management</masterLabel>
+            <translation><!-- Yard Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Industry --></label>
+        <name>Primary_Supervertical__c</name>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy and Utilities</masterLabel>
+            <translation><!-- Energy and Utilities --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government Services</masterLabel>
+            <translation><!-- Government Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National Government Security</masterLabel>
+            <translation><!-- National Government Security --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Natural Resources</masterLabel>
+            <translation><!-- Natural Resources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation><!-- Professional Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Safety</masterLabel>
+            <translation><!-- Public Safety --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecom and Media</masterLabel>
+            <translation><!-- Telecom and Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation and Logistics</masterLabel>
+            <translation><!-- Transportation and Logistics --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Do you manufacture and/or integrate your own Print and Apply system? --></help>
+        <label><!-- Print and Apply System --></label>
+        <name>Print_and_Apply_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Printed Catalog Total Revenue % --></label>
+        <name>Printed_Catalog_Total_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Printronix % --></label>
+        <name>Printronix__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate your professional services business (i.e. consulting, installation, site survey, etc.) as a percent of your total revenue. --></help>
+        <label><!-- Professional Services Revenue % --></label>
+        <name>Professional_Services_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicate the types of professional services your company provides. (select all that apply) --></help>
+        <label><!-- Professional Services --></label>
+        <name>Professional_Services__c</name>
+        <picklistValues>
+            <masterLabel>Application Development</masterLabel>
+            <translation><!-- Application Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Analysis</masterLabel>
+            <translation><!-- Needs Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Checked</masterLabel>
+            <translation><!-- Not Checked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Config Install Support</masterLabel>
+            <translation><!-- Product Config Install Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Project Management</masterLabel>
+            <translation><!-- Project Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Configuration</masterLabel>
+            <translation><!-- System Configuration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systems Install/Install Support</masterLabel>
+            <translation><!-- Systems Install/Install Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Professional Services % of Tot Revenue --></label>
+        <name>Professional_Services_of_Tot_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Programming Languages --></label>
+        <name>Programming_Languages__c</name>
+        <picklistValues>
+            <masterLabel>ASP.NET</masterLabel>
+            <translation><!-- ASP.NET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C / C++</masterLabel>
+            <translation><!-- C / C++ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C#</masterLabel>
+            <translation><!-- C# --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delphi</masterLabel>
+            <translation><!-- Delphi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HTML5</masterLabel>
+            <translation><!-- HTML5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Java</masterLabel>
+            <translation><!-- Java --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JavaScript</masterLabel>
+            <translation><!-- JavaScript --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Objective-C</masterLabel>
+            <translation><!-- Objective-C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PERL</masterLabel>
+            <translation><!-- PERL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PHP</masterLabel>
+            <translation><!-- PHP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Python</masterLabel>
+            <translation><!-- Python --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ruby</masterLabel>
+            <translation><!-- Ruby --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VB.NET/VB</masterLabel>
+            <translation><!-- VB.NET/VB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XML</masterLabel>
+            <translation><!-- XML --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # Project Managers/Consultants --></label>
+        <name>Project_Managers_Consultants__c</name>
+    </fields>
+    <fields>
+        <help><!-- Do you advertise/promote Zebra product on any public auction site or third-party marketplaces? --></help>
+        <label><!-- Promote Auction/3rd Party Marketplaces --></label>
+        <name>Promote_Auction_3rd_Party_Marketplaces__c</name>
+    </fields>
+    <fields>
+        <help><!-- Provide any and all business names and/or DBAs under which your company actively promotes/resells Zebra Products --></help>
+        <label><!-- Promoters/Resellers of Zebra --></label>
+        <name>Promoters_Resellers_of_Zebra__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please provide an overview of your company&apos;s application/solution and how it fits with Zebra&apos;s offerings. --></help>
+        <label><!-- Provide an Application/Solution Overview --></label>
+        <name>Provide_an_Application_Solution_Overview__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quality Control/Assurance % --></label>
+        <name>Quality_Control_Assurance__c</name>
+    </fields>
+    <fields>
+        <label><!-- REVENUE ACTIVITIES TOTAL --></label>
+        <name>REVENUE_ACTIVITIES_TOTAL__c</name>
+    </fields>
+    <fields>
+        <label><!-- RFID % --></label>
+        <name>RFID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refer to Distributor % --></label>
+        <name>Refer_to_Distributor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refer to Zebra % --></label>
+        <name>Refer_to_Zebra__c</name>
+    </fields>
+    <fields>
+        <label><!-- Repair Services (break/fix) Revenue % --></label>
+        <name>Repair_Services_break_fix_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Replacement of existing printer --></label>
+        <name>Replacement_of_existing_printer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Sales Team member assessment of overall reseller health --></help>
+        <label><!-- Reseller Health --></label>
+        <name>Reseller_Health__c</name>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Red</masterLabel>
+            <translation><!-- Red --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yellow</masterLabel>
+            <translation><!-- Yellow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resellers Customer Mix % --></label>
+        <name>Resellers_Customer_Mix__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Management % --></label>
+        <name>Retail_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail Total Revenue % --></label>
+        <name>Retail_Total_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Retail % --></label>
+        <name>Retail__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Revenue Customer Service --></label>
+        <name>Revenue_Customer_Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Revenue Hardware Sales --></label>
+        <name>Revenue_Hardware__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Revenue Professional Sales --></label>
+        <name>Revenue_Professional_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Revenue Software Sales --></label>
+        <name>Revenue_Software__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reverse Logistics % --></label>
+        <name>Reverse_Logistics__c</name>
+    </fields>
+    <fields>
+        <label><!-- SATO % --></label>
+        <name>SATO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Revenue Internet Only Sales --></label>
+        <name>Sales_Last_FY_Auto_E_Com_Orders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Revenue Face to Face Sales --></label>
+        <name>Sales_Last_FY_Field_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Revenue Internet-Human Sales --></label>
+        <name>Sales_Last_FY_Online_Print_Catalogs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample/Specimen Management % --></label>
+        <name>Sample_Specimen_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- ScanSource % --></label>
+        <name>ScanSource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Services % --></label>
+        <name>Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping/ Receiving % --></label>
+        <name>Shipping_Receiving__c</name>
+    </fields>
+    <fields>
+        <help><!-- Software service contracts or other technical support revenue --></help>
+        <label><!-- Software Service/Tech Support Revenue % --></label>
+        <name>Software_Service_Tech_Support_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Software(application-based) Revenue % --></label>
+        <name>Software_application_based_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does your company have expertise in a specialized application that your company developed and sold across industries? If yes, check the box. --></help>
+        <label><!-- Specialized Application Expertise --></label>
+        <name>Specialized_Application_Expertise__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sports &amp; Entertainment % --></label>
+        <name>Sports_Entertainment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Star Micronics % --></label>
+        <name>Star_Micronics__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <help><!-- Steps to submit your Profile: Step 1: Check the box to verify your data; Step 2: Click the SAVE button; Step 3: Click the Submit for Approval button at either the Top of the page or Bottom of the page --></help>
+        <label><!-- Steps to Submit --></label>
+        <name>Steps_to_Submit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplies &amp; Accessories Revenue % --></label>
+        <name>Supplies_Accessories_Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supplies Converter --></label>
+        <name>Supplies_Converter__c</name>
+    </fields>
+    <fields>
+        <label><!-- # System Engineers --></label>
+        <name>System_Engineers__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Technical Support Resources --></label>
+        <name>Technical_Support_Resources__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please indicate if you offer any of the following options to your customers (please check all that apply) --></help>
+        <label><!-- Technology Offerings --></label>
+        <name>Technology_Offerings__c</name>
+        <picklistValues>
+            <masterLabel>Hardware as a Service (HaaS)</masterLabel>
+            <translation><!-- Hardware as a Service (HaaS) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leasing</masterLabel>
+            <translation><!-- Leasing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Service Contracts</masterLabel>
+            <translation><!-- Managed Service Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tele/Inside Sales % --></label>
+        <name>Tele_Inside_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telesales Total Revenue % --></label>
+        <name>Telesales_Total_Revenue__c</name>
+    </fields>
+    <fields>
+        <help><!-- If Third Party Professional Services % is &gt; 0, provide their names. --></help>
+        <label><!-- Third Party Professional Services Name --></label>
+        <name>Third_Party_Professional_Services_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Third Party Professional Services % --></label>
+        <name>Third_Party_Professional_Services__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Toshiba/TEC % --></label>
+        <name>Toshiba_TEC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Number of Company Employees --></label>
+        <name>Total_Number_of_Company_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Number of Inside Sales Personnel --></label>
+        <name>Total_Number_of_Inside_Sales_Personnel__c</name>
+    </fields>
+    <fields>
+        <label>営業職の合計人数</label>
+        <name>Total_Number_of_Sales_Personnel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Number of Services Employees --></label>
+        <name>Total_Number_of_Services_Employees__c</name>
+    </fields>
+    <fields>
+        <label>技術職の合計人数</label>
+        <name>Total_Number_of_Technical_Personnel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Sales/Service Revenue --></label>
+        <name>Total_Sales_Service_Revenue_Last_FY__c</name>
+        <picklistValues>
+            <masterLabel>$0-$150,000</masterLabel>
+            <translation><!-- $0-$150,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$1,000,001 - 3,000,000</masterLabel>
+            <translation><!-- $1,000,001 - 3,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$150,001-$600,000</masterLabel>
+            <translation><!-- $150,001-$600,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$3,000,001 - $5,000,000</masterLabel>
+            <translation><!-- $3,000,001 - $5,000,000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$5,000,001 or more</masterLabel>
+            <translation><!-- $5,000,001 or more --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$600,001 - $1,000,000</masterLabel>
+            <translation><!-- $600,001 - $1,000,000 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # Training Employees --></label>
+        <name>Training_Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transportation &amp; Logistics % --></label>
+        <name>Transportation_Logistics__c</name>
+    </fields>
+    <fields>
+        <label><!-- Upgrade of existing printer --></label>
+        <name>Upgrade_of_existing_printer__c</name>
+    </fields>
+    <fields>
+        <help><!-- Does your company have expertise in specific vertical market? If yes, check the box. --></help>
+        <label><!-- Vertical Market Focus --></label>
+        <name>Vertical_Market_Focus__c</name>
+    </fields>
+    <fields>
+        <label><!-- WIP Management % --></label>
+        <name>WIP_Management__c</name>
+    </fields>
+    <fields>
+        <label><!-- Website --></label>
+        <name>Website__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wynit (Card)% --></label>
+        <name>Wynit_Card__c</name>
+    </fields>
+    <fields>
+        <label><!-- 3rd Party Market Place Websites --></label>
+        <name>X3rd_Party_Market_Place_Websites__c</name>
+        <picklistValues>
+            <masterLabel>Amazon</masterLabel>
+            <translation><!-- Amazon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonanza</masterLabel>
+            <translation><!-- Bonanza --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Craigslist</masterLabel>
+            <translation><!-- Craigslist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ebay</masterLabel>
+            <translation><!-- Ebay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecrater</masterLabel>
+            <translation><!-- Ecrater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google</masterLabel>
+            <translation><!-- Google --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newegg</masterLabel>
+            <translation><!-- Newegg --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oodle</masterLabel>
+            <translation><!-- Oodle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overstock.com</masterLabel>
+            <translation><!-- Overstock.com --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricegrabber</masterLabel>
+            <translation><!-- Pricegrabber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rakuten</masterLabel>
+            <translation><!-- Rakuten --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sears</masterLabel>
+            <translation><!-- Sears --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Walmart</masterLabel>
+            <translation><!-- Walmart --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yahoo Shopping</masterLabel>
+            <translation><!-- Yahoo Shopping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zebra Product Focus --></label>
+        <name>Zebra_Product_Focus__c</name>
+        <picklistValues>
+            <masterLabel>Aftermarket</masterLabel>
+            <translation><!-- Aftermarket --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Card</masterLabel>
+            <translation><!-- Card --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Desktop</masterLabel>
+            <translation><!-- Desktop --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiosk</masterLabel>
+            <translation><!-- Kiosk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile</masterLabel>
+            <translation><!-- Mobile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PAX</masterLabel>
+            <translation><!-- PAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID</masterLabel>
+            <translation><!-- RFID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RTLS</masterLabel>
+            <translation><!-- RTLS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service</masterLabel>
+            <translation><!-- Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Supplies</masterLabel>
+            <translation><!-- Supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tabletop</masterLabel>
+            <translation><!-- Tabletop --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Zebra % --></label>
+        <name>Zebra__c</name>
+    </fields>
+    <fields>
+        <help><!-- To date, how many software installations has your organization completed? --></help>
+        <label><!-- # of Software Installations --></label>
+        <name>of_Software_Installations__c</name>
+    </fields>
+    <layouts>
+        <layout>Application Specialitst</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Application Specialist Personnel Profile (Dedicated FTE) --></label>
+            <section>Application Specialist Personnel Profile (Dedicated FTE)</section>
+        </sections>
+        <sections>
+            <label><!-- Business Focus --></label>
+            <section>Business Focus</section>
+        </sections>
+        <sections>
+            <label><!-- Check the box to verify data accuracy, save, and click Submit for Approval --></label>
+            <section>Check the box to verify data accuracy, save, and click Submit for Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Company Overview --></label>
+            <section>Company Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a specialized application that is sold across industries? --></label>
+            <section>Does your company have a specialized application that is sold across industries?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a vertical market focus? --></label>
+            <section>Does your company have a vertical market focus?</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, indicate your business focus on the folllowing specialized applications. --></label>
+            <section>If yes, indicate your business focus on the folllowing specialized applications.</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, please indicate your business focus in the following vertical markets. --></label>
+            <section>If yes, please indicate your business focus in the following vertical markets.</section>
+        </sections>
+        <sections>
+            <label><!-- Please estimate how much of your business focus is on cloud-based solutions: --></label>
+            <section>Please estimate how much of your business focus is on cloud-based solutions:</section>
+        </sections>
+        <sections>
+            <label><!-- Please indicate the prog languages/platforms/op systems used for sw development: --></label>
+            <section>Please indicate the prog languages/platforms/op systems used for sw development:</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your company&apos;s business focus is derived from the following? --></label>
+            <section>What % of your company&apos;s business focus is derived from the following?</section>
+        </sections>
+        <sections>
+            <label><!-- What %, if any, do barcode and/or card printers represent? --></label>
+            <section>What %, if any, do barcode and/or card printers represent?</section>
+        </sections>
+        <sections>
+            <label><!-- What is the brand mix of your barcode and/or card printers? --></label>
+            <section>What is the brand mix of your barcode and/or card printers?</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Internal Partners</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Advertise/promote Zebra product on public auction site/3rd party marketplace --></label>
+            <section>Advertise/promote Zebra product on public auction site/3rd party marketplace</section>
+        </sections>
+        <sections>
+            <label><!-- Business Focus --></label>
+            <section>Business Focus</section>
+        </sections>
+        <sections>
+            <label><!-- Business Trends --></label>
+            <section>Business Trends</section>
+        </sections>
+        <sections>
+            <label><!-- Check the box to verify data accuracy, save, and click submit for approval --></label>
+            <section>Check the box to verify data accuracy, save, and click submit for approval</section>
+        </sections>
+        <sections>
+            <label><!-- Company Overview --></label>
+            <section>Company Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Do you manufacture and/or integrate your own Print and Apply system? --></label>
+            <section>Do you manufacture and/or integrate your own Print and Apply system?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a specialized application that is sold across industries? --></label>
+            <section>Does your company have a specialized application that is sold across industries?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a vertical market focus? --></label>
+            <section>Does your company have a vertical market focus?</section>
+        </sections>
+        <sections>
+            <label><!-- For Zebra products, what percent of purchases come from these distributors? --></label>
+            <section>For Zebra products, what percent of purchases come from these distributors?</section>
+        </sections>
+        <sections>
+            <label><!-- How do you address technical (non-repair) questions for Zebra products? --></label>
+            <section>How do you address technical (non-repair) questions for Zebra products?</section>
+        </sections>
+        <sections>
+            <label><!-- How much of your previous year&apos;s revenue was from the following verticals? --></label>
+            <section>How much of your previous year&apos;s revenue was from the following verticals?</section>
+        </sections>
+        <sections>
+            <label><!-- How much of your previous year&apos;s total revenue came from apps you developed/sold --></label>
+            <section>How much of your previous year&apos;s total revenue came from apps you developed/sold</section>
+        </sections>
+        <sections>
+            <label><!-- If barcode printers are sold, indicate your previous year&apos;s revenue % from: --></label>
+            <section>If barcode printers are sold, indicate your previous year&apos;s revenue % from:</section>
+        </sections>
+        <sections>
+            <label><!-- If professional services are sold, indicate the following offerings: --></label>
+            <section>If professional services are sold, indicate the following offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If software is sold, indicate the following application software offerings: --></label>
+            <section>If software is sold, indicate the following application software offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- Indicate how much of your total company&apos;s revenue is derived from the following: --></label>
+            <section>Indicate how much of your total company&apos;s revenue is derived from the following:</section>
+        </sections>
+        <sections>
+            <label><!-- Please estimate how much of your business focus is on cloud-based solutions: --></label>
+            <section>Please estimate how much of your business focus is on cloud-based solutions:</section>
+        </sections>
+        <sections>
+            <label><!-- Please indicate the prog languages/platforms/op systems used for sw development: --></label>
+            <section>Please indicate the prog languages/platforms/op systems used for sw development:</section>
+        </sections>
+        <sections>
+            <label><!-- Provide business names/DBAs your company actively promotes/resells Zebra --></label>
+            <section>Provide business names/DBAs your company actively promotes/resells Zebra</section>
+        </sections>
+        <sections>
+            <label><!-- Reseller Personnel Profile (Dedicated FTE) --></label>
+            <section>Reseller Personnel Profile (Dedicated FTE)</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your company&apos;s revenue is derived from the following? --></label>
+            <section>What % of your company&apos;s revenue is derived from the following?</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your total revenue is derived by the following sales activities? --></label>
+            <section>What % of your total revenue is derived by the following sales activities?</section>
+        </sections>
+        <sections>
+            <label><!-- What %, if any, do barcode printers represent? --></label>
+            <section>What %, if any, do barcode printers represent?</section>
+        </sections>
+        <sections>
+            <label><!-- What is the brand mix of your barcode and/or card printers? --></label>
+            <section>What is the brand mix of your barcode and/or card printers?</section>
+        </sections>
+        <sections>
+            <label><!-- What is your customer mix as a percentage of your overall revenue? --></label>
+            <section>What is your customer mix as a percentage of your overall revenue?</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Potential Application Specialist</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Application Specialist Personnel Profile (Dedicated FTE) --></label>
+            <section>Application Specialist Personnel Profile (Dedicated FTE)</section>
+        </sections>
+        <sections>
+            <label><!-- Business Focus --></label>
+            <section>Business Focus</section>
+        </sections>
+        <sections>
+            <label><!-- Check the box to verify data accuracy, save, and click Submit for Approval --></label>
+            <section>Check the box to verify data accuracy, save, and click Submit for Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Company Overview --></label>
+            <section>Company Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a specialized application that is sold across industries? --></label>
+            <section>Does your company have a specialized application that is sold across industries?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a vertical market focus? --></label>
+            <section>Does your company have a vertical market focus?</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, indicate your business focus on the folllowing specialized applications. --></label>
+            <section>If yes, indicate your business focus on the folllowing specialized applications.</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, please indicate your business focus in the following vertical markets. --></label>
+            <section>If yes, please indicate your business focus in the following vertical markets.</section>
+        </sections>
+        <sections>
+            <label><!-- Please estimate how much of your business focus is on cloud-based solutions: --></label>
+            <section>Please estimate how much of your business focus is on cloud-based solutions:</section>
+        </sections>
+        <sections>
+            <label><!-- Please indicate the prog languages/platforms/op systems used for sw development: --></label>
+            <section>Please indicate the prog languages/platforms/op systems used for sw development:</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your company&apos;s business focus is derived from the following? --></label>
+            <section>What % of your company&apos;s business focus is derived from the following?</section>
+        </sections>
+        <sections>
+            <label><!-- What %, if any, do barcode and/or card printers represent? --></label>
+            <section>What %, if any, do barcode and/or card printers represent?</section>
+        </sections>
+        <sections>
+            <label><!-- What is the brand mix of your barcode and/or card printers? --></label>
+            <section>What is the brand mix of your barcode and/or card printers?</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Potential Partner Reseller</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Advertise/promote Zebra product on public auction site/3rd party marketplace --></label>
+            <section>Advertise/promote Zebra product on public auction site/3rd party marketplace</section>
+        </sections>
+        <sections>
+            <label><!-- Business Trends --></label>
+            <section>Business Trends</section>
+        </sections>
+        <sections>
+            <label><!-- Check the box to verify data accuracy, save, and click submit for approval --></label>
+            <section>Check the box to verify data accuracy, save, and click submit for approval</section>
+        </sections>
+        <sections>
+            <label><!-- Company Overview --></label>
+            <section>Company Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Do you manufacture and/or integrate your own Print and Apply system? --></label>
+            <section>Do you manufacture and/or integrate your own Print and Apply system?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a specialized application that is sold across industries? --></label>
+            <section>Does your company have a specialized application that is sold across industries?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a vertical market focus? --></label>
+            <section>Does your company have a vertical market focus?</section>
+        </sections>
+        <sections>
+            <label><!-- For Zebra products, what percent of purchases come from these distributors? --></label>
+            <section>For Zebra products, what percent of purchases come from these distributors?</section>
+        </sections>
+        <sections>
+            <label><!-- How do you address technical (non-repair) questions for Zebra products? --></label>
+            <section>How do you address technical (non-repair) questions for Zebra products?</section>
+        </sections>
+        <sections>
+            <label><!-- If barcode printers are sold, indicate your previous year&apos;s revenue % from: --></label>
+            <section>If barcode printers are sold, indicate your previous year&apos;s revenue % from:</section>
+        </sections>
+        <sections>
+            <label><!-- If custom software is sold, indicate the following offerings: --></label>
+            <section>If custom software is sold, indicate the following offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If professional services are sold, indicate the following offerings: --></label>
+            <section>If professional services are sold, indicate the following offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If software is sold, indicate the following application software offerings: --></label>
+            <section>If software is sold, indicate the following application software offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, indicate your business focus in the following vertical markets. --></label>
+            <section>If yes, indicate your business focus in the following vertical markets.</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, indicate your business focus on the following specialized applications. --></label>
+            <section>If yes, indicate your business focus on the following specialized applications.</section>
+        </sections>
+        <sections>
+            <label><!-- Indicate how much of your total company&apos;s revenue is derived from the following: --></label>
+            <section>Indicate how much of your total company&apos;s revenue is derived from the following:</section>
+        </sections>
+        <sections>
+            <label><!-- Provide business names/DBAs your company actively promotes/resells Zebra --></label>
+            <section>Provide business names/DBAs your company actively promotes/resells Zebra</section>
+        </sections>
+        <sections>
+            <label><!-- Reseller Personnel Profile (Dedicated FTE) --></label>
+            <section>Reseller Personnel Profile (Dedicated FTE)</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your company/division&apos;s revenue is derived from the following? --></label>
+            <section>What % of your company/division&apos;s revenue is derived from the following?</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your total revenue is derived by the following sales activities? --></label>
+            <section>What % of your total revenue is derived by the following sales activities?</section>
+        </sections>
+        <sections>
+            <label><!-- What %, if any, do barcode and/or card printers represent? --></label>
+            <section>What %, if any, do barcode and/or card printers represent?</section>
+        </sections>
+        <sections>
+            <label><!-- What is the brand mix of your barcode and/or card printers? --></label>
+            <section>What is the brand mix of your barcode and/or card printers?</section>
+        </sections>
+        <sections>
+            <label><!-- What is your customer mix as a percentage of your overall revenue? --></label>
+            <section>What is your customer mix as a percentage of your overall revenue?</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Reseller</layout>
+        <sections>
+            <label><!-- Account Detail --></label>
+            <section>Account Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Advertise/promote Zebra product on public auction site/3rd party marketplace --></label>
+            <section>Advertise/promote Zebra product on public auction site/3rd party marketplace</section>
+        </sections>
+        <sections>
+            <label><!-- Business Trends --></label>
+            <section>Business Trends</section>
+        </sections>
+        <sections>
+            <label><!-- Check the box below to verify data accuracy, SAVE and click Submit for Approval --></label>
+            <section>Check the box below to verify data accuracy, SAVE and click Submit for Approval</section>
+        </sections>
+        <sections>
+            <label><!-- Company Overview --></label>
+            <section>Company Overview</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Do you manufacture and/or integrate your own Print and Apply system? --></label>
+            <section>Do you manufacture and/or integrate your own Print and Apply system?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a specialized application that is sold across industries? --></label>
+            <section>Does your company have a specialized application that is sold across industries?</section>
+        </sections>
+        <sections>
+            <label><!-- Does your company have a vertical market focus? --></label>
+            <section>Does your company have a vertical market focus?</section>
+        </sections>
+        <sections>
+            <label><!-- For Zebra products, what percent of purchases come from these distributors? --></label>
+            <section>For Zebra products, what percent of purchases come from these distributors?</section>
+        </sections>
+        <sections>
+            <label><!-- How do you address technical (non-repair) questions for Zebra products? --></label>
+            <section>How do you address technical (non-repair) questions for Zebra products?</section>
+        </sections>
+        <sections>
+            <label><!-- If barcode printers are sold, indicate your previous year&apos;s revenue % from: --></label>
+            <section>If barcode printers are sold, indicate your previous year&apos;s revenue % from:</section>
+        </sections>
+        <sections>
+            <label><!-- If custom software is sold, indicate the following offerings: --></label>
+            <section>If custom software is sold, indicate the following offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If professional services are sold, indicate the following offerings: --></label>
+            <section>If professional services are sold, indicate the following offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If software is sold, indicate the following application software offerings: --></label>
+            <section>If software is sold, indicate the following application software offerings:</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, indicate your business focus in the following vertical markets. --></label>
+            <section>If yes, indicate your business focus in the following vertical markets.</section>
+        </sections>
+        <sections>
+            <label><!-- If yes, indicate your business focus on the following specialized applications. --></label>
+            <section>If yes, indicate your business focus on the following specialized applications.</section>
+        </sections>
+        <sections>
+            <label><!-- Indicate how much of your total company&apos;s revenue is derived from the following: --></label>
+            <section>Indicate how much of your total company&apos;s revenue is derived from the following:</section>
+        </sections>
+        <sections>
+            <label><!-- Provide business names/DBAs your company actively promotes/resells Zebra --></label>
+            <section>Provide business names/DBAs your company actively promotes/resells Zebra</section>
+        </sections>
+        <sections>
+            <label><!-- Reseller Personnel Profile (Dedicated FTE) --></label>
+            <section>Reseller Personnel Profile (Dedicated FTE)</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your company&apos;s business focus is derived from the following? --></label>
+            <section>What % of your company&apos;s business focus is derived from the following?</section>
+        </sections>
+        <sections>
+            <label><!-- What % of your total revenue is derived by the following sales activities? --></label>
+            <section>What % of your total revenue is derived by the following sales activities?</section>
+        </sections>
+        <sections>
+            <label><!-- What %, if any, do barcode and/or card printers represent? --></label>
+            <section>What %, if any, do barcode and/or card printers represent?</section>
+        </sections>
+        <sections>
+            <label><!-- What is the brand mix of your barcode and/or card printers? --></label>
+            <section>What is the brand mix of your barcode and/or card printers?</section>
+        </sections>
+        <sections>
+            <label><!-- What is your customer mix as a percentage of your overall revenue? --></label>
+            <section>What is your customer mix as a percentage of your overall revenue?</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Partner Profile Name --></nameFieldLabel>
+    <recordTypes>
+        <label><!-- Application Specialist --></label>
+        <name>Application_Specialist</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Reseller --></label>
+        <name>Reseller</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- This is a sum total of the Handle in-house %, Refer to Zebra %, and Refer to Distributor % must total 100% --></errorMessage>
+        <name>Address_Tech_nonRepairsum_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must enter a value for &quot;Other Auction or 3rd Party Marketplace. --></errorMessage>
+        <name>Auction_or_3rd_Party_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Printer Sales %&quot; field is &gt; 0 the above field is required. --></errorMessage>
+        <name>Brand_Mix_OtherPrintSales_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The previous years barcode printer revenue % must total 100% --></errorMessage>
+        <name>BrcdPrntSld_PrevYrRev_sum_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Barcode Printer Revenue%&quot; is &gt; than 0 then printer brand fields are required and must total 100% --></errorMessage>
+        <name>BrcdPrntrRev_BrcdPrntrBrands_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If &quot;Barcode Printer Revenue%&quot; is greater than 0 then the sum of barcode printer brands in this section must equal 100%. --></errorMessage>
+        <name>BrcdPrntrRev_BrcdPrntrBrands_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Bardcode Printer Revenue needs to be filled out because you indicated you have Hardware revenue. --></errorMessage>
+        <name>BrcdPrntrRev_FromHardwareRev_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Hardware Revenue% is greater than 0 then the above field is required. --></errorMessage>
+        <name>BrcdPrntrRev_FromHardwareRev_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Other Customer field is greater than 0 the Describe Other revenue sources field must be filled in --></errorMessage>
+        <name>CompDivRev_Other_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The sum total of company division revenue must total 100% --></errorMessage>
+        <name>CompDiv_RevSum_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The company/division revenue % must total 100% --></errorMessage>
+        <name>Comp_DivRevPercentsum_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Revenue Sources&quot; field is &gt; 0 the above field is required. --></errorMessage>
+        <name>Comp_Div_OtherRevSources_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Customer Mix % must total 100% --></errorMessage>
+        <name>Cust_Mix_Percent_tot_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If &quot;Custom Software as % of application sw&quot; is greater than 0, then &quot;In-house dev as % of custom offering&quot; and &quot;Outsourced dev as % of custom offering&quot; are required for entry --></errorMessage>
+        <name>CustomSoftwareBreakOut_In_Out_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If Custom Software as % of Applications is&gt; 0, the above field is required. --></errorMessage>
+        <name>CustomSoftwareDescribe_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;other&quot; was chosen the above field is required. --></errorMessage>
+        <name>Describ_CloudBusMod_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other&quot; was chosen the above field is required. --></errorMessage>
+        <name>Describ_OtherTechOff_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Customer Mix %&quot; field  is &gt; 0 the above field is required. --></errorMessage>
+        <name>Describ_Other_Cust_Mix_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Printer Sales %&quot; field is &gt; than 0 the above field is required. --></errorMessage>
+        <name>Describ_Other_Printer_Activ_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Revenue Activities %&quot; is &gt; than 0 the above field is required. --></errorMessage>
+        <name>Describ_Other_Rev_Activ_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Vertical %&quot; is &gt; than 0 the above field is required. --></errorMessage>
+        <name>Describ_Other_Vert_Markets_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Third Party Professional Service%&quot; field is &gt; 0, the above field is required. --></errorMessage>
+        <name>Describ_Third_Party_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Off the Shelf (OTS) as a % of Applications sw&quot; field is &gt; 0, the above field is required. --></errorMessage>
+        <name>Detail_AppSoftOff_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This is a sum total of and In-house dev of custom offering and Outsourced dev must total 100% --></errorMessage>
+        <name>Inhouse_Outsource_devSum_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- This is a sum total of the In_house Professional Services % and Third_Party Professional Services % must total 100% --></errorMessage>
+        <name>Inhouse_ThirdPtysum_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your must enter a value when &quot;Other&quot; is selected as a picklist value --></errorMessage>
+        <name>Other_Operating_System</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your must enter a value when &quot;Other&quot; is selected as a picklist value --></errorMessage>
+        <name>Other_Platform</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Your must enter a value when &quot;Other&quot; is selected as a picklist value --></errorMessage>
+        <name>Other_Programming_Language</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Outsourced Development as% of custom offering&quot; field is &gt; 0 the above field is required. --></errorMessage>
+        <name>Outsourced_dev_custom_offerin_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;other Distributor %&quot; field is &gt; 0, the above field is required --></errorMessage>
+        <name>Percent_Purchases_Distis_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Vertical Market Business Focus must total 100% --></errorMessage>
+        <name>PrevYearRevVertPercentsum_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Vertical Markets&quot; field is &gt; 0 the above field is required. --></errorMessage>
+        <name>PrevYear_Other_Vertical_Market_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Applications %&quot; field is &gt; 0, the above field is required. --></errorMessage>
+        <name>PrevYrTotRev_AppDevSld_ZSM_ISV</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Other Applications %&quot; field is &gt; 0, the above field is required. --></errorMessage>
+        <name>PrevYrTotRev_AppDevSld_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Professional Services&quot; field contains the value &quot;Other&quot;, then the above field is required. --></errorMessage>
+        <name>ProfServ_Contains_Other_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;Professional Services Revenue %&quot; field is greater than 0, then &quot;In-house Professional Services %&quot; and &quot;Third Party Professional Services %&quot; fields are required --></errorMessage>
+        <name>ProfServ_InHouse_3rdPty_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- If the &quot;software (application-based) revenue%&quot; field is greater than 0 check the &quot;custom software as % of application sw&quot; and the &quot;off-the-shelf(OTC) sw as % of applic sw&quot; fields for a value. --></errorMessage>
+        <name>SoftwrAppBsd_CustSftwrandOTS_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You will not be able to submit your profile without checking the box to verify that the information enclosed herein is accurate. --></errorMessage>
+        <name>Submit_button</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The &quot;Custom Software as % of application sw&quot; and &quot;Off-the-shelf (OTS) sw as % of applic sw&quot; fields must equal 100% --></errorMessage>
+        <name>SumSW_CustSftwrandOTS_ZSM_Resell</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Revenue Activities % fields must total 100% --></errorMessage>
+        <name>Tot_Rev_Act_Percentsum_ZSM_Resell</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Update_Company_ID --></label>
+        <name>Update_Company_ID</name>
+    </webLinks>
+</CustomObjectTranslation>

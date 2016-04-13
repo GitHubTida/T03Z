@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="PC_InlineAccountSellableAreaExtension" standardStylesheets="false" rendered="{!if((Account.Partner_Region__c!='NA' && Account.Partner_Region__c!='EMEA' && hardwareFlag = true),true,false)}">
+     
+  <style>
+        .bPageBlock.brandSecondaryBrd.apexDefaultPageBlock.secondaryPalette{
+            background-color: transparent;
+            
+        }
+    </style>
+        <apex:form >
+        
+        <apex:outputLabel value="{!$Label.PC_Sellable_Area}" style="font-weight:600;font-size:211px*15px"></apex:outputLabel>
+        </apex:form>
+    <br/>
+    <apex:pageBlock id="thePageBlock2" >
+        <apex:pageBlockSection showHeader="false" columns="2" >
+            <apex:outputField value="{!Account.Sellable_Area_Resellers_Distributors__c}" rendered="{!hardwareFlag}"/>
+           <!-- <apex:outputField value="{!Account.Sellable_Area_Complementary_Partners__c}" rendered="{!softwareFlag}"/>-->
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

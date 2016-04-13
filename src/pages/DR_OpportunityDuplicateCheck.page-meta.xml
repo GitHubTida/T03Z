@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>35.0</apiVersion>
+    <description>This page displays the duplicate opportunities based on the details in Deal Registration</description>
+    <label>DR_OpportunityDuplicateCheck</label>
+</ApexPage>

@@ -1,0 +1,151 @@
+<apex:page standardController="Quote" extensions="PCApprovalHistoryController"  action="{!getAppHistoryList}" >
+
+<apex:includeScript value="//code.jquery.com/jquery-1.11.0.min.js"/> 
+<apex:form >
+
+<style>
+    .actionLink {
+        color:#fff;
+        text-decoration:none;
+        font-weight:bold;
+    }
+    .actionOutputLink {
+        text-decoration:none;
+    }
+
+    .extraStatusDiv_X {
+      background-color:#c0bebc;
+    }
+    .extraStatus {
+        vertical-align:top;
+        padding-left:2px;
+        padding-right:5px;
+        padding-top:2px;
+        color:black;
+        font-weight:bold;
+    }
+    .extraStatusDiv_A {
+        background-color:#a1f78d;
+    }
+    .extraStatusDiv_P {
+        background-color:#ffd74b;
+    }
+    .extraStatusDiv_R {
+        background-color:#fb8a8c;
+    }
+    .headerClass{
+        border:0px !important;
+        background-color: #f8f8f8 !important;
+        font-size: 1em !important;
+        font-weight: normal !important;
+    }
+    
+    
+    </style>
+<Script>
+    var j$ = jQuery.noConflict();
+    j$(document).ready(function() {
+        j$('#stepNodeId > a').addClass("actionLink");
+    });
+  </Script>
+
+    <apex:Pageblock title="Approval History" id="DisAllRec">
+    <apex:pageBlockTable value="{!piHistoryList}" var="n" rendered="{!piHistoryList.size==0}">
+        <apex:column headerValue="No records to display" headerClass="headerClass"/>
+    </apex:pageBlocktable>
+       <apex:pageBlockButtons location="top" >
+            <apex:commandLink styleClass="btn" rendered="{!returnId !=null}" style="text-decoration: none;" value="Recall Approval Request" action="{!recallRedirectPage}" target="_top" />
+            <apex:outputLink styleClass="btn" rendered="{!returnId ==null && status!='Pending'}" style="text-decoration: none;"  value="/apex/PCSubmitForApprovalValidation?id={!QuoteId}" target="_top"> Submit for approval  </apex:outputlink>
+        </apex:pageBlockButtons>
+        <apex:outputPanel rendered="{!piHistoryList.size!=0}">
+        <table class="list" border="0" cellpadding="0" cellspacing="0">
+           <tr class="headerRow">
+              <th class="headerRow"> Action </th>
+              <th class="headerRow"> Date </th>
+              <th class="headerRow"> Status </th>
+              <th class="headerRow"> Assigned To </th>
+              <th class="headerRow"> Actual Approver </th>
+              <th class="headerRow"> Comments </th>
+              <th class="headerRow"> Overall Status </th>
+           </tr>
+           <apex:repeat value="{!piHistoryList}" var="processInstStep" >
+           <apex:outputpanel rendered="{!processInstStep.StepStatus!= 'Reassigned'}">
+               <tr class="tertiaryPalette extraRow dataRow even first">
+               <td colspan="6" class="actionColumn;">
+                   <apex:outputpanel rendered="{!processInstStep.ProcessNodeId!= null && processInstStep.ProcessNodeId!='' && (processInstStep.StepStatus=='Approved' || processInstStep.StepStatus=='Rejected') }">
+                       <span class="actionLink">Step:&nbsp;<apex:outputfield value="{!processInstStep.ProcessNode.name}" /></span>
+                    </apex:outputpanel>
+                    <apex:outputpanel rendered="{!processInstStep.ProcessNodeId!= null && processInstStep.ProcessNodeId!='' && processInstStep.StepStatus=='Pending'}" >
+                       <span class="actionLink">Step:&nbsp;<apex:outputfield value="{!processInstStep.ProcessNode.name}" /></span><span class="actionLink">(Pending for approval)</Span>
+                    </apex:outputpanel>
+                    <apex:outputpanel rendered="{!processInstStep.StepStatus=='Started'}">
+                       <span class="actionLink">Approval Request Submitted</Span>
+                    </apex:outputpanel>
+                     <apex:outputpanel rendered="{!processInstStep.StepStatus=='Removed'}">
+                       <span class="actionLink">Approval Request Recalled</Span>
+                    </apex:outputpanel>
+                </td>
+                <td>
+                 <apex:outputpanel rendered="{!processInstStep.ProcessNodeId!= null && processInstStep.ProcessNodeId!='' && processInstStep.StepStatus=='Approved'}">
+                    <div class="extraStatusDiv_A">
+                        <img title="" class="extraStatus" alt="" src="/img/icon/approve12.gif"/>
+                        <span class="extraStatus">Approved</span>
+                    </div>
+                  </apex:outputpanel>
+                  <apex:outputpanel rendered="{!processInstStep.ProcessNodeId!= null && processInstStep.ProcessNodeId!='' && processInstStep.StepStatus=='Pending'}" >
+                    <div class="extraStatusDiv_P">
+                        <img title="" class="extraStatus" alt="" src="/img/icon/pending12.gif"/>
+                        <span class="extraStatus">Pending</span>
+                    </div>
+                  </apex:outputpanel>
+                  <apex:outputpanel rendered="{!processInstStep.StepStatus=='Removed'}">
+                      <div class="extraStatusDiv_X">
+                        <img title="" class="extraStatus" alt="" src="/img/icon/recall12.png" />
+                        <span class="extraStatus">Recalled</span>
+                      </div>
+                  </apex:outputpanel>
+                  <apex:outputpanel rendered="{!processInstStep.ProcessNodeId!= null && processInstStep.ProcessNodeId!='' && processInstStep.StepStatus=='Rejected' }">
+                      <div class="extraStatusDiv_R">
+                        <img title="" class="extraStatus" alt="" src="/img/icon/reject12.gif"/>
+                        <span class="extraStatus">Rejected</span>
+                       </div>
+                  </apex:outputpanel>
+                 </td>
+               </tr>
+           </apex:outputpanel>
+           <tr class="dataRow">
+              <td class="actioncolumn;">
+                    <apex:outputpanel rendered="{!processInstStep.ProcessNodeId!= null && processInstStep.ProcessNodeId!='' && processInstStep.StepStatus=='Pending'}" >
+                     <!-- <apex:outputLink styleclass="actionOutputLink" style="color:#015ba7;" value="/apex/PCReassignApproval?quoteId={!quoteId}" target="_top">Reassign</apex:outputLink>&nbsp;|-->
+                      <apex:outputLink styleclass="actionOutputLink" style="color:#015ba7;"  value="/p/process/ProcessInstanceWorkitemWizardStageManager?id={!processInstStep.Id}" target="_top"> Approve / Reject</apex:outputLink>
+                    </apex:outputpanel>
+              </td>
+              <td class="dataCell"><apex:outputField value="{!processInstStep.CreatedDate}"/></td>
+              <td class="dataCell"><apex:outputField value="{!processInstStep.StepStatus}"/></td>
+              <!--<td class="dataCell"><apex:outputField value="{!processInstStep.OriginalActorId}"/></td>
+              <td class="dataCell"> <apex:outputField value="{!processInstStep.ActorId}" /></td>-->
+               <td class="dataCell"><apex:Outputlink value="/{!processInstStep.OriginalActorId}" target="_top">{!processInstStep.OriginalActor.Name}</apex:outputLink></td>
+               <td class="dataCell"><apex:outputLink value="/{!processInstStep.ActorId}" target="_top">{!processInstStep.Actor.Name}</apex:outputLink></td>
+
+              <td class="dataCell"><apex:outputField value="{!processInstStep.Comments}"/></td>
+              <td class="dataCell">
+               </td>
+           </tr>
+           </apex:repeat>
+           <apex:outputPanel rendered="{!IF(totalcount>5,TRUE,FALSE)}">
+           <tr>
+               <td class="dataCell" colspan="7">
+                  <apex:outputPanel rendered="{!hideShowmore=true}">
+                       <apex:commandLink action="{!DisplayAllrecords}" value="Show {!totalcount-5} more"/> |&nbsp;&nbsp;
+                   </apex:outputPanel>
+                  <apex:OutputLink target="_top" value="/04h?rlid=RelatedProcessHistoryList&id={!quoteId}">
+                       Go to list ({!totalcount})»
+                  </apex:OutputLink>
+               </td>
+           </tr>
+           </apex:outputPanel>
+       </table>
+       </apex:outputPanel>
+ </apex:pageblock> 
+ </apex:form>
+</apex:page>

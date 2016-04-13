@@ -1,0 +1,122 @@
+<!--
+/*******************************************************************************
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author      : Shanthi Latharani
+Date        : 21-Sep-15
+Description : This VF page is used to override the New Button in the DealProduct Object,where we can add Product to DR.
+              
+Revision History 
+Ver       Date        Author             Modification 
+---       ---------   -----------        -------------------------
+V0.1      21-Sep-15   Shanthi Latharani    Initial Code
+********************************************************************************/ 
+-->
+<apex:page tabStyle="Deal_Registration__c"  Controller="DR_dealRegProductEntryController">
+
+    <apex:sectionHeader Title="{!$Label.DR_Manage_Products}"/>
+    <apex:messages style="color:red"/>
+
+    <style>
+        .search{font-size:14pt}
+        .fyi{color:red;}
+    </style>
+    
+    <script type='text/javascript'>
+    
+        var countDown = 2;
+        var started = false;
+        
+        function resetTimer(){
+        
+            countDown=2;
+            
+            if(started==false){
+                started=true;
+                runCountDown();
+            }
+        }
+        
+        function runCountDown(){
+        
+            countDown--;
+            
+            if(countDown<=0){
+                fetchResults();
+                started=false;
+            }
+            else{
+                window.setTimeout(runCountDown,1000);
+            }
+        }
+    
+    </script>
+    
+    <apex:form >
+
+        <apex:pageBlock title="{!$Label.DR_Selected_Products}" id="selected">
+        
+            <apex:pageblockTable value="{!shoppingCart}" var="s" width="100%">
+                <apex:column >
+                    <apex:commandLink value="{!$Label.DR_Remove}" action="{!removeFromShoppingCart}" reRender="selected,searchResults" immediate="true">
+                        <apex:param value="{!s.PRMProductEntry__c}" assignTo="{!toUnselect}" name="toUnselect"/>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column headerValue="{!$Label.ZEB_DR_Product_Family_Name}" value="{!s.PRMProductEntry__r.Product_Family__c}"/>
+                <apex:column headerValue="{!$Label.Zeb_DR_Deal_Product_Quantity}">
+                    <apex:inputField value="{!s.Quantity__c}" style="width:70px" required="true"/>
+                </apex:column>
+                <apex:column headerValue="{!$Label.Zeb_DR_Deal_Procuct_list_price}">
+                    <apex:inputField value="{!s.ListPrice__c}" style="width:70px" required="true"/>
+                </apex:column>
+                <apex:column headerValue="{!$Label.Zeb_DR_Deal_Procuct_Currency}" value="{!s.CurrencyISOCode}"/>
+            </apex:pageblockTable>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!onSave}" value="{!$Label.DR_Save}"/>
+                <apex:commandButton action="{!onCancel}" value="{!$Label.DR_Cancel}" immediate="true"/>
+            </apex:pageBlockButtons>
+            
+        </apex:pageBlock>
+    
+        <apex:pageBlock >
+            <apex:outputPanel styleClass="search">
+                {!$Label.DR_Search_for_Products}:&nbsp;&nbsp;&nbsp;
+            </apex:outputPanel>
+
+            <apex:actionRegion renderRegionOnly="false" immediate="true">
+                <apex:actionFunction name="fetchResults" action="{!updateAvailableList}" reRender="searchResults" status="searchStatus"/>
+                <apex:inputText value="{!searchString}" onkeydown="if(event.keyCode==13){this.blur();}else{resetTimer();}" style="width:300px"/>
+                &nbsp;&nbsp;<i><apex:actionStatus id="searchStatus" startText="{!$Label.DR_Searching}" stopText=" "/></i>
+            </apex:actionRegion>
+            
+            <br/>
+            <br/>
+            
+            <apex:outputPanel id="searchResults">
+                <apex:pageBlockTable value="{!AvailableProducts}" var="a" id="searchResults1" rendered="{!!noProduct}">
+                    <apex:column headerValue="{!$Label.ZEB_DR_Product_Family_Name}" value="{!a.Product_Family__c}" />
+                    <apex:column value="{!a.Named_Product_Family__r.Product_Family_Description__c}" />
+                    <apex:column value="{!a.Product_Category__c}" />
+                    <apex:column >
+                        <apex:commandButton value="{!$Label.DR_Select}" action="{!addToShoppingCart}" reRender="selected,searchResults,test" immediate="true">
+                            <apex:param value="{!a.Id}" assignTo="{!toSelect}" name="toSelect"/>
+                        </apex:commandButton>
+                    </apex:column>
+                </apex:pageBlockTable>
+                <apex:outputPanel styleClass="fyi" rendered="{!noProduct}">
+                    <br/>
+                    <i>{!$Label.Zeb_DR_No_records_to_display}</i>
+                    <br/>
+                </apex:outputPanel>
+                <apex:outputPanel styleClass="fyi" rendered="{!overLimit}">
+                    <br/>
+                    <i>{!$Label.DR_Over_100_Results}</i>
+                    <br/>
+                </apex:outputPanel>
+            </apex:outputPanel>
+            
+        </apex:pageBlock>
+
+    </apex:form>
+    
+</apex:page>

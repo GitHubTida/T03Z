@@ -1,0 +1,161 @@
+<!--**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Jagdish Khantwal
+    Date        : 26-Feb-15
+    Revision History
+    Ver       Date        Author           Modification
+    ---       ---------   -----------      -------------------------
+    V0.1      26-Feb-15   Jagdish Khantwal     Initial Code
+    v0.2      24-Mar-15   Ragamalika Mohanraj  Added labels
+    v0.3      04-May-15    Priyanka Singh      Fetched parent opportunity id from controller and passed it in base URL.
+    
+ ***************************************************************-->
+<apex:page extensions="ZEBOpportunityPartner" sidebar="false" standardController="OpportunityPatner__c">    
+    <script type="text/javascript"> 
+       var baseURL = '';
+       var width = '';
+       var modified = '';
+       var searchParam = '';
+    function openLookup(baseURL, width, modified, searchParam){
+        var selectedRole = document.getElementById('j_id0:myForm:renderblock:theHiddenInput').value;
+        var oppId = '{!ParentOppId}';
+        console.log( 'Value of Selected Role ' +selectedRole);
+        console.log( 'ParentOppId ' +oppId);
+        console.log('Value of Selected Row Direct ' +'{!selectedrow}');
+        console.log('**baseurl: '+baseURL);
+        console.log('width'+width);
+        console.log('**modified: '+baseURL);
+        console.log('searchparam'+searchParam);
+        var originalbaseURL = baseURL;
+        var originalwidth = width;
+        var originalmodified = modified;
+        var originalsearchParam = searchParam;
+        var lookupType = baseURL.substr(baseURL.length-3, 3);
+        if (modified == '1') 
+            baseURL = baseURL + searchParam;
+        var isCustomLookup = false;
+        <!-- Following "001" is the lookup type for Account object -->
+        if(lookupType == "001"){
+            var urlArr = baseURL.split("&");
+            var txtId = '';
+            if(urlArr.length > 2) {
+                urlArr = urlArr[1].split('=');
+                txtId = urlArr[1];
+            }
+            console.log('**txtId: '+txtId);
+            <!-- Following is the url of Custom Lookup page. -->
+            baseURL = "/apex/CustomPartnerLookup?txt=" + txtId;
+            <!-- Following is the id of apex:form control "myForm". -->
+            baseURL = baseURL + "&frm=" + escapeUTF("{!$Component.myForm}");
+            if (modified == '1') {
+                baseURL = baseURL + "&lksearch=" + searchParam+ "&role=" + selectedRole+"&Oppid="+oppId;
+                console.log('Baseurl Final:' +baseURL);
+            }
+
+            <!-- Following is the ID of inputField that is the lookup to be customized as custom lookup -->
+            if(txtId.indexOf('Account') > -1 ){
+                isCustomLookup = true;       
+            }
+        }
+        if(isCustomLookup == true){
+            openPopup(baseURL, "lookup", 1800, 600, "width=1800,height=600,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollbars=yes", true);
+        }
+        else{
+            if (modified == '1') originalbaseURL = originalbaseURL + originalsearchParam;
+                openPopup(originalbaseURL, "lookup", 2000, 480, "height=480,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollbars=yes", true);
+        }
+  }
+  
+
+  
+
+</script>
+
+  <apex:sectionHeader title="Channel Partners" subtitle="{!HTMLENCODE(ParentOpp.Name)}" description="Lookup partners with the lookup glasses below. Previously selected Partners may be given a new Role, or removed via the 'delete' link. Note that you will not be able to identify more than one Primary Channel Partner or more than one Primary Distributor. <b> You will able to identify multiple Channel Partners with other (non-Primary) Roles.</b>"/>
+    <apex:form id="myForm">
+       <!-- <apex:actionFunction name="plusOneCheck" action="{!plusOnePartner}"/>-->
+        <apex:actionFunction name="focusAccountRole" action="{!AccountGetRoles}"/>
+        <apex:pageBlock id="renderblock" >
+            <apex:messages />
+            <apex:pageMessage severity="Low" rendered="{!isDuplicateValuesFound}" id="Err" strength="3" summary="{!errorMessage}" ></apex:pageMessage>
+            <apex:pageMessage severity="High" rendered="{!isRolePartnerMapped}" id="Err1" strength="3" summary="{!errorRolePartnerMessage}" ></apex:pageMessage>
+            <apex:inputHidden id="theHiddenInput" value="{!selectedrow}" />
+             <apex:variable var="index" value="{!0}" />
+             <apex:variable var="rowNumber" value="{!0}" />
+             <apex:outputpanel rendered="{!ParentOpp.Owner_Theater__c != 'APAC'}" >
+                 <apex:pageBlockTable value="{!lstPartner}" var="partner" width="20%" id="pbt">
+                    <apex:column >
+                        <apex:outputtext value="      " rendered="{!partner.Id == null}"/>
+                        <apex:commandLink action="{!onRemove}" value="delete" reRender="myForm,theHiddenInput" rendered="{!partner.Id<>null}" style="margin:0 8px 0 0">
+                            <apex:param assignTo="{!deleteThis}" value="{!partner.Id}" name="deleteThis"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Role" width="50%">
+                        <apex:inputField value="{!partner.Role__c}">
+                            <apex:actionsupport event="onchange" action="{!checkRoleDuplicate}" reRender="myForm,theHiddenInput">
+                                 <apex:param name="srl" assignTo="{!srl}" value="{!index}"/>
+                            </apex:actionsupport>
+                        </apex:inputField>  
+                    <apex:variable var="index" value="{!index + 1}" /> 
+                    </apex:column>
+                   <!-- <apex:column headerValue="Partner" id="name" title="Custom Lookup" width="50%" >
+                        <apex:outputpanel>
+                            <apex:inputField id="Account" value="{!partner.Patner__c}"  onclick="openLookup('/_ui/common/data/LookupPage?lkfm=j_id0%3AmyForm&lknm=j_id0%3AmyForm%3Arenderblock%3Apbt%3A'+{!index - 1}+'%3AAccount&lktp=001', '{!partner.Role__c}','1', this.value)"  rendered="{!partner.Role__c<>null}" onchange="plusOneCheck();">
+                                <apex:actionsupport event="onclick" action="{!AccountGetRoles}" rerender="theHiddenInput">
+                                    <apex:param name="sr2" assignTo="{!sr2}" value="{!rowNumber}"/>
+                                </apex:actionsupport>
+                            </apex:inputField> 
+                        </apex:outputpanel>
+                         <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                     </apex:column>-->
+                    <apex:column headerValue="Partner" title="Custom Lookup" width="50%" >
+                        <apex:inputField id="Account" value="{!partner.Patner__c}" onchange="plusOneCheck();" rendered="{!partner.Role__c<>null}">
+                         <apex:actionsupport event="onfocus" action="{!AccountGetRoles}" rerender="myForm,theHiddenInput">
+                            <apex:param name="sr2" assignTo="{!sr2}" value="{!rowNumber}"/>
+                         </apex:actionsupport>
+                        </apex:inputField> 
+                        <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:outputpanel>
+            <apex:outputpanel rendered="{!ParentOpp.Owner_Theater__c == 'APAC'}" >
+                 <apex:pageBlockTable value="{!roleWrpperList}" var="partner" width="20%" id="pbtAPACID">
+                    <apex:column >
+                        <apex:outputtext value="      " rendered="{!partner.oppPartner.Id == null}"/>
+                        <apex:commandLink action="{!onRemove}" value="delete"  rendered="{!partner.oppPartner.Id<>null}" style="margin:0 8px 0 0"> <!-- reRender="myForm,theHiddenInput" -->
+                            <apex:param assignTo="{!deleteThis}" value="{!partner.oppPartner.Id}" name="deleteThis"/>
+                        </apex:commandLink>
+                    </apex:column>
+                    <apex:column headerValue="Role" width="50%">
+                        <!-- <apex:inputField value="{!partner.Role__c}">
+                            <apex:actionsupport event="onchange" action="{!checkRoleDuplicate}" reRender="myForm,theHiddenInput">
+                                 <apex:param name="srl" assignTo="{!srl}" value="{!index}"/>
+                            </apex:actionsupport>
+                        </apex:inputField>  -->
+                        <apex:selectList id="roleListId" value="{!partner.roleValue}" size="1" >
+                            <apex:selectOptions value="{!RoleForAPAC}"/>
+                            <apex:actionsupport event="onchange" action="{!checkRoleDuplicate}" reRender="myForm,theHiddenInput">
+                                 <apex:param name="srl" assignTo="{!srl}" value="{!index}"/>
+                            </apex:actionsupport>
+                        </apex:selectList>
+                    <apex:variable var="index" value="{!index + 1}" /> 
+                    </apex:column>
+                    <apex:column headerValue="Partner" title="Custom Lookup" width="50%" >
+                        <apex:inputField id="AccountId" value="{!partner.oppPartner.Patner__c}" onchange="plusOneCheck();" rendered="{!partner.roleValue<>null}" >
+                         <apex:actionsupport event="onfocus" action="{!AccountGetRoles}" rerender="myForm,theHiddenInput">
+                            <apex:param name="sr2" assignTo="{!sr2}" value="{!rowNumber}"/>
+                         </apex:actionsupport>
+                        </apex:inputField> 
+                        <apex:variable var="rowNumber" value="{!rowNumber + 1}" /> 
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:outputpanel>
+                <apex:pageBlockButtons location="bottom" >
+                <apex:commandButton value="Save" action="{!save}" reRender="myform"/>
+                 <!-- <apex:commandButton value="Save" action="{!save}"/>-->
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

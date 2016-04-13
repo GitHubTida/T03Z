@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Channel Partner</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Channel Partners</value>
+    </caseValues>
+    <fields>
+        <label><!-- AIT Channel Partner ID --></label>
+        <name>AIT_Channel_Partner_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIT --></label>
+        <name>AIT__c</name>
+    </fields>
+    <fields>
+        <label><!-- EVM Channel Partner ID --></label>
+        <name>EVM_Channel_Partner_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- EVM --></label>
+        <name>EVM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Channel Partners --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner --></label>
+        <name>Patner__c</name>
+        <relationshipLabel><!-- Channel Partners --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Alliance Partner</masterLabel>
+            <translation><!-- Alliance Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Partner</masterLabel>
+            <translation><!-- Application Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Channel Partner</masterLabel>
+            <translation><!-- Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Influence Partner</masterLabel>
+            <translation><!-- Influence Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Carrier</masterLabel>
+            <translation><!-- Primary Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Channel Partner</masterLabel>
+            <translation><!-- Primary Channel Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Channel Partner AIT</masterLabel>
+            <translation><!-- Primary Channel Partner AIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Distributor</masterLabel>
+            <translation><!-- Primary Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Distributor AIT</masterLabel>
+            <translation><!-- Primary Distributor AIT --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>OpportunityPartner Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Custom_Partner --></label>
+        <name>New_Custom_Partner</name>
+    </webLinks>
+</CustomObjectTranslation>

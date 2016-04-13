@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>BucketField_30824885</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
+        <field>BucketField_56164695</field>
+    </columns>
+    <currency>USD</currency>
+    <description>AIT total backlog case detail</description>
+    <filter>
+        <booleanFilter>((1 OR 2 OR 3) AND 4) AND 5</booleanFilter>
+        <criteriaItems>
+            <column>Case.Case_Created_by_Role__c</column>
+            <operator>equals</operator>
+            <value>Manager Technical Support (APAC),Supervisor Technical Support (China),Supervisor Technical Support (APAC),Technical Support Rep (China),Technical Support Rep (APAC)</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ALIAS</column>
+            <operator>equals</operator>
+            <value>APAC TS L2 - China Email,APAC TS L2 - China,APAC TS L2 Email,APAC TS L2,APAC Parts Queue,CN Parts Queue</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORIGIN</column>
+            <operator>equals</operator>
+            <value>TS APAC email,TS CN email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.ZEB_Case_Owner_Reference__c</column>
+            <operator>equals</operator>
+            <value>A Jin Hwang,Alan Wang,APAC TS Email,APAC TS Email - China,APAC TS L2,APAC TS L2 - China,Chin Hooi Khor,Hakim Zolkepli,Harvey Li,Hui Ling Oh,Kok Chin Ch&apos;ng,Leon Chen,Max Zhang,Ming Shing Pang,Richen Yan,Titan Tang,Wai Han Chan,Wan Yin Chin,Wei Sheng Lee,Lai Kheng Hng,Theen Yeow Choy,Bao Li Chee</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <operator>notEqual</operator>
+            <value>Closed,Solution Provided,Customer No Response</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>AIT total backlog case detail</name>
+    <params>
+        <name>units</name>
+        <value>d</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <endDate>2015-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-10-01</startDate>
+    </timeFrameFilter>
+</Report>

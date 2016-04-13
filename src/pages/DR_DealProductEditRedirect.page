@@ -1,0 +1,28 @@
+<!--
+/*******************************************************************************
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author      : Shanthi Latharani
+Date        : 23-Sep-15
+Description : This VF page is used to override the Edit Button in the DealProduct Object.
+              
+Revision History 
+Ver       Date        Author             Modification 
+---       ---------   -----------        -------------------------
+V0.1      23-Sep-15   Shanthi Latharani    Initial Code
+********************************************************************************/ 
+-->
+
+
+<apex:page standardController="DealProduct__c">
+
+<apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+<apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>
+<script>
+   $(document).ready(function () {
+       pageURLVal= '{!$CurrentPage.parameters.retURL}';
+       dealId = '{!DealProduct__c.Deal_Registration__r}';
+       var formatURL= pageURLVal.substring(1, 16);   
+       window.location.href = '{!URLFOR( $Site.Prefix)}'+ '/apex/DR_dealRegRedirect?retURL='+dealId.substring(0,15);             
+    });
+</script>
+</apex:page>

@@ -1,0 +1,13 @@
+<!--********************************************************************************
+PAGE            : ZEBRedirector
+PURPOSE         : Redirects the incoming request to another page
+CREATED BY      : Shakti Mehtani
+CREATED DATE    : 06/26/2014 (MM/DD/YYYY)
+
+--------------------------------------------------------------------------------
+MODIFICATION HISTORY
+
+MODIFICATION DATE   MODIFIED BY             REASON
+--------------------------------------------------------------------------------
+*********************************************************************************-->
+<apex:page controller="ZEBRedirectorController" action="{!handleRedirection}" />

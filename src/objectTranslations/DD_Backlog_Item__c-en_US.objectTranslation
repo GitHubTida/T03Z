@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Unavailable Products</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Unavailable Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Admin Email --></label>
+        <name>Admin_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Request --></label>
+        <name>Demo_Request__c</name>
+        <relationshipLabel><!-- Unavailable Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Material --></label>
+        <name>Material__c</name>
+        <relationshipLabel><!-- Unavailable Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Admin --></label>
+        <name>Program_Admin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+    </fields>
+    <fields>
+        <label><!-- Register an Interest --></label>
+        <name>Register_an_Interest__c</name>
+    </fields>
+    <fields>
+        <label><!-- Required By --></label>
+        <name>Required_By__c</name>
+    </fields>
+    <layouts>
+        <layout>Backlog Item Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

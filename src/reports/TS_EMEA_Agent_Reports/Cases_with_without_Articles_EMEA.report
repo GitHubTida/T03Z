@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case$CaseNumber</field>
+    </columns>
+    <columns>
+        <field>Case$Case_Organization__c</field>
+    </columns>
+    <columns>
+        <field>Case$CreatedBy</field>
+    </columns>
+    <columns>
+        <field>Case$ZEB_Product_Model_Name__c</field>
+    </columns>
+    <columns>
+        <field>Case$Type</field>
+    </columns>
+    <columns>
+        <field>Case$ZEB_Sub_Type__c</field>
+    </columns>
+    <columns>
+        <field>Case$Subject</field>
+    </columns>
+    <columns>
+        <field>Case.CaseArticles$ArticleNumber</field>
+    </columns>
+    <columns>
+        <field>Case$ZEB_Needs_Knowledge_Article__c</field>
+    </columns>
+    <columns>
+        <field>Case.CaseArticles$Title</field>
+    </columns>
+    <description>Cases with &amp; without Articles EMEA</description>
+    <filter>
+        <criteriaItems>
+            <column>Case$Case_Organization__c</column>
+            <operator>equals</operator>
+            <value>Zebra EMEA</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Cases with &amp; without Articles EMEA</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>cases_with_and_without_articles__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Case.CaseArticles$ArticleNumber</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Case$CreatedDate</dateColumn>
+        <interval>INTERVAL_LAST60</interval>
+    </timeFrameFilter>
+</Report>

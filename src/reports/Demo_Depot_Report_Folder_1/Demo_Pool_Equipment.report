@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Total_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Available_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Used__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Demand__c</field>
+    </columns>
+    <columns>
+        <field>FK_$DD_Master_Demo_Products__c.Bin__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>FK_NAME</column>
+            <operator>equals</operator>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Demo Pool Equipment(SA)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntityCustomEntity$DD_Demo__c$DD_Reserved_Product__c@DD_Reserved_Product__c.Material__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>DD_Demo__c.X1st_Audit_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

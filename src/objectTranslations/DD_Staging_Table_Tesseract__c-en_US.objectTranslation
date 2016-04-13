@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Staging Table</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Staging Tables</value>
+    </caseValues>
+    <fields>
+        <label><!-- Call_ADate --></label>
+        <name>Call_ADate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call_Num --></label>
+        <name>Call_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call_Status --></label>
+        <name>Call_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Date - Formula --></label>
+        <name>Completion_Date_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Date --></label>
+        <name>Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Contact --></label>
+        <name>Contact1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Date --></label>
+        <name>DD_Demo_Approved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Approved Date - Formula --></label>
+        <name>Job_Approved_Date_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Preapproval Part Num --></label>
+        <name>Job_Preapproval_Part_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Preapproval Prod Num --></label>
+        <name>Job_Preapproval_Prod_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Preapproval Ser Num --></label>
+        <name>Job_Preapproval_Ser_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking # --></label>
+        <name>Job_Ref4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Return Site Num --></label>
+        <name>Job_Return_Site_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job_Ship_Ref --></label>
+        <name>Job_Ship_Ref__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Source Site Num --></label>
+        <name>Job_Source_Site_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Name --></label>
+        <name>Material__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Ref # --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Postal Code --></label>
+        <name>Post_Code_ZIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received Date --></label>
+        <name>Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial number --></label>
+        <name>Serialnumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Date --></label>
+        <name>Shipped_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Telephone --></label>
+        <name>Telephone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Number --></label>
+        <name>Tracking_Number__c</name>
+    </fields>
+    <layouts>
+        <layout>Staging Table Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

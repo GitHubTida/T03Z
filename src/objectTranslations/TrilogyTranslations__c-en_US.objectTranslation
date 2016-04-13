@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Trilogy Translations</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Trilogy Translations</value>
+    </caseValues>
+    <fields>
+        <label><!-- Possible Trilogy Values --></label>
+        <name>PossibleTrilogyValues__c</name>
+    </fields>
+    <fields>
+        <label><!-- Trilogy Rating Value --></label>
+        <name>TrilogyRatingValue__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

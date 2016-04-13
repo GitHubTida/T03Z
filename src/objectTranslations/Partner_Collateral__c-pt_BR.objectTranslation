@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Parceiro Colateral</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Materiais para Parceiros</value>
+    </caseValues>
+    <fields>
+        <label>Conta</label>
+        <name>Account__c</name>
+        <relationshipLabel>Parceiros Indiretos</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Anexo</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Caso</label>
+        <name>Case__c</name>
+        <relationshipLabel>Parceiros Indiretos</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Descrição</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Tipo de documento</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>Plano de Negócio/Marketing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>Estudo de caso</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>Referencia de Cliente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Outro</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>Referencia de solução Zebra</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Nome de arquivo</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>Vista</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>Logotipo</label>
+        <name>isLogo__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Partner Collateral No --></nameFieldLabel>
+    <webLinks>
+        <label>Carregar documento</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>Carrega Logotipo / Documento</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>Carrega Logotipo</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

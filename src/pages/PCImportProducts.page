@@ -1,0 +1,48 @@
+<apex:page sidebar="false" standardStylesheets="false" standardcontroller="Opportunity" extensions="PCImportProductsController" action="{!validateUserPermission}">
+     <apex:stylesheet value="{!$Resource.PCCommonStyles}" />
+     <apex:form id="theForm">
+          <apex:sectionHeader title="{!$Label.PC_Import_Page_Title}" subtitle="{!oppName}" />
+          <apex:commandLink action="{!doCancel}" value="<< Back To Opportunity" styleClass="hypLink"/><br/>
+          <apex:pagemessages />
+          
+                  <apex:pageBlock >
+        
+          <apex:pageBlockSection title="Information" collapsible="false" columns="1">
+              <apex:outputText value="{!$Label.PC_Import_Instruction}" escape="false" />             
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="{!$Label.PC_Download_Template}" collapsible="false">
+         <b> <a href="/servlet/servlet.FileDownload?file={!Document}" target="_blank"> Click here </a> to download the template. </b> 
+        
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="{!$Label.PC_Select_File}" collapsible="false">
+                 <apex:inputFile value="{!contentFile}" filename="{!nameFile}" id="theFile"/> <br/>
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="{!$Label.PC_Click_Import}" collapsible="false">
+                 <apex:commandButton action="{!ReadFile}" value="Import Products" id="theButton" style="width:95px;"/>
+    
+          </apex:pageBlockSection>
+          <apex:pageBlockSection title="{!$Label.PC_Cancel_Import}" collapsible="false">
+                 <apex:commandButton action="{!doCancel}" value="Ok" id="theButton" style="width:95px;"/>                 
+          </apex:pageBlockSection>
+          
+          <apex:pageBlockSection title="Result of Upload" collapsible="false" rendered="{!if((errorlist.size>0 || successProductList.size>0),true,false) }">       
+              <apex:outputPanel id="successPnl" rendered="{!successProductList.Size > 0}" >
+                    <h1 class="successmsg">{!$Label.PC_Uploaded_Product_Success}</h1>
+                    <apex:pageBlockTable value="{!successList }" var="successRow" styleclass="tablemargin"> 
+                         <apex:column headerValue="Product Name" value="{!successRow.productName}" /> 
+                         <apex:column value="{!successRow.warningMsg }" style="color:red"/> 
+                    </apex:pageBlockTable> 
+                    
+              </apex:outputPanel>      
+              <apex:outputPanel id="errorPnl" rendered="{!errorlist.size > 0}" >
+                  <h1 class="errormsgcolor">{!$Label.PC_Uploaded_Error}</h1>
+                  <apex:pageBlockTable value="{!errorlist}" var="errorRow" styleclass="tablemargin"> 
+                     <apex:column headerValue="Product Name" value="{!errorRow.productName}"/> 
+                     <apex:column headerValue="Error Message" value="{!errorRow.errorMsg}"/> 
+                   </apex:pageBlockTable>
+              </apex:outputPanel>              
+         </apex:pageBlockSection>
+                
+          </apex:pageBlock>       
+   </apex:form>   
+</apex:page>

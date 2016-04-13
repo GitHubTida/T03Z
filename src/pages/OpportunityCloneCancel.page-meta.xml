@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>33.0</apiVersion>
+    <description>This page calls the method of corresponding controller to remove the records from Clone Queue when user hits the Cancel button</description>
+    <label>OpportunityCloneCancel</label>
+</ApexPage>

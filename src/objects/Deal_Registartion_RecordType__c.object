@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <fields>
+        <fullName>Error__c</fullName>
+        <label>Error</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Number__c</fullName>
+        <label>Number</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Number_for_Projected_Date__c</fullName>
+        <label>Number for Projected Date</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Queue__c</fullName>
+        <label>Queue</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RecordtypeId__c</fullName>
+        <label>RecordtypeId</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RecortType_Name__c</fullName>
+        <label>RecortType Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <label>Deal Registration RecordType</label>
+</CustomObject>

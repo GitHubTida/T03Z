@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Partner_Profile__c.Company_Name__c</field>
+    </columns>
+    <columns>
+        <field>Partner_Profile__c.Company_Name_Potential_Partner__c</field>
+    </columns>
+    <columns>
+        <field>Partner_Profile__c.Account_Number_Formula__c</field>
+    </columns>
+    <columns>
+        <field>Partner_Profile__c.Approval_Status__c</field>
+    </columns>
+    <columns>
+        <field>CUST_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>Partner_Profile__c.State_Province__c</field>
+    </columns>
+    <columns>
+        <field>Partner_Profile__c.Account_Owner__c</field>
+    </columns>
+    <columns>
+        <field>CUST_OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_DATE</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Partner_Profile__c.Company_Trading_Name__c</column>
+            <operator>notContain</operator>
+            <value>ISV 3</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>NA PF Partner Profiles Queue</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Partner_Profile__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Partner_Profile__c.Company_Name_Potential_Partner__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2014-07-01</startDate>
+    </timeFrameFilter>
+</Report>

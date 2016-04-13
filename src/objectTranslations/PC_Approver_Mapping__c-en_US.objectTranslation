@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>PC Approver Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PC Approver Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Approver 1 --></label>
+        <name>Additional_Approver_1__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Additional Approver 1) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Additional Approver 2 --></label>
+        <name>Additional_Approver_2__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Additional Approver 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Aftermarket Approver --></label>
+        <name>Aftermarket_Approver__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Aftermarket Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Aftermarket Services Approver --></label>
+        <name>Aftermarket_Services_Approver__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Aftermarket Services Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Barcode Supplies Approver --></label>
+        <name>Barcode_Supplies_Approver__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Barcode Supplies Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Card Approver --></label>
+        <name>Card_Approver__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Card Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delegated Approver --></label>
+        <name>Delegated_Approver__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Delegated Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Effective From --></label>
+        <name>Effective_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective To --></label>
+        <name>Effective_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- L1 Passthrough Manager --></label>
+        <name>L1_Passthrough_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (L1 Passthrough Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- L2 Passthrough Manager --></label>
+        <name>L2_Passthrough_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (L2 Passthrough Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- L3 Passthrough Manager --></label>
+        <name>L3_Passthrough_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (L3 Passthrough Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- L4 Passthrough Manager --></label>
+        <name>L4_Passthrough_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (L4 Passthrough Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Level 1 Manager --></label>
+        <name>Level_1_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Level 1 Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Level 2 Manager --></label>
+        <name>Level_2_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Level 2 Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Level 3 Manager --></label>
+        <name>Level_3_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Level 3 Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Level 4 Manager --></label>
+        <name>Level_4_Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Level 4 Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User Theater --></label>
+        <name>User_Theater__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- PC Approver Mapping (User) --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>PC Approver Mapping Layout</layout>
+        <sections>
+            <label><!-- Additional Approvers (Optional) --></label>
+            <section>Additional Approvers (Optional)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Delegated Section --></label>
+            <section>Delegated Section</section>
+        </sections>
+        <sections>
+            <label><!-- Level Managers --></label>
+            <section>Level Managers</section>
+        </sections>
+        <sections>
+            <label><!-- Pass through Managers --></label>
+            <section>Pass through Managers</section>
+        </sections>
+        <sections>
+            <label><!-- Product Level Approvers --></label>
+            <section>Product Level Approvers</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please provide L1 Manager. --></errorMessage>
+        <name>L1_Manager_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide L2 Manager. --></errorMessage>
+        <name>L2_Manager_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide L3 Manager. --></errorMessage>
+        <name>L3_Manager_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide L4 Manager. --></errorMessage>
+        <name>L4_Manager_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Effective From date&quot; should be lesser than &quot;Effective To Date&quot; --></errorMessage>
+        <name>PC_Effective_From_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &quot;Effective To Date&quot; should be greater than &quot;Effective From Date&quot; --></errorMessage>
+        <name>PC_Effective_To_Validation</name>
+    </validationRules>
+</CustomObjectTranslation>

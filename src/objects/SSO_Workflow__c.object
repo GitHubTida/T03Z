@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Admin_Request__c</fullName>
+        <formula>Related_Contact__r.Partner_Administrator__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Admin Request?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Application_Name__c</fullName>
+        <label>Application Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Deal Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Order Provisioning Tool</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E-PORTAL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ELICENSING</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZIPZEBRA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MICROSITES</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Owner__c</fullName>
+        <label>Application Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Access_Process_Builders1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_Source_System__c</fullName>
+        <label>Application Source System</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Type__c</fullName>
+        <formula>TEXT(Maps_to_Application__r.Approval_Type__c)</formula>
+        <label>Approval Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Approver__c</fullName>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Access_Process_Builders</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_10__c</fullName>
+        <label>Attribute 10</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_1__c</fullName>
+        <label>Attribute 1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_2__c</fullName>
+        <label>Attribute 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_3__c</fullName>
+        <label>Attribute 3</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_4__c</fullName>
+        <label>Attribute 4</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_5__c</fullName>
+        <label>Attribute 5</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_6__c</fullName>
+        <label>Attribute 6</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_7__c</fullName>
+        <label>Attribute 7</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_8__c</fullName>
+        <label>Attribute 8</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_9__c</fullName>
+        <label>Attribute 9</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <label>Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <label>First Name</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <label>Last Name</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Maps_to_Application__c</fullName>
+        <label>Maps to Application</label>
+        <referenceTo>SSO_Application_Mapping__c</referenceTo>
+        <relationshipName>User_Access_Process_Builders</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Name__c</fullName>
+        <label>Name</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>OPT_Request_Approved_by_Admin__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is created to check if the Order Provisioning Request made by Partner Contact is approved by Partner Admin.</description>
+        <label>OPT Request Approved by Admin</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Account_Number__c</fullName>
+        <formula>Related_Account__r.Partner_Program_ID_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Account Number</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Primary_Role__c</fullName>
+        <formula>TEXT(Related_Contact__r.Primary_Role__c)</formula>
+        <label>Partner Primary Role</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Region__c</fullName>
+        <formula>TEXT(Related_Account__r.Partner_Region__c)</formula>
+        <label>Partner Region</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Secondary_Role__c</fullName>
+        <label>Partner Secondary Role</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Tool_Access__c</fullName>
+        <label>Partner Tool Access</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Zone__c</fullName>
+        <label>Partner Zone</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Process_Error__c</fullName>
+        <description>This field is created to capture the errors if any.</description>
+        <label>Process Error</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Process_Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Created</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create User Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update User Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revoked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivate User Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Provisioned_Rejected_Date__c</fullName>
+        <description>This field holds the date and time when a request was either provisioned or rejected.</description>
+        <label>Provisioned/Rejected Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Provisioning_Type__c</fullName>
+        <formula>TEXT(Maps_to_Application__r.Provisioning_Type__c)</formula>
+        <label>Provisioning Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Ready_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Ready for Approval</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Related_Account__c</fullName>
+        <label>Related Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>User_Access_Process_Builders</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Contact_Admin__c</fullName>
+        <label>Related Contact Admin</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>User_Access_Process_Builders1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_Contact_Region__c</fullName>
+        <formula>TEXT(Related_Account__r.Partner_Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Related Contact Region</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Related_Contact__c</fullName>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>SSO Workflow (Related Contact)</relationshipLabel>
+        <relationshipName>User_Access_Process_Builders</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Related_User__c</fullName>
+        <label>Related User</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SSO_Workflow</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Request_Source__c</fullName>
+        <label>Request Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Default</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delegated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bulk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>API</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Create User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivate User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Grant Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Revoke Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Date_Formula__c</fullName>
+        <formula>DATEVALUE( Requested_Date__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Requested Date Formula</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Date__c</fullName>
+        <label>Requested Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>SSO_Request_Id__c</fullName>
+        <label>SSO Request Id</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_Attributes__c</fullName>
+        <formula>Related_Contact__r.Siebel_Attributes__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Siebel Attributes</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User_Type__c</fullName>
+        <label>User Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>SSO Workflow</label>
+    <listViews>
+        <fullName>APAC_PIC_Queue_SSO_Workflow</fullName>
+        <filterScope>Queue</filterScope>
+        <label>APAC PIC Queue</label>
+        <queue>APAC PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Name__c</columns>
+        <columns>Related_Account__c</columns>
+        <columns>Partner_Region__c</columns>
+        <columns>Email__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Request_Source__c</columns>
+        <columns>Process_Status__c</columns>
+        <columns>Application_Name__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>EMEA_PIC_Queue_SSO_Workflow</fullName>
+        <filterScope>Queue</filterScope>
+        <label>EMEA PIC Queue</label>
+        <queue>EMEA PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>LATAM_PIC_Queue_SSO_Workflow</fullName>
+        <filterScope>Queue</filterScope>
+        <label>LATAM PIC Queue</label>
+        <queue>LATAM PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>NA_PIC_Queue_SSO_Workflow</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA PIC Queue</label>
+        <queue>NA PIC Queue</queue>
+    </listViews>
+    <nameField>
+        <displayFormat>7{000000}</displayFormat>
+        <label>Request ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SSO Workflow</pluralLabel>
+    <recordTypes>
+        <fullName>Customer</fullName>
+        <active>true</active>
+        <label>Customer</label>
+        <picklistValues>
+            <picklist>Application_Name__c</picklist>
+            <values>
+                <fullName>E-PORTAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ELICENSING</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MICROSITES</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZIPZEBRA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revoked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Source__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Default</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delegated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Application Grant Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Revoke Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Type__c</picklist>
+            <values>
+                <fullName>Customer</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Others</fullName>
+        <active>true</active>
+        <label>Others</label>
+        <picklistValues>
+            <picklist>Application_Name__c</picklist>
+            <values>
+                <fullName>Deal Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>E-PORTAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Provisioning Tool</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revoked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Source__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Default</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delegated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Application Grant Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Revoke Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Type__c</picklist>
+            <values>
+                <fullName>Others</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Partner</fullName>
+        <active>true</active>
+        <label>Partner</label>
+        <picklistValues>
+            <picklist>Application_Name__c</picklist>
+            <values>
+                <fullName>Deal Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Order Provisioning Tool</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Process_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Created</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Approval</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Revoked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update User Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Updated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Source__c</picklist>
+            <values>
+                <fullName>API</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bulk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Default</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delegated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Request_Type__c</picklist>
+            <values>
+                <fullName>Application Grant Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Revoke Access</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Create User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deactivate User</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Update User</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>User_Type__c</picklist>
+            <values>
+                <fullName>Partner</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <searchResultsAdditionalFields>Related_Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Related_Contact__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Source__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Process_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Application_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Retrigger</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Retrigger</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)}
+
+var result = sforce.connection.query(&quot;SELECT Id, Process_Status__c FROM SSO_Workflow__c WHERE Id = &apos;{!SSO_Workflow__c.Id}&apos; &quot;);
+var recs = result.getArray(&quot;records&quot;);
+var rec = recs[0];
+
+var btnVal; 
+var btnValModified; 
+btnVal = element.value; 
+btnValModified = btnVal + &quot; : Processing... please wait.&quot;; 
+element.value = btnValModified; 
+element.title = btnValModified; 
+element.style.background=&quot;#1797C0&quot;; 
+element.style.color=&quot;#FFFFFF&quot;; 
+element.disabled=true;
+
+if(rec.Process_Status__c == &quot;Create User Failed&quot; || rec.Process_Status__c == &quot;Update User Failed&quot; || rec.Process_Status__c == &quot;Deactivate User Failed&quot;){
+rec.Process_Status__c = &quot;Pending&quot;;
+var finalResult = sforce.connection.update([rec]);
+}
+else{
+alert(&quot;You can retrigger only failed requests.&quot;);
+}
+
+window.location.reload();</url>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Campaign influence on Demand Waterfall</description>
+    <format>MultiBlock</format>
+    <name>Campaign Demand Waterfall</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>OpportunityLead</reportType>
+    <showDetails>true</showDetails>
+</Report>

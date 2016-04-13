@@ -1,0 +1,33 @@
+<apex:page tabStyle="Target_Account__c" controller="ZEBTargetAccountTabController">
+
+    <style>
+        .reportLink {text-align:right; font-size:10pt}
+        .direction {font-family:arial; font-size:13pt; color:blue; font-weight:bold; width:100%; border-bottom: 4px solid #DDDDDD; padding-bottom:3px}
+    </style>
+
+    <apex:sectionHeader title="Target Accounts" subtitle="Home"/>
+    <apex:messages style="color:red"/>
+
+    <div class="reportLink">
+        <a href="/apex/ZEBTargetAccountModList">Click to see a list of pending add, drop, or modify requests.</a>
+    </div>
+    <div class="direction">
+        Search to find and request ownership of Target Accounts:
+    </div>
+    <br/>
+    
+    <apex:form >
+        <apex:actionFunction action="{!find}" name="GOfindMatches"/>
+        <apex:inputText value="{!findString}" onkeydown="if(event.keyCode==13){this.blur();GOfindMatches();}"/>
+        <apex:commandButton value="Find" action="{!find}"/>
+    </apex:form>
+
+    <br/>
+    <br/>
+    <div class="direction">
+        Or browse Target Accounts you own to view and edit:
+    </div>
+    <br/>
+    <apex:listViews type="Target_Account__c"/>
+
+</apex:page>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***** Demo Depot Application ***********
+List of state with the state code</description>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Country__c</fullName>
+        <description>This is look up to country.</description>
+        <label>Country</label>
+        <referenceTo>DD_Country__c</referenceTo>
+        <relationshipName>DD_States</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Only active states will appear.</description>
+        <label>IsActive</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>State_code__c</fullName>
+        <description>This will store state code</description>
+        <label>State code</label>
+        <length>5</length>
+        <type>Text</type>
+    </fields>
+    <label>State</label>
+    <nameField>
+        <label>State Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>States</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

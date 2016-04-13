@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <value>Operating System / Description</value>
+        </caseValues>
+        <name>line_description_opportunitylineitem</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- AIT Line Item ID --></label>
+        <name>AIT_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- AIT PC# --></label>
+        <name>AIT_PC__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Apttus_Approval__Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval Required</masterLabel>
+            <translation><!-- Approval Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Submitted</masterLabel>
+            <translation><!-- Not Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending Approval</masterLabel>
+            <translation><!-- Pending Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Check this box when the SKU is not known or not available (Custom Application) --></help>
+        <label><!-- Base Part # --></label>
+        <name>Base_Part__c</name>
+    </fields>
+    <fields>
+        <label><!-- Discount Percentage --></label>
+        <name>Discount_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Line ID --></label>
+        <name>Document_Line_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- EVM Line Item ID --></label>
+        <name>EVM_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency of Deliveries --></label>
+        <name>Frequency_of_Deliveries__c</name>
+        <picklistValues>
+            <masterLabel>Bi-Weekly</masterLabel>
+            <translation><!-- Bi-Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Year</masterLabel>
+            <translation><!-- Half-Year --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Month</masterLabel>
+            <translation><!-- Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarter</masterLabel>
+            <translation><!-- Quarter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Week</masterLabel>
+            <translation><!-- Week --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Year</masterLabel>
+            <translation><!-- Year --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Has Quantity Scheduled --></label>
+        <name>Has_Quantity_Scheduled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Revenue Scheduled --></label>
+        <name>Has_Revenue_Scheduled__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Service Product ? --></label>
+        <name>Is_Service_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Status --></label>
+        <name>Line_Status__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Received</masterLabel>
+            <translation><!-- Received --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Siebel List Price --></label>
+        <name>List_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Product Family --></label>
+        <name>Named_Product_Family_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Product Family Line --></label>
+        <name>Named_Product_Family_Line__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Product Family --></label>
+        <name>Named_Product_Family__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Number of Deliveries --></label>
+        <name>Number_of_Deliveries__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add Products Source --></label>
+        <name>PC_Add_Products_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Error Message --></label>
+        <name>PC_Error_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part number --></label>
+        <name>Part_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary UOM --></label>
+        <name>Primary_UOM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Description --></label>
+        <name>Product_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Source --></label>
+        <name>Product_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Line Item ID --></label>
+        <name>Quote_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Attribute1 --></label>
+        <name>Revenue_Attribute1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue Attribute2 --></label>
+        <name>Revenue_Attribute2__c</name>
+    </fields>
+    <fields>
+        <label><!-- SB Catalog Product --></label>
+        <name>SB_Catalog_Product__c</name>
+        <relationshipLabel><!-- Opportunity Product --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SB Quote ID --></label>
+        <name>SB_Quote_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SKU Level Entry --></label>
+        <name>SKU_Level_Entry__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Close Date --></label>
+        <name>Service_Close_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Start Date --></label>
+        <name>Service_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This the customer requested delivery date --></help>
+        <label><!-- Siebel Ship Date --></label>
+        <name>Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel ProductId --></label>
+        <name>Siebel_ProductId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Net Price (Direct Acc Currency) --></label>
+        <name>Standard_Net_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uplift Cost --></label>
+        <name>Uplift_Cost__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Product Description Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <validationRules>
+        <errorMessage><!-- Please provide the Service Start Date &amp; Service Close Date for this Service SKU. --></errorMessage>
+        <name>DNA_SKU_Mand_Service_Start_and_End_dates</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Product Selected in End of Life&apos;d and cannot be added to the Opportunity --></errorMessage>
+        <name>DO_NOT_ACTIVATE_End_Of_Life</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity is associated to another Primary Opportunity, Sales Price must be set to 0. --></errorMessage>
+        <name>Primary_Opportunity_Sales_Price_Check</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Service Start Date OR Service Close Date should not be added for non-Service SKUs. --></errorMessage>
+        <name>SKU_Non_Service_Start_and_End_dates</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The SKU is Non Orderable and cannot be added to the Opportunity. Please select a different SKU. --></errorMessage>
+        <name>SKU_Orderable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Service Start Date should be later than the Service Close Date. --></errorMessage>
+        <name>SKU_Service_Start_and_End_dates</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Product_Family --></label>
+        <name>Add_Product_Family</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Go_To_Solution_Builder --></label>
+        <name>Go_To_Solution_Builder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Import_Product --></label>
+        <name>Import_Product</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Price_All --></label>
+        <name>Price_All</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Schedule_List --></label>
+        <name>Schedule_List</name>
+    </webLinks>
+</CustomObjectTranslation>

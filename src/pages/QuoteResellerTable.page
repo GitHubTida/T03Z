@@ -1,0 +1,36 @@
+<apex:page standardController="Quote"  extensions="QuoteResellerTableExtn">
+    <apex:form >
+    
+     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+      <script type="text/javascript">
+          var $j = jQuery.noConflict();
+          $j(document).ready(function() {
+              $j('.wrapperClass :hidden').change(function(e) {
+                  alert('Hidden input was changed');
+              });
+          });  
+      </script>
+        
+        <apex:pageblock >
+        <apex:pageBlockButtons > 
+                    <apex:commandButton value="Edit" action="{!save}" id="editButton" />
+                    <apex:commandButton value="Save" action="{!save}" id="saveButton" />
+                    <apex:commandButton value="Cancel" action="{!cancel}" id="cancelButton" />
+            </apex:pageBlockButtons>
+            <apex:pageblocksection columns="1" >
+            <apex:inlineEditSupport event="ondblClick" showOnEdit="saveButton,cancelButton" hideOnEdit="editButton" >
+                <apex:pageblocktable value="{!lstQuoteReseller}" var="QuoteReseller">
+                    <apex:column value="{!QuoteReseller.Name}" />
+                    <apex:column value="{!QuoteReseller.List_Price__c}"/>
+                    <apex:column value="{!QuoteReseller.Standard_Net_Price__c}"/>
+                    <apex:column value="{!QuoteReseller.Extra_Disc__c}" />
+                    <apex:column value="{!QuoteReseller.Discount__c}"/>
+                    <apex:column value="{!QuoteReseller.Uplifted_Cost__c}" />
+                    <apex:column value="{!QuoteReseller.Total_Discount__c}"/>
+                </apex:pageblockTable>
+                 </apex:inlineEditSupport> 
+            </apex:pageblocksection>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This Custom settings is Used to store the External URL&apos;s to avoid hard coding in the Apex classes.</description>
+    <fields>
+        <fullName>Solution_Builder__c</fullName>
+        <label>Solution Builder</label>
+        <type>Url</type>
+    </fields>
+    <label>External App URL&apos;s settings</label>
+</CustomObject>

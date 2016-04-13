@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Presales Resource Requests</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Presales Resource Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name_View_Only__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+        <relationshipLabel><!-- PSRR --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+        <relationshipLabel><!-- Presales Resource Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Owner --></label>
+        <name>Opportunity_Owner_Name__c</name>
+        <relationshipLabel><!-- Presales Resource Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Proposal Center Manager --></label>
+        <name>Proposal_Center_Manager__c</name>
+        <picklistValues>
+            <masterLabel>Marie Iorio</masterLabel>
+            <translation><!-- Marie Iorio --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proposal Due Date --></label>
+        <name>Proposal_Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposal Status --></label>
+        <name>Proposal_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Proposal Type --></label>
+        <name>Proposal_Type__c</name>
+        <picklistValues>
+            <masterLabel>Budgetary</masterLabel>
+            <translation><!-- Budgetary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFI</masterLabel>
+            <translation><!-- RFI --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sharepoint Link --></label>
+        <name>Sharepoint_Link__c</name>
+    </fields>
+    <layouts>
+        <layout>Presales Resource Requests Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_PreSales_Resource_Request --></label>
+        <name>New_PreSales_Resource_Request</name>
+    </webLinks>
+</CustomObjectTranslation>

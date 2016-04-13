@@ -1,0 +1,20 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" extensions="APTS_SendToLegalController" action="{!initSend}">
+    <apex:form >
+        <apex:pageBlock title="Send To Legal" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!send}" value="Send" Disabled="{!sendDisable}"/>
+                <apex:commandButton action="{!backToAgreement}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageMessages />
+            
+            <apex:pageBlockSection title="Requestor Comments" columns="1" >
+                <apex:outputPanel >
+                    <br/>
+                    <apex:inputTextarea value="{!RequestorComment}"  style="width: 500px; height: 100px"/>
+                </apex:outputPanel>         
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

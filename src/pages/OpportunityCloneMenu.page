@@ -1,0 +1,71 @@
+<!--
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author: Dhruthi_S@infosys.com
+Date: 06-Mar-2015
+Description: This Page is used to choose the related items which the user wants in the cloned Opportunity.
+-->
+<apex:page tabStyle="Opportunity" controller="OpportunityCloneMenuController">
+    <apex:sectionHeader title="Clone" subtitle="{!theOpp.Name}" description="Note: When you choose to clone partners, sales team will also be cloned."/>
+    <apex:messages style="color:red"/>
+    <script type='text/javascript'>
+        function inCase(){
+            allInputs = document.getElementsByTagName('input');
+            for(var a=0; a<allInputs.length; a++){
+                if(allInputs[a].id.indexOf('partnerOption',0) != -1){
+                    partChange(allInputs[a].id);
+                    break;
+                }
+            }
+        }
+    
+        function partChange(partId){
+            pCheck = document.getElementById(partId);
+            allInputs = document.getElementsByTagName('input');
+            for(var a=0; a<allInputs.length; a++){
+                if(allInputs[a].id.indexOf('salesTeamOption',0) != -1){
+                    var stCheck = allInputs[a];
+                    break;
+                }
+            }
+            if(pCheck.checked==true){
+                stCheck.checked=true;
+                stCheck.disabled=1;
+            }
+            else{
+                stCheck.disabled=0;
+            }
+        }
+        window.onload = inCase;
+    </script> 
+    <apex:form >
+        <apex:actionFunction name="salesTeamToTrue" action="{!salesTeamToTrue}" immediate="true" reRender="nothing"/>
+        <apex:outputPanel rendered="{!inactives}" style="color:red">
+            <br/>
+            You do not have the option to clone Product Families because one or more Product Families listed on the Opportunity are inactive:<br/>
+            <apex:repeat value="{!inactiveList}" var="i">
+                {!i.priceBookEntry.Product2.Name}<br/>
+            </apex:repeat>
+            <br/>
+        </apex:outputPanel>
+        <apex:pageBlock title="Clone Options" mode="edit">
+            <apex:pageBlockSection columns="1">
+               <apex:pageBlockSectionItem rendered="{!NOT(inactives)}">
+                    <apex:outputLabel >Clone Product Families</apex:outputLabel>
+                    <apex:inputCheckbox value="{!products}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Clone Partners</apex:outputLabel>
+                    <apex:inputCheckbox id="partnerOption" value="{!cloneQueue.Partners__c}" onClick="partChange(this.id)"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Clone Sales Team</apex:outputLabel>
+                    <apex:inputCheckbox id="salesTeamOption" value="{!cloneQueue.Sales_Team__c}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Clone" action="{!onSave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

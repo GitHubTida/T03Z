@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Partner Program Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partner Program Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active(?) --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- LMS Training Bundle Id --></label>
+        <name>LMS_Training_Bundle_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- LMS Training Bundle Name --></label>
+        <name>LMS_Training_Bundle__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <picklistValues>
+            <masterLabel>Zebra APAC RMB</masterLabel>
+            <translation><!-- Zebra APAC RMB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra APAC USD</masterLabel>
+            <translation><!-- Zebra APAC USD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra EMEA USD</masterLabel>
+            <translation><!-- Zebra EMEA USD --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Program --></label>
+        <name>Partner_Program__c</name>
+        <relationshipLabel><!-- Partner Program Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Subfamily --></label>
+        <name>Product_Subfamily_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Subfamily --></label>
+        <name>Product_Subfamily__c</name>
+        <relationshipLabel><!-- Partner Program Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Purchasing Method --></label>
+        <name>Purchasing_Method__c</name>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation><!-- Direct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect</masterLabel>
+            <translation><!-- Indirect --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LA</masterLabel>
+            <translation><!-- LA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Siebel ROW ID --></label>
+        <name>Siebel_ROW_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target no. of Trainings --></label>
+        <name>Target_no_of_Trainings__c</name>
+    </fields>
+    <fields>
+        <label><!-- Validity(Months) --></label>
+        <name>Validity__c</name>
+    </fields>
+    <layouts>
+        <layout>Product Subfamily</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Training Bundles</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Product Family --></label>
+        <name>Product_Family</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Training Bundle --></label>
+        <name>Training_Bundle</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

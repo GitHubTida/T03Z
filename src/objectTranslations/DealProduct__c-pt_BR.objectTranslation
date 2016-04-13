@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Produto da Oportunidade</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Produto da Oportunidade</value>
+    </caseValues>
+    <fields>
+        <label>Valor</label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label>O Registro de Oportunidade</label>
+        <name>Deal_Registration__c</name>
+        <relationshipLabel>Produto da Oportunidade</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- EVM Deal Product Id --></label>
+        <name>EVM_Deal_Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- DR Discount Percentage --></label>
+        <name>F_DR_Discount_Percentage__c</name>
+    </fields>
+    <fields>
+        <label>É Produto Serviço?</label>
+        <name>Is_Service_Product__c</name>
+    </fields>
+    <fields>
+        <help>Por favor acrescente o preço de lista para a unidade multiplicada pelo volume da unidade</help>
+        <label>Preço de Lista Estimado</label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label>Entrada de Produto em PRM</label>
+        <name>PRMProductEntry__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nome da Familia de Produtos</label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label>Quantidade</label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label>Valor mínimo</label>
+        <name>Threshold_Amount__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Produto da Oportunidade ID</nameFieldLabel>
+</CustomObjectTranslation>

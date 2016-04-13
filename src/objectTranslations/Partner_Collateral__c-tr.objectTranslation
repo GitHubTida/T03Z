@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyali</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value>İş Ortağı Materyalleri</value>
+    </caseValues>
+    <fields>
+        <label>Hesap</label>
+        <name>Account__c</name>
+        <relationshipLabel>İş Ortağı Materyalleri</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Eklenti</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Vaka</label>
+        <name>Case__c</name>
+        <relationshipLabel>İş Ortağı Materyalleri</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Tanım</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Belge Türü</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>İş / Pazarlama Planı</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>Başarı Öyküsü</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>Müşteri Referansı</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Diğer</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>Zebra Çözüm Referansı</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Dosya Adı</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>Gör</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>Logo?</label>
+        <name>isLogo__c</name>
+    </fields>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Partner Collateral No --></nameFieldLabel>
+    <webLinks>
+        <label>Belge Yükle</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>Logo / Belge Yükle</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>Logo Yükle</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

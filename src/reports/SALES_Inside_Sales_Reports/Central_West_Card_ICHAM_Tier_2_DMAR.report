@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <format>MultiBlock</format>
+    <name>Central/West/Card ICHAM Tier 2 DMAR</name>
+    <reportType>Activity</reportType>
+    <showDetails>true</showDetails>
+</Report>

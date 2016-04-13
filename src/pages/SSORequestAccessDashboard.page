@@ -1,0 +1,1323 @@
+<apex:page id="thepage" controller="SSORequestAccessDashboardController" sidebar="false">
+    
+    <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    <script type="text/javascript"> 
+     function readCell(user,isactive,seluserid,usercreated){
+       
+        document.getElementById("thepage:frmMain:pbRadio:inputAction:0").checked=false;  
+        document.getElementById("thepage:frmMain:pbRadio:inputAction:1").checked=false;  
+        document.getElementById("thepage:frmMain:pbRadio:inputAction:2").checked=false;
+        document.getElementById("thepage:frmMain:pbRadio:inputAction:3").checked=false;     
+        if(usercreated == 'true')
+            document.getElementById("tblProfileAction").style.display="block";
+        else
+            document.getElementById("tblProfileAction").style.display="none";
+        document.getElementById("tblUpdate").style.display="none";        
+        document.getElementById('lblUser').innerHTML = user;   
+        document.getElementById('lblUserid').innerHTML = seluserid;      
+    }
+    
+    function showhideSections(selected){
+    
+        document.getElementById("divSelectedUser").style.display="none";
+        document.getElementById("allUsers").style.display="none"; 
+        document.getElementById("tblDeactivateAcc1").style.display="none";
+        document.getElementById("tblGrantRevokeAcc").style.display="none";
+        document.getElementById("tbluserdet").style.display="none";        
+        document.getElementById("tblUpdate").style.display="none";  
+        document.getElementById("tblviewuserdet").style.display="none";       
+        if(selected=="{!$Label.Update_profile}"){
+            document.getElementById("divSelectedUser").style.display="block"; 
+            document.getElementById("allUsers").style.display="none"; 
+            document.getElementById("tbluserdet").style.display="block";            
+            document.getElementById("tblUpdate").style.display="block";            
+            myJavascriptFunc();
+        }
+        else if(selected=="{!$Label.Deactivate_Contact_sect}"){
+            document.getElementById("tblDeactivateAcc1").style.display="block";
+            document.getElementById("allUsers").style.display="none";             
+            document.getElementById("divSelectedUser").style.display="block";            
+            myJavascriptFunc();
+        }else if(selected=="{!$Label.Grant_Revoke_application_Access}"){
+            document.getElementById("tblGrantRevokeAcc").style.display="block";
+            document.getElementById("allUsers").style.display="none";             
+            document.getElementById("divSelectedUser").style.display="block";            
+            myJavascriptFunc();
+        }
+        else if(selected=="{!$Label.View_My_Profile}"){     
+            document.getElementById("tblviewuserdet").style.display="block";
+            document.getElementById("allUsers").style.display="none";             
+            document.getElementById("divSelectedUser").style.display="block";            
+            myJavascriptFunc();
+        }
+        else{ 
+            document.getElementById("allUsers").style.display="none"; 
+            myJavascriptFunc();
+        }
+        
+    }
+    var pRow='';
+    function highlightElem(a) {             
+        var c=a.className;
+        a.className="rowColor";
+        if(pRow==''){
+            pRow=a;
+        }
+        else{
+            if(pRow.innerHTML!=a.innerHTML) {
+                pRow.className=c;
+                pRow=a;
+            }
+        }
+    }
+    
+  
+    
+    function setActiveTab(activetab)
+    {       
+        Reset();
+    }
+    
+    function Reset(){   
+    
+        if(document.getElementById("divSelectedUser")!=null)    {
+    
+          document.getElementById("divSelectedUser").style.display="none"; }
+        if(document.getElementById("tblProfileAction")!=null){
+    
+          document.getElementById("tblProfileAction").style.display="none";
+          
+          }
+          
+            
+    }
+    
+    </script> 
+    <script>
+    function getData(actualAppName,appname,appstatus,isRevoke){
+        document.getElementById('lblAppDetails').innerHTML = appname+';'+appstatus+';'+isRevoke+';'+actualAppName; 
+        console.log('AppStatus->',document.getElementById('lblAppDetails').innerHTML); 
+        document.getElementById("tblsection1").style.display="none";
+        document.getElementById("tblCommand").style.display="none";                      
+        document.getElementById("tblDeactivateAcc1").style.display="none";          
+        if(isRevoke==false)
+        {
+            document.getElementById("tblCommand").style.display="block";
+            if(appname=='{!$Label.SSO_App_Order_Provisioning_Tool}'){
+                document.getElementById("tblsection1").style.display="block";
+            } 
+            document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').disabled=true;
+             document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.background="grey";
+        }
+        else
+        {
+            document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').disabled=false;
+            document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.color="#fff";
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.background="linear-gradient(to bottom,#8abafe 0,#5788c7 100%)";
+            document.getElementById("tblCommand").style.display="block";
+        }
+    } 
+    function calfunc(name){ 
+        if(name=='{!$Label.SSO_App_Deal_Registration}'){
+            var imgName='img_'+'{!$Label.SSO_App_Deal_Registration}';
+            if(document.getElementById(imgName).src=="{!$Label.SSO_Minus}"){
+                document.getElementById("{!$Label.SSO_App_Deal_Registration}").style.display="none";  
+                document.getElementById(imgName).src="{!$Label.SSO_Plus}";
+            }
+            else{
+                document.getElementById("{!$Label.SSO_App_Deal_Registration}").style.display="block";  
+                document.getElementById(imgName).src="{!$Label.SSO_Minus}";
+            }
+        }            
+        else if(name=='{!$Label.SSO_App_Order_Provisioning_Tool}'){
+            var imgName='img_'+'{!$Label.SSO_App_Order_Provisioning_Tool}';
+            if(document.getElementById(imgName).src=='{!$Label.SSO_Minus}'){
+                document.getElementById("{!$Label.SSO_App_Order_Provisioning_Tool}").style.display="none";  
+                document.getElementById(imgName).src="{!$Label.SSO_Plus}";
+            }
+            else{
+                document.getElementById("{!$Label.SSO_App_Order_Provisioning_Tool}").style.display="block";  
+                document.getElementById(imgName).src="{!$Label.SSO_Minus}";
+            }
+        }
+    }
+    
+    function salutationCheck(){
+        //To remove the duplicate Salutation values in German, Russian, Polish, Turkish
+        var saluationVal=document.getElementById('thepage:frmMain:PBcreateUser:newContactSalutation');
+        var preferredLang = '{!languageLocale}';
+        if('de'== preferredLang || 'ru'== preferredLang || 'pl'== preferredLang || 'tr'== preferredLang){
+            for(var i=0;i<saluationVal.length;i++){ 
+                if('Miss'== saluationVal[i].value || 'Ms.'== saluationVal[i].value ){
+                    saluationVal.remove(i)                      
+                }
+            }          
+        }
+    }
+    
+    function salutationUpdateCheck(){
+        //To remove the duplicate Salutation values in German, Russian, Polish, Turkish
+        var saluationVal=document.getElementById('thepage:frmMain:PBUpdateUser:selectContactSalutation');
+        var preferredLang = '{!languageLocale}';
+        if('de'== preferredLang || 'ru'== preferredLang || 'pl'== preferredLang || 'tr'== preferredLang){
+            for(var i=0;i<saluationVal.length;i++){ 
+                if('Miss'== saluationVal[i].value || 'Ms.'== saluationVal[i].value ){
+                    saluationVal.remove(i)                      
+                }
+            }          
+        }
+    }
+                                            
+    window.document.onload=function(){    
+        if(document.getElementById("divCreateMessage")!=null)
+            document.getElementById("divCreateMessage").style.display="none"; 
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactSecondaryRole")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactSecondaryRole").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactSecondaryRole_selected")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactSecondaryRole_selected").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactPrimaryRole")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactPrimaryRole").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactPrefLang")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactPrefLang").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactMobile")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactMobile").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactPhone")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactPhone").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactEmail")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactEmail").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactTitle")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactTitle").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactLName")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactLName").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactFName")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactFName").value='';
+        if(document.getElementById("thepage:frmMain:PBcreateUser:newContactSalutation")!=null)
+            document.getElementById("thepage:frmMain:PBcreateUser:newContactSalutation").value='';
+    };
+    </script>
+    <style>
+        .required{
+        color:grey;
+        fon:bold;
+        }
+        .pbSubheader{
+        background-color: #E5E8E8!important;
+        border-color: none !important;
+        height:8px;
+        color:black!important;
+        }
+        .rowColor {
+        background-color:#BFBFBF;       
+        }
+        .activeTab {
+        background-color:grey!important;
+        color:white !important;
+        tab-color:yellow !important;
+        background-image:none;
+        height:25px;
+        cursor:pointer;
+        }
+        .inactiveTab {
+        background-color:#EAEAEA!important;
+        color:#0063BB!important;
+        background-image:none;
+        }
+        .pagenation
+        {
+        background:transparent !important;
+        border:0px solid transparent;
+        color:#666 !important;
+        box-shadow:none !important;
+        }
+        .multiSelectPicklistTable select
+        {
+        width:180px !important;
+        }
+        .pbTitle
+        {
+        display:none;
+        }
+        .searchPreload {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        background: #555555;
+        padding: 30px;
+        width: 40px;
+        height: 40px;
+        opacity: 0.9;
+        -moz-border-radius: 20px;
+        border-radius: 20px;
+        z-index: 10;
+        }
+        .button{
+        background: linear-gradient(to bottom,#8abafe 0,#5788c7 100%) !important;
+        // text-transform: uppercase !important;//removing as per the requirement of client dt 1/14/2015
+        font-size: .9em !important;
+        box-shadow: 0px 5px 6px rgba(0,0,0,0.2) !important;
+        color: #fff !important;
+        padding: 0 10px !important;
+        border: 1px solid transparent !important;
+        border-radius: 4px !important;
+        }
+        .button:hover{
+        color: #FFCC33 !important;
+        text-shadow: 1px 1px 0 rgba(0,0,0,0.4) !important;
+        }
+        
+        .buttongrant{
+        background: linear-gradient(to bottom,#8abafe 0,#5788c7 100%) ;
+        // text-transform: uppercase !important;//removing as per the requirement of client dt 1/14/2015
+        font-size: .9em !important;
+        box-shadow: 0px 5px 6px rgba(0,0,0,0.2) !important;
+        color: #fff ;
+        padding: 0 10px !important;
+        border: 1px solid transparent !important;
+        border-radius: 4px !important;
+        }
+        .buttongrant:hover{
+        color: #FFCC33 !important;
+        text-shadow: 1px 1px 0 rgba(0,0,0,0.4) !important;
+        }
+        
+        .bPageBlock .detailList .data2Col
+        {
+        padding-left:0px !important;
+        }
+        .buttonHpe {
+        align:center;       
+        height:31px;
+        width:40px;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        background: linear-gradient(to bottom,#8abafe 0,#5788c7 100%) !important;
+        // text-transform: uppercase !important;//removing as per the requirement of client dt 1/14/2015
+        font-size: 2 em !important;
+        font-weight:bold;
+        box-shadow: 0px 5px 6px rgba(0,0,0,0.2) !important;
+        color: #fff !important;
+        padding: 5px 4px 0px 6px !important;
+        border: 1px solid transparent !important;
+        border-radius: 4px !important;      
+    }
+    
+    .buttonHpe:hover{
+        color: #FFCC33 !important;
+        text-shadow: 1px 1px 0 rgba(0,0,0,0.4) !important;
+        }
+        .bPageBlock .detailList .data2Col
+        {
+        padding-left:0px !important;
+        }
+    </style>
+    <apex:form id="frmMain" >
+        <apex:inputHidden value="{!inpValues}" id="source"  rendered="true"/>
+        <table width="100%"> 
+            <apex:actionStatus id="stat">
+                <apex:facet name="start">
+                    <div class="waitingSearchDiv" id="el_loading" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 1000; background-color: #fbfbfb;"> 
+                    </div><div class="waitingHolder" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1000; margin: 30% 50%">
+                    <img src="{!$Resource.MM_Searching}" class="searchPreload"/>
+                    <span class="waitingDescription">Loading...</span>
+                    </div>
+                    
+                </apex:facet>
+            </apex:actionStatus>  
+            
+             <apex:tabPanel width="100%"   immediate="true"   switchType="server" selectedTab="{!tabOpt}" value="{!tabOpt}"  id="theAccessTabs" tabClass="activeTab" inactiveTabClass="inactiveTab">
+                <apex:tab status="stat"     label="{!$Label.Create_New_Contact}" name="Create New Contact" id="tabCreateNewUser" 
+                      style="cursor:pointer" rerender="PBcreateUser"      ontabenter="setActiveTab('tabCreateNewUser');" rendered="{!isAdmin}">
+                    
+                   <div id="divCreateMessage" style="display:none;" >
+                    <apex:pageBlock id="PBCreateMessage">
+                         
+                            <table width="100%">
+                                
+                                <tr>
+                                    <td align="center">
+                                    <div style="width:100%; text-align:left; font-weight:bold; font-size:14px;">
+                                        <span style="width:100%; text-align:left; font-weight:bold; font-size:14px;">                                        
+                                            <apex:outputLabel id="lblOutSubmitContMessage" rendered="true" value="{!$Label.Create_Cont_Success}" />
+                                            <br/>                       
+                                            <apex:outputText id="outFinalMsg2" rendered="true" value="<br/>{!messQuery}" escape="false" />                                           
+                                        </span>
+                                    </div>
+                                    <div style="align:center; background-color:white;"> 
+                                        <br/>
+                                             <apex:commandButton styleClass="button"    action="{!URLFOR($Page.SSORequestAccessDashboard,null,['activetab'='contsubmitted','sfdc.tabName'=$Label.SSO_Req_Acc_Dashboard_Tab])}" value="{!$Label.btnOk}" style="height:31px; padding:0 27px 0 16px; color:#000; background:#fee000; font-family:proxima-nova,Arial,sans-serif; text-decoration: none; border: none; font-size: 16px; font-weight: 600; letter-spacing: 1px;" rendered="{!isPicUsr <> 'true'}">                        
+                                            </apex:commandButton>
+                                            
+                                           
+                                                
+                                    </div>
+                                    </td>
+                                </tr>
+                            </table>
+                       
+                    </apex:pageBlock>
+                      </div>
+                    <div id="tblsection2" onload="showhideMessageSection1();" style="border-style: solid; border-width:thin; border-color: #E5E8E8;background-color:white;">  
+                    <apex:pageBlock id="PBcreateUser">     
+                        <apex:pageMessages rendered="{!isMaxLimitReached}"/>                   
+                        <apex:outputpanel rendered="{!!newContactCreated}"> 
+                            
+                                <div style="font-family: Helvetica,sans-serif;font-size: 12px;color: #333333;font-weight:bold;"><t/><br/><b>{!$Label.Create_Contact_Header} </b><br/></div>               
+                                <table width="100%">
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.Salutation}"/>
+                                        </td>                            
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactSalutation" value="{!newContact.Salutation}" onclick="salutationCheck();"/>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.First_Name}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactFName" value="{!newContact.FirstName}"/>
+                                        </td>
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.Last_Name}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactLName" value="{!newContact.LastName__c}"/>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.Country}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left"> 
+                                            <apex:inputField value="{!newContact.MailingCountryCode}"  style="width:176px;" />
+                                        </td>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.SSO_Title}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left"> 
+                                            <apex:inputField id="newContactTitle" value="{!newContact.Title}"  style="width:176px;"/>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.Street}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField value="{!newContact.MailingStreet}" style="width:168px;" />
+                                        </td>
+                                        <td style="width:25%;" align="right"> 
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.Email_Address}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactEmail" value="{!newContact.Email}"/>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span> <apex:outputLabel value="{!$Label.City}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField value="{!newContact.MailingCity}"/>
+                                        </td>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.Phone}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactPhone" value="{!newContact.Phone}"/>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.State}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField value="{!newContact.MailingStateCode}"/>
+                                        </td>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.SSO_Mobile}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactMobile" value="{!newContact.MobilePhone}"/>
+                                        </td>
+                                        
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.Zip_Code}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField value="{!newContact.MailingPostalCode}"/>
+                                        </td>  
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.Preferred_Language}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactPrefLang" value="{!newContact.Preferred_Language__c}"/>
+                                        </td>   
+                                    </tr>
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <span class="required">*</span><apex:outputLabel value="{!$Label.SSO_Primary_Role}"/>
+                                        </td>
+                                        <td style="width:25%;" align="left">
+                                            <apex:inputField id="newContactPrimaryRole" value="{!newContact.Primary_Role__c}"/>
+                                        </td>
+                                      
+                                        <td style="width:50%;"  colspan="2">
+                                        
+                                        <table width="100%">
+                                        <tr>
+                                          <td style="width:50%;" align="right"> 
+                                            <apex:outputLabel value="{!$Label.Set_as_Partner_Administrator}"/>
+                                        </td>
+                                        <td style="width:50%;" align="left"><apex:inputField id="newContactSetPtnrAdm" value="{!newContact.Admin_Access_Requested__c}"/>
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                        <td>&nbsp;</td>
+                                        <td style="color:#d74c3b;" >
+                                        <apex:outputText id="lblOutSubmitMessage1" rendered="true" value="{!MaxAdmLimitMsg}" escape="false" >                                              
+                                            </apex:outputText>
+                                        </td>
+                                        </tr>
+                                        </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width:25%;" align="right">
+                                            <apex:outputLabel value="{!$Label.SSO_Secondary_Role}"/>
+                                        </td>
+                                        <td style="width:25%;" colspan="3" align="left">
+                                            <apex:inputField id="newContactSecondaryRole" value="{!newContact.Secondary_Role__c}"/>
+                                        </td>
+                                    </tr>
+                                    
+                                </table> 
+                              
+                        </apex:outputpanel> 
+                       
+                        <apex:pageBlockButtons location="bottom" rendered="{!!newContactCreated}">
+                            
+                            <table width="100%">
+                                <tr>
+                                    <td id="tblNext"  align="right" style="width:50%;">
+                                        <apex:commandButton id="btnSubmitContact" oncomplete="OnSubmitContact();"   status="stat" styleClass="button"   reRender="PBcreateUser,PBCreateMessage" action="{!SubmitContact}" rendered="true"  value="{!$Label.Create}" >
+                                        </apex:commandButton>   
+                                            <script>
+                                                function OnSubmitContact()
+                                                {
+                                                    var op='{!displaySubContMessage}';                                                          
+                                                    if(op=='block'){                                                    
+                                                        document.getElementById("tblsection2").style.display="none";                                                        
+                                                        document.getElementById("divCreateMessage").style.display="block";
+                                                    }
+                                                    else
+                                                    {                                                       
+                                                        document.getElementById("tblsection2").style.display="block";                                                       
+                                                        document.getElementById("divCreateMessage").style.display="none";
+                                                    }
+                                                }
+                                            </script>
+                                        
+                                    </td>
+                                    <td style="width:50%;" align="left">
+                                        <apex:commandButton id="btnCancel2"   status="stat" styleClass="button" reRender="NONE" action="{!clearAll}" rendered="true" value="{!$Label.Cancel}"/>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                        </apex:pageBlockButtons> 
+                        
+                    </apex:pageBlock>
+                      </div> 
+                </apex:tab>
+                
+              
+              <apex:tab status="stat"  reRender="PBcreateUser" label="{!$Label.SSO_Manage_Contacts}" style="cursor:pointer" ontabenter="setActiveTab('tabMyAssociates');" name="My Associates" id="tabMyAssociates" rendered="{!isAdmin}">
+                    <div id="allUsers" style="display:{!displaycancel};">                        
+                        <apex:pageBlock id="pbModifyUser" >
+                            <apex:outputpanel id="opModifyUser" layout="block">                            
+                                <apex:actionstatus id="st1">
+                                    <apex:facet name="start"><apex:image value="/img/loading32.gif" />
+                                    </apex:facet>
+                                </apex:actionstatus>
+                                <h1>
+                                    <span style="color:#9E0404;">
+                                        <i><b>{!$Label.Company_Contacts_Description}</b></i>
+                                    </span>
+                                </h1>                                  
+                                <apex:pageblocksection id="section1" showheader="true" collapsible="true" columns="1" rendered="{!submitView}">             
+                                    <apex:pageBlockTable value="{!lstContacts}" var="a" id="pbRegTable" onRowClick="highlightElem(this)">
+                                        <apex:column value="{!a.name}" onclick="readCell('{!JSENCODE(a.name)}','{!a.Contact_Status__c }','{!a.id}','{!a.User_Created__c}')" style="{!if(a.User_Created__c,'','background-color:#D8D8D8;')}"/>
+                                        <!--apex:column value="{!a.Contact_Status__c}" rendered="false" onclick="readCell('{!a.name}','{!a.Contact_Status__c}','{!a.id}')"/-->
+                                        <apex:column value="{!a.email}" onclick="readCell('{!JSENCODE(a.name)}','{!a.Contact_Status__c}','{!a.id}','{!a.User_Created__c}')" style="{!if(a.User_Created__c,'','background-color:#D8D8D8;')}"/>
+                                        
+                                        <apex:column onclick="readCell('{!JSENCODE(a.name)}','{!a.Contact_Status__c}','{!a.id}','{!a.User_Created__c}')" headerValue="{!$Label.Tool_Access}" value="{!a.Tool_Access__c}" style="{!if(a.User_Created__c,'','background-color:#D8D8D8;')}"/>
+                                        <apex:column onclick="readCell('{!JSENCODE(a.name)}','{!a.Contact_Status__c}','{!a.id}','{!a.User_Created__c}')" headerValue="{!$Label.Primary_Role_Header}" value="{!a.Primary_Role__c}" style="{!if(a.User_Created__c,'','background-color:#D8D8D8;')}"/>
+                                        <apex:column onclick="readCell('{!JSENCODE(a.name)}','{!a.Contact_Status__c}','{!a.id}','{!a.User_Created__c}')" headerValue="{!$Label.Is_Partner_Administrator}" value="{!a.Partner_Administrator__c}" style="{!if(a.User_Created__c,'','background-color:#D8D8D8;')}"/>
+                                        <apex:column onclick="readCell('{!JSENCODE(a.name)}','{!a.Contact_Status__c}','{!a.id}','{!a.User_Created__c}')" style="{!if(a.User_Created__c,'','background-color:#D8D8D8;')}">
+                                            <apex:facet name="header">{!$Label.SSO_Status}</apex:facet>
+                                            <apex:outputText value="{!$Label.SSO_Pending}" rendered="{!!a.User_Created__c && !a.User_Already_Exists__c}"></apex:outputText>
+                                            <apex:outputText value="{!$Label.User_Already_Exists}" rendered="{!a.User_Already_Exists__c}"></apex:outputText>
+                                        </apex:column>
+                                    </apex:pageBlockTable>  
+                                </apex:pageblockSection>
+                                
+                            </apex:outputpanel>  
+                            <apex:outputpanel id="myButtons" >
+                                <div align="right" style="display:{!IF(NOT(ISNULL(lstContacts)),'block','none')}; border-style: solid; border-width:thick; border-color: #E5E8E8; background-color:white;">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <apex:commandButton action="{!First}" styleClass="pagenation" disabled="{!IF(pageNumber==1,true,false)}"
+                                                rerender="pbModifyUser,block" value="{!$Label.SSO_First}" status="stat"></apex:commandButton>
+                                            </td>
+                                            <td>
+                                                <apex:commandButton action="{!Previous}" styleClass="pagenation" disabled="{!IF(pageNumber==1,true,false)}"
+                                                rerender="pbModifyUser,block" value="{!$Label.App_Previous}" status="stat"></apex:commandButton> 
+                                            </td>
+                                            <td>
+                                                <b>
+                                                    <apex:outputText value="{!$Label.SSO_Page}" escape="true">
+                                                        <apex:param value="{!pageNumber}"/>
+                                                        <apex:param value="{!totalPageNumber}"/>
+                                                    </apex:outputText>
+                                                </b>
+                                            </td>
+                                            <td>
+                                                <apex:commandButton action="{!Next}" styleClass="pagenation" disabled="{!IF(pageNumber==totalPageNumber,true,false)}"
+                                                rerender="pbModifyUser,block"  value="{!$Label.App_Next}" status="stat">
+                                                </apex:commandButton>
+                                            </td>
+                                            <td>
+                                                <apex:commandButton action="{!Last}" styleClass="pagenation" disabled="{!IF(pageNumber==totalPageNumber,true,false)}"
+                                                rerender="pbModifyUser,block" value="{!$Label.SSO_Last}" status="stat"></apex:commandButton>
+                                            </td>
+                                            <td>
+                                                <apex:actionFunction action="{!setpageNumber}" name="serchPageNumber" rerender="pbModifyUser"/>
+                                            </td>
+                                        </tr>
+                                    </table>                                                                                       
+                                </div>
+                            </apex:outputpanel>    
+                        </apex:pageBlock>                       
+                    </div>    
+                    
+                    <div id="divSelectedUser" style="display:none;">
+                        <apex:pageBlock id="bbEditUser" >                       
+                            <apex:outputpanel id="selectedUser" rendered="{!submitView1}">                            
+                                <apex:pageblocksection id="section2" title="Selected User" showheader="false" collapsible="true" columns="1" rendered="{!submitView1}">
+                                    <apex:pageBlockTable value="{!lstSelectedContact}" var="a" id="pbRegTable">
+                                        <apex:column value="{!a.name}" />
+                                        <!--apex:column value="{!a.Contact_Status__c}" /-->
+                                        <apex:column value="{!a.email}" />
+                                        <apex:column headerValue="{!$Label.SSO_Address}" >
+                                            {!a.mailingstreet}, {!a.mailingcity}, {!a.mailingstate}, {!a.mailingpostalcode}, {!a.mailingcountry}
+                                        </apex:column>
+                                    </apex:pageBlockTable>    
+                                </apex:pageblockSection>
+                            </apex:outputpanel>                          
+                        </apex:pageBlock>                        
+                    </div>  
+                    
+                <div id="tblProfileAction" style="display:none;">
+                        <apex:pageBlock id="pbRadio" >
+                            
+                            <apex:outputpanel id="opRadio" rendered="{!submitView1}">
+                                <lable id="lblactivetab"  style="display:none;"></lable>  
+                                <lable id="lblUserid" style="display:none;"></lable>  
+                                <lable id="lblAppDetails" style="display:none;" ></lable>
+                                <apex:selectRadio id="inputAction" value="{!selectOption}" layout="pageDirection" onclick="showhideSections(this.value);"  rendered="{!submitView1}">
+                                    {!$Label.Your_Selection}: <lable id="lblUser" style="font-weight: bold;"></lable>   
+                                     <apex:selectOption itemValue="{!$Label.View_My_Profile}" itemlabel="{!$Label.View_My_Profile}"/>
+                                    <apex:selectOption itemValue="{!$Label.Update_profile}" itemlabel="{!$Label.Update_profile}" />
+                                    <apex:selectOption itemValue="{!$Label.Deactivate_Contact_sect}" itemlabel="{!$Label.Deactivate_Contact_sect}"/>
+                                    <apex:selectOption itemValue="{!$Label.Grant_Revoke_application_Access}" itemlabel="{!$Label.Grant_Revoke_application_Access}"/>
+                                </apex:selectRadio>
+                                <apex:actionFunction name="CallApexMethod" action="{!moveNext}" reRender="bbEditUser,section1,nimsi,PBUViewUser,PBUpdateUser,block1" status="stat">
+                                    <apex:param name="user" value="" />
+                                    <apex:param name="activetab" value="" />
+                                    <apex:param name="userId" value="" />
+                                    <apex:param name="appDetails" value=""  />
+                                </apex:actionFunction>
+                                <script>
+                                function myJavascriptFunc(){                
+                                    var user=document.getElementById('lblUser').innerHTML;
+                                    var activetab=document.getElementById('lblactivetab').innerHTML;
+                                    var userId=document.getElementById('lblUserid').innerHTML;
+                                    var AppDetails=document.getElementById('lblAppDetails').innerHTML;
+                                    CallApexMethod(user,activetab,userId,AppDetails) ;
+                                }
+                                </script>
+                            </apex:outputpanel>
+                            
+                        </apex:pageBlock>   
+                    </div>
+                    
+                    <apex:pageBlock id="PBmessage">
+                        <div id="divMessage" style="display:{!display};">
+                            <table width="100%">
+                                
+                                <tr>
+                                    <td align="center">
+                                    <div style="width:100%; text-align:left; font-weight:bold; font-size:14px;">
+                                        <span style="width:100%; text-align:left; font-weight:bold; font-size:14px;">
+                                            <apex:outputText id="lblOutSubmitMessage" rendered="true" value="{!outmessage}" escape="false" >
+                                                <apex:param value="{!applicationName}"/>
+                                                <apex:param value="{!lstSelectedContact[0].Name}"/>
+                                            </apex:outputText>
+                                            <br/>                       
+                                            <apex:outputText id="outFinalMsg1" rendered="true" value="<br/>{!messQuery}" escape="false" />                                           
+                                        </span>
+                                    </div>
+                                    <div style="display:{!display}; align:center; background-color:white;"> 
+                                        <br/>
+                                            <apex:commandButton styleClass="button" action="{!URLFOR($Page.SSORequestAccessDashboard,null,['activetab'='contsubmitted','sfdc.tabName'=$Label.SSO_Req_Acc_Dashboard_Tab])}" value="{!$Label.btnOk}" style="height:31px; padding:0 27px 0 16px; color:#000; background:#fee000; font-family:proxima-nova,Arial,sans-serif; text-decoration: none; border: none; font-size: 16px; font-weight: 600; letter-spacing: 1px;" rendered="{!isPicUsr <> 'true'}">                        
+                                            </apex:commandButton>
+                                            <apex:commandButton styleClass="button" action="{!URLFOR($Page.SSORequestAccessDashboard,null,['id'=conDetails.Id,'isgrantrevoke'='true','isPicUsr'='true'])}" value="{!$Label.btnOk}" style="height:31px; padding:0 27px 0 16px; color:#000; background:#fee000; font-family:proxima-nova,Arial,sans-serif; text-decoration: none; border: none; font-size: 16px; font-weight: 600; letter-spacing: 1px;" rendered="{!isPicUsr == 'true'}">
+                                            </apex:commandButton>
+                                    </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div> 
+                    </apex:pageBlock>
+                    
+                    
+                    <div id="tblviewuserdet"  style="display:none;"> 
+                        <apex:pageBlock id="PBUViewUser">  
+                              <div style="font-family: Helvetica,sans-serif;font-size: 12px;color: #333333;font-weight:bold;">
+                                <br/><b>{!$Label.View_Contact}</b><br/>
+                            </div>
+                            <table width="100%" style="color:#666666;">                              
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Salutation}"/> </span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Salutation}"/>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.First_Name}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.FirstName}"/>
+                                    </td>                                
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Last_Name}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.LastName__c}"/>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Country}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.MailingCountryCode}" style="width:168px;"/>
+                                    </td>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.SSO_Title}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Title}" style="width:168px;"/>
+                                    </td>                                
+                                    
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Street}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.MailingStreet}" style="width:168px;"/>
+                                    </td>
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Email_Address}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Email}"/>
+                                    </td> 
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.City}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.MailingCity}"/>
+                                    </td>    
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Phone}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Phone}"/>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.State}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.MailingStateCode}"/>
+                                    </td>                           
+                                    <td style="width:25%;" align="right">
+                                       <span class="labelCol"> <apex:outputLabel value="{!$Label.SSO_Mobile}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.MobilePhone}"/>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                 <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Zip_Code}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.MailingPostalCode}"/>
+                                    </td>                                
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Preferred_Language}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Preferred_Language__c}"/>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.SSO_Primary_Role}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Primary_Role__c}"/>
+                                    </td>
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.Set_as_Partner_Administrator}"/></span>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Admin_Access_Requested__c}"/>
+                                    </td>
+                                </tr>
+                                <tr><td colspan="2" style="height:2px;">&nbsp;</td></tr>
+                                <tr>                                
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="labelCol"><apex:outputLabel value="{!$Label.SSO_Secondary_Role}"/></span>
+                                    </td>
+                                    <td style="width:25%;"  align="left">
+                                        <apex:outputField value="{!selectedContactUpdate.Secondary_Role__c}" />                                                                                     
+                                    </td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </table>
+                              <apex:pageBlockButtons location="bottom" >                            
+                                <table width="100%">
+                                    <tr>                                 
+                                        <td style="width:100%;" align="center">
+                                            <apex:commandButton styleClass="button" action="{!OkViewProfile}" id="btnCancelUpdate" onclick="clearAll();"  status="stat" rendered="true" reRender="NONE" value="{!$Label.btnOk}"/>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>                                                
+                            </apex:pageBlockButtons>
+                        </apex:pageBlock>   
+                    </div>
+                    
+                    <div id="tbluserdet"  style="display:none;"> 
+                        <apex:pageBlock id="PBUpdateUser">                           
+                            
+                            <div style="font-family: Helvetica,sans-serif;font-size: 12px;color: #333333;font-weight:bold;">
+                                <br/><b>{!$Label.Update_Contact}</b><br/>
+                            </div>
+                            <table width="100%" style="color:#666666;">                              
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <apex:outputLabel value="{!$Label.Salutation}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField id="selectContactSalutation" value="{!selectedContactUpdate.Salutation}" onclick="salutationUpdateCheck();"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="required">*</span><apex:outputLabel value="{!$Label.First_Name}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.FirstName}"/>
+                                    </td>                                
+                                    <td style="width:25%;" align="right">
+                                        <span class="required">*</span><apex:outputLabel value="{!$Label.Last_Name}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.LastName__c}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="required">*</span><apex:outputLabel value="{!$Label.Country}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.MailingCountryCode}" style="width:168px;"/>
+                                    </td>
+                                    <td style="width:25%;" align="right">
+                                        <apex:outputLabel value="{!$Label.SSO_Title}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.Title}" style="width:168px;"/>
+                                    </td>                                
+                                    
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="required">*</span><apex:outputLabel value="{!$Label.Street}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.MailingStreet}" style="width:168px;"/>
+                                    </td>
+                                    <td style="width:25%;" align="right"> 
+                                        <apex:outputLabel value="{!$Label.Email_Address}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:outputLabel value="{!selectedContactUpdate.Email}"/>
+                                    </td> 
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="required">*</span><apex:outputLabel value="{!$Label.City}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.MailingCity}"/>
+                                    </td>    
+                                    <td style="width:25%;" align="right">
+                                        <apex:outputLabel value="{!$Label.Phone}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.Phone}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <apex:outputLabel value="{!$Label.State}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.MailingStateCode}"/>
+                                    </td>                           
+                                    <td style="width:25%;" align="right">
+                                        <apex:outputLabel value="{!$Label.SSO_Mobile}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.MobilePhone}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <apex:outputLabel value="{!$Label.Zip_Code}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.MailingPostalCode}"/>
+                                    </td>                                
+                                    <td style="width:25%;" align="right"> 
+                                        <span class="required">*</span> <apex:outputLabel value="{!$Label.Preferred_Language}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.Preferred_Language__c}"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="width:25%;" align="right">
+                                        <span class="required">*</span> <apex:outputLabel value="{!$Label.SSO_Primary_Role}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.Primary_Role__c}"/>
+                                    </td>
+                                    <td style="width:25%;" align="right"> 
+                                        <apex:outputLabel value="{!$Label.Set_as_Partner_Administrator}"/>
+                                    </td>
+                                    <td style="width:25%;" align="left">
+                                        <apex:inputField value="{!selectedContactUpdate.Admin_Access_Requested__c}"/>
+                                    </td>
+                                </tr>
+                                <tr>                                
+                                    <td style="width:25%;" align="right"> 
+                                        <apex:outputLabel value="{!$Label.SSO_Secondary_Role}"/>
+                                    </td>
+                                    <td style="width:25%;"  align="left" colspan="3">
+                                        <apex:inputField value="{!selectedContactUpdate.Secondary_Role__c}" />
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                            
+                            <apex:pageBlockButtons location="bottom" >                            
+                                <table width="100%">
+                                    <tr>
+                                        <td id="tblUpdate"  style="width:50%;" align="right">
+                                            <apex:commandButton id="btnUpdate" oncomplete="oncompleteActions();" onclick="JSUpdateContact();" styleClass="button" status="stat" action="{!UpdateContact}"   
+                                                                reRender="PBUpdateUser,PBmessage,pbModifyUser,block1,section1,pbRadio,bbEditUser,section1RTA,psMessage" rendered="true" value="{!$Label.Update}" >
+                                            </apex:commandButton>     
+                                            <apex:actionFunction name="CallUpdateContact" action="{!UpdateContact}" reRender="PBUpdateUser,PBmessage,pbModifyUser,block1,section1,pbRadio,bbEditUser,section1RTA,psMessage" >                                                                        
+                                            </apex:actionFunction>
+                                            <script>
+                                            function oncompleteActions()
+                                            {
+                                                var op='{!display}';                                        
+                                                if(op=='block'){
+                                                    document.getElementById("divSelectedUser").style.display="none";
+                                                    document.getElementById("tbluserdet").style.display="none"; 
+                                                    document.getElementById("tblProfileAction").style.display="none";
+                                                    document.getElementById("divMessage").style.display="block";
+                                                }
+                                                else
+                                                {
+                                                    document.getElementById("divSelectedUser").style.display="block";
+                                                    document.getElementById("tbluserdet").style.display="block"; 
+                                                    document.getElementById("tblProfileAction").style.display="block";
+                                                    document.getElementById("divMessage").style.display="none";
+                                                }
+                                            }
+                                            
+                                            function clearAll()
+                                            {
+                                                document.getElementById("divSelectedUser").style.display="none";
+                                                document.getElementById("tbluserdet").style.display="none"; 
+                                                document.getElementById("tblviewuserdet").style.display="none"; 
+                                                document.getElementById("tblProfileAction").style.display="none";
+                                                document.getElementById("divMessage").style.display="none";
+                                                document.getElementById("allUsers").style.display="block";
+                                                document.getElementById("tblGrantRevokeAcc").style.display="none";
+                                                document.getElementById("tblDeactivateAcc1").style.display="none";  
+                                                if(document.getElementById("divCreateMessage")!=null)
+                                                    document.getElementById("divCreateMessage").style.display="none";                                               
+                                            }
+                                            function JSUpdateContact(){ 
+                                                
+                                                // document.getElementById("divSelectedUser").style.display="none";
+                                                // document.getElementById("tblProfileAction").style.display="none";
+                                                // document.getElementById("divCancelGrntRevoke").style.display="none";
+                                                //document.getElementById("divUpdate").style.display="block";   
+                                                //  document.getElementById("tbluserdet").style.display="none"; 
+                                                
+                                                //  document.getElementById("divMessage").style.display="block";  
+                                                
+                                                //CallUpdateContact() ;
+                                            }
+                                            </script>                                                               
+                                        </td>
+                                        <td style="width:50%;" align="left">
+                                            <apex:commandButton styleClass="button" id="btnCancelUpdate" onclick="clearAll();"   status="stat" rendered="true" reRender="NONE" value="{!$Label.Cancel}"/>
+                                        </td>
+                                    </tr>
+                                    
+                                </table>                                                
+                            </apex:pageBlockButtons>
+                            
+                        </apex:pageBlock>   
+                    </div>
+                    <div id="tblDeactivateAcc1" style="display:none;border-style: solid; border-width:thick; border-color: #E5E8E8; background-color:white;">
+                        <apex:pageBlock id="PBRevokeUser">  
+                            <apex:pageBlockButtons location="bottom" >                                 
+                                <table   width="100%">
+                                    <tr>
+                                        <td  style="width:50%;" align="right">
+                                            <apex:commandButton id="btnDeactivate" styleClass="button" status="stat"  onclick="JSDeactivateContact();" 
+                                                                reRender="PBmessage,block1,section1,pbRadio,bbEditUser,section1RTA,psMessage" rendered="true" value="{!$Label.Deactivate}">
+                                            </apex:commandButton>  
+                                            <apex:actionFunction name="CallDeactivateContact" action="{!DeactivateContact}" reRender="PBmessage,block1,section1,pbRadio,bbEditUser,section1RTA,psMessage" >                                                                        
+                                            </apex:actionFunction>
+                                            <script>
+                                            function JSDeactivateContact(){                                                                                      
+                                                document.getElementById("divSelectedUser").style.display="none";
+                                                document.getElementById("tblProfileAction").style.display="none";
+                                                document.getElementById("divCancelGrntRevoke").style.display="none";
+                                                // document.getElementById("divUpdate").style.display="block";                                     
+                                                document.getElementById("thepage:frmMain:PBRevokeUser").style.display="none";
+                                                document.getElementById("divMessage").style.display="block";                                    
+                                                
+                                                CallDeactivateContact() ;
+                                            }
+                                            </script>                                           
+                                        </td>
+                                        <td style="width:50%;" align="left">
+                                            <apex:commandButton styleClass="button" id="btnCancelDeactivate" onclick="clearAll();"   status="stat" rendered="true" reRender="NONE" value="{!$Label.Cancel}"/>
+                                        </td>
+                                    </tr>
+                                </table>                                                
+                            </apex:pageBlockButtons>
+                            
+                        </apex:pageBlock>                       
+                    </div>
+                    
+                    
+                    <div id="tblGrantRevokeAcc" style="display:none;border-style: solid; border-width:thick; border-color: #E5E8E8; background-color:white;">
+                        <apex:pageBlock id="block1" rendered="{!submitView}">
+                         <lable id="lblIsError"  style="display:none;"></lable> 
+                            <apex:pageBlockButtons location="bottom" id="pbbGrantRevoke">         
+                                <table width="100%">
+                                    <tr>
+                                        <td align="right"  style="width:50%;">
+                                            <div id="tblCommand" style="display:none;" align="right"> 
+                                                <apex:commandButton id="btnGrantRevoke" status="stat" styleClass="buttongrant" value="{!$Label.Submit_Contact}" 
+                                                 oncomplete="processComplete();"   onclick="JSGrantRevoke();"  rendered="true" reRender="PBmessage,pbModifyUser,block1,section1,pbRadio,bbEditUser,section1RTA,psMessage"/>
+                                                <apex:actionFunction name="CallApexMethod1" action="{!submitRequest}" reRender="PBmessage,pbModifyUser,block1,section1,pbRadio,bbEditUser,section1RTA,psMessage" >
+                                                    <apex:param name="userId1" value="" />
+                                                    <apex:param name="appDetails1" value=""  />
+                                                </apex:actionFunction>
+                                                <script>
+                                               
+                                                
+                                                 function JSGrantRevoke()
+                                                {                
+                                                    var userId=document.getElementById('lblUserid').innerHTML;
+                                                    var AppDetails=document.getElementById('lblAppDetails').innerHTML;
+                                                    var arrapDet=AppDetails.split(';');
+                                                    var siebelAttrCnt=0;
+                                                    var varsiebelAttrCnt='{!siebelAttrCnt}';                                                    
+                                                    if(document.getElementById('{!$Component.chkAttr2}').checked)
+                                                        siebelAttrCnt=siebelAttrCnt+1;
+                                                    if(document.getElementById('{!$Component.chkAttr3}').checked)
+                                                        siebelAttrCnt=siebelAttrCnt+1;
+                                                    if(document.getElementById('{!$Component.chkAttr4}').checked)
+                                                        siebelAttrCnt=siebelAttrCnt+1;
+                                                    if(document.getElementById('{!$Component.chkAttr5}').checked)
+                                                        siebelAttrCnt=siebelAttrCnt+1;
+                                                    if(document.getElementById('{!$Component.chkAttr6}').checked)
+                                                        siebelAttrCnt=siebelAttrCnt+1;
+                                                    if(document.getElementById('{!$Component.chkAttr7}').checked)
+                                                        siebelAttrCnt=siebelAttrCnt+1;                                                         
+                                                    if((arrapDet[3]=='Order Provisioning Tool') && (arrapDet[2]=='false'))
+                                                    {   
+                                                        if(siebelAttrCnt>varsiebelAttrCnt){                                                         
+                                                            document.getElementById("divSelectedUser").style.display="none";
+                                                            document.getElementById("tblProfileAction").style.display="none";
+                                                            document.getElementById("divCancelGrntRevoke").style.display="none";  
+                                                            document.getElementById("divMessage").style.display="block"; 
+                                                            document.getElementById("tblGrantRevokeAcc").style.display="none";                                                          
+                                                            CallApexMethod1(userId,AppDetails) ;
+                                                        }
+                                                        else
+                                                        {
+                                                             document.getElementById("tblsection1").style.display="block";
+                                                             document.getElementById("lblIsError").value='true';
+                                                        }
+                                                    }                                                   
+                                                   else
+                                                   {    
+                                                        document.getElementById("divSelectedUser").style.display="none";
+                                                        document.getElementById("tblProfileAction").style.display="none";
+                                                        document.getElementById("divCancelGrntRevoke").style.display="none";  
+                                                        document.getElementById("divMessage").style.display="block";  
+                                                        document.getElementById("tblGrantRevokeAcc").style.display="none";                                                      
+                                                        CallApexMethod1(userId,AppDetails) ;
+                                                   }
+                                                }
+                                                
+                                                function processComplete()
+                                                {
+                                                    if(document.getElementById("lblIsError").value=='true')
+                                                    {
+                                                        document.getElementById("tblsection1").style.display="block";
+                                                    }
+                                                    else{
+                                                        document.getElementById("tblsection1").style.display="none";
+                                                        document.getElementById("tblGrantRevokeAcc").style.display="none";                                                  
+                                                    }
+                                                }
+                                                </script>
+                                            </div>
+                                        </td>
+                                        <td align="left" style="width:50%;">
+                                            <div align="left" id="divCancelGrntRevoke" style="display:{!displaycancel};">
+                                                <apex:commandButton id="btnCancelGrantRevoke" styleClass="button" status="stat" value="{!$Label.Cancel}"    onclick="clearAll();" rendered="true" reRender="NONE"  />
+                                            </div>
+                                        </td>                
+                                    </tr>
+                                    
+                                    
+                                </table>
+                            </apex:pageBlockButtons>
+                            
+                            <apex:pageBlockSection id="psMessage" showheader="false" collapsible="true" columns="1">            
+                                
+                            </apex:pageBlockSection>
+                            <apex:pageblocksection id="section1RTA" title="Applications" showheader="false" collapsible="true" columns="1" rendered="{!submitView1}">
+                                
+                                <apex:pageBlockTable value="{!lstToolAccess}" var="a" id="pbRegTable" rowClasses="changecss" >
+                                    <apex:column width="20px" onclick="calfunc('{!a.ToolName}');">
+                                        <img id="img_{!a.ToolName}" src="https://t03sfdc-zebra.cs42.force.com/ZEBLegalAgreement/resource/1452068184000/SSO_Plus" />
+                                    </apex:column>
+                                    <apex:column headerValue="{!$Label.Tool_Name}" value="{!a.ToolName}"/>                
+                                    <apex:column headerValue="{!$Label.Access_Status}" value="{!a.ToolAccess}"/>
+                                    <apex:column headerValue="{!$Label.Requested_Date}">
+                                        <apex:outputText value="{0, date, MMMM d','  yyyy  hh:mm aaa}">
+                                            <apex:param value="{!a.ToolRequestedDate}" /> 
+                                        </apex:outputText>
+                                    </apex:column>
+                                    <apex:column headerValue="{!$Label.Access_Approved_Rejected_Date}">
+                                        <apex:outputText value="{0, date, MMMM d','  yyyy  hh:mm aaa}">
+                                            <apex:param value="{!a.ToolActionedDate}" /> 
+                                        </apex:outputText>
+                                    </apex:column>
+                                    <apex:column headerValue="{!$Label.Request_Access}" >
+                                        <div id="test1" style="display:{!IF((a.ToolAccess==$Label.Access_Eligible || (a.ToolAccess==$Label.Declined && a.ToolName != $Label.SSO_App_Deal_Registration) || a.ToolAccess==$Label.Partial_Access),'block','none')}" >
+                                            <input type="radio"  name="rdoRequestRevokeAcc"  onchange="getData('{!JSENCODE(a.ActualToolName)}','{!JSENCODE(a.ToolName)}','{!JSENCODE(a.ToolAccess)}',false);"/>
+                                        </div>
+                                    </apex:column>
+                                    <apex:column headerValue="{!$Label.Revoke_Access}" rendered="{!isrevokevisible}"  style="display:{!IF((((a.ToolAccess==$Label.Approved && (a.ActualToolName <> 'Deal Registration' || (a.ActualToolName == 'Deal Registration' && !adminFlag))) || a.ToolAccess==$Label.Partial_Access) && isrevokevisible==true),'block','none')}" >
+                                        <input type="radio"  name="rdoRequestRevokeAcc"  onchange="getData('{!JSENCODE(a.ActualToolName)}','{!JSENCODE(a.ToolName)}','{!JSENCODE(a.ToolAccess)}',true);"/>
+                                    </apex:column>
+                                    <!--apex:column headerValue="{!$Label.Revoke_Access}" rendered="{!isrevokevisible}"  style="display:{!IF(((a.ToolAccess==$Label.Approved || a.ToolAccess==$Label.Partial_Access) && isrevokevisible==true),'block','none')}" >
+                                        <input type="radio"  name="rdoRequestRevokeAcc"  onchange="getData('{!JSENCODE(a.ActualToolName)}','{!JSENCODE(a.ToolName)}','{!JSENCODE(a.ToolAccess)}',true);"/>
+                                    </apex:column-->
+                                    <apex:column breakBefore="true" colspan="6" style="height:2px;" rendered="true" >           
+                                        <div id="{!a.ToolName}" style="display:none;">
+                                            {!a.ToolDescription}                           
+                                        </div>
+                                    </apex:column>                
+                                </apex:pageBlockTable>
+                            </apex:pageblocksection>
+                            <div  id="tblsection1" style="display:none;border-style: solid; border-width:thin; border-color: #E5E8E8; background-color:white;">
+                                <div style="font-family: Helvetica,sans-serif;font-size: 12px;color: #333333;font-weight:bold;"><b><br/>{!$Label.Selected_Application}: {!$Label.SSO_App_Order_Provisioning_Tool}<br/></b></div>
+                               <script>
+                   function showhideGrantRequestBtn()
+                   {
+                        var siebelAttrCnt=0;
+                         var AppDetails=document.getElementById('lblAppDetails').innerHTML;
+                         var arrapDet=AppDetails.split(';');
+                        var varsiebelAttrCnt='{!siebelAttrCnt}';  
+                        if((arrapDet[3]=='Order Provisioning Tool') && (arrapDet[2]=='false'))
+                        {                       
+                            if(document.getElementById('{!$Component.chkAttr2}').checked)
+                                siebelAttrCnt=siebelAttrCnt+1;
+                            if(document.getElementById('{!$Component.chkAttr3}').checked)
+                                siebelAttrCnt=siebelAttrCnt+1;
+                            if(document.getElementById('{!$Component.chkAttr4}').checked)
+                                siebelAttrCnt=siebelAttrCnt+1;
+                            if(document.getElementById('{!$Component.chkAttr5}').checked)
+                                siebelAttrCnt=siebelAttrCnt+1;
+                            if(document.getElementById('{!$Component.chkAttr6}').checked)
+                                siebelAttrCnt=siebelAttrCnt+1;
+                            if(document.getElementById('{!$Component.chkAttr7}').checked)
+                                siebelAttrCnt=siebelAttrCnt+1; 
+                            
+                            
+                            //if(siebelAttrCnt>0)
+                            //if(varsiebelAttrCnt==siebelAttrCnt) check if the old values and new values are same.
+                            if(siebelAttrCnt>varsiebelAttrCnt)
+                            {  
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').disabled=false;
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.background="linear-gradient(to bottom,#8abafe 0,#5788c7 100%)";
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.color="#fff";
+                            }
+                            else
+                            {
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').disabled=true;
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.background="grey";
+                            }
+                        }
+                        else
+                        {
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').disabled=false;
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.color="#fff";
+                                document.getElementById('thepage:frmMain:block1:pbbGrantRevoke:btnGrantRevoke').style.background="linear-gradient(to bottom,#8abafe 0,#5788c7 100%)";
+                        }
+                   }
+                   </script>
+
+                               <table>
+                                    
+                                    <tr>
+                                        <td>   
+                                            <br/>{!$Label.Siebel_Attribute_2}           
+                                        </td>
+                                        <td>            
+                                            <apex:inputCheckbox id="chkAttr2" value="{!conDetails.Siebel_Attribute_2__c}" 
+                                            disabled="{!IF(conDetails.Siebel_Attribute_2__c==true,true,false)}" onclick="showhideGrantRequestBtn();"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>   
+                                            <br/>{!$Label.Siebel_Attribute_3}           
+                                        </td>
+                                        <td>           
+                                            <apex:inputCheckbox id="chkAttr3" value="{!conDetails.Siebel_Attribute_3__c}" 
+                                            disabled="{!IF(conDetails.Siebel_Attribute_3__c==true,true,false)}" onclick="showhideGrantRequestBtn();"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>    
+                                            <br/>{!$Label.Siebel_Attribute_4}           
+                                        </td>
+                                        <td>            
+                                            <apex:inputCheckbox id="chkAttr4" value="{!conDetails.Siebel_Attribute_4__c}" 
+                                            disabled="{!IF(conDetails.Siebel_Attribute_4__c==true,true,false)}" onclick="showhideGrantRequestBtn();"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>  
+                                            <br/>{!$Label.Siebel_Attribute_5}          
+                                        </td>
+                                        <td>           
+                                            <apex:inputCheckbox id="chkAttr5" value="{!conDetails.Siebel_Attribute_5__c}" 
+                                            disabled="{!IF(conDetails.Siebel_Attribute_5__c==true,true,false)}" onclick="showhideGrantRequestBtn();"/>
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>  
+                                            <br/>{!$Label.Siebel_Attribute_6}          
+                                        </td>
+                                        <td>           
+                                            <apex:inputCheckbox id="chkAttr6" value="{!conDetails.Siebel_Attribute_6__c}" 
+                                            disabled="{!IF(conDetails.Siebel_Attribute_6__c==true,true,false)}" onclick="showhideGrantRequestBtn();"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>  
+                                            <br/>{!$Label.Siebel_Attribute_7}          
+                                        </td>
+                                        <td>           
+                                            <apex:inputCheckbox id="chkAttr7" value="{!conDetails.Siebel_Attribute_7__c}" 
+                                            disabled="{!IF(conDetails.Siebel_Attribute_7__c==true,true,false)}" onclick="showhideGrantRequestBtn();"/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </div>        
+                        </apex:pageBlock>
+                    </div>               
+                    
+                    
+                </apex:tab>
+                <apex:tab status="stat"  label="{!$Label.Request_Tool_Access}" style="cursor:pointer"  name="Self" id="tabSelf" ontabenter="setActiveTab('tabSelf');"> 
+                    <apex:outputpanel rendered="true" id="opComponent"> 
+                        <c:SSORequest id="reqac" rendered="true"/> 
+                    </apex:outputpanel>          
+                </apex:tab>
+                
+                
+                
+            </apex:tabPanel>  
+            
+        </table>
+    </apex:form>
+</apex:page>

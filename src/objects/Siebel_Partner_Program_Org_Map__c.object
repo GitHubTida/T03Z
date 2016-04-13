@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Organization__c</fullName>
+        <label>Organization</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Zebra APAC RMB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zebra APAC USD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zebra EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zebra NALA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Program_Name__c</fullName>
+        <formula>Partner_Program__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Program Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Program__c</fullName>
+        <label>Partner Program</label>
+        <referenceTo>Partner_Program__c</referenceTo>
+        <relationshipLabel>Siebel Partner Program Org Map</relationshipLabel>
+        <relationshipName>Siebel_Partner_Program_Org_Map</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Region__c</fullName>
+        <label>Partner Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_Partner_Program_Id__c</fullName>
+        <label>Siebel Partner Program Id</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <label>Siebel Partner Program Org Map</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Organization__c</columns>
+        <columns>Partner_Program__c</columns>
+        <columns>Partner_Region__c</columns>
+        <columns>Siebel_Partner_Program_Id__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Siebel Partner Program Org Map Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Siebel Partner Program Org Map</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

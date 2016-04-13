@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <picklistValues>
+            <masterLabel>All non product revenue sources</masterLabel>
+            <translation>Toutes sources de revenus ne provenant pas de produits</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Animal Management</masterLabel>
+            <translation>Gestion des animaux</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset and Facility Management</masterLabel>
+            <translation>Gestion des actifs et des installations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baggage Reconciliation</masterLabel>
+            <translation>Rapprochement des bagages</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Breast Milk Tracking</masterLabel>
+            <translation>Traçabilité du lait maternel</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Care Collaboration</masterLabel>
+            <translation>Collaboration secteur de la santé</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check Scanning and Printing</masterLabel>
+            <translation>Numérisation et impression de chèques</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Couponing Loyalty and Membership Cards</masterLabel>
+            <translation>Coupons et cartes de fidélité et d&apos;adhésion</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cross Docking</masterLabel>
+            <translation>Transbordement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Security</masterLabel>
+            <translation>Sécurité des données</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dietary and allergens</masterLabel>
+            <translation>Alimentation et allergènes</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Store Delivery</masterLabel>
+            <translation>Livraison directe en magasin</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document and Records Management</masterLabel>
+            <translation>Gestion documentaire et de dossiers</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility Security</masterLabel>
+            <translation>Sécurité des installations et bâtiments</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Sales Automation</masterLabel>
+            <translation>Automatisation des ventes par représentation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Service</masterLabel>
+            <translation>Service après-vente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Cards</masterLabel>
+            <translation>Cartes financières</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fleet Management</masterLabel>
+            <translation>Gestion des flottes de véhicules</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gift Registry</masterLabel>
+            <translation>Registre de cadeaux</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home delivery</masterLabel>
+            <translation>Livraisons à domicile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identification Movement and Access Control</masterLabel>
+            <translation>Identification, mouvement et contrôle de l&apos;accès</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Identification</masterLabel>
+            <translation>Identification des informations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Cards</masterLabel>
+            <translation>Cartes d&apos;assurance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory Management -  Point of Care</masterLabel>
+            <translation>Gestion des stocks - Point d&apos;intervention médicale</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory Management -  Warehouse</masterLabel>
+            <translation>Gestion des stocks - Entrepôts</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab Management</masterLabel>
+            <translation>Gestion de laboratoire</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Services</masterLabel>
+            <translation>Services gérés</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medication Administration</masterLabel>
+            <translation>Administration de médicaments</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchandising and Planograms</masterLabel>
+            <translation>Merchandising et planogrammes</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile HMI</masterLabel>
+            <translation>IHM mobile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Specimen Collection</masterLabel>
+            <translation>Recueil mobile de prélèvements</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Management and Wireless Communications</masterLabel>
+            <translation>Gestion de réseaux et communications sans fil</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Identification</masterLabel>
+            <translation>Identification des patients</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Management</masterLabel>
+            <translation>Gestion de pharmacie</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Point of Sale</masterLabel>
+            <translation>Point de vente</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription Pharmacy</masterLabel>
+            <translation>Pharmacie - médicaments sur ordonnance</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation>Tarifs</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Compliance</masterLabel>
+            <translation>Conformité aux processus</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proof of Delivery</masterLabel>
+            <translation>Accusé de livraison</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality Assurance</masterLabel>
+            <translation>Assurance qualité</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raw Material Management</masterLabel>
+            <translation>Gestion des matières premières</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receiving/Shipping</masterLabel>
+            <translation>Réception/Expédition</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reverse Logistics Merchandise Returns</masterLabel>
+            <translation>Logistique inverse et retours de marchandises</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Specimen and Biologics Management</masterLabel>
+            <translation>Gestion des prélèvements et spécimens biologiques</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service</masterLabel>
+            <translation>Self-service</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff Communication</masterLabel>
+            <translation>Communication au personnel</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stored Value and Gift Cards</masterLabel>
+            <translation>Cartes de magasin et cartes-cadeaux</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ticketing/Citations</masterLabel>
+            <translation>Amendes</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traceability</masterLabel>
+            <translation>Traçabilité</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visibility and Intelligence</masterLabel>
+            <translation>Visibilité et renseignement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehouse Management</masterLabel>
+            <translation>Gestion des entrepôts</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless Communication Infrastructure</masterLabel>
+            <translation>Infrastructures de communications sans fil</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yard Management</masterLabel>
+            <translation>Gestion des cours d&apos;usine</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vertical Segment --></label>
+        <name>Vertical_Segment__c</name>
+        <picklistValues>
+            <masterLabel>&lt;&lt;Blank&gt;&gt;column AR</masterLabel>
+            <translation><!-- &lt;&lt;Blank&gt;&gt;column AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acute Care: Hospitals - Mental Health</masterLabel>
+            <translation>Soins de courte durée : hôpitaux, santé mentale</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acute Care: Hospitals - Physical Health</masterLabel>
+            <translation>Soins de courte durée : hôpitaux, santé physique</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation>Agriculture</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air</masterLabel>
+            <translation>Aérien</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Blood Banks and Donation Centers</masterLabel>
+            <translation>Soins ambulatoires : centres de don du sang et banques du sang</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Dialysis</masterLabel>
+            <translation>Soins ambulatoires : dialyse</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Emergency and Ambulatory Services</masterLabel>
+            <translation>Soins ambulatoires : ambulances et services d&apos;urgence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Out Patient Surgery</masterLabel>
+            <translation>Soins ambulatoires : traitement sans hospitalisation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Physician Offices and Clinics</masterLabel>
+            <translation>Soins ambulatoires : cabinets médicaux et cliniques</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Reference and Diagnostic Labs</masterLabel>
+            <translation>Soins ambulatoires : laboratoires d&apos;analyse et de diagnostic</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Urgent Care</masterLabel>
+            <translation>Soins ambulatoires : soins d&apos;urgence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amusement Parks, Museums, and Zoos</masterLabel>
+            <translation>Parcs d&apos;amusement, musées et zoos</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisted Living</masterLabel>
+            <translation>Maisons de résidence assistée</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associations</masterLabel>
+            <translation>Associations</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation>Automobile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blood Banks and Donation Centers</masterLabel>
+            <translation>Centres de don du sang et banques du sang</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation>Industrie chimique</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications and Entertainment</masterLabel>
+            <translation>Communications et divertissement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation>Construction</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer Products</masterLabel>
+            <translation>Produits de consommation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dialysis</masterLabel>
+            <translation>Dialyse</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation>Électronique</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency and Ambulatory Services</masterLabel>
+            <translation>Ambulances et services d&apos;urgence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal</masterLabel>
+            <translation>Fédéral</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services</masterLabel>
+            <translation>Services financiers</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food and Beverage</masterLabel>
+            <translation>Produits alimentaires et boissons</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forestry</masterLabel>
+            <translation>Foresterie</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Higher Education</masterLabel>
+            <translation>Éducation supérieure</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation>Soins de santé à domicile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitals - Mental Health</masterLabel>
+            <translation>Hôpitaux, santé mentale</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitals - Physical Health</masterLabel>
+            <translation>Hôpitaux, santé physique</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Machinery</masterLabel>
+            <translation>Machines industrielles</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Library</masterLabel>
+            <translation>Bibliothèque</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodging</masterLabel>
+            <translation>Hébergement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care: Assisted Living</masterLabel>
+            <translation>Soins de longue durée : maisons de résidence assistée</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care: Nursing Homes</masterLabel>
+            <translation>Soins de longue durée : maisons de santé</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care: Skilled Nursing / Intermediate Care</masterLabel>
+            <translation>Soins de longue durée : maisons de santé spécialisées, soins intermédiaires</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation>Marine</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Device Manufacture / OEM</masterLabel>
+            <translation>Fabrication d&apos;appareils médicaux / OEM</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metal Products</masterLabel>
+            <translation>Produits en métal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mining</masterLabel>
+            <translation>Industrie minière</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Patient Care: Medical Device Manufacture / OEM</masterLabel>
+            <translation>Paramédical : fabrication d&apos;appareils médicaux / OEM</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Patient Care: Pharmaceutical Repackager</masterLabel>
+            <translation>Paramédical : reconditionnement pharmaceutique</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Patient Care: Pharmacy</masterLabel>
+            <translation>Paramédical : pharmacie</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Store Front Retailers</masterLabel>
+            <translation>Détaillants hors magasin</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nursing Homes</masterLabel>
+            <translation>Maisons de santé</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oil and Gas</masterLabel>
+            <translation>Industrie pétrolière et industrie du gaz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out Patient Surgery</masterLabel>
+            <translation>Traitement sans hospitalisation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parking Lots/Garages</masterLabel>
+            <translation>Parkings et garages</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmaceutical Repackager</masterLabel>
+            <translation>Reconditionnement pharmaceutique</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmaceutical and Medical Devices</masterLabel>
+            <translation>Industrie pharmaceutique et appareils médicaux</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation>Pharmacie</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician Offices and Clinics</masterLabel>
+            <translation>Cabinets médicaux et cliniques</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic, Glass, and Pottery</masterLabel>
+            <translation>Industrie des plastiques, du verre et de la poterie</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation>Postes</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Education</masterLabel>
+            <translation>Éducation primaire</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation>Services professionnels</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Administration and Safety</masterLabel>
+            <translation>Administration publique et sécurité</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Transit</masterLabel>
+            <translation>Transports publics</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publishing</masterLabel>
+            <translation>Édition</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Railroad</masterLabel>
+            <translation>Chemins de fer</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reference and Diagnostic Labs</masterLabel>
+            <translation>Laboratoires d&apos;analyse et de diagnostic</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants and Bars</masterLabel>
+            <translation>Restaurants et bars</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Department Stores and Apparel</masterLabel>
+            <translation>Magasins de détail: grands magasins et habillement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Drug Stores/Retail Pharmacy</masterLabel>
+            <translation>Magasins de détail: pharmacies</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Electronics and Entertainment</masterLabel>
+            <translation>Magasins de détail: électronique et divertissement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Gas and Convenience Stations</masterLabel>
+            <translation>Magasins de détail: stations essence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Grocery/Supermarket</masterLabel>
+            <translation>Magasins de détail: épiceries et supermarchés</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Home Improvement</masterLabel>
+            <translation>Magasins de détail: bricolage</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Mass Merchants/Superstores</masterLabel>
+            <translation>Magasins de détail: supermarchés et commerçants grand public</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Specialty Stores</masterLabel>
+            <translation>Magasins de détail: magasins spécialisés</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Bureaus</masterLabel>
+            <translation>Bureaux de services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skilled Nursing / Intermediate Care</masterLabel>
+            <translation>Maisons de santé spécialisées, soins intermédiaires</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports and Entertainment: Players and Player Unions</masterLabel>
+            <translation>Sports et divertissement : joueurs et syndicats de joueurs</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports and Entertainment: Venues</masterLabel>
+            <translation>Lieux sportifs et de divertissement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State and Local Government</masterLabel>
+            <translation>État et collectivités locales</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Textiles</masterLabel>
+            <translation>Industrie textile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Theaters and Cinemas</masterLabel>
+            <translation>Théâtres et cinémas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third-party Logistics</masterLabel>
+            <translation>Logistique tierce</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation Equipment - Auto Manufacturing</masterLabel>
+            <translation>Équipements de transport - Construction automobile</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation Equipment - Other</masterLabel>
+            <translation>Équipements de transport - Autres</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent Care</masterLabel>
+            <translation>Soins d&apos;urgence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation>Services publics</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veterinary Services</masterLabel>
+            <translation>Services vétérinaires</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehousing and Distribution Centers</masterLabel>
+            <translation>Entrepôts et centres de distribution</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vertical --></label>
+        <name>Vertical__c</name>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation>Éducation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation>Gouvernement</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation>Santé</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation>Infrastructures de tourisme</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation>Fabrication</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation>Commerce de détail</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Providers</masterLabel>
+            <translation>Prestataires de services</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation and Logistics</masterLabel>
+            <translation>Transports et logistique</translation>
+        </picklistValues>
+    </fields>
+    <gender><!-- Masculine --></gender>
+    <nameFieldLabel><!-- Vertical Hierarchy Name --></nameFieldLabel>
+    <startsWith><!-- Consonant --></startsWith>
+</CustomObjectTranslation>

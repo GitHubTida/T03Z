@@ -1,0 +1,249 @@
+<apex:page standardController="Quote" extensions="ZEBPCResellerGridExt" showHeader="false" sidebar="false">
+     <c:AjaxLoader />
+   
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.base.css')}" type="text/css"/>
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.energyblue.css')}" type="text/css"/>
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget,  '/scripts/jquery-1.11.1.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget, '/scripts/jqx-all.js')}"/>
+    <!--<apex:includeScript value="{!URLFOR($Resource.jqwidget, '/scripts/jquery.mobile-1.4.3.min.js')}"/>-->
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'jquery.mobile-1.3.0.min.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'jquery.mobile-1.3.0.min.css')}"/>
+     <style>
+        .column
+        {
+            background-color: #c7c7c7;
+        }
+    </style>
+   
+   <script>
+  
+   $(function() {
+     var theme = "";
+     var  data = {!ResellerlistJson}; 
+  
+     var source =
+            {
+                localdata: data,
+                datatype: "array",
+                datafields:
+                [
+                    { name: 'Id', type: 'string' },
+                    { name: 'Name', type: 'string' },
+                    { name: 'Product_Family__c', type: 'string' },
+                    { name: 'List_Price__c', type: 'float' },
+                    { name: 'Standard_Net_Price__c', type: 'float' },
+                    { name: 'Extra_Disc__c', type: 'float' },
+                    { name: 'Discount__c', type: 'float' },
+                    { name: 'Min_Qty__c', type: 'number' },
+                    { name: 'Max_Qty__c', type: 'number' },
+                    { name: 'Min_First_Order__c', type: 'bool' },
+                    { name: 'Uplifted_Cost__c', type: 'float' },
+                    { name: 'Total_Discount__c', type: 'float' },
+                    { name: 'Unit_Special_Price__c', type: 'float' },
+                    { name: 'Total_Net_Price__c', type: 'float' },
+                    { name: 'Distributor_Margin__c', type: 'float' },
+                    { name: 'Total_Cost__c', type: 'float' },
+                    { name: 'Reseller_Margin__c', type: 'float' },
+                    { name: 'PC_Discount__c', type: 'float' },
+                    { name: 'Suggested_Reseller_Buy_Price__c', type: 'float' },
+                    { name: 'Suggested_End_User_Price__c', type: 'float' }
+                
+                ],
+                Id: 'Id',
+                datatype: "array"
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+
+            $("#jqxgrid").jqxGrid(
+            {
+                width: '100%',
+                height :450,
+                //theme: 'energyblue',
+               // autoheight: true,
+               groupable: true,
+                sortable: true,
+                //altrows: true,
+                enabletooltips: true,
+                editable: true,
+                source: dataAdapter,
+                columnsresize: true,
+                columnsreorder: true,
+                selectionmode: 'multiplecellsadvanced',
+                columns: [
+                  { text: 'Product', datafield: 'Name',  width: '180',pinned: true,editable:false },
+                 
+                  { text: 'Min First Order', datafield: 'Min_First_Order__c',  width: '100', cellsalign: 'right', columntype: 'checkbox' },
+                  { text: 'Min Qty', datafield: 'Min_Qty__c',  width: '65', cellsalign: 'right' },
+                  { text: 'Max Qty', datafield: 'Max_Qty__c',  width: '65', cellsalign: 'right' },
+                  { text: 'Extra Disc', datafield: 'Extra_Disc__c',  width: '80', cellsalign: 'right' },
+                  { text: 'Reseller Margin', datafield: 'Reseller_Margin__c',  width: '80', cellsalign: 'right',cellsformat: 'c2' },
+                  
+                  { text: 'Siebel List Price', datafield: 'List_Price__c',  width: '130',cellsformat: 'c2',editable:false },
+                  { text: 'Standard Net Price', datafield: 'Standard_Net_Price__c', width: '140',editable:false  },
+                  { text: 'Discount', datafield: 'Discount__c', width: '70', cellsalign: 'right',editable:false  },
+                  { text: 'PC Discount', datafield: 'PC_Discount__c', width: '70', cellsalign: 'right',editable:true  },
+                
+                  { text: 'Total Discount', datafield: 'Total_Discount__c',  width: '120px', cellclassname: 'column',editable:false,
+                      cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                          var total = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(total, "c2") + "</div>";
+                      } 
+                  },
+                 
+                  { text: 'Unit Special Price', datafield: 'Unit_Special_Price__c',  width: '150', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    
+                     cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        
+                         var totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                         var unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(unitSpecialPrice, "c2") + "</div>";
+                      } 
+                  },
+                 
+                  { text: 'Total Net Price', datafield: 'Total_Net_Price__c',  width: '120', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    
+                     cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        
+                         var totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                         var unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                         
+                          var totalNetPrice = parseFloat(rowdata.Max_Qty__c) * unitSpecialPrice ;
+                        
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(totalNetPrice , "c2") + "</div>";
+                      } 
+                  },
+                 
+                 // { text: 'Total Cost', datafield: 'Total_Cost__c',  width: '100', cellsalign: 'right',editable:false },
+                  { text: 'Distributor Margin', datafield: 'Distributor_Margin__c',  width: '150', cellsalign: 'right' },
+                  { text: 'Suggested Reseller Buy Price', datafield: 'Suggested_Reseller_Buy_Price__c', width: '120', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    
+                     cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        
+                         var totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                         var unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                         
+                          var SRBP = (unitSpecialPrice*100)/(100-parseFloat(rowdata.Distributor_Margin__c)) ;
+                        
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(SRBP, "c2") + "</div>";
+                      } 
+                  },
+                  
+                  { text: 'Suggested End User Price', datafield: 'Suggested_End_User_Price__c',  width: '130',cellsformat: 'c2',editable:true },
+                 
+                //  { text: 'Uplifted Cost', datafield: 'Uplifted_Cost__c',  width: '100', cellsalign: 'right' }
+                 
+                   { text: 'Product Family', datafield: 'Product_Family__c',  width: '140',editable:false }
+                  
+                ]
+            });
+
+    
+    });
+    
+    
+
+    </script>    
+    <apex:form >
+     <!--<p>
+        <h1 style="font-size: .9em; font-weight: bold; color: #4a4a56; padding-left: 25px;">Edit Product for</h1><br/> 
+        <h2 style="font-size: 1.8em;font-weight:normal;line-height:1.1em;padding-left: 25px;"><apex:outputField value="{!Quote.Name}" /></h2>
+     </p>-->
+     
+     <!--jQueryMobile Code-->
+    <div data-role="page">        
+        <div data-role="header">            
+            <h1>{!Quote.Name}</h1>
+        </div>
+        <div data-role="main" class="ui-content">
+            <a href="/apex/PCResellerGrid_Mobile?id=0Q0e0000000GWFo">CLICK HERE TO VIEW DATA</a>
+            <label>Quote Number:</label>{!Quote.QuoteNumber}
+             <div id="jqxgrid"></div>
+        </div>
+       
+    </div>
+    <div id="responseErrors"></div>
+    <!--<div style="width:100%;">
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Quote.QuoteNumber}"/>
+                    <apex:outputField value="{!Quote.Name}"/>
+                </apex:pageBlockSection>   
+                 <apex:pageBlockSection >
+                    <apex:outputField value="{!Quote.Status}"/>
+                    <apex:outputField value="{!Quote.TotalPrice}"/>
+                </apex:pageBlockSection>   
+                
+                 <apex:pageBlockSection >
+                     <apex:outputText value="{!Quote.opportunity.account.Name}"/>
+                    <apex:outputText value="{!Quote.opportunity.Name}"/>
+                </apex:pageBlockSection>   
+                <div id='jqxWidget'>
+                    <div id="jqxgrid"></div>
+                </div>
+              </apex:pageBlockSection>   
+              
+            </apex:pageBlock>
+        </div>
+            <div style="width:100%;text-align:center">
+                         <apex:commandButton id="btnSave"   value="Save" onclick="SaveLineItem();return false;" />
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+           </div>-->
+    </apex:form>
+    <script>
+      function SaveLineItem() {
+          showLoader();
+          var updateRecords = [];
+          var griddata = jQuery("#jqxgrid").jqxGrid('getdatainformation'); 
+          for (var i = 0; i < griddata.rowscount; i++){
+                var update_QLI = {};     
+                var rowsdata = jQuery('#jqxgrid').jqxGrid('getrenderedrowdata', i);
+                              
+                update_QLI.Id =rowsdata.Id ;
+                update_QLI.Name =rowsdata.Name;
+                update_QLI.List_Price__c =rowsdata.List_Price__c;
+                update_QLI.Standard_Net_Price__c =rowsdata.Standard_Net_Price__c;
+                update_QLI.Extra_Disc__c =rowsdata.Extra_Disc__c;
+                update_QLI.Discount__c =rowsdata.Discount__c;
+                update_QLI.Min_Qty__c  =rowsdata.Min_Qty__c;
+                update_QLI.Max_Qty__c = rowsdata.Max_Qty__c;
+                   if(rowsdata.Min_First_Order__c)
+                        update_QLI.Min_First_Order__c  = true;
+                   else
+                        update_QLI.Min_First_Order__c  = false;
+               
+                update_QLI.Uplifted_Cost__c  =rowsdata.Uplifted_Cost__c;
+                
+               //  update_QLI.Total_Discount__c  =rowsdata.Total_Discount__c;
+                 update_QLI.Unit_Special_Price__c= rowsdata.Unit_Special_Price__c;
+                 update_QLI.Total_Net_Price__c= rowsdata.Total_Net_Price__c;
+                 update_QLI.Distributor_Margin__c= rowsdata.Distributor_Margin__c;
+                 update_QLI.Total_Cost__c= rowsdata.Total_Cost__c;
+                 Reseller_Margin__c = rowsdata.Reseller_Margin__c;                 
+                 update_QLI.PC_Discount__c = rowsdata.PC_Discount__c;
+                 update_QLI.Suggested_Reseller_Buy_Price__c = rowsdata.Suggested_Reseller_Buy_Price__c;
+                 update_QLI.Suggested_End_User_Price__c = rowsdata.Suggested_End_User_Price__c;
+                updateRecords.push(update_QLI);
+            
+          }
+         
+              Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ZEBPCResellerGridExt.updatePCReseller}',updateRecords , 
+              function(result, event){
+                      if(event.status){
+                          window.top.location = '/{!Quote.Id}';
+                      }
+                      else if (event.type === 'exception') {
+                          document.getElementById("responseErrors").innerHTML = 
+                          event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                      } else {
+                          document.getElementById("responseErrors").innerHTML = event.message;
+                      }
+                  }, 
+                  {escape: true}
+              ); 
+       }
+   
+    
+    </script>
+</apex:page>

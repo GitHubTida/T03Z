@@ -1,0 +1,14 @@
+<apex:page standardController="TAL_Batch_Update__c" standardStylesheets="true" showHeader="false" extensions="ZEBTalBatchRunExtension">
+	<apex:form >
+		<apex:pageBlock title="Batch Job Status" id="jobStatus">
+			<apex:pageBlockTable value="{!job}" var="j">
+				<apex:column value="{!j.status}"/>
+				<apex:column value="{!j.jobitemsprocessed}"/>
+				<apex:column value="{!j.totaljobitems}"/>
+				<apex:column value="{!j.numberoferrors}"/>
+			</apex:pageBlockTable>
+			<apex:commandButton action="{!process}" value="Run Batch Update" rendered="{!neverRun}"/>
+		</apex:pageBlock>
+		<apex:actionPoller reRender="jobStatus" interval="5"/>
+	</apex:form>
+</apex:page>

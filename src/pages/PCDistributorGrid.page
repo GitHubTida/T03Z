@@ -1,0 +1,403 @@
+<apex:page standardController="Quote" extensions="ZEBPCResellerGridExt" showHeader="false" sidebar="false" action="{!updateDisti}">
+     <c:AjaxLoader />
+   
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.base.css')}" type="text/css" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.energyblue.css')}" type="text/css" />
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget,  '/scripts/jquery-1.11.1.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget, '/scripts/jqx-all.js')}"  />
+    <style>
+        .column {
+            background-color: #c7c7c7;
+        }
+    </style>
+   
+   <script>
+    $(function() {
+    var theme = "";
+    var  data = {!ResellerlistJson}; 
+    var source =
+        {
+            localdata: data,
+            datatype: "array",
+            datafields:
+            [
+                { name: 'Id', type: 'string' },
+                { name: 'Order_Placed_on_Line__c', type: 'number' },
+                { name: 'Product__c', type: 'string' },
+                { name: 'Min_First_Order__c', type: 'bool' },
+                { name: 'Cancel_Flag__c', type: 'bool' },
+                { name: 'Min_Qty__c', type: 'number' },
+                { name: 'Max_Qty__c', type: 'number' },
+                { name: 'Available_Quantity__c', type: 'number' },
+                { name: 'List_Price__c', type: 'float' },
+                { name: 'Standard_Net_Price__c', type: 'float' },
+                { name: 'Discount__c', type: 'float' },
+                { name: 'Extra_Disc__c', type: 'float' },
+                { name: 'Total_Discount__c', type: 'float' },    
+                { name: 'Net_Price__c', type: 'float' },
+                { name: 'Unit_Special_Price__c', type: 'float' },
+                { name: 'Total_Net_Price__c', type: 'float' },
+                { name: 'Distributor_Margin__c', type: 'float' },
+                { name: 'Suggested_Reseller_Buy_Price__c', type: 'float' },
+                { name: 'Reseller_Margin__c', type: 'float' },
+                { name: 'Suggested_End_User_Price__c', type: 'float' },
+                { name: 'Uplifted_Cost__c', type: 'float' }
+            ],
+           
+        };
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        $("#jqxgrid").jqxGrid(
+        {
+            width: '98%',
+            height :380,
+            groupable: true,
+            sortable: true,
+            enabletooltips: true,
+            editable: true,
+            source: dataAdapter,
+            columnsresize: true,
+            columnsreorder: true,
+            selectionmode: 'multiplecellsadvanced',
+            columns: [
+                { text: 'Product', datafield: 'Product__c',  width: '180',pinned: true,editable:false },
+                { text: 'Min First Order', datafield: 'Min_First_Order__c',  width: '120', cellsalign: 'right', columntype: 'checkbox',cellbeginedit: rowEdit,cellclassname: rowEditDisable   },
+                { text: 'Cancel', datafield: 'Cancel_Flag__c',  width: '120', cellsalign: 'right', columntype: 'checkbox',cellbeginedit: rowBind ,cellclassname: rowEditDisable },
+                { text: 'Min Qty', datafield: 'Min_Qty__c',  width: '65', cellsalign: 'right',cellbeginedit: rowEdit,cellclassname: rowEditDisable},
+                { text: 'Max Qty', datafield: 'Max_Qty__c',  width: '65', cellsalign: 'right', cellbeginedit: rowEdit,cellclassname: rowEditDisable  },
+                { text: 'Avl Qty', datafield: 'Available_Quantity__c',  width: '65', cellclassname: 'column',editable:false },
+                { text: 'List Price', datafield: 'List_Price__c',  width: '90', cellclassname: 'column',editable:false},
+                { text: 'Std Net Price', datafield: 'Standard_Net_Price__c', width: '100', cellclassname: 'column',editable:false, 
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        var standardNetPrice = '';
+                        if(rowdata.Discount__c > 0){
+                            standardNetPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - parseFloat(rowdata.Discount__c)/100);
+                        }
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(standardNetPrice, "f2") + "</div>";
+                    } 
+                },
+                { text: 'Std Disc', datafield: 'Discount__c', width: '70', cellsalign: 'right', cellclassname: 'column',editable:false,formatoptions:{decimalPlaces: 2}, 
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) { 
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(rowdata.Discount__c, "p") + "</div>";
+                    }
+                },
+                { text: 'Extra Disc', datafield: 'Extra_Disc__c',  width: '80', cellsalign: 'right',cellsformat: 'p' ,cellbeginedit: rowEdit,cellclassname: rowEditDisable},
+                { text: 'Total Discount', datafield: 'Total_Discount__c',  width: '110', cellclassname: 'column',editable:false,formatoptions:{decimalPlaces: 2},
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        var total = '';
+                        console.log(' Nimsi ',rowdata.Net_Price__c);
+                        if(rowdata.Net_Price__c == null || rowdata.Net_Price__c == '' || rowdata.Net_Price__c == 'undefined'){
+                            if(rowdata.Extra_Disc__c == null){
+                                total = parseFloat(rowdata.Discount__c);
+                            }else{
+                                total = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                            }
+                            rowdata.PC_Discount__c = null;
+                        }else{
+                            total = parseFloat((1 - (rowdata.Net_Price__c/rowdata.List_Price__c))*100);
+                            rowdata.PC_Discount__c = total;
+                            
+                        }
+                        
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(total, "p2") + "</div>";
+                    } 
+                },
+                { text: 'Net Price', datafield: 'Net_Price__c',   width: '80', cellsalign: 'right',cellbeginedit: rowEdit,cellclassname: rowEditDisable},
+                { text: 'Unit Special Price', datafield: 'Unit_Special_Price__c',  width: '130', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        var totalDiscount = '';
+                        var unitSpecialPrice = '';
+                        if(rowdata.Net_Price__c == null || rowdata.Net_Price__c == '' || rowdata.Net_Price__c == 'undefined'){
+                            if(rowdata.Extra_Disc__c == null){
+                                totalDiscount = parseFloat(rowdata.Discount__c);
+                            }
+                            else{
+                                totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                            }
+                            unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                        }else{
+                            unitSpecialPrice = rowdata.Net_Price__c;
+                            rowdata.Extra_Disc__c = null;
+                            
+                        }
+                        
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(unitSpecialPrice, "f2") + "</div>";
+                    } 
+                },
+                { text: 'Total Net Price', datafield: 'Total_Net_Price__c',  width: '120', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        var unitSpecialPrice = '';
+                        if(rowdata.Net_Price__c == null || rowdata.Net_Price__c == 'undefined'){
+                            if(rowdata.Extra_Disc__c == null){
+                                totalDiscount = parseFloat(rowdata.Discount__c);
+                            }
+                            else{
+                                totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                            }
+                            unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                        }else{
+                            unitSpecialPrice = rowdata.Net_Price__c;
+                        }
+                        var totalNetPrice = parseFloat(rowdata.Max_Qty__c) * unitSpecialPrice;
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(totalNetPrice , "f2") + "</div>";
+                    } 
+                },
+               { text: 'Distributor Margin', datafield: 'Distributor_Margin__c',  width: '130',cellclassname: 'column', cellsformat: 'p',editable:false},
+                { text: 'Suggested Reseller Buy Price', datafield: 'Suggested_Reseller_Buy_Price__c', width: '220', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        if(rowdata.Net_Price__c == null || rowdata.Net_Price__c == 'undefined'){
+                            if(rowdata.Extra_Disc__c == null){
+                                totalDiscount = parseFloat(rowdata.Discount__c);
+                            }
+                            else{
+                                totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                            }
+                            unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                        }else{
+                            unitSpecialPrice = rowdata.Net_Price__c;
+                        }
+                        var SRBP = (unitSpecialPrice)/ parseFloat(1 - rowdata.Distributor_Margin__c/100);
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(SRBP, "f2") + "</div>";
+                    } 
+                },
+                { text: 'Reseller Margin', datafield: 'Reseller_Margin__c',  width: '120', cellsalign: 'right',cellsformat: 'p',cellbeginedit: rowEdit,cellclassname: rowEditDisable  },
+                { text: 'Suggested End User Price', datafield: 'Suggested_End_User_Price__c', width: '220', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        if(rowdata.Net_Price__c == null || rowdata.Net_Price__c == 'undefined'){
+                            if(rowdata.Extra_Disc__c == null){
+                                totalDiscount = parseFloat(rowdata.Discount__c);
+                            }
+                            else{
+                                totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                            }
+                            unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                        }else{
+                            unitSpecialPrice = rowdata.Net_Price__c;
+                        }
+                        var SRBP = (unitSpecialPrice)/ parseFloat(1 - rowdata.Distributor_Margin__c/100);
+                        var SRBPLineITem = (SRBP) / parseFloat(1 - rowdata.Reseller_Margin__c/100);
+                        return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(SRBPLineITem, "f2") + "</div>";
+                    } 
+                }
+            ]
+        });
+    });
+    var rowBind = function (row, datafield, columntype, value)  {
+      try{
+      
+      var  data = {!ResellerlistJson}; 
+      var existingValue = data[row].Cancel_Flag__c;
+      if(existingValue == false){
+          return true;
+      }
+      else{
+          return false;
+      }
+      }catch(err){
+      
+      }
+    }
+    
+    // 9 OCt 2015 Manjunath
+    var rowEdit = function (row, datafield, columntype, value)  {
+       var data = $("#jqxgrid").jqxGrid('getrowdata', row);
+      // alert(data.Max_Qty__c+' '+data.Available_Quantity__c);
+       var maxQty = data.Max_Qty__c;
+       var availableQty = data.Available_Quantity__c;
+       var iscancel= data.Cancel_Flag__c;
+       var order = data.Order_Placed_on_Line__c;
+       if(iscancel==true){
+           //alert(3)
+           return false; 
+       }
+       
+       if(maxQty != availableQty && order > 0){
+            return false;
+       }
+    }
+    
+    //9 oct 2015 Manjunath
+    var rowEditDisable = function (row, column, value, data) {
+         var data = $("#jqxgrid").jqxGrid('getrowdata', row);
+       // alert(data.Max_Qty__c+' '+data.Available_Quantity__c);
+       var maxQty = data.Max_Qty__c;
+       var availableQty = data.Available_Quantity__c;
+       var iscancel= data.Cancel_Flag__c;
+       var order = data.Order_Placed_on_Line__c;
+       if(iscancel==true){
+           return "column"; 
+       }
+       if(maxQty != availableQty && order > 0){
+             return "column"; 
+       }
+    }
+    </script>    
+    <apex:form >
+        <p>
+           <h1 style="font-size: .9em; font-weight: bold; color: #4a4a56; padding-left: 25px;">Edit Product for</h1><br/> 
+           <h2 style="font-size: 1.8em;font-weight:normal;line-height:1.1em;padding-left: 25px;"><apex:outputField value="{!Quote.Name}" /></h2>
+        </p>
+        <div id="responseErrors"></div>
+        <div style="width:100%;">
+            <apex:pageBlock >
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSection >
+                        <apex:outputField value="{!Quote.QuoteNumber}"/>
+                        <apex:outputField value="{!Quote.Name}"/>
+                    </apex:pageBlockSection>   
+                    <apex:pageBlockSection >
+                        <apex:outputField value="{!Quote.Status}"/>
+                        <apex:outputField value="{!Quote.TotalPrice}"/>
+                    </apex:pageBlockSection>   
+                    <apex:pageBlockSection >
+                        <apex:outputText value="{!Quote.opportunity.account.Name}"/>
+                        <apex:outputText value="{!Quote.opportunity.Name}"/>
+                    </apex:pageBlockSection>   
+                    <apex:pageBlockSection >
+                        <apex:outputText label="Currency" value="{!Quote.Direct_Account_Currency__c}"/>
+                    </apex:pageBlockSection>   
+                    <div id='jqxWidget'>
+                        <div id="jqxgrid"></div>
+                    </div>
+              </apex:pageBlockSection>   
+           </apex:pageBlock>
+        </div>
+        <div style="width:100%;text-align:center">
+            <apex:commandButton id="btnSave"   value="Save" onclick="SaveLineItem();return false;" />
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </div>
+    </apex:form>
+    <script>
+        function SaveLineItem() {
+            showLoader();
+            var updateRecords = [];
+            var griddata = jQuery("#jqxgrid").jqxGrid('getdatainformation'); 
+            for (var i = 0; i < griddata.rowscount; i++){
+                var update_QLI = {};     
+                var rowsdata = jQuery('#jqxgrid').jqxGrid('getrenderedrowdata', i);
+                update_QLI.Id =rowsdata.Id ;
+                console.log(rowsdata.Extra_Disc__c);
+                console.log(rowsdata.Id);
+                update_QLI.Name =rowsdata.Name;
+                console.log(rowsdata.Name);
+                update_QLI.List_Price__c =rowsdata.List_Price__c;
+                console.log(rowsdata.List_Price__c);
+                update_QLI.Standard_Net_Price__c =rowsdata.Standard_Net_Price__c;
+                console.log(rowsdata.Standard_Net_Price__c);
+               /* if(rowsdata.Extra_Disc__c == null || rowsdata.Extra_Disc__c == ''){
+                    alert('Extra Disc cannot be null.');
+                    hideLoader();
+                    return;
+                }*/
+                console.log(rowsdata.Extra_Disc__c);
+                update_QLI.Extra_Disc__c =rowsdata.Extra_Disc__c;
+                console.log(rowsdata.Discount__c);
+                update_QLI.Discount__c =rowsdata.Discount__c;
+                console.log(rowsdata.Min_Qty__c);
+                
+                if('{!Quote.IsInApproval__c}' == 'true'){
+                    alert('Quote is locked and cannot be edited.');
+                    hideLoader();
+                    return;
+                }
+                 //Changes done for EVM CPQ
+                if(rowsdata.Extra_Disc__c < 0){
+                alert('Extra Discount cannot be negative.');
+                 hideLoader();
+                    return;
+                }
+                if(rowsdata.Order_Placed_on_Line__c > 0 && rowsdata.Cancel_Flag__c ){
+                    alert('Order is placed on the quote line and cannot be modified.');
+                    hideLoader();
+                    return;
+                }
+                if(rowsdata.Min_Qty__c == null || rowsdata.Min_Qty__c == ''){
+                    alert('Min Qty cannot be null.');
+                    hideLoader();
+                    return;
+                }
+                
+                if(rowsdata.Cancel_Flag__c != true && rowsdata.Min_Qty__c > rowsdata.Max_Qty__c){
+                    alert('Min Qty cannot be greater than Max Qty.');
+                    hideLoader();
+                    return;
+                }
+                //28 Dec 
+                //check for Max not to equal to avilable quantity
+                // 21_12_2015
+                if(rowsdata.Max_Qty__c > rowsdata.Available_Quantity__c  && rowsdata.Order_Placed_on_Line__c>0){   
+                    continue;
+                }
+                update_QLI.Min_Qty__c  =rowsdata.Min_Qty__c;
+                console.log(rowsdata.Max_Qty__c);
+                update_QLI.Max_Qty__c = rowsdata.Max_Qty__c;
+                console.log(rowsdata.Min_First_Order__c);
+                if(rowsdata.Min_First_Order__c)
+                    update_QLI.Min_First_Order__c  = true;
+                else
+                    update_QLI.Min_First_Order__c  = false;
+                    
+                console.log(rowsdata.Cancel_Flag__c);
+                if(rowsdata.Cancel_Flag__c)
+                    update_QLI.Cancel_Flag__c  = true;
+                else
+                    update_QLI.Cancel_Flag__c  = false; 
+                    
+                update_QLI.Uplifted_Cost__c  =rowsdata.Uplifted_Cost__c;
+                //update_QLI.Total_Discount__c  =rowsdata.Total_Discount__c;
+                update_QLI.Net_Price__c = rowsdata.Net_Price__c;
+                if(rowsdata.Net_Price__c == null || rowsdata.Net_Price__c == '' || rowsdata.Net_Price__c == 'undefined'){
+                    if(rowsdata.Extra_Disc__c == null){
+                        update_QLI.Total_Discount__c = parseFloat(rowsdata.Discount__c);
+                    }
+                    else{
+                        update_QLI.Total_Discount__c = parseFloat(rowsdata.Discount__c) + parseFloat(rowsdata.Extra_Disc__c);
+                    }
+                    update_QLI.Unit_Special_Price__c = parseFloat(rowsdata.List_Price__c) * parseFloat(1 - update_QLI.Total_Discount__c/100);
+                }else{
+                    update_QLI.Unit_Special_Price__c = rowsdata.Net_Price__c;
+                    update_QLI.Extra_Disc__c = null;
+                }
+                
+                if(update_QLI.Total_Discount__c > 100){
+                    alert('Total Discount cannot be greater than 100%.');
+                    hideLoader();
+                    return;
+                } 
+                
+                //update_QLI.Unit_Special_Price__c= rowsdata.Unit_Special_Price__c;
+                update_QLI.Total_Net_Price__c= rowsdata.Total_Net_Price__c;
+                update_QLI.Distributor_Margin__c= rowsdata.Distributor_Margin__c;
+                update_QLI.Suggested_End_User_Price__c = rowsdata.Suggested_End_User_Price__c;
+                update_QLI.Reseller_Margin__c = rowsdata.Reseller_Margin__c;                 
+                update_QLI.PC_Discount__c = rowsdata.PC_Discount__c;
+                update_QLI.Suggested_Reseller_Buy_Price__c = rowsdata.Suggested_Reseller_Buy_Price__c;
+                console.log(rowsdata.Uplifted_Cost__c);
+                console.log(rowsdata.Extra_Disc__c);
+                console.log(rowsdata.Total_Discount__c);
+                console.log(rowsdata.Unit_Special_Price__c);
+                console.log(rowsdata.Total_Net_Price__c);
+                console.log(rowsdata.Distributor_Margin__c);
+                console.log(rowsdata.Suggested_End_User_Price__c);
+                console.log(rowsdata.Reseller_Margin__c);
+                console.log(rowsdata.PC_Discount__c);
+                console.log(rowsdata.SRBPLineITem);
+                
+                updateRecords.push(update_QLI);
+            }
+            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ZEBPCResellerGridExt.updatePCReseller}',updateRecords ,'{!Quote.IsInApproval__c}',
+                function(result, event){
+                    if(event.status){
+                        window.top.location = '/{!Quote.Id}';
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }else {
+                        document.getElementById("responseErrors").innerHTML = event.message;
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    </script>
+</apex:page>

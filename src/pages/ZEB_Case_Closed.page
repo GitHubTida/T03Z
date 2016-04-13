@@ -1,0 +1,9 @@
+<apex:page standardController="Case">
+  <!-- Case Closed Announcement -->
+  <center>
+    <font color="red">
+          <h1>This case is closed</h1>
+    </font>   
+  </center>
+
+</apex:page>

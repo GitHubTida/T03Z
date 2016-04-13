@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartType>Pie</chartType>
+        <groupingColumn>OWNER</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <showAxisLabels>true</showAxisLabels>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <summaryColumn>RowCount</summaryColumn>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>OPEN</field>
+    </columns>
+    <columns>
+        <field>CLOSED</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <description>Cases Logged By Agent EMEA 24hr+ Complete</description>
+    <filter>
+        <booleanFilter>((((1 OR (4 OR (7 AND 6))) AND (2 AND 3)) AND 5) AND 6) AND 7</booleanFilter>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>contains</operator>
+            <value>Ian Sopp,Steve Gayler,Tonny Witteveen,Maurits Kranenberg,Jim Finnie,Laurence Khunan,Sunil Khatwa,Matthew Miller,Gary Chivers,Cameron Grant,Mohamed Imaizen,Gemma Schaschke</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>STATUS</column>
+            <operator>equals</operator>
+            <value>Solution Provided,Closed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>AGE</column>
+            <operator>greaterThan</operator>
+            <value>24</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORIGIN</column>
+            <operator>equals</operator>
+            <value>TS EMEA email</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>notEqual</operator>
+            <value>Jess Martin-Smith,Abed Salameh,Karl Lewis,Charlie Kew,Charles Kew,Albert Lukkes,Harry de Haan</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>CREATED</column>
+            <operator>contains</operator>
+            <value>Ian Sopp,Steve Gayler,Tonny Witteveen,Maurits Kranenberg,Jim Finnie,Laurence Khunan,Sunil Khatwa,Matthew Miller,Gary Chivers,Cameron Grant,Mohamed Imaizen,Gemma Schaschke</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ORIGIN</column>
+            <operator>equals</operator>
+            <value>Phone,Email,Web</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OWNER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Cases Logged By Agent EMEA 24hr+ Comple</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_LASTMONTH</interval>
+    </timeFrameFilter>
+</Report>

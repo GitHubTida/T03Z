@@ -1,0 +1,353 @@
+<apex:page standardController="Partner_Application__c"  standardStylesheets="true" extensions="ZEBPartnerController" showHeader="false" sidebar="false" cache="false" title="{!$Label.Application_Head}" tabstyle="Partner_Application__c" action="{!onLoad}" language="{!languageLocale}">
+       
+       <head>
+       <!--<title>{!$Label.Application_Title}</title>-->
+       <!--Highlight styles start-->
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <style>
+           li.done1,li.done2{
+                background: #0077FF ! Important;
+                color: #FFFFFF ! Important;
+            }
+            #crumbs li.done1:after,#crumbs li.done2:after {
+                  content: "";
+                  border-top: 20px solid transparent;
+                  border-bottom: 20px solid transparent;
+                  border-left: 40px solid #0077FF;
+                  position: absolute;
+                  right: -40px;
+                  top: 0;
+                  z-index: 1;
+            }
+         </style>
+         <!--Highlight styles End-->
+       </head>
+      <!-- <apex:includeScript value="//code.jquery.com/jquery-1.11.3.min.js"/>
+       <apex:includeScript value="//code.jquery.com/jquery-migrate-1.2.1.min.js"/>
+        <apex:includeScript value="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"/> -->
+        <apex:includeScript value="{!URLFOR($Resource.appprocess,'appprocess.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+        
+        <script type="text/javascript">
+            
+            function copyAdd(){
+            
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI1.HQAL1}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA1.PAAL1}').value;
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2.HQAL2}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA2.PAAL2}').value;
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI3.HQTC}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA3.PATC}').value;
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI4.HQC}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA4.PAC}').value;
+                //alert(document.getElementById('{!$Component.theform.pageblock.plPanel.HeadComState.HQS}').value);
+                //alert(document.getElementById('{!$Component.theform.pageblock.plPanel.MainBusState.PAPC}'));
+                //alert(document.getElementById('{!$Component.theform.pageblock.plPanel.HeadComState.HQS}'));
+                //document.getElementById('{!$Component.theform.pageblock.plPanel.HeadComState.HQS}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.MainBusState.PAPC}').value;
+                //alert(document.getElementById('{!$Component.theform.pageblock.plPanel.HeadComState.HQS}').value);
+                 copyAndRerenderDepdPLFields();
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI6.HQPC}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA5.PAPC}').value;
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI7.HQPN}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA6.PAPN}').value;
+                document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI8.HQF}').value = document.getElementById('{!$Component.theform.pageblock.plPanel.pageBlockSI2PA7.PAF}').value;
+                
+                }
+    
+         function copyDepdPLValues (DestDepdPListID,SourceDepdPListID) {
+            document.getElementById(DestDepdPListID).value = document.getElementById(SourceDepdPListID).value;
+         }
+        </script>
+        
+        <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+        
+        <div class="ztopbanner">
+        <apex:define name="header">
+          <c:testheader />
+        </apex:define>
+        </div> 
+        
+        <!--Chevron styles start-->
+        <div class="chevron">
+            <apex:define name="Chevron">
+                <c:ChevronComponent />
+            </apex:define>
+        </div>
+        <!--Chevron styles end-->
+        
+        <div class="zmainbody">
+        
+        <script type="text/javascript">
+            function fixElements(tagn,attrib) {
+                var tags = document.getElementsByTagName(tagn);
+                var ti;
+                var pos;
+                // Since Salesforce builds a complex Id using the Id's of previous elements, we need
+                // to find the one that we want.
+                // Note: this means we're searching for tags like:
+                // apex:inputfield id="tabIndex4" ....>
+                var pat = /:tabIndex[0-9]+/; 
+                for (var i=0; i < tags.length; i++) {
+                    if (tags[i].getAttribute(attrib) != null) {
+                        pos = tags[i].getAttribute(attrib).search(pat);
+                        if (pos != -1) {
+                            ti = tags[i].getAttribute(attrib).slice(pos+9);
+                            tags[i].setAttribute('tabIndex',ti);
+                            
+                        }
+                    }
+                }
+            }   
+        </script>
+        <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script> 
+        
+        <apex:form id="theform">
+        <apex:pageBlock id="pageblock" Title="{!$Label.Company_Details}"  tabStyle="Account" helptitle="{!$Label.Help_Title}" helpUrl="{!ZEB.MPE_Help_PDF__c}">                
+                
+                <apex:outputPanel >
+                <br/>
+                    <apex:outputLabel value="{!$Label.Required_Fields}" style="font-weight:bold; font-size: 1em; color: #000000;"> </apex:outputLabel>
+                </apex:outputPanel>
+                
+                <!-- Show page messages -->
+                <apex:PageMessages />
+                
+                <apex:pageBlockButtons id="pageblockbutton" location="bottom">
+                        <apex:commandButton id="previous" value="{!$Label.App_Previous}" immediate="true" action="{!prevPage2}" tabindex="201" styleClass="prev"/>
+                        <apex:commandButton value="{!$Label.App_Finish_Later}" immediate="true" action="{!FinishLater}" onclick="if(!confirm('{!$Label.PopUp_Finish_Later}')){return false;}" 
+                            title="{!$Label.OnMouse_Finish_Later}" onmouseover="{!$Label.OnMouse_Finish_Later}" tabindex="202" styleClass="finishlater"/>
+                        <apex:commandButton id="ENTER_BUTTON" value="{!$Label.App_Next}" action="{!nextPage4}" tabindex="203"/>
+                </apex:pageBlockButtons>
+                                
+                <apex:pageBlockSection showHeader="true" title="{!$Label.Company_Location_Details}" columns="2" rendered="{!NOT(RelType)}" collapsible="false" /> 
+                 
+                
+                <apex:pageBlockSection columns="2">
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Company_Legal_Name}" for="Company_Legal_Name__c"/>
+                        <apex:outputPanel layout="block">
+                            <apex:outputPanel layout="block"/>
+                            <apex:outputField id="Company_Legal_Name__c" value="{!ZEB.Company_Legal_Name__c}" />
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                        
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Company_Trading_Name}" for="Company_Trading_Name__c"/>
+                         <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="Company_Trading_Name__c" value="{!ZEB.Company_Trading_Name__c}" taborderhint="1"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <!-- <apex:pageblockSectionItem labelStyle="text-align: right; padding-bottom: 15px;">
+                        <apex:outputLabel value="{!$Label.Is_Legal_Name_Correct}" for="IsLegalNameIncorrect"/>
+                        <apex:outputPanel layout="block">
+                            <apex:outputPanel layout="block"/>
+                            <apex:inputField id="IsLegalNameIncorrect" value="{!ZEB.Is_Company_Legal_Name_Incorrect__c}" />
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem labelStyle="text-align: right; padding-bottom: 15px;">
+                        <apex:outputLabel value="{!$Label.Is_Trading_Name_Correct}" for="IsTradingNameIncorrect"/>
+                        <apex:outputPanel layout="block">
+                            <apex:outputPanel layout="block"/>
+                            <apex:inputField id="IsTradingNameIncorrect" value="{!ZEB.Is_Company_DBA_Trading_Name_Incorrect__c}" />
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem> -->
+                </apex:pageBlockSection>
+                
+                <apex:pageBlockSection id="plPanel" columns="2" rendered="{!NOT(RelType)}">                
+                    
+                    
+                    <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px;">
+                        <apex:pageBlockSection title="{!$Label.Primary_Business_Location_Details}" collapsible="false">
+                        </apex:pageBlockSection>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px;">
+                        <apex:pageBlockSection title="{!$Label.Company_Details}" collapsible="false">
+                        </apex:pageBlockSection>
+                    </apex:pageblockSectionItem>
+                    
+                    
+                    <apex:pageblockSectionItem >
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                        <apex:pageBlockSection columns="2" collapsible="false">
+                            <apex:outputLabel value="{!$Label.Primary_Same_As_HQ}" style="font-weight:bold;"/>
+                            <apex:commandButton value="{!$Label.Copy}" onclick="copyAdd(); return false;" reRender="HeadComState" styleClass="cpbtn"/>
+                        </apex:pageBlockSection> 
+                    </apex:pageblockSectionItem>
+                        
+                        <apex:pageblockSectionItem id="pageBlockSI2PA1">
+                        <apex:outputLabel value="{!$Label.Main_place_of_business_Address_1}"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="PAAL1" value="{!ZEB.Primary_Business_Address_Line_1__c}" taborderhint="2"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI1">
+                         <apex:outputLabel value="{!$Label.Headquarter_Company_Address_1}"/> 
+                         <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField id="HQAL1" value="{!ZEB.Headquarters_Address_Line_1__c}" taborderhint="10"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                                            
+                    <apex:pageblockSectionItem id="pageBlockSI2PA2">
+                        <apex:outputLabel value="{!$Label.Main_place_of_business_Address_2}"/>
+                        <apex:inputField id="PAAL2" value="{!ZEB.Primary_Business_Address_Line_2__c}" taborderhint="3"/>
+                    </apex:pageblockSectionItem> 
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI2">
+                        <apex:outputLabel value="{!$Label.Headquarter_Company_Address_2}"/>
+                        <apex:inputField id="HQAL2" value="{!ZEB.Headquarters_Address_Line_2__c}" taborderhint="11"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI2PA3">
+                        <apex:outputLabel value="{!$Label.Main_place_of_business_Town_City}"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="PATC" value="{!ZEB.Primary_Business_Town_City__c}" taborderhint="4"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI3">
+                        <apex:outputLabel value="{!$Label.Headquarter_Company_Town_City}"/>
+                    <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField id="HQTC" value="{!ZEB.Headquarters_Town_City__c}" taborderhint="12"/>
+                    </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                     <apex:pageblockSectionItem id="pageBlockSI2PA4">
+                        <apex:outputLabel value="{!$Label.Main_place_of_business_Country}"/>
+                            <apex:actionRegion >
+                            <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                             <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                             <apex:inputField id="PAC" value="{!ZEB.Primary_Business_Country__c}" taborderhint="5" style="width:45%">
+                                <apex:actionsupport event="onchange" rerender="MainBusState1"/>
+                             </apex:inputField>
+                             </apex:outputPanel>
+                            </apex:actionRegion>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI4">
+                        <apex:outputLabel value="{!$Label.Headquarter_Company_Country}"/>
+                            <apex:actionRegion >
+                            <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                             <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                                <apex:inputField id="HQC" value="{!ZEB.Headquarters_Country__c}" taborderhint="13" style="width:45%">
+                                    <apex:actionsupport event="onchange" rerender="HeadComState1"/>
+                                </apex:inputField>
+                                </apex:outputPanel>
+                            </apex:actionRegion>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="MainBusState">
+                        <apex:outputLabel value="{!$Label.Main_place_of_business_State}"/>
+                         <apex:outputpanel id="MainBusState1">
+                         <apex:outputPanel id="outputPanel1" layout="block" styleClass="{!IF(RequiredPrimaryState,'requiredInput', '')}"> 
+                             <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                        <apex:inputField id="PAPC" value="{!ZEB.Primary_Business_State__c}" taborderhint="6" /></apex:outputpanel>
+                         </apex:outputPanel> 
+                    </apex:pageblockSectionItem>
+                     
+                  <apex:pageblockSectionItem id="HeadComState">
+                        <apex:outputLabel value="{!$Label.Headquarter_Company_State}"/>
+                       <apex:outputpanel id="HeadComState1">
+                       <apex:outputPanel id="outputPanel1" layout="block" styleClass="{!IF(RequiredHQState,'requiredInput', '')}"> 
+                             <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                        <apex:inputField id="HQS" value="{!ZEB.Headquarters_State__c}" taborderhint="14"/>
+                        </apex:outputPanel> 
+                        </apex:outputpanel>
+                    </apex:pageblockSectionItem>
+                    
+                   <apex:pageblockSectionItem id="pageBlockSI2PA5">
+                        <apex:outputLabel value="{!$Label.Main_place_of_business_Postal_Code}"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="PAPC" value="{!ZEB.Primary_Business_Postal_Code__c}" taborderhint="7"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                   <apex:pageblockSectionItem id="pageBlockSI6">
+                        <apex:outputLabel value="{!$Label.Headquarter_Company_Postal_Code}"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField id="HQPC" value="{!ZEB.Headquarters_Postal_Code__c}" taborderhint="15"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI2PA6">
+                        <apex:outputLabel value="{!$Label.Main_Business_Phone_Number}"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="PAPN" value="{!ZEB.Primary_Business_Phone_Number__c}" taborderhint="8"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+   
+                   <apex:pageblockSectionItem id="pageBlockSI7">
+                        <apex:outputLabel value="{!$Label.Company_Phone_Number}"/>
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                        <apex:inputField id="HQPN" value="{!ZEB.Company_Phone_Number__c}" taborderhint="16"/>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI2PA7">
+                        <apex:outputLabel value="{!$Label.Primary_Location_Fax_Number}"/>
+                        <apex:inputField id="PAF" value="{!ZEB.Primary_Business_Fax_Number__c}" taborderhint="9"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem id="pageBlockSI8">
+                        <apex:outputLabel value="{!$Label.Headquarters_Fax_Number}"/>
+                        <apex:inputField id="HQF" value="{!ZEB.Headquarters_Fax_Number__c}" taborderhint="17"/>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem >
+                    </apex:pageblockSectionItem>
+                     <apex:actionFunction name="copyAndRerenderDepdPLFields" oncomplete="return copyDepdPLValues('{!$Component.theform.pageblock.plPanel.HeadComState.HQS}' ,'{!$Component.theform.pageblock.plPanel.MainBusState.PAPC}');" rerender="HeadComState1" />
+                </apex:pageblockSection>       
+        </apex:pageBlock>
+        </apex:form>
+        </div>
+
+      <div class="zbottombanner">
+        <apex:define name="footer">
+        <c:testfooter />
+        </apex:define>
+      </div> 
+</apex:page>

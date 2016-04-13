@@ -1,0 +1,212 @@
+<apex:page id="page" controller="ZEBLegalController" showHeader="false" sidebar="false" cache="false" action="{!onLoad}" language="{!languageLocale}" title="{!$Label.Application_Head}">
+    <!-- Begin CSS Style Cascading -->
+    <style>
+        .bPageBlock .requiredInput {
+            display: inline;
+        }
+    </style>
+    <!--Highlight styles start-->
+        <style>
+            li.done1{
+                background: #0077FF ! Important;
+                color: #FFFFFF ! Important;
+            }
+            #crumbs li.done1:after {
+                  content: "";
+                  border-top: 20px solid transparent;
+                  border-bottom: 20px solid transparent;
+                  border-left: 40px solid #0077FF;
+                  
+                  position: absolute;
+                  right: -40px;
+                  top: 0;
+                  z-index: 1;
+                  }
+                  
+         </style>
+         <!--Highlight styles End-->
+    <script type="text/javascript">
+        function replaceEnter(evt){
+          var e = evt || window.event;
+          if (e.keyCode == 13){
+            var allElements = document.getElementsByTagName('*');
+            for (var i = 0; i < allElements.length; i++){
+              if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                allElements[i].click();
+              }
+            }
+            return false;
+          }else{
+            return true;
+          }
+        }
+    function clearValue()
+    {
+        document.getElementById('{!$Component.page:frm:pblck:pbSectn:inputfield}').value = '';  
+        return false;
+    }
+    
+       document.onkeypress = replaceEnter;
+    </script>
+    <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+
+ 
+        <div class="ztopbanner">
+            <apex:define name="header">
+              <c:testheader />
+            </apex:define>
+        </div>
+<!--Chevron styles start-->
+        <div class="chevron">
+            <apex:define name="Chevron">
+                <c:ChevronComponent />
+            </apex:define>
+        </div>
+        <!--Chevron styles end-->
+
+    <div class="zmainbody">    
+<!--    <div style="width: 960px; margin: 0 auto;"> -->
+    <div >
+           
+            <!-- Show page messages -->
+            <apex:pageMessages />
+    </div>
+    <apex:sectionHeader title="{!partnerApplication.Company_Legal_Name__c}" />   
+        <apex:form id="frm">
+             <apex:pageBlock title="{!$Label.ZEB_Instructions}" mode="detail">
+                <apex:pageBlockSection columns="1">
+                    <apex:outputPanel >
+                        <apex:outputLabel value="{!$Label.ZEB_Instructions_placeholder1}" escape="false"/>
+                        <apex:outputLabel value="{!$Label.ZEB_Instructions_placeholder}" escape="false">
+                        </apex:outputLabel>
+                        <br></br>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+           </apex:pageBlock>
+            
+            <apex:pageBlock mode="detail">
+                <apex:pageBlockSection columns="1">
+                    <apex:outputPanel rendered="{!partnerApplication.Region_Requested__c=='LATAM' }">
+                        <apex:outputLabel value="{!$Label.Pre_Approval_LACR_Component_3}" style="font-weight:bold;">
+                        </apex:outputLabel>
+                        <br></br>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!partnerApplication.Region_Requested__c=='APAC' }">
+                        <apex:outputLabel value="{!$Label.Pre_Approval_APAC_Component_3}" style="font-weight:bold;">
+                        </apex:outputLabel>
+                        <br></br>
+                    </apex:outputPanel>
+
+                    <apex:outputPanel rendered="{!partnerApplication.Region_Requested__c=='NA'}">
+                        <apex:outputLabel value="{!$Label.Pre_Approval_NA_Component_3}" style="font-weight:bold;">
+                        </apex:outputLabel>
+                        <br></br>
+                    </apex:outputPanel>
+                    
+                    <apex:outputPanel rendered="{!partnerApplication.Region_Requested__c=='EMEA'}">
+                        <apex:outputLabel value="{!$Label.Pre_Approval_EMEA_Component}" style="font-weight:bold;">
+                        </apex:outputLabel>
+                        <br></br>
+                    </apex:outputPanel>
+                    <apex:outputPanel >
+                        <apex:outputText value="{!recommendedPrograms}" escape="false"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+           
+          
+           
+            
+                <apex:pageBlock id="pblck" title="{!$Label.Legal_Section_Title}" mode="detail">
+
+                <apex:pageBlockSection id="pbSectn" collapsible="false" columns="1">
+                    
+                      <apex:outputLabel value="{!$Label.App_Legal_Message}" style="font-weight:bold;"> </apex:outputLabel>
+                       <apex:outputPanel id="outputPanel" layout="block">
+                    <table border="0" width="80%">
+                        <tr colspan="3">
+                        <td width="50%">                         
+                          <apex:outputText value="{!$Label.Confirm_Company_Legal_Name}" escape="false">
+                                <apex:param value="{!partnerApplication.Company_Legal_Name__c}"/>
+                          </apex:outputText>
+                        </td>
+                        <td width="10%">
+                    <apex:actionRegion >
+                      <apex:selectRadio value="{!confirmLegalName}" required="true"> 
+                            <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                            <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/>   
+                                 <apex:actionsupport event="onclick" rerender="legalnameid" oncomplete="clearValue(); return false;" />
+                      </apex:selectRadio>
+                    </apex:actionRegion>
+                        </td>                       
+                        <td width="40%">
+                        <apex:outputPanel id="legalnameid" layout="block" >
+                                <apex:outputPanel id="outputPanela" layout="block" styleClass="{!IF(!confirmLegalName,'requiredInput', '')}"> 
+                                 <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                 <apex:inputField id="inputfield" label="name" value="{!partnerApplication.Updated_Company_Legal_Name__c}"  rendered="{!NOT(confirmLegalName)}" style="width: 200px"/> &nbsp;
+                                 <apex:commandButton id="ENTER_BUTTON" action="{!saveLegalName}" value="{!$Label.LegalNameSave}" rendered="{!NOT(confirmLegalName)}"/>
+                                 </apex:outputPanel>
+                        </apex:outputPanel>                     
+                        </td> 
+                    </tr>
+                    </table>    
+                     </apex:outputPanel>
+                      <apex:dataTable value="{!LegalAddendumList}" var="af" width="100%" 
+                            columns="7" columnsWidth="23%,13%,10%,13%,12%,16%,12%" cellpadding="5" cellspacing="0">                                                                       
+                                              
+                         <apex:column id="c1a" headerValue="{!$Label.Legal_Header_Agreement}" rendered="{!Not(IF((af.Document_Type__c == 'Specialization' && displayChannelPartner),true,false))}">
+                            <!-- <apex:outputLink value="/ZEBAddendumAgreement?id={!af.Id}" id="ct"  style="font-weight:bold;color: #0000A0;"> -->
+                            <apex:outputLink value="{!addendumURL}/ZEBAddendumAgreement?id={!af.Id}" id="ct"  style="font-weight:bold;color: #07F;">
+                                     <apex:outputField value="{!af.Legal_Document_Name__c}" />
+                            </apex:outputLink>
+                         </apex:column>
+                         <apex:column id="c1b" headerValue="{!$Label.Legal_Header_Agreement}" rendered="{!IF((af.Document_Type__c == 'Specialization' && displayChannelPartner),true,false)}">
+                                     <apex:outputField value="{!af.Legal_Document_Name__c}" />
+                         </apex:column>
+                         
+                         <apex:column id="c2" headerValue="{!$Label.Legal_Header_Community}">                         
+                           <apex:outputField value="{!af.Category__c}" />                        
+                         </apex:column>
+                         
+                         <apex:column id="c3" headerValue="{!$Label.Legal_Header_Link}">
+                           <apex:outputLink value="{!af.PDF_Link__c}" target="_blank">{!$Label.Legal_PDF_Link}</apex:outputLink>
+                         </apex:column>
+                                            
+                         <apex:column id="c4" headerValue="{!$Label.Legal_Header_Approver}">
+                           <apex:outputField value="{!af.Approver__c}" />
+                         </apex:column>
+                         
+                          <apex:column id="c6" headerValue="{!$Label.Legal_Header_Date}">
+                           <apex:outputText value="{0,date,MMM dd yyyy hh:mm aaa}">
+                             <apex:param value="{!af.Date_Approved__c}"></apex:param>
+                           </apex:outputText>
+                         </apex:column> 
+                         
+                         <apex:column id="c7" headerValue="{!$Label.Legal_Header_Approval}">
+                           <apex:outputField value="{!af.Status__c}" />
+                         </apex:column>
+                         
+                       </apex:dataTable>
+                </apex:pageBlockSection>
+                <apex:pageBlockButtons location="bottom" >
+                    <apex:commandButton action="{!onFinishLater}" value="{!$Label.Legal_Finish_Later}" onclick="if(!confirm('{!$Label.PopUp_Finish_Later}')){return false;}"
+                     title="{!$Label.OnMouse_Finish_Later}" onmouseover="{!$Label.OnMouse_Finish_Later}" immediate="true"/>
+                     <apex:commandButton id="ENTER_BUTTON" action="{!nextPage}" value="{!$Label.App_Next}" rendered="{!displaySubmit}"/>
+                </apex:pageBlockButtons>
+                
+            </apex:pageBlock>
+            
+        </apex:form>
+    </div>
+
+
+    <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+    </div>
+
+    
+  <!-- End CSS Style Cascading -->
+</apex:page>

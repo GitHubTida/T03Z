@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Product Hierarchy Value</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Hierarchy Value</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product Hierarchy Value --></label>
+        <name>ProductHierarchyValue__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

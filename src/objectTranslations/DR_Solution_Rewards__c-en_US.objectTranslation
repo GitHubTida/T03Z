@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>DR Solution Rewards</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DR Solution Rewards</value>
+    </caseValues>
+    <fields>
+        <label><!-- Recommended Program for Transition --></label>
+        <name>Recommended_Program_for_Transition__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Reward Discount Percentage --></label>
+        <name>Solution_Reward_Discount_Percentage__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,10 @@
+<apex:page standardController="Deal_Registration__c" extensions="DRChangeOwnerExtension">
+    <apex:form style="text-align:center; font-family:verdana,arial; font-size:8pt; font-weight:bold">
+    
+        <div style="padding:3px"></div>
+        <br/>
+        <apex:outputPanel rendered="{!isPartnerAdmin && displayLink}">
+            <apex:commandLink value="{!$Label.DRChangeOwner}" action="{!gotochangeownership}" target="_top" /><br/>
+        </apex:outputPanel>
+    </apex:form> 
+</apex:page>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>RMA Return</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RMA Returns</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Problem Description --></label>
+        <name>Additional_Problem_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- RMA Returns --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contract End Date --></label>
+        <name>Contract_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Number --></label>
+        <name>Contract_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Start Date --></label>
+        <name>Contract_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Depot Location --></label>
+        <name>Depot_Location__c</name>
+        <picklistValues>
+            <masterLabel>Australia, Melbourne {10 Wesley Court, Burwood}</masterLabel>
+            <translation><!-- Australia, Melbourne {10 Wesley Court, Burwood} --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China, Shanghai {No18 Zijin Road, Zhangpu Town, Kunshan Jiangsu Providence}</masterLabel>
+            <translation><!-- China, Shanghai {No18 Zijin Road, Zhangpu Town, Kunshan Jiangsu Providence} --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India, Bangalore {#4,5 Maruthi Industrial Estate, Whitefield Road}</masterLabel>
+            <translation><!-- India, Bangalore {#4,5 Maruthi Industrial Estate, Whitefield Road} --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore {49 Jalan Pemimpin #03-11 APS Industrial Building Singapore}</masterLabel>
+            <translation><!-- Singapore {49 Jalan Pemimpin #03-11 APS Industrial Building Singapore} --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Estimated Price Currency --></label>
+        <name>Estimated_Price_Currency__c</name>
+        <picklistValues>
+            <masterLabel>Test1</masterLabel>
+            <translation><!-- Test1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Test2</masterLabel>
+            <translation><!-- Test2 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Estimated Repair price --></label>
+        <name>Estimated_Repair_price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filter By --></label>
+        <name>Filter_By_Problem1__c</name>
+        <picklistValues>
+            <masterLabel>BATTERY</masterLabel>
+            <translation><!-- BATTERY --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Filter By --></label>
+        <name>Filter_By_Problem2__c</name>
+        <picklistValues>
+            <masterLabel>ERROR</masterLabel>
+            <translation><!-- ERROR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Model Number --></label>
+        <name>Model_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Orderline Source Reference --></label>
+        <name>Orderline_Source_Reference__c</name>
+    </fields>
+    <fields>
+        <label><!-- OutBound Tracking Number --></label>
+        <name>OutBound_Tracking_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Outbound Carrier --></label>
+        <name>Outbound_Carrier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Problem #1 --></label>
+        <name>Problem_Code_1__c</name>
+        <picklistValues>
+            <masterLabel>BATTERY; BACKUP</masterLabel>
+            <translation><!-- BATTERY; BACKUP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BATTERY; DAMAGE</masterLabel>
+            <translation><!-- BATTERY; DAMAGE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BATTERY; DRAIN PROBLEM</masterLabel>
+            <translation><!-- BATTERY; DRAIN PROBLEM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Problem #2 --></label>
+        <name>Problem_Code_2__c</name>
+        <picklistValues>
+            <masterLabel>ERROR</masterLabel>
+            <translation><!-- ERROR --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Problem Description --></label>
+        <name>Problem_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Order --></label>
+        <name>Purchase_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- RMAReturn External ID --></label>
+        <name>RMAReturn_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- RMA LineNumber --></label>
+        <name>RMA_LineNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- RMA SiebelLineId --></label>
+        <name>RMA_SiebelLineId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Repair Status --></label>
+        <name>Repair_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Entitlement --></label>
+        <name>Return_Entitlement__c</name>
+        <picklistValues>
+            <masterLabel>Commision</masterLabel>
+            <translation><!-- Commision --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Select Primary Symptom --></label>
+        <name>Select_Primary_Symptom__c</name>
+        <picklistValues>
+            <masterLabel>BATTERY; PROBLEM</masterLabel>
+            <translation><!-- BATTERY; PROBLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BOOT: COLD/WARM/REPEATED</masterLabel>
+            <translation><!-- BOOT: COLD/WARM/REPEATED --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CABLE; PROBLEM</masterLabel>
+            <translation><!-- CABLE; PROBLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAMERA MODULE; INTERMITTENT</masterLabel>
+            <translation><!-- CAMERA MODULE; INTERMITTENT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAMERA MODULE; NO DECODE</masterLabel>
+            <translation><!-- CAMERA MODULE; NO DECODE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAMERA MODULE; NO FLASH</masterLabel>
+            <translation><!-- CAMERA MODULE; NO FLASH --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CAMERA; PROBLEM</masterLabel>
+            <translation><!-- CAMERA; PROBLEM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COMMUNICATIONS; PROBLEM</masterLabel>
+            <translation><!-- COMMUNICATIONS; PROBLEM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Serial Number --></label>
+        <name>Serial_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Entitlement --></label>
+        <name>Service_Entitlement__c</name>
+        <picklistValues>
+            <masterLabel>Contract</masterLabel>
+            <translation><!-- Contract --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Warranty</masterLabel>
+            <translation><!-- Extended Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Warranty</masterLabel>
+            <translation><!-- Service Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Warranty</masterLabel>
+            <translation><!-- Standard Warranty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>T &amp; M</masterLabel>
+            <translation><!-- T &amp; M --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warranty</masterLabel>
+            <translation><!-- Warranty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ShipTo Address --></label>
+        <name>ShipTo_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo AttentionLine --></label>
+        <name>ShipTo_AttentionLine__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo Building --></label>
+        <name>ShipTo_Building__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo City --></label>
+        <name>ShipTo_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo ContactId --></label>
+        <name>ShipTo_ContactId__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo Country --></label>
+        <name>ShipTo_Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo Email --></label>
+        <name>ShipTo_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo FirstName --></label>
+        <name>ShipTo_FirstName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo LastName --></label>
+        <name>ShipTo_LastName__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo PhoneNumber --></label>
+        <name>ShipTo_PhoneNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo PostalCode --></label>
+        <name>ShipTo_PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo State --></label>
+        <name>ShipTo_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- ShipTo Street --></label>
+        <name>ShipTo_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty End --></label>
+        <name>Warranty_End__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Start --></label>
+        <name>Warranty_Start__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warranty Type --></label>
+        <name>Warranty_Type__c</name>
+        <picklistValues>
+            <masterLabel>EXTENDED WARRANTY</masterLabel>
+            <translation><!-- EXTENDED WARRANTY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SERVICE WARRANTY</masterLabel>
+            <translation><!-- SERVICE WARRANTY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>STANDARD WARRANTY</masterLabel>
+            <translation><!-- STANDARD WARRANTY --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Product --></label>
+        <name>Add_Product</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_RMA_Product --></label>
+        <name>Add_RMA_Product</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Checkout --></label>
+        <name>Checkout</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Checkout_RMA --></label>
+        <name>Checkout_RMA</name>
+    </webLinks>
+</CustomObjectTranslation>

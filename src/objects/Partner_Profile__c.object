@@ -1,0 +1,4175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Number_Formula__c</fullName>
+        <formula>Account_Parent_Record__r.AccountNumber</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Number Formula</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Account_Owner__c</fullName>
+        <formula>Account_Parent_Record__r.Owner.FirstName  &amp; &quot; &quot; &amp;  Account_Parent_Record__r.Owner.LastName</formula>
+        <label>Account Owner</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Account_Parent_Record__c</fullName>
+        <label>Account Parent Record</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Partner Profiles</relationshipLabel>
+        <relationshipName>Partners4</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Partner_Profiles1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Company_Websites__c</fullName>
+        <label>Additional Company Websites</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Asset_Management__c</fullName>
+        <label>Asset Management %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Auction_or_3rd_Party_Marketplaces__c</fullName>
+        <inlineHelpText>If you advertise/promote Zebra product on any public auction site or third-party marketplaces,  indicate which sites. (select all that apply)</inlineHelpText>
+        <label>Auction or 3rd Party Marketplaces</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bonanza</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Craigslist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ebay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecrater</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newegg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oodle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overstock.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricegrabber</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rakuten</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sears</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wal-Mart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yahoo Shopping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Auto_ID_POS_ID_HW_or_complementary_sw__c</fullName>
+        <label>Auto ID/POS/ID HW or complementary sw%</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>BARCODE_PRINTER_REVENUE_TOTAL__c</fullName>
+        <description>Displays the percentage sum total for barcode printers sold revenue</description>
+        <formula>(IF(ISBLANK(Zebra__c ), 0, 1) + 
+IF(ISBLANK(Datamax_O_Neil__c), 0,1) + 
+  IF(ISBLANK(Intermec_Honeywell__c), 0, 1) + 
+   IF(ISBLANK(Printronix__c), 0, 1) +
+    IF(ISBLANK(SATO__c), 0, 1) +
+     IF(ISBLANK(Toshiba_TEC__c ), 0, 1) +
+      IF(ISBLANK(Other_Printer_Sales__c ), 0, 1)) / 7</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>BARCODE PRINTER REVENUE TOTAL</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Barcode_Printer_Revenue__c</fullName>
+        <label>Barcode and/or Card Printer Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Blue_Star__c</fullName>
+        <label>Blue Star %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Business_Model__c</fullName>
+        <label>Business Model</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Application partner / Developer Integrator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier / Service Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consulting Services Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Marketer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>E-Tailer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installation Service Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Internet Service Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Network / System Integrator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Store</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Added Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wireless Service Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CUSTOMER_MIX_TOTAL__c</fullName>
+        <description>This is the total percentage sum of the customer mix fields</description>
+        <formula>(IF(ISBLANK(End_User_Customer_Mix__c), 0, 1) + 
+IF(ISBLANK(OEMs_Customer_Mix__c), 0,1) + 
+  IF(ISBLANK(Other_Customer_Mix__c), 0, 1) + 
+      IF(ISBLANK(Resellers_Customer_Mix__c), 0, 1)) / 4</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>CUSTOMER MIX TOTAL</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Card_ID_HW_or_complementary_software__c</fullName>
+        <label>Card/ID HW or complementary software %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Citizen__c</fullName>
+        <label>Citizen %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <label>City</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Cloud_Based_Solutions_Revenue__c</fullName>
+        <label>Cloud-Based Solutions Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Cloud_Business_Models__c</fullName>
+        <inlineHelpText>Please indicate if you offer any of the following cloud business models.</inlineHelpText>
+        <label>Cloud Business Models</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Infrastructure as a Service (IaaS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Platform as a Service (PaaS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software as a Service (SaaS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Company_Description__c</fullName>
+        <label>Company Description</label>
+        <length>131072</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Company_Develops_Software_Firmware__c</fullName>
+        <label>Company Develops Software/Firmware</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Company_Geographical_Coverage_Areas__c</fullName>
+        <inlineHelpText>Identify your company&apos;s geographical coverage areas by state/providence and country through field sales efforts only (excludes web, catalog, and inside sales)</inlineHelpText>
+        <label>Company Geographical Coverage Areas</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Company_ID__c</fullName>
+        <formula>Company_Name__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company ID</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Id_Type__c</fullName>
+        <label>Company ID Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Tax Registration ID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government ID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VAT Registration ID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Company_Legal_Name__c</fullName>
+        <label>Company Legal Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name_Lookup_Formula__c</fullName>
+        <formula>Company_Name__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Company Name Lookup Formula</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name_Potential_Partner__c</fullName>
+        <description>Potential Partner Company Name</description>
+        <label>Company Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Name__c</fullName>
+        <label>Company Name Lookup</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Partner Profiles</relationshipLabel>
+        <relationshipName>Partners4_del</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Company_Tax_Registration_ID__c</fullName>
+        <label>Company ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Trading_Name__c</fullName>
+        <label>Company DBA/Trading Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Website__c</fullName>
+        <label>Company Website</label>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Compliance_Labeling__c</fullName>
+        <label>Compliance Labeling %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Consumer_Goods__c</fullName>
+        <inlineHelpText>Consumer Goods is focused on consumer products, electronics, and textiles (not retail or manufacturing).</inlineHelpText>
+        <label>Consumer Goods %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Software_Offering__c</fullName>
+        <inlineHelpText>If Custom Software as % of application sw is &gt;0, describe custom software offering</inlineHelpText>
+        <label>Custom Software Offering</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Custom_Software_as_of_application_sw__c</fullName>
+        <label>Custom Software as % of application sw</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DIS_Matica__c</fullName>
+        <label>DIS/Matica %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>DataCard__c</fullName>
+        <label>DataCard %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Datamax_O_Neil__c</fullName>
+        <label>Datamax-O&apos;Neil %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Customer_Mix__c</fullName>
+        <inlineHelpText>If Other Customer Mix % is &gt; 0, describe what else makes up your customer mix.</inlineHelpText>
+        <label>Describe Other Customer Mix %</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Printer_Sales_Pct__c</fullName>
+        <label>Describe Other Printer Sales %</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Printer_Sales__c</fullName>
+        <inlineHelpText>If Other Printer Sales % is &gt; 0, describe what other printer brands you sell.</inlineHelpText>
+        <label>Describe Other Printer Sales</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Revenue_Activities__c</fullName>
+        <inlineHelpText>If Other Revenue Activities % is &gt; 0, describe what other activities exist.</inlineHelpText>
+        <label>Describe Other Revenue Activities %</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Revenue_Sources_Pct__c</fullName>
+        <label>Describe Other Revenue Sources %</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Revenue_Sources__c</fullName>
+        <inlineHelpText>If Other Revenue Sources % is &gt; 0, describe what other revenue sources you have.</inlineHelpText>
+        <label>Describe Other Revenue Sources</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Describe_Other_Vertical_Markets__c</fullName>
+        <label>Describe Other Vertical Markets</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Document_Records_Management__c</fullName>
+        <label>Document &amp; Records Management %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>EMS_WMS_Integration__c</fullName>
+        <label>EMS/WMS Integration %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Employees__c</fullName>
+        <inlineHelpText>Please indicate total employees at the company. In the other fields, please specify the dedicated full-time employees for each role.</inlineHelpText>
+        <label>Employees</label>
+        <precision>8</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>End_User_Customer_Mix__c</fullName>
+        <label>End User Customer Mix %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Epson__c</fullName>
+        <label>Epson %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Evolis__c</fullName>
+        <label>Evolis %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Fargo__c</fullName>
+        <label>Fargo %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Field_Sales__c</fullName>
+        <label>Field Sales %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Financial Customer</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Government__c</fullName>
+        <inlineHelpText>Includes Federal, State &amp; Local, Education, and Public Administration &amp; Safety.</inlineHelpText>
+        <label>Government %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>HQ_Address__c</fullName>
+        <inlineHelpText>Indicate your company headquarter&apos;s mailing address.</inlineHelpText>
+        <label>HQ Address</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Handle_in_house__c</fullName>
+        <label>Handle in-house %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Hardware_Revenue__c</fullName>
+        <label>Hardware Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Healthcare__c</fullName>
+        <label>Healthcare %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>In_house_Professional_Services__c</fullName>
+        <label>In-house Professional Services %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>In_house_Software_Program_Developers__c</fullName>
+        <label># In-house Software Program/Developers</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>In_house_dev_as_of_custom_offering__c</fullName>
+        <label>In-house dev as % of custom offering</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Indicate_Other_Applications__c</fullName>
+        <inlineHelpText>If Other Applications % is &gt; 0, indicate other applications that make up total revenue.</inlineHelpText>
+        <label>Indicate Other Applications</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Information_Labels__c</fullName>
+        <label>Information Labels %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Information_enclosed_herein_is_accurate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Information enclosed herein is accurate</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Ingram_Nimax__c</fullName>
+        <label>Ingram/Nimax %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Inside_Sales_Reps__c</fullName>
+        <label># Inside Sales Reps</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Intermec_Honeywell__c</fullName>
+        <label>Intermec/Honeywell %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Internet_Total_Revenue__c</fullName>
+        <label>Internet Total Revenue %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Management__c</fullName>
+        <label>Inventory Management %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Invoice_Receipt_Printing_Receipts__c</fullName>
+        <label>Invoice/Receipt Printing/ Receipts %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Kiosk_or_complementary_software__c</fullName>
+        <label>Kiosk or complementary software %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Magicard__c</fullName>
+        <label>Magicard %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Manufacturing__c</fullName>
+        <label>Manufacturing %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_Resources__c</fullName>
+        <label># Marketing Resources</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Mobility__c</fullName>
+        <label>Mobility %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_printer_existing_application__c</fullName>
+        <label>New printer/existing application %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>New_printer_new_application__c</fullName>
+        <label>New printer/new application %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OEMs_Customer_Mix__c</fullName>
+        <label>OEMs Customer Mix %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>OTS_software_brand_name__c</fullName>
+        <inlineHelpText>If Off-the-shelf software % is &gt; 0, provide OTS software brand name</inlineHelpText>
+        <label>OTS software brand name</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Off_the_shelf_OTS_sw_as_of_applic_sw__c</fullName>
+        <label>Off-the-shelf (OTS) sw as % of applic sw</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>On_boarding_reject_reason__c</fullName>
+        <description>This field will populate the email sent to the prospect when an on-boarding profile is rejected.</description>
+        <inlineHelpText>This field will populate the email sent to the prospect when an on-boarding profile is rejected.</inlineHelpText>
+        <label>On-boarding reject reason</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Online_Sales__c</fullName>
+        <label>Online Sales %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Operating_Systems__c</fullName>
+        <label>Operating Systems</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Android</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iOS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Linux</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mac OS/X</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unix</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Browser</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows CE/Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows PC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Windows Server</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Ordering_Order_Entry_Fulfillment__c</fullName>
+        <label>Ordering, Order Entry/Fulfillment %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Applications__c</fullName>
+        <label>Other Applications %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Auction_or_3rd_Party_Marketplaces__c</fullName>
+        <inlineHelpText>If you selected other for Auction or 3rd Party Marketplaces, please describe.</inlineHelpText>
+        <label>Other Auction or 3rd Party Marketplaces</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Cloud_Business_Models__c</fullName>
+        <inlineHelpText>If you selected other for Cloud Business Models, please describe.</inlineHelpText>
+        <label>Other Cloud Business Models</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Customer_Mix__c</fullName>
+        <label>Other Customer Mix %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Distributor_Define__c</fullName>
+        <inlineHelpText>If Other Distributor % is &gt; 0, indicate distributor names.</inlineHelpText>
+        <label>Other Distributor</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Distributor__c</fullName>
+        <label>Other Distributor %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Operating_System__c</fullName>
+        <label>Other Operating System</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Platform__c</fullName>
+        <label>Other Platform</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Printer_Sales__c</fullName>
+        <label>Other Printer Sales %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Professional_Services__c</fullName>
+        <inlineHelpText>If you selected other for professional services, please describe.</inlineHelpText>
+        <label>Other Professional Services</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Programming_Language__c</fullName>
+        <label>Other Programming Language</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Other_Revenue_Activities__c</fullName>
+        <label>Other Revenue Activities %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Revenue_Sources__c</fullName>
+        <label>Other Revenue Sources %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Technology_Offerings__c</fullName>
+        <inlineHelpText>If you selected other for Technology Offerings, please describe.</inlineHelpText>
+        <label>Other Technology Offerings</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Other_Vertical_Market__c</fullName>
+        <label>Other Vertical Market %</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Other_Vertical_Markets__c</fullName>
+        <inlineHelpText>If other vertical markets % &gt; 0, indicate those vertical markets.</inlineHelpText>
+        <label>Other Vertical Markets</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Outside_Field_Sales_Reps__c</fullName>
+        <label># Outside/Field Sales Reps</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Outside_Field_Sales_Total_Revenue__c</fullName>
+        <label>Outside/Field Sales Total Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Outsourced_dev_as_of_custom_offering__c</fullName>
+        <label>Outsourced dev as % of custom offering</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Outsourcing_Company_Name__c</fullName>
+        <inlineHelpText>If Outsourced development &gt;0, provide outsourcing company name.</inlineHelpText>
+        <label>Outsourcing Company Name</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PF_Program_Name__c</fullName>
+        <label>PF Program Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Technology Solutions Architect Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Solutions Architect Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIDC Technology Specialist Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIDC Technology Specialist Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIDC Technology Specialist Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Broadline Technology Marketer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Print &amp; Apply Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self Service Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller Premier Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Specialist Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Specialist Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PF_Program_Type__c</fullName>
+        <label>PF Program Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Application Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PREVIOUS_YEARS_REVENUE_TOTAL__c</fullName>
+        <description>This is the percentage sum for previous year&apos;s barcode printers are sales</description>
+        <formula>(IF(ISBLANK(Replacement_of_existing_printer__c), 0, 1) + 
+IF(ISBLANK(Upgrade_of_existing_printer__c), 0,1) + 
+ IF(ISBLANK(New_printer_existing_application__c), 0, 1) + 
+ IF(ISBLANK(New_printer_new_application__c), 0, 1)) / 4</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PREVIOUS YEARS REVENUE TOTAL</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Parent_Account__c</fullName>
+        <label>Parent Account</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_First_ID__c</fullName>
+        <description>ID from Siebel associated with Partner&apos;s First Account ID</description>
+        <label>Partner First ID</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Locator_Permisson_Granted__c</fullName>
+        <defaultValue>true</defaultValue>
+        <label>Partner Locator Permisson Granted</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Program_Membership__c</fullName>
+        <description>This field allows us to pull the Partner Program Membership object into the Partner Profile section.</description>
+        <label>Partner Program Membership</label>
+        <referenceTo>Partner_Program_Membership__c</referenceTo>
+        <relationshipLabel>Partner Profiles</relationshipLabel>
+        <relationshipName>Partner_Profiles</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Website_del__c</fullName>
+        <formula>Company_Name__r.Website</formula>
+        <label>Partner Website</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Percentage_of_End_Users__c</fullName>
+        <description>Percentage of End user in overall Revenue Mix</description>
+        <inlineHelpText>What percentage of End Users are part of your overall revenue?</inlineHelpText>
+        <label>Percentage of End Users</label>
+        <picklist>
+            <picklistValues>
+                <fullName>10%</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>20%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>25%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>30%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>40%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>50%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>60%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>70%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>75%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>80%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>90%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>100%</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Personal_ID_Access_Control__c</fullName>
+        <label>Personal ID/Access Control %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Pharmacy_Patient_Wristband__c</fullName>
+        <label>Pharmacy/Patient Wristband %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Phone__c</fullName>
+        <label>Phone</label>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Platform__c</fullName>
+        <label>Platform</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NetBeans</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Openstream CueMe</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RhoMobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spring</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Titanium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Xamarin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zatar</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <label>Postal Code</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Previous_Year_Revenue__c</fullName>
+        <description>Overall company/division revenue for the previous year</description>
+        <inlineHelpText>What was your overall company/division revenue for the previous year?</inlineHelpText>
+        <label>Previous Year Revenue</label>
+        <picklist>
+            <picklistValues>
+                <fullName>&lt; $10,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$10,000-$99,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$99,001-$250,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$250,000-$500,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$500,001-$1M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$1M-$5M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Over $5M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Segment_Revenue__c</fullName>
+        <label>Primary Solution Revenue</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Solution__c</fullName>
+        <label>Primary Solution</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Autonomous Mining</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Campus Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Citizen Engagement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Collection and Tracking</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Command and Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Agent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected First Responder</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Government Service Worker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Guest and Self-Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Shopper and Self-Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Soldier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Traveler</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Facing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Device and Asset Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dispatch and Workflow Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emergency Medical Safety and Efficiency</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Enterprise Asset Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Communications and Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Field Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fire Accountability and Credentialing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Firehouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>First Responder Life Safety</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fleet Management and Delivery</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Front Line Command</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Guest Wi-Fi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Health, Human and Social Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Wireless Comms Infrastructure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intelligent Transportation System</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Life Safety</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Material and Inventory Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Merchandising and Inventory Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metering and Distribution Automation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mining Command and Control</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Operator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Network Infrastructure Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nurse Call</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ordering and Payment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passenger Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Physical Security and Personnel Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plant Communications and Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Point Of Care</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Point-Of-Sale</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Practice Administration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quality and Traceability</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Safety and Environmental</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security and Resilience</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipboard Communication</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Soldier Life Safety</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Staff Communications and Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Video and Real Time Crime Center</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Video Surveillance and Streaming</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warehouse Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wireless Communications Infrastructure</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yard Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Primary_Supervertical__c</fullName>
+        <label>Primary Industry</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Energy and Utilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospitality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>National Government Security</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Natural Resources</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Safety</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Telecom and Media</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation and Logistics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Print_and_Apply_System__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Do you manufacture and/or integrate your own Print and Apply system?</inlineHelpText>
+        <label>Print and Apply System</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Printed_Catalog_Total_Revenue__c</fullName>
+        <label>Printed Catalog Total Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Printronix__c</fullName>
+        <label>Printronix %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Professional_Services_Revenue__c</fullName>
+        <inlineHelpText>Indicate your professional services business (i.e. consulting, installation, site survey, etc.) as a percent of your total revenue.</inlineHelpText>
+        <label>Professional Services Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Professional_Services__c</fullName>
+        <inlineHelpText>Indicate the types of professional services your company provides. (select all that apply)</inlineHelpText>
+        <label>Professional Services</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Checked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Needs Analysis</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Config Install Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Configuration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systems Install/Install Support</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Professional_Services_of_Tot_Revenue__c</fullName>
+        <label>Professional Services % of Tot Revenue</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Programming_Languages__c</fullName>
+        <label>Programming Languages</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ASP.NET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C / C++</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C#</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delphi</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HTML5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Java</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JavaScript</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Objective-C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PERL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Python</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ruby</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VB.NET/VB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>XML</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Project_Managers_Consultants__c</fullName>
+        <label># Project Managers/Consultants</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Promote_Auction_3rd_Party_Marketplaces__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Advertise/promote Zebra product on any public auction site or third-party marketplaces?</description>
+        <inlineHelpText>Do you advertise/promote Zebra product on any public auction site or third-party marketplaces?</inlineHelpText>
+        <label>Promote Auction/3rd Party Marketplaces</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Promoters_Resellers_of_Zebra__c</fullName>
+        <inlineHelpText>Provide any and all business names and/or DBAs under which your company actively promotes/resells Zebra Products</inlineHelpText>
+        <label>Promoters/Resellers of Zebra</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Provide_an_Application_Solution_Overview__c</fullName>
+        <inlineHelpText>Please provide an overview of your company&apos;s application/solution and how it fits with Zebra&apos;s offerings.</inlineHelpText>
+        <label>Provide an Application/Solution Overview</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Quality_Control_Assurance__c</fullName>
+        <label>Quality Control/Assurance %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>REVENUE_ACTIVITIES_TOTAL__c</fullName>
+        <description>This formula field takes a real-time sum of the Total_Revenue_Activities and displays it for the user</description>
+        <formula>(IF(ISBLANK(Outside_Field_Sales_Total_Revenue__c), 0, 1) + 
+IF(ISBLANK(Telesales_Total_Revenue__c), 0,1) + 
+ IF(ISBLANK(Printed_Catalog_Total_Revenue__c), 0, 1) + 
+ IF(ISBLANK(Internet_Total_Revenue__c), 0, 1) + 
+ IF(ISBLANK(Retail_Total_Revenue__c), 0, 1) + 
+ IF(ISBLANK(Other_Revenue_Activities__c), 0, 1)) / 6</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>REVENUE ACTIVITIES TOTAL</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RFID__c</fullName>
+        <label>RFID %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Refer_to_Distributor__c</fullName>
+        <label>Refer to Distributor %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Refer_to_Zebra__c</fullName>
+        <label>Refer to Zebra %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Repair_Services_break_fix_Revenue__c</fullName>
+        <label>Repair Services (break/fix) Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Replacement_of_existing_printer__c</fullName>
+        <label>Replacement of existing printer</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Reseller_Health__c</fullName>
+        <description>Sales Team member assessment of overall reseller health</description>
+        <inlineHelpText>Sales Team member assessment of overall reseller health</inlineHelpText>
+        <label>Reseller Health</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resellers_Customer_Mix__c</fullName>
+        <label>Resellers Customer Mix %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Retail_Management__c</fullName>
+        <label>Retail Management %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Retail_Total_Revenue__c</fullName>
+        <label>Retail Total Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Retail__c</fullName>
+        <label>Retail %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Customer_Service__c</fullName>
+        <label>% Revenue Customer Service</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Hardware__c</fullName>
+        <label>% Revenue Hardware Sales</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Professional_Sales__c</fullName>
+        <label>% Revenue Professional Sales</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Software__c</fullName>
+        <label>% Revenue Software Sales</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Reverse_Logistics__c</fullName>
+        <label>Reverse Logistics %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>SATO__c</fullName>
+        <label>SATO %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Last_FY_Auto_E_Com_Orders__c</fullName>
+        <label>Percentage Revenue Internet Only Sales</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Last_FY_Field_Sales__c</fullName>
+        <label>Percentage Revenue Face to Face Sales</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Last_FY_Online_Print_Catalogs__c</fullName>
+        <label>Percentage Revenue Internet-Human Sales</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Sample_Specimen_Management__c</fullName>
+        <label>Sample/Specimen Management %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>ScanSource__c</fullName>
+        <label>ScanSource %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Services__c</fullName>
+        <label>Services %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_Receiving__c</fullName>
+        <label>Shipping/ Receiving %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Software_Service_Tech_Support_Revenue__c</fullName>
+        <description>Software service contracts or other technical support revenue</description>
+        <inlineHelpText>Software service contracts or other technical support revenue</inlineHelpText>
+        <label>Software Service/Tech Support Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Software_application_based_Revenue__c</fullName>
+        <label>Software(application-based) Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Specialized_Application_Expertise__c</fullName>
+        <defaultValue>false</defaultValue>
+        <inlineHelpText>Does your company have expertise in a specialized application that your company developed and sold across industries? If yes, check the box.</inlineHelpText>
+        <label>Specialized Application Expertise</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Sports_Entertainment__c</fullName>
+        <label>Sports &amp; Entertainment %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Star_Micronics__c</fullName>
+        <label>Star Micronics %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <label>State/Province</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Steps_to_Submit__c</fullName>
+        <description>Steps to Submit your profile:  
+Step 1: Check the box to verify your data; 
+Step 2: Hit the SAVE button; 
+Step 3: Hit the Submit for Approval button</description>
+        <inlineHelpText>Steps to submit your Profile: Step 1: Check the box to verify your data; Step 2: Click the SAVE button; Step 3: Click the Submit for Approval button at either the Top of the page or Bottom of the page</inlineHelpText>
+        <label>Steps to Submit</label>
+        <length>28000</length>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <label>Street</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Supplies_Accessories_Revenue__c</fullName>
+        <label>Supplies &amp; Accessories Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Supplies_Converter__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Type of customer that converts supplies</description>
+        <label>Supplies Converter</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>System_Engineers__c</fullName>
+        <label># System Engineers</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Technical_Support_Resources__c</fullName>
+        <label># Technical Support Resources</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Technology_Offerings__c</fullName>
+        <inlineHelpText>Please indicate if you offer any of the following options to your customers (please check all that apply)</inlineHelpText>
+        <label>Technology Offerings</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Leasing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hardware as a Service (HaaS)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Managed Service Contracts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Tele_Inside_Sales__c</fullName>
+        <description>Tele/Inside Sales %</description>
+        <label>Tele/Inside Sales %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Telesales_Total_Revenue__c</fullName>
+        <label>Telesales Total Revenue %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Third_Party_Professional_Services_Name__c</fullName>
+        <inlineHelpText>If Third Party Professional Services % is &gt; 0, provide their names.</inlineHelpText>
+        <label>Third Party Professional Services Name</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Third_Party_Professional_Services__c</fullName>
+        <label>Third Party Professional Services %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <label>Title</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Toshiba_TEC__c</fullName>
+        <label>Toshiba/TEC %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Company_Employees__c</fullName>
+        <label>Total Number of Company Employees</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Inside_Sales_Personnel__c</fullName>
+        <label>Total Number of Inside Sales Personnel</label>
+        <precision>7</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Sales_Personnel__c</fullName>
+        <label>Total Number of Sales Personnel</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Services_Employees__c</fullName>
+        <label>Total Number of Services Employees</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Number_of_Technical_Personnel__c</fullName>
+        <label>Total Number of Technical Personnel</label>
+        <precision>9</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Sales_Service_Revenue_Last_FY__c</fullName>
+        <label>Total Sales/Service Revenue</label>
+        <picklist>
+            <picklistValues>
+                <fullName>$0-$150,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$150,001-$600,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$600,001 - $1,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$1,000,001 - 3,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$3,000,001 - $5,000,000</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>$5,000,001 or more</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Training_Employees__c</fullName>
+        <label># Training Employees</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Transportation_Logistics__c</fullName>
+        <label>Transportation &amp; Logistics %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Upgrade_of_existing_printer__c</fullName>
+        <label>Upgrade of existing printer</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Vertical_Market_Focus__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Does your company have expertise in specific vertical market? If yes, check the box.</description>
+        <inlineHelpText>Does your company have expertise in specific vertical market? If yes, check the box.</inlineHelpText>
+        <label>Vertical Market Focus</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>WIP_Management__c</fullName>
+        <label>WIP Management %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Website__c</fullName>
+        <description>Website Field for the &quot;Potential Partner Application&quot;</description>
+        <label>Website</label>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Wynit_Card__c</fullName>
+        <label>Wynit (Card)%</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>X3rd_Party_Market_Place_Websites__c</fullName>
+        <label>3rd Party Market Place Websites</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bonanza</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Craigslist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ebay</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ecrater</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Newegg</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oodle</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overstock.com</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pricegrabber</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rakuten</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sears</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Walmart</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yahoo Shopping</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Zebra_Product_Focus__c</fullName>
+        <label>Zebra Product Focus</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Aftermarket</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RTLS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Zebra__c</fullName>
+        <label>Zebra %</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>of_Software_Installations__c</fullName>
+        <inlineHelpText>To date, how many software installations has your organization completed?</inlineHelpText>
+        <label># of Software Installations</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>Partner Profile</label>
+    <listViews>
+        <fullName>APAC_PIC_Queue_Partner_Profile</fullName>
+        <filterScope>Queue</filterScope>
+        <label>APAC PIC Queue</label>
+        <queue>APAC PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>Applicant_Profile</fullName>
+        <columns>NAME</columns>
+        <columns>Company_Name_Potential_Partner__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Mine</filterScope>
+        <label>Applicant Profile</label>
+    </listViews>
+    <listViews>
+        <fullName>EMEA_PIC_Queue_Partner_Profile</fullName>
+        <filterScope>Queue</filterScope>
+        <label>EMEA PIC Queue</label>
+        <queue>EMEA PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>Internal_All_Profile_View</fullName>
+        <columns>NAME</columns>
+        <columns>Company_Name__c</columns>
+        <columns>RECORDTYPE</columns>
+        <filterScope>Everything</filterScope>
+        <label>Internal All Profile View</label>
+    </listViews>
+    <listViews>
+        <fullName>LATAM_PIC_Queue_Partner_Profile</fullName>
+        <filterScope>Queue</filterScope>
+        <label>LATAM PIC Queue</label>
+        <queue>LATAM PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>NA_PIC_Queue_Partner_Profile</fullName>
+        <filterScope>Queue</filterScope>
+        <label>NA PIC Queue</label>
+        <queue>NA PIC Queue</queue>
+    </listViews>
+    <listViews>
+        <fullName>Partner_Profile_View</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Parent_Record__c</columns>
+        <columns>Account_Owner__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Partner Profile View</label>
+    </listViews>
+    <listViews>
+        <fullName>Self_Registration</fullName>
+        <columns>Company_Name__c</columns>
+        <columns>Account_Number_Formula__c</columns>
+        <columns>NAME</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Company_Name_Potential_Partner__c</columns>
+        <columns>State_Province__c</columns>
+        <columns>Account_Owner__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>7/1/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Company_Trading_Name__c</field>
+            <operation>notContain</operation>
+            <value>ISV 3</value>
+        </filters>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>notEqual</operation>
+            <value>Approved,Rejected,Duplicate</value>
+        </filters>
+        <label>Self Registration- Profiles After 7/1/14</label>
+    </listViews>
+    <listViews>
+        <fullName>Self_Registration_Approved</fullName>
+        <columns>Company_Name__c</columns>
+        <columns>Account_Number_Formula__c</columns>
+        <columns>Company_Name_Potential_Partner__c</columns>
+        <columns>State_Province__c</columns>
+        <columns>NAME</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>7/1/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Company_Trading_Name__c</field>
+            <operation>notContain</operation>
+            <value>ISV 3</value>
+        </filters>
+        <label>Self Registration- Approved</label>
+    </listViews>
+    <listViews>
+        <fullName>Self_Registration_Duplicate</fullName>
+        <columns>Company_Name__c</columns>
+        <columns>Account_Number_Formula__c</columns>
+        <columns>Company_Name_Potential_Partner__c</columns>
+        <columns>State_Province__c</columns>
+        <columns>NAME</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Duplicate</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>7/1/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Company_Trading_Name__c</field>
+            <operation>notContain</operation>
+            <value>ISV 3</value>
+        </filters>
+        <label>Self Registration- Duplicate</label>
+    </listViews>
+    <listViews>
+        <fullName>Self_Registration_Rejected</fullName>
+        <columns>Company_Name__c</columns>
+        <columns>Account_Number_Formula__c</columns>
+        <columns>Company_Name_Potential_Partner__c</columns>
+        <columns>State_Province__c</columns>
+        <columns>NAME</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </filters>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterOrEqual</operation>
+            <value>7/1/2014 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Company_Trading_Name__c</field>
+            <operation>notContain</operation>
+            <value>ISV 3</value>
+        </filters>
+        <label>Self Registration- Rejected</label>
+    </listViews>
+    <nameField>
+        <displayFormat>PP -{0000000}</displayFormat>
+        <label>Partner Profile Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Partner Profiles</pluralLabel>
+    <recordTypes>
+        <fullName>Application_Specialist</fullName>
+        <active>true</active>
+        <description>Independent Software Vendor</description>
+        <label>Application Specialist</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Auction_or_3rd_Party_Marketplaces__c</picklist>
+            <values>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bonanza</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craigslist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ebay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecrater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newegg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oodle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overstock%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricegrabber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rakuten</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sears</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wal-Mart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yahoo Shopping</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cloud_Business_Models__c</picklist>
+            <values>
+                <fullName>Infrastructure as a Service %28IaaS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platform as a Service %28PaaS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software as a Service %28SaaS%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operating_Systems__c</picklist>
+            <values>
+                <fullName>Android</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linux</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mac OS%2FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Browser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows CE%2FMobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PF_Program_Name__c</picklist>
+            <values>
+                <fullName>AIDC Technology Specialist Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIDC Technology Specialist Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIDC Technology Specialist Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Specialist Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Specialist Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broadline Technology Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Premier Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print %26 Apply Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Solutions Architect Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Solutions Architect Premier</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PF_Program_Type__c</picklist>
+            <values>
+                <fullName>Application Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Percentage_of_End_Users__c</picklist>
+            <values>
+                <fullName>10%25</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>75%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>NetBeans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Openstream CueMe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RhoMobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titanium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xamarin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zatar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Previous_Year_Revenue__c</picklist>
+            <values>
+                <fullName>%2410%2C000-%2499%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%241M-%245M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24250%2C000-%24500%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24500%2C001-%241M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2499%2C001-%24250%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C %2410%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over %245M</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Professional_Services__c</picklist>
+            <values>
+                <fullName>Application Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Checked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Config Install Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systems Install%2FInstall Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Programming_Languages__c</picklist>
+            <values>
+                <fullName>ASP%2ENET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C %2F C%2B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delphi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HTML5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Java</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JavaScript</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Objective-C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PERL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Python</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VB%2ENET%2FVB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XML</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reseller_Health__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Technology_Offerings__c</picklist>
+            <values>
+                <fullName>Hardware as a Service %28HaaS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Service Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Zebra_Product_Focus__c</picklist>
+            <values>
+                <fullName>Aftermarket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTLS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Reseller</fullName>
+        <active>true</active>
+        <description>Resellers of Auto Id/POS, Card ID, Technology Solutions</description>
+        <label>Reseller</label>
+        <picklistValues>
+            <picklist>Approval_Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Process</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Auction_or_3rd_Party_Marketplaces__c</picklist>
+            <values>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bonanza</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Craigslist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ebay</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ecrater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Google</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Newegg</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oodle</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Overstock%2Ecom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricegrabber</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Rakuten</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sears</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wal-Mart</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yahoo Shopping</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Cloud_Business_Models__c</picklist>
+            <values>
+                <fullName>Infrastructure as a Service %28IaaS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Platform as a Service %28PaaS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software as a Service %28SaaS%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Operating_Systems__c</picklist>
+            <values>
+                <fullName>Android</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Linux</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mac OS%2FX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unix</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Browser</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows CE%2FMobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows PC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Windows Server</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iOS</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PF_Program_Name__c</picklist>
+            <values>
+                <fullName>AIDC Technology Specialist Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIDC Technology Specialist Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>AIDC Technology Specialist Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Specialist Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Specialist Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Broadline Technology Marketer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller Premier Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print %26 Apply Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Solutions Architect Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Solutions Architect Premier</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>PF_Program_Type__c</picklist>
+            <values>
+                <fullName>Application Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Percentage_of_End_Users__c</picklist>
+            <values>
+                <fullName>10%25</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>100%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>20%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>25%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>30%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>40%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>50%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>60%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>70%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>75%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>80%25</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>90%25</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Platform__c</picklist>
+            <values>
+                <fullName>NetBeans</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Openstream CueMe</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RhoMobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spring</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Titanium</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Xamarin</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zatar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Previous_Year_Revenue__c</picklist>
+            <values>
+                <fullName>%2410%2C000-%2499%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%241M-%245M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24250%2C000-%24500%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%24500%2C001-%241M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%2499%2C001-%24250%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3C %2410%2C000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over %245M</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Professional_Services__c</picklist>
+            <values>
+                <fullName>Application Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Analysis</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Checked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Config Install Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Project Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>System Configuration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Systems Install%2FInstall Support</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Programming_Languages__c</picklist>
+            <values>
+                <fullName>ASP%2ENET</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C %2F C%2B%2B</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>C%23</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delphi</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HTML5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Java</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JavaScript</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Objective-C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PERL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Python</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ruby</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VB%2ENET%2FVB</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>XML</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reseller_Health__c</picklist>
+            <values>
+                <fullName>Green</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Red</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yellow</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Technology_Offerings__c</picklist>
+            <values>
+                <fullName>Hardware as a Service %28HaaS%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leasing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Service Contracts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Zebra_Product_Focus__c</picklist>
+            <values>
+                <fullName>Aftermarket</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RTLS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Address_Tech_nonRepairsum_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>The sum of the Handle in-house %, Refer to Zebra %, Refer to Distributor % fields must total 100%</description>
+        <errorConditionFormula>AND( 
+( BLANKVALUE( RecordType.Name , &quot;Not Provided&quot;)= &quot;Reseller&quot; )
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)  
+,((BLANKVALUE(Handle_in_house__c,0)) 
++ (BLANKVALUE(Refer_to_Zebra__c,0)) 
++ (BLANKVALUE(Refer_to_Distributor__c,0)) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Refer_to_Distributor__c</errorDisplayField>
+        <errorMessage>This is a sum total of the Handle in-house %, Refer to Zebra %, and Refer to Distributor % must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Auction_or_3rd_Party_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If the Other field Auction_or_3rd_Party_Marketplaces is &gt; than 0 then the Other_Auction_or_3rd_Party_Marketplaces field must be filled in.</description>
+        <errorConditionFormula>AND( 
+(INCLUDES( Auction_or_3rd_Party_Marketplaces__c , &quot;Other&quot;)) 
+,( ISBLANK( Other_Auction_or_3rd_Party_Marketplaces__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Auction_or_3rd_Party_Marketplaces__c</errorDisplayField>
+        <errorMessage>You must enter a value for &quot;Other Auction or 3rd Party Marketplace.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Brand_Mix_OtherPrintSales_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>ISV Brand Mix Other Print Sales</description>
+        <errorConditionFormula>AND( 
+(RecordType.Name = &quot;Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Other_Printer_Sales__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK( Describe_Other_Printer_Sales_Pct__c )) 
+)</errorConditionFormula>
+        <errorDisplayField>Describe_Other_Printer_Sales_Pct__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Printer Sales %&quot; field is &gt; 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrcdPrntSld_PrevYrRev_sum_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>This is a sum the barcode printer previous years revenue</description>
+        <errorConditionFormula>AND( 
+( BLANKVALUE( RecordType.Name , &quot;Not Provided&quot;)= &quot;Reseller&quot; ) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,((BLANKVALUE(Replacement_of_existing_printer__c,0)) 
++ (BLANKVALUE(Upgrade_of_existing_printer__c,0)) 
++ (BLANKVALUE(New_printer_existing_application__c,0)) 
++ (BLANKVALUE(New_printer_new_application__c,0) ) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>New_printer_new_application__c</errorDisplayField>
+        <errorMessage>The previous years barcode printer revenue % must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrcdPrntrRev_BrcdPrntrBrands_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>If the Barcode Printer Revenue % field is filled in then the &quot;If barcode printers are sold, indicate your company&apos;s revenue % derived from:&quot; questions need to have its fields filled in.</description>
+        <errorConditionFormula>AND( 
+(RecordType.Name = &quot;Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,(Barcode_Printer_Revenue__c &gt; 0) 
+,((BLANKVALUE(Zebra__c,0) + 
+BLANKVALUE(Datamax_O_Neil__c,0) + 
+BLANKVALUE(Citizen__c,0) + 
+BLANKVALUE(Star_Micronics__c ,0) + 
+BLANKVALUE(Intermec_Honeywell__c,0) + 
+BLANKVALUE(Epson__c,0) + 
+BLANKVALUE(Printronix__c,0)+ 
+BLANKVALUE(SATO__c,0) + 
+BLANKVALUE(Toshiba_TEC__c,0)+ 
+BLANKVALUE(DataCard__c ,0)+ 
+BLANKVALUE(DIS_Matica__c ,0)+ 
+BLANKVALUE(Evolis__c ,0)+ 
+BLANKVALUE(Fargo__c ,0)+ 
+BLANKVALUE(Magicard__c ,0)+ 
+BLANKVALUE(Other_Printer_Sales__c,0) ) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Printer_Sales__c</errorDisplayField>
+        <errorMessage>If the &quot;Barcode Printer Revenue%&quot; is &gt; than 0 then printer brand fields are required and must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrcdPrntrRev_BrcdPrntrBrands_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If the Barcode Printer Revenue % is filled in then the &quot;If barcode printers are sold, indicate your company&apos;s revenue % derived from:&quot; question needs to have its fields filled in.</description>
+        <errorConditionFormula>AND( 
+(RecordType.Name = &quot;Reseller&quot; || RecordType.Name = &quot;Potential Partner Reseller&quot;)  
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)   
+,(Barcode_Printer_Revenue__c &gt; 0) 
+,((BLANKVALUE(Zebra__c,0) + 
+BLANKVALUE(Datamax_O_Neil__c,0) + 
+BLANKVALUE(Citizen__c,0) + 
+BLANKVALUE(Star_Micronics__c ,0) + 
+BLANKVALUE(Intermec_Honeywell__c,0) + 
+BLANKVALUE(Printronix__c,0)+ 
+BLANKVALUE(SATO__c,0) + 
+BLANKVALUE(Toshiba_TEC__c,0)+ 
+BLANKVALUE(Epson__c,0)+ 
+BLANKVALUE(DataCard__c ,0)+ 
+BLANKVALUE(DIS_Matica__c ,0)+ 
+BLANKVALUE(Evolis__c ,0)+ 
+BLANKVALUE(Fargo__c ,0)+ 
+BLANKVALUE(Magicard__c ,0)+ 
+BLANKVALUE(Other_Printer_Sales__c,0) ) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Printer_Sales__c</errorDisplayField>
+        <errorMessage>If &quot;Barcode Printer Revenue%&quot; is greater than 0 then the sum of barcode printer brands in this section must equal 100%.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrcdPrntrRev_FromHardwareRev_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>Bardcode Printer Revenue needs to be filled out because you indicated you have Hardware revenue.</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE(Hardware_Revenue__c , 0) &lt;&gt; 0 ) 
+,( OR(((ISBLANK(Barcode_Printer_Revenue__c))),( Barcode_Printer_Revenue__c = 0)) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Barcode_Printer_Revenue__c</errorDisplayField>
+        <errorMessage>Bardcode Printer Revenue needs to be filled out because you indicated you have Hardware revenue.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>BrcdPrntrRev_FromHardwareRev_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If the Hardware Revenue% field is greater than 0 then the Barcode Printer Revenue field is required.</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)  
+,( BLANKVALUE( Hardware_Revenue__c , 0) &lt;&gt; 0 ) 
+,( OR(((ISBLANK( Barcode_Printer_Revenue__c))),( Barcode_Printer_Revenue__c = 0)) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Barcode_Printer_Revenue__c</errorDisplayField>
+        <errorMessage>If Hardware Revenue% is greater than 0 then the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CompDivRev_Other_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If the Other field is greater than 0 then the describe field needs to be filled in.</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)   
+,( BLANKVALUE( Other_Revenue_Sources__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK(Describe_Other_Revenue_Sources_Pct__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Describe_Other_Revenue_Sources_Pct__c</errorDisplayField>
+        <errorMessage>If Other Customer field is greater than 0 the Describe Other revenue sources field must be filled in</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CompDiv_RevSum_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>This is a sum total of company division revenue field must be 100%</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)   
+,((BLANKVALUE( Hardware_Revenue__c ,0) 
++BLANKVALUE( Software_application_based_Revenue__c ,0) 
++ BLANKVALUE( Supplies_Accessories_Revenue__c   ,0) 
++ BLANKVALUE( Repair_Services_break_fix_Revenue__c ,0) 
++ BLANKVALUE( Professional_Services_Revenue__c ,0) 
++ BLANKVALUE( Other_Revenue_Sources__c ,0)) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Revenue_Sources__c</errorDisplayField>
+        <errorMessage>The sum total of company division revenue must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Comp_DivRevPercentsum_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>SECTION: WHAT PERCENT OF THE COMPANY/DIVISIONS REVENUE IS DERIVED FROM THE FOLLOWING?
+This is a sum of the company/division revenue.</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,((BLANKVALUE( Hardware_Revenue__c ,0) 
++BLANKVALUE( Software_application_based_Revenue__c ,0) 
++ BLANKVALUE( Supplies_Accessories_Revenue__c ,0) 
++ BLANKVALUE( Repair_Services_break_fix_Revenue__c ,0) 
++ BLANKVALUE( Professional_Services_Revenue__c ,0) 
++ BLANKVALUE( Other_Revenue_Sources__c ,0)) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Revenue_Sources__c</errorDisplayField>
+        <errorMessage>The company/division revenue % must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Comp_Div_OtherRevSources_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>Company Division Other Revenue Sources</description>
+        <errorConditionFormula>AND( 
+(RecordType.Name = &quot;Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE(Other_Revenue_Sources__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK( Describe_Other_Revenue_Sources_Pct__c )) 
+)</errorConditionFormula>
+        <errorDisplayField>Describe_Other_Revenue_Sources_Pct__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Revenue Sources&quot; field is &gt; 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cust_Mix_Percent_tot_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>This is a sum total of End User Customer Mix %, OEM Customer Mix %, Reseller Customer; Other Customer fields must total 100%</description>
+        <errorConditionFormula>AND( 
+( BLANKVALUE( RecordType.Name , &quot;Not Provided&quot;)= &quot;Reseller&quot; )
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)  
+,((BLANKVALUE(End_User_Customer_Mix__c,0)) 
++ (BLANKVALUE(Resellers_Customer_Mix__c,0)) 
++ (BLANKVALUE(OEMs_Customer_Mix__c,0)) 
++ (BLANKVALUE(Other_Customer_Mix__c,0)) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Customer_Mix__c</errorDisplayField>
+        <errorMessage>The Customer Mix % must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CustomSoftwareBreakOut_In_Out_ZSM_Resell</fullName>
+        <active>false</active>
+        <description>DO NOT USE - If &quot;Custom Software as % of application sw&quot; is greater than 0, then &quot;In-house dev as % of custom offering&quot; and &quot;Outsourced dev as % of custom offering&quot; are required for entry</description>
+        <errorConditionFormula>AND( 
+(RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE(Custom_Software_as_of_application_sw__c,0) &lt;&gt; 0) 
+,(OR((ISBLANK( In_house_dev_as_of_custom_offering__c )) 
+,ISBLANK( Outsourced_dev_as_of_custom_offering__c ))) 
+)</errorConditionFormula>
+        <errorDisplayField>Outsourced_dev_as_of_custom_offering__c</errorDisplayField>
+        <errorMessage>If &quot;Custom Software as % of application sw&quot; is greater than 0, then &quot;In-house dev as % of custom offering&quot; and &quot;Outsourced dev as % of custom offering&quot; are required for entry</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CustomSoftwareDescribe_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If Custom Software as % of Applications field is &gt; 0, the Custom Software Offering field is required.</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Custom_Software_as_of_application_sw__c , 0) &lt;&gt; 0 ) 
+,ISBLANK( Custom_Software_Offering__c ) 
+)</errorConditionFormula>
+        <errorDisplayField>Custom_Software_Offering__c</errorDisplayField>
+        <errorMessage>If Custom Software as % of Applications is&gt; 0, the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_CloudBusMod_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>Describe Other Cloud Business Models value.</description>
+        <errorConditionFormula>AND( 
+(INCLUDES( Cloud_Business_Models__c , &quot;Other&quot;)) 
+,( ISBLANK( Other_Cloud_Business_Models__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Cloud_Business_Models__c</errorDisplayField>
+        <errorMessage>If the &quot;other&quot; was chosen the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_OtherTechOff_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If the &quot;Describe Other Technology Offerings&quot;  field is &gt;0 a description must be filled in.</description>
+        <errorConditionFormula>AND( 
+(INCLUDES( Technology_Offerings__c , &quot;Other&quot;)) 
+,( ISBLANK( Other_Technology_Offerings__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Technology_Offerings__c</errorDisplayField>
+        <errorMessage>If the &quot;Other&quot; was chosen the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_Other_Cust_Mix_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If Other Customer field is greater than 0 check Describe Other Customer Mix for a value</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;)
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)   
+,( BLANKVALUE( Other_Customer_Mix__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK(Describe_Other_Customer_Mix__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Describe_Other_Customer_Mix__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Customer Mix %&quot; field  is &gt; 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_Other_Printer_Activ_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If Other Printer Sales is greater than 0 check Describe Other Printer Sales for a value</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)   
+,( BLANKVALUE( Other_Printer_Sales__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK(Describe_Other_Printer_Sales_Pct__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Describe_Other_Printer_Sales_Pct__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Printer Sales %&quot; field is &gt; than 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_Other_Rev_Activ_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If Other Revenue Activities is greater than 0 check Describe Other Revenue Activities for a value</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Other_Revenue_Activities__c , 0) &lt;&gt; 0 ) 
+,( ISBLANK( Describe_Other_Revenue_Activities__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Describe_Other_Revenue_Activities__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Revenue Activities %&quot; is &gt; than 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_Other_Vert_Markets_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If Other Vertical Markets % is greater than 0 check Describe Other Vertical Markets for a value</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Other_Vertical_Market__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK(Other_Vertical_Markets__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Vertical_Markets__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Vertical %&quot; is &gt; than 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Describ_Third_Party_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>Describe 3rd Party Services</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)  
+,( BLANKVALUE( Third_Party_Professional_Services__c , 0) &lt;&gt; 0 ) 
+,ISBLANK( Third_Party_Professional_Services_Name__c ) 
+)</errorConditionFormula>
+        <errorDisplayField>Third_Party_Professional_Services_Name__c</errorDisplayField>
+        <errorMessage>If the &quot;Third Party Professional Service%&quot; field is &gt; 0, the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Detail_AppSoftOff_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>Describe OTS software brand name</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,(BLANKVALUE( Off_the_shelf_OTS_sw_as_of_applic_sw__c , 0) &lt;&gt; 0 ) 
+,ISBLANK( OTS_software_brand_name__c ) 
+)</errorConditionFormula>
+        <errorDisplayField>OTS_software_brand_name__c</errorDisplayField>
+        <errorMessage>If the &quot;Off the Shelf (OTS) as a % of Applications sw&quot; field is &gt; 0, the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inhouse_Outsource_devSum_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>This is a sum total of and In-house dev of custom offering and Outsourced dev must total 100%</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;)
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)   
+,(Custom_Software_as_of_application_sw__c &gt; 0) 
+,(
+(BLANKVALUE(In_house_dev_as_of_custom_offering__c,0))
+ + (BLANKVALUE(Outsourced_dev_as_of_custom_offering__c,0)) &lt;&gt; 1.0
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Outsourced_dev_as_of_custom_offering__c</errorDisplayField>
+        <errorMessage>This is a sum total of and In-house dev of custom offering and Outsourced dev must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Inhouse_ThirdPtysum_ZSM_Resell</fullName>
+        <active>false</active>
+        <description>DO NOT USE - This is a sum total of the In_house Professional Services % and Third_Party Professional Services % must total 100%</description>
+        <errorConditionFormula>AND( 
+( BLANKVALUE( RecordType.Name , &quot;Not Provided&quot;)= &quot;Reseller&quot; )
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;)  
+,((BLANKVALUE( In_house_Professional_Services__c ,0)) 
++ (BLANKVALUE( Third_Party_Professional_Services__c ,0)) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Third_Party_Professional_Services__c</errorDisplayField>
+        <errorMessage>This is a sum total of the In_house Professional Services % and Third_Party Professional Services % must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Operating_System</fullName>
+        <active>true</active>
+        <description>This field is required when &quot;Other&quot; is selected as a Operating System pick list value</description>
+        <errorConditionFormula>AND( 
+(INCLUDES(Operating_Systems__c, &quot;Other&quot;)) 
+,( ISBLANK(Other_Operating_System__c) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Operating_System__c</errorDisplayField>
+        <errorMessage>Your must enter a value when &quot;Other&quot; is selected as a picklist value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Platform</fullName>
+        <active>true</active>
+        <description>This field is required when &quot;Other&quot; is selected as a Platform pick list value</description>
+        <errorConditionFormula>AND( 
+(INCLUDES(Platform__c, &quot;Other&quot;)) 
+,(ISBLANK(Other_Platform__c) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Platform__c</errorDisplayField>
+        <errorMessage>Your must enter a value when &quot;Other&quot; is selected as a picklist value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other_Programming_Language</fullName>
+        <active>true</active>
+        <description>This field is required when &quot;Other&quot; is selected as a Programming Language pick list value</description>
+        <errorConditionFormula>AND( 
+(INCLUDES( Programming_Languages__c, &quot;Other&quot;)) 
+,( ISBLANK( Other_Programming_Language__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Programming_Language__c</errorDisplayField>
+        <errorMessage>Your must enter a value when &quot;Other&quot; is selected as a picklist value</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Outsourced_dev_custom_offerin_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>Outsourced development custom offering</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE(Outsourced_dev_as_of_custom_offering__c , 0) &lt;&gt; 0 ) 
+,ISBLANK( Outsourcing_Company_Name__c ) 
+)</errorConditionFormula>
+        <errorDisplayField>Outsourcing_Company_Name__c</errorDisplayField>
+        <errorMessage>If the &quot;Outsourced Development as% of custom offering&quot; field is &gt; 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Percent_Purchases_Distis_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If you add a percent value into a field that is labeled &quot;Other Distributor %&quot;, you must provide a value in the &quot;Other_Distributor&quot; field. This rule only fires for Partner Reseller.</description>
+        <errorConditionFormula>AND(( RecordType.Name = &quot;Reseller&quot;)
+,( $Profile.Name  &lt;&gt; &quot;System Administrator&quot;) 
+,( (BLANKVALUE( Other_Distributor__c , 0)) &lt;&gt; 0 ) 
+,( ISBLANK( Other_Distributor_Define__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Distributor_Define__c</errorDisplayField>
+        <errorMessage>If the &quot;other Distributor %&quot; field is &gt; 0, the above field is required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PrevYearRevVertPercentsum_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>This is a sum total previous year revenue derived from vertical</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Application Specialist&quot; || RecordType.Name = &quot;Potential Partner Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,(( BLANKVALUE(Manufacturing__c, 0) 
++ BLANKVALUE (Transportation_Logistics__c ,0) 
++ BLANKVALUE( Retail__c ,0) 
++ BLANKVALUE( Healthcare__c ,0) 
++ BLANKVALUE( Government__c ,0) 
++ BLANKVALUE( Consumer_Goods__c ,0) 
++ BLANKVALUE( Services__c ,0) 
++ BLANKVALUE( Sports_Entertainment__c ,0) 
++ BLANKVALUE( Other_Vertical_Market__c, 0) ) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Vertical_Market__c</errorDisplayField>
+        <errorMessage>The Vertical Market Business Focus must total 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PrevYear_Other_Vertical_Market_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>Other Vertical Market % validation rule that &gt;0 which requires it to be described.</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Application Specialist&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Other_Vertical_Market__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK( Other_Vertical_Markets__c )) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Vertical_Markets__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Vertical Markets&quot; field is &gt; 0 the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PrevYrTotRev_AppDevSld_ZSM_ISV</fullName>
+        <active>true</active>
+        <description>If Other Applications% is greater than 0 check Describe Other Applications for a value</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Application Specialist&quot;)  
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Other_Applications__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK(Indicate_Other_Applications__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Indicate_Other_Applications__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Applications %&quot; field is &gt; 0, the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>PrevYrTotRev_AppDevSld_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If Other Applications% is greater than 0 check Describe Other Applications for a value</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE( Other_Applications__c , 0) &lt;&gt; 0 ) 
+,(ISBLANK(Indicate_Other_Applications__c)) 
+)</errorConditionFormula>
+        <errorDisplayField>Indicate_Other_Applications__c</errorDisplayField>
+        <errorMessage>If the &quot;Other Applications %&quot; field is &gt; 0, the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProfServ_Contains_Other_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If &quot;Professional Services&quot; contains the value &quot;Other&quot;, then &quot;Other Professional Services&quot; is required.</description>
+        <errorConditionFormula>AND( 
+(INCLUDES( Professional_Services__c , &quot;Other&quot;)) 
+,( ISBLANK( Other_Professional_Services__c ) ) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Professional_Services__c</errorDisplayField>
+        <errorMessage>If the &quot;Professional Services&quot; field contains the value &quot;Other&quot;, then the above field is required.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ProfServ_InHouse_3rdPty_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If the &quot;Professional Services Revenue %&quot; field is greater than 0, then &quot;In-house Professional Services %&quot; and &quot;Third Party Professional Services %&quot; fields are required</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,(Professional_Services_Revenue__c &gt; 0) 
+,( 
+(BLANKVALUE(In_house_Professional_Services__c,0)) 
++ (BLANKVALUE(Third_Party_Professional_Services__c,0)) &lt;&gt; 1.0 
+) 
+)</errorConditionFormula>
+        <errorDisplayField>Third_Party_Professional_Services__c</errorDisplayField>
+        <errorMessage>If the &quot;Professional Services Revenue %&quot; field is greater than 0, then &quot;In-house Professional Services %&quot; and &quot;Third Party Professional Services %&quot; fields are required</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SoftwrAppBsd_CustSftwrandOTS_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>If &quot;Software(application-based) Revenue %&quot; &gt; 0, then &quot;Custom Software as % of application sw&quot; and &quot;Off-the-shelf (OTS) sw as % of applic sw&quot; must be greater than 0.</description>
+        <errorConditionFormula>AND( 
+(RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,( BLANKVALUE(Software_application_based_Revenue__c,0) &lt;&gt; 0) 
+,(OR((ISBLANK( Custom_Software_as_of_application_sw__c)) 
+,ISBLANK(Off_the_shelf_OTS_sw_as_of_applic_sw__c))) 
+)</errorConditionFormula>
+        <errorDisplayField>Off_the_shelf_OTS_sw_as_of_applic_sw__c</errorDisplayField>
+        <errorMessage>If the &quot;software (application-based) revenue%&quot; field is greater than 0 check the &quot;custom software as % of application sw&quot; and the &quot;off-the-shelf(OTC) sw as % of applic sw&quot; fields for a value.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Submit_button</fullName>
+        <active>true</active>
+        <description>The information enclosed herein is accurate button must be checked for submission</description>
+        <errorConditionFormula>Information_enclosed_herein_is_accurate__c   = False&amp;&amp; ($Profile.Name  &lt;&gt; &quot;System Administrator&quot;)</errorConditionFormula>
+        <errorDisplayField>Information_enclosed_herein_is_accurate__c</errorDisplayField>
+        <errorMessage>You will not be able to submit your profile without checking the box to verify that the information enclosed herein is accurate.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SumSW_CustSftwrandOTS_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>The &quot;Custom Software as % of application sw&quot; and &quot;Off-the-shelf (OTS) sw as % of applic sw&quot; fields must equal 100%</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( BLANKVALUE(Software_application_based_Revenue__c,0) &lt;&gt; 0) 
+,((( BLANKVALUE(Custom_Software_as_of_application_sw__c, 0) + BLANKVALUE(Off_the_shelf_OTS_sw_as_of_applic_sw__c,0)) &lt; 1)) 
+)</errorConditionFormula>
+        <errorDisplayField>Off_the_shelf_OTS_sw_as_of_applic_sw__c</errorDisplayField>
+        <errorMessage>The &quot;Custom Software as % of application sw&quot; and &quot;Off-the-shelf (OTS) sw as % of applic sw&quot; fields must equal 100%</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Tot_Rev_Act_Percentsum_ZSM_Resell</fullName>
+        <active>true</active>
+        <description>The Revenue Activities % fields must total 100%</description>
+        <errorConditionFormula>AND( 
+( RecordType.Name = &quot;Reseller&quot;) 
+,( $Profile.Name &lt;&gt; &quot;System Administrator&quot;) 
+,(( BLANKVALUE(Outside_Field_Sales_Total_Revenue__c, 0) + BLANKVALUE(Telesales_Total_Revenue__c,0) + BLANKVALUE(Printed_Catalog_Total_Revenue__c,0) + 
+BLANKVALUE(Internet_Total_Revenue__c,0) + 
+BLANKVALUE(Retail_Total_Revenue__c,0) + 
+BLANKVALUE(Other_Revenue_Activities__c,0) ) &lt;&gt; 1.0) 
+)</errorConditionFormula>
+        <errorDisplayField>Other_Revenue_Activities__c</errorDisplayField>
+        <errorMessage>The Revenue Activities % fields must total 100%</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Update_Company_ID</fullName>
+        <availability>online</availability>
+        <description>This button is created to create a case for updating the Company ID.</description>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Update Company ID Delete</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>{!URLFOR( $Site.Prefix + &quot;/apex/PC_CommunityCaseEdit?cas6=Update%20Company%20Id&amp;cas3_lkid=&quot;+ $User.ContactId +&quot;&amp;cas4_lkid=&quot;+ Account.Id +&quot;&amp;retURL=%2FPartners%2Fapex%2FPC_AccountVFTab?sfdc.tabName=01r56000000CmO2&quot;)}</url>
+    </webLinks>
+</CustomObject>

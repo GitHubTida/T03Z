@@ -1,0 +1,76 @@
+<apex:page tabStyle="Target_Account__c" controller="ZEBTargetAccountFinderController">
+
+    <apex:sectionHeader title="Target Account" subtitle="Finder"/>
+    <apex:messages style="color:red"/>
+
+    <apex:outputPanel style="color:red" id="errorMsg">
+        <apex:outputText rendered="{!not(good)}"><ul><li>Your search string must be three or more characters.</li></ul></apex:outputText>
+    </apex:outputPanel>
+    <br/>
+    
+    <apex:outputPanel id="searchFirst">
+        <apex:outputText rendered="{!not(good)}">
+            Before you request the creation of a Target Account, you must first search to see if it already exists.  Enter a portion of the Account Name below and click 'Find'.
+            <br/>
+            <br/>
+        </apex:outputText>
+    </apex:outputPanel>
+    
+    <apex:form >
+        <apex:actionFunction action="{!findMatches}" name="GOfindMatches" reRender="resultBlock,searchFirst,createLink,errorMsg"/>
+        <apex:inputText value="{!findString}" onkeydown="if(event.keyCode==13){this.blur();GOfindMatches();}"/>
+        <apex:commandButton value="Find" action="{!findMatches}" reRender="resultBlock,searchFirst,createLink,errorMsg"/>
+    </apex:form>
+    
+    <br/>
+    <br/>
+    
+    <apex:form >
+        <!--<apex:pageBlock id="resultBlock" title="Matching Target Accounts" rendered="{!IF(matches.size != null && matches.size > 0, true , false)}">-->
+        <apex:pageBlock id="resultBlock" title="Matching Target Accounts">
+            <apex:pageBlockTable value="{!matches}" var="m">
+                <apex:column >
+                    <apex:outputLink value="/apex/ZEBTargetAccountAdd" rendered="{!IF( OR(LEFT($User.Id,15)=LEFT(m.ownerId,15), m.RecordType.Name='Zip Code'), False, True)}">
+                        <b>Add</b>
+                        <apex:param name="id" value="{!m.Id}"/>
+                        <apex:param name="retURL" value="%2Fapex%2FZEBTargetAccountTab"/>
+                     </apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Name" title="Name" value="{!m.Name}"/>
+                <apex:column headerValue="EVM Account Number" title="EVM Account Number" value="{!m.EVM_Account_Number__c}"/>
+                <apex:column headerValue="AIT Account Number" title="AIT Account Number" value="{!m.AIT_Account_Number__c}"/>
+                <apex:column headerValue="Owner Name" title="Owner Name" value="{!m.Owner.Name}"/>
+                <apex:column headerValue="Country" title="Country" value="{!m.Country__c}"/>
+                <apex:column headerValue="City" title="City" value="{!m.City__c}"/>
+                <apex:column headerValue="State/Province" title="State/Province" value="{!m.State_Province__c}"/>
+                <apex:column headerValue="Zip/Postal Code" title="Zip/Postal Code" value="{!m.Zip_Postal_Code__c}"/>
+                <apex:column headerValue="Owner Area" title="Focus 30" value="{!m.Owner_Area__c}"/>
+                <apex:column headerValue="Effective Date" title="Effective Date" value="{!m.Effective_Date__c}"/>
+                <apex:column headerValue="End Date" title="End Date" value="{!m.End_Date__c}"/>
+                <apex:column headerValue="Active" title="Active" value="{!m.Active__c}"/>
+            </apex:pageBlockTable>
+            <apex:panelGrid columns="7">
+                <apex:commandButton status="fetchStatus" reRender="resultBlock" value="First" action="{!first}" disabled="{!!hasPrevious}" title="First Page"/>
+                <apex:commandButton status="fetchStatus" reRender="resultBlock" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                <apex:commandButton status="fetchStatus" reRender="resultBlock" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page"/>
+                <apex:commandButton status="fetchStatus" reRender="resultBlock" value="Last" action="{!last}" disabled="{!!hasNext}" title="Last Page"/>
+                <apex:outputText >{!IF(noOfRecords>0,(pageNumber * size)+1-size,0)}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                <!--<apex:commandButton status="fetchStatus" reRender="resultBlock" value="Refresh" action="{!refresh}" title="Refresh Page"/>-->
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:pageBlock>
+        
+        <br/>
+        <apex:outputPanel id="createLink">
+            <apex:outputText rendered="{!hasSearched}">
+                Can't find existing account you are looking for?&nbsp;
+                <apex:commandLink value="Create a New Target Account" action="{!create}"/>.
+            </apex:outputText>
+            
+        </apex:outputPanel>
+        
+    </apex:form>
+
+</apex:page>

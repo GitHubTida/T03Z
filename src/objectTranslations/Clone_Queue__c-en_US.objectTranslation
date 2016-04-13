@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Clone Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Clone Queue</value>
+    </caseValues>
+    <fields>
+        <label><!-- Opp_Line_Item --></label>
+        <name>Opp_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Clone Queue --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partners --></label>
+        <name>Partners__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Team --></label>
+        <name>Sales_Team__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

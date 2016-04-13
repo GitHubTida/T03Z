@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ABS (Case.ZEB_SLA_Turnaround_Email__c:SUM)</calculatedFormula>
+        <datatype>number</datatype>
+        <description>This calculates the response time between latest received and sent emails.</description>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <masterLabel>Response Time</masterLabel>
+        <scale>2</scale>
+    </aggregates>
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>EMAIL.STATUS</field>
+    </columns>
+    <columns>
+        <field>EMAIL.MESSAGE_DATE</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Shows how much time elapsed before a reply was sent.</description>
+    <filter>
+        <criteriaItems>
+            <column>OWNER_ROLE</column>
+            <operator>equals</operator>
+            <value>Technical Support Representative</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CASE_NUMBER</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Email Response Time</name>
+    <params>
+        <name>units</name>
+        <value>m</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseEmail</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <endDate>2015-06-30</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2015-06-01</startDate>
+    </timeFrameFilter>
+</Report>

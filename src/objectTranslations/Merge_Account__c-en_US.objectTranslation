@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Merge Account</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Merge Account</value>
+    </caseValues>
+    <fields>
+        <label><!-- Duplicate Account Id --></label>
+        <name>Duplicate_Account_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Master Account Id --></label>
+        <name>Master_Account_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

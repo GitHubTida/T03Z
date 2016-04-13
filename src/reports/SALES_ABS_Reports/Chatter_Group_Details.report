@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <chart>
+        <backgroundColor1>#FFFFFF</backgroundColor1>
+        <backgroundColor2>#FFFFFF</backgroundColor2>
+        <backgroundFadeDir>Diagonal</backgroundFadeDir>
+        <chartType>VerticalColumnGrouped</chartType>
+        <groupingColumn>CollaborationGroup$MemberCount</groupingColumn>
+        <legendPosition>Right</legendPosition>
+        <location>CHART_TOP</location>
+        <secondaryGroupingColumn>CollaborationGroup$Name</secondaryGroupingColumn>
+        <showAxisLabels>true</showAxisLabels>
+        <size>Medium</size>
+        <summaryAxisRange>Auto</summaryAxisRange>
+        <summaryColumn>RowCount</summaryColumn>
+        <textColor>#000000</textColor>
+        <textSize>12</textSize>
+        <titleColor>#000000</titleColor>
+        <titleSize>18</titleSize>
+    </chart>
+    <columns>
+        <field>CollaborationGroup$Id</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup$Owner</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup$CollaborationType</field>
+    </columns>
+    <columns>
+        <field>CollaborationGroup$LastFeedModifiedDate</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Report containing Chatter group and member details.</description>
+    <filter>
+        <criteriaItems>
+            <column>CollaborationGroup$Name</column>
+            <operator>equals</operator>
+            <value>APAC Sales Support,NA Sales Support,LACR Sales Support,EMEA Sales Support</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CollaborationGroup$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CollaborationGroup$MemberCount</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Chatter Group Details</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Chatter_Groups__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CollaborationGroup$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

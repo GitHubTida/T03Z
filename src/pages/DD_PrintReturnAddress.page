@@ -1,0 +1,84 @@
+<apex:page standardController="DD_Demo__c" applyBodyTag="false"  renderAs="pdf" extensions="DD_PrintReturnAddress">
+<head>
+    <style>
+        td {
+            border-style: solid;
+            border-width: 1px;
+        }
+        table.tableclass{
+            border-style: solid;
+            border-width: 1px;
+        }
+        .tableclass{
+            width:100%;
+            
+        }
+    </style>
+</head>
+<div>
+Return Document for Demo Ref No:{!demo.name} 
+</div>
+<br/>
+<hr/>
+<br/>
+<table style="width:100%;border:1px double black;">
+
+ <tr style="background-color:#9A9A9A;">
+            <td>Return Address</td>
+           </tr>
+<tr><td> <apex:outputText rendered="{!demo.Address_Line1__c!= null}" value="{!demo.Address_Line1__c}">
+        </apex:outputText>
+           <apex:outputText rendered="{!demo.Address_Line_2__c!= null}" value="{!demo.Address_Line_2__c}"><br/>
+            </apex:outputText>
+             <apex:outputText rendered="{!demo.Address_Line_3__c!= null}" value="{!demo.Address_Line_3__c}"><br/>
+              </apex:outputText>
+             <apex:outputText rendered="{!demo.Address_Line_4__c!= null}" value="{!demo.Address_Line_4__c}"><br/>
+              </apex:outputText>
+            <apex:outputText rendered="{!demo.Address_Line_5__c!= null}" value="{!demo.Address_Line_5__c}"> <br/>
+             </apex:outputText></td></tr>     
+</table>        
+        <br/>
+        <hr/>
+    <div>
+
+<table class="tableclass">
+    <tr style="background-color:#9A9A9A;">
+        <td style="width:30%;">Parts to return</td>
+        <td style="width:10%;">Qty</td>
+        <td style="width:50%;">Checklist-State if missing</td>
+        <td style="width:10%;"></td>
+    </tr>
+    <apex:repeat value="{!LisWrap}" var="temp">
+        <tr>
+            <td> {!temp.MastrPRD.name}</td>
+            <td> {!temp.Quant}</td>
+            <td> {!demo.Detail_about_WriteOff__c}</td>
+            <td> </td>
+        </tr>
+    </apex:repeat>
+    
+</table>
+</div>
+    <br/>
+    <br/>
+    <table style="width:100%;border:1px double black;">
+        <tr style="background-color:#9A9A9A;">
+            <td>Final Destination: Zebra Demo Pool</td>
+           </tr><tr>
+            <td><apex:outputText rendered="{!demo.Street_demopool__c!= null}" value="{!demo.Street_demopool__c}">
+             </apex:outputText>
+             <apex:outputText rendered="{!demo.City_demopool__c!= null}" value="{!demo.City_demopool__c}"><br/>
+              </apex:outputText>
+             <apex:outputText rendered="{!demo.StateProvince_demopool__c!= null}" value="{!demo.StateProvince_demopool__c}"><br/>
+              </apex:outputText>
+             <apex:outputText rendered="{!demo.country_demopool__c!= null}" value="{!demo.country_demopool__c}"><br/>
+              </apex:outputText>
+            <apex:outputText rendered="{!demo.Post_Code_ZIP_demopool__c!= null}" value="{!demo.Post_Code_ZIP_demopool__c}"><br/>
+             </apex:outputText>
+             </td>
+       </tr> 
+    </table>
+<div>
+
+</div>
+</apex:page>

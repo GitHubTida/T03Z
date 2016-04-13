@@ -1,0 +1,117 @@
+<apex:page tabStyle="Target_Account__c" controller="ZEBTargetAccountModifyController">
+    <apex:sectionHeader title="Target Account Modify" subtitle="{!taRecord.Name}" description="Enter the new or modified information below which you would like to request the Target Account be updated with.  Fields you do not wish to change you should leave blank."/>
+    <apex:messages style="color:red"/>
+    <style>
+        .label {text-align:right; font-weight:bold; font-size:8pt}
+        .previous {color:#0000FF}
+        .pgrows {border-bottom:1px solid rgb(227,222,184)}
+    </style>
+    <script type="text/javascript">
+    </script>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2" title="Account Information" showHeader="true" collapsible="false">
+                &nbsp;
+                <apex:outputText >
+                    <b>
+                        <u>Current Values</u>
+                    </b>
+                </apex:outputText>
+                <apex:inputField value="{!modRecord.Street__c}"/>
+                <apex:outputText >
+                    {!taRecord.Street__c}
+                </apex:outputText>
+                <apex:inputField value="{!modRecord.City__c}"/>
+                <apex:outputText >
+                    {!taRecord.City__c}
+                </apex:outputText>
+                <apex:inputField value="{!modRecord.State_Province__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">
+                    {!taRecord.State_Province__c}
+                </apex:outputText>
+                <apex:inputField value="{!modRecord.Zip_Postal_Code__c}"/>
+                <apex:outputText >
+                    {!taRecord.Zip_Postal_Code__c}
+                </apex:outputText>
+                <!--<apex:inputField value="{!modRecord.Country__c}"/>-->
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Country" />
+                    <!--<apex:outputPanel layout="block" styleClass="requiredInput" >
+                    <apex:outputPanel layout="block" styleClass="requiredBlock" />-->
+                    <apex:selectList required="true" value="{!modRecord.Country__c}" size="1" title="Country" id="Country">
+                        <apex:selectOptions value="{!Countries}"/>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:outputText >
+                   {!taRecord.Country__c}
+                </apex:outputText>
+                <apex:inputField value="{!modRecord.Vertical__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}" >
+                   {!taRecord.Vertical__c}
+                </apex:outputText>
+                <apex:inputField value="{!modRecord.State_Local_Account_Manager__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">
+                   {!taRecord.State_Local_Account_Manager__c}
+                </apex:outputText>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="2" title="Owner / Split Definition" collapsible="false">
+            </apex:pageBlockSection>
+            <apex:panelGrid columns="6" style="width:80%;margin-left:auto;margin-right:auto" rowClasses="pgrows" columnClasses="label,,previous">
+                <apex:outputText >&nbsp;</apex:outputText>
+                <apex:outputText >&nbsp;</apex:outputText>
+                <apex:outputText >
+                    <b>
+                        <u>Current Values</u>
+                    </b>
+                </apex:outputText>
+                <apex:outputText >&nbsp;</apex:outputText>
+                <apex:outputText >&nbsp;</apex:outputText>
+                <apex:outputText >
+                    <b>
+                        <u>Current Values</u>
+                    </b>
+                </apex:outputText>
+                <apex:outputText >Owner</apex:outputText>
+                <apex:outputText >{!taRecord.Owner.Name}</apex:outputText>
+                <apex:outputText >{!taRecord.Owner.Name}</apex:outputText>
+                <apex:outputText >Owner Percentage</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner_Percentage__c}"/>
+                <apex:outputText >{!taRecord.Owner_Percentage__c}</apex:outputText>
+                <apex:outputText rendered="{!displyforNAMRUsers}">2nd Owner</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner2__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">{!taRecord.Owner2__r.Name}</apex:outputText>
+                <apex:outputText rendered="{!displyforNAMRUsers}">2nd Owner Percentage</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner2_Percentage__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">{!taRecord.Owner2_Percentage__c}</apex:outputText>
+                <apex:outputText rendered="{!displyforNAMRUsers}">3rd Owner</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner3__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">{!taRecord.Owner3__r.Name}</apex:outputText>
+                <apex:outputText rendered="{!displyforNAMRUsers}">3rd Owner Percentage</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner3_Percentage__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">{!taRecord.Owner3_Percentage__c}</apex:outputText>
+                <apex:outputText rendered="{!displyforNAMRUsers}">4th Owner</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner4__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">{!taRecord.Owner4__r.Name}</apex:outputText>
+                <apex:outputText rendered="{!displyforNAMRUsers}">4th Owner Percentage</apex:outputText>
+                <apex:inputField value="{!modRecord.Owner4_Percentage__c}" rendered="{!displyforNAMRUsers}"/>
+                <apex:outputText rendered="{!displyforNAMRUsers}">{!taRecord.Owner4_Percentage__c}</apex:outputText>
+            </apex:panelGrid>
+            <apex:pageBlockSection title="Effective Date" showHeader="true" collapsible="false">
+            </apex:pageBlockSection>
+            <br/>
+            If these changes should not go into effect until a certain date, please enter the date below.  If the changes should be made as soon as possible, leave the default value.
+            <br/>
+            <br/>
+            <apex:inputField value="{!modRecord.Effective_Date__c}"/>
+            <br/>
+            <br/>
+            <apex:pageBlockSection columns="1" title="Additional Comments" showHeader="true" collapsible="false">
+                <apex:inputField value="{!modRecord.Comments__c}" style="width:400px"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Request Changes" action="{!goSave}"/>
+                <apex:commandButton value="Cancel" action="{!goCancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

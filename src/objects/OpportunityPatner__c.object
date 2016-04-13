@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AIT_Channel_Partner_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>AIT Channel Partner ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AIT__c</fullName>
+        <formula>(IF(ISBLANK(Patner__r.Account_Number_Formula__c), &quot;No&quot;, &quot;Yes&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>AIT</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>EVM_Channel_Partner_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>It is used as a Place holder for Partners ID of MSI SFDC.</description>
+        <externalId>true</externalId>
+        <label>EVM Channel Partner ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>EVM__c</fullName>
+        <formula>(IF(ISBLANK(Patner__r.MSI_E_Account__c), &quot;No&quot;, &quot;Yes&quot;))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>EVM</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Channel Partners</relationshipLabel>
+        <relationshipName>OpportunityPatners</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Patner__c</fullName>
+        <label>Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Channel Partners</relationshipLabel>
+        <relationshipName>OpportunityPatners</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Role__c</fullName>
+        <label>Role</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Primary Channel Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primary Channel Partner AIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primary Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primary Distributor AIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alliance Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Influence Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primary Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Carrier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Channel Partner</label>
+    <listViews>
+        <fullName>AIT_Channel_Partner</fullName>
+        <columns>NAME</columns>
+        <columns>OBJECT_ID</columns>
+        <columns>AIT_Channel_Partner_ID__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Patner__c</columns>
+        <columns>Role__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>AIT_Channel_Partner_ID__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>AIT Channel Partner</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>AIT_Channel_Partner_ID__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Patner__c</columns>
+        <columns>Role__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>6/9/2015 12:00 AM</value>
+        </filters>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>P-{000}</displayFormat>
+        <label>Partner Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Channel Partners</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>New_Custom_Partner</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ZEBOppPartner?Oppid={!Opportunity.Id}</url>
+    </webLinks>
+</CustomObject>

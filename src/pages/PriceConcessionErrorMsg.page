@@ -1,0 +1,11 @@
+<apex:page standardController="Quote" extensions="PriceConcessionErrorMsgController">
+  <apex:form > 
+      <apex:pageBlock >
+          <apex:commandButton value="Back" action="{!Opppage}"/>
+          <apex:pageblockSection >
+              The Following error occured: <br/> 
+              <p style="font-weight: bold;width: 500%;">{!errorMsg} </p>
+          </apex:pageblockSection>
+      </apex:pageBlock>
+  </apex:form>
+</apex:page>

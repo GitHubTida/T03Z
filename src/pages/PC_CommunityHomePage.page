@@ -1,0 +1,300 @@
+<apex:page controller="PC_PartnerHomePageController" showHeader="false" >
+    <style>
+        th{
+        background-color:#e6e6e6;
+        vertical-align:middle;
+        }
+        .tdforWrap 
+        {
+        white-space: pre-wrap; /* css-3 */
+        white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+        white-space: -pre-wrap; /* Opera 4-6 */
+        white-space: -o-pre-wrap; /* Opera 7 */
+        word-wrap: break-word; /* Internet Explorer 5.5+ */
+         
+        } 
+        .profileHead
+        {
+            padding:10px 0px 0px 10px;
+            border-radius:25px 25px 0 0; 
+            cursor:pointer;
+        }
+        .profileHeadSel
+        {
+            padding:10px 0px 0px 10px;
+            border-radius:25px 25px 0 0; 
+            cursor:pointer;
+            background-color:blue;
+        }
+        .headerWrap
+        {
+            white-space: pre-wrap; /* css-3 */
+            white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+            white-space: -pre-wrap; /* Opera 4-6 */
+            white-space: -o-pre-wrap; /* Opera 7 */
+            word-wrap: break-word; /* Internet Explorer 5.5+ */
+            padding:10px 0px 10px 10px;
+            cursor:pointer;
+        }
+        .headerWrap:hover { 
+            background-color: grey;
+        }
+        .profileHead:hover { 
+            background-color: grey;
+        }
+        
+        a:active 
+    </style>
+    <script>
+    
+    
+        function showHide()
+        {
+            var isAdmin={!adminflag};
+            if(isAdmin==false){
+             document.getElementById('antclDashboard').style.display="none";
+             document.getElementById('lblDashboard').style.display="none";
+            }           
+        }
+    
+        function Accordian(sectionName)
+        {   
+        
+                document.getElementById('trWuesContPtnrInteract').style.display="none";
+                document.getElementById('trProfile').style.display="none";
+                document.getElementById('trAlerts').style.display="none";
+                document.getElementById('trAlerts').style.display="none";
+                document.getElementById('trQuickLinks').style.display="none";           
+                
+                document.getElementById('lstPartnerMembers').style.display="none";
+                if(document.getElementById('antclDashboard')!=null)
+                    document.getElementById('antclDashboard').style.display="none";
+                document.getElementById('trCompPtnrAdm').style.display="none";
+                document.getElementById('thProfileHead').style.backgroundColor ="#e6e6e6";
+                document.getElementById('thAlertsHead').style.backgroundColor ="#e6e6e6";
+                document.getElementById('thQucikLinksHead').style.backgroundColor ="#e6e6e6";               
+                document.getElementById('thPartnerMembers').style.backgroundColor ="#e6e6e6";
+                if(document.getElementById('thDashboard')!=null)
+                document.getElementById('thDashboard').style.backgroundColor ="#e6e6e6";
+                document.getElementById('thCompPtnrAdm').style.backgroundColor ="#e6e6e6";
+                document.getElementById('thWuesContPtnrInteract').style.backgroundColor ="#e6e6e6";
+            if(sectionName=='trProfile')         
+            {           
+                document.getElementById('trProfile').style.display="block";
+                document.getElementById('thProfileHead').style.backgroundColor ="grey";
+                    
+            }
+             else if(sectionName=='trAlerts')         
+            {           
+                document.getElementById('trAlerts').style.display="block";
+                document.getElementById('thAlertsHead').style.backgroundColor ="grey";
+                    
+            }  
+            else if(sectionName=='trQuickLinks')         
+            {           
+                document.getElementById('trQuickLinks').style.display="block";
+                document.getElementById('thQucikLinksHead').style.backgroundColor ="grey";
+                    
+            }               
+            else if (sectionName=='lstPartnerMembers')
+            {
+                document.getElementById('lstPartnerMembers').style.display="block";
+                document.getElementById('thPartnerMembers').style.backgroundColor ="grey";
+                
+            }
+            else if (sectionName=='antclDashboard')
+            {
+                document.getElementById('antclDashboard').style.display="block";
+                document.getElementById('thDashboard').style.backgroundColor ="grey";
+                
+            }
+            else if (sectionName=='trCompPtnrAdm')
+            {
+                document.getElementById('trCompPtnrAdm').style.display="block";
+                document.getElementById('thCompPtnrAdm').style.backgroundColor ="grey";
+                
+            }   
+            else if (sectionName=='trWuesContPtnrInteract')
+            {
+                document.getElementById('trWuesContPtnrInteract').style.display="block";
+                document.getElementById('thWuesContPtnrInteract').style.backgroundColor ="grey";
+                
+            }
+            else{}
+        }
+    </script>
+<body onload="showHide();">
+<apex:form >
+    <apex:pageBlock id="thePageBlock">
+        <apex:actionStatus id="stat">
+            <apex:facet name="start">
+                <div class="waitingSearchDiv" id="el_loading" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.75; z-index: 1000; background-color: #fbfbfb;"> 
+                </div><div class="waitingHolder" style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1000; margin: 30% 50%">
+                <img src="{!$Resource.MM_Searching}" class="searchPreload"/>
+                <span class="waitingDescription">Loading...</span>
+                </div>                    
+            </apex:facet>
+        </apex:actionStatus>  
+           
+        <table width="100%" cellpadding="0" cellspacing="0" bgcolor="white" style="white-space:nowrap;border-radius:25px 0 0 25px; height:100%;">
+            <tr>
+                <td width="25%" style="white-space:nowrap; height:650px;vertical-align:top;">             
+                        
+                    <table width="320px" frame="box"  height="650px" style="border-radius:25px;">
+                    <tr>
+                    <td style="vertical-align:top;">
+                        <table style="vertical-align:top;">
+                        
+                        <tr>                        
+                                <th id="thProfileHead" class="profileHead"   width="320px" height="20px" onclick="Accordian('trProfile');">                            
+                                    {!$Label.My_Profile}                             
+                                </th>                   
+                        </tr>
+                        <tr style="display:block;" id="trProfile">
+                            <td style="padding:0px 0px 0px 10px; vertical-align:top;" height="30px">
+                                <apex:outputLink value="{!URLFOR($Action.Contact.View,partnerContact.Id)}" target="_top">{!partnerContact.Name}</apex:outputLink>
+                            </td>
+                        </tr>
+                         <tr>
+                            <th id="thAlertsHead" class="headerWrap" width="320px" height="20px" onclick="Accordian('trAlerts');" ><apex:outputText value="{!$Label.Alerts}"  escape="false"></apex:OutputText></th>
+                        </tr>
+                        <tr style="display:none;" id="trAlerts">
+                            <td style="padding:0px 0px 0px 10px; vertical-align:top;" height="30px">
+                            <span style="display:{!termsDisp}">
+                                <apex:outputLink value="{!URLFOR($Page.SSOAdminApproval,null,['Id'=userList.contactid])}" target="_top">{!$Label.Partner_Administrator_Terms_and_Conditions}</apex:outputLink>
+                            </span>
+                            </td>
+                        </tr>
+                         <tr>
+                            <th id="thQucikLinksHead" class="headerWrap" width="320px" height="20px" onclick="Accordian('trQuickLinks');" ><apex:outputText value="{!$Label.Quick_Links}"  escape="false"></apex:OutputText></th>
+                        </tr>
+                        <tr style="display:none;" id="trQuickLinks">
+                            <td style="padding:0px 0px 0px 10px; vertical-align:top;" height="30px">
+                            <span style="display:{!isPatnerAdmin}">
+                                <apex:outputLink value="{!PARolesRespPDFUrl}" target="_blank">{!$Label.Partner_Administrator_Roles_and_Responsibilities}</apex:outputLink> 
+                            </span>
+                             <span style="display:{!isDRAccepted}">
+                                <apex:outputLink value="{!URLFOR($Resource[SSODealRegGuidelines1])}" target="_blank">{!$Label.Deal_Registration_Program_Terms}</apex:outputLink> 
+                            </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th id="thPartnerMembers" class="headerWrap" width="320px" height="20px" onclick="Accordian('lstPartnerMembers');" ><apex:outputText value="{!$Label.PartnerConnect_Membership}"  escape="false"></apex:OutputText></th>
+                        </tr>
+                        <tr id="lstPartnerMembers"  style="display:none;" >
+                            <td style="padding:0px 0px 0px 10px;" height="50px">
+                                <apex:dataTable value="{!membershipList}" var="member" rendered="{!IF(membershipList=='',false,true)}">
+                                    <apex:column value="{!member}"/>
+                                </apex:dataTable>
+                            </td>
+                        </tr>
+                        <tr id="lblDashboard">     
+                                
+                            <apex:outputPanel rendered="{!adminflag}">
+                                    <th id="thDashboard" class="headerWrap"  height="20px" width="320px" onclick="Accordian('antclDashboard');"><apex:outputText value="{!$Label.My_Dashboard}"  escape="false"></apex:OutputText></th>
+                            </apex:outputPanel>
+                             
+                        </tr>
+                        <tr id="antclDashboard" style="display:none;">                                          
+                            <apex:outputPanel rendered="{!adminflag}">
+                                <td style="padding:0px 10px 0px 10px; vertical-align:top;" height="100px">
+                                        <apex:outputText value="{!$Label.Open_Cases_by_Escalation}" ></apex:outputText>
+                                        <a onclick="window.top.location = '/Partners/'+'{!$Label.PC_Home_Page_Report_Id}'">
+                                            <analytics:reportChart reportId="{!$Label.PC_Home_Page_Report_Id}" showRefreshButton="true" size="tiny" hideOnError="true"></analytics:reportChart>
+                                        </a>
+                                </td>
+                            </apex:outputPanel>                                         
+                        </tr>
+                        <tr>
+                            <th id="thCompPtnrAdm" class="headerWrap" width="320px" height="20px"  onclick="Accordian('trCompPtnrAdm');"><apex:outputText value="{!$Label.Your_Company_s_Partner_Administrators}"  escape="false"></apex:OutputText></th>
+                        </tr>
+                        <tr style="display:none;" id="trCompPtnrAdm">
+                            <td style="padding:0px 0px 0px 10px;  vertical-align:top;" width="320px" height="300px">
+                            <div style="overflow-y : scroll;overflow-x:hidden; width:100%; height:97%;">
+                                <apex:repeat value="{!partnerAdminList}" var="contact">
+                                <apex:outputLink value="mailto:{!contact.Email}">{!contact.Name}</apex:outputLink>
+                                <br/>
+                                </apex:repeat>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th id="thWuesContPtnrInteract" class="headerWrap" width="320px" height="20px" onclick="Accordian('trWuesContPtnrInteract');"><apex:outputText value="{!$Label.Questions_Contact_the_Partner_Interaction_Center}"  escape="false"></apex:OutputText></th>
+                        </tr>
+                        <tr style="display:none;" id="trWuesContPtnrInteract">
+                            <td style="padding:0px 0px 10px 10px; vertical-align:top; height:40px;">
+                                
+                                <apex:outputPanel rendered="{!if((partnerAccount.Partner_Region__c == 'NA'),true,false)}" >
+                                    <apex:outputText escape="false" value="<b>{!$Label.Community_Email}</b>" ></apex:outputText>
+                                    <a href = "mailto:pic.na@zebra.com">pic.na@zebra.com</a>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!if((partnerAccount.Partner_Region__c == 'LATAM'),true,false)}" >
+                                    <apex:outputText escape="false" value="<b>{!$Label.Community_Email}</b>"></apex:outputText>
+                                    <a href = "mailto:pic.lacr@zebra.com">pic.lacr@zebra.com</a>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!if((partnerAccount.Partner_Region__c == 'EMEA'),true,false)}" >
+                                    <apex:outputText escape="false" value="<b>{!$Label.Community_Email}</b>"></apex:outputText>
+                                    <a href = "mailto:pic.emea@zebra.com">pic.emea@zebra.com</a>
+                                </apex:outputPanel>
+                                
+                                <apex:outputPanel rendered="{!if((partnerAccount.Partner_Region__c == 'APAC'),true,false)}" >
+                                    <apex:outputText escape="false" value="<b>{!$Label.Community_Email}</b>"></apex:outputText>
+                                    <a href = "mailto:pic.apac@zebra.com">pic.apac@zebra.com</a>
+                                </apex:outputPanel>
+                                
+                                <br/>
+                                
+                                <apex:outputPanel >
+                                    <apex:outputText escape="false" value="<b>{!$Label.Community_Website}</b> "></apex:outputText>
+                                    <apex:outputLink value="https://www.zebra.com/partnerinteractioncenter" target="_new">www.zebra.com/partnerinteractioncenter</apex:outputLink>
+                                </apex:outputPanel>
+                            </td>
+                        </tr>
+                        
+                        </table>
+                    </td>
+                    </tr>
+                    </table>
+                                           
+                </td>    
+                <td width="1px">
+                    &nbsp;
+                </td>
+                <td width="75%" style="white-space:nowrap;vertical-align:top;"> 
+                    <table id="rightcontent" frame="box" width="100%"  height="650px" style="border-radius:25px;">
+                        <tr>
+                            <th style="padding:10px 0px 0px 10px;border-radius:25px 25px 0 0;">
+                                <div>
+                                    <apex:outputText style="font-weight:800" value="{!$Label.Welcome_to_the_Partner_Administration_Tool}">
+                                          <apex:param value="{!contact.name}" />
+                                                                              </apex:OutputText>
+                                </div>                             
+                            </th>
+                        </tr>       
+                        <tr>
+                            <td class="tdforWrap">                               
+                                    <apex:outputText value="{!$Label.Community_Home_Page_Para1}"  escape="false"></apex:OutputText>                              
+                            </td>
+                        </tr>       
+                        <tr>
+                            <td style="width:100%;">
+                                <apex:image id="rightcontent" url="{!URLFOR($Resource.PartnerConnectHomeDummy)}"  width="100%" height="100%"/>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>  
+                    </table> 
+                </td>
+                
+            </tr>
+        </table>
+
+        </apex:pageBlock>       
+</apex:form>
+</body>
+</apex:page>

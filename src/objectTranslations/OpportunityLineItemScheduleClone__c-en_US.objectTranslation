@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Opportunity Revenue Forecast</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Revenue Forecast</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Period --></label>
+        <name>Fiscal_Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fiscal Quarter --></label>
+        <name>Fiscal_Quarter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week --></label>
+        <name>Fiscal_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- IDtoClone --></label>
+        <name>IDtoClone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Product Family --></label>
+        <name>Named_Product_Family__c</name>
+        <relationshipLabel><!-- Opportunity Revenue Forecast --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- OpportunityLineItemId15 --></label>
+        <name>OpportunityLineItemId15__c</name>
+    </fields>
+    <fields>
+        <label><!-- OpportunityLineItemId --></label>
+        <name>OpportunityLineItemId__c</name>
+    </fields>
+    <fields>
+        <label><!-- OpportunityLineItemScheduleId --></label>
+        <name>OpportunityLineItemScheduleId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Closed Date --></label>
+        <name>Opportunity_Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Revenue Forecast --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Revenue --></label>
+        <name>Revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>SKU__c</name>
+        <relationshipLabel><!-- Opportunity Revenue Forecast --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ScheduleDate --></label>
+        <name>ScheduleDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Both</masterLabel>
+            <translation><!-- Both --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clone - Line Item</masterLabel>
+            <translation><!-- Clone - Line Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clone - Opportunity</masterLabel>
+            <translation><!-- Clone - Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Line Item</masterLabel>
+            <translation><!-- Line Item --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quantity</masterLabel>
+            <translation><!-- Quantity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revenue</masterLabel>
+            <translation><!-- Revenue --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Weighted Amount AIT LA --></label>
+        <name>Weighted_Amount_AIT_LA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weighted Amount EVM LA --></label>
+        <name>Weighted_Amount_LA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weighted Amount --></label>
+        <name>Weighted_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Workflow Kick-Off Date --></label>
+        <name>Workflow_Kick_Off_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Revenue Forecast Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

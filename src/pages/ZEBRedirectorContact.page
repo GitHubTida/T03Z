@@ -1,0 +1,54 @@
+<!--********************************************************************************
+PAGE            : ZEBRedirectorContact
+PURPOSE         : Redirects the incoming request for Contact Edit/New to other pages
+CREATED BY      : Shakti Mehtani
+CREATED DATE    : 08/19/2014 (MM/DD/YYYY)
+--------------------------------------------------------------------------------
+MODIFICATION HISTORY
+
+MODIFICATION DATE   MODIFIED BY     REASON
+--------------------------------------------------------------------------------
+28-Oct-2014         Gaurish Goel    JavaScript code to detect the mediaType, 
+                                    Calling handleRedirection using actionFunction 
+06-Jan-2015         Gaurish Goel    JavaScript code to detect the console mode. Line #20-38                                    
+*********************************************************************************-->
+<apex:page StandardController="Contact" extensions="ZEBRedirectContactController">
+<apex:includeScript value="/soap/ajax/26.0/connection.js"/>
+<apex:includeScript value="/support/console/26.0/integration.js"/>
+    <script type="text/javascript">        
+        function checkMediaType() 
+        {
+            if(sforce.one == 'undefined' || sforce.one == null) 
+            {
+                var mediaType = 'desktop';
+                setmediatype(mediaType);
+            }
+            else
+            {
+                var mediaType = 'salesforce1';
+                setmediatype(mediaType);
+            }
+        }
+        window.onload = checkMediaType;
+        
+        function setmediatype(mediaType)
+        {
+            var mediaType = mediaType;
+            setmediatype1(mediaType);
+        }
+        
+        function callRedirectorMethod()
+        {
+            handleRedirection();
+        }
+    </script>
+    
+    <apex:form id="formid">
+    
+        <apex:actionfunction name="setmediatype1" action="{!determineMediaType}" rerender="formid" oncomplete="callRedirectorMethod();">
+            <apex:param name="mediaType" value="" assignTo="{!mediaType}"/>
+        </apex:actionFunction>
+        
+        <apex:actionfunction name="handleRedirection" action="{!handleRedirection}"/>
+    </apex:form>
+</apex:page>

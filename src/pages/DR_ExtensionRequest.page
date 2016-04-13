@@ -1,0 +1,34 @@
+<apex:page standardController="Deal_Registration__c" showHeader="false" extensions="DR_ExtensionRequest">
+    <apex:form style="text-align:center; font-family:verdana,arial; font-size:8pt; font-weight:bold">
+    
+        <div style="padding:3px"></div><br/>
+
+        <apex:outputPanel rendered="{!AND(theRecord.Approval_Status__c='Approved Final',isPartnerUser,theRecord.DR_Expiration_Date__c <= now()+15,theRecord.Extension_Status__c='Not Requested',NOT(theRecord.Opportunity__r.IsClosed),theRecord.Opportunity__c != NULL)}">
+            <apex:commandLink value="{!$Label.Zeb_DR_Extension_Request_Line_1}" action="{!xrequest}"/><br/>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!AND(theRecord.Extension_Status__c='Requested',theRecord.Approval_Status__c='Approved Final', isPartnerUser)}">
+            {!$Label.Zeb_DR_Extension_Request_Line_2}<br/>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!AND(theRecord.Extension_Status__c='Requested',theRecord.Approval_Status__c='Approved Final',(isExtensionApprover))}">
+            <apex:commandLink value="{!$Label.Zeb_DR_Extension_Request_Line_5}" action="{!xapprove}" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <apex:commandLink value="{!$Label.Zeb_DR_Extension_Request_Line_6}" action="{!xreject}" /><br/>
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!AND(theRecord.Extension_Status__c='Approved',NOT(theRecord.Approval_Status__c = 'Expired'))}">
+             <apex:outputText value="{!$Label.Zeb_DR_Extension_Request_Line_3}" escape="false">
+             <apex:param value="{!noOfDays}"/>
+             </apex:outputText>
+             <br/>
+        </apex:outputPanel>
+
+
+             
+        <apex:outputPanel rendered="{!theRecord.Extension_Status__c='Rejected'}">
+            {!$Label.Zeb_DR_Extension_Request_Line_4}<br/>
+        </apex:outputPanel>
+
+    </apex:form> 
+</apex:page>

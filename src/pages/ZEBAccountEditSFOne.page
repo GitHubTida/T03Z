@@ -1,0 +1,306 @@
+<apex:page docType="html-5.0" showHeader="false" sidebar="false" standardController="Account" extensions="ZEBAccountEditSFOne">
+    <apex:stylesheet value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'jquery.mobile-1.3.0.min.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'jquery-1.9.1.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'jquery.mobile-1.3.0.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'cordova.force.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'backbone/underscore-1.4.4.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'force.entity.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.MobileSample_Resources_jQueryMobile, 'SObjectData.js')}"/>
+    
+    <script type="text/javascript">
+    window.onload = function getRemoteContact()
+    {
+        var accountId = '{!$CurrentPage.Parameters.id}';
+        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ZEBAccountEditSFOne.getAccount}',accountId, 
+            function(result, event)
+            {
+                if (event.status)
+                {
+                    if(result.Name != 'undefined')
+                    {
+                        document.getElementById('accname').value = result.Name;
+                    }
+                    if(result.AccountNumber != 'undefined')
+                    {
+                        document.getElementById('accnum').value = result.AccountNumber;
+                    }
+                    if(result.Phone != 'undefined')
+                    {
+                        document.getElementById('phone').value = result.Phone;
+                    }
+                    if(result.Translated_Name__c != 'undefined')
+                    {
+                        document.getElementById('tname').value = result.Translated_Name__c;
+                    }
+                    if(result.Account_Unique_Id__c != 'undefined')
+                    {
+                        document.getElementById('accuniqueid').value = result.Account_Unique_Id__c;
+                    }
+                    if(result.Fax != 'undefined' && result.Fax != null)
+                    {
+                        document.getElementById('fax').value = result.Fax;
+                    }
+                    if(result.ZEB_NCR_Flag__c)
+                    {
+                        document.getElementById("ncrid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('ncr').checked = "true";
+                    }
+                    if(result.Website != 'undefined')
+                    {
+                        document.getElementById('website').value = result.Website;
+                    }
+                    if(result.Financial_Customer_Flag__c)
+                    {
+                        document.getElementById("fcfid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('fcf').checked = "true";
+                    }
+                    if(result.Credit_Hold__c)
+                    {
+                        document.getElementById("chid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('credithold').checked = "true";
+                    }
+                    if(result.Key_Account_Flag__c)
+                    {
+                        document.getElementById("kafid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('kaf').checked = "true";
+                    }
+                    if(result.Strategic_Account_Flag__c)
+                    {
+                        document.getElementById("safid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('saf').checked = "true";
+                    }
+                    if(result.Orderable_Flag__c)
+                    {
+                        document.getElementById("ofid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('ordflag').checked = "true";
+                    }
+                    if(result.Financial_Status__c != 'undefined' && result.Financial_Status__c != null)
+                    {
+                        document.getElementById('fstatus').value = result.Financial_Status__c;
+                    }
+                    if(result.Price_List__c != 'undefined' && result.Price_List__c != null)
+                    {
+                        document.getElementById('plist').value = result.Price_List__c;
+                    }
+                    if(result.Currency_Code__c != 'undefined' && result.Currency_Code__c != null)
+                    {
+                        document.getElementById('ccode').value = result.Currency_Code__c;
+                    }
+                    if(result.Organization__c != 'undefined' && result.Organization__c != null)
+                    {
+                        document.getElementById('org').value = result.Organization__c;
+                    }
+                    if(result.BO_Error__c != 'undefined' && result.BO_Error__c != null)
+                    {
+                        document.getElementById('boerror').value = result.BO_Error__c;
+                    }
+                    if(result.BO_Synch_Status__c != 'undefined' && result.BO_Synch_Status__c != null)
+                    {
+                        document.getElementById('bosstatus').value = result.BO_Synch_Status__c;
+                    }
+                    if(result.Siebel_Row_Id__c != 'undefined' && result.Siebel_Row_Id__c != null)
+                    {
+                        document.getElementById('srid').value = result.Siebel_Row_Id__c;
+                    }
+                    if(result.Siebel_SF_ID__c != 'undefined' && result.Siebel_SF_ID__c != null)
+                    {
+                        document.getElementById('ssfid').value = result.Siebel_SF_ID__c;
+                    }
+                    if(result.SFDCSiebel_Sync_Status__c)
+                    {
+                        document.getElementById("sfdcssstatusid").getElementsByClassName("ui-icon ui-icon-checkbox-off ui-icon-shadow")[0].setAttribute("class","ui-icon ui-icon-checkbox-on ui-icon-shadow");
+                        document.getElementById('sfdcssstatus').checked = "true";
+                    }
+                }
+                else if (event.type === 'exception')
+                {
+                    document.getElementById("error").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                }
+                else
+                {
+                    document.getElementById("error").innerHTML = event.message;
+                }
+            }, 
+            {escape: true}
+        );
+    }
+    
+    function updateAccount()
+    {
+        var acc = new Object();
+        acc.Id = '{!$CurrentPage.Parameters.id}';
+        acc.Name = document.getElementById('accname').value;
+        acc.AccountNumber = document.getElementById('accnum').value;
+        acc.Translated_Name__c = document.getElementById('tname').value;
+        acc.Phone = document.getElementById('phone').value;
+        acc.Account_Unique_Id__c = document.getElementById('accuniqueid').value;
+        acc.Fax = document.getElementById('fax').value;
+        acc.ZEB_NCR_Flag__c = document.getElementById('ncr').checked;
+        acc.Website = document.getElementById('website').value;
+        acc.Financial_Customer_Flag__c = document.getElementById('fcf').checked;
+        acc.Credit_Hold__c = document.getElementById('credithold').checked;
+        acc.Key_Account_Flag__c = document.getElementById('kaf').checked;
+        acc.Strategic_Account_Flag__c = document.getElementById('saf').checked;
+        acc.Orderable_Flag__c = document.getElementById('ordflag').checked;
+        acc.Financial_Status__c = document.getElementById('fstatus').value;
+        acc.Price_List__c = document.getElementById('plist').value;
+        acc.Currency_Code__c = document.getElementById('ccode').value;
+        acc.Organization__c = document.getElementById('org').value;
+        acc.BO_Error__c = document.getElementById('boerror').value;
+        acc.BO_Synch_Status__c = document.getElementById('bosstatus').value;
+        acc.Siebel_Row_Id__c = document.getElementById('srid').value;
+        acc.Siebel_SF_ID__c = document.getElementById('ssfid').value;
+        acc.SFDCSiebel_Sync_Status__c = document.getElementById('sfdcssstatus').checked;
+        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ZEBAccountEditSFOne.saveAccount}', acc,
+            function(result, event)
+            {
+                if(event.status)
+                {
+                    if(result == 'Success')
+                    {
+                        if(sforce.one == 'undefined' || sforce.one == null) 
+                        {
+                            window.open('/{!$CurrentPage.Parameters.id}', '_self');
+                        }
+                        else
+                        {
+                             sforce.one.navigateToSObject('{!$CurrentPage.Parameters.id}', 'detail');
+                        }
+                    }
+                    else
+                    {
+                        document.getElementById("error").innerHTML = result;
+                    }
+                }
+                else if (event.type === 'exception')
+                {
+                    document.getElementById("error").innerHTML = event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                }
+                else
+                {
+                    document.getElementById("error").innerHTML = event.message;
+                }
+            }
+        );
+    }
+    
+    function cancelAccount()
+    {
+        if(sforce.one == 'undefined' || sforce.one == null) 
+        {
+            window.open('/{!$CurrentPage.Parameters.id}', '_self');
+        }
+        else
+        {
+             sforce.one.navigateToSObject('{!$CurrentPage.Parameters.id}', 'detail');
+        }
+    }
+    </script>
+    
+    <head>
+        <title>Accounts</title>
+    </head>
+    <body>
+        <div data-role="page">
+            <div data-role="header" >
+                <button onclick="updateAccount();">Save</button>
+                <h1>Edit Account</h1>
+                <button onclick="cancelAccount();">Cancel</button>
+            </div>
+            <br/>
+            <div data-role="main" class="ui-content">
+            <form method="post" action="demoform.asp">
+              <div style="background-color:#848484;padding:3px">
+                  <label style="font-size:16px;color:white">Account Information</label>
+              </div><br/>
+              <output type="text" name="error" id="error" style="color:red"/>
+              <label for="accname">Account name:</label>
+              <input type="text" name="accname" id="accname"/>
+              <label for="tname">Translated Name:</label>
+              <input type="text" name="tname" id="tname"/>
+              <label for="accnum">Account Number:</label>
+              <input type="number" name="accnum" id="accnum"/>
+              <label for="accuniqueid">Account Unique Id:</label>
+              <input type="text" name="accuniqueid" id="accuniqueid"/>
+              <label for="phone">Phone:</label>
+              <input type="tel" name="phone" id="phone"/>
+              <label for="fax">Fax:</label>
+              <input type="tel" name="fax" id="fax"/>
+              <div id="ncrid">
+                  <label for="ncr">NCR Flag</label>
+                  <input type="checkbox" name="ncr" id="ncr"/>
+              </div>
+              <label for="website">Website:</label>
+              <input type="url" name="website" id="website"/><br/>
+              <br/>
+              <div style="background-color:#848484;padding:3px">
+                  <label style="font-size:16px;color:white">Financial Details</label>
+              </div>
+              <br/>
+              <div id="fcfid">
+                  <label for="fcf">Financial Customer Flag</label>
+                  <input type="checkbox" name="fcf" id="fcf"/>
+              </div>
+              <div id="chid">
+                  <label for="credithold">Credit Hold</label>
+                  <input type="checkbox" name="credithold" id="credithold"/>
+              </div>
+              <div id="kafid">
+                  <label for="kaf">Key Account Flag</label>
+                  <input type="checkbox" name="kaf" id="kaf"/>
+              </div>
+              <div id="safid">
+                  <label for="saf">Strategic Account Flag</label>
+                  <input type="checkbox" name="saf" id="saf"/>
+              </div>
+              <div id="ofid">
+                  <label for="ordflag">Orderable Flag</label>
+                  <input type="checkbox" name="ordflag" id="ordflag"/>
+              </div>
+              <label for="fstatus">Financial Status:</label>
+              <input type="text" name="fstatus" id="fstatus"/>
+              <label for="plist">Price List:</label>
+              <input type="text" name="plist" id="plist"/>
+              <label for="ccode">Currency Code:</label>
+              <input type="text" name="ccode" id="ccode"/><br/>
+              <br/>
+              <div style="background-color:#848484;padding:3px">
+                  <label style="font-size:16px;color:white">Interface Details</label>
+              </div><br/>
+              <label for="org">Organization:</label>
+              <input type="text" name="org" id="org"/>
+              <label for="boerror">BO Error:</label>
+              <textarea name="boerror" id="boerror"></textarea>
+              <label for="bosstatus">BO Synch Status:</label>
+              <input type="text" name="bosstatus" id="bosstatus"/>
+              <label for="srid">Siebel Row Id:</label>
+              <input type="text" name="srid" id="srid"/>
+              <label for="ssfid">Siebel SF ID:</label>
+              <input type="text" name="ssfid" id="ssfid"/>
+              <div id="sfdcssstatusid">
+                  <label for="sfdcssstatus">SFDCSiebel Sync Status</label>
+                  <input type="checkbox" name="sfdcssstatus" id="sfdcssstatus"/>
+              </div>
+              <!--<br/><br/>
+              <div style="background-color:#848484;padding:3px">
+                  <label style="font-size:16px;color:white">Account Address Information</label>
+              </div>
+              <br/>
+              <label for="mstreet">Mailing Street:</label>
+              <textarea name="mstreet" id="mstreet"></textarea>
+              <label for="mcity">Mailing City:</label>
+              <input type="text" name="mcity" id="mcity"/>
+              <label for="mzip">Mailing Zip/Postal Code:</label>
+              <input type="text" name="mzip" id="mzip"/>
+              <label for="mstate">Mailing State/Province Code:</label>
+              <input type="text" name="mstate" id="mstate"/>-->
+            </form>
+            </div>
+            <div data-role="header">
+                <button onclick="updateAccount();">Save</button>
+                <h1></h1>
+                <button onclick="cancelAccount();">Cancel</button>
+            </div>
+        </div>
+    </body>
+</apex:page>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <fields>
+        <fullName>SSO_Code__c</fullName>
+        <label>SSO Code</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Salesforce_Code__c</fullName>
+        <label>Salesforce Code</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <label>SSO Preferred Language Codes</label>
+</CustomObject>

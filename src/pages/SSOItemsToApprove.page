@@ -1,0 +1,33 @@
+<apex:page id="pgItemsToApprove" controller="SSOItemsToApprove" sidebar="false">
+ 
+    <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    
+     <apex:form id="frmMain">
+      <apex:pageBlock id="PBItemsToApprove">      
+      
+       <apex:outputpanel id="opItemsToApprove" layout="block">                            
+                                <apex:actionstatus id="st1">
+                                    <apex:facet name="start"><apex:image value="/img/loading32.gif" />
+                                    </apex:facet>
+                                </apex:actionstatus>
+                                <!--h1>
+                                    <span style="color:#9E0404;">
+                                        <i><b>{!$Label.Items_To_Approve}</b></i>
+                                    </span>
+                                </h1-->                                  
+                                <apex:pageblocksection id="section1" showheader="true" collapsible="true" columns="1" rendered="true">             
+                                    <apex:pageBlockTable value="{!lstItemsToApprove}" var="a" id="pbItemsToApprove">                                                                                 
+                                         <apex:column >
+                                            <apex:facet name="header"></apex:facet> 
+                                            <apex:outputLink value="/{!a.SSORecordName.Id}">{!a.SSORecordName.Name}</apex:outputLink>
+                                         </apex:column>
+                                         <apex:column value="{!a.SSORecordName.Name__c}"  headerValue="{!$Label.SSO_Name}"/>
+                                         <apex:column value="{!a.SSORecordName.Application_Name__c}"  headerValue="{!$Label.SSO_Application_Name}"/>
+                                         <apex:column value="{!a.DateSubmitted}"  headerValue="{!$Label.Requested_Date}"/>                                         
+                                    </apex:pageBlockTable>  
+                                </apex:pageblockSection>
+                                
+                            </apex:outputpanel>  
+         </apex:pageBlock>
+     </apex:form>
+</apex:page>

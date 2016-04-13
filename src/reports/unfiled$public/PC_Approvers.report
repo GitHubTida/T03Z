@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Quote$Name</field>
+    </columns>
+    <columns>
+        <field>Quote$PC__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Siebel_Id__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Revision__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Level_1_Approval__c</field>
+    </columns>
+    <columns>
+        <field>Quote$L1_User__c</field>
+    </columns>
+    <columns>
+        <field>Quote$L2_User__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Level_2_Approval__c</field>
+    </columns>
+    <columns>
+        <field>Quote$Level_3_Approval__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>PC Approvers</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Quotes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Quote$L2_User__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Quote$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

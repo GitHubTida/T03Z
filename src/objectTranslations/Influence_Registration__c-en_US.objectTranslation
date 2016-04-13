@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Influence Registration</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Influence Registration</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved - Admin</masterLabel>
+            <translation><!-- Approved - Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved - CAM</masterLabel>
+            <translation><!-- Approved - CAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved - Final</masterLabel>
+            <translation><!-- Approved - Final --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved - TAM</masterLabel>
+            <translation><!-- Approved - TAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Confirmation Number --></label>
+        <name>Confirmation_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- EVM Influence Registration ID --></label>
+        <name>EVM_Influence_Registration_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Influence Registration --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Influence Registration Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

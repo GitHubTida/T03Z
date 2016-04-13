@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Line Item Distributor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Line Item Distributors</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <value>Line Item Distributor ID</value>
+        </caseValues>
+        <name>quotelineitem_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <value>Line Item Distributor Information</value>
+        </caseValues>
+        <name>quotelineitem_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <value>Opportunities with Quotes and Line Item Distributors Report</value>
+        </caseValues>
+        <name>quotelineitem_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Cancel Flag --></label>
+        <name>Cancel_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- DATA LOAD CHECK --></label>
+        <name>DATA_LOAD_CHECK__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Account Currency --></label>
+        <name>Direct_Account_Currency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dist Margin Approval --></label>
+        <name>Dist_Margin_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disti Margin --></label>
+        <name>Disti_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disti. Special Discount --></label>
+        <name>Disti_Special_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disti. Special Price --></label>
+        <name>Disti_Special_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disti. Special Total --></label>
+        <name>Disti_Special_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disti Std Discount --></label>
+        <name>Disti_Std_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disti Total --></label>
+        <name>Disti_Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Disc% --></label>
+        <name>Extra_Disc__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsCreatedFromOLI --></label>
+        <name>IsCreatedFromOLI__c</name>
+    </fields>
+    <fields>
+        <label><!-- Min First Order --></label>
+        <name>Min_First_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Min Qty --></label>
+        <name>Min_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- OLIAutoNumber --></label>
+        <name>OLIAutoNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Currency Code --></label>
+        <name>Opp_Currency_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opp Price book --></label>
+        <name>Opp_Price_book__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity ID --></label>
+        <name>Opportunity_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Line Item ID --></label>
+        <name>Opportunity_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Discount --></label>
+        <name>PC_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- EVM PC Line Item ID --></label>
+        <name>PC_EVM_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Margin --></label>
+        <name>PC_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Price --></label>
+        <name>PC_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Reseller Rec ID --></label>
+        <name>PC_Reseller_Rec_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parent Line Item Distributor --></label>
+        <name>Parent_Line_Item_Distributor__c</name>
+        <relationshipLabel><!-- Quote Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Pc Quote Line SF ID --></label>
+        <name>Pc_Quote_Line_SF_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product_Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity Factor --></label>
+        <name>Quantity_Factor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reseller Margin --></label>
+        <name>Reseller_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reseller Std Disc --></label>
+        <name>Reseller_Std_Disc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reseller Unit Special Price --></label>
+        <name>Reseller_Unit_Special_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Line Id --></label>
+        <name>Siebel_Line_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel List Price --></label>
+        <name>Siebel_List_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Margin --></label>
+        <name>Standard_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Net Price --></label>
+        <name>Standard_Net_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suggested End User Price --></label>
+        <name>Suggested_End_User_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Suggested Reseller Buy Price --></label>
+        <name>Suggested_Reseller_Buy_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Discount --></label>
+        <name>Total_Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Disti Cost --></label>
+        <name>Total_Disti_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Special Price --></label>
+        <name>Unit_Special_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Uplifted Cost --></label>
+        <name>Uplifted_Cost__c</name>
+    </fields>
+    <layouts>
+        <layout>Quote Line Item Layout</layout>
+        <sections>
+            <label><!-- Discount and Quantity --></label>
+            <section>Discount and Quantity</section>
+        </sections>
+        <sections>
+            <label><!-- Margin and Cost Information --></label>
+            <section>Margin and Cost Information</section>
+        </sections>
+        <sections>
+            <label><!-- Other Information --></label>
+            <section>Other Information</section>
+        </sections>
+        <sections>
+            <label><!-- Pricing Information --></label>
+            <section>Pricing Information</section>
+        </sections>
+        <sections>
+            <label><!-- Product Information --></label>
+            <section>Product Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Only AIT Products can be added to the Quote. --></errorMessage>
+        <name>AIT_Product_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Quote is locked and cannot be edited. --></errorMessage>
+        <name>Cannot_Edit_Line_Item_Locked_Quote</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Quote is locked and no new items can be added. --></errorMessage>
+        <name>Cannot_add_new_Line_Item_Locked_Quote</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The EVM SKU is Service SKU and cannot be added to the Quote. Please select a different SKU. --></errorMessage>
+        <name>EVM_Product_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The SKU is Non Orderable and cannot be added to the Quote, please select a different SKU. --></errorMessage>
+        <name>SKU_Orderable</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Calculate_Disti_Margin --></label>
+        <name>Calculate_Disti_Margin</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_All_Modified --></label>
+        <name>Edit_All_Modified</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Price_All --></label>
+        <name>Price_All</name>
+    </webLinks>
+</CustomObjectTranslation>

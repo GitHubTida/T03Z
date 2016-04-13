@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>RulesDeactivateSwitch</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RulesDeactivateSwitch</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Switch --></label>
+        <name>Account_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead Switch --></label>
+        <name>Lead_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Switch --></label>
+        <name>Opportunity_Switch__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC Switch --></label>
+        <name>PC_Switch__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

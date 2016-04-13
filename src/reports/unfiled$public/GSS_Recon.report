@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Custom_Services__c.Hardware_Pullthrough__c.CONVERT</field>
+    </columns>
+    <columns>
+        <field>FK_$Opportunity.Service_Product_Pullthrough__c.CONVERT</field>
+    </columns>
+    <columns>
+        <field>FK_OPP_AMOUNT.CONVERT</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_OPP_STAGE_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Opportunity.Order_Date__c</field>
+    </columns>
+    <columns>
+        <field>Custom_Services__c.Log_Credit_Value__c.CONVERT</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>GSS Recon</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Custom_Services__c@Custom_Services__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Custom_Services__c.Estimated_Service_Close_Date__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

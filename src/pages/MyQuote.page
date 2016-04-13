@@ -1,0 +1,15 @@
+<apex:page standardController="Opportunity" extensions="CTR_MyQuote">
+  <apex:pageBlock >
+      <apex:pageblockTable value="{!QuoteList}" var="qt">
+          <apex:column headerValue="Quote Id">
+              <apex:outputLink value="{!qt.Id}">{!qt.QuoteNumber}</apex:outputLink>
+          </apex:column>
+          <apex:column value="{!qt.PC__c}"/>
+          <apex:column value="{!qt.Revision__c}"/>
+          <apex:column value="{!qt.Total_Price__c}"/>
+          <apex:column value="{!qt.ExpirationDate}"/>
+          <apex:column value="{!qt.Status}"/>
+          <apex:column value="{!qt.Primary__c}"/>
+      </apex:pageblockTable>
+  </apex:pageBlock>
+</apex:page>

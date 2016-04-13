@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Opportunity Null clone fields</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Null clone fields</value>
+    </caseValues>
+    <fields>
+        <label><!-- Api name --></label>
+        <name>Api_name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Field id --></label>
+        <name>Field_id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

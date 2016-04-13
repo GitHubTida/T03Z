@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SSO Application Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SSO Application Mappings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application Description --></label>
+        <name>Application_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Home URL --></label>
+        <name>Application_Home_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Label --></label>
+        <name>Application_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Local Name --></label>
+        <name>Application_Local_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Name --></label>
+        <name>Application_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Application_Owner__c</name>
+        <relationshipLabel><!-- SSO Application Mappings (Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Status --></label>
+        <name>Application_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not in Use</masterLabel>
+            <translation><!-- Not in Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obsolete</masterLabel>
+            <translation><!-- Obsolete --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Support API? --></label>
+        <name>Application_Support_API__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Type --></label>
+        <name>Application_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Webservice URL --></label>
+        <name>Application_Webservice_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Type --></label>
+        <name>Approval_Type__c</name>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Administrator</masterLabel>
+            <translation><!-- Account Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Owner</masterLabel>
+            <translation><!-- Application Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto Approval</masterLabel>
+            <translation><!-- Auto Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto Provisioning</masterLabel>
+            <translation><!-- Auto Provisioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIC</masterLabel>
+            <translation><!-- PIC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Can be delegated? --></label>
+        <name>Can_be_delegated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Communication to App --></label>
+        <name>Communication_to_App__c</name>
+        <picklistValues>
+            <masterLabel>API - Auto Provisioning</masterLabel>
+            <translation><!-- API - Auto Provisioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approval Process</masterLabel>
+            <translation><!-- Approval Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provisioner --></label>
+        <name>Provisioner__c</name>
+        <relationshipLabel><!-- SSO Application Mappings (Provisioner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Type --></label>
+        <name>Provisioning_Type__c</name>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Administrator</masterLabel>
+            <translation><!-- Account Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Owner</masterLabel>
+            <translation><!-- Application Owner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto Provisioning</masterLabel>
+            <translation><!-- Auto Provisioning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIC</masterLabel>
+            <translation><!-- PIC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global</masterLabel>
+            <translation><!-- Global --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requestor --></label>
+        <name>Requestor__c</name>
+        <picklistValues>
+            <masterLabel>Admin</masterLabel>
+            <translation><!-- Admin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIC</masterLabel>
+            <translation><!-- PIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>SSO Application Mapping Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Account.Account_id_18_Digit__c</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Account.MSI_E_Account__c</field>
+    </columns>
+    <columns>
+        <field>Account.Organization__c</field>
+    </columns>
+    <columns>
+        <field>Account.Partner_Region__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Account.Account_Type__c</column>
+            <operator>equals</operator>
+            <value>Partner</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Account.Partner_Region__c</column>
+            <operator>equals</operator>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Partner Accounts with no Partner Region</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>AccountList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

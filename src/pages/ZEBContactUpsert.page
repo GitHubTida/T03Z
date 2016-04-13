@@ -1,0 +1,338 @@
+<apex:page standardController="Partner_Application__c" extensions="ZEBPartnerController" showHeader="false" sidebar="false" cache="false" title="{!$Label.Application_Title}" tabstyle="Partner_Application__c" action="{!onLoad}" id="thePage" language="{!languageLocale}">
+        
+        <head>
+        <!-- <title>{!$Label.Application_Title}</title> -->
+        </head>
+               
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>               
+        <apex:includeScript value="{!URLFOR($Resource.appprocess,'appprocess.js')}"/>
+        
+        <script type="text/javascript">
+        
+            function findSelectedChkbox()
+            {
+           
+                var checkboxs = document.getElementsByTagName('input');                         
+                var okay=false;
+                //alert(okay);
+                 //alert(checkboxs.length);
+                for(var i=0,l=checkboxs.length;i<l;i++)
+                {               
+                    if(checkboxs[i].name.indexOf('chk1') !=-1){
+                        if(checkboxs[i].checked)
+                        {
+                            okay=true;
+                            break;                          
+                        }
+                    }
+                }
+                
+                if (okay == true) {
+                   //alert('check box selected');
+                   //need to set the hidden field to 1 based on this command button block need to be rerender.
+                }else {
+                  //alert('check box not selected');
+                  //need to set hidden field to 0 based on this command button block need to be rerender.
+                }    
+            }
+            
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+    
+        window.onload = function() {               
+            var saluationVal=document.getElementById('thePage:theForm:pageBlk:pgeBlckSec:pgeBlckSecItem:theSalutation');          
+            var preferredLang = '{!languageLocale}';
+           if('de'== preferredLang || 'ru'== preferredLang || 'pl'== preferredLang || 'tr'== preferredLang){
+                 for(var i=0;i<saluationVal.length;i++){ 
+                     if('Miss'== saluationVal[i].value || 'Ms.'== saluationVal[i].value ){
+                        saluationVal.remove(i)                      
+                        }
+                    }          
+          }
+        };
+        </script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        
+        <!--Highlight styles start-->
+         <style>
+            li.done1,li.done2,li.done3,li.done4,li.done5{
+                background: #0077FF ! Important;
+                color: #FFFFFF ! Important;
+            }
+            #crumbs li.done1:after,#crumbs li.done2:after,#crumbs li.done3:after,#crumbs li.done4:after,#crumbs li.done5:after {
+                  content: "";
+                  border-top: 20px solid transparent;
+                  border-bottom: 20px solid transparent;
+                  border-left: 40px solid #0077FF;
+                  position: absolute;
+                  right: -40px;
+                  top: 0;
+                  z-index: 1;
+            }
+         </style>
+         <!--Highlight styles End-->
+        
+        <div class="ztopbanner">
+        <apex:define name="header">
+        <c:testheader />
+        </apex:define>
+        </div>
+        
+         <!--Chevron styles start-->
+        <div class="chevron">
+            <apex:define name="Chevron">
+                <c:ChevronComponent />
+            </apex:define>
+        </div>
+        <!--Chevron styles end-->
+        
+        <div class="zmainbody">
+        <!-- <apex:sectionHeader title="{!$Label.Application_Title}"/> -->
+        <apex:form id="theForm">
+       <apex:inputHidden value="{!checkValue}" id="theHiddenInput"/>
+        <apex:pageBlock Title="{!$Label.Contact_Details}" id="pageBlk" tabStyle="Account" helptitle="{!$Label.Help_Title}" helpUrl="{!ZEB.MPE_Help_PDF__c}">
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!$Label.Required_Fields}" style="font-weight:bold; color: #000000;"> </apex:outputLabel>
+                </apex:outputPanel>                               
+                
+                <apex:pageBlockButtons location="bottom" id="a1">
+                       <!-- <apex:commandButton value="{!$Label.App_Previous}" immediate="true" action="{!prevPage7}"/> 
+                        <apex:commandButton value="{!$Label.App_Finish_Later}" immediate="true" action="{!FinishLater}" onclick="if(!confirm('{!$Label.PopUp_Finish_Later}')){return false;}" 
+                         title="{!$Label.OnMouse_Finish_Later}" onmouseover="{!$Label.OnMouse_Finish_Later}"/>  -->                      
+                        <apex:commandButton value="{!$Label.Contact_Cancel}" action="{!upsertCancel}" immediate="true" /> 
+                        <apex:commandButton id="ENTER_BUTTON" value="{!$Label.Save_Contact}" action="{!onSave}"/>
+                         <!--apex:commandButton value="{!$Label.Finish_Submit}" action="{!onSubmit}" rendered="{!subFlag}"/-->
+                </apex:pageBlockButtons>
+                
+                <apex:pageBlockSection columns="1">
+                
+                
+                    <apex:pageblockSectionItem >
+                        <apex:outputPanel >
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message}" style="font-weight:bold;"> </apex:outputLabel>
+                            
+                            <!-- <apex:outputLabel value="{!$Label.Trans_Page6_message1_1}" style="font-weight:bold;" rendered="{!NOT(appDevFlag)}"> </apex:outputLabel> -->
+                            <!-- <apex:outputLabel value="{!$Label.Trans_Page6_message1}" style="font-weight:bold;" rendered="{!appDevFlag}"> </apex:outputLabel> -->
+                            <br/>
+                            <apex:outputLabel value="{!$Label.Optional_Training_Role}" style="font-weight:bold;" rendered="{!TrainFlag}" >
+                                <img src="/s.gif" alt="Help" class="helpIcon" title="{!$Label.Training_Coordinator_Title}"/>
+                            </apex:outputLabel>
+                            <br/>
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message2} {!$Label.Trans_Page6_message3}" style="font-weight:bold;"> </apex:outputLabel> 
+                     
+                            <br/>
+                            </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+            
+            </apex:pageBlockSection>
+                
+              <!--  <apex:pageBlockSection columns="1" rendered="{!AND(subFlag,PartAdmnCount>=1)}">
+                    <apex:pageblockSectionItem >
+                        <apex:outputPanel >
+                        <apex:outputLabel value="{!$Label.Trans_Page6_message4}" style="font-weight:bold;color:red" rendered="{!AND(subFlag,PartAdmnCount>=1)}"> </apex:outputLabel>
+                            <apex:outputLabel rendered="{!AND(subFlag,PartAdmnCount>=1)}"><br/></apex:outputLabel>
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message5}" style="font-weight:bold;color:red" rendered="{!AND(subFlag,PartAdmnCount>=1)}"> </apex:outputLabel>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageBlockSection> 
+                  
+                <apex:pageBlockSection columns="1" >
+                    <apex:outputPanel >
+                       <apex:outputLabel value="{!$Label.Trans_Page6_message8}" style="font-weight:bold;color:red" >
+                       </apex:outputLabel>
+                    </apex:outputPanel> 
+                    <apex:pageblockSectionItem rendered="{!Not(subflag)}">
+                        <apex:outputPanel >
+                            <apex:outputLabel value="{!$Label.Contact_For_Each_Role}" style="font-weight:bold;color:red" rendered="{!Not(subflag)}"> </apex:outputLabel>
+                            <apex:outputLabel rendered="{!Not(subflag)}"><br/></apex:outputLabel>
+                            <apex:outputLabel value="{!$Label.Contact_For_Following_Role}" style="font-weight:bold;color:red" rendered="{!Not(subflag)}"> </apex:outputLabel>
+                            <apex:outputLabel rendered="{!Not(subflag)}"><br/></apex:outputLabel>
+                          
+                            <apex:outputLabel value="{!unMappedRoles}" style="font-weight:bold;color:red"> </apex:outputLabel>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageBlockSection>  -->              
+                
+                <!-- Show page messages -->
+                <apex:PageMessages />
+                              
+                                <apex:pageBlockSection id="pgeBlckSec" showHeader="true" title="{!$Label.Company_Contact_Details}" columns="1" collapsible="false">
+                    <apex:pageblockSectionItem rendered="{!markFlag}">
+                        <apex:outputLabel value="{!$Label.Mark_for_Deletion_1}" /> 
+                         <apex:actionRegion >
+                        <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:inputField value="{!CTX.Selected__c}" >
+                                <apex:actionsupport event="onclick" rerender="outputPanel1,outputPanel2,outputPanel3,outputPanel4,outputPanel5,outputPanel6,outputPanel7,outputPanel8,outputPanel9,outputPane20"/>
+                            </apex:inputField>
+                        </apex:outputPanel>
+                        </apex:actionRegion>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem id="pgeBlckSecItem">
+                        <apex:outputLabel value="{!$Label.Salutation}" /> 
+                            <apex:inputField id="theSalutation" value="{!CTX.Salutation__c}" /> 
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                    <apex:outputLabel value="{!$Label.First_Name}" />
+                        <apex:outputPanel id="outputPanel1"> 
+                        <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" > 
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                        
+                            <apex:inputField value="{!CTX.First_Name__c}"/> 
+                        </apex:outputPanel>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <!-- <apex:pageblockSectionItem rendered="{!IF(contains(ZEB.Region_Requested__c,'APAC'),true,false)}">
+                            <apex:outputLabel value="{!$Label.First_Name_Local_Language}" />
+                            <apex:inputField value="{!CTX.First_Name_Local_Language__c}" /> 
+                    </apex:pageblockSectionItem> -->
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Last_Name}" />
+                        <apex:outputPanel id="outputPanel2"> 
+                        <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                        
+                            <apex:inputField value="{!CTX.Last_Name__c}"/> 
+                        </apex:outputPanel>
+                         </apex:outputPanel> 
+                    </apex:pageblockSectionItem>
+                    <!-- <apex:pageblockSectionItem rendered="{!IF(contains(ZEB.Region_Requested__c,'APAC'),true,false)}">
+                            <apex:outputLabel value="{!$Label.Last_Name_Local_Language}" />
+                            <apex:inputField value="{!CTX.Last_Name_Local_Language__c}" /> 
+                    </apex:pageblockSectionItem> -->
+                    
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Title}" />
+                        <apex:outputPanel id="outputPanel3"> 
+                        <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                        
+                            <apex:inputField value="{!CTX.Title__c}" /> 
+                        </apex:outputPanel>
+                        </apex:outputPanel> 
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Email}" />
+                        <apex:outputPanel id="outputPanel4"> 
+                        <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                       
+                            <apex:inputField value="{!CTX.Email__c}">
+                                <apex:actionSupport event="onblur" rerender="outputPanel4"/>
+                            </apex:inputfield>
+                        </apex:outputPanel>
+                         </apex:outputPanel> 
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Phone_Number}" />
+                        <apex:outputPanel id="outputPanel5"> 
+                         <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                        
+                            <apex:inputField value="{!CTX.Phone__c}" /> 
+                        </apex:outputPanel>
+                         </apex:outputPanel> 
+                    </apex:pageblockSectionItem>
+                    <apex:inputField label="{!$Label.Mobile}" value="{!CTX.Mobile_Phone__c}"/> 
+                    <!-- <apex:inputField label="{!$Label.Fax}" value="{!CTX.Fax__c}"/> 
+                    <apex:inputField label="{!$Label.Stree_Address_1}" value="{!CTX.Street_Address1__c}" /> 
+                    <apex:inputField label="{!$Label.Street_Address_2}" value="{!CTX.Street_Address2__c}" /> 
+                    <apex:inputField label="{!$Label.City}" value="{!CTX.City__c}"/>  -->
+                    <!--Made the country field mandatory by Nimesh as part of Onboarding enhancements -->
+                    <!--apex:inputField label="{!$Label.Generic_Country}" value="{!CTX.Country__c}"/-->
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Generic_Country}" />
+                        <apex:outputPanel id="outputPanel6"> 
+                        <apex:actionRegion >
+                         <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                        
+                            <apex:inputField value="{!CTX.Country__c}"> 
+                                <apex:actionsupport event="onchange" rerender="StateCont"/>
+                            </apex:inputField>
+                        </apex:outputPanel>
+                        </apex:actionRegion>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Generic_State}"/>
+                            <apex:outputpanel id="StateCont">
+                            <apex:outputPanel id="outputPanel7" layout="block" styleClass="{!IF(ContactState,'requiredInput', '')}"> 
+                                 <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                    <apex:inputField value="{!CTX.State__c}" />
+                                 </apex:outputPanel>
+                            </apex:outputPanel>
+                        </apex:pageblockSectionItem>
+                    <!-- <apex:inputField label="{!$Label.Generic_State}" value="{!CTX.State__c}" rendered="{!IF(NOT(contains(ZEB.Region_Requested__c,'NA')),true,false)}"/> -->
+                    <!-- <apex:inputField label="{!$Label.Postal_Code}" value="{!CTX.Postal_Code__c}"/> -->
+                    
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel value="{!$Label.Primary_Role}" />
+                        <apex:outputPanel id="outputPanel8"> 
+                         <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                      
+                            <apex:inputField value="{!CTX.Primary_Role__c}"/> 
+                        </apex:outputPanel>
+                         </apex:outputPanel> 
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:inputField label="{!$Label.Secondary_Role}" value="{!CTX.Secondary_Role__c}" />
+                    
+                    <apex:pageblockSectionItem >
+                    <apex:outputLabel value="{!$Label.Primary_Language}" />
+                    <apex:outputPanel id="outputPane20"> 
+                         <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>                        
+                            <apex:inputField value="{!CTX.Preferred_Language__c}"/>
+                        </apex:outputPanel>
+                         </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem >
+                    <apex:outputLabel value="{!$Label.Technology_Preference}" />
+                        <!-- <apex:outputPanel layout="block" styleClass="requiredInput" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/> -->
+                            <apex:inputField value="{!CTX.Technology_Preference__c}" />
+                        <!-- </apex:outputPanel> -->
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:outputPanel id="outputPanel9" layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}">
+                    
+                        <apex:pageblockSectionItem >
+                            <apex:outputLabel value="{!$Label.Authorized_Partner_Admin}" for="Partner_Administrator__c"/>
+                            <!-- <img src="/s.gif" alt="Help" class="helpIcon" title="{!$Label.Partner_Administrator_Help}"/> -->
+                        </apex:pageblockSectionItem>
+                        <apex:pageblockSectionItem >
+                        <apex:outputPanel layout="block" styleClass="{!IF(!CTX.Selected__c,'requiredInput', '')}" >
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                              <apex:selectRadio id="Partner_Administrator__c" value="{!CTX.Partner_Administrator__c}" required="{!NOT(CTX.Selected__c)}">
+                                  <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true"/>
+                                  <apex:selectOption itemLabel="{!$Label.No}" itemValue="false"/>
+                              </apex:selectRadio>
+                        </apex:outputPanel>
+                        </apex:pageblockSectionItem>
+                     </apex:outputPanel>
+                    
+                                 
+                </apex:pageBlockSection>           
+        </apex:pageBlock>
+        </apex:form>
+        </div>
+        
+        <div class="zbottombanner">
+        <apex:define name="footer">
+        <c:testfooter />
+        </apex:define>
+        </div> 
+        
+</apex:page>

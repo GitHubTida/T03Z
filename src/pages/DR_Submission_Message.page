@@ -1,0 +1,24 @@
+<apex:page standardController="Deal_Registration__c" showHeader="false">
+
+    <style type="text/css">
+        .topLine{font-size:20pt; color:grak; font-family:Arial Unicode MS;}
+
+    </style>
+
+    <apex:outputPanel rendered="{!(Deal_Registration__c.Approval_Status__c='New' && Deal_Registration__c.No_of_Deal_Products__c = 0)}">
+        <span class="topLine">
+            {!$Label.Zeb_DR_not_submitted_for_approval}
+        </span>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!(Deal_Registration__c.Approval_Status__c= 'New' && Deal_Registration__c.No_of_Deal_Products__c != 0)}">
+        <span class="topLine">
+            {!$Label.DR_Not_Submitted_Yet}
+        </span>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!Deal_Registration__c.Approval_Status__c='Pending'}">
+        <span class="topLine">
+            {!$Label.Zeb_DR_submitted_for_approval}
+        </span>
+    </apex:outputPanel>
+
+</apex:page>

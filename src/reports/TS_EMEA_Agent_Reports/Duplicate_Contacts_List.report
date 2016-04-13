@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <colorRanges>
+        <columnName>RowCount</columnName>
+        <highBreakpoint>0.0</highBreakpoint>
+        <highColor>#54C254</highColor>
+        <lowBreakpoint>2.0</lowBreakpoint>
+        <lowColor>#C25454</lowColor>
+        <midColor>#C2C254</midColor>
+    </colorRanges>
+    <columns>
+        <field>EMAIL</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_CITY</field>
+    </columns>
+    <columns>
+        <field>PHONE1</field>
+    </columns>
+    <columns>
+        <field>ADDRESS2_COUNTRY_CODE</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <description>Duplicate Contacts List</description>
+    <filter>
+        <criteriaItems>
+            <column>EMAIL</column>
+            <operator>contains</operator>
+            <value>@</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>ADDRESS2_COUNTRY_CODE</column>
+            <operator>notEqual</operator>
+            <value>AS,AQ,AG,AR,AW,AU,BS,BB,BM,BO,BR,CA,KY,CL,CN,CX,CO,CR,CU,DO,FJ,JM,KP,KR,MG,MY,NP,NC,NZ,PA,PG,PE,PH,US,VU,VE,VN,MX,PR,IN,TH,NI,BD,HN,VI</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <name>Duplicate Contacts List</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>ContactList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

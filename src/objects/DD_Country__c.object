@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>****** Demo Depot Application *****
+This will store list of all the countries.</description>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Available_State__c</fullName>
+        <description>This will count the number of states associated with country</description>
+        <label>Available State</label>
+        <summaryForeignKey>DD_State__c.Country__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <description>This will store country code</description>
+        <label>Country Code</label>
+        <length>5</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>IsActive__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Only active countries and associated states will appear.</description>
+        <label>IsActive</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Country</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Country_Code__c</columns>
+        <columns>Available_State__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Country Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Countries</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

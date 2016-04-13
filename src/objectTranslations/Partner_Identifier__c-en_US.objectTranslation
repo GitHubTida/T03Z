@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Partner Identifier</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partner Identifiers</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Reference ID/number --></label>
+        <name>Account_Reference_ID_number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Partner Identifiers --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- EVM Partner Identifier Id --></label>
+        <name>EVM_Partner_Identifier_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- ID/Number Type --></label>
+        <name>ID_Number_Type__c</name>
+        <picklistValues>
+            <masterLabel>Account Ex Ref ID Number</masterLabel>
+            <translation><!-- Account Ex Ref ID Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D&amp;B Number</masterLabel>
+            <translation><!-- D&amp;B Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ITSITIO Number</masterLabel>
+            <translation><!-- ITSITIO Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MR ID</masterLabel>
+            <translation><!-- MR ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Customer Number</masterLabel>
+            <translation><!-- Motorola Customer Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Motorola Enterprise Number</masterLabel>
+            <translation><!-- Motorola Enterprise Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SFDC Partner Membership ID</masterLabel>
+            <translation><!-- SFDC Partner Membership ID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sold To Number</masterLabel>
+            <translation><!-- Sold To Number --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vendor Number</masterLabel>
+            <translation><!-- Vendor Number --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

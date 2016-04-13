@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Master Demo Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Product Information</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>Additional_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternative Part Number --></label>
+        <name>Alternative_Part_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Available Quantity --></label>
+        <name>Available_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Bin --></label>
+        <name>Bin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Price --></label>
+        <name>Cost_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cycle --></label>
+        <name>Cycle__c</name>
+        <picklistValues>
+            <masterLabel>1</masterLabel>
+            <translation><!-- 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11</masterLabel>
+            <translation><!-- 11 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13</masterLabel>
+            <translation><!-- 13 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14</masterLabel>
+            <translation><!-- 14 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16</masterLabel>
+            <translation><!-- 16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17</masterLabel>
+            <translation><!-- 17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18</masterLabel>
+            <translation><!-- 18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19</masterLabel>
+            <translation><!-- 19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2</masterLabel>
+            <translation><!-- 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21</masterLabel>
+            <translation><!-- 21 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>22</masterLabel>
+            <translation><!-- 22 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>23</masterLabel>
+            <translation><!-- 23 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>24</masterLabel>
+            <translation><!-- 24 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>26</masterLabel>
+            <translation><!-- 26 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>27</masterLabel>
+            <translation><!-- 27 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>28</masterLabel>
+            <translation><!-- 28 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>29</masterLabel>
+            <translation><!-- 29 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3</masterLabel>
+            <translation><!-- 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>31</masterLabel>
+            <translation><!-- 31 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>32</masterLabel>
+            <translation><!-- 32 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>33</masterLabel>
+            <translation><!-- 33 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>34</masterLabel>
+            <translation><!-- 34 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35</masterLabel>
+            <translation><!-- 35 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>36</masterLabel>
+            <translation><!-- 36 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>37</masterLabel>
+            <translation><!-- 37 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>38</masterLabel>
+            <translation><!-- 38 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>39</masterLabel>
+            <translation><!-- 39 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4</masterLabel>
+            <translation><!-- 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>40</masterLabel>
+            <translation><!-- 40 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>41</masterLabel>
+            <translation><!-- 41 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>42</masterLabel>
+            <translation><!-- 42 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>43</masterLabel>
+            <translation><!-- 43 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>44</masterLabel>
+            <translation><!-- 44 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>46</masterLabel>
+            <translation><!-- 46 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>47</masterLabel>
+            <translation><!-- 47 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>48</masterLabel>
+            <translation><!-- 48 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>49</masterLabel>
+            <translation><!-- 49 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>50</masterLabel>
+            <translation><!-- 50 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>51</masterLabel>
+            <translation><!-- 51 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>52</masterLabel>
+            <translation><!-- 52 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>53</masterLabel>
+            <translation><!-- 53 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>54</masterLabel>
+            <translation><!-- 54 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>55</masterLabel>
+            <translation><!-- 55 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>56</masterLabel>
+            <translation><!-- 56 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>57</masterLabel>
+            <translation><!-- 57 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>58</masterLabel>
+            <translation><!-- 58 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>59</masterLabel>
+            <translation><!-- 59 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8</masterLabel>
+            <translation><!-- 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Demo Pool --></label>
+        <name>DD_Demo_Pool__c</name>
+        <relationshipLabel><!-- Demo Pool Equipment --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Demand --></label>
+        <name>Demand__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Master --></label>
+        <name>Demo_Master__c</name>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Exclude ReStock --></label>
+        <name>Exclude_ReStock__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Units --></label>
+        <name>Maximum_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- MinMaxFixed Flag --></label>
+        <name>MinMaxFixed_Flag__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MinMaxManual Date --></label>
+        <name>MinMaxManual_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- MinMaxManual Flag --></label>
+        <name>MinMaxManual_Flag__c</name>
+        <picklistValues>
+            <masterLabel>N</masterLabel>
+            <translation><!-- N --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Y</masterLabel>
+            <translation><!-- Y --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Minimum Units --></label>
+        <name>Minimum_Units__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Name --></label>
+        <name>Part_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pool Location --></label>
+        <name>Pool_Location__c</name>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation><!-- Brazil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brno</masterLabel>
+            <translation><!-- Brno --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation><!-- China --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation><!-- Germany --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation><!-- India --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation><!-- Texas --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UK</masterLabel>
+            <translation><!-- UK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US</masterLabel>
+            <translation><!-- US --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ProductUniqueID --></label>
+        <name>ProductUniqueID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Indicator --></label>
+        <name>Product_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Location --></label>
+        <name>Product_Location__c</name>
+        <picklistValues>
+            <masterLabel>Prod Loc 1</masterLabel>
+            <translation><!-- Prod Loc 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 2</masterLabel>
+            <translation><!-- Prod Loc 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 3</masterLabel>
+            <translation><!-- Prod Loc 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 4</masterLabel>
+            <translation><!-- Prod Loc 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 5</masterLabel>
+            <translation><!-- Prod Loc 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 6</masterLabel>
+            <translation><!-- Prod Loc 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 7</masterLabel>
+            <translation><!-- Prod Loc 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prod Loc 8</masterLabel>
+            <translation><!-- Prod Loc 8 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Status --></label>
+        <name>Product_Status__c</name>
+        <picklistValues>
+            <masterLabel>Available</masterLabel>
+            <translation><!-- Available --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Register an Interest</masterLabel>
+            <translation><!-- Register an Interest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Serialized Product</masterLabel>
+            <translation><!-- Serialized Product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reserved Quantity --></label>
+        <name>Reserved_Product_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stock Take Date --></label>
+        <name>Stock_Take_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Quantity Allocated --></label>
+        <name>Total_Quantity_Allocated__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Quantity Bad --></label>
+        <name>Total_Quantity_Bad__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Quantity --></label>
+        <name>Total_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Used Qty. --></label>
+        <name>Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Write Off Quantity NA --></label>
+        <name>Write_Off_Quantity_NA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Written Off Quantity --></label>
+        <name>Written_Off_Quantity__c</name>
+    </fields>
+    <layouts>
+        <layout>DD_Master Demo Products Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Accessories --></label>
+        <name>Add_Accessories</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Serial_Part --></label>
+        <name>Add_Serial_Part</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Bulk_Upload_Master_Products --></label>
+        <name>Bulk_Upload_Master_Products</name>
+    </webLinks>
+</CustomObjectTranslation>

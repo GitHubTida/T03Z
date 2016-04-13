@@ -1,0 +1,238 @@
+<apex:page standardController="Quote" extensions="ZEBPCResellerGridExt" showHeader="false" sidebar="false">
+     <c:AjaxLoader />
+    <script src="/soap/ajax/15.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/15.0/apex.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.base.css')}" type="text/css" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.energyblue.css')}" type="text/css" />
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget,  '/scripts/jquery-1.11.1.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget, '/scripts/jqx-all.js')}"  />
+     <style>
+        .column {
+            background-color: #c7c7c7;
+           
+        }
+    </style>
+   
+   <script>
+   
+   
+        function acountListData() 
+        {
+            // prepare the data
+            sforce.connection.sessionId = "{!$Api.Session_ID}";
+            var accList =   sforce.apex.execute('ZEBPCResellerGridExt','getPCReseller',{ PcId: '{!Quote.Id}' });
+            var data = [];
+            for(var i = 0; i < accList.length; i++){
+             data[i] = {
+                    Id: accList[i].get("Id"),
+                    Name: accList[i].get("Name"),
+                    List_Price__c: accList[i].get("List_Price__c"),
+                    Standard_Net_Price__c: accList[i].get("Standard_Net_Price__c"),
+                    Extra_Disc__c: accList[i].get("Extra_Disc__c"),
+                    Discount__c: accList[i].get("Discount__c"),
+                    Min_Qty__c:accList[i].get("Min_Qty__c"),
+                    Max_Qty__c :accList[i].get("Max_Qty__c"),
+                    Min_First_Order__c:accList[i].get("Min_First_Order__c"),
+                    Uplifted_Cost__c :accList[i].get("Uplifted_Cost__c"),
+                    Total_Discount__c: accList[i].get("Total_Discount__c"),    
+                    Unit_Special_Price__c :accList[i].get("Unit_Special_Price__c"),
+                    Total_Net_Price__c :accList[i].get("Total_Net_Price__c")
+                            
+                }
+                
+             }
+                return data;
+        }
+   
+    $(document).ready(function () {
+     var theme = "";
+     var data = acountListData();
+    
+     var source =
+            {
+                localdata: data,
+                datatype: "array",
+                datafields:
+                [
+                    { name: 'Id', type: 'string' },
+                    { name: 'Name', type: 'string' },
+                    { name: 'List_Price__c', type: 'float' },
+                    { name: 'Standard_Net_Price__c', type: 'float' },
+                    { name: 'Extra_Disc__c', type: 'float' },
+                    { name: 'Discount__c', type: 'float' },
+                    { name: 'Min_Qty__c', type: 'number' },
+                    { name: 'Max_Qty__c', type: 'number' },
+                    { name: 'Min_First_Order__c', type: 'bool' },
+                    { name: 'Uplifted_Cost__c', type: 'float' },
+                    { name: 'Total_Discount__c', type: 'float' },
+                    { name: 'Unit_Special_Price__c', type: 'float' },
+                    { name: 'Total_Net_Price__c', type: 'float' }
+                    
+                    
+                ],
+                Id: 'Id',
+                datatype: "array"
+            };
+            var dataAdapter = new $.jqx.dataAdapter(source);
+
+
+            $("#jqxgrid").jqxGrid(
+            {
+                width: 1250,
+                height :450,
+                //theme: 'energyblue',
+               // autoheight: true,
+               groupable: true,
+                sortable: true,
+                //altrows: true,
+                enabletooltips: true,
+                editable: true,
+                source: dataAdapter,
+                columnsresize: true,
+                columnsreorder: true,
+                selectionmode: 'multiplecellsadvanced',
+                columns: [
+                  { text: 'Product', datafield: 'Name',  width: '180px',pinned: true,editable:false },
+                  { text: 'Min Qty', datafield: 'Min_Qty__c',  width: '65', cellsalign: 'right' },
+                  { text: 'Max Qty', datafield: 'Max_Qty__c',  width: '65', cellsalign: 'right' },
+                  { text: 'Siebel List Price', datafield: 'List_Price__c',  width: '130',cellsformat: 'c2'},
+                  { text: 'Standard Net Price', datafield: 'Standard_Net_Price__c', width: '130' },
+                  { text: 'Discount', datafield: 'Discount__c', width: '70', cellsalign: 'right',cellsformat: 'c2' },
+                  { text: 'Extra Disc', datafield: 'Extra_Disc__c',  width: '80', cellsalign: 'right',cellsformat: 'c2' },
+                
+                  { text: 'Total Discount', datafield: 'Total_Discount__c',  width: '120px', cellclassname: 'column',editable:false,
+                      cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                          var total = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(total, "c2") + "</div>";
+                      } 
+                  },
+                 
+                  { text: 'Unit Special Price', datafield: 'Unit_Special_Price__c',  width: '120', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    
+                     cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        
+                         var totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                         var unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(unitSpecialPrice, "c2") + "</div>";
+                      } 
+                  },
+                 
+                  { text: 'Total Net Price', datafield: 'Total_Net_Price__c',  width: '120', cellclassname: 'column',cellsalign: 'right',editable:false,
+                    
+                     cellsrenderer: function (index, datafield, value, defaultvalue, column, rowdata) {
+                        
+                         var totalDiscount = parseFloat(rowdata.Discount__c) + parseFloat(rowdata.Extra_Disc__c);
+                         var unitSpecialPrice = parseFloat(rowdata.List_Price__c) * parseFloat(1 - totalDiscount/100);
+                         
+                          var totalNetPrice = parseFloat(rowdata.Max_Qty__c) * unitSpecialPrice ;
+                        
+                          return "<div style='margin: 4px;' class='jqx-right-align'>" + dataAdapter.formatNumber(totalNetPrice , "c2") + "</div>";
+                      } 
+                  },
+                 
+                 
+                  
+                  { text: 'Min First Order', datafield: 'Min_First_Order__c',  width: '100', cellsalign: 'right', columntype: 'checkbox' },
+                  { text: 'Uplifted Cost', datafield: 'Uplifted_Cost__c',  width: '100', cellsalign: 'right' }
+                  
+                ]
+            });
+
+    
+    });
+    
+    
+    function SaveLineItem(){
+          showLoader();
+          var updateRecords = [];
+          var griddata = jQuery("#jqxgrid").jqxGrid('getdatainformation'); 
+        
+          var updateRecords =[];
+          
+           for (var i = 0; i < griddata.rowscount; i++){
+               
+                var update_QLI = {};     
+                var rowsdata = jQuery('#jqxgrid').jqxGrid('getrenderedrowdata', i);
+                              
+                update_QLI.Id =rowsdata.Id ;
+                update_QLI.Name =rowsdata.Name;
+                update_QLI.List_Price__c =rowsdata.List_Price__c;
+                update_QLI.Standard_Net_Price__c =rowsdata.Standard_Net_Price__c;
+                update_QLI.Extra_Disc__c =rowsdata.Extra_Disc__c;
+                update_QLI.Discount__c =rowsdata.Discount__c;
+                update_QLI.Min_Qty__c  =rowsdata.Min_Qty__c;
+                update_QLI.Max_Qty__c = rowsdata.Max_Qty__c;
+               
+                   if(rowsdata.Min_First_Order__c)
+                        update_QLI.Min_First_Order__c  = true;
+                   else
+                        update_QLI.Min_First_Order__c  = false;
+               
+                update_QLI.Uplifted_Cost__c  =rowsdata.Uplifted_Cost__c;
+               // update_QLI.Total_Discount__c  =rowsdata.Total_Discount__c;
+                
+                updateRecords.push(update_QLI);
+            
+        }
+        //alert(updateRecords);
+            
+            
+            
+      Visualforce.remoting.Manager.invokeAction(
+     
+        '{!$RemoteAction.ZEBPCResellerGridExt.updatePCReseller}', 
+        updateRecords , 
+        function(result, event){
+       // window.top.location = '/{!Quote.Id}';
+           // alert(result);
+           // alert(event.status);
+            //alert(event.type);
+            console.log(result);
+            console.log(event.status);
+            console.log(event.type);
+        }, 
+        {
+           
+            escape: true
+        }
+        ); 
+            
+     }
+    </script>    
+    <apex:form >
+     <p>
+            <h1 style="font-size: .9em; font-weight: bold; color: #4a4a56; padding-left: 25px;">Edit Product for</h1><br/> 
+            <h2 style="font-size: 1.8em;font-weight:normal;line-height:1.1em;padding-left: 25px;"><apex:outputField value="{!Quote.Name}" /></h2>
+           
+        </p>
+    
+    
+    
+    <div style="width:100%;">
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSection >
+                    <apex:outputField value="{!Quote.QuoteNumber}"/>
+                    <apex:outputField value="{!Quote.Name}"/>
+                </apex:pageBlockSection>   
+                 <apex:pageBlockSection >
+                    <apex:outputField value="{!Quote.Status}"/>
+                    <apex:outputField value="{!Quote.TotalPrice}"/>
+                </apex:pageBlockSection>   
+                
+                 <apex:pageBlockSection >
+                     <apex:outputText value="{!Quote.opportunity.account.Name}"/>
+                    <apex:outputText value="{!Quote.opportunity.Name}"/>
+                </apex:pageBlockSection>   
+                <div id='jqxWidget'>
+                    <div id="jqxgrid"></div>
+                </div>
+              </apex:pageBlockSection>   
+            </apex:pageBlock>
+        </div>
+            <div style="width:100%;text-align:center">
+                         <apex:commandButton id="btnSave"   value="Save" onclick="SaveLineItem();" />
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+           </div>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>AIT_Line_Item_ID__c</fullName>
+        <description>External ID to save the Siebel Row ID for conversion and Integration</description>
+        <externalId>true</externalId>
+        <label>AIT Line Item ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>AIT_PC__c</fullName>
+        <description>Stores the Quote ID</description>
+        <label>AIT PC#</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <formula>CASE(Opportunity.Sales_Stage_Order__c,
+1,(TotalPrice*0.1),
+2,(TotalPrice*0.3),
+3,(TotalPrice*0.5),
+4,(TotalPrice*0.8),
+0
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>% Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_Approval__Approval_Status__c</fullName>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Base_Part__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Check this box when the SKU is not known or not available (Custom Application) to indicate the SKU selected is only a base part, not the actual SKU being planned</description>
+        <inlineHelpText>Check this box when the SKU is not known or not available (Custom Application)</inlineHelpText>
+        <label>Base Part #</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Discount_Percentage__c</fullName>
+        <label>Discount Percentage</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Document_Line_ID__c</fullName>
+        <label>Document Line ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>EVM_Line_Item_ID__c</fullName>
+        <description>External ID to save the Opp Line Item id for Conversion and Integration</description>
+        <externalId>true</externalId>
+        <label>EVM Line Item ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Frequency_of_Deliveries__c</fullName>
+        <label>Frequency of Deliveries</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Week</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bi-Weekly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Month</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Half-Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Year</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Has_Quantity_Scheduled__c</fullName>
+        <description>This Field displays if the the Revenue is Scheduled for this Opportunity Line Item or not</description>
+        <formula>IF(HasQuantitySchedule, IMAGE(&apos;/servlet/servlet.FileDownload?file=015i0000006jaLC&apos;, &apos;Scheduled&apos;),&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Quantity Scheduled</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Has_Revenue_Scheduled__c</fullName>
+        <description>This Field displays if the the Revenue is Scheduled for this Opportunity Line Item or not</description>
+        <formula>IF(HasRevenueSchedule, IMAGE(&apos;/servlet/servlet.FileDownload?file=015i0000006jaLC&apos;, &apos;Scheduled&apos;), &apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Has Revenue Scheduled</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Is_Service_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field denotes of the product added is a service product or not</description>
+        <label>Is Service Product ?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Line_Status__c</fullName>
+        <description>Product line Status</description>
+        <label>Line Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Received</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>List_Price__c</fullName>
+        <label>Siebel List Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Named_Product_Family_Formula__c</fullName>
+        <description>This is a formula Field created to capture the Name of the &apos;Named Product Family record&apos;</description>
+        <formula>Named_Product_Family__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Named Product Family</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Named_Product_Family_Line__c</fullName>
+        <formula>Named_Product_Family__r.Product_Line__c</formula>
+        <label>Named Product Family Line</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Named_Product_Family__c</fullName>
+        <description>Provided the capability to attach a Line Item to a Product Family if SKU determination is not feasible during the initial stage of a deal</description>
+        <label>Named Product Family</label>
+        <referenceTo>Named_Product_Family__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_ProductFamily</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Deliveries__c</fullName>
+        <label>Number of Deliveries</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>PC_Add_Products_Source__c</fullName>
+        <defaultValue>&apos;Standard&apos;</defaultValue>
+        <label>Add Products Source</label>
+        <length>15</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PC_Error_Message__c</fullName>
+        <label>Siebel Error Message</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Part_number__c</fullName>
+        <label>Part number</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Primary_UOM__c</fullName>
+        <label>Primary UOM</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Description__c</fullName>
+        <formula>PricebookEntry.Product2.Description</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Description</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <formula>TEXT( PricebookEntry.Product2.Family )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Family</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Source__c</fullName>
+        <description>This field will display the Product Source (EVM or PTZ)</description>
+        <formula>text(PricebookEntry.Product2.Product_Conversion_Source__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Source</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Line_Item_ID__c</fullName>
+        <label>Quote Line Item ID</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Attribute1__c</fullName>
+        <label>Revenue Attribute1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Revenue_Attribute2__c</fullName>
+        <label>Revenue Attribute2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>SB_Catalog_Product__c</fullName>
+        <label>SB Catalog Product</label>
+        <referenceTo>SB_Catalog_Products__c</referenceTo>
+        <relationshipLabel>Opportunity Product</relationshipLabel>
+        <relationshipName>Opportunity_Product</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>SB_Quote_ID__c</fullName>
+        <description>Stores the SB quote ID</description>
+        <label>SB Quote ID</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>SKU_Level_Entry__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This Field will be Checked from a Workflow when the Product is SKU Product</description>
+        <label>SKU Level Entry</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Service_Close_Date__c</fullName>
+        <description>This field will be used only for the Service Products</description>
+        <label>Service Close Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Service_Start_Date__c</fullName>
+        <description>This field will be used only for the Service Products</description>
+        <label>Service Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Ship_Date__c</fullName>
+        <defaultValue>today()</defaultValue>
+        <description>This the customer requested delivery date</description>
+        <inlineHelpText>This the customer requested delivery date</inlineHelpText>
+        <label>Siebel Ship Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_ProductId__c</fullName>
+        <label>Siebel ProductId</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Standard_Net_Price__c</fullName>
+        <label>Siebel Net Price (Direct Acc Currency)</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Uplift_Cost__c</fullName>
+        <label>Uplift Cost</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <validationRules>
+        <fullName>DNA_SKU_Mand_Service_Start_and_End_dates</fullName>
+        <active>false</active>
+        <description>Service Start Date AND Service Close date to be added only for the Service Products.</description>
+        <errorConditionFormula>(  $User.Alias  &lt;&gt; &apos;zzebi&apos; )  &amp;&amp; (  PricebookEntry.Product2.Is_Service_Product__c = true  &amp;&amp;   (ISNULL(Service_Start_Date__c)  ||  ISNULL(Service_Close_Date__c)))&amp;&amp; NOT(  $Setup.RulesDeactivateSwitch__c.Opportunity_Switch__c )</errorConditionFormula>
+        <errorDisplayField>Service_Start_Date__c</errorDisplayField>
+        <errorMessage>Please provide the Service Start Date &amp; Service Close Date for this Service SKU.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DO_NOT_ACTIVATE_End_Of_Life</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF(Product2.Agile_Life_Cycle__c = &quot;End Of Life&quot;, true, false)</errorConditionFormula>
+        <errorMessage>The Product Selected in End of Life&apos;d and cannot be added to the Opportunity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Primary_Opportunity_Sales_Price_Check</fullName>
+        <active>true</active>
+        <errorConditionFormula>($User.Alias &lt;&gt; &apos;zzebi&apos;) &amp;&amp; NOT( $Setup.RulesDeactivateSwitch__c.Opportunity_Switch__c) &amp;&amp; IF( AND(Opportunity.Primary_Opportunity__c &lt;&gt; null, UnitPrice &lt;&gt;0), true, false)</errorConditionFormula>
+        <errorDisplayField>UnitPrice</errorDisplayField>
+        <errorMessage>Opportunity is associated to another Primary Opportunity, Sales Price must be set to 0.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SKU_Non_Service_Start_and_End_dates</fullName>
+        <active>true</active>
+        <description>Service Start Date OR Service Close date should not be added for the Non Service Products.</description>
+        <errorConditionFormula>(  $User.Alias &lt;&gt; &apos;zzebi&apos; )  &amp;&amp;  (  PricebookEntry.Product2.Is_Service_Product__c = false)    &amp;&amp; (NOT(ISNULL(Service_Start_Date__c)  &amp;&amp; ISNULL(Service_Close_Date__c)))&amp;&amp;(PC_Add_Products_Source__c &lt;&gt; &apos;VF Page&apos;)&amp;&amp; NOT(  $Setup.RulesDeactivateSwitch__c.Opportunity_Switch__c )</errorConditionFormula>
+        <errorDisplayField>Service_Start_Date__c</errorDisplayField>
+        <errorMessage>Service Start Date OR Service Close Date should not be added for non-Service SKUs.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SKU_Orderable</fullName>
+        <active>true</active>
+        <description>If the SKU is not Orderable do not allow to be added to the Opportunity</description>
+        <errorConditionFormula>($User.Alias &lt;&gt; &apos;zzebi&apos;)&amp;&amp;(ISPICKVAL(Product2.Product_Conversion_Source__c,&apos;AIT&apos;) &amp;&amp; Product2.Orderable_SKU__c = false &amp;&amp; NOT( $Setup.RulesDeactivateSwitch__c.Opportunity_Switch__c))</errorConditionFormula>
+        <errorMessage>The SKU is Non Orderable and cannot be added to the Opportunity. Please select a different SKU.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>SKU_Service_Start_and_End_dates</fullName>
+        <active>true</active>
+        <description>Service Start Date should be equal or before the Service Close date.</description>
+        <errorConditionFormula>(  $User.Alias  &lt;&gt; &apos;zzebi&apos; )  &amp;&amp; (  PricebookEntry.Product2.Is_Service_Product__c =true) &amp;&amp; (Service_Close_Date__c &gt; Service_Start_Date__c   )&amp;&amp; NOT( $Setup.RulesDeactivateSwitch__c.Opportunity_Switch__c )</errorConditionFormula>
+        <errorDisplayField>Service_Start_Date__c</errorDisplayField>
+        <errorMessage>Service Start Date should be later than the Service Close Date.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Add_Product_Family</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Add Product Family</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a1Y/e?CF00Ni000000GaDQa_lkid={!Opportunity.Id}&amp;CF00Ni000000GaDQa={!Opportunity.Name}&amp;retURL=%2F{!Opportunity.Id}&amp;saveURL=%2F{!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Go_To_Solution_Builder</fullName>
+        <availability>online</availability>
+        <description>This Button is used for Solution Builder punchout logic</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Go To Solution Builder</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)} 
+
+var hasPermission = sforce.apex.execute(&apos;PCValidateUserPermission&apos;,&apos;ValidateUserPermission&apos;,{OppId: &apos;{!Opportunity.Id}&apos;});
+
+if(hasPermission==&apos;false&apos;){ 
+
+alert(&quot;You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.&quot;); 
+
+}else { 
+window.open(&apos;/apex/SolutionBuilderRedirectPage?id=&apos;+&apos;{!Opportunity.Id}&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Import_Product</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Import Products</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/PCImportProducts?oppId={!Opportunity.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Price_All</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Price Items</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/support/console/26.0/integration.js&quot;)} 
+
+
+var hasPermission = sforce.apex.execute(&apos;PCValidateUserPermission&apos;,&apos;ValidateUserPermission&apos;,{OppId: &apos;{!Opportunity.Id}&apos;});
+
+if(hasPermission==&apos;false&apos;){
+
+alert(&quot;You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.&quot;);
+
+}else {
+var resultFinancialFlag = sforce.connection.query(&quot;Select Id From Opportunity where Id = &apos;&quot; + &apos;{!Opportunity.Id}&apos;+ &quot;&apos;  and Fulfillment_Type__c = &apos;Direct to End User&apos; and Account.Financial_Customer_flag__c = false&quot;); 
+var checkbreak = false;
+
+if (resultFinancialFlag.size &gt;0){
+alert(&apos;The Fulfillment Type selected is Direct to End User but the End User Account is not a financial account; Siebel Net Pricing is not available. Please select a different Account or change the Fulfillment Type.&apos;);
+checkbreak = true;
+}
+
+
+if(&quot;{!Opportunity.Fulfillment_Type__c}&quot;==&apos;Distributor Sales Out&apos; || &quot;{!Opportunity.Fulfillment_Type__c}&quot;==&apos;OEM Sales Out&apos;) {
+var resultDisFlag = sforce.connection.query(&quot;Select ID from Opportunity where ID = &apos;&quot; + &apos;{!Opportunity.Id}&apos;+ &quot;&apos;  and (Opportunity_Distributor__c!=null or Primary_Distributor_AIT__c!=null) and (Fulfillment_Type__c=&apos;Distributor Sales Out&apos; or Fulfillment_Type__c=&apos;OEM Sales Out&apos;) &quot;); 
+
+if (resultDisFlag.size==0){
+alert(&apos;Price Items is not allowed without a Distributor account when the Fulfilment type is Distributor Sales out or OEM Sales out.&apos;);
+checkbreak = true;	
+}
+}
+
+
+
+if(&quot;{!Opportunity.Fulfillment_Type__c}&quot;==&apos;Direct to Partner&apos;){
+var resultPartFlag = sforce.connection.query(&quot;Select ID from OpportunityPatner__c where Opportunity__c = &apos;&quot; + &apos;{!Opportunity.Id}&apos;+ &quot;&apos; and Role__c =&apos;Primary Channel Partner&apos; limit 1 &quot;); 
+
+if (resultPartFlag.size==0){
+alert(&apos;Price Items is not allowed without a Partner account when the Fulfilment type is Direct to Partner.&apos;);
+checkbreak = true;
+}
+}
+
+
+var result = sforce.connection.query(&quot;Select Id From OpportunityLineItem where OpportunityId = &apos;&quot; + &apos;{!Opportunity.Id}&apos;+ &quot;&apos; &quot;); 
+if(checkbreak == false){
+if(result.size &gt;0) 
+{ 
+var btnVal; 
+var btnValModified; 
+
+//btnVal = $(this).val(); 
+//btnValModified = btnVal + &quot; : Processing. Please Wait.&quot;; 
+//$(this).attr(&quot;value&quot;,btnValModified); 
+//$(this).attr(&quot;title&quot;,btnValModified); 
+//$(this).css(&quot;color&quot;,&quot;#FFFFFF&quot;); 
+//$(this).css(&quot;background&quot;,&quot;#1797C0&quot;); 
+
+btnVal = element.value; 
+btnValModified = btnVal + &quot; : Processing... please wait.&quot;; 
+element.value = btnValModified; 
+element.title = btnValModified; 
+element.style.background=&quot;#1797C0&quot;; 
+element.style.color=&quot;#FFFFFF&quot;; 
+element.disabled=true;
+
+setTimeout(function() { 
+// call apex webservice method 
+var result = sforce.apex.execute( 
+&quot;ZEBSfdcToSiebelPricingCallout&quot;, //class name 
+&quot;getSFDCtoSiebelPricing&quot;, //method name 
+{	OppId: &apos;{!Opportunity.Id}&apos; 
+
+} 
+); 
+
+if(result[0] != null &amp;&amp; result[0] != &apos;&apos; &amp;&amp; result[0] != &apos;SUCCESS&apos;) { 
+alert(result[0]); 
+} 
+
+
+if(sforce.console.isInConsole()) { 
+refreshPrimaryTab(); 
+} else { 
+window.location.reload(); 
+} 
+
+},1); 
+} 
+else 
+{ 
+alert(&apos;Please Add a Product.&apos;); 
+} 
+}
+}
+function refreshPrimaryTab() { 
+sforce.console.getFocusedPrimaryTabId(initiateRefreshPrimaryTab); 
+} 
+
+function initiateRefreshPrimaryTab(result) { 
+sforce.console.refreshPrimaryTabById(result.id, true); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Schedule_List</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Schedule List</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.open(&quot;/apex/ZebScheduleRecords?id={!Opportunity.Id}&quot;,&quot;_blank &quot;);</url>
+    </webLinks>
+</CustomObject>

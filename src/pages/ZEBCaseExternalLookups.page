@@ -1,0 +1,60 @@
+<!--Custom VF page that will hold the buttons that execute the external lookups -->
+<!--Created: JG, 20-May-2014 -->
+<apex:page standardController="Case">
+
+<style>
+
+.zebsection { 
+    float: left;
+    width: 200px;
+    height: 75px;
+    margin-left: 10px;
+    margin-right: 10px;
+} 
+
+.zebbutton {
+    margin: auto;
+    width: 55%;
+}
+
+</style>
+
+    <apex:form >
+    
+        <div class="zebsection">
+            <div class="zebbutton">
+                <apex:commandButton onClick="window.open('http://www.zebra.com/us/en/search.html?q={!case.ZEB_Product_Model_Name__c}')" value="Zebra.com Search" id="zebcom"/>
+            </div>                
+            <i>Search Zebra.com using the Product Model specified on this Case</i>
+        </div>
+        
+        <div class="zebsection">
+            <div class="zebbutton">
+                <apex:commandButton onClick="window.open('http://www.google.com/#q={!case.subject} {!case.ZEB_Product_Model_Name__c}')" value="Google Search" id="googcom"/>
+            </div>
+            <i>Search Google using the Case Subject as well as the Product Model specified on this Case</i>
+        </div>
+
+        <div class="zebsection">
+            <div class="zebbutton">        
+                <apex:commandButton onClick="window.open('http://support.zebra.com/OA_HTML/lookup.jsp?search+criteria=Serial+Number&value={!case.ZEB_Serial_Number__c}')" value="Warranty Search" id="warrantycom"/>
+            </div>                
+            <i>Perform warranty search using the Serial Number specified on this Case</i>
+        </div>
+
+        <div class="zebsection">
+            <div class="zebbutton">                            
+                <apex:commandButton onClick="window.open('http://www.google.com/#q={!case.ZEB_Product_Model_Name__c} Parts PDF site:zebra.com')" value="Parts Search" id="partscom"/>
+            </div>
+            <i>Search Google for a PDF Parts catalog using the Product Model specified on this Case</i>
+        </div> 
+
+        <div class="zebsection">
+            <div class="zebbutton">             
+                <apex:commandButton onClick="window.open('https://km.zebra.com/kb/index?page=answers&startover=y&question_box_status=changed&question_box={!case.subject}')" value="External KM Search" id="inquiracom"/>
+            </div>                
+            <i>Search km.zebra.com for a solution based on this Case's subject</i>
+        </div>               
+        
+    </apex:form>
+</apex:page>

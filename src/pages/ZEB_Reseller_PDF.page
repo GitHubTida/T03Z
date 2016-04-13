@@ -1,0 +1,351 @@
+<apex:page standardController="Quote" extensions="ctrlZEBSendEmail" renderAs="PDF" >
+    <html>
+      <style type="text/css">
+        body {
+          font-family: Courier;
+          size: 8pt;
+        }
+        .thbgcolor {
+            background-color:rgb(58,117,196);
+        }
+        th{
+        color: #000000;
+        border-width: 1px ;
+        padding: 4px ;
+        border-style: solid ;
+        border-color: #000000;
+        background-color: #DBDBDB;
+      }
+  </style>
+  <body>
+    <div align="center" >
+      <table style="width:900px;border: 1px solid;padding: 8px;" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td  align="right" >
+            <a href="http://www.zebra.com/">
+             <apex:image value="https://c.cs16.content.force.com/servlet/servlet.ImageServer?id=015f0000000F5KN&oid=00Df0000002Myhs&lastMod=1405962821000"  ></apex:image>               
+              
+         </a>
+          </td>
+        </tr>
+       
+        <tr>
+          <td align="left">
+            Dear intended user,
+            <br />
+            <br />
+            <strong>
+              The Price concession (PC# : {!quoteObj.PC__c}, Revision# : {!quoteObj.Revision__c}) has been Confirmed. This revision replaces any previous concession of the same PC number. 
+            </strong>            
+            <h2 align="left">
+              Price Concession Details 
+            </h2>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" style="width: 100%" align="left">
+              <tbody>
+                
+                  <tr>
+                    <td>
+                      <p>
+                        Account
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        :
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        <apex:outputField value="{!quoteObj.Account.Name}"/>
+                      </p>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        Account#
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        :
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        <apex:outputField value="{!quoteObj.Account.AccountNumber}"/>
+                      </p>
+                    </td>
+                    
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        Reseller
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        :
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        <apex:outputField value="{!quoteObj.Reseller__c}"/>
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        &nbsp;
+                      </p>
+                    </td>
+                   </tr>
+                   
+                   <tr>
+                    <td>
+                      <p>
+                        End User
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        :
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        <apex:outputField value="{!quoteObj.End_User__c}"/>
+                      </p>
+                    </td>
+                    </tr>                    
+                  <tr>                    
+                    <td>
+                      <p>
+                        Start Date
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        :
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        <apex:outputField value="{!quoteObj.Start_Date__c}"/>
+                      </p>
+                    </td>                 
+                  </tr>
+                  <tr>                
+                    <td>
+                      <p>
+                        End Date
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        :
+                      </p>
+                    </td>
+                    <td>
+                      <p>
+                        <apex:outputField value="{!quoteObj.ExpirationDate}"/>
+                        
+                      </p>
+                    </td>
+                  </tr>
+                  
+                    
+                  <tr>
+                    <td>
+                     
+                        Special Conditions
+                     
+                    </td>
+                    <td>
+                      
+                        :
+                      
+                    </td>
+                    <td >                     
+                        <apex:outputField value="{!quoteObj.Special_Condition__c}"/>                      
+                    </td>
+                  </tr>                  
+                  
+                </tbody>
+              </table>
+            </td>
+      </tr>
+      <tr>
+        <td>
+          &nbsp;
+            </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <h2>
+            Price Concession Items
+          </h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border="1" cellspacing="0" cellpadding="0">
+            <tr>
+              <th class="thbgcolor">
+                Line #
+              </th>
+              <th class="thbgcolor">
+                Part.No.
+              </th>
+              <th class="thbgcolor">
+                Description
+              </th>
+              <th class="thbgcolor">
+                Min. First Order Only
+              </th>
+              <th class="thbgcolor">
+                Min. Qty
+              </th>
+              <th class="thbgcolor">
+                Max. Qty
+              </th>
+              <th class="thbgcolor">
+                List Price
+              </th>
+              <th class="thbgcolor">
+                Distributor Concession Disc%
+              </th>
+              <th class="thbgcolor">
+                Distributor Concession Price
+              </th>
+              <th class="thbgcolor">
+                Reseller Suggested Concession Disc%
+              </th>
+              <th class="thbgcolor">
+                Reseller Suggested Concession Price
+              </th>
+              <th class="thbgcolor">
+                Disti Special Discount
+              </th>
+              <th class="thbgcolor">
+                Disti Std Discount
+              </th>
+              <th class="thbgcolor">
+                Cancelled 
+              </th>
+            </tr>  
+            <apex:repeat value="{!results}" var="qli">
+              <tr>
+                <td >
+                  {!qli.lineNumber}
+                </td>
+                <td >
+                  {!qli.partNumber}
+                </td>
+                <td >
+                  {!qli.description}
+                </td>
+                <td>
+                  {!qli.minFirstOrder}
+                </td>
+                <td >                  
+                  <apex:outputText value="{0, number,integer}">
+                      <apex:param value="{!qli.minQty}" />
+                  </apex:outputText>
+                </td>
+                <td >                  
+                  <apex:outputText value="{0, number,integer}">
+                      <apex:param value="{!qli.maxQty}" />
+                  </apex:outputText>
+                </td>
+                <td>
+                  {!qli.listPrice}
+                </td>
+                <td>
+                  {!qli.distConDiscPer}
+                </td>
+                <td>
+                  {!qli.distConDiscPrice}
+                </td>
+                <td>
+                  {!qli.resellerConDiscPer}
+                </td>
+                <td>
+                  {!qli.resellerConDiscPrice}
+                </td>
+                <td>
+                  {!qli.distiSplDisc}
+                </td>
+                <td>
+                  {!qli.distiStdDisc}
+                </td>
+                <td >
+                  {!qli.cancelFlag}
+                </td>
+              </tr>
+            </apex:repeat>
+          </table>
+        </td>
+      </tr>      
+      
+      <tr>
+        <td>
+          &nbsp;
+        </td>        
+      </tr>
+      
+      <tr>
+        <td>
+        This price concession is available only to the Zebra Account for the end user identified above and cannot be used in conjunction with any other offer. It is valid to the above mentioned date but can be withdrawn by Zebra at any time, for example if the Partner does not win the opportunity or if it is superseded by another price concession. Any List Price changes occurring before the expiry date will void this concession and may necessitate its re-negotiation for any outstanding quantities. Normal payment terms apply to this price concession. Please ensure concession contract number is quoted on any future related correspondence. If you have any questions regarding this concession please contact your account manager. The price concession does not restrict the price at which the Zebra Partner may decide to sell to the end-user.  
+        </td>        
+      </tr>
+      
+      <tr>
+        <td>
+          &nbsp;
+        </td>        
+      </tr>
+      
+      <tr>
+        <td>
+          Thank you
+          <p>
+            <strong>
+              Zebra Technologies 
+            </strong>
+          </p>
+        </td>
+        
+      </tr>
+      <tr>
+        
+        <td  style="font-size: x-small;">
+          <p>
+            For our terms of use, please&nbsp;
+            <a href="http://www.zebra.com/id/zebra/na/en/index/about_zebra/our_company/compliance/privacy_statement.html">
+              click here
+            </a>
+          </p>
+          <p>
+            ZEBRA TECHNOLOGIES 
+            <br />
+            333 Corporate Woods Parkway Vernon Hills, IL 60061-3109 U.S.A.
+          </p>
+          <p>
+            &copy;2011 ZIH Corp. All product names and numbers are Zebra trademarks, and Zebra and representation of Zebra Head are registered trademarks of ZIH Corp. All rights reserved. All other trademarks are the property of their respective owners.
+          </p>
+        </td>
+        
+      </tr>
+  </table>
+  
+          </div>
+  </body>
+  </html>
+</apex:page>

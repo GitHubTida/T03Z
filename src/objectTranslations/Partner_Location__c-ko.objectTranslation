@@ -1,0 +1,2741 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>파트너 위치</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account_Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label>계정</label>
+        <name>Account__c</name>
+        <relationshipLabel>파트너 위치</relationshipLabel>
+    </fields>
+    <fields>
+        <label>도시</label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label>국가</label>
+        <name>Country__c</name>
+        <picklistValues>
+            <masterLabel>Afghanistan</masterLabel>
+            <translation>아프가니스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aland Islands</masterLabel>
+            <translation>올란드 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Albania</masterLabel>
+            <translation>알바니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Algeria</masterLabel>
+            <translation>알제리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andorra</masterLabel>
+            <translation>안도라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Angola</masterLabel>
+            <translation>앙골라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Anguilla</masterLabel>
+            <translation>앙귈라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antigua And Barbuda</masterLabel>
+            <translation>앤티가 바부다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antilles</masterLabel>
+            <translation>안틸레스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Argentina</masterLabel>
+            <translation>아르헨티나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armenia</masterLabel>
+            <translation>아르메니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aruba</masterLabel>
+            <translation>아루바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australia</masterLabel>
+            <translation>호주</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Austria</masterLabel>
+            <translation>오스트리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Azerbaijan</masterLabel>
+            <translation>아제르바이잔</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahamas</masterLabel>
+            <translation>바하마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahrain</masterLabel>
+            <translation>바레인</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bangladesh</masterLabel>
+            <translation>방글라데시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barbados</masterLabel>
+            <translation>바베이도스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belarus</masterLabel>
+            <translation>벨라루스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belgium</masterLabel>
+            <translation>벨기에</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belize</masterLabel>
+            <translation>벨리즈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benin</masterLabel>
+            <translation>베냉</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bermuda</masterLabel>
+            <translation>버뮤다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bhutan</masterLabel>
+            <translation>부탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolivia</masterLabel>
+            <translation>볼리비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bonaire</masterLabel>
+            <translation>보나이러</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bosnia And Herzegovina</masterLabel>
+            <translation>보스니아 헤르체코비나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Botswana</masterLabel>
+            <translation>보츠와나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bouvet Island</masterLabel>
+            <translation>부베섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brazil</masterLabel>
+            <translation>브라질</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>British Indian Ocean Territory</masterLabel>
+            <translation>영국령 인도양 식민지</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brunei Darussalam</masterLabel>
+            <translation>브루나이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bulgaria</masterLabel>
+            <translation>불가리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burkina Faso</masterLabel>
+            <translation>부르키나 파소</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Burundi</masterLabel>
+            <translation>부룬디</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cambodia</masterLabel>
+            <translation>캄보디아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cameroon</masterLabel>
+            <translation>카메룬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Canada</masterLabel>
+            <translation>캐나다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cape Verde</masterLabel>
+            <translation>카보베르데</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cayhill</masterLabel>
+            <translation><!-- Cayhill --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cayman Islands</masterLabel>
+            <translation>케이맨섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Central African Republic</masterLabel>
+            <translation>중앙아프리카 공화국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chad</masterLabel>
+            <translation>차드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chile</masterLabel>
+            <translation>칠레</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>China</masterLabel>
+            <translation>중국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Christmas Island</masterLabel>
+            <translation>크리스마스섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cocos (Keeling) Islands</masterLabel>
+            <translation>코코스 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colombia</masterLabel>
+            <translation>콜롬비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Comoros</masterLabel>
+            <translation>코모로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo</masterLabel>
+            <translation>콩고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congo, The Democratic Republic Of The</masterLabel>
+            <translation>콩고민주공화국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cook Islands</masterLabel>
+            <translation>쿡 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Costa Rica</masterLabel>
+            <translation>코스타리카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Croatia</masterLabel>
+            <translation>크로아티아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuba</masterLabel>
+            <translation>쿠바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Curacao</masterLabel>
+            <translation>쿠라사오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cyprus</masterLabel>
+            <translation>키프로스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Czech Republic</masterLabel>
+            <translation>체코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Denmark</masterLabel>
+            <translation>덴마크</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Djibouti</masterLabel>
+            <translation>지부티</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dominica</masterLabel>
+            <translation>도미니카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dominican Republic</masterLabel>
+            <translation>도미니카 공화국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ecuador</masterLabel>
+            <translation>에콰도르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Egypt</masterLabel>
+            <translation>이집트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>El Salvador</masterLabel>
+            <translation>엘살바도르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Equatorial Guinea</masterLabel>
+            <translation>적도기니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eritrea</masterLabel>
+            <translation>에리트리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Estonia</masterLabel>
+            <translation>에스토니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ethiopia</masterLabel>
+            <translation>에티오피아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Falkland Islands (Malvinas)</masterLabel>
+            <translation>포클랜드 제도(말비나스)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Faroe Islands</masterLabel>
+            <translation>페로 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fiji</masterLabel>
+            <translation>피지</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finland</masterLabel>
+            <translation>핀란드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation>프랑스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French Guiana</masterLabel>
+            <translation>프랑스령 기아나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French Polynesia</masterLabel>
+            <translation>프랑스령 폴리네시아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>French Southern Territories</masterLabel>
+            <translation>프랑스령 남부</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gabon</masterLabel>
+            <translation>가봉</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gambia</masterLabel>
+            <translation>감비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation>그루지아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Germany</masterLabel>
+            <translation>독일</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ghana</masterLabel>
+            <translation>가나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gibraltar</masterLabel>
+            <translation>지브롤터</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Greece</masterLabel>
+            <translation>그리스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grenada</masterLabel>
+            <translation>그레나다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guadeloupe</masterLabel>
+            <translation>과들루프</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guam</masterLabel>
+            <translation>괌</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guatemala</masterLabel>
+            <translation>과테말라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guernsey</masterLabel>
+            <translation>건지</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guinea</masterLabel>
+            <translation>기니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guinea-Bissau</masterLabel>
+            <translation>기니비사우</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guyana</masterLabel>
+            <translation>가이아나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haiti</masterLabel>
+            <translation>아이티</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Heard Island And Mcdonald Islands</masterLabel>
+            <translation>허드 맥도널드 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Honduras</masterLabel>
+            <translation>온두라스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hong Kong</masterLabel>
+            <translation>홍콩</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hungary</masterLabel>
+            <translation>헝가리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iceland</masterLabel>
+            <translation>아이슬란드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>India</masterLabel>
+            <translation>인도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indonesia</masterLabel>
+            <translation>인도네시아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iran, Islamic Republic Of</masterLabel>
+            <translation>이란</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iraq</masterLabel>
+            <translation>이라크</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ireland</masterLabel>
+            <translation>아일랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Isle Of Man</masterLabel>
+            <translation>맨 섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Israel</masterLabel>
+            <translation>이스라엘</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Italy</masterLabel>
+            <translation>이탈리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ivory Coast</masterLabel>
+            <translation><!-- Ivory Coast --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jamaica</masterLabel>
+            <translation>자메이카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japan</masterLabel>
+            <translation>일본</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jersey</masterLabel>
+            <translation>저지</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jordan</masterLabel>
+            <translation>요르단</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kazakhstan</masterLabel>
+            <translation>카자흐스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kenya</masterLabel>
+            <translation>케냐</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kiribati</masterLabel>
+            <translation>키리바시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Korea, Republic Of</masterLabel>
+            <translation>대한민국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kosovo</masterLabel>
+            <translation><!-- Kosovo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kuwait</masterLabel>
+            <translation>쿠웨이트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kyrgyzstan</masterLabel>
+            <translation>키르기스스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laos</masterLabel>
+            <translation>라오스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latvia</masterLabel>
+            <translation>라트비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lebanon</masterLabel>
+            <translation>레바논</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lesotho</masterLabel>
+            <translation>레소토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liberia</masterLabel>
+            <translation>라이베리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Libyan Arab Jamahiriya</masterLabel>
+            <translation>리비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Liechtenstein</masterLabel>
+            <translation>리히텐슈타인</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lithuania</masterLabel>
+            <translation>리투아니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Luxembourg</masterLabel>
+            <translation>룩셈부르크</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macao</masterLabel>
+            <translation>마카오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madagascar</masterLabel>
+            <translation>마다가스카르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malawi</masterLabel>
+            <translation>말라위</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malaysia</masterLabel>
+            <translation>말레이시아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maldives</masterLabel>
+            <translation>몰디브</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mali</masterLabel>
+            <translation>말리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Malta</masterLabel>
+            <translation>몰타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marshall Islands</masterLabel>
+            <translation>마샬 군도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Martinique</masterLabel>
+            <translation>마르티니크</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritania</masterLabel>
+            <translation>모리타니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mauritius</masterLabel>
+            <translation>모리셔스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayotte</masterLabel>
+            <translation>마요트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mexico</masterLabel>
+            <translation>멕시코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Micronesia, Federated States Of</masterLabel>
+            <translation>미크로네시아 연방</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moldova, Republic Of</masterLabel>
+            <translation>몰도바 공화국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monaco</masterLabel>
+            <translation>모나코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mongolia</masterLabel>
+            <translation>몽골</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montenegro</masterLabel>
+            <translation>몬테니그로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montserrat</masterLabel>
+            <translation>몬트세라트섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morocco</masterLabel>
+            <translation>모로코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mozambique</masterLabel>
+            <translation>모잠비크</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Myanmar</masterLabel>
+            <translation>미얀마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Namibia</masterLabel>
+            <translation>나미비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nauru</masterLabel>
+            <translation>나우루</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nepal</masterLabel>
+            <translation>네팔</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands</masterLabel>
+            <translation>네덜란드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netherlands Antilles</masterLabel>
+            <translation>네덜란드령 안틸레스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Caledonia</masterLabel>
+            <translation>뉴칼레도니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Zealand</masterLabel>
+            <translation>뉴질랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nicaragua</masterLabel>
+            <translation>니카라과</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niger</masterLabel>
+            <translation>니제르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nigeria</masterLabel>
+            <translation>나이지리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niue</masterLabel>
+            <translation>니우에</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norfolk Island</masterLabel>
+            <translation>노퍽섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northern Mariana Islands</masterLabel>
+            <translation>북마리아나제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Norway</masterLabel>
+            <translation>노르웨이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oman</masterLabel>
+            <translation>오만</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pakistan</masterLabel>
+            <translation>파키스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palau</masterLabel>
+            <translation>팔라우</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palestine</masterLabel>
+            <translation>팔레스타인</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panama</masterLabel>
+            <translation>파나마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Papua New Guinea</masterLabel>
+            <translation>파푸아뉴기니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraguay</masterLabel>
+            <translation>파라과이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Peru</masterLabel>
+            <translation>페루</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Philippines</masterLabel>
+            <translation>필리핀</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pitcairn</masterLabel>
+            <translation>핏케언 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poland</masterLabel>
+            <translation>폴란드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Portugal</masterLabel>
+            <translation>포르투갈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation>푸에르토리코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qatar</masterLabel>
+            <translation>카타르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Republic of Macedonia</masterLabel>
+            <translation>마케도니아 공화국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Romania</masterLabel>
+            <translation>루마니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Russian Federation</masterLabel>
+            <translation>러시아 연방</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rwanda</masterLabel>
+            <translation>르완다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Réunion</masterLabel>
+            <translation>레위니옹</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saint Helena</masterLabel>
+            <translation>세인트 헬레나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saint Kitts And Nevis</masterLabel>
+            <translation>세인트키츠네비스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saint Lucia</masterLabel>
+            <translation>세인트루시아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saint Vincent And The Grenadines</masterLabel>
+            <translation>세인트빈센트그레나딘</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Samoa</masterLabel>
+            <translation><!-- Samoa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Marino</masterLabel>
+            <translation>산마리노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sao Tome And Principe</masterLabel>
+            <translation>상투메 프린시페</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saudi Arabia</masterLabel>
+            <translation>사우디아라비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Senegal</masterLabel>
+            <translation>세네갈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Serbia</masterLabel>
+            <translation>세르비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seychelles</masterLabel>
+            <translation>세이셸</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sierra Leone</masterLabel>
+            <translation>시에라리온</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Singapore</masterLabel>
+            <translation>싱가포르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovakia</masterLabel>
+            <translation>슬로바키아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Slovenia</masterLabel>
+            <translation>슬로베니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Solomon Islands</masterLabel>
+            <translation>솔로몬 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Somalia</masterLabel>
+            <translation>소말리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Africa</masterLabel>
+            <translation>남아프리카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Georgia And The South Sa</masterLabel>
+            <translation><!-- South Georgia And The South Sa --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Spain</masterLabel>
+            <translation>스페인</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sri Lanka</masterLabel>
+            <translation>스리랑카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Barhelemy</masterLabel>
+            <translation>생바르텔르미</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>St. Maarten N.A.</masterLabel>
+            <translation>신트마르턴</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sudan</masterLabel>
+            <translation>수단</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suriname</masterLabel>
+            <translation>수리남</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Svalbard And Jan Mayen</masterLabel>
+            <translation>스발바르 얀마옌 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swaziland</masterLabel>
+            <translation>스와질란드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sweden</masterLabel>
+            <translation>스웨덴</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Switzerland</masterLabel>
+            <translation>스위스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syrian Arab Republic</masterLabel>
+            <translation>시리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tahititi</masterLabel>
+            <translation><!-- Tahititi --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taiwan</masterLabel>
+            <translation>대만</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tajikistan</masterLabel>
+            <translation>타지키스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tanzania, United Republic Of</masterLabel>
+            <translation>탄자니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thailand</masterLabel>
+            <translation>태국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Timor-Leste</masterLabel>
+            <translation>동티모르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Togo</masterLabel>
+            <translation>토고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tokelau</masterLabel>
+            <translation>토켈라우</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tonga</masterLabel>
+            <translation>통가</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trinidad And Tobago</masterLabel>
+            <translation>트리니다드 토바고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tunisia</masterLabel>
+            <translation>튀니지</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkey</masterLabel>
+            <translation>터키</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turkmenistan</masterLabel>
+            <translation>투르크메니스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turks And Caicos Islands</masterLabel>
+            <translation>터크스 케이커스 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuvalu</masterLabel>
+            <translation>투발루</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uganda</masterLabel>
+            <translation>우간다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ukraine</masterLabel>
+            <translation>우크라이나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Arab Emirates</masterLabel>
+            <translation>아랍에미리트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom</masterLabel>
+            <translation>영국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United States</masterLabel>
+            <translation>미국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uruguay</masterLabel>
+            <translation>우루과이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uzbekistan</masterLabel>
+            <translation>우즈베키스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vanuatu</masterLabel>
+            <translation>바누아투</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vatican City State</masterLabel>
+            <translation>바티칸 시국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venezuela</masterLabel>
+            <translation>베네주엘라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viet Nam</masterLabel>
+            <translation>베트남</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virgin Islands, British</masterLabel>
+            <translation>영국령 버진아일랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virgin Islands, U.S.</masterLabel>
+            <translation>미국령 버진아일랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wallis And Futuna</masterLabel>
+            <translation>월리스푸투나 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Western Sahara</masterLabel>
+            <translation>서사하라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yemen</masterLabel>
+            <translation>예멘</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zambia</masterLabel>
+            <translation>잠비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zimbabwe</masterLabel>
+            <translation>짐바브웨</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- CurrentUserProfile --></label>
+        <name>CurrentUserProfile__c</name>
+    </fields>
+    <fields>
+        <label><!-- EVM Partner Location Id --></label>
+        <name>EVM_Partner_Location_Id__c</name>
+    </fields>
+    <fields>
+        <label>팩스</label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label>기본</label>
+        <name>Is_Primary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Keyword --></label>
+        <name>Keyword__c</name>
+    </fields>
+    <fields>
+        <label>위치 유형</label>
+        <name>Location_Type__c</name>
+        <picklistValues>
+            <masterLabel>HQ</masterLabel>
+            <translation>본사</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mailing Address</masterLabel>
+            <translation>우편 주소</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Location</masterLabel>
+            <translation>기본 위치</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Office</masterLabel>
+            <translation>영업소</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Location</masterLabel>
+            <translation>서비스 위치</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>휴대폰</label>
+        <name>Mobile_Phone__c</name>
+    </fields>
+    <fields>
+        <label>전화</label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <help>선택하면 해당 위치가 지브라 파트너 찾기 기능에 게시됩니다.</help>
+        <label>플래그 표시</label>
+        <name>Publish_Flag__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Code --></label>
+        <name>State_Code__c</name>
+    </fields>
+    <fields>
+        <label>구/군/시</label>
+        <name>State_Province__c</name>
+        <picklistValues>
+            <masterLabel>ANHUI</masterLabel>
+            <translation>안후이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acre</masterLabel>
+            <translation>아크레</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agrigento</masterLabel>
+            <translation>아그리젠토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aguascalientes</masterLabel>
+            <translation>아과스칼리엔테스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aisén del General Carlos Ibáñez del Campo</masterLabel>
+            <translation>아이센 델 헤네랄 카를로스 이바녜스 델 캄포</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alabama</masterLabel>
+            <translation>앨라배마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alagoas</masterLabel>
+            <translation>알라고아스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska</masterLabel>
+            <translation>알래스카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alberta</masterLabel>
+            <translation>앨버타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alessandria</masterLabel>
+            <translation>알레산드리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amapá</masterLabel>
+            <translation>아마파</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amazonas</masterLabel>
+            <translation>아마조나스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Samoa</masterLabel>
+            <translation>아메리칸사모아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ancona</masterLabel>
+            <translation>앙코나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andaman and Nicobar Islands</masterLabel>
+            <translation><!-- Andaman and Nicobar Islands --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Andhra Pradesh</masterLabel>
+            <translation>안드라프라데시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Antofagasta</masterLabel>
+            <translation>안토파가스타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aosta</masterLabel>
+            <translation>아오스타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Araucanía</masterLabel>
+            <translation>아라우카니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arezzo</masterLabel>
+            <translation>아레초</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arica and Parinacota</masterLabel>
+            <translation>아리카 파리나코타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arizona</masterLabel>
+            <translation>애리조나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arkansas</masterLabel>
+            <translation>아칸소</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armed Forces Americas</masterLabel>
+            <translation>AFA(미군 본토 사령부)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armed Forces Europe</masterLabel>
+            <translation>AFE(미군 유럽 사령부)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Armed Forces Pacific</masterLabel>
+            <translation>AFP(미군 태평양 사령부)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Arunachal Pradesh</masterLabel>
+            <translation>아루나찰프라데시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ascoli Piceno</masterLabel>
+            <translation>아스콜리피체노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assam</masterLabel>
+            <translation>아삼</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asti</masterLabel>
+            <translation>아스티</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Atacama</masterLabel>
+            <translation>아타카마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Australian Capital Territory</masterLabel>
+            <translation>오스트레일리아 수도 지역</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Avellino</masterLabel>
+            <translation>아벨리노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BEIJING</masterLabel>
+            <translation>베이징</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bahia</masterLabel>
+            <translation>바이아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baja California</masterLabel>
+            <translation>바하칼리포르니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baja California Sur</masterLabel>
+            <translation>바하칼리포르니아수르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barcelona</masterLabel>
+            <translation>바르셀로나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bari</masterLabel>
+            <translation>바리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Barletta-Andria-Trani</masterLabel>
+            <translation>바를레타안드리아트라니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Belluno</masterLabel>
+            <translation>벨루노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Benevento</masterLabel>
+            <translation>베네벤토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bergamo</masterLabel>
+            <translation>베르가모</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biella</masterLabel>
+            <translation>비엘라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bihar</masterLabel>
+            <translation>비하르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bologna</masterLabel>
+            <translation>볼로냐</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bolzano</masterLabel>
+            <translation>볼차노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brescia</masterLabel>
+            <translation>브레시아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Brindisi</masterLabel>
+            <translation>브린디시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>British Columbia</masterLabel>
+            <translation>브리티시컬럼비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buenos Aires</masterLabel>
+            <translation>부에노스 아이레스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Buenos Aires City</masterLabel>
+            <translation>부에노스 아이레스 시티</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bío-Bío</masterLabel>
+            <translation>비오비오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHONGQING</masterLabel>
+            <translation>충칭</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cagliari</masterLabel>
+            <translation>칼리아리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>California</masterLabel>
+            <translation>캘리포니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caltanissetta</masterLabel>
+            <translation>칼타니세타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campeche</masterLabel>
+            <translation>캄페체</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Campobasso</masterLabel>
+            <translation>캄포바소</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caracas</masterLabel>
+            <translation>카라카스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carbonia-Iglesias</masterLabel>
+            <translation>카르보니아이글레시아스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carlow</masterLabel>
+            <translation>칼로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Caserta</masterLabel>
+            <translation>카세르타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catamarca</masterLabel>
+            <translation>카타마르카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catania</masterLabel>
+            <translation>카타니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Catanzaro</masterLabel>
+            <translation>카탄자로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cavan</masterLabel>
+            <translation>캐번</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ceará</masterLabel>
+            <translation>세아라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chaco</masterLabel>
+            <translation>차코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chandigarh</masterLabel>
+            <translation>찬디가르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chhattisgarh</masterLabel>
+            <translation>차티스가르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chiapas</masterLabel>
+            <translation>치아파스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chieti</masterLabel>
+            <translation>키에티</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chihuahua</masterLabel>
+            <translation>치와와</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chinese Taipei</masterLabel>
+            <translation>대만</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chubut</masterLabel>
+            <translation>추부트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Clare</masterLabel>
+            <translation>클레어</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coahuila</masterLabel>
+            <translation>코아윌라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colima</masterLabel>
+            <translation>콜리마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Colorado</masterLabel>
+            <translation>콜로라도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Como</masterLabel>
+            <translation>코모</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Connecticut</masterLabel>
+            <translation>코네티컷</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coquimbo</masterLabel>
+            <translation>코킴보</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cork</masterLabel>
+            <translation>코르크</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corrientes</masterLabel>
+            <translation>코리엔테스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cosenza</masterLabel>
+            <translation>코센차</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cremona</masterLabel>
+            <translation>크레모나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Crotone</masterLabel>
+            <translation>크로토네</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cundinamarca</masterLabel>
+            <translation>쿤디나마르카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cuneo</masterLabel>
+            <translation>쿠네오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Córdoba</masterLabel>
+            <translation>코르도바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dadra and Nagar Haveli</masterLabel>
+            <translation><!-- Dadra and Nagar Haveli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daman and Diu</masterLabel>
+            <translation>다만디우</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delaware</masterLabel>
+            <translation>델라웨어</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delhi</masterLabel>
+            <translation>델리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>District of Columbia</masterLabel>
+            <translation>컬럼비아 특별구</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distrito Federal</masterLabel>
+            <translation>디스트리토 페더럴</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Donegal</masterLabel>
+            <translation>도네갈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dublin</masterLabel>
+            <translation>더블린</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Durango</masterLabel>
+            <translation>두랑고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enna</masterLabel>
+            <translation>엔나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entre Ríos</masterLabel>
+            <translation>엔트레리오스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Espírito Santo</masterLabel>
+            <translation>이스피리투산투</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FUJIAN</masterLabel>
+            <translation>푸젠</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal District</masterLabel>
+            <translation>페더럴 디스트리토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federated Micronesia</masterLabel>
+            <translation>미크로네시아 연방</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fermo</masterLabel>
+            <translation>페르모</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ferrara</masterLabel>
+            <translation>페라라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florence</masterLabel>
+            <translation>플로렌스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Florida</masterLabel>
+            <translation>플로리다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Foggia</masterLabel>
+            <translation>포지아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forlì-Cesena</masterLabel>
+            <translation>포를리체세나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Formosa</masterLabel>
+            <translation>포르모사</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Frosinone</masterLabel>
+            <translation>프로시노네</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fryslân (fy)</masterLabel>
+            <translation>프리슬란트 </translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GANSU</masterLabel>
+            <translation>간쑤</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GUANGDONG</masterLabel>
+            <translation>광둥</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GUANGXI</masterLabel>
+            <translation>광시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GUIZHOU</masterLabel>
+            <translation>구이저우</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Galway</masterLabel>
+            <translation>골웨이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gauteng</masterLabel>
+            <translation>가우텡</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Genoa</masterLabel>
+            <translation>제노바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Georgia</masterLabel>
+            <translation>그루지아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Girona</masterLabel>
+            <translation>지로나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goa</masterLabel>
+            <translation>고아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Goiás</masterLabel>
+            <translation>고이아스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gorizia</masterLabel>
+            <translation>고리치아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grosseto</masterLabel>
+            <translation>그로세토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guam</masterLabel>
+            <translation>괌</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guanajuato</masterLabel>
+            <translation>과나후아토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Guerrero</masterLabel>
+            <translation>게레로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gujarat</masterLabel>
+            <translation>구자라트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HAINAN</masterLabel>
+            <translation>하이난</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEBEI</masterLabel>
+            <translation>허베이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HEILONGJIANG</masterLabel>
+            <translation>헤이룽장</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HENAN</masterLabel>
+            <translation>허난</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUBEI</masterLabel>
+            <translation>후베이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HUNAN</masterLabel>
+            <translation>후난</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haryana</masterLabel>
+            <translation>하리아나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hawaii</masterLabel>
+            <translation>하와이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hidalgo</masterLabel>
+            <translation>이달고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Himachal Pradesh</masterLabel>
+            <translation>히마찰프라데시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hong Kong</masterLabel>
+            <translation>홍콩</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Huesca</masterLabel>
+            <translation>우에스카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Idaho</masterLabel>
+            <translation>아이다호</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Illinois</masterLabel>
+            <translation>일리노이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Imperia</masterLabel>
+            <translation>임페리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indiana</masterLabel>
+            <translation>인디애나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Iowa</masterLabel>
+            <translation>아이오와</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Isernia</masterLabel>
+            <translation>이세르니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIANGSU</masterLabel>
+            <translation>장쑤</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JIANGXI</masterLabel>
+            <translation>장시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JILIN</masterLabel>
+            <translation>지린</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jalisco</masterLabel>
+            <translation>할리스코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jammu and Kashmir</masterLabel>
+            <translation>잠무카슈미르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jharkhand</masterLabel>
+            <translation>자르칸트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jujuy</masterLabel>
+            <translation>후후이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kansas</masterLabel>
+            <translation>캔사스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Karnataka</masterLabel>
+            <translation>카르나타카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kentucky</masterLabel>
+            <translation>켄터키</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerala</masterLabel>
+            <translation>케랄라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kerry</masterLabel>
+            <translation>케리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kildare</masterLabel>
+            <translation>킬데어</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Kilkenny</masterLabel>
+            <translation>킬케니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L&apos;Aquila</masterLabel>
+            <translation>라퀼라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LIAONING</masterLabel>
+            <translation>랴오닝</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>La Pampa</masterLabel>
+            <translation>라팜파</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>La Rioja</masterLabel>
+            <translation>라리호아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>La Spezia</masterLabel>
+            <translation>라스페치아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lakshadweep</masterLabel>
+            <translation>락샤드위프</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laois</masterLabel>
+            <translation>라오이스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Latina</masterLabel>
+            <translation>라티나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lecce</masterLabel>
+            <translation>레체</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lecco</masterLabel>
+            <translation>레코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Leitrim</masterLabel>
+            <translation>리트림</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Libertador General Bernardo O&apos;Higgins</masterLabel>
+            <translation>리베르타도 제네랄 베르나르도 오히긴스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Limerick</masterLabel>
+            <translation>리머릭</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Livorno</masterLabel>
+            <translation>리보르노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodi</masterLabel>
+            <translation>로디</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Longford</masterLabel>
+            <translation>롱포드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Los Lagos</masterLabel>
+            <translation>로스라고스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Los Ríos</masterLabel>
+            <translation>로스리오스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louisiana</masterLabel>
+            <translation>루이지애나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Louth</masterLabel>
+            <translation>라우스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lucca</masterLabel>
+            <translation>루카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macao</masterLabel>
+            <translation>마카오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Macerata</masterLabel>
+            <translation>마체라타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Madhya Pradesh</masterLabel>
+            <translation>마디아프라데시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Magallanes y Antártica Chilena</masterLabel>
+            <translation>마가야네스 이 안타르티카 칠레나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maharashtra</masterLabel>
+            <translation>마하라슈트라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maine</masterLabel>
+            <translation>메인</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manipur</masterLabel>
+            <translation>마니푸르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manitoba</masterLabel>
+            <translation>매니토바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mantua</masterLabel>
+            <translation>만토바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maranhão</masterLabel>
+            <translation>마라냥</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marshall Islands</masterLabel>
+            <translation>마샬 군도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maryland</masterLabel>
+            <translation>메릴랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massa and Carrara</masterLabel>
+            <translation>마사에카라라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Massachusetts</masterLabel>
+            <translation>메사추세츠</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Matera</masterLabel>
+            <translation>마테라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mato Grosso</masterLabel>
+            <translation>마토 그로수</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mato Grosso do Sul</masterLabel>
+            <translation>마투그로수두술</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maule</masterLabel>
+            <translation>마울레</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mayo</masterLabel>
+            <translation>마요</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meath</masterLabel>
+            <translation>미스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medio Campidano</masterLabel>
+            <translation>메디오캄피다노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meghalaya</masterLabel>
+            <translation>메갈라야</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mendoza</masterLabel>
+            <translation>멘도사</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Messina</masterLabel>
+            <translation>메시나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mexico State</masterLabel>
+            <translation>멕시코 주</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michigan</masterLabel>
+            <translation>미시간</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Michoacán</masterLabel>
+            <translation>미초아칸</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Milan</masterLabel>
+            <translation>밀라노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minas Gerais</masterLabel>
+            <translation>미나스 제라이스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minnesota</masterLabel>
+            <translation>미네소타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Misiones</masterLabel>
+            <translation>미시오네스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mississippi</masterLabel>
+            <translation>미시시피</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Missouri</masterLabel>
+            <translation>미주리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mizoram</masterLabel>
+            <translation>미조람</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Modena</masterLabel>
+            <translation>모데나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monaghan</masterLabel>
+            <translation>모너핸</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Montana</masterLabel>
+            <translation>몬태나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monza and Brianza</masterLabel>
+            <translation>몬차에브리안차</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Morelos</masterLabel>
+            <translation>모렐로스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NINGXIA</masterLabel>
+            <translation>닝샤</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nagaland</masterLabel>
+            <translation>나갈랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Naples</masterLabel>
+            <translation>나폴리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nayarit</masterLabel>
+            <translation>나야리트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nebraska</masterLabel>
+            <translation>네브라스카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nei Mongol</masterLabel>
+            <translation>내몽골</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neuquén</masterLabel>
+            <translation>네우켄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nevada</masterLabel>
+            <translation>네바다</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Brunswick</masterLabel>
+            <translation>뉴브런즈윅</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Hampshire</masterLabel>
+            <translation>뉴햄프셔</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Jersey</masterLabel>
+            <translation>뉴저지</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Mexico</masterLabel>
+            <translation>뉴멕시코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New South Wales</masterLabel>
+            <translation>뉴사우스웨일즈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New York</masterLabel>
+            <translation>뉴욕</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Newfoundland and Labrador</masterLabel>
+            <translation>뉴펀들랜드 래브라도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Carolina</masterLabel>
+            <translation>노스캐롤라이나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>North Dakota</masterLabel>
+            <translation>노스다코타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northern Mariana Islands</masterLabel>
+            <translation>북마리아나제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northern Territory</masterLabel>
+            <translation>노던 테리토리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northwest Territories</masterLabel>
+            <translation>노스웨스트 테리토리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nova Scotia</masterLabel>
+            <translation>노바스코샤</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Novara</masterLabel>
+            <translation>노바라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuevo León</masterLabel>
+            <translation>누에보레온</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nunavut</masterLabel>
+            <translation>누나부트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nuoro</masterLabel>
+            <translation>누오로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oaxaca</masterLabel>
+            <translation>오악사카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Odisha</masterLabel>
+            <translation>오리사</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Offaly</masterLabel>
+            <translation>오펄리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ogliastra</masterLabel>
+            <translation>올리아스트라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ohio</masterLabel>
+            <translation>오하이오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oklahoma</masterLabel>
+            <translation>오클라호마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Olbia-Tempio</masterLabel>
+            <translation>올비아템피오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ontario</masterLabel>
+            <translation>온타리오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oregon</masterLabel>
+            <translation>오레곤</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oristano</masterLabel>
+            <translation>오리스타노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Padua</masterLabel>
+            <translation>파두아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palau</masterLabel>
+            <translation>팔라우</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Palermo</masterLabel>
+            <translation>팔레르모</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraná</masterLabel>
+            <translation>파라나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paraíba</masterLabel>
+            <translation>파라이바</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parma</masterLabel>
+            <translation>파르마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pará</masterLabel>
+            <translation>파라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pavia</masterLabel>
+            <translation>파비아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pennsylvania</masterLabel>
+            <translation>펜실바니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pernambuco</masterLabel>
+            <translation>페르남부쿠</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perugia</masterLabel>
+            <translation>페루자</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pesaro and Urbino</masterLabel>
+            <translation>페사로에우르비노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pescara</masterLabel>
+            <translation>페스카라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Piacenza</masterLabel>
+            <translation>피아첸차</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Piauí</masterLabel>
+            <translation>파아우이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pichincha</masterLabel>
+            <translation>피친차</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pisa</masterLabel>
+            <translation>피사</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pistoia</masterLabel>
+            <translation>피스토야</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pontevedra</masterLabel>
+            <translation>폰테베드라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pordenone</masterLabel>
+            <translation>포르데노네</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Potenza</masterLabel>
+            <translation>포텐차</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prato</masterLabel>
+            <translation>프라토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prince Edward Island</masterLabel>
+            <translation>프린스 에드워드 섬</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puducherry</masterLabel>
+            <translation>푸두체리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puebla</masterLabel>
+            <translation>푸에블라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Puerto Rico</masterLabel>
+            <translation>푸에르토리코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Punjab</masterLabel>
+            <translation>펀자브</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QINGHAI</masterLabel>
+            <translation>칭하이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qatar</masterLabel>
+            <translation>카타르</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quebec</masterLabel>
+            <translation>퀘벡</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Queensland</masterLabel>
+            <translation>퀸즈랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Querétaro</masterLabel>
+            <translation>케레타로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quintana Roo</masterLabel>
+            <translation>킨타나 로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ragusa</masterLabel>
+            <translation>라구자</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rajasthan</masterLabel>
+            <translation>라자스탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ravenna</masterLabel>
+            <translation>라벤나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reggio Calabria</masterLabel>
+            <translation>레지오 칼라브리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reggio Emilia</masterLabel>
+            <translation>레지오 에밀리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Región Metropolitana de Santiago</masterLabel>
+            <translation>산티아고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rhode Island</masterLabel>
+            <translation>로드아일랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rieti</masterLabel>
+            <translation>리에티</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rimini</masterLabel>
+            <translation>리미니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rio Grande do Norte</masterLabel>
+            <translation>리우그란데두노르테</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rio Grande do Sul</masterLabel>
+            <translation>리우그린데두술</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rio de Janeiro</masterLabel>
+            <translation>리우데자네이루</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rome</masterLabel>
+            <translation>로마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rondônia</masterLabel>
+            <translation>론도니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roraima</masterLabel>
+            <translation>로라이마</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Roscommon</masterLabel>
+            <translation>로스코먼</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rovigo</masterLabel>
+            <translation>로비고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Río Negro</masterLabel>
+            <translation>리오네그로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHAANXI</masterLabel>
+            <translation>산시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHANDONG</masterLabel>
+            <translation>산둥</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHANGHAI</masterLabel>
+            <translation>상하이</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SHANXI</masterLabel>
+            <translation>산시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SICHUAN</masterLabel>
+            <translation>쓰촨</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salerno</masterLabel>
+            <translation>살레르노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Salta</masterLabel>
+            <translation>살타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Juan</masterLabel>
+            <translation>산후안</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis</masterLabel>
+            <translation>산루이스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>San Luis Potosí</masterLabel>
+            <translation>산루이스포토시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Catarina</masterLabel>
+            <translation>산타카타리나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Cruz</masterLabel>
+            <translation>산타크루즈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santa Fe</masterLabel>
+            <translation>산타페</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Santiago del Estero</masterLabel>
+            <translation>산티아고 델 에스트로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Saskatchewan</masterLabel>
+            <translation>서스캐처원</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sassari</masterLabel>
+            <translation>사사리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Savona</masterLabel>
+            <translation>사보나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sergipe</masterLabel>
+            <translation>세르지페</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siena</masterLabel>
+            <translation>시에나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sikkim</masterLabel>
+            <translation>시킴</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sinaloa</masterLabel>
+            <translation>시날로아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sligo</masterLabel>
+            <translation>슬라이고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sondrio</masterLabel>
+            <translation>손드리오</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sonora</masterLabel>
+            <translation>소노라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Australia</masterLabel>
+            <translation>사우스 오스트레일리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Carolina</masterLabel>
+            <translation>사우스캐롤라이나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>South Dakota</masterLabel>
+            <translation>사우스다코타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Syracuse</masterLabel>
+            <translation>시라쿠사</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>São Paulo</masterLabel>
+            <translation>상파울루</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TIANJIN</masterLabel>
+            <translation>톈진</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tabasco</masterLabel>
+            <translation>타바스코</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamaulipas</masterLabel>
+            <translation>타마울리파스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tamil Nadu</masterLabel>
+            <translation>타밀 나두</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taranto</masterLabel>
+            <translation>타란토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tarapacá</masterLabel>
+            <translation>타라파카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tennessee</masterLabel>
+            <translation>테네시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teramo</masterLabel>
+            <translation>테라모</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terni</masterLabel>
+            <translation>테르니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Texas</masterLabel>
+            <translation>텍사스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tierra del Fuego</masterLabel>
+            <translation>티에라 델 푸에고</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tipperary</masterLabel>
+            <translation>티퍼레리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tlaxcala</masterLabel>
+            <translation>틀라스칼라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tocantins</masterLabel>
+            <translation>토칸틴스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trapani</masterLabel>
+            <translation>트라파니</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trento</masterLabel>
+            <translation>트렌토</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Treviso</masterLabel>
+            <translation>트레비조</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trieste</masterLabel>
+            <translation>트리에스테</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tripura</masterLabel>
+            <translation>트리푸라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tucumán</masterLabel>
+            <translation><!-- Tucumán --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Turin</masterLabel>
+            <translation>토리노</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Virgin Islands</masterLabel>
+            <translation>미국령 버진아일랜드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Udine</masterLabel>
+            <translation>우디네</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Kingdom</masterLabel>
+            <translation>영국</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United States Minor Outlying Islands</masterLabel>
+            <translation>미국령 군소 제도</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utah</masterLabel>
+            <translation>유타</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttar Pradesh</masterLabel>
+            <translation>우타르프라데시</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uttarakhand</masterLabel>
+            <translation>우타라칸드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valencia / València</masterLabel>
+            <translation>발렌시아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valle del Cauca</masterLabel>
+            <translation>발예델카우카</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Valparaíso</masterLabel>
+            <translation>발파라이소</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Varese</masterLabel>
+            <translation>바레세</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Venice</masterLabel>
+            <translation>베니스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veracruz</masterLabel>
+            <translation>베라크루즈</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbano-Cusio-Ossola</masterLabel>
+            <translation>베르바노쿠시오오솔라</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vercelli</masterLabel>
+            <translation>베르첼리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vermont</masterLabel>
+            <translation>버몬트</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verona</masterLabel>
+            <translation>베로나</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vibo Valentia</masterLabel>
+            <translation>비보발렌티아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vicenza</masterLabel>
+            <translation>비첸차</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Victoria</masterLabel>
+            <translation>빅토리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virginia</masterLabel>
+            <translation>버지니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Viterbo</masterLabel>
+            <translation>비테르보</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vizcaya / Bizkaia</masterLabel>
+            <translation>비스카야</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Washington</masterLabel>
+            <translation>워싱턴</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waterford</masterLabel>
+            <translation>워터퍼드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Bengal</masterLabel>
+            <translation>웨스트 벵골</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>West Virginia</masterLabel>
+            <translation>웨스트버지니아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Western Australia</masterLabel>
+            <translation>웨스턴 오스트레일리아</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Western Cape</masterLabel>
+            <translation>웨스턴케이프</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Westmeath</masterLabel>
+            <translation>웨스트미스</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wexford</masterLabel>
+            <translation>웩스퍼드</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wicklow</masterLabel>
+            <translation>위클로</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wisconsin</masterLabel>
+            <translation>위스콘신</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wyoming</masterLabel>
+            <translation>와이오밍</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XINJIANG</masterLabel>
+            <translation>신장</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>XIZANG</masterLabel>
+            <translation>시짱</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>YUNNAN</masterLabel>
+            <translation>윈난</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yucatán</masterLabel>
+            <translation>유카탄</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yukon Territories</masterLabel>
+            <translation>유콘 테리토리</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZHEJIANG</masterLabel>
+            <translation>저장</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zacatecas</masterLabel>
+            <translation>사카테카스</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>주소1</label>
+        <name>Street_Address1__c</name>
+    </fields>
+    <fields>
+        <label>주소2</label>
+        <name>Street_Address2__c</name>
+    </fields>
+    <fields>
+        <label>주소3</label>
+        <name>Street_Address3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transition Address --></label>
+        <name>Transition_Address__c</name>
+    </fields>
+    <fields>
+        <label>우편 번호</label>
+        <name>Zip_Postal_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>Partner Admin Location Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Contact Location Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Location Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Locator Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>파트너 위치</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Partner Admin --></label>
+        <name>Partner_Admin</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage>기본 위치 업데이트를 위한 케이스를 생성하십시오.</errorMessage>
+        <name>PC_Update_Primary_Business_Address</name>
+    </validationRules>
+    <webLinks>
+        <label>기본 위치 업데이트</label>
+        <name>Update_Primary_Location</name>
+    </webLinks>
+</CustomObjectTranslation>

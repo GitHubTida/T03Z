@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Alternate_Phone_Number__c</fullName>
+        <label>Alternate Phone Number</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Alternate_Phone_Type__c</fullName>
+        <label>Alternate Phone Type</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application_Source__c</fullName>
+        <label>Application Source</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application_Status__c</fullName>
+        <label>Application Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Provisioned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Revoked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Type__c</fullName>
+        <formula>TEXT(Maps_to_Application__r.Approval_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Approval Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Approver__c</fullName>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SSO_Customer_Workflow</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_10__c</fullName>
+        <label>Attribute Name 10</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_11__c</fullName>
+        <label>Attribute Name 11</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_12__c</fullName>
+        <label>Attribute Name 12</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_13__c</fullName>
+        <label>Attribute Name 13</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_14__c</fullName>
+        <label>Attribute Name 14</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_15__c</fullName>
+        <label>Attribute Name 15</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_16__c</fullName>
+        <label>Attribute Name 16</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_17__c</fullName>
+        <label>Attribute Name 17</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_18__c</fullName>
+        <label>Attribute Name 18</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_19__c</fullName>
+        <label>Attribute Name 19</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_1__c</fullName>
+        <label>Attribute Name 1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_20__c</fullName>
+        <label>Attribute Name 20</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_2__c</fullName>
+        <label>Attribute Name 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_3__c</fullName>
+        <label>Attribute Name 3</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_4__c</fullName>
+        <label>Attribute Name 4</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_5__c</fullName>
+        <label>Attribute Name 5</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_6__c</fullName>
+        <label>Attribute Name 6</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_7__c</fullName>
+        <label>Attribute Name 7</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_8__c</fullName>
+        <label>Attribute Name 8</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Name_9__c</fullName>
+        <label>Attribute Name 9</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_10__c</fullName>
+        <label>Attribute Value 10</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_11__c</fullName>
+        <label>Attribute Value 11</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_12__c</fullName>
+        <label>Attribute Value 12</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_13__c</fullName>
+        <label>Attribute Value 13</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_14__c</fullName>
+        <label>Attribute Value 14</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_15__c</fullName>
+        <label>Attribute Value 15</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_16__c</fullName>
+        <label>Attribute Value 16</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_17__c</fullName>
+        <label>Attribute Value 17</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_18__c</fullName>
+        <label>Attribute Value 18</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_19__c</fullName>
+        <label>Attribute Value 19</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_1__c</fullName>
+        <label>Attribute Value 1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_20__c</fullName>
+        <label>Attribute Value 20</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_2__c</fullName>
+        <label>Attribute Value 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_3__c</fullName>
+        <label>Attribute Value 3</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_4__c</fullName>
+        <label>Attribute Value 4</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_5__c</fullName>
+        <label>Attribute Value 5</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_6__c</fullName>
+        <label>Attribute Value 6</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_7__c</fullName>
+        <label>Attribute Value 7</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_8__c</fullName>
+        <label>Attribute Value 8</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Attribute_Value_9__c</fullName>
+        <label>Attribute Value 9</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <label>City</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Number__c</fullName>
+        <label>Company Number</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company__c</fullName>
+        <label>Company</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <label>Country</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Email__c</fullName>
+        <label>Email</label>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Extra_Attribute_1__c</fullName>
+        <label>Extra Attribute 1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Extra_Attribute_2__c</fullName>
+        <label>Extra Attribute 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Extra_Attribute_3__c</fullName>
+        <label>Extra Attribute 3</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Extra_Attribute_4__c</fullName>
+        <label>Extra Attribute 4</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Extra_Attribute_5__c</fullName>
+        <label>Extra Attribute 5</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <label>Fax</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <label>First Name</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <label>Last Name</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Maps_to_Application__c</fullName>
+        <label>Maps to Application</label>
+        <referenceTo>SSO_Application_Mapping__c</referenceTo>
+        <relationshipLabel>SSO Customer Workflow</relationshipLabel>
+        <relationshipName>SSO_Customer_Workflow</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <label>Password</label>
+        <length>500</length>
+        <type>LongTextArea</type>
+        <visibleLines>2</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Phone_Number__c</fullName>
+        <label>Phone Number</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Type__c</fullName>
+        <label>Phone Type</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Preferred_Language__c</fullName>
+        <label>Preferred Language</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Process_Error__c</fullName>
+        <label>Process Error</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Provisioned_Rejected_Date__c</fullName>
+        <label>Provisioned/Rejected Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Provisioner__c</fullName>
+        <label>Provisioner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SSO_Customer_Workflow1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Provisioning_Type__c</fullName>
+        <formula>TEXT(Maps_to_Application__r.Provisioning_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Provisioning Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Ready_for_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Ready for Approval</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Request_Type__c</fullName>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Create User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivate User</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Grant Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Revoke Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Additional Application Access</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requested_Date__c</fullName>
+        <label>Requested Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Requestor_ID__c</fullName>
+        <label>Requestor ID</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>SSO_Request_Id__c</fullName>
+        <label>SSO Request Id</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Security_Question_1__c</fullName>
+        <label>Security Question 1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Security_Question_2__c</fullName>
+        <label>Security Question 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Security_Response_1__c</fullName>
+        <label>Security Response 1</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Security_Response_2__c</fullName>
+        <label>Security Response 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <label>State</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <label>Street</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Timezone__c</fullName>
+        <label>Timezone</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Title__c</fullName>
+        <label>Title</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User_ID__c</fullName>
+        <label>User ID</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User_Status__c</fullName>
+        <label>User Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Created</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Updated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Create User Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Update User Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Deactivate User Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User_Type__c</fullName>
+        <label>User Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ZUID__c</fullName>
+        <label>ZUID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Zip_Code__c</fullName>
+        <label>Zip Code</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <label>SSO Customer Workflow</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Email__c</columns>
+        <columns>Application_Source__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Application_Status__c</columns>
+        <columns>User_Status__c</columns>
+        <columns>SSO_Request_Id__c</columns>
+        <columns>ZUID__c</columns>
+        <columns>First_Name__c</columns>
+        <columns>Last_Name__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Today</fullName>
+        <columns>NAME</columns>
+        <columns>Email__c</columns>
+        <columns>Application_Source__c</columns>
+        <columns>User_Status__c</columns>
+        <columns>Application_Status__c</columns>
+        <columns>SSO_Request_Id__c</columns>
+        <columns>ZUID__c</columns>
+        <columns>Request_Type__c</columns>
+        <columns>Provisioning_Type__c</columns>
+        <columns>Provisioner__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>greaterThan</operation>
+            <value>3/4/2016 12:00 AM</value>
+        </filters>
+        <label>Today</label>
+    </listViews>
+    <nameField>
+        <displayFormat>7{000000}</displayFormat>
+        <label>Workflow Request ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SSO Customer Workflow</pluralLabel>
+    <searchLayouts>
+        <searchResultsAdditionalFields>First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>User_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Application_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Application_Source__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approval_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Approver__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Provisioning_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Provisioner__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,32 @@
+<apex:page standardController="Apttus__APTS_Agreement__c" sidebar="false" showHeader="false" id="thePage">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    
+    <script src="/soap/ajax/34.0/connection.js" type="text/javascript"></script>
+    <script src="/soap/ajax/34.0/apex.js" type="text/javascript"></script>
+    
+   
+    <script type="text/javascript">
+        
+        sforce.connection.sessionId = '{!GETSESSIONID()}';
+      $( document ).ready(function() {
+   			 $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+          
+     				 var agreement = new sforce.SObject("Apttus__APTS_Agreement__c");
+                                         
+                      agreement.Id = "{!Apttus__APTS_Agreement__c.Id}";
+                      agreement.Apttus__Status__c = "Ready for Signatures";
+                      agreement.Apttus__Status_Category__c = "In Signatures";
+                      
+                      var result = sforce.connection.update([agreement]);
+                      
+                      window.location.href = "/"+"{!Apttus__APTS_Agreement__c.Id}";
+  		});
+    
+    
+    </script>
+    
+   
+</apex:page>

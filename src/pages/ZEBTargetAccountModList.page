@@ -1,0 +1,31 @@
+<apex:page tabStyle="Target_Account__c" controller="ZEBTargetAccountModListController">
+
+    <apex:sectionHeader title="Add, Drop, and Modify Requests" description="Below are Target Account modifications you've requested which are pending approval, or are approved and awaiting the month end processing to be executed."/>
+    
+    <apex:messages style="color:red"/>    
+
+    <apex:pageBlock title="Pending Requests">
+        <apex:pageBlockTable value="{!mods}" var="m">
+            <apex:column headerValue="Request Type" value="{!m.RecordType.Name}"/>
+            <apex:column headerValue="Target Account" value="{!m.Target_Account__r.Name}"/>
+            <apex:column headerValue="Current Owner" value="{!m.Target_Account__r.Owner.Name}"/>
+            <apex:column headerValue="Requires a Drop" value="{!m.Target_Account__r.Add_Requires_Drop__c}"/>
+            <apex:column headerValue="Approval Status" value="{!m.Status__c}"/>
+            <apex:column headerValue="Submitted" value="{!m.CreatedDate}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <br/><br/>
+    
+    <apex:pageBlock title="Recently Executed or Rejected">
+        <apex:pageBlockTable value="{!done}" var="m">
+            <apex:column headerValue="Request Type" value="{!m.RecordType.Name}"/>
+            <apex:column headerValue="Target Account" value="{!m.Target_Account__r.Name}"/>
+            <apex:column headerValue="Current Owner" value="{!m.Target_Account__r.Owner.Name}"/>
+            <apex:column headerValue="Approval Status" value="{!m.Status__c}"/>
+            <apex:column headerValue="Submitted" value="{!m.CreatedDate}"/>
+            <apex:column headerValue="Last Action" value="{!m.LastModifiedDate}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+</apex:page>

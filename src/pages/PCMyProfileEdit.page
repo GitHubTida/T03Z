@@ -1,0 +1,94 @@
+<apex:page standardController="Contact" tabStyle="My_Profile__tab" id="ConEditPage" extensions="PC_ContactEditExtension" action="{!getLanguageLocale}">
+<!--<apex:sectionHeader title="Contact Edit" subtitle="{!contact.Name}"/>-->
+<script>
+ function salutationCheck(){
+        //To remove the duplicate Salutation values in German, Russian, Polish, Turkish
+        var saluationVal=document.getElementById('ConEditPage:start:section1:subSec1:subSec2:subSec3:newContactSalutation');
+        var preferredLang = '{!languageLocale}';
+        
+        if('de'== preferredLang || 'ru'== preferredLang || 'pl'== preferredLang || 'tr'== preferredLang){
+           
+            for(var i=0;i<saluationVal.length;i++){ 
+                if('Miss'== saluationVal[i].value || 'Ms.'== saluationVal[i].value ){
+                    saluationVal.remove(i)   
+                                   
+                }
+            }          
+        }
+    }
+
+</script>
+    <apex:form id="start">
+     <apex:sectionHeader id="header" title="{!Contact.Name}">
+     
+     
+        <apex:pageBlock id="section1">
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageblockButtons >
+                <apex:commandButton value="{!$Label.Save}" action="{!save}"/>
+                <apex:commandButton value="{!$Label.Cancel}" action="{!cancel}"/>
+            </apex:pageblockButtons>
+            <apex:pageblockSection id="subSec1">
+                <apex:pageblocksectionItem id="subSec2">
+                    <apex:outputText >
+                          {!$Label.First_Name_PC}
+                      </apex:outputText>                      
+                       <apex:pageblocksectionItem id="subSec3">
+                        <apex:inputField id="newContactSalutation" value="{!Contact.Salutation}"  style="margin-right:5px" onclick="salutationCheck();"/>
+                        <apex:inputField value="{!Contact.FirstName}"/>
+                     </apex:pageblocksectionItem>  
+         </apex:pageblocksectionItem> 
+              <apex:outputtext value=""/>
+                <apex:inputField value="{!Contact.LastName}" required="true" />
+                <apex:outputtext value="{!Contact.Account.Name}"/>
+                <apex:inputField value="{!Contact.title}" />
+                
+                <apex:outputField value="{!Contact.Secondary_Role__c}" rendered="{!!Contact.Partner_Administrator__c}" />
+                <apex:inputField value="{!Contact.Secondary_Role__c}" rendered="{!Contact.Partner_Administrator__c}"/>
+                
+                 <apex:outputField value="{!Contact.Primary_Role__c}" rendered="{!!Contact.Partner_Administrator__c}" />
+                 <apex:inputField value="{!Contact.Primary_Role__c}" required="true"  rendered="{!Contact.Partner_Administrator__c}"/>
+                 <br/>
+                 <apex:outputField value="{!Contact.Preferred_Language__c}" rendered="{!!Contact.Partner_Administrator__c}" />
+                 <apex:inputField value="{!Contact.Preferred_Language__c}" required="true" rendered="{!Contact.Partner_Administrator__c}" />
+                 <apex:pageblocksectionItem id="subSec4">
+                 <!-- </apex:pageblocksectionItem>
+                 <apex:pageblocksectionItem >
+                 <apex:outputText >
+                          Preferred Language
+                      </apex:outputText>                     
+               <apex:inputField value="{!Contact.Preferred_Language__c}" required="true" /> -->
+                 </apex:pageblocksectionItem>
+            </apex:pageblockSection>
+            <apex:pageblockSection id="subSec5" title="{!$Label.PC_My_Profile_Tool}" collapsible="False">
+                <apex:repeat value="{!$ObjectType.contact.FieldSets.Tool_Capability_Access_Detail}"  var="f">
+                    <apex:outputField value="{!contact[f.fieldPath]}"/>
+                </apex:repeat>
+            </apex:pageblockSection>
+            <apex:pageblockSection id="subSec6" title="{!$Label.PC_My_Profile_Vehicle}" collapsible="False">
+                <apex:pageblocksectionItem id="subSec5">
+                    <apex:outputText value="{!$ObjectType.Contact.fields.MailingCountry.Label}">
+                          
+                      </apex:outputText>
+                   
+                    <apex:inputField value="{!Contact.MailingCountrycode}" required="true" />
+                
+                </apex:pageblocksectionItem> 
+                <apex:OutputField value="{!Contact.Email}"/>
+                <apex:inputField value="{!Contact.MailingStreet}"/>
+                <apex:inputField value="{!Contact.Phone}" />
+                <apex:inputField value="{!Contact.MailingCity}"/>
+                <apex:inputField value="{!Contact.MobilePhone}"/>
+                <apex:pageblocksectionItem id="subSec6" >
+                    
+                      <apex:outputText value="{!$ObjectType.Contact.fields.Mailingstate.Label}">
+                      </apex:outputText>
+                    <apex:inputField value="{!Contact.Mailingstatecode}"/>
+                </apex:pageblocksectionItem> 
+                <apex:inputField value="{!Contact.Fax}"/>
+                 <apex:inputField value="{!Contact.MailingPostalCode}"/>
+            </apex:pageblockSection>
+      </apex:pageBlock>    
+      </apex:sectionHeader>
+    </apex:form>    
+</apex:page>

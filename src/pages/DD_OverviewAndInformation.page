@@ -1,0 +1,213 @@
+<apex:page showHeader="false" standardController="DD_Demo__c" applyBodyTag="false" extensions="DD_Overview_and_Information" renderAs="pdf">
+<head>
+    <style>
+        body { font-family: 'Arial Unicode MS';font-weight:bold;font-size:12px;}
+        .section1{
+            background-color:#E6E6E6;
+            width:100%;
+            height:auto;
+            
+        }
+        .section1 img
+        {
+            float:right;
+        }
+        
+        .section{
+            background-color:#E6E6E6;
+            width:100%;
+            height:22px;
+            margin-bottom:5px;
+        }
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            table-layout: fixed;
+            
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;            
+            word-break: break-word;
+            white-space: normal;
+            word-wrap:break-word;
+             line-height: 100%;
+           
+        }
+        td.wrap{
+           white-space: normal;
+           word-wrap:break-word;
+           word-break: break-all;
+           line-height: 100%;
+           text-align: left;
+           
+           }
+        p.detail {}
+        span.name {color:#801500;} 
+    </style>
+</head>
+<body>
+    <div class="section1">
+        <apex:image url="{!$Resource.DD_ZebraLogo}" height="65" width="100"/>
+        <div style="padding-left:3px;font-weight:bolder;font-size:15px">
+            <p class="detail">Zebra Demo Request for Customer: <span class="name">{!demo.Customer_Name__c}</span><br/>
+            Ref No: <span class="name">{!demo.Name}</span><br/>
+            Tracking Number: <span class="name">{!demo.Tracking_Number__c}</span> </p>
+        </div>     
+    </div>
+    
+    <br/>
+    
+    <div class="section">
+        <span  style="font-size:12px;font-weight:bold;padding-left:5px;padding-top:2px;"> Demo Details</span>
+    </div>
+     
+    <!--Display the demo qualification details(start)-->
+    <table style="width:100%;" class="test">
+        <tr>
+            <td>Demo Period:&nbsp;&nbsp;{!demo.Demo_Period__c}</td>
+            <td>Evaluation End Date:&nbsp;&nbsp;{!returnDate}</td>
+            <td>Shipped Date:&nbsp;&nbsp;{!shippedDate}</td>
+        </tr>
+    </table> <br/>
+    <!--Display the demo qualification details(end)-->
+    
+    <div class="section">
+        <span  style="font-size:12px;font-weight:bold;padding-left:5px;padding-top:2px;">Selected Product Details</span>
+    </div>
+    <table style="width:100%;" class="test">
+        <tr>
+            <th style="width:25%;">Material</th>
+            <th style="width:10%;">Quantity</th>
+            <th style="width:20%;">Serial Number</th>
+            <th class = "wrap" style="width:40%;">Description</th>
+            <th style="width:15%;">IR Number</th>
+            <th style="width:10%;">Product Status</th>
+        </tr>
+        <apex:repeat value="{!lst_ResProd}" var="res">
+            <tr>
+                <td style="width:25%;">{!res.Material__r.Name}</td>
+                <td style="width:10%;">{!res.Quantity__c}</td>
+                <td style="width:20%;">{!res.Serialnumber__c}</td>
+                <td class = "wrap" style="width:40%;">{!res.Material__r.Description__c}</td>
+                <td style="width:15%;">{!res.IR_Number__c}</td>
+                <td style="width:10%;">{!res.Product_Status__c }</td>
+            </tr>
+        </apex:repeat>
+    </table><br/>
+    
+    <!-- customer information (start)-->
+    <div>
+        <div class="section">
+            <span  style="font-size:12px;font-weight:bold;padding-left:5px;padding-top:2px;width:50%;">Customer Details</span>
+            <!--<span  style="font-size:12px;font-weight:bold;padding-left:217px;padding-top:2px;">Customer Address Details</span> -->
+        </div> 
+        <table style="width:49%;float:left;margin-top:5px;">
+            <tr>
+                <td>Customer:&nbsp;&nbsp;{!demo.Customer_Name__c}</td>
+            </tr>
+            <tr>    
+                <td>Name:&nbsp;&nbsp;{!demo.Contact1__c}</td>
+            </tr>
+            <tr>    
+                <td>Email:&nbsp;&nbsp;{!demo.Contact_Email__c}</td>
+            </tr>
+            <tr>    
+                <td>Telephone:&nbsp;&nbsp;{!demo.Telephone__c}</td>
+            </tr>
+            <tr>    
+                <td>Fax:&nbsp;&nbsp;{!demo.Fax__c}</td>
+            </tr>
+       </table>
+       <table style="width:49%;float:right;margin-top:5px;">
+            <tr>
+                <td>Street:&nbsp;&nbsp;{!demo.Street__c}</td>
+            </tr>
+            <tr>    
+                <td>City:&nbsp;&nbsp;{!demo.City__c}</td>
+            </tr>
+            <tr>    
+                <td>State:&nbsp;&nbsp;{!demo.State_Province__c}</td>
+            </tr>
+            <tr>    
+                <td>Country:&nbsp;&nbsp;{!demo.Country__c}</td>
+            </tr>
+            <tr>    
+                <td>Postal Code:&nbsp;&nbsp;{!demo.Post_Code_ZIP__c}</td>
+            </tr>
+       </table>
+   </div>
+   <!-- customer information (end)-->
+   <br/>
+   <!-- Return and Shipping address information (start)-->
+    <div style="margin-top:163px;">
+        <div class="section">
+            <span  style="font-size:12px;font-weight:bold;padding-left:5px;padding-top:2px;width:50%;">Ship to Address</span>
+            <span  style="font-size:12px;font-weight:bold;padding-left:272px;padding-top:2px;">Return Address</span>
+            
+        </div>         
+        <table style="width:49%;float:left;margin-top:5px;">
+        <apex:repeat value="{!lst_ShippingAddress}" var="shippingAddress" >
+           <tr>
+                <td>Street:&nbsp;&nbsp;{!shippingAddress.Street__c}</td>
+            </tr>
+            <tr>    
+                <td>City:&nbsp;&nbsp;{!shippingAddress.City__c}</td>
+            </tr>
+            <tr>    
+                <td>State:&nbsp;&nbsp;{!shippingAddress.State_Province__c}</td>
+            </tr>
+            <tr>    
+                <td>Country:&nbsp;&nbsp;{!shippingAddress.Country__c}</td>
+            </tr>
+            <tr>    
+                <td>Postal Code:&nbsp;&nbsp;{!shippingAddress.Post_Code_ZIP__c}</td>
+            </tr>
+        </apex:repeat>            
+        </table>
+        
+        <table style="width:49%;float:right;margin-top:5px;">
+           
+           <apex:outputText rendered="{!demo.Address_Line1__c!= null}">  
+           <tr> 
+             
+                <td>{!demo.Address_Line1__c}</td>
+            </tr>
+             </apex:outputText>
+             
+            <apex:outputText rendered="{!demo.Address_Line_2__c!= null}">  
+             <tr>
+                  
+                <td>{!demo.Address_Line_2__c}</td>
+            </tr>
+             </apex:outputText>
+             
+              <apex:outputText rendered="{!demo.Address_Line_3__c!= null}"> 
+             <tr> 
+               
+                <td>{!demo.Address_Line_3__c}</td>
+            </tr>
+             </apex:outputText>
+             
+              <apex:outputText rendered="{!demo.Address_Line_4__c!= null}">   
+            <tr> 
+           
+                <td>{!demo.Address_Line_4__c}</td>
+            </tr>
+             </apex:outputText>
+        
+      <apex:outputtext rendered="{!demo.Address_Line_5__c != null}"> <tr>    
+                <td>{!demo.Address_Line_5__c}</td>
+            </tr>
+            </apex:outputText>
+        </table>
+    </div>
+   <!-- Return and Shipping address information (end)-->
+   <!--
+    <div class="section" style="margin-top:163px;">
+        <span  style="font-size:12px;font-weight:bold;padding-left:5px;padding-top:2px;">Services Delivery Help Desk Details</span>
+    </div>
+    <apex:outputLabel value="{!$Label.DD_Service_Delivery_Help_Desk}" escape="false" />
+    -->  
+</body>
+</apex:page>

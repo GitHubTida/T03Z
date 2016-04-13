@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Accessory Management</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Accessory Management</value>
+    </caseValues>
+    <fields>
+        <label><!-- Master Demo Product --></label>
+        <name>Master_Demo_Product__c</name>
+        <relationshipLabel><!-- Accessory Management --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <layouts>
+        <layout>Accessories Management Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

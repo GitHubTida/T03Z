@@ -1,0 +1,54 @@
+<apex:page controller="SSOAdminApprovalController" sidebar="false">
+    <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    <style>
+        .button{
+            background: linear-gradient(to bottom,#8abafe 0,#5788c7 100%) !important;
+            text-transform: uppercase !important;
+            font-size: .9em !important;
+            box-shadow: 0px 5px 6px rgba(0,0,0,0.2) !important;
+            color: #fff !important;
+            padding: 0 10px !important;
+            border: 1px solid transparent !important;
+            border-radius: 4px !important;
+        }
+        .button:hover{
+            color: #FFCC33 !important;
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.4) !important;
+        }
+    </style>
+    <apex:form >
+        <apex:pageBlock rendered="{!contact.Admin_Access_Requested__c && !contact.Partner_Administrator__c}">
+            <apex:pageBlockButtons location="bottom" style="align:left;">
+                <apex:commandButton id="btnGrantRevoke" styleClass="button" value="{!$Label.Submit_Contact}" action="{!submit}" status="stat"/>
+                <apex:commandButton id="btnCancelGrantRevoke" styleClass="button" value="{!$Label.Cancel}"  action="{!back}" status="stat"/>       
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="{!$Label.Partner_Administrator_Terms_and_Conditions}" columns="1" collapsible="false" >
+                <p>
+                    <apex:outputText value="{!$Label.SSO_Partner_Admin_Acceptance_Verbiage}" escape="false">
+                         <apex:param value="{!urlTo}"/>
+                    </apex:outputText>
+                </p>
+                <apex:selectRadio layout="pageDirection" value="{!status}">
+                    <apex:selectOption itemLabel="{!$Label.I_ACCEPT}" itemValue="Agreed"></apex:selectOption>
+                    <apex:selectOption itemLabel="{!$Label.I_DECLINE}" itemValue="Declined"></apex:selectOption>
+                </apex:selectRadio>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <!--apex:pageBlock rendered="{!display && contact.Admin_Access_Requested__c}">
+            <apex:pageBlockSection columns="1">
+                <p>
+                    <apex:outputText value="{!$Label.SSO_Congratulation_Message}" escape="false">
+                        <apex:param value="{!contact.Account.Name}"/>
+                    </apex:outputText>
+                </p>
+                <apex:commandButton id="btnOk" styleClass="button" action="{!back}" value="OK" status="stat"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock-->
+        <apex:pageBlock rendered="{!displayExpire}">
+            <apex:pageBlockSection columns="1">
+                <apex:outputText value="{!$Label.SSO_Partner_Admin_Link_Invalid}" escape="false" style="font-size: 15px;"></apex:outputText>
+                <apex:commandButton id="btnOk" styleClass="button" action="{!back}" value="OK" status="stat"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

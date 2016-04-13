@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to map MSI state list to Zebra state list</description>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Source_LOV__c</fullName>
+        <label>Source LOV</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>State_Code__c</fullName>
+        <label>State Code</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>State_Name__c</fullName>
+        <label>State Name</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <label>Standard State Lookup</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Source_LOV__c</columns>
+        <columns>State_Name__c</columns>
+        <columns>State_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Standard State Lookup Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Standard State Lookup</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

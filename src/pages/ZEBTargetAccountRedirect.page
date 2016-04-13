@@ -1,0 +1,2 @@
+<apex:page standardController="Target_Account__c" extensions="ZEBTargetAccountRedirectExtension" action="{!redirect}">
+</apex:page>

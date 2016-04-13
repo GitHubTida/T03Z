@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Opportunity_Number__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <booleanFilter>1 or 2</booleanFilter>
+        <criteriaItems>
+            <column>Opportunity$Opportunity_Number__c</column>
+            <operator>equals</operator>
+            <value>Z-0000047632,Z-0000047630,Z-0000137549,Z-0000088526,Z-0000078398,Z-0000071582,Z-0000025441,Z-0000018731,Z-0000029817,Z-0000149940,Z-0000048713</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Opportunity_Number__c</column>
+            <operator>equals</operator>
+            <value>Z-0000010639,Z-0000011052,Z-0000022352,Z-0000043100,Z-0000086809,Z-0000120089,Z-0000120357,Z-0000137334</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>%LAOps Q4 Brazil Must-Win</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Historical_Trending__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity$StageName</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

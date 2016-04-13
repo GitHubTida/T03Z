@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting is used to capture the last run date of the product batch</description>
+    <fields>
+        <fullName>Last_Run_Date__c</fullName>
+        <description>This field will capture the Last Run Date of the batch</description>
+        <label>Last Run Date</label>
+        <type>DateTime</type>
+    </fields>
+    <label>Products Batch Last Run Date</label>
+</CustomObject>

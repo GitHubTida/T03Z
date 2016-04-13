@@ -1,0 +1,12 @@
+<apex:page standardController="Deal_Registration__c"  tabStyle="Deal_Registration__c" extensions="DR_dealRegToOpportunityLinkController" showHeader="false" rendered="{!theDeal.Opportunity__c==null}">
+<apex:form style="text-align:center; font-family:verdana,arial; font-size:10pt; font-weight:bold">
+
+<div style="padding:3px"></div>
+<apex:outputPanel rendered="{!AND(iF(CONTAINS(theDeal.Approval_Status__c , 'Approved Final' ),true,false),(GroupMembers))}">
+<apex:outputLink id="link" style="color:blue" value="{!$Page.DR_dealToOldOpp}?id={!theDeal.id}" target="_blank"  >{!$Label.Zeb_DR_Link_to_Existing_Opportunity}</apex:outputLink> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<apex:outputLink id="link1" style="color:blue" value="{!$Page.DR_dealToOpp}?id={!theDeal.id}" target="_blank"  >{!$Label.Zeb_DR_Link_to_New_Opportunity}</apex:outputLink>
+</apex:outputPanel>
+</apex:form>
+</apex:page>

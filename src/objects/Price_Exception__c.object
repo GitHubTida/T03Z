@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Approved_Date__c</fullName>
+        <label>Approved Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Data_Load_Check__c</fullName>
+        <description>Dummy, Put for data load</description>
+        <label>Data Load Check</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <label>End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Line_Item_Count__c</fullName>
+        <label>Line Item Count</label>
+        <summaryForeignKey>Price_Exception_Line_Item__c.Price_Exception__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Line_Item_Zero_Qty__c</fullName>
+        <label>Line Item Zero Qty</label>
+        <summaryFilterItems>
+            <field>Price_Exception_Line_Item__c.Quantity__c</field>
+            <operation>lessThan</operation>
+            <value>1</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Price_Exception_Line_Item__c.Price_Exception__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Name__c</fullName>
+        <formula>Opportunity__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity_Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipName>Price_Exceptions</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Final_Approver_Comments__c</fullName>
+        <label>PC EVM Final Approver Comments</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Hardware_Only_Margin__c</fullName>
+        <label>PC EVM Hardware Only Margin</label>
+        <precision>6</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Margin__c</fullName>
+        <label>PC EVM Margin</label>
+        <precision>6</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Submitter_Comments__c</fullName>
+        <label>SB EVM PC Submitter Comments</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Total_Oracle__c</fullName>
+        <label>PC EVM Total Oracle</label>
+        <summarizedField>Price_Exception_Line_Item__c.PC_Oracle_Price__c</summarizedField>
+        <summaryForeignKey>Price_Exception_Line_Item__c.Price_Exception__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PC_EVM_Total_Sell__c</fullName>
+        <label>PC EVM Total Sell</label>
+        <summarizedField>Price_Exception_Line_Item__c.Unit_Sell_Price__c</summarizedField>
+        <summaryForeignKey>Price_Exception_Line_Item__c.Price_Exception__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>PC_Legacy_SB_Created_By__c</fullName>
+        <label>Legacy SB Created By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>EVM_Price_Concessions1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PE_Deal_ID__c</fullName>
+        <label>PE Deal ID</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Primary__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>The Price Exception which is promoted will have the value of this field set as true</description>
+        <label>Primary</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Amount__c</fullName>
+        <label>Quote Amount</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Quote_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>SB Quote ID</label>
+        <length>255</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Selected__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Selected</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <label>Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <length>50</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <label>EVM Price Concession</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>Opportunity__c</columns>
+        <columns>Quote_ID__c</columns>
+        <columns>PE_Deal_ID__c</columns>
+        <columns>Status__c</columns>
+        <columns>Quote_Amount__c</columns>
+        <columns>Primary__c</columns>
+        <columns>NAME</columns>
+        <columns>End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>SB Quote ID</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>EVM Price Concessions</pluralLabel>
+    <searchLayouts>
+        <searchFilterFields>OBJECT_ID</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Quote_ID__c</searchFilterFields>
+        <searchResultsAdditionalFields>Quote_ID__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Go_To_Solution_Builder</fullName>
+        <availability>online</availability>
+        <description>This Button is used for Solution Builder punchout logic</description>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Go To Solution Builder</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)} 
+
+var hasPermission = sforce.apex.execute(&apos;PCValidateUserPermission&apos;,&apos;ValidateUserPermission&apos;,{OppId: &apos;{!Opportunity.Id}&apos;}); 
+
+if(hasPermission==&apos;false&apos;){ 
+
+alert(&quot;You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.&quot;); 
+
+}else { 
+window.open(&apos;/apex/SolutionBuilderRedirectPage?id=&apos;+&apos;{!Opportunity.Id}&apos;);
+};</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Promote</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Promote</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>//Include the following AJAX toolkit libraries 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&quot;//code.jquery.com/jquery-1.11.0.min.js&quot;)} 
+
+if(&apos;{!Opportunity.Owner_Theater__c}&apos;==&apos;APAC&apos;){ 
+alert(&quot;This Option is not valid for APAC&quot;); 
+} 
+else { 
+var hasPermission = sforce.apex.execute(&apos;PCValidateUserPermission&apos;,&apos;ValidateUserPermission&apos;,{OppId: &apos;{!Opportunity.Id}&apos;}); 
+
+if(hasPermission==&apos;false&apos;){ 
+
+alert(&quot;You do not have the level of access necessary to perform the operation you requested. Please contact the owner of the record or your administrator if access is necessary.&quot;); 
+
+} 
+else { 
+var getSelectedRecord = {!GETRECORDIDS($ObjectType.Price_Exception__c)}; 
+var updateRecords = []; 
+var getLineItemCount; 
+var selectedRecord = &apos;&apos;; 
+if (getSelectedRecord.length == 0) { 
+alert(&quot;Please select atleast one Price Concession record to promote.&quot;); 
+}else if (getSelectedRecord.length &gt;= 2) { 
+alert(&quot;Please select only one Price Concession Record to promote.&quot;); 
+}else{ 
+selectedRecord = getSelectedRecord[0]; 
+getLineItemCount = sforce.connection.query(&quot;Select Id From Price_Exception_Line_Item__c where Price_Exception__c = &apos;&quot; + getSelectedRecord[0]+ &quot;&apos; &quot;); 
+if (getLineItemCount.size &lt;1) { 
+alert(&quot;The Quote has no Line items added and cannot be promoted&quot;); 
+} 
+if (getLineItemCount.size &gt;=1) { 
+window.location=&apos;/apex/EVMPromote?Id=&apos;+getSelectedRecord[0]; 
+} 
+} 
+} 
+}</url>
+    </webLinks>
+</CustomObject>

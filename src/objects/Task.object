@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <recordTypes>
+        <fullName>Channel_Ops</fullName>
+        <active>true</active>
+        <label>Channel Ops</label>
+        <picklistValues>
+            <picklist>Application__c</picklist>
+            <values>
+                <fullName>Animal Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Management%2C Tracking%2C %26 Movement %28owned by the company%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bag Tag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check Scanning %26 Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupon%2FVoucher Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cross Docking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Store Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document %26 Records Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Labels %28Out of Stock%2C Aisles Signs%2C Layaway Bins%2C Oil Change%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory Management%2C Tracking%2C %26 Movement %28product of the company%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyalty %26 Membership Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ordering%2C Order Entry%2C Order Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person Identification%2C Movement%2C Access Control%2C and Authorization%2FAuthentication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Point of Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription Pharmacy Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription Writing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receiving%2FShipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reverse Logistics%2C Merchandise Returns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Specimen %26 Biologics Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stored Value %26 Gift Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ticketing%2FCitations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work in Process Tracking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Application Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Growth Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Support Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MDF Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Requalification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product%2FApplication Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller On-Boarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales Notes</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transition</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Method__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite%2FFace-to-Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Assessment__c</picklist>
+            <values>
+                <fullName>Did not meet Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeded Expections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Met Expections</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Category__c</picklist>
+            <values>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Growth Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MDF Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Territory Trip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Escalate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Agenda Defined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Defined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivered%2FCompleted%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied%2FRejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Analysis%2FIdentification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resources Identified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surveys Sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Validated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Address Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call - Outbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Deleted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contact Detail Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Growth Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ID Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification - Non Decision Maker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification Call - Left VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification Call - Refusal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification Call - spoken to Decision Maker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MDF Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Name Change</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Requalification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product%2FApplication Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Re-evaluation requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Relationship Change updated</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller On-boarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retriggered Transition</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transition Triggered</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Standard</fullName>
+        <active>true</active>
+        <label>Standard</label>
+        <picklistValues>
+            <picklist>Application__c</picklist>
+            <values>
+                <fullName>Animal Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Asset Management%2C Tracking%2C %26 Movement %28owned by the company%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bag Tag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Check Scanning %26 Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compliance Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Coupon%2FVoucher Printing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cross Docking</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dietary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Store Delivery</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Document %26 Records Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Field Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Information Labels %28Out of Stock%2C Aisles Signs%2C Layaway Bins%2C Oil Change%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Insurance Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inventory Management%2C Tracking%2C %26 Movement %28product of the company%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Loyalty %26 Membership Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ordering%2C Order Entry%2C Order Fulfillment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Person Identification%2C Movement%2C Access Control%2C and Authorization%2FAuthentication</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Point of Sale</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription Pharmacy Labeling</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Prescription Writing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quality Control</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Receiving%2FShipping</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reverse Logistics%2C Merchandise Returns</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Specimen %26 Biologics Management</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stored Value %26 Gift Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ticketing%2FCitations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Work in Process Tracking</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Growth Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Leads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Legal Support Requested</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MDF Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Requalification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product%2FApplication Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller On-Boarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Communication_Direction__c</picklist>
+            <values>
+                <fullName>Inbound</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outbound</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Contact_Method__c</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite%2FFace-to-Face</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Assessment__c</picklist>
+            <values>
+                <fullName>Did not meet Expectations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Exceeded Expections</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Met Expections</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Event_Category__c</picklist>
+            <values>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Growth Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Industry Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MDF Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Territory Trip</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Escalate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Normal</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Stage__c</picklist>
+            <values>
+                <fullName>Agenda Defined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Content Defined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Delivered%2FCompleted%2FApproved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Denied%2FRejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Needs Analysis%2FIdentification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resources Identified</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Surveys Sent</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Deferred</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Approved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Notified Customer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sent Collateral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Successful</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Waiting on someone else</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Subject</picklist>
+            <values>
+                <fullName>Business Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Demo Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Growth Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Compliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification - Non Decision Maker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification Call - Left VM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification Call - Refusal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Qualification Call - spoken to Decision Maker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MDF Discussion</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Requalification</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product%2FApplication Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quote Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller On-boarding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Schedule Follow Up</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Call</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Proactive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>Completion_Date_Mandatory_Completed_Task</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(RecordType.Name = &apos;Channel Ops&apos;,OR(ISPICKVAL( Status ,&quot;Completed&quot;),ISPICKVAL(Status ,&quot;Validated&quot;),ISPICKVAL(Status ,&quot;Failed&quot;),ISPICKVAL(Status ,&quot;Successful&quot;)),ISBLANK(( Completion_Date__c )))</errorConditionFormula>
+        <errorDisplayField>Completion_Date__c</errorDisplayField>
+        <errorMessage>Please fill in Completion Date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Other</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(ISPICKVAL(Category__c,&quot;other&quot;),ISBLANK((  Other__c  )))</errorConditionFormula>
+        <errorDisplayField>Other__c</errorDisplayField>
+        <errorMessage>You must enter a value when &quot;Other&quot; is selected under category</errorMessage>
+    </validationRules>
+</CustomObject>

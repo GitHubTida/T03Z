@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>PE Program Detail</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PE Program Details</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- PE Program Details --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Community --></label>
+        <name>Community__c</name>
+        <picklistValues>
+            <masterLabel>Alliance Partner</masterLabel>
+            <translation><!-- Alliance Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Partner</masterLabel>
+            <translation><!-- Application Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Carrier</masterLabel>
+            <translation><!-- Carrier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Market Reseller</masterLabel>
+            <translation><!-- Direct Market Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Global Systems Integrator</masterLabel>
+            <translation><!-- Global Systems Integrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Service Provider</masterLabel>
+            <translation><!-- Managed Service Provider --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturer Representative</masterLabel>
+            <translation><!-- Manufacturer Representative --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered Academic</masterLabel>
+            <translation><!-- Registered Academic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered Application Developer</masterLabel>
+            <translation><!-- Registered Application Developer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered Consultant</masterLabel>
+            <translation><!-- Registered Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered Reseller</masterLabel>
+            <translation><!-- Registered Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Partner</masterLabel>
+            <translation><!-- Service Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sub-Distributor</masterLabel>
+            <translation><!-- Sub-Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systems Integrator</masterLabel>
+            <translation><!-- Systems Integrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Added Distributor</masterLabel>
+            <translation><!-- Value Added Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Added Reseller</masterLabel>
+            <translation><!-- Value Added Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eTailer</masterLabel>
+            <translation><!-- eTailer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Engagement Level --></label>
+        <name>Engagement_Level__c</name>
+        <picklistValues>
+            <masterLabel>Authorized</masterLabel>
+            <translation><!-- Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Elite Specialist</masterLabel>
+            <translation><!-- Elite Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialist</masterLabel>
+            <translation><!-- Specialist --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MSI Program Detail ID --></label>
+        <name>MSI_Program_Detail_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialization Type --></label>
+        <name>Specialization_Type__c</name>
+        <picklistValues>
+            <masterLabel>Application</masterLabel>
+            <translation><!-- Application --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Delivery</masterLabel>
+            <translation><!-- Service Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Technology Segment --></label>
+        <name>Technology_Segment__c</name>
+        <picklistValues>
+            <masterLabel>Advanced Data Capture</masterLabel>
+            <translation><!-- Advanced Data Capture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Radio</masterLabel>
+            <translation><!-- Business Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Converged Communication</masterLabel>
+            <translation><!-- Converged Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Mobile Computing</masterLabel>
+            <translation><!-- Industrial Mobile Computing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mission Critical Radio Systems</masterLabel>
+            <translation><!-- Mission Critical Radio Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Computing</masterLabel>
+            <translation><!-- Mobile Computing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional and Commercial Radio</masterLabel>
+            <translation><!-- Professional and Commercial Radio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID</masterLabel>
+            <translation><!-- RFID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless Networks</masterLabel>
+            <translation><!-- Wireless Networks --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>MPE Program Detail Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

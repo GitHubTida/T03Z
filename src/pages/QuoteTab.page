@@ -1,0 +1,40 @@
+<apex:page tabstyle="Quote" StandardController="Quote" extensions="CustomQuoteTabController" id="thisPage" >
+
+<apex:form >
+    <apex:pageBlock title="Quotes">
+    
+    <apex:outputPanel rendered="{!NOT(hasResults)}">
+        No records to display
+    </apex:outputPanel>
+    
+    
+    <div style="width:100%; margin-top:5px; height:500px;overflow:scroll;">
+    
+        <apex:pageBlockTable width="100%" value="{!allQuotes}"  rendered="{!hasResults}" id="related" var="quotes">
+            
+            <apex:column >
+                <apex:facet name="header">Quote Id</apex:facet>
+                <a href="#" onClick="window.parent.location.href='/{!quotes.Id}'">{!quotes.QuoteNumber}</a>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Account</apex:facet>
+                <a href="#" onClick="window.parent.location.href='/{!quotes.Opportunity.Account.Id}'">{!quotes.Opportunity.Account.name}</a>
+            </apex:column>
+            <apex:column >
+                <apex:facet name="header">Opportunity</apex:facet>
+                <a href="#" onClick="window.parent.location.href='/{!quotes.OpportunityId}'">{!quotes.Opportunity.name}</a>
+            </apex:column>
+            <apex:column value="{!quotes.PC__c}"/>
+            <apex:column value="{!quotes.Revision__c}"/>
+            <apex:column value="{!quotes.Total_Price__c}"/>
+            <apex:column value="{!quotes.ExpirationDate}"/>
+            <apex:column value="{!quotes.Status}"/>
+            <apex:column value="{!quotes.Primary__c}"/>
+        
+        </apex:pageBlockTable>
+    
+    </div>
+    
+    </apex:pageBlock>
+</apex:form>
+</apex:page>

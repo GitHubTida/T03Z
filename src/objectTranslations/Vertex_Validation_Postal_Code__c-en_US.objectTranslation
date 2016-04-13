@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Vertex Validation Postal Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vertex Validation Postal Code</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- County --></label>
+        <name>County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel ID --></label>
+        <name>Siebel_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Code --></label>
+        <name>State__c</name>
+    </fields>
+    <layouts>
+        <layout>Vertex Validation Postal Code Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

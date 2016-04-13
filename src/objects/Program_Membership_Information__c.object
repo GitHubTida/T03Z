@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Program Membership Information</relationshipLabel>
+        <relationshipName>Program_Membership_Informations</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>BO_Error__c</fullName>
+        <label>BO Error</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>BO_Synch_Status__c</fullName>
+        <label>BO Synch Status</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <label>Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Certified Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complementary Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Specialization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date__c</fullName>
+        <label>Expiration Date</label>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Member_Status__c</fullName>
+        <label>Member Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Current Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Membership_Activation_Date__c</fullName>
+        <defaultValue>Now()</defaultValue>
+        <label>Membership Activation Date</label>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Membership_End_Date__c</fullName>
+        <label>Membership End Date</label>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Program_Name__c</fullName>
+        <formula>Partner_Program__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Partner Program Name</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Program__c</fullName>
+        <label>Program Name / Product Access</label>
+        <referenceTo>Partner_Program__c</referenceTo>
+        <relationshipLabel>Program Membership Informations</relationshipLabel>
+        <relationshipName>Program_Membership_Informations</relationshipName>
+        <required>true</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Program_Status__c</fullName>
+        <label>Program Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Purchasing_Method__c</fullName>
+        <label>Purchasing Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>SFDCSiebel_Sync_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>SFDCSiebel Sync Status</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_Membership_ID__c</fullName>
+        <label>Siebel Membership ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_Membership_Number__c</fullName>
+        <label>Siebel Membership Number</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <controllingField>Category__c</controllingField>
+            <picklistValues>
+                <fullName>Eligible</fullName>
+                <controllingFieldValues>Certified Product</controllingFieldValues>
+                <controllingFieldValues>Complementary Partner</controllingFieldValues>
+                <controllingFieldValues>Distributor</controllingFieldValues>
+                <controllingFieldValues>Reseller</controllingFieldValues>
+                <controllingFieldValues>Specialization</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Eligible</fullName>
+                <controllingFieldValues>Certified Product</controllingFieldValues>
+                <controllingFieldValues>Complementary Partner</controllingFieldValues>
+                <controllingFieldValues>Distributor</controllingFieldValues>
+                <controllingFieldValues>Reseller</controllingFieldValues>
+                <controllingFieldValues>Specialization</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Waiver</fullName>
+                <controllingFieldValues>Certified Product</controllingFieldValues>
+                <controllingFieldValues>Specialization</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tier_Change__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Tier Change?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Tier_Level__c</fullName>
+        <label>Tier</label>
+        <picklist>
+            <controllingField>Category__c</controllingField>
+            <picklistValues>
+                <fullName>Waiver</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registered</fullName>
+                <controllingFieldValues>Complementary Partner</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premier</fullName>
+                <controllingFieldValues>Complementary Partner</controllingFieldValues>
+                <controllingFieldValues>Reseller</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eligible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Eligible</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advanced</fullName>
+                <controllingFieldValues>Specialization</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorized</fullName>
+                <controllingFieldValues>Distributor</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Updated_by_Certification_Batch__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Updated by Certification Batch?</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Program Membership Information</label>
+    <nameField>
+        <displayFormat>PMI-{00000000}</displayFormat>
+        <label>Program Membership Information Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Program Membership Information</pluralLabel>
+    <recordTypes>
+        <fullName>Certified_Product</fullName>
+        <active>true</active>
+        <label>Certified Product</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Certified Product</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Status__c</picklist>
+            <values>
+                <fullName>Current Member</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchasing_Method__c</picklist>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Waiver</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tier_Level__c</picklist>
+            <values>
+                <fullName>Waiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Program</fullName>
+        <active>true</active>
+        <label>Program</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Complementary Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Status__c</picklist>
+            <values>
+                <fullName>Current Member</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchasing_Method__c</picklist>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Eligible</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tier_Level__c</picklist>
+            <values>
+                <fullName>Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Registered</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Specialization</fullName>
+        <active>true</active>
+        <label>Specialization</label>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Specialization</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Status__c</picklist>
+            <values>
+                <fullName>Current Member</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Purchasing_Method__c</picklist>
+            <values>
+                <fullName>Direct</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Eligible</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Waiver</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tier_Level__c</picklist>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <validationRules>
+        <fullName>Access_Status_Restriction_Specialization</fullName>
+        <active>true</active>
+        <description>product access status can’t be changed from Eligible to Waiver For Specialization</description>
+        <errorConditionFormula>AND(
+(RecordType.Name = &apos;Specialization&apos;) || (RecordType.Name = &apos;Certified Product&apos;) ,
+ISPICKVAL(PRIORVALUE(Status__c),&quot;Eligible&quot;),
+ISPICKVAL(Status__c,&quot;Waiver&quot;)  
+)</errorConditionFormula>
+        <errorDisplayField>Status__c</errorDisplayField>
+        <errorMessage>Status cannot be changed from Eligible to Waiver.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Certified_Product_Region</fullName>
+        <active>true</active>
+        <description>When a certified product is selcected but is not applicable for the Regions</description>
+        <errorConditionFormula>AND(
+ RecordType.Name =&quot;Certified Product&quot;,
+
+OR (
+AND (ISPICKVAL ( Account__r.Partner_Region__c ,&quot;NA&quot;), OR(Partner_Program__r.Name =&quot;RFIDPROD&quot;, Partner_Program__r.Name =&quot;PTP8&quot;)),
+
+AND (ISPICKVAL ( Account__r.Partner_Region__c ,&quot;EMEA&quot;),  Partner_Program__r.Name =&quot;PTP8&quot;),
+
+AND (ISPICKVAL ( Account__r.Partner_Region__c ,&quot;LATAM&quot;), OR(Partner_Program__r.Name =&quot;MPM&quot;, Partner_Program__r.Name =&quot;MSP&quot;,Partner_Program__r.Name =&quot;MWM&quot;,Partner_Program__r.Name =&quot;NX5P&quot;,Partner_Program__r.Name =&quot;PTP8&quot;,
+Partner_Program__r.Name =&quot;SAS&quot;))))</errorConditionFormula>
+        <errorDisplayField>Partner_Program__c</errorDisplayField>
+        <errorMessage>The selected product requiring product access training is not applicable for this region.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Developer_and_SI_Tier_Restriction</fullName>
+        <active>true</active>
+        <description>To restrict the applicable values for the programs</description>
+        <errorConditionFormula>(Partner_Program__r.Name =&apos;Developer&apos; &amp;&amp; ( ISPICKVAL(Tier_Level__c,&apos;Registered&apos;)|| ISPICKVAL(Tier_Level__c,&apos;Premier&apos;)))
+
+|| (Partner_Program__r.Name =&apos;System Integrator&apos;&amp;&amp; ( ISPICKVAL(Tier_Level__c,&apos;Registered&apos;)|| ISPICKVAL(Tier_Level__c,&apos;Premier&apos;)))</errorConditionFormula>
+        <errorDisplayField>Tier_Level__c</errorDisplayField>
+        <errorMessage>Update Tier field with None.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>EMEA_Broadline_Technology</fullName>
+        <active>true</active>
+        <description>Partner Region EMEA can not have an Program as Broadline Technology Reseller</description>
+        <errorConditionFormula>(ISPICKVAL(Account__r.Partner_Region__c, &apos;EMEA&apos;) &amp;&amp; 
+  Partner_Program__r.Name  = &apos;Broadline Technology Reseller&apos; &amp;&amp;   ISPICKVAL(Category__c, &apos;Reseller&apos;)  &amp;&amp;  RecordType.Name  = &apos;Program&apos; )</errorConditionFormula>
+        <errorDisplayField>Partner_Program__c</errorDisplayField>
+        <errorMessage>The selected program cannot be created for the EMEA region.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExpDate_Cannot_be_null_for_Waiver</fullName>
+        <active>true</active>
+        <description>Product Access Expiration Date is applicable only when the waiver is granted</description>
+        <errorConditionFormula>IF(  AND((ISPICKVAL(Status__c,&apos;Waiver&apos;)), 
+ISNULL( Expiration_Date__c ),
+ NOT( ISPICKVAL(PRIORVALUE(Status__c),&apos;Eligible&apos;)))   ,
+TRUE,
+ False)</errorConditionFormula>
+        <errorDisplayField>Expiration_Date__c</errorDisplayField>
+        <errorMessage>Expiration Date should not be blank when the Status is listed as Waiver.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExpDate_Validation_for_Waiver</fullName>
+        <active>true</active>
+        <description>Exp Date should be in future for waiver Product Access Status .</description>
+        <errorConditionFormula>AND(
+ISPICKVAL(Status__c,&apos;Waiver&apos;),
+DATEVALUE(Expiration_Date__c)  &lt; TODAY()
+)</errorConditionFormula>
+        <errorDisplayField>Expiration_Date__c</errorDisplayField>
+        <errorMessage>Expiration Date must not precede today&apos;s date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExpDate_blank_Specialization</fullName>
+        <active>true</active>
+        <description>Product Access Expiration date should be blank for Non- Waiver Product Access Status</description>
+        <errorConditionFormula>IF(
+ OR( (RecordType.Name = &apos;Program&apos;),
+    (RecordType.Name = &apos;Specialization&apos;)) ,
+AND(
+NOT(ISPICKVAL(Status__c,&apos;Waiver&apos;)),
+ NOT(ISNULL( Expiration_Date__c ))) 
+
+, false)</errorConditionFormula>
+        <errorDisplayField>Expiration_Date__c</errorDisplayField>
+        <errorMessage>Expiration Date should be blank when the Status is Eligible or Not Eligible.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ExpDate_changed_Certified_Product</fullName>
+        <active>true</active>
+        <description>Product Access Expiration Date can not be changed for Certified Product if the status is Eligible (as it is determined from the student LMS data)</description>
+        <errorConditionFormula>ISPICKVAL( Category__c,&apos;Certified Product&apos;) &amp;&amp; 
+ISPICKVAL(  Status__c ,&apos;Eligible&apos;) &amp;&amp; 
+NOT(ISNEW()) &amp;&amp; 
+($User.ProfileId = &apos;00e56000000HgjT&apos;)&amp;&amp;
+ ISCHANGED( Expiration_Date__c )</errorConditionFormula>
+        <errorDisplayField>Expiration_Date__c</errorDisplayField>
+        <errorMessage>Expiration Date cannot be changed.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ISV_Partner_Tier_Restriction</fullName>
+        <active>true</active>
+        <description>To restrict the applicable values for the ISV Partner programs</description>
+        <errorConditionFormula>Partner_Program__r.Name =&apos;ISV Partner&apos; &amp;&amp; ISPICKVAL(Tier_Level__c,&apos;Registered&apos;)</errorConditionFormula>
+        <errorDisplayField>Tier_Level__c</errorDisplayField>
+        <errorMessage>Update Tier with Premier or None for ISV Partner Programs</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ISV_Tier_Restriction</fullName>
+        <active>true</active>
+        <description>To restrict the applicable values for the programs</description>
+        <errorConditionFormula>(Partner_Program__r.Name =&apos;ISV&apos; &amp;&amp; ( ISPICKVAL(Tier_Level__c,&apos;&apos;)|| ISPICKVAL(Tier_Level__c,&apos;Premier&apos;)))</errorConditionFormula>
+        <errorDisplayField>Tier_Level__c</errorDisplayField>
+        <errorMessage>Update Tier with Registered for ISV Programs</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Independent_ServiceProvider_Restriction</fullName>
+        <active>true</active>
+        <errorConditionFormula>(Partner_Program_Name__c  = &apos;Independent Service Provider&apos; &amp;&amp;  Account__r.Is_ZISP__c = FALSE)</errorConditionFormula>
+        <errorMessage>To create a record for &apos;Independent Service Provider&apos; specialization, the partner must have the ZISP flag checked</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Member_Status_Expired</fullName>
+        <active>true</active>
+        <description>Member Status field can&apos;t be set to expired when creating a new program membership information record.</description>
+        <errorConditionFormula>ISNEW()  &amp;&amp; 
+ISPICKVAL( Member_Status__c, &apos;Expired&apos;)</errorConditionFormula>
+        <errorDisplayField>Member_Status__c</errorDisplayField>
+        <errorMessage>To create a new membership, Member Status must be Current Member.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Program_Category_Unique</fullName>
+        <active>true</active>
+        <description>A duplicate record is being created for the same community (category) (Distributor, Reseller, Complementary Partner)</description>
+        <errorConditionFormula>RecordType.Name = &apos;Program&apos; &amp;&amp; 
+ISPICKVAL (Member_Status__c,&quot;Current Member&quot;) 
+&amp;&amp; Tier_Change__c = False &amp;&amp; 
+ISNEW()&amp;&amp; 
+((Account__r.of_Active_Reseller__c &gt; 0 &amp;&amp; 
+ISPICKVAL(Category__c ,&apos;Reseller&apos;)) ||
+(Account__r.of_Active_Complementary_Partner__c &gt; 0 &amp;&amp; 
+ISPICKVAL(Category__c ,&apos;Complementary Partner&apos;)) ||
+(Account__r.of_Active_Distributor__c &gt; 0 &amp;&amp; 
+ISPICKVAL(Category__c ,&apos;Distributor&apos;)))</errorConditionFormula>
+        <errorDisplayField>Partner_Program__c</errorDisplayField>
+        <errorMessage>A record already exists for the selected community.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Program_Category_can_not_be_changed</fullName>
+        <active>true</active>
+        <description>Program and Category can’t be changed in an existing Program Membership Information record</description>
+        <errorConditionFormula>OR((ISCHANGED( Partner_Program__c )),(ISCHANGED( Category__c )))</errorConditionFormula>
+        <errorMessage>The Program and Category fields are not editable.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Purchasing_Method_Direct_Non_Financial</fullName>
+        <active>true</active>
+        <description>Direct as a purchasing method should be allowed only for the Financial Partners</description>
+        <errorConditionFormula>AND (ISPICKVAL (Purchasing_Method__c,&apos;Direct&apos;), Account__r.Financial_Customer_Flag__c = false, Account__r.Siebel_Row_Id__c != NULL)</errorConditionFormula>
+        <errorDisplayField>Purchasing_Method__c</errorDisplayField>
+        <errorMessage>Siebel record must be Financial to select Direct as the Purchasing Method for this account.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RFID_Specialist</fullName>
+        <active>true</active>
+        <description>Tier should not be blank for RFID Specialist program</description>
+        <errorConditionFormula>AND (Partner_Program__r.Name =&apos;RFID Specialist&apos;,  OR (ISPICKVAL(Tier_Level__c, &apos;None&apos;), ISPICKVAL(Tier_Level__c,&apos;&apos;)))</errorConditionFormula>
+        <errorDisplayField>Tier_Level__c</errorDisplayField>
+        <errorMessage>Update Tier with Advanced for RFID Specialists.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Specialization_Record_Restriction</fullName>
+        <active>true</active>
+        <description>Base level program membership is required to add any specializations or certified product</description>
+        <errorConditionFormula>OR((RecordType.Name = &apos;Specialization&apos; &amp;&amp;  Partner_Program_Name__c != &apos;Independent Service Provider&apos;), (RecordType.Name = &apos;Certified Product&apos;)) &amp;&amp; 
+(Account__r.Partner_Status__c = &apos;Inactive&apos;) 
+&amp;&amp;  ISPICKVAL (Member_Status__c,&quot;Current Member&quot;)</errorConditionFormula>
+        <errorMessage>To create a record for specialization or product access, the partner must be a distributor / reseller / complementary  partner type.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Tier_Validations</fullName>
+        <active>true</active>
+        <description>When the PIC selects a Tier that is not applicable for the program or specialization</description>
+        <errorConditionFormula>OR ( AND((Partner_Program__r.Name =&apos;Broadline Technology Reseller&apos;|| Partner_Program__r.Name =&apos;Registered Reseller&apos;)
+
+,ISPICKVAL(Tier_Level__c,&apos;Premier&apos;)),
+AND (Partner_Program__r.Name =&apos;Independent Service Provider&apos;|| Partner_Program__r.Name =&apos;Repair Services Specialist - Card Printer&apos; ||Partner_Program__r.Name =&apos;Repair Services Specialist - Label Printer&apos; ||  Partner_Program__r.Name =&apos;Repair Services Specialist - Mobile Printer&apos;|| Partner_Program__r.Name =&apos;Repair Services Specialist - Print Engine&apos;,ISPICKVAL(Tier_Level__c,&apos;Advanced&apos;))
+
+)</errorConditionFormula>
+        <errorDisplayField>Tier_Level__c</errorDisplayField>
+        <errorMessage>Update Tier field with None.</errorMessage>
+    </validationRules>
+</CustomObject>

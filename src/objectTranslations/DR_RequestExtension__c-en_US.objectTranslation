@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>DR_RequestExtension</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DR_RequestExtension</value>
+    </caseValues>
+    <fields>
+        <label><!-- DR_recordtype --></label>
+        <name>DR_recordtype__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days Extended for Solution Partners --></label>
+        <name>Days_Extended_for_Solution_Partners__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Days Extended --></label>
+        <name>Number_of_Days_Extended__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Partner-Marketingmaterialien</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>Account__c</name>
+        <relationshipLabel>Partner-Marketingmaterialien</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Anlage</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Kundenvorgang</label>
+        <name>Case__c</name>
+        <relationshipLabel>Partner-Marketingmaterialien</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Beschreibung</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Dokumenttyp</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>Geschäfts-/Marketingplan</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>Anwendungsbeispiel</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>Kundenreferenz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Sonstiges</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>Zebra-Lösungsreferenz</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Dateiname</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>Anzeigen</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>Logo?</label>
+        <name>isLogo__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Partner Collateral No --></nameFieldLabel>
+    <webLinks>
+        <label>Dokument hochladen</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>Logo/Dokument hochladen</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>Logo hochladen</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

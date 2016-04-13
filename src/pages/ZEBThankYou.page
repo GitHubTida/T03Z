@@ -1,0 +1,256 @@
+<apex:page showHeader="false"  sidebar="false"  language="{!appLang}" controller="ZEBThankYouController" title="{!$Label.Application_Head}">
+    <apex:pageMessages />
+     <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    
+     
+     <div class="ztopbanner">
+    <apex:define name="header">
+      <c:testheader />
+    </apex:define>
+    </div>
+    <!-- <apex:sectionHeader /> -->
+    
+    <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+     
+     <div class="zmainbody">
+       <!--- <apex:outputPanel rendered="{!$CurrentPage.parameters.PPLater = '1'}">
+        <apex:outputText >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Are_you_sure_you_want_to_finish_your_Partner_Profile_later}
+        </p>
+        </apex:outputText>
+        <apex:outputText styleClass="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left" value="{!$Label.OK}"></apex:outputText><br></br>
+        <apex:outputText styleClass="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left" value="{!$Label.Cancel}"></apex:outputText>
+        </apex:outputPanel>--->
+        
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.LFL = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center" escape="false">{!$Label.Legal_Save_and_Return} 
+        </p>
+        <!-- <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Legal_Save_and_Return1} 
+        </p> -->
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Legal_Already_Submitted1}<br/> <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.Sub = '1'}" >
+        <apex:outputText value="{!$Label.Legal_Already_Submitted11}" style="font-size:2em;margin: 1px 2px 1 1; text-align:center" escape="false"/>
+        <apex:outputText value="{!$Label.Legal_Already_Submitted13}" style="font-size:2em;margin: 1px 2px 1 1; text-align:center" escape="false"/>
+        </apex:outputText>
+
+        <apex:outputText rendered="{!$CurrentPage.parameters.PPSaveRet = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Save_and_Return} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Save_and_Return1}
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+
+        <apex:outputText rendered="{!$CurrentPage.parameters.DeclineTC = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Confirmation_Declining_T_Cs}  </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Confirmation_Declining_T_Cs2}  </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.RCDeclineTC = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Declining_T_Cs}  </p>        
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Declining_T_Cs1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.RC_Declining_T_Cs2}        
+        </p>
+        </apex:outputText>
+
+       <apex:outputText rendered="{!$CurrentPage.parameters.TransComplete = '1'}">
+       <apex:outputText value="{!$Label.Transition_Complete_thank_you4}" style="font-size:2em;margin: 1px 2px 1 1;text-align:center" escape="false"/>
+       </apex:outputText>
+
+        <apex:outputText rendered="{!$CurrentPage.parameters.DeclineAddendum = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Confirmation_Decline_all_Addendums} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Confirmation_Decline_all_Addendums1}
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText> 
+       
+        <apex:outputText rendered="{!$CurrentPage.parameters.RCDeclineServ = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Decline_Serv_Spec} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Declining_T_Cs1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.RC_Declining_T_Cs2}        
+        </p>
+        </apex:outputText>
+                
+        <apex:outputText rendered="{!$CurrentPage.parameters.RCDeclineAddendum = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Decline_all_Addendums} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Declining_T_Cs1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.RC_Declining_T_Cs2}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.RCDeclineFed = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Decline_Fed_Addendum} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Declining_T_Cs1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.RC_Declining_T_Cs2}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.DeclineFed = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Decline_Fed_Addendum} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Confirmation_Declining_all_Addendum_New_Partners_1}
+        </p>
+       <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+       
+        <apex:outputText rendered="{!$CurrentPage.parameters.AppThankyou1 = '1'}" >
+        <p style="font-weight:bold;font-size:2em;text-align:center;">{!$Label.THANK_YOU}</p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Application_Process_Thank_You} 
+        </p>
+        <p style="font-size:2em;margin: 1px 2px 1 1;text-align:center;">{!appName}</p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Application_Process_Thank_You1} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        <!--
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">
+            <apex:outputText value="{!$Label.Onboarding_downtime_message}" escape="FALSE">
+                <apex:param value="{!$Label.MPE_Compl_EXT_NAMR_PIC_Link}" />       
+            </apex:outputText>
+        </p> -->
+        </apex:outputText>
+        
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.AppFinishLater = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.AppFinishLater_Save1} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.AppFinishLater_Save2}
+        </p>
+        </apex:outputText> 
+        
+
+        <apex:outputText rendered="{!$CurrentPage.parameters.DeclineNewTCs = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Warning_Declining_T_Cs_New_Partners} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Warning_Declining_T_Cs_New_Partners_1}
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.transitionError = '1'}"  >
+        <apex:outputText value="{!$Label.Membership_NotFound_ThankYou10}" style="font-size:2em;margin: 1px 2px 1 1;text-align:center" escape="false"/>
+        <!--  <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center; font-weight:bold">{!$Label.Membership_NotFound_ThankYou} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Membership_NotFound_ThankYou4} 
+                
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Membership_NotFound_ThankYou1}
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Membership_NotFound_ThankYou5}&nbsp;<a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> 
+          {!$Label.Membership_NotFound_ThankYou2}      
+        </p>-->
+        </apex:outputText>
+     
+        
+        <!---<apex:outputPanel rendered="{!$CurrentPage.parameters.DeclineNewAdd = '1'}">
+        <apex:outputText >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Warning_Declining_Addendums_New_Partners} 
+        </p>
+        </apex:outputText><br></br>
+        <apex:outputText styleClass="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left" value="{!$Label.Warning_Declining_Addendums_New_Partners1}"> </apex:outputText><br></br>
+        <apex:outputText styleClass="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left" value="{!$Label.Warning_Declining_Addendums_New_Partners_2}"></apex:outputText><br></br>
+        <apex:outputText styleClass="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left" value="{!$Label.Warning_Declining_Addendums_New_Partners_3}"></apex:outputText><br></br>
+        </apex:outputPanel>--->
+        
+        
+     
+        <apex:outputText rendered="{!$CurrentPage.parameters.CDeclineNewAdd = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Confirmation_Declining_all_Addendum_New_Partners2} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Confirmation_Declining_all_Addendum_New_Partners} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Confirmation_Declining_all_Addendum_New_Partners_1}<a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted4}
+        </p>
+       <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+    
+
+        <apex:outputText rendered="{!$CurrentPage.parameters.AppThankyou2 = '1'}" >
+        <p style="font-weight:bold;font-size:2em;text-align:center;">{!$Label.THANK_YOU}</p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Thank_You_New_Partners} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.membershipChange = '1'}" >
+        <p style="font-weight:bold;font-size:2em;text-align:left;">{!$Label.THANK_YOU}</p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Membership_Change_Thankyou1} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Membership_Change_Thankyou2} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Membership_Change_Thankyou3}       
+        </p>
+        <!--
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">
+            <apex:outputText value="{!$Label.Onboarding_downtime_message}" escape="FALSE">
+                <apex:param value="{!$Label.MPE_Compl_EXT_NAMR_PIC_Link}" />       
+            </apex:outputText>
+        </p> -->
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.rclegal = '1'}" >
+        <p style="font-weight:bold;font-size:2em;text-align:left;">{!$Label.THANK_YOU}</p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.RC_Legal_Thank_You} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.Legal_Already_Submitted1} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>
+        </apex:outputText>
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.memnotfound = '1'}" >
+        <apex:outputtext value="{!$Label.Membership_NotFound_ThankYou10}" style="font-size:2em;margin: 1px 2px 1 1;text-align:center; font-weight:bold" escape="false"/>
+        <!--  <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center; font-weight:bold">{!$Label.Membership_NotFound_ThankYou} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Membership_NotFound_ThankYou4} 
+                
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Membership_NotFound_ThankYou1}
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Membership_NotFound_ThankYou5}&nbsp;<a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> 
+          {!$Label.Membership_NotFound_ThankYou2}      
+        </p>-->
+        </apex:outputText>
+        
+        
+        <apex:outputText rendered="{!$CurrentPage.parameters.AIP = '1'}" >
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.AIP_Part1} 
+        </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:left">{!$Label.AIP_Part2} <a href="http://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.AIP_PIC}</a>
+         {!$Label.AIP_Part3}       
+        </p>
+        </apex:outputText>
+        
+       
+    </div>
+    <div class="zbottombanner">
+    <apex:define name="footer">
+        <c:testfooter />
+    </apex:define>
+    </div>
+    
+</apex:page>

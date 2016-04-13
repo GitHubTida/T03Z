@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>To get the description of process status  from the Address doctor lookup</description>
+    <fields>
+        <fullName>Description_for_Process_status_C1__c</fullName>
+        <label>Description for Process status C1</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_C2__c</fullName>
+        <label>Description for Process status C2</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_C3__c</fullName>
+        <label>Description for Process status C3</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_C4__c</fullName>
+        <label>Description for Process status C4</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_I1__c</fullName>
+        <label>Description for Process status I1</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_I2__c</fullName>
+        <label>Description for Process status I2</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_I3__c</fullName>
+        <label>Description for Process status I3</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_I4__c</fullName>
+        <label>Description for Process status I4</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_N1__c</fullName>
+        <label>Description for Process status N1</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_N2__c</fullName>
+        <label>Description for Process status N2</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_Q0__c</fullName>
+        <label>Description for Process status Q0</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_Q1__c</fullName>
+        <label>Description for Process status Q1</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_Q2__c</fullName>
+        <label>Description for Process status Q2</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_Q3__c</fullName>
+        <label>Description for Process status Q3</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_V1__c</fullName>
+        <label>Description for Process status V1</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_V2__c</fullName>
+        <label>Description for Process status V2</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_V3__c</fullName>
+        <label>Description for Process status V3</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_V4__c</fullName>
+        <label>Description for Process status V4</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_W1__c</fullName>
+        <label>Description for Process status W1</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_W7__c</fullName>
+        <label>Description for Process status W7</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_W8__c</fullName>
+        <label>Description for Process status W8</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Description_for_Process_status_W9__c</fullName>
+        <label>Description for Process status W9</label>
+        <type>TextArea</type>
+    </fields>
+    <label>AddressDoctorLookup connection</label>
+</CustomObject>

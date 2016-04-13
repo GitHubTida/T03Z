@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>BucketField_71627875</acrossGroupingContext>
+        <calculatedFormula>RowCount / PARENTGROUPVAL(RowCount, BucketField_97202115, COLUMN_GRAND_SUMMARY)</calculatedFormula>
+        <datatype>percent</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>BucketField_97202115</downGroupingContext>
+        <isActive>true</isActive>
+        <masterLabel>Percent Invited</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Owner</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Status</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers*Contact$DSE__DS_Company__c</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Email</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Owner.Region__c</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Owner.Sub_Region__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Campaign$Name</column>
+            <operator>equals</operator>
+            <value>OS Migration Initiative - NA</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Campaign.ContactCampaignMembers$Status</column>
+            <operator>notEqual</operator>
+            <value>Do Not Include</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>BucketField_56636438</column>
+            <operator>equals</operator>
+            <value>Retail &amp; Hospitality,Healthcare,Channel,Inside Sales,T&amp;L,US OEM,Manufacturing</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_71627875</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_97202115</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>chartdata_PercentInvited_Vertical</name>
+    <params>
+        <name>scopeid</name>
+        <value></value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Campaign_History_Custom__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <endDate>2016-03-08</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-03-08</startDate>
+    </timeFrameFilter>
+</Report>

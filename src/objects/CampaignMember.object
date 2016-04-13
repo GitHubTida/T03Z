@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Lead_Status_Formula__c</fullName>
+        <formula>IF(
+ISBLANK(LeadId), &quot;Converted&quot;, TEXT(Lead.Status))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Lead Status</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Sub_Region__c</fullName>
+        <formula>TEXT( Contact.Owner.Sub_Region__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Owner Sub-Region</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <formula>TEXT( Contact.Owner.Region__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Region</label>
+        <type>Text</type>
+    </fields>
+</CustomObject>

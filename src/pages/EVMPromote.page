@@ -1,0 +1,186 @@
+<apex:page standardController="Price_Exception__c" extensions="ZEB_EVMPromoteController" showHeader="false" sidebar="false" action="{!promote}">
+     <c:AjaxLoader />
+   
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.base.css')}" type="text/css" />
+    <link rel="stylesheet" href="{!URLFOR($Resource.jqwidget, '/styles/jqx.energyblue.css')}" type="text/css" />
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget,  '/scripts/jquery-1.11.1.min.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jqwidget, '/scripts/jqx-all.js')}"  />
+    <style>
+        .column {
+            background-color: #c7c7c7;
+        }
+    </style>
+   
+   <script>
+    $(function() {
+    var theme = "";
+    var  data = {!ResellerlistJson}; 
+    var source =
+        {
+            localdata: data,
+            datatype: "array",
+            datafields:
+            [
+                { name: 'Id', type: 'string' },
+                { name: 'SKU_Name__c', type: 'string' },
+                { name: 'Quantity__c', type: 'number' },
+                { name: 'Promote_Flag__c', type: 'boolean' },
+                { name: 'Total_Price__c', type: 'float' },
+                { name: 'Unit_List_Price__c', type: 'float' },
+                { name: 'Unit_Sell_Price__c', type: 'float' },
+                { name: 'Unit_Std_Price__c', type: 'float'}
+           ]
+        };
+        var dataAdapter = new $.jqx.dataAdapter(source);
+        $("#jqxgrid").jqxGrid(
+        {
+            width: '98%',
+            height :350,
+            groupable: true,
+            sortable: true,
+            enabletooltips: true,
+            editable: true,
+            source: dataAdapter,
+            columnsresize: true,
+            columnsreorder: true,
+            selectionmode: 'multiplecellsadvanced',
+            columns: [
+                { text: 'Promote', datafield: 'Promote_Flag__c',  width: '160', cellsalign: 'right', columntype: 'checkbox' },
+                { text: 'SKU Name', datafield: 'SKU_Name__c',  width: '180',pinned: true,editable:false, editable:false },
+                { text: 'Quantity', datafield: 'Quantity__c',  width: '180', cellsalign: 'right',cellclassname: 'column', editable:false},
+                { text: 'Total Price', datafield: 'Total_Price__c',  width: '190', cellsalign: 'right',cellclassname: 'column', editable:false},
+                { text: 'Unit List Price', datafield: 'Unit_List_Price__c',  width: '190', cellsalign: 'right', cellclassname: 'column',editable:false },
+                { text: 'Unit Sell Price', datafield: 'Unit_Sell_Price__c',  width: '190', cellsalign: 'right', cellclassname: 'column',editable:false },
+                { text: 'Unit Std Price', datafield: 'Unit_Std_Price__c',  width: '195', cellsalign: 'right', cellclassname: 'column',editable:false}
+            ]
+        });
+    });
+    </script>    
+    <apex:form >
+        <p>
+           <h1 style="font-size: .9em; font-weight: bold; color: #4a4a56; padding-left: 25px;">Promote Product</h1><br/> 
+           <h2 style="font-size: 1.8em;font-weight:normal;line-height:1.1em;padding-left: 25px;"><apex:outputField value="{!Price_Exception__c.Name}" /></h2>
+        </p>
+        <div id="responseErrors"></div>
+        <div style="width:100%;">
+            <apex:pageBlock >
+                <apex:pageBlockSection columns="1">
+                    <apex:pageBlockSection >
+                        <apex:outputField value="{!Price_Exception__c.Name}"/>
+                        <apex:outputField value="{!Price_Exception__c.PE_Deal_ID__c}"/>
+                    </apex:pageBlockSection>   
+                    <apex:pageBlockSection >
+                        <apex:outputField value="{!Price_Exception__c.Quote_Amount__c}"/>
+                        <apex:outputField value="{!Price_Exception__c.Status__c}"/>
+                    </apex:pageBlockSection>   
+                    <apex:pageBlockSection >
+                        <apex:outputField value="{!Price_Exception__c.Start_Date__c}"/>
+                        <apex:outputField value="{!Price_Exception__c.End_Date__c}"/>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection >
+                        <apex:outputText value="{!Price_Exception__c.opportunity__r.account.Name}"/>
+                        <apex:outputText value="{!Price_Exception__c.opportunity__r.Name}"/>
+                    </apex:pageBlockSection>                    
+                    <div id='jqxWidget'>
+                        <div id="jqxgrid"></div>
+                    </div>
+              </apex:pageBlockSection>   
+           </apex:pageBlock>
+        </div>
+        <div style="width:100%;text-align:center">
+            <apex:commandButton id="btnSave" value="Promote Selected" onclick="SaveLineItem();return false;"/>
+            <apex:commandButton id="btnSaveAll" value="Promote All" onclick="SaveAllLineItem();return false;"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </div>
+    </apex:form>
+    <script>
+   
+        function SaveLineItem() {
+            showLoader();
+            
+            var updateRecords = [];
+            var griddata = jQuery("#jqxgrid").jqxGrid('getdatainformation'); 
+            for (var i = 0; i < griddata.rowscount; i++){
+                var update_QLI = {};     
+                var rowsdata = jQuery('#jqxgrid').jqxGrid('getrenderedrowdata', i);
+                update_QLI.Id =rowsdata.Id ;
+                console.log(rowsdata.Id);
+                update_QLI.Promote_Flag__c =rowsdata.Promote_Flag__c;
+                console.log(rowsdata.Promote_Flag__c);
+                update_QLI.SKU_Name__c =rowsdata.SKU_Name__c;
+                console.log(rowsdata.SKU_Name__c);
+                update_QLI.Total_Price__c =rowsdata.Total_Price__c;
+                console.log(rowsdata.Total_Price__c);
+                update_QLI.Quantity__c =rowsdata.Quantity__c;
+                console.log(rowsdata.Quantity__c);
+                update_QLI.Unit_List_Price__c =rowsdata.Unit_List_Price__c;
+                console.log(rowsdata.Unit_List_Price__c);
+                update_QLI.Unit_Sell_Price__c =rowsdata.Unit_Sell_Price__c;
+                console.log(rowsdata.Unit_Sell_Price__c);
+                update_QLI.Unit_Std_Price__c =rowsdata.Unit_Std_Price__c;
+                console.log(rowsdata.Unit_Std_Price__c);
+                //Nimesh : add to list only if the promote flag is true
+                if(rowsdata.Promote_Flag__c)
+                    updateRecords.push(update_QLI);
+            }
+            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ZEB_EVMPromoteController.LoadToOpportunityLineItems}','{!Price_Exception__c.Opportunity__c}','{!Price_Exception__c.Id}', updateRecords,
+                function(result, event){
+                    if(event.status){
+                        window.top.location = '/{!Price_Exception__c.Opportunity__c}';
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }else {
+                        document.getElementById("responseErrors").innerHTML = event.message;
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+        
+        function SaveAllLineItem() {
+            showLoader();
+            
+            var updateRecords = [];
+            var promoteFlag = true;
+            var griddata = jQuery("#jqxgrid").jqxGrid('getdatainformation'); 
+            for (var i = 0; i < griddata.rowscount; i++){
+                var update_QLI = {};     
+                var rowsdata = jQuery('#jqxgrid').jqxGrid('getrenderedrowdata', i);
+                update_QLI.Id =rowsdata.Id ;
+                console.log(rowsdata.Id);
+                update_QLI.Promote_Flag__c =promoteFlag;
+                console.log(promoteFlag);
+                update_QLI.SKU_Name__c =rowsdata.SKU_Name__c;
+                console.log(rowsdata.SKU_Name__c);
+                update_QLI.Total_Price__c =rowsdata.Total_Price__c;
+                console.log(rowsdata.Total_Price__c);
+                update_QLI.Quantity__c =rowsdata.Quantity__c;
+                console.log(rowsdata.Quantity__c);
+                update_QLI.Unit_List_Price__c =rowsdata.Unit_List_Price__c;
+                console.log(rowsdata.Unit_List_Price__c);
+                update_QLI.Unit_Sell_Price__c =rowsdata.Unit_Sell_Price__c;
+                console.log(rowsdata.Unit_Sell_Price__c);
+                update_QLI.Unit_Std_Price__c =rowsdata.Unit_Std_Price__c;
+                console.log(rowsdata.Unit_Std_Price__c);
+                updateRecords.push(update_QLI);
+            }
+            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.ZEB_EVMPromoteController.LoadToOpportunityLineItems}','{!Price_Exception__c.Opportunity__c}','{!Price_Exception__c.Id}', updateRecords,
+                function(result, event){
+                    if(event.status){
+                        window.top.location = '/{!Price_Exception__c.Opportunity__c}';
+                    }
+                    else if (event.type === 'exception') {
+                        document.getElementById("responseErrors").innerHTML = 
+                        event.message + "<br/>\n<pre>" + event.where + "</pre>";
+                    }else {
+                        document.getElementById("responseErrors").innerHTML = event.message;
+                    }
+                }, 
+                {escape: true}
+            );
+        }
+    </script> 
+
+</apex:page>

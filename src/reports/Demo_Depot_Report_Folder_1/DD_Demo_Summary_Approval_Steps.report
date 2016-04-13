@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>ProcessInstanceNode.ElapsedTimeInDays:AVG</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <masterLabel>Avg. Days</masterLabel>
+        <scale>3</scale>
+    </aggregates>
+    <columns>
+        <field>ProcessInstance.Nodes$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>ProcessInstance.Nodes$CompletedDate</field>
+    </columns>
+    <columns>
+        <field>ProcessInstance.Nodes$ElapsedTimeInDays</field>
+    </columns>
+    <columns>
+        <field>ProcessInstance.Nodes$NodeStatus</field>
+    </columns>
+    <currency>USD</currency>
+    <description>SE Approval and RSM Approval</description>
+    <filter>
+        <criteriaItems>
+            <column>ProcessInstance.Nodes$ProcessNode</column>
+            <operator>equals</operator>
+            <value>Manager Approval,SE Approval,Program Admin Approval</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>ProcessInstance.Nodes$ProcessNode</field>
+        <sortOrder>Desc</sortOrder>
+    </groupingsDown>
+    <name>Demo Summary (Approval Steps)</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>DD_Approval_Completion_Cycle__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>ProcessInstance$CompletedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

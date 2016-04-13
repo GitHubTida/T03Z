@@ -1,0 +1,31 @@
+<apex:page sidebar="false">
+<apex:image id="theImage" value="https://na15.salesforce.com/resource/1405804067000/zprinters"/>
+<br></br>
+<table border="0" bordercolor="#FFCC00"  width="100%" cellpadding="3" cellspacing="3">
+    <tr>
+        <td><font size="3"><b>Reseller Applicant Training Guide &nbsp; <apex:outputlink value="{!$Resource.Resellerpartnerobboarding}" id="theLink1" target="_blank">Click here</apex:outputlink> </b></font></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><font size="3"><b>Independent Software Applicant Training Guide &nbsp;<apex:outputlink value="{!$Resource.ISVonboarding}" id="theLink2" target="_blank">Click here</apex:outputlink></b></font></td>        
+        <td></td>
+    </tr>
+     <tr>
+        <td></td>
+        <td></td>
+    </tr>
+         <tr>
+        <td></td>
+        <td></td>
+    </tr>
+         <tr>
+        <td></td>
+        <td></td>
+    </tr>
+         <tr>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+</apex:page>

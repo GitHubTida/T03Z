@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Partner Program</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Partner Programs</value>
+    </caseValues>
+    <fields>
+        <label><!-- Category/Classification --></label>
+        <name>Category_Classification__c</name>
+        <picklistValues>
+            <masterLabel>Certified Product</masterLabel>
+            <translation><!-- Certified Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complementary Partner</masterLabel>
+            <translation><!-- Complementary Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Influencer</masterLabel>
+            <translation><!-- Influencer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialization</masterLabel>
+            <translation><!-- Specialization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Specialization? --></label>
+        <name>Is_Specialization__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Effective End Date --></label>
+        <name>Program_Effective_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Effective Start Date --></label>
+        <name>Program_Effective_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialization Category --></label>
+        <name>Specialization_Category__c</name>
+        <picklistValues>
+            <masterLabel>Product Focus</masterLabel>
+            <translation><!-- Product Focus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Delivery Authorization</masterLabel>
+            <translation><!-- Service Delivery Authorization --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Capability</masterLabel>
+            <translation><!-- Technical Capability --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Partner Program Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

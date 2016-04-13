@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Ablative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <possessive>None</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <possessive>First</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <possessive>Second</possessive>
+        <value><!-- Vertical Hierarchy --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <picklistValues>
+            <masterLabel>All non product revenue sources</masterLabel>
+            <translation>Tüm ürün harici gelir kaynakları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Animal Management</masterLabel>
+            <translation>Hayvan Yönetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Asset and Facility Management</masterLabel>
+            <translation>Varlık ve Tesis Yönetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Baggage Reconciliation</masterLabel>
+            <translation>Bagaj Yönetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Breast Milk Tracking</masterLabel>
+            <translation>Anne Sütü İzleme</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Care Collaboration</masterLabel>
+            <translation>Bakım İşbirliği</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Check Scanning and Printing</masterLabel>
+            <translation>Çek Tarama ve Baskısı</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Couponing Loyalty and Membership Cards</masterLabel>
+            <translation>Kuponlar Mağaza ve Üyelik Kartları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cross Docking</masterLabel>
+            <translation>Çapraz Yükleme</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Data Security</masterLabel>
+            <translation>Veri Güvenliği</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dietary and allergens</masterLabel>
+            <translation>Diyet ve Alerji</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Direct Store Delivery</masterLabel>
+            <translation>Doğrudan Mağazaya Teslim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Document and Records Management</masterLabel>
+            <translation>Belge ve Kayıt Yönetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Facility Security</masterLabel>
+            <translation>Tesis Güvenliği</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Sales Automation</masterLabel>
+            <translation>Saha Satış Otomasyonu</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Field Service</masterLabel>
+            <translation>Saha Hizmetleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Cards</masterLabel>
+            <translation>Finansal Kartlar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fleet Management</masterLabel>
+            <translation>Filo Yönetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gift Registry</masterLabel>
+            <translation>Hediye Kaydı</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home delivery</masterLabel>
+            <translation>Eve Teslim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Identification Movement and Access Control</masterLabel>
+            <translation>Tanıma Hareket ve Erişim Denetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Information Identification</masterLabel>
+            <translation>Bilgi Tanıma</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance Cards</masterLabel>
+            <translation>Sigorta Kartları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory Management -  Point of Care</masterLabel>
+            <translation>Envanter Yönetimi -  Bakım Noktası</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory Management -  Warehouse</masterLabel>
+            <translation>Envanter Yönetimi -  Depo</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lab Management</masterLabel>
+            <translation><!-- Lab Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Managed Services</masterLabel>
+            <translation><!-- Managed Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medication Administration</masterLabel>
+            <translation><!-- Medication Administration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchandising and Planograms</masterLabel>
+            <translation><!-- Merchandising and Planograms --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile HMI</masterLabel>
+            <translation><!-- Mobile HMI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile Specimen Collection</masterLabel>
+            <translation><!-- Mobile Specimen Collection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Network Management and Wireless Communications</masterLabel>
+            <translation><!-- Network Management and Wireless Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Identification</masterLabel>
+            <translation><!-- Patient Identification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy Management</masterLabel>
+            <translation><!-- Pharmacy Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Point of Sale</masterLabel>
+            <translation><!-- Point of Sale --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prescription Pharmacy</masterLabel>
+            <translation><!-- Prescription Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricing</masterLabel>
+            <translation><!-- Pricing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Process Compliance</masterLabel>
+            <translation><!-- Process Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proof of Delivery</masterLabel>
+            <translation><!-- Proof of Delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality Assurance</masterLabel>
+            <translation><!-- Quality Assurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Raw Material Management</masterLabel>
+            <translation><!-- Raw Material Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Receiving/Shipping</masterLabel>
+            <translation><!-- Receiving/Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reverse Logistics Merchandise Returns</masterLabel>
+            <translation><!-- Reverse Logistics Merchandise Returns --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Specimen and Biologics Management</masterLabel>
+            <translation><!-- Sample Specimen and Biologics Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Service</masterLabel>
+            <translation><!-- Self Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Staff Communication</masterLabel>
+            <translation><!-- Staff Communication --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stored Value and Gift Cards</masterLabel>
+            <translation><!-- Stored Value and Gift Cards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ticketing/Citations</masterLabel>
+            <translation><!-- Ticketing/Citations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Traceability</masterLabel>
+            <translation><!-- Traceability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Visibility and Intelligence</masterLabel>
+            <translation><!-- Visibility and Intelligence --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehouse Management</masterLabel>
+            <translation><!-- Warehouse Management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless Communication Infrastructure</masterLabel>
+            <translation><!-- Wireless Communication Infrastructure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yard Management</masterLabel>
+            <translation><!-- Yard Management --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vertical Segment --></label>
+        <name>Vertical_Segment__c</name>
+        <picklistValues>
+            <masterLabel>&lt;&lt;Blank&gt;&gt;column AR</masterLabel>
+            <translation><!-- &lt;&lt;Blank&gt;&gt;column AR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acute Care: Hospitals - Mental Health</masterLabel>
+            <translation>Akut Bakım: Hastaneler - Ruh Sağlığı</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Acute Care: Hospitals - Physical Health</masterLabel>
+            <translation>Akut Bakım: Hastaneler - Fiziksel Sağlık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation>Tarım</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air</masterLabel>
+            <translation>Havacılık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Blood Banks and Donation Centers</masterLabel>
+            <translation>Ayakta Tedavi: Kan Bankaları ve Kan Bağış Merkezleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Dialysis</masterLabel>
+            <translation>Ayakta Tedavi: Diyaliz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Emergency and Ambulatory Services</masterLabel>
+            <translation>Ayakta Tedavi: Acil Servis ve Ayakta Tedavi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Out Patient Surgery</masterLabel>
+            <translation>Ayakta Tedavi: Ayakta Cerrahi Müdahale</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Physician Offices and Clinics</masterLabel>
+            <translation>Ayakta Tedavi: Hekim Ofisleri ve Klinikler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Reference and Diagnostic Labs</masterLabel>
+            <translation>Ayakta Tedavi: Görüntüleme ve Tanılama Laboratuvarları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ambulatory Care: Urgent Care</masterLabel>
+            <translation>Ayakta Tedavi: Acil Bakım</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Amusement Parks, Museums, and Zoos</masterLabel>
+            <translation>Lunaparklar, Müzeler ve Hayvanat Bahçeleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Assisted Living</masterLabel>
+            <translation>Yaşlı Bakım Merkezi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Associations</masterLabel>
+            <translation>Birlikler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Auto</masterLabel>
+            <translation>Otomotiv</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blood Banks and Donation Centers</masterLabel>
+            <translation>Kan Bankaları ve Kan Bağış Merkezleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation>Kimyasallar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications and Entertainment</masterLabel>
+            <translation>İletişim ve Eğlence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation>İnşaat</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consumer Products</masterLabel>
+            <translation>Tüketici Ürünleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dialysis</masterLabel>
+            <translation>Diyaliz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation>Elektronik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency and Ambulatory Services</masterLabel>
+            <translation>Acil Servis ve Ayakta Tedavi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Federal</masterLabel>
+            <translation>Federal</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Services</masterLabel>
+            <translation>Finansal Hizmetler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food and Beverage</masterLabel>
+            <translation>Gıda ve İçecek</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forestry</masterLabel>
+            <translation>Ormancılık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Higher Education</masterLabel>
+            <translation>Yüksek Eğitim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Health</masterLabel>
+            <translation>Evde Sağlık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitals - Mental Health</masterLabel>
+            <translation>Hastaneler - Ruh Sağlığı</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitals - Physical Health</masterLabel>
+            <translation>Hastaneler - Fiziksel Sağlık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial Machinery</masterLabel>
+            <translation>Endüstriyel Makineler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Library</masterLabel>
+            <translation>Kütüphane</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lodging</masterLabel>
+            <translation>Konaklama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care: Assisted Living</masterLabel>
+            <translation>Uzun Süreli Bakım: Yaşlı Bakım Merkezi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care: Nursing Homes</masterLabel>
+            <translation>Uzun Süreli Bakım: Bakımevleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Long Term Care: Skilled Nursing / Intermediate Care</masterLabel>
+            <translation>Uzun Süreli Bakım: Rehabilitasyon Merkezleri / Geçici Bakım</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine</masterLabel>
+            <translation>Denizcilik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical Device Manufacture / OEM</masterLabel>
+            <translation>Tıbbi Cihaz Üretimi / OEM</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Metal Products</masterLabel>
+            <translation>Metal Ürünler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mining</masterLabel>
+            <translation>Madencilik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Patient Care: Medical Device Manufacture / OEM</masterLabel>
+            <translation>Hasta Harici Bakım: Tıbbi Cihaz Üretimi / OEM</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Patient Care: Pharmaceutical Repackager</masterLabel>
+            <translation>Hasta Harici Bakım: İlaç Yeniden Ambalajlama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Patient Care: Pharmacy</masterLabel>
+            <translation>Hasta Harici Bakım: Eczane</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-Store Front Retailers</masterLabel>
+            <translation>Mağazasız Perakendeciler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nursing Homes</masterLabel>
+            <translation>Bakımevleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oil and Gas</masterLabel>
+            <translation>Benzin ve Gaz</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Out Patient Surgery</masterLabel>
+            <translation>Ayakta Cerrahi Müdahale</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parking Lots/Garages</masterLabel>
+            <translation>Otoparklar/Garajlar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmaceutical Repackager</masterLabel>
+            <translation>İlaç Yeniden Ambalajlama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmaceutical and Medical Devices</masterLabel>
+            <translation>İlaç ve Tıbbi Cihazlar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation>Eczane</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Physician Offices and Clinics</masterLabel>
+            <translation>Hekim Ofisleri ve Klinikler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plastic, Glass, and Pottery</masterLabel>
+            <translation>Plastik, Cam ve Seramik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post</masterLabel>
+            <translation>Posta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Education</masterLabel>
+            <translation>Temel Eğitim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Services</masterLabel>
+            <translation>Profesyonel Hizmetler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Administration and Safety</masterLabel>
+            <translation>Kamu Yönetimi ve Güvenlik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Transit</masterLabel>
+            <translation>Toplu Taşımacılık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Publishing</masterLabel>
+            <translation>Yayıncılık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Railroad</masterLabel>
+            <translation>Demiryolları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reference and Diagnostic Labs</masterLabel>
+            <translation>Görüntüleme ve Tanılama Laboratuvarları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restaurants and Bars</masterLabel>
+            <translation>Restoran ve Barlar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Department Stores and Apparel</masterLabel>
+            <translation>Perakende Mağazaları:Büyük Mağazalar ve Giyim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Drug Stores/Retail Pharmacy</masterLabel>
+            <translation>Perakende Mağazaları:Eczaneler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Electronics and Entertainment</masterLabel>
+            <translation>Perakende Mağazaları:Elektronik ve Eğlence</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Gas and Convenience Stations</masterLabel>
+            <translation>Perakende Mağazaları:Benzin İstasyonları ve Küçük Marketler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Grocery/Supermarket</masterLabel>
+            <translation>Perakende Mağazaları:Bakkal/Süpermarket</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Home Improvement</masterLabel>
+            <translation>Perakende Mağazaları:Ev ve Yapı Marketler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Mass Merchants/Superstores</masterLabel>
+            <translation>Perakende Mağazaları:Toplu Satış/Hipermarketler</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail Storefront: Specialty Stores</masterLabel>
+            <translation>Perakende Mağazaları:Özel Ürün Mağazaları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Bureaus</masterLabel>
+            <translation>Hizmet Büroları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Skilled Nursing / Intermediate Care</masterLabel>
+            <translation>Rehabilitasyon Merkezleri / Geçici Bakım</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports and Entertainment: Players and Player Unions</masterLabel>
+            <translation>Spor ve Eğlence: Sporcular ve Sporcu Birlikleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sports and Entertainment: Venues</masterLabel>
+            <translation>Sport &amp; Eğlence: Gösteri ve etkinlik alanları</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State and Local Government</masterLabel>
+            <translation>Merkezi ve Yerel Yönetim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Textiles</masterLabel>
+            <translation>Tekstil</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Theaters and Cinemas</masterLabel>
+            <translation>Tiyatro ve Sinemalar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Third-party Logistics</masterLabel>
+            <translation>Üçüncü Şahıs Lojistik</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation Equipment - Auto Manufacturing</masterLabel>
+            <translation>Taşımacılık Ekipmanı - Otomobil Üretimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation Equipment - Other</masterLabel>
+            <translation>Taşımacılık Ekipmanı - Diğer</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urgent Care</masterLabel>
+            <translation>Acil Bakım</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation>Altyapı Hizmetleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Veterinary Services</masterLabel>
+            <translation>Veterinerlik Hizmetleri</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehousing and Distribution Centers</masterLabel>
+            <translation>Depolama ve Dağıtım Merkezleri</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Vertical --></label>
+        <name>Vertical__c</name>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation>Eğitim</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation>Kamu Yönetimi</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation>Sağlık</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation>Konaklama &amp; Ağırlama</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation>İmalat</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation>Perakende</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Providers</masterLabel>
+            <translation>Hizmet Sağlayıcılar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation and Logistics</masterLabel>
+            <translation>Taşımacılık ve Lojistik</translation>
+        </picklistValues>
+    </fields>
+    <nameFieldLabel><!-- Vertical Hierarchy Name --></nameFieldLabel>
+</CustomObjectTranslation>

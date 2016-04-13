@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Vocative</caseType>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Vocative</caseType>
+        <plural>true</plural>
+        <value>SSO Workflow</value>
+    </caseValues>
+    <fields>
+        <label><!-- Admin Request? --></label>
+        <name>Admin_Request__c</name>
+    </fields>
+    <fields>
+        <label>Nazwa rejestracja</label>
+        <name>Application_Name__c</name>
+        <picklistValues>
+            <masterLabel>Deal Registration</masterLabel>
+            <translation>Rejestracja potencjalnej transakcji(Deal Registration)</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>E-PORTAL</masterLabel>
+            <translation><!-- E-PORTAL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ELICENSING</masterLabel>
+            <translation><!-- ELICENSING --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MICROSITES</masterLabel>
+            <translation><!-- MICROSITES --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Order Provisioning Tool</masterLabel>
+            <translation>Narzędzie „Obsługa Zamówień”</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZIPZEBRA</masterLabel>
+            <translation><!-- ZIPZEBRA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Application Owner --></label>
+        <name>Application_Owner__c</name>
+        <relationshipLabel><!-- SSO Workflow (Application Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Source System --></label>
+        <name>Application_Source_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Type --></label>
+        <name>Approval_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+        <relationshipLabel><!-- SSO Workflow (Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attribute 10 --></label>
+        <name>Attribute_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 1 --></label>
+        <name>Attribute_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 2 --></label>
+        <name>Attribute_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 3 --></label>
+        <name>Attribute_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 4 --></label>
+        <name>Attribute_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 5 --></label>
+        <name>Attribute_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 6 --></label>
+        <name>Attribute_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 7 --></label>
+        <name>Attribute_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 8 --></label>
+        <name>Attribute_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 9 --></label>
+        <name>Attribute_9__c</name>
+    </fields>
+    <fields>
+        <label>E-mail</label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maps to Application --></label>
+        <name>Maps_to_Application__c</name>
+        <relationshipLabel><!-- SSO Workflow --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>Nazwa</label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- OPT Request Approved by Admin --></label>
+        <name>OPT_Request_Approved_by_Admin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Account Number --></label>
+        <name>Partner_Account_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Primary Role --></label>
+        <name>Partner_Primary_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Region --></label>
+        <name>Partner_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Secondary Role --></label>
+        <name>Partner_Secondary_Role__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Tool Access --></label>
+        <name>Partner_Tool_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Zone --></label>
+        <name>Partner_Zone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Error --></label>
+        <name>Process_Error__c</name>
+    </fields>
+    <fields>
+        <label>Status</label>
+        <name>Process_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation>Zatwierdzony</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create User Failed</masterLabel>
+            <translation><!-- Create User Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivate User Failed</masterLabel>
+            <translation><!-- Deactivate User Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivated</masterLabel>
+            <translation><!-- Deactivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Approval</masterLabel>
+            <translation><!-- In Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisioned</masterLabel>
+            <translation>zabezpieczony</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation>Zamówiony</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revoked</masterLabel>
+            <translation><!-- Revoked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update User Failed</masterLabel>
+            <translation><!-- Update User Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Updated</masterLabel>
+            <translation><!-- Updated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Provisioned/Rejected Date --></label>
+        <name>Provisioned_Rejected_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Type --></label>
+        <name>Provisioning_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ready for Approval --></label>
+        <name>Ready_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Account --></label>
+        <name>Related_Account__c</name>
+        <relationshipLabel><!-- SSO Workflow --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Contact Admin --></label>
+        <name>Related_Contact_Admin__c</name>
+        <relationshipLabel><!-- SSO Workflow (Related Contact Admin) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related Contact Region --></label>
+        <name>Related_Contact_Region__c</name>
+    </fields>
+    <fields>
+        <label>Osoba upoważniona do kontaktu</label>
+        <name>Related_Contact__c</name>
+        <relationshipLabel><!-- SSO Workflow (Related Contact) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Related User --></label>
+        <name>Related_User__c</name>
+        <relationshipLabel><!-- SSO Workflow (Related User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Request Source --></label>
+        <name>Request_Source__c</name>
+        <picklistValues>
+            <masterLabel>API</masterLabel>
+            <translation><!-- API --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bulk</masterLabel>
+            <translation><!-- Bulk --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Default</masterLabel>
+            <translation><!-- Default --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delegated</masterLabel>
+            <translation><!-- Delegated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PIC</masterLabel>
+            <translation><!-- PIC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self</masterLabel>
+            <translation><!-- Self --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Application Grant Access</masterLabel>
+            <translation><!-- Application Grant Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Revoke Access</masterLabel>
+            <translation><!-- Application Revoke Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create User</masterLabel>
+            <translation><!-- Create User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivate User</masterLabel>
+            <translation><!-- Deactivate User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update User</masterLabel>
+            <translation><!-- Update User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requested Date Formula --></label>
+        <name>Requested_Date_Formula__c</name>
+    </fields>
+    <fields>
+        <label>Data złożenia prośby</label>
+        <name>Requested_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSO Request Id --></label>
+        <name>SSO_Request_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Attributes --></label>
+        <name>Siebel_Attributes__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Type --></label>
+        <name>User_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Customer Workflow Layout</layout>
+        <sections>
+            <label><!-- Application Details --></label>
+            <section>Application Details</section>
+        </sections>
+        <sections>
+            <label><!-- Attribute Details --></label>
+            <section>Attribute Details</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PIC Admin Workflow Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Partner Admin Workflow Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>System Admin Workflow Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- IT Related Attributes --></label>
+            <section>IT Related Attributes</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Poproś Identyfikator</nameFieldLabel>
+    <recordTypes>
+        <label><!-- Customer --></label>
+        <name>Customer</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Others --></label>
+        <name>Others</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Partner --></label>
+        <name>Partner</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Retrigger --></label>
+        <name>Retrigger</name>
+    </webLinks>
+</CustomObjectTranslation>

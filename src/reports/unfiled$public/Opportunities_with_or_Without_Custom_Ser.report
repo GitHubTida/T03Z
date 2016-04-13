@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Custom_Solutions_and_Services__r$Custom_Solutions_and_Services_ID_18Char__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Custom_Solutions_and_Services__r$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Service_Offered__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Custom_Solutions_and_Services__r$Service_Product_Pullthrough__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Service__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Hardware_Pullthrough__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Service_Product_Pullthrough__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Hardware__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Custom_Solutions_and_Services__r$Hardware_Pullthrough__c</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>Opportunities with or Without Custom Ser</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_or_Without_Custom_Services__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

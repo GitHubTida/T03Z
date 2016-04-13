@@ -1,0 +1,17 @@
+<apex:page standardController="Deal_Registration__c" extensions="DR_dealToOppExtension" action="{!initCheck}">
+
+    <apex:sectionHeader title="Deal Registration" subtitle="Create Opportunity"/>
+
+    <apex:messages style="color:red"/>
+
+    <apex:form >
+    
+   
+     
+    <apex:outputPanel rendered="{!AND((theDeal.Approval_Status__c='Approved Final'),theDeal.Opportunity__c=null,Not(inactives))}" >
+    
+    </apex:outputPanel>
+    
+    </apex:form>
+
+</apex:page>

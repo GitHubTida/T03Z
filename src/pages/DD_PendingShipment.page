@@ -1,0 +1,92 @@
+<apex:page controller="DD_PendingShipment" tabStyle="DD_Pending_Shipment__tab">
+    <apex:form >
+        <apex:outputLabel style="font-size:11px; background-color:#E6E6E6;"> 
+            <B>Demo Products dues for shipment</B> <I>(This page auto refreshes every 30 seconds)</I>
+        </apex:outputLabel><br/>
+        
+        <apex:pageBlock rendered="{!enableTable==false}">
+            <apex:outputLabel value="No record found"/>
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="pbTable" rendered="{!enableTable==true}">
+            <center>
+                <apex:outputPanel id="btns">
+                    <apex:commandButton action="{!First}" title="First" value="{!$Label.First_Page}" disabled="{!disableFirst}" status="stat" reRender="pbTable" />&nbsp;  
+                    <apex:commandButton action="{!Previous}" title="Previous" value="{!$Label.Previous_Page}" disabled="{!disablePrevious}" status="stat" reRender="pbTable" />&nbsp;  
+                    <apex:commandButton action="{!Next}" title="Next" value="{!$Label.Next_Page}" disabled="{!disableNext}" status="stat" reRender="pbTable"/>&nbsp;
+                    <apex:commandButton action="{!Last}" title="Last" value="{!$Label.Last_Page}" disabled="{!disableLast}" status="stat" reRender="pbTable"/>
+                </apex:outputPanel> 
+            </center>
+            <br/>
+    
+            <apex:outputPanel id="Displaydata">  
+                <apex:actionPoller action="{!refreshscreen}" interval="30" enabled="true" reRender="Displaydata"/>
+                
+                <table width="100%" border="0" cellspacing="0" >
+                    <tr style="font-size:12px; font-weight:bold; background-color:#E6E6E6;">
+                        <td width="6%">ID</td> 
+                        <td width="12%">Demo Ref</td>
+                        <td width="18%">AM</td>
+                        <td width="18%">Customer</td>
+                        <td width="12%">Approved Date</td>
+                        <td width="17%">Demo Status</td>
+                        <td width="17%">Operator</td>
+                    </tr>     
+                    
+                    <apex:repeat value="{!DemoSearch}" var="demoWrapper">
+                        <tr>
+                            <td></td>
+                            <td>{!demoWrapper.demo.demoName}</td>
+                            <td>{!demoWrapper.demo.accountManager}</td>
+                            <td>{!demoWrapper.demo.CustomerName}</td>
+                            <td>{!demoWrapper.demo.approvedDate}</td>
+                            <td>{!demoWrapper.demo.demoStatus}</td>
+                            <td>{!demoWrapper.demo.operator}</td>
+                        </tr>
+        
+                        <tr style="font-size:12px; font-weight:bold;">
+                            <td></td>
+                            <td></td>
+                            <td bgcolor="#E6E6E6">Material</td> 
+                            <td bgcolor="#E6E6E6">Quantity</td>
+                            <td bgcolor="#E6E6E6"></td>
+                            <td bgcolor="#E6E6E6"></td>
+                            <td bgcolor="#E6E6E6" align="right"><a href="/apex/DD_JobSheet?id={!demoWrapper.demo.demoID}" target="_blank"><font color="#980000">Job Sheet</font></a></td>
+                           <!-- <td bgcolor="#E6E6E6" align="right"><a href="/apex/DD_JobLabel?id={!demoWrapper.demo.demoID}" target="_blank"><font color="#980000">Job Label</font></a></td> -->
+                        </tr>   
+                        
+                        <apex:repeat value="{!demoWrapper.resProdList}" var="res">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{!res.material}</td>
+                            <td>{!res.quantity}</td>
+                            <td></td>
+                        </tr>
+                        </apex:repeat>
+                        
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td></td>
+                            <td></td> 
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </apex:repeat>             
+                </table>
+            </apex:outputPanel>
+            
+            <center>
+                <apex:outputPanel id="btnsBelow">
+                <!--    <apex:commandButton action="{!First}" title="First" value="{!$Label.First_Page}" disabled="{!disableFirst}" status="stat" reRender="btns,btnsBelow,Displaydata" />&nbsp;  -->
+                    <apex:commandButton action="{!First}" title="First" value="{!$Label.First_Page}" disabled="{!disableFirst}" status="stat" reRender="pbTable" />&nbsp;
+                    <apex:commandButton action="{!Previous}" title="Previous" value="{!$Label.Previous_Page}" disabled="{!disablePrevious}" status="stat" reRender="pbTable" />&nbsp;  
+                    <apex:commandButton action="{!Next}" title="Next" value="{!$Label.Next_Page}" disabled="{!disableNext}" status="stat" reRender="pbTable"/>&nbsp;
+                    <apex:commandButton action="{!Last}" title="Last" value="{!$Label.Last_Page}" disabled="{!disableLast}" status="stat" reRender="pbTable"/><br/><br/>  
+                    <apex:outputText >({!IF(total_size = 0,0,(pageNumber * list_size)+1-list_size)}-{!IF((pageNumber * list_size)>total_size, total_size,(pageNumber * list_size))}) of {!total_size} Records</apex:outputText>
+                </apex:outputPanel> 
+            </center>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>**** Demo Depot application****** 
+This will store Accessory Management details.</description>
+    <fields>
+        <fullName>Master_Demo_Product__c</fullName>
+        <description>Master Demo Product</description>
+        <label>Master Demo Product</label>
+        <referenceTo>DD_Master_Demo_Products__c</referenceTo>
+        <relationshipLabel>Accessory Management</relationshipLabel>
+        <relationshipName>Accessories_Management</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <description>Notes for this Accessory</description>
+        <label>Notes</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <label>Accessory Management</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Master_Demo_Product__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>Accessory Mgmt-{00000}</displayFormat>
+        <label>Accessory Management</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Accessory Management</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Master_Demo_Product__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Notes__c</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <searchResultsAdditionalFields>Master_Demo_Product__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Notes__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

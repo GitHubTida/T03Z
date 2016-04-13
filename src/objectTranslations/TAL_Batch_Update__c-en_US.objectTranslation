@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>TAL Batch Update</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>TAL Batch Updates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Added Accounts --></label>
+        <name>Added_Accounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Batch Job Id --></label>
+        <name>Batch_Job_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Created Accounts --></label>
+        <name>Created_Accounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Processed --></label>
+        <name>Date_Processed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dropped Accounts --></label>
+        <name>Dropped_Accounts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dropped Zip Codes --></label>
+        <name>Dropped_Zip_Codes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modified Accounts --></label>
+        <name>Modified_Accounts__c</name>
+    </fields>
+    <layouts>
+        <layout>TAL Batch Update Layout</layout>
+        <sections>
+            <label><!-- Batch Job --></label>
+            <section>Batch Job</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

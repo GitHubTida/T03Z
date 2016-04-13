@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>OWNER</field>
+    </columns>
+    <columns>
+        <field>SUBJECT</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Product_Model__c</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Affected_Quantity__c</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>AGE</field>
+    </columns>
+    <columns>
+        <field>CLOSED_DATEONLY</field>
+    </columns>
+    <columns>
+        <field>ACCOUNT.NAME</field>
+    </columns>
+    <columns>
+        <field>Case.ZEB_Eng_Activity_Status__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Sustaining Engineering Mobile Cases OPEN (old version)</description>
+    <filter>
+        <booleanFilter>(((1 and 2) OR ((1 AND (3 OR 4)) AND (5 or 6))))</booleanFilter>
+        <criteriaItems>
+            <column>STATUS</column>
+            <operator>equals</operator>
+            <value>Working,Pending Customer Response,Waiting on Zebra Team,Quality Submitted,Quality Working,Quality Waiting,Engineering Submitted,Engineering Waiting,Engineering Working,Support Rep on Site</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>equals</operator>
+            <value>Forest Chen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.ZEB_Product_Line__c</column>
+            <operator>equals</operator>
+            <value>Mobile</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.ZEB_Product_Model__c</column>
+            <operator>equals</operator>
+            <value>Mobile Accy,RP4T,P4T</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>OWNER</column>
+            <operator>equals</operator>
+            <value>Sustaining Engineering</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.ZEB_Case_Owner_Role__c</column>
+            <operator>equals</operator>
+            <value>Sustaining Engineer,Sustaining Engineering - Project Manager</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <name>Sustaining Engineering Mobile Cases(OLD)</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CASE_NUMBER</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATEONLY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <format>MultiBlock</format>
+    <name>Stage Duration - Joined Re</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Products_and_Revenue_Forecast__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

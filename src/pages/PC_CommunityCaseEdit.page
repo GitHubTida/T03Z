@@ -1,0 +1,75 @@
+<apex:page standardController="Case" showHeader="true" sidebar="true" extensions="PC_CommunityCaseEditExtension" action="{!getAccountAndContact}">
+    <style type="text/css">
+        .myClass { width: 400px; height: 50px; }
+    </style>
+    <apex:form id="caseForm">
+        <apex:sectionHeader subtitle="{!$Label.New_Case}"/>
+        <apex:pageBlock id="caseBlock" mode="edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="{!$Label.Save}" action="{!Save}" />
+                <!--apex:commandButton value="{!$Label.Save_New}" action="{!SaveAndNew}"/-->
+                <apex:commandButton value="{!$Label.Cancel}" action="{!Cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:outputPanel rendered="{!displayError}">
+                <div class="pbError">
+                    {!$Label.Error_Invalid_Data} <br/>
+                    {!$Label.Review_error_messages} <br/>
+                    {!errorMessage}
+                </div>
+            </apex:outputPanel>
+            <apex:pageBlockSection collapsible="false" columns="2" id="caseDetailSection">
+                <apex:pageBlockSectionItem id="reasonSection" >
+                    <apex:outputLabel value="{!$Label.Case_Reason}" />
+                    <apex:inputField value="{!cs.Reason}" required="true" id="caseReasonList" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Case_Owner}" />
+                    <apex:outputText value="{!OwnerName.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem />
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Account_Name}" />
+                    <apex:outputField value="{!cs.AccountId}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Description}" />
+                    <apex:inputField value="{!cs.Description}" styleClass="myClass" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Contact_Name}" />
+                    <apex:outputField value="{!cs.ContactId}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!--apex:pageBlockSection collapsible="false" columns="1" id="caseDescriptionSection">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Description" />
+                    <apex:inputField value="{!cs.Description}" styleClass="myClass" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection-->
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        
+        var hFlag = {!hardwareFlag};
+        var pRegion = '{!PartnerRegion}';
+        var reasonList = document.getElementById('{!$Component.caseForm:caseBlock:caseDetailSection:reasonSection:caseReasonList}');
+        if(reasonList){
+            var options = reasonList.options;
+            console.log("Options length",options.length);
+            for(i=0; i<options.length;i++){
+                console.log(options[i]);
+                console.log("options[i].value",options[i].value);
+                console.log("options[i].text",options[i].text);
+                if(options[i] && options[i].text == '{!$Label.Update_Hardware_Sellable_Area}' && !hFlag){
+                    options.remove(i);
+                }
+               /* if(options[i] && options[i].text == '{!$Label.Update_Software_Sellable_Area}' && !sFlag){
+                    options.remove(i);
+                }*/
+                if(options[i] && options[i].text == '{!$Label.Deactivate_Contact}' && pRegion != '{!$Label.EMEA}'){
+                    options.remove(i);
+                }
+            }
+        }
+    </script>
+</apex:page>

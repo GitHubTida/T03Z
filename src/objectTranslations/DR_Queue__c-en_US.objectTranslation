@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>DR Queue</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DR Queue</value>
+    </caseValues>
+    <fields>
+        <label><!-- Queue --></label>
+        <name>Queue__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Address</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Address</value>
+    </caseValues>
+    <fields>
+        <label><!-- Address Line 1 --></label>
+        <name>Address_Line_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 2 --></label>
+        <name>Address_Line_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 3 --></label>
+        <name>Address_Line_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address Line 4 --></label>
+        <name>Address_Line_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Address --></label>
+        <name>Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Contact Name --></label>
+        <name>Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country_Lookup__c</name>
+        <relationshipLabel><!-- Address --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Theatre --></label>
+        <name>DD_Theatre__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Loc Code --></label>
+        <name>Loc_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Contact Telephone # --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Code/ZIP --></label>
+        <name>Post_Code_ZIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Gross SF --></label>
+        <name>Site_Gross_SF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Site Number --></label>
+        <name>Site_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State__c</name>
+        <relationshipLabel><!-- Address --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Telephone # --></label>
+        <name>Telephone__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Address --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Alternate Address</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Return Address</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Alternative Address --></label>
+        <name>Alternative_Address</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Returned Address --></label>
+        <name>Returned_Address</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Sales Office --></label>
+        <name>Sales_Office_Address</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,896 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_LU__c</fullName>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Account</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Name_del__c</fullName>
+        <label>Account Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <label>Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Any_known_issues_yet_to_be_resolved__c</fullName>
+        <description>Are there any known issues yet to be resolved?</description>
+        <inlineHelpText>Are there any known issues yet to be resolved?</inlineHelpText>
+        <label>Any known issues yet to be resolved?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Any_other_comments__c</fullName>
+        <inlineHelpText>Any other relevant information / comments?</inlineHelpText>
+        <label>Any other relevant information / comment</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Are_all_Partner_certifications_current__c</fullName>
+        <inlineHelpText>Are all Partner certifications current?</inlineHelpText>
+        <label>Are all Partner certifications current?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Business_impact_of_the_proposal__c</fullName>
+        <inlineHelpText>What is the business impact of the proposed solution?</inlineHelpText>
+        <label>Business impact of the proposal?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Can_the_Customer_validate__c</fullName>
+        <inlineHelpText>Can the Partner/ISV supply a named contact at the customer who can verify the Partner/ISV claims?</inlineHelpText>
+        <label>Can the Customer validate?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Can_we_satisy_customer_requirements__c</fullName>
+        <inlineHelpText>How are we (Motorola EMB and the Partner) placed to satisfy the customer requirements?</inlineHelpText>
+        <label>Can we satisfy customer requirements?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bespoke solution required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Solution Exists</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Some development required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Significant development Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Close_Date__c</fullName>
+        <label>Close Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Project_Registration_ID_18__c</fullName>
+        <formula>CASESAFEID(Id)</formula>
+        <label>Customer Project Registration ID 18</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Did_Partner_recommend_EMb_devices__c</fullName>
+        <inlineHelpText>Did the Partner/ISV recommend specifically to the customer to consider Motorola devices?</inlineHelpText>
+        <label>Did Partner recommend EMb devices?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Do_the_approvals_fit_the_time_line__c</fullName>
+        <inlineHelpText>Are all the approval levels available to approve in the committed timescales?</inlineHelpText>
+        <label>Do the approvals fit the time line?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Does_the_solution_use_current_products__c</fullName>
+        <inlineHelpText>Is the application deployable on a Motorola EMB released product?</inlineHelpText>
+        <label>Does the solution use current products?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Existing_EMb_Customer__c</fullName>
+        <inlineHelpText>Is the Account a Zebra customer?</inlineHelpText>
+        <label>Is the Account a Zebra customer?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Expiration_Date__c</fullName>
+        <formula>CreatedDate + 180</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expiration Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Extent_of_Partner_involvement__c</fullName>
+        <inlineHelpText>Explain level of engagement that Partner has had with End User to date?</inlineHelpText>
+        <label>Extent of Partner involvement?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>First_EMb_notification__c</fullName>
+        <inlineHelpText>When did the Partner/ISV alert Motorola to this opportunity?</inlineHelpText>
+        <label>First EMb notification?</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>First_Partner_ISV_contact_date__c</fullName>
+        <inlineHelpText>When did the Partner/ISV first have contact with the customer about this opportunity?</inlineHelpText>
+        <label>First Partner/ISV contact date?</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Has_a_demo_taken_place__c</fullName>
+        <inlineHelpText>Have dependancies for demo/trial kit been fulfilled?</inlineHelpText>
+        <label>Has a demo taken place?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Has_proposal_been_tested_by_a_customer__c</fullName>
+        <inlineHelpText>Has a proposal been tested by a customer?</inlineHelpText>
+        <label>Has proposal been tested by a customer?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Have_we_completed_a_Value_Prompter__c</fullName>
+        <inlineHelpText>Have we sold the value of the deal to all levels of the approval chain?, Have we completed a Value Prompter?</inlineHelpText>
+        <label>Have we completed a Value Prompter?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Haw_is_our_technical_solution_rated__c</fullName>
+        <inlineHelpText>How is our technical solution rated?</inlineHelpText>
+        <label>How is our technical solution rated?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Competitor Preferred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Preferred</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>How_long_has_the_Partner_been_active_in__c</fullName>
+        <inlineHelpText>How long has the Partner been active in the Account?</inlineHelpText>
+        <label>How long has the Partner been active?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ISV_Partner_Name__c</fullName>
+        <label>ISV Partner</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>If_there_is_an_ISV_who_is_it__c</fullName>
+        <inlineHelpText>If there is an App. Partner, who is it ?</inlineHelpText>
+        <label>If there is an App. Partner, who is it ?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Is_a_PE_required_at_this_time__c</fullName>
+        <inlineHelpText>Is a PE or Deals Desk request required to close the deal?</inlineHelpText>
+        <label>Is a PE required at this time?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_hard_copy_documentation_available__c</fullName>
+        <inlineHelpText>Has the Partner/ISV supply written evidence (eg. Email) to back up their claims for any of the above questions?</inlineHelpText>
+        <label>Is hard copy documentation available?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_the_Engagement_strategic_or_tactical__c</fullName>
+        <inlineHelpText>Engagement is strategic or tactical with this client?</inlineHelpText>
+        <label>Is the Engagement strategic or tactical?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Tactical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_the_project_funded__c</fullName>
+        <inlineHelpText>Is the Project capital funded in the customer’s budget?</inlineHelpText>
+        <label>Is the project funded?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_the_solution_tested__c</fullName>
+        <inlineHelpText>Where does it stand in test and in validation?</inlineHelpText>
+        <label>Is the solution tested?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_there_a_ISV_engaged__c</fullName>
+        <inlineHelpText>Is the Application Partner engaging an ISV in delivering the Solution</inlineHelpText>
+        <label>Is there an Application Partner engaged?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_there_a_Price_Exception_with_this_dea__c</fullName>
+        <label>Is there a Price Exception?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Is_there_a_clearly_defined_requirement__c</fullName>
+        <inlineHelpText>Is there a clearly defined requirement?</inlineHelpText>
+        <label>Is there a clearly defined requirement?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Key_technical_decision_makers__c</fullName>
+        <inlineHelpText>Has the Partner identified the key technical decision maker?</inlineHelpText>
+        <label>Key technical decision makers?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Amount__c</fullName>
+        <label>Opportunity Amount</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Customer Project Registration (EMEA Only)</relationshipLabel>
+        <relationshipName>R00N300000022XJNEA2</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Partner_compliant_with_PE_process__c</fullName>
+        <inlineHelpText>Is the partner compliant with PE processes?</inlineHelpText>
+        <label>Partner compliant with PE process?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Partner_delievered_a_similar_solution__c</fullName>
+        <inlineHelpText>Has the Partner delivered a similar solution to other customers</inlineHelpText>
+        <label>Partner delievered a similar solution?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Partner_level_in_customer_organisation__c</fullName>
+        <inlineHelpText>At what level in the customer&apos;s organisation is the Partners contacts? Are they at the decision maker level?</inlineHelpText>
+        <label>Partner level in customer organisation?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Partner_technicall_qualified__c</fullName>
+        <inlineHelpText>Is the Partner technically qualified to deliver the solution?</inlineHelpText>
+        <label>Partner technicall qualified?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Payment_history_within_policy__c</fullName>
+        <inlineHelpText>If the Partner is purchasing direct, is their payment history in accordance with policy?</inlineHelpText>
+        <label>Payment history within policy?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Primary_Channel_Partner_LU__c</fullName>
+        <label>Primary Channel Partner</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Partner</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Channel_Partner__c</fullName>
+        <label>Primary Channel Partner 2</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Requested_fee_level__c</fullName>
+        <defaultValue>&quot;0&quot;</defaultValue>
+        <inlineHelpText>Requested Fee Level?</inlineHelpText>
+        <label>Requested fee level</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Right_solution_recommended_by_partner__c</fullName>
+        <inlineHelpText>Do we believe the Partner is recommending the right technical solution?</inlineHelpText>
+        <label>Right solution recommended by partner?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Significant_technical_milestones__c</fullName>
+        <inlineHelpText>What are the key technical milestones &amp;  dates for the project?</inlineHelpText>
+        <label>Key technical milestones?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>StageName_1__c</fullName>
+        <label>Stage</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Submitting_for__c</fullName>
+        <label>Request Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Solution Rewards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Project Registration</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Time_line_for_completing_the_project__c</fullName>
+        <defaultValue>NOW() + 182</defaultValue>
+        <inlineHelpText>What is the time line for completing the project? i.e. what is the expiry date of the proposed Deal Registration? (note this is generally expected to be six months from current date, but can be extended if necessary)</inlineHelpText>
+        <label>Time line for completing the project?</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Status__c</fullName>
+        <defaultValue>&quot;In Progress&quot;</defaultValue>
+        <label>Tracking Status</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Trust_and_support_Partner__c</fullName>
+        <inlineHelpText>Does the Partner have the trust and support of the Account? Please provide comments</inlineHelpText>
+        <label>Account trust and support the partner?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Unresolved_technical_issues__c</fullName>
+        <inlineHelpText>Are there any known unresolved technical issues?</inlineHelpText>
+        <label>Unresolved technical issues?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Was_customer_already_looking_at_EMb__c</fullName>
+        <inlineHelpText>Was the customer already considering Motorola for this opportunity?</inlineHelpText>
+        <label>Was customer already looking at EMb?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Was_it_previously_unknown_to_Motorola__c</fullName>
+        <inlineHelpText>Was this opportunity previously unknown to Motorola?</inlineHelpText>
+        <label>Was it previously unknown to Motorola?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Were_Demo_s_on_EMb_devices__c</fullName>
+        <inlineHelpText>Did the Partner/ISV demontrate their solution/software to the customer on a Motorola device?</inlineHelpText>
+        <label>Were Demo&apos;s on EMb devices?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>What_are_the_customers_buying_criteria__c</fullName>
+        <inlineHelpText>What are the customers buying criteria?</inlineHelpText>
+        <label>What are the customers buying criteria?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Price</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mid/Long Term ROI</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>System Compatibility</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>What_customer_approval_is_required__c</fullName>
+        <inlineHelpText>What customer approval level is required to give final approval and have we sold the value of the deal to all levels of the approval chain?</inlineHelpText>
+        <label>What customer approval is required?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Known</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Executive/Board Sign Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Unit Decision</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Line Function Decision</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>What_has_the_Partner_previously_sold_in__c</fullName>
+        <inlineHelpText>What has the Partner previously sold into the Account?</inlineHelpText>
+        <label>What has the Partner previously sold in?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>What_is_the_selection_process__c</fullName>
+        <inlineHelpText>What are the steps in the selection process?</inlineHelpText>
+        <label>Selection process steps?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Who_is_the_prime_interagtor__c</fullName>
+        <inlineHelpText>Who is the prime integrator?</inlineHelpText>
+        <label>Who is the prime integrator?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>None Required</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Motorola EMb</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Why_engage_with_this_partner__c</fullName>
+        <inlineHelpText>Why does the Customer want to engage with this Partner?</inlineHelpText>
+        <label>Why engage with this partner?</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>roadmap_feature_dependancies__c</fullName>
+        <inlineHelpText>Are there any roadmap/feature dependancies involved?</inlineHelpText>
+        <label>Roadmap/feature dependancies?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>sold_across_org__c</fullName>
+        <description>No
+Yes</description>
+        <inlineHelpText>Have we sold the value of the deal to all levels of the approval chain?, Have we completed a Value Prompter?</inlineHelpText>
+        <label>Have we sold across the organisation?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Customer Project Registration</label>
+    <nameField>
+        <displayFormat>CPR-{0000000}</displayFormat>
+        <label>Reference Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Customer Project Registration</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>N_SE</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Notify Sales Engineer</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>MailTo:?Subject=Customer Project Registration Action Required &amp;Body=This email has been generated as a result of a Customer Project Registration request.%0A%0AYou are required to discuss this request with your RSM/RCM.%0A%0AWe understand that you may not have access to SFDC however, you are expected to discuss the deal with the RSM/RCM, and provide email confirmation to the RSM/RCM, that you believe that the solution being proposed by the Partner is appropriate and that the Partner has met the objective requirements of the Customer Project Registration program.%0A%0ARemember the Customer Project Registration process is designed to support Partners who have demonstrated and proven a high level of early engagement and investment and promoted EMb products in the process.%0A%0APartner: {!Opportunity.Primary_Channel_Partner_Formula__c}%0A%0AEnd User:{!Opportunity.Account}%0A%0ACustomer Project Registration  ID: {!SR_DR__c.Name}%0A%0AOpportunity Name: {!Opportunity.Name}%0A%0AOpportunity Number:{!Opportunity.Opportunity_Number__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>NewCPR</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>New</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/a26/e?00Ni000000H2Wiw={!Opportunity.Amount_Converted_SRDR__c}
+&amp;00Ni000000H2Wj3={!Opportunity.CloseDate} 
+&amp;CF00Ni000000H2Wiu_lkid={!Opportunity.AccountId} 
+&amp;CF00Ni000000H2Wiu={!Opportunity.Account} 
+&amp;00Ni000000H2Wje={!Opportunity.StageName} 
+&amp;CF00Ni000000H2Wii_lkid={!Opportunity.Id} 
+&amp;CF00Ni000000H2Wii={!Opportunity.Name} 
+&amp;CF00Ni000000H2WjZ_lkid={!Opportunity.Opportunity_ResellerId__c} 
+&amp;CF00Ni000000H2WjZ={!Opportunity.Opportunity_Reseller__c} 
+&amp;CurrencyIsoCode={!Opportunity.CurrencyIsoCode} 
+&amp;retURL=/{!Opportunity.Id}</url>
+    </webLinks>
+</CustomObject>

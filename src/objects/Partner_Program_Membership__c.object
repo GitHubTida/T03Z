@@ -1,0 +1,3222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom object provides a window into partner program membership details.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>This relationship will allow the Partner Profile Object to join the Account Object.</description>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>Partner_Profiles</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox for active or inactive</description>
+        <label>Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BIP_Begin_Date__c</fullName>
+        <label>BIP Begin Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BIP_End_Date__c</fullName>
+        <label>BIP End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>BIP_Plan_Name__c</fullName>
+        <label>BIP Plan Name</label>
+        <picklist>
+            <controllingField>BIP__c</controllingField>
+            <picklistValues>
+                <fullName>Development - Volume</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Development - Competitive</fullName>
+                <controllingFieldValues>checked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>BIP__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Captures whether the Partner is on a Business Improvement Plan.</description>
+        <label>BIP</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>BO_Error__c</fullName>
+        <label>BO Error</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Begin_Date__c</fullName>
+        <description>Start date of the program.</description>
+        <label>Begin Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Company_Geographical_Coverage_Areas__c</fullName>
+        <label>Company Geographical Coverage Areas</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Company_Trading_Name__c</fullName>
+        <label>Company Trading Name</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Date the program membership ends.</description>
+        <label>End Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>GSA_Enabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checkbox to indicate partners that are able to purchase via GSA Schedule.</description>
+        <label>GSA Enabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>HQ_Address__c</fullName>
+        <label>HQ Address</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Member_Status__c</fullName>
+        <description>Status of the current program membership</description>
+        <label>Member Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Current Member</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Grace Period</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Membership__c</fullName>
+        <description>PF Membership number</description>
+        <externalId>true</externalId>
+        <label>Membership #</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PF_Program_Type__c</fullName>
+        <label>PF Program Type</label>
+        <length>110</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Name__c</fullName>
+        <description>This field contains the partner name</description>
+        <label>Partner Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Profile__c</fullName>
+        <description>This field creates a lookup relationship to the Partner Profile.</description>
+        <label>Partner Profile</label>
+        <referenceTo>Partner_Profile__c</referenceTo>
+        <relationshipLabel>Partner Program Memberships</relationshipLabel>
+        <relationshipName>Partner_Program_Memberships</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Tier__c</fullName>
+        <description>Signifies the partner tier level (Advanced, Associate, etc..)</description>
+        <label>Partner Tier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associate Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor BARCODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor CARDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Influencer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA - ZASP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Workforce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Classified Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX Authorized</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premier Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Print and Apply</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID - North America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Enablement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Solutions Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Single Product Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TPP Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TPP Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP PAX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Partner_Type__c</fullName>
+        <description>Signifies the type (ex. reseller) of account.</description>
+        <label>Partner Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Alliance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Direct Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IHV Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IZASP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Card Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplies Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Program_Category__c</fullName>
+        <description>Indicates the Program Track (Main, etc..)</description>
+        <label>Program Category</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Main Track</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sub-Track</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Program_Name__c</fullName>
+        <description>This field contains the PartnersFirst Program Name</description>
+        <label>Program Name</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Access Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advanced Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Advanced Card Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Advanced Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Associate Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Authorised Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Authorised Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Card Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Card Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Card Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ISV Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ISV Partner Subtrack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Kiosk Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Master Dealer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Pax Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Platinum Premier Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Premier Card Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Premier Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC RFID Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC Supplies Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ZASP Barcode Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ZASP Barcode Printers Indirect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ZASP Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ZASP Mobile Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC ZASP Print Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associate Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Card Distributor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Distributor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Distributor - SPA scheme - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Kiosk Distributor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Label Distributor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Authorised Supplies Distributor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barcode Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barcode Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barcode Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barcode Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil - Distributors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil Resellers- Card &amp; Barcode Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil Resellers- Card &amp; Barcode Business Develop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card National Reseller Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Associate Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Card Technology</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Reseller - Premier Plus</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Specialist L1 - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Specialist L2 - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Certified Zebra Service Centre - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Advanced Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Associate Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Authorised Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Authorised Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Card Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Platinum Premier Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Premier Card Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Premier Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Supplies Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China ZASP Barcode Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China ZASP Barcode Printers Indirect</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China ZASP Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial National Reseller Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Reseller - Associate Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop/Tabletop Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop/Tabletop Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop/Tabletop Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop/Tabletop Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor - Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distributor LACA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Specialist (LaserBand) - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Specialist (Solution) - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Specialist (Solution) - EMEA - subtrack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Independent Hardware Vendor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect ZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect ZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect ZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect ZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indirect ZASP - Print &amp; Apply - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>International Distributor - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Brazil</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Influencer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Partner subtrack - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISV Subtrack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iZASP - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>iZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Only Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Specialist - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA - ZASP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA - ZASP BARCODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA - ZASP CARD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA - ZASP MOBILE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA BARCODE SPS - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA BARCODE SPS - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA BARCODE SPS - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA BARCODE SPS - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Card Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Card Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Card Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Card Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA CARDS CPS - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA CARDS CPS - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA CARDS CPS - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Distributor - BARCODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Distributor - CARDS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA ID Distributors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA PAX - Authorized</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA Print - Apply</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA-Distributor ZASP Barcode</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA-Distributor ZASP Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LACA-Distributor ZASP Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Reseller - Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Workforce</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner Subsidiary Office - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passive RFID Solutions Provider</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Passive RFID Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX Authorized</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX Authorized Non-Classified Reseller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX OEM Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX OEM Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX OEM Business Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX OEM Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PAX Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premier Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Print – Apply</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Print &amp; Apply Specialist - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reseller - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID - North America</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Enablement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RFID Specialist - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Card Specialist L1 - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Card Specialist L2 - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spare Parts &amp; Supplies Only Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic Alliance Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplies Elite Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplies Partner - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplies Specialist - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Partner - Influencer - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Partner Referral/Influencer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Partner Reseller - Advanced</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Partner Reseller - Associate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technology Partner Reseller - Premier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP - Print &amp; Apply - EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP Card</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP Full Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP PAX</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZASP Standard Service</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Begin_Date__c</fullName>
+        <description>Date that the renewal period begins.</description>
+        <label>Renewal Begin Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_End_Date__c</fullName>
+        <description>Date the renewal period ends.</description>
+        <label>Renewal End Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Ineligible__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Designates whether this account is eligible for renewal</description>
+        <label>Renewal Ineligible</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Period__c</fullName>
+        <label>Renewal Period</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Website__c</fullName>
+        <label>Website</label>
+        <type>Url</type>
+    </fields>
+    <label>Partner Program Membership</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Membership__c</columns>
+        <columns>Program_Name__c</columns>
+        <columns>Member_Status__c</columns>
+        <columns>Begin_Date__c</columns>
+        <columns>End_Date__c</columns>
+        <columns>Partner_Tier__c</columns>
+        <columns>Program_Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{YYYY}{MM}-{0}</displayFormat>
+        <label>Partner Profile Program Membership</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Partner Program Memberships</pluralLabel>
+    <recordTypes>
+        <fullName>Application_Specialist</fullName>
+        <active>true</active>
+        <description>Partner Application Specialist for Partner Community</description>
+        <label>Application Specialist</label>
+        <picklistValues>
+            <picklist>BIP_Plan_Name__c</picklist>
+            <values>
+                <fullName>Development - Competitive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development - Volume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Status__c</picklist>
+            <values>
+                <fullName>Approved Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Grace Period</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Tier__c</picklist>
+            <values>
+                <fullName>ASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor BARCODE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor CARDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Workforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Classified Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print and Apply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID - North America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Enablement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Solutions Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Product Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPP Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPP Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP PAX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Type__c</picklist>
+            <values>
+                <fullName>Alliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IZASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Category__c</picklist>
+            <values>
+                <fullName>Main Track</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub-Track</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Name__c</picklist>
+            <values>
+                <fullName>APAC Advanced Card Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Advanced Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Associate Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Authorised Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Authorised Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Card Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Card Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ISV Partner Subtrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Kiosk Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Master Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Pax Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Platinum Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Premier Card Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Supplies Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Barcode Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Barcode Printers Indirect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Mobile Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Print Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advanced Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Card Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Distributor - SPA scheme - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Kiosk Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Label Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Supplies Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - Distributors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Resellers- Card %26 Barcode Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Resellers- Card %26 Barcode Business Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card National Reseller Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Associate Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Card Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Premier Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist L1 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist L2 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certified Zebra Service Centre - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Advanced Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Associate Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Authorised Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Authorised Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Card Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Platinum Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Premier Card Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Supplies Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China ZASP Barcode Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China ZASP Barcode Printers Indirect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China ZASP Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial National Reseller Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Associate Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor - Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor LACA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare Specialist %28LaserBand%29 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare Specialist %28Solution%29 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare Specialist %28Solution%29 - EMEA - subtrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner subtrack - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Subtrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Independent Hardware Vendor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Print %26 Apply - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Only Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP BARCODE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP CARD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP MOBILE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA CARDS CPS - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA CARDS CPS - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA CARDS CPS - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Distributor - BARCODE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Distributor - CARDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA ID Distributors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA PAX - Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Print - Apply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA-Distributor ZASP Barcode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA-Distributor ZASP Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA-Distributor ZASP Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Workforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Authorized Non-Classified Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Subsidiary Office - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Passive RFID Solutions Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Passive RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print %26 Apply Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print %E2%80%93 Apply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID - North America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Enablement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Card Specialist L1 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Card Specialist L2 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spare Parts %26 Supplies Only Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Alliance Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Elite Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner - Influencer - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Referral%2FInfluencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Print %26 Apply - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP Full Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP PAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP Standard Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Partner_Reseller</fullName>
+        <active>true</active>
+        <description>Partner Resell for Partner Community</description>
+        <label>Partner Reseller</label>
+        <picklistValues>
+            <picklist>BIP_Plan_Name__c</picklist>
+            <values>
+                <fullName>Development - Competitive</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Development - Volume</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Member_Status__c</picklist>
+            <values>
+                <fullName>Approved Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Current Member</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Grace Period</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Tier__c</picklist>
+            <values>
+                <fullName>ASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor BARCODE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor CARDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Full Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Workforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-Classified Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print and Apply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID - North America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Enablement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Solutions Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single Product Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPP Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPP Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP PAX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Partner_Type__c</picklist>
+            <values>
+                <fullName>Alliance</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Direct Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IHV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>IZASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subsidiary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Category__c</picklist>
+            <values>
+                <fullName>Main Track</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sub-Track</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Program_Name__c</picklist>
+            <values>
+                <fullName>APAC Advanced Card Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Advanced Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Associate Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Authorised Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Authorised Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Card Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Card Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Card Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ISV Partner Subtrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Kiosk Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Master Dealer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Pax Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Platinum Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Premier Card Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC Supplies Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Barcode Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Barcode Printers Indirect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Mobile Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>APAC ZASP Print Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Access Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Advanced Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Associate Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Card Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Distributor - SPA scheme - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Kiosk Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Label Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Authorised Supplies Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil - Distributors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Resellers- Card %26 Barcode Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Brazil Resellers- Card %26 Barcode Business Develop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card National Reseller Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Associate Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Card Technology</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Reseller - Premier Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist L1 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Specialist L2 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Certified Zebra Service Centre - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Advanced Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Associate Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Authorised Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Authorised Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Card Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Platinum Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Premier Card Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Premier Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China Supplies Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China ZASP Barcode Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China ZASP Barcode Printers Indirect</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>China ZASP Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial National Reseller Organization</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Associate Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commercial Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop%2FTabletop Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor - Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Distributor LACA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ESP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Government Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare Specialist %28LaserBand%29 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare Specialist %28Solution%29 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Healthcare Specialist %28Solution%29 - EMEA - subtrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Brazil</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Influencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Partner subtrack - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ISV Subtrack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Independent Hardware Vendor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Indirect ZASP - Print %26 Apply - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>International Distributor - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Only Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP BARCODE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP CARD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA - ZASP MOBILE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA BARCODE SPS - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA CARDS CPS - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA CARDS CPS - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA CARDS CPS - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Card Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Distributor - BARCODE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Distributor - CARDS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA ID Distributors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA PAX - Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA Print - Apply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA-Distributor ZASP Barcode</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA-Distributor ZASP Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LACA-Distributor ZASP Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Reseller - Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Workforce</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Authorized</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Authorized Non-Classified Reseller</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Business Development</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX OEM Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PAX Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner Subsidiary Office - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Passive RFID Solutions Provider</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Passive RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Premier Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print %26 Apply Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Print %E2%80%93 Apply</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID - North America</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Enablement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RFID Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reseller - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Card Specialist L1 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Card Specialist L2 - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Spare Parts %26 Supplies Only Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strategic Alliance Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Elite Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Partner - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Supplies Specialist - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner - Influencer - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Referral%2FInfluencer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Reseller - Advanced</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Reseller - Associate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technology Partner Reseller - Premier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP - Print %26 Apply - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP Card</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP Full Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP PAX</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZASP Standard Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Card Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Kiosk Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Label Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>iZASP - Mobile Printers - EMEA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Partner_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Program_Name__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Member_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Partner_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Program_Name__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Partner_Name__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Program_Name__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Partner_Name__c</searchFilterFields>
+        <searchFilterFields>Program_Name__c</searchFilterFields>
+        <searchResultsAdditionalFields>OBJECT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Partner_Name__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

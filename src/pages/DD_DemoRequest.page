@@ -1,0 +1,222 @@
+<!--
+**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Nikhil Kumar
+    Date        : 07-AUG-15
+    Revision History
+    Ver       Date        Author            Modification
+    ---       ---------   -----------       -------------------------
+    V0.1      07-AUG-15   Nikhil Kumar         Initial Code  
+ ***************************************************************
+ -->
+<apex:page standardcontroller="DD_Demo__c" extensions="DD_DemoRequest" tabStyle="DD_Demo__c">
+<head>
+    <style>
+        th.labelCol.vfLabelColTextWrap.last {
+          width: 30%;
+        }
+    </style>
+</head>
+    <apex:form id="RecodrNoTLocked" rendered="{!NOT(recordlock)}">
+         <apex:pageBlock title="Demo Edit" mode="edit">
+       <apex:messages Styleclass="pbError" style="list-style-type: none;" id="showerror"/>
+           
+             <apex:pageBlockButtons >
+                 <apex:commandButton value="Save" action="{!save}"/>
+                 <apex:commandButton value="Cancel" action="{!Cancel}"/>
+             </apex:pageBlockButtons>
+                 
+             <apex:pageblockSection title="Opportunity" id="Oppid" rendered="{!demoFromOpp}" >
+                  <apex:Outputfield value="{!demo.Opportunity__c}"/>
+             </apex:pageblockSection>
+            <apex:pageBlockSection title="Customer Details" columns="2">
+                <apex:pageblocksection columns="1">
+                    <apex:pageblocksectionitem labelStyle="Width:30%" rendered="{!demoNotFromOpp}">
+                        <apex:outputlabel value="Customer Name" ></apex:outputlabel>
+                        <apex:inputField value="{!demo.Customer_Name__c}" />
+                    </apex:pageblocksectionitem>
+                    <apex:pageblocksectionitem labelStyle="Width:30%" rendered="{!demoFromOpp}">
+                        <apex:outputlabel value="Customer Name" ></apex:outputlabel>
+                        <apex:outputField value="{!demo.Customer_Name__c}"/> 
+                    </apex:pageblocksectionitem>
+                    <apex:inputField value="{!demo.Street__c}" style="width:50%;height:25px"/>
+                    <apex:inputField value="{!demo.City__c}" />
+                    <apex:pageblockSectionItem >
+                        <apex:outputText >
+                            Country
+                        </apex:outputText>
+                        <apex:actionRegion >
+                            <apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputpanel layout="block" styleClass="requiredBlock"/> 
+                                <apex:selectList value="{!countries}" multiselect="False" size="1" required="true">
+                                    <apex:selectOptions value="{!Countrylist}"/>  
+                                    <apex:actionSupport event="onchange" action="{!RerunState}" reRender="StateRerun" status="DisplayState"/>      
+                                </apex:selectList>
+                            </apex:outputPanel>  
+                        </apex:actionRegion>    
+                    </apex:pageblockSectionItem>
+                    
+                    <apex:pageblockSectionItem >
+                        <apex:outputText >
+                        State
+                        </apex:outputText>
+                    <apex:actionRegion >
+                        <apex:selectList value="{!State}" multiselect="False" size="1" id="StateRerun">
+                            <apex:selectOptions value="{!Statelist}"/>      
+                        </apex:selectList>
+                        <apex:actionStatus id="DisplayState">
+                            <apex:facet name="start" >
+                                <apex:image value="{!$Resource.DD_Loading}"/>
+                            </apex:facet>
+                        </apex:actionStatus>  
+                    </apex:actionRegion>  
+                    </apex:pageblockSectionItem>
+                    <apex:inputField value="{!demo.Post_Code_ZIP__c}"/>
+                        <!-- <apex:inputField value="{!demo.Fax__c}" id="Coninfo3"/> -->                  
+                </apex:pageblocksection>
+                <apex:pageblocksection columns="1"> <!-- rendered="{!demoNotFromOpp}"-->
+                <apex:pageblockSectionItem rendered="{!demoFromOpp}">
+                        <apex:outputText >
+                        Customer Contact
+                        </apex:outputText>
+                        <apex:actionRegion rendered="{!demoFromOpp}">
+                                <apex:outputPanel layout="block" styleClass="requiredInput">
+                                <apex:outputpanel layout="block" styleClass="requiredBlock"/> 
+                                    <apex:selectList value="{!CusContact}" multiselect="False" size="1">
+                                        <apex:selectOptions value="{!ContactList}"/>  
+                                        <apex:actionSupport event="onchange" action="{!Populatecontactvalue}" reRender="Coninfo1,Coninfo2" status="DisplayCon"/>      
+                                    </apex:selectList> 
+                                <apex:actionStatus id="DisplayCon">
+                                    <apex:facet name="start" >
+                                        <apex:image value="{!$Resource.DD_Loading}"/>
+                                    </apex:facet>
+                               </apex:actionStatus>
+                           </apex:outputPanel>  
+                        </apex:actionRegion>
+                   </apex:pageblockSectionItem>
+                     <apex:inputField value="{!demo.Contact1__c}" rendered="{!demoNotFromOpp}" required="true"/>  
+                        <apex:inputField value="{!demo.Contact_Email__c}" id="Coninfo1"/>       
+                        <apex:inputField value="{!demo.Telephone__c}" id="Coninfo2"/> 
+                    </apex:pageblocksection>
+                    <!--
+                    <apex:pageblocksection columns="1" rendered="{!demoFromOpp}">  
+                        <apex:outputField value="{!demo.Country__c}" />
+                        <apex:outputField value="{!demo.Street__c}"/>
+                        <apex:outputField value="{!demo.City__c}" />
+                        <apex:outputField value="{!demo.State_Province__c}" />
+                        <apex:outputField value="{!demo.Post_Code_ZIP__c}" />
+                </apex:pageblocksection> 
+                -->
+            </apex:pageBlockSection> 
+             <apex:pageblockSection title="Demo Details" id="DemoQualification" columns="2">
+             <apex:pageBlockSection columns="1">
+                 <apex:pageblockSectionItem labelStyle="Width:30%">
+                      <apex:outputText >
+                          Account Manager
+                      </apex:outputText>
+                      <apex:actionRegion >
+                          <apex:selectList value="{!AccountManager}" multiselect="False" size="1" required="true">
+                              <apex:selectOptions value="{!AccountManagerlist}"/>  
+                              <apex:actionSupport event="onchange" action="{!RerunAccountManager}" reRender="RegRun,sedis" status="DisplayManager" />      
+                          </apex:selectList>
+                          <apex:actionStatus id="DisplayManager">
+                              <apex:facet name="start" >
+                                      <apex:image value="{!$Resource.DD_Loading}"/>
+                              </apex:facet>
+                          </apex:actionStatus>
+                      </apex:actionRegion>    
+                  </apex:pageblockSectionItem>
+                  <!--<apex:inputField value="{!demo.Manager__c}"/>-->
+                   <apex:pageblockSectionItem >
+                      <apex:outputText >
+                          System Engineer
+                      </apex:outputText>
+                       <apex:actionRegion >
+                          <apex:selectList value="{!SystemEngineer}" multiselect="False" size="1"  id="sedis">
+                              <apex:selectOptions value="{!SystemEngineerlist}"/>   
+                          </apex:selectList>
+                          <apex:actionStatus id="DisplayManager">
+                              <apex:facet name="start" >
+                                      <apex:image value="{!$Resource.DD_Loading}"/>
+                              </apex:facet>
+                          </apex:actionStatus>
+                      </apex:actionRegion>     
+                  </apex:pageblockSectionItem>
+                  <apex:pageblockSectionItem >
+                      <apex:outputText >
+                          Manager
+                      </apex:outputText>
+                      <apex:actionRegion >
+                          <apex:selectList value="{!RegionalManager}" multiselect="False" size="1" id="RegRun">
+                              <apex:selectOptions value="{!RegionalManagerlist}"/>   
+                          </apex:selectList>
+                          
+                      </apex:actionRegion>    
+                  </apex:pageblockSectionItem>
+                  <!--
+                  <apex:pageblockSectionItem >
+                      <apex:outputText >
+                          Demo pool
+                      </apex:outputText>
+                      <apex:actionRegion >
+                          <apex:selectList value="{!SelectedDemo}" multiselect="False" size="1">
+                              <apex:selectOptions value="{!DemoList}"/>  
+                              
+                          </apex:selectList>
+                      </apex:actionRegion>    
+                  </apex:pageblockSectionItem>
+                  -->
+                  
+                  <apex:Outputfield value="{!demo.DD_Program_Admin__c}"/>
+                 <!-- <apex:actionRegion >-->
+                  <apex:outputField value="{!demo.Evaluation_Start_Date__c}"/>
+                 <!-- </apex:actionRegion> -->
+                  <apex:outputField value="{!demo.Demo_Period__c}"/>
+                  <apex:outputField value="{!demo.Demo_Pool_Lookup__c}"/> 
+                  
+                    
+                                  
+                 <!-- <apex:inputField value="{!demo.Tracking_Number__c}" rendered="{!APACLAregion}"/> -->
+                 <!-- <apex:inputField value="{!demo.Shipped_Date__c}" rendered="{!APACLAregion}" /> -->
+                    
+             </apex:pageBlockSection>
+             <apex:pageBlockSection columns="1">                   
+                 
+                  <!--<apex:pageblockSectionItem >
+                      <apex:outputText >
+                          Demo period
+                      </apex:outputText>
+                      <apex:selectList value="{!Selectedperiod}" multiselect="False" size="1"  required="true">
+                          <apex:selectOptions value="{!DemoperiodList}"/>  
+                      </apex:selectList>    
+                  </apex:pageblockSectionItem>-->
+                  
+                  <!--<apex:inputField value="{!demo.Demo_Status__c}"/>-->
+                  <apex:inputField value="{!demo.Carrier__c}" rendered="{!APACLAregion}"/>
+                  <!--<apex:inputField value="{!demo.Carrier_Account__c}"/>-->
+                  <apex:pageBlockSectionItem >
+                      <apex:outputText >
+                            Reason Code
+                            </apex:outputText>
+                      <apex:outputPanel layout="block" styleClass="requiredInput">
+                      <apex:outputpanel layout="block" styleClass="requiredBlock"/> 
+                          <apex:inputField value="{!demo.Reason_Code__c}"/>
+                      </apex:outputpanel>
+                  </apex:pageBlockSectionItem>
+                   <apex:inputField value="{!demo.Reason_for_Demo__c}" style="width:70%;height:50px"/> 
+                  <!--<apex:inputField value="{!demo.Shipping_Location__c}"/>-->
+                  <apex:inputField value="{!demo.Additional_Information__c}" style="width:90%;height:70px"/>
+               </apex:pageBlockSection>    
+             </apex:pageblockSection> 
+            <!--  for testing needs to  delete -->
+
+         </apex:pageBlock>
+     </apex:form> 
+     <apex:form id="Recodrlock" rendered="{!recordlock}">
+     <br/>
+    <h1 style="font-weight: bold; font-size: 12pt;">Record Locked</h1><br/><br/>
+    The record you are trying to edit has been locked. Please contact your administrator if access is necessary. <br/><br/>
+   
+    Click <apex:commandlink value="here" action="{!RetrunPage}"/> to return to the previous page.
+    </apex:form> 
+</apex:page>

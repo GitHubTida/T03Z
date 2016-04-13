@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Demo Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Demo Request</value>
+    </caseValues>
+    <fields>
+        <label><!-- I Agree --></label>
+        <name>Accept__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Demo Request (Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Action --></label>
+        <name>Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Address Line 1 --></label>
+        <name>Address_Line1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Address Line 2 --></label>
+        <name>Address_Line_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Address Line 3 --></label>
+        <name>Address_Line_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Address Line 4 --></label>
+        <name>Address_Line_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Address Line 5 --></label>
+        <name>Address_Line_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Barcode --></label>
+        <name>Barcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- CENTRE__KEY --></label>
+        <name>CENTRE_KEY__c</name>
+    </fields>
+    <fields>
+        <label><!-- Carrier Account --></label>
+        <name>Carrier_Account__c</name>
+        <picklistValues>
+            <masterLabel>234267</masterLabel>
+            <translation><!-- 234267 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3456778</masterLabel>
+            <translation><!-- 3456778 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>35673473</masterLabel>
+            <translation><!-- 35673473 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Carrier --></label>
+        <name>Carrier__c</name>
+        <picklistValues>
+            <masterLabel>FedEx</masterLabel>
+            <translation><!-- FedEx --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TNT</masterLabel>
+            <translation><!-- TNT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UPS</masterLabel>
+            <translation><!-- UPS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demopool City --></label>
+        <name>City_demopool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Date Difference --></label>
+        <name>Closed_Date_Difference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed Date --></label>
+        <name>Closed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirm checkbox --></label>
+        <name>Confirm_checkbox__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirm date --></label>
+        <name>Confirm_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Contact --></label>
+        <name>Contact1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Email --></label>
+        <name>Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count Address --></label>
+        <name>Count_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Name --></label>
+        <name>Customer_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Date --></label>
+        <name>DD_Demo_Approved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Admin --></label>
+        <name>DD_Program_Admin__c</name>
+        <relationshipLabel><!-- Demo Request (Program Admin) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delete Parts Not Submitted --></label>
+        <name>DeleteReservedProducts__c</name>
+        <picklistValues>
+            <masterLabel>False</masterLabel>
+            <translation><!-- False --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>True</masterLabel>
+            <translation><!-- True --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Delete Parts On Reject --></label>
+        <name>Delete_Parts_On_Reject__c</name>
+        <picklistValues>
+            <masterLabel>False</masterLabel>
+            <translation><!-- False --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>True</masterLabel>
+            <translation><!-- True --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Demo Period --></label>
+        <name>Demo_Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Pool --></label>
+        <name>Demo_Pool_Lookup__c</name>
+        <relationshipLabel><!-- Demo Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sequence number --></label>
+        <name>Demo_Ref__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Status --></label>
+        <name>Demo_Status__c</name>
+        <picklistValues>
+            <masterLabel>Awaiting AM Submission</masterLabel>
+            <translation><!-- Awaiting AM Submission --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Admin Approval</masterLabel>
+            <translation><!-- Awaiting Admin Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Manager Approval</masterLabel>
+            <translation><!-- Awaiting Manager Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting SE Validation</masterLabel>
+            <translation><!-- Awaiting SE Validation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Service Action</masterLabel>
+            <translation><!-- Awaiting Service Action --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed With Missing Product</masterLabel>
+            <translation><!-- Closed With Missing Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress With Services</masterLabel>
+            <translation><!-- In Progress With Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Return In Progress</masterLabel>
+            <translation><!-- Return In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipped</masterLabel>
+            <translation><!-- Shipped --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Detail about WriteOff --></label>
+        <name>Detail_about_WriteOff__c</name>
+    </fields>
+    <fields>
+        <label><!-- Due Date --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- END_DATE --></label>
+        <name>END_DATE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evaluation Start Date --></label>
+        <name>Evaluation_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Evaluation End Date --></label>
+        <name>Evaulation_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Controller(Name) --></label>
+        <name>Financial_Controller_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Financial Controller --></label>
+        <name>Financial_Controller__c</name>
+        <relationshipLabel><!-- Demo Request (Financial Controller) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- IR Status --></label>
+        <name>IR_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manager --></label>
+        <name>Manager__c</name>
+        <relationshipLabel><!-- Demo Request (Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Demo Request --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PRINT_DATE --></label>
+        <name>PRINT_DATE__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packed By --></label>
+        <name>Packed_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Packed Date --></label>
+        <name>Packed_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Parts Reserved --></label>
+        <name>Parts_Reserved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picked Date --></label>
+        <name>Picked_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Code/ZIP --></label>
+        <name>Post_Code_ZIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demopool Post Code/ZIP --></label>
+        <name>Post_Code_ZIP_demopool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- RB Service Order --></label>
+        <name>RB_Service_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reason Code --></label>
+        <name>Reason_Code__c</name>
+        <picklistValues>
+            <masterLabel>Application Development</masterLabel>
+            <translation><!-- Application Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bake Off</masterLabel>
+            <translation><!-- Bake Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Satisfaction</masterLabel>
+            <translation><!-- Customer Satisfaction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pilot</masterLabel>
+            <translation><!-- Pilot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Show and Tell</masterLabel>
+            <translation><!-- Show and Tell --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Testing</masterLabel>
+            <translation><!-- Testing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>TradeShow</masterLabel>
+            <translation><!-- TradeShow --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Reason for Demo --></label>
+        <name>Reason_for_Demo__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item Received By --></label>
+        <name>Received_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Indicator --></label>
+        <name>Record_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Address --></label>
+        <name>Return_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Air Bill --></label>
+        <name>Return_Air_Bill__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship to Site --></label>
+        <name>Ship_to_Site__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Date Difference --></label>
+        <name>Shipped_Date_Difference__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Date --></label>
+        <name>Shipped_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ship to Address --></label>
+        <name>Shipping_Location__c</name>
+        <picklistValues>
+            <masterLabel>Alternative Address</masterLabel>
+            <translation><!-- Alternative Address --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales Office</masterLabel>
+            <translation><!-- Sales Office --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Site Name --></label>
+        <name>Site_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demopool State/Province --></label>
+        <name>StateProvince_demopool__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demopool Street --></label>
+        <name>Street_demopool__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Engineer --></label>
+        <name>System_Engineer__c</name>
+        <relationshipLabel><!-- Demo Request (System Engineer) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact Telephone --></label>
+        <name>Telephone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Theater --></label>
+        <name>Theater__c</name>
+    </fields>
+    <fields>
+        <label><!-- Theater --></label>
+        <name>Theater_for_Sharing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking Number --></label>
+        <name>Tracking_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Number --></label>
+        <name>Transaction_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Write Off Count --></label>
+        <name>Write_Off_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1st Audit By --></label>
+        <name>X1st_Audit_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- 1st Audit Date --></label>
+        <name>X1st_Audit_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Audit Date --></label>
+        <name>X2nd_Audit_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- 2nd Audit By --></label>
+        <name>X2nd_audit_By__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demopool Country --></label>
+        <name>country_demopool__c</name>
+    </fields>
+    <layouts>
+        <layout>DD_Demo Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Details --></label>
+            <section>Customer Details</section>
+        </sections>
+        <sections>
+            <label><!-- Demo Details --></label>
+            <section>Demo Details</section>
+        </sections>
+        <sections>
+            <label><!-- Demo Request Status --></label>
+            <section>Demo Request Status</section>
+        </sections>
+        <sections>
+            <label><!-- Selected Products --></label>
+            <section>Selected Products</section>
+        </sections>
+        <sections>
+            <label><!-- Shipping Information --></label>
+            <section>Shipping Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Information --></label>
+            <section>System Information</section>
+        </sections>
+        <sections>
+            <label><!-- Terms and Condition --></label>
+            <section>Terms and Condition</section>
+        </sections>
+    </layouts>
+    <sharingReasons>
+        <label><!-- Demo Access --></label>
+        <name>Demo_Access</name>
+    </sharingReasons>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- &quot;Reason code&quot; is mandatory --></errorMessage>
+        <name>DD_Reason_for_Code_mendatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Reason of demo is mandatory, if Reason Code is Others --></errorMessage>
+        <name>DD_Reason_of_Demo_is_required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- State is mandatory when country selected is USA OR CANADA --></errorMessage>
+        <name>DD_state_mendatory</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Accept_and_Submit --></label>
+        <name>Accept_and_Submit</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Add_Parts --></label>
+        <name>Add_Parts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone --></label>
+        <name>Clone</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Oppty_New_Demo_Request --></label>
+        <name>Oppty_New_Demo_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Overview_and_Information --></label>
+        <name>Overview_and_Information</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Print_Return_Address --></label>
+        <name>Print_Return_Address</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Track_Shipment --></label>
+        <name>Track_Shipment</name>
+    </webLinks>
+</CustomObjectTranslation>

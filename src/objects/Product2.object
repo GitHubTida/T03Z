@@ -1,0 +1,2624 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>ATO_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>ATO Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Accounting_Rule_ID__c</fullName>
+        <label>Accounting Rule ID</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Agile_Life_Cycle__c</fullName>
+        <label>Agile Life Cycle</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Allow_Opportunity_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Allow Opportunity Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <label>Category</label>
+        <length>240</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Order_Enabled_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Customer Order Enabled Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Division_Name__c</fullName>
+        <label>Division Name</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Inventory_Item_Id__c</fullName>
+        <label>Inventory Item Id</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Is_Service_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Is Service Product?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Item_Group_Code__c</fullName>
+        <label>Item Group Code</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Item_Group__c</fullName>
+        <description>Zebra Item Group Description</description>
+        <label>Item Group</label>
+        <picklist>
+            <picklistValues>
+                <fullName>105SL Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>110 PAX4 Print Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>110Xi4 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>110XiIII Plus Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>140Xi4 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>170 PAX4 Print Engine</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>170XiIII Plus Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>220Xi4 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Barcode Supplies Components</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bar Code Training Materials</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAG Development Prof Svcs</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Cleaning Supplies</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Laminates / Holograms</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Maintenance Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Media Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Printer Service Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Printhead Maint Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Ribbons YMCKO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card RM Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card Upgrade Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connectivity Wired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connectivity Wireless</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom Desktop Ribbons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom Ribbon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop Maint/Upgrade Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop Printer Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop Printhead Maint Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop RM Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Desktop Service Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EM220 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extra Charges</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GK420 DT Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GK420 TT Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GX420 DD Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GX420 TT Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GX430 TT Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HC100 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Keyboard Display Units</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kiosk RM Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Label Design Applications</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Labels Custom Desktop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Labels Custom Kiosk</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Labels Custom Specialty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom Laser Label</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Media Kits Custom</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Labels Custom Mobile</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laminates ? ZXP8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laminates - P630/P640</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Laminates - ZXP 7&amp;8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LP2824 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LP2824Z Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LP 2844 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LP2844Z Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LP3844Z Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Batteries</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Maint/Upgrade Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Printer Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Printheads</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile RM Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mobile Service Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Monochrome Card Ribbons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MZ220 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MZ320 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Onsite Service Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Multi Panel Card Ribbons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P100 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P110 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P120 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P330 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P430 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4T TT Mobile Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P4T TT Mobile RFID Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P630 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>P640 Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Photo Printer RM Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plastic Cards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PS4000 Print Servers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PS4XXX Printer Systems</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QL200 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QL300 Printer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>QL400 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R110XiIII Plus UHF Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R170XiIII Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R2844Z/R402 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R3i Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R4i Card Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ribbons - P630/P640</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ribbons - Perf - Oth Multi Panel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ribbons - Perf - YMCKO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ribbons - Value - Oth Multi Panel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ribbons - Value - YMCKO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RW2 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RW4 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RZ400 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RZ600 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>S4M Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sample Labels Tabletop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sample Ribbons</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Security Cards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stock Cartridge Wristbands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stock Desktop Wristbands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stock Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stock Tabletop Wristbands</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop Accessories</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop Maint/Upgrade Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop Printer Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop Printhead Maint Kits</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop RM Parts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tabletop Service Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TLP2824 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TLP2824Z Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TLP2844 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TLP2844Z Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TLP3842 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TLP3844Z Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTP 2000 Kiosk Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTP 2100 Kiosk Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTP 8000 Kiosk Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TTPM Series Ticket Printer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UHF RFID Cards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Used and Refurbished Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZebraNet Bridge Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZM400 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZM600 Printers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Long_Description__c</fullName>
+        <label>Long Description</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Orderable_SKU__c</fullName>
+        <description>This Flag decides if the Opportunity Product can be added to the Opportunity if it is Orderable or Customer Enabled Flag is true</description>
+        <formula>IF(OR(Allow_Opportunity_Flag__c, Customer_Order_Enabled_Flag__c),true,false)</formula>
+        <label>Orderable SKU</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Organization_ID__c</fullName>
+        <label>Organization ID</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Primary_UOM__c</fullName>
+        <description>Primary Unit of Measure</description>
+        <inlineHelpText>Primary Unit of Measure</inlineHelpText>
+        <label>Primary UOM</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Box</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Roll</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bag</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Kit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pack</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Class__c</fullName>
+        <label>Product Class</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Conversion_Source__c</fullName>
+        <description>This field identifies if a product SKU is from MSI SFDC or Zebra</description>
+        <label>Product Conversion Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>EVM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <label>Product Line</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Sub_Family_View__c</fullName>
+        <formula>Item_Group_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Sub Family</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Sub_Family__c</fullName>
+        <label>Product Sub Family</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Sub_Line__c</fullName>
+        <label>Product Sub Line</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <label>Product Type</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Unique_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>Product Unique Id</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>SKU_Level_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field Identifies if a Product Entry is SKU level or NOT. If unchecked it shall be identified as a Family Level Product. This may NOT be required if we store all Product Family Entries in a separate custom object.</description>
+        <label>SKU Level Product?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Serialized__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Serialized</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Stock_Enabled_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Stock Enabled Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Structure_Type__c</fullName>
+        <label>Structure Type</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Prod_Line__c</fullName>
+        <label>Sub Prod Line</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User_Item_Type__c</fullName>
+        <label>User Item Type</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Weight_UOM__c</fullName>
+        <label>Weight UOM</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Weight__c</fullName>
+        <label>Weight</label>
+        <precision>18</precision>
+        <scale>4</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>ZEBModel_Name__c</fullName>
+        <label>Model Name</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ZEB_Organization_Image__c</fullName>
+        <formula>IF( Division_Name__c = &apos;Zebra NALA&apos;, IMAGE(&quot;/servlet/servlet.ImageServer?id=015i0000004EE8p&amp;oid=00D560000008iX6&quot;, &quot;Zebra NALA&quot;),  
+ IF( Division_Name__c = &apos;Zebra EMEA&apos;, IMAGE(&quot;/servlet/servlet.ImageServer?id=015i0000004EE99&amp;oid=00D560000008iX6&quot;, &quot;Zebra EMEA&quot;), IF( Division_Name__c = &apos;Zebra APAC USD&apos;, IMAGE(&quot;/servlet/servlet.ImageServer?id=015i0000004EE9J&amp;oid=00D560000008iX6&quot;, &quot;Zebra APAC USD&quot;), IF( Division_Name__c = &apos;Zebra APAC RMB&apos;, IMAGE(&quot;/servlet/servlet.ImageServer?id=015i0000004EE9d&amp;oid=00D560000008iX6&quot;, &quot;Zebra APAC RMB&quot;), null))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Organization</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ZEB_Product_Family__c</fullName>
+        <description>Custom, non-picklist field used to store Zebra Product Family.</description>
+        <label>Product Family</label>
+        <length>60</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>box__FolderId__c</fullName>
+        <label>FolderId</label>
+        <length>18</length>
+        <type>Text</type>
+    </fields>
+    <recordTypes>
+        <fullName>Hardware_Products</fullName>
+        <active>true</active>
+        <description>This Record type is for hardware products.</description>
+        <label>Hardware Products</label>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>105SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110 PAX4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110Xi4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110XiIII Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>140Xi4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170 PAX4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170XiIII Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>220Xi4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Accessory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Contract Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Printheads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Cleaning Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Laminates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Media Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EM 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extra Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 DT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 TT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 DD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 TT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX430 TT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HC100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LINK-OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2824</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2824Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2844</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 3844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ 320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P110</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P330</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P430</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P630</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P640</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS 4000 Print Servers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS4XXX Printer Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL 320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL 420</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLn220%2F320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R110XiIII Plus UHF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R170XiIII Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R2844-R402</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R3i</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R4i</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RP4T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW 420</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ400</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ600</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refurbished Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S4M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Accessory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Batteries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Connectivity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Contract Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Onsite Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Printheads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Professional Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Repair Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sundries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2824</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2824Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2844</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3842</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 8000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM400</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM600</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZebraDesigner Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZebraNet Bridge Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zip Ship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Item_Group__c</picklist>
+            <values>
+                <fullName>105SL Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110 PAX4 Print Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110Xi4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110XiIII Plus Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>140Xi4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170 PAX4 Print Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170XiIII Plus Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>220Xi4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bar Code Training Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Supplies Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAG Development Prof Svcs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Cleaning Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Laminates %2F Holograms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Maintenance Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Media Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Printer Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Printhead Maint Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Ribbons YMCKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Upgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connectivity Wired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connectivity Wireless</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Desktop Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Laser Label</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Ribbon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Maint%2FUpgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Printer Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Printhead Maint Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EM220 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extra Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 DT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 TT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 DD Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 TT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX430 TT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HC100 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keyboard Display Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2844 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP2824 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP2824Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP2844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP3844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Label Design Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Desktop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Kiosk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laminates %3F ZXP8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laminates - P630%2FP640</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laminates - ZXP 7%268</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ220 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ320 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media Kits Custom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Batteries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Maint%2FUpgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Printer Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Printheads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monochrome Card Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Multi Panel Card Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P100 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P110 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P120 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P330 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P430 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4T TT Mobile Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4T TT Mobile RFID Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P630 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P640 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS4000 Print Servers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS4XXX Printer Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Printer RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plastic Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL200 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL300 Printer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL400 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R110XiIII Plus UHF Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R170XiIII Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R2844Z%2FR402 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R3i Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R4i Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW2 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ400 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ600 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - P630%2FP640</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Perf - Oth Multi Panel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Perf - YMCKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Value - Oth Multi Panel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Value - YMCKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S4M Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Labels Tabletop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Cartridge Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Desktop Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Tabletop Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2824 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2824Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2844 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3842 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2000 Kiosk Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2100 Kiosk Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 8000 Kiosk Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTPM Series Ticket Printer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Maint%2FUpgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Printer Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Printhead Maint Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UHF RFID Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Used and Refurbished Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM400 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM600 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZebraNet Bridge Product</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_UOM__c</picklist>
+            <values>
+                <fullName>Bag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Roll</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Conversion_Source__c</picklist>
+            <values>
+                <fullName>AIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EVM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Service_Products</fullName>
+        <active>true</active>
+        <description>This Record type is for Service products.</description>
+        <label>Service Products</label>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>105SL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110 PAX4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110Xi4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110XiIII Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>140Xi4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170 PAX4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170XiIII Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>220Xi4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Accessory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Contract Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CPS Printheads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Cleaning Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Laminates</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Media Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EM 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extra Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 DT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 TT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 DD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 TT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX430 TT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HC100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LINK-OS</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2824</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2824Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2844</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 3844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ 320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P110</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P120</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P330</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P430</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P630</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P640</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS 4000 Print Servers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS4XXX Printer Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL 320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL 420</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QLn220%2F320</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R110XiIII Plus UHF</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R170XiIII Plus</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R2844-R402</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R3i</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R4i</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RP4T</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW 220</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW 420</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ400</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ600</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Refurbished Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S4M</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Accessory</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Batteries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Connectivity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Contract Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Onsite Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Printheads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Professional Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SPS Repair Service</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sundries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2824</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2824Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2844</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP 2844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3842</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3844Z</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2100</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 8000</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTPM</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM400</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM600</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZebraDesigner Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZebraNet Bridge Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Zip Ship</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Item_Group__c</picklist>
+            <values>
+                <fullName>105SL Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110 PAX4 Print Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110Xi4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>110XiIII Plus Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>140Xi4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170 PAX4 Print Engine</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>170XiIII Plus Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>220Xi4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bar Code Training Materials</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Barcode Supplies Components</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAG Development Prof Svcs</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Cleaning Supplies</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Laminates %2F Holograms</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Maintenance Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Media Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Printer Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Printhead Maint Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Ribbons YMCKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Card Upgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connectivity Wired</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connectivity Wireless</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Desktop Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Laser Label</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom Ribbon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Maint%2FUpgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Printer Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Printhead Maint Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Desktop Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EM220 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Extra Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 DT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GK420 TT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 DD Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX420 TT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GX430 TT Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HC100 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Keyboard Display Units</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kiosk RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP 2844 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP2824 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP2824Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP2844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>LP3844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Label Design Applications</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Desktop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Kiosk</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Mobile</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Labels Custom Specialty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laminates %3F ZXP8</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laminates - P630%2FP640</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Laminates - ZXP 7%268</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ220 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MZ320 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media Kits Custom</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Batteries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Maint%2FUpgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Printer Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Printheads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Mobile Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monochrome Card Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Onsite Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other Multi Panel Card Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P100 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P110 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P120 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P330 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P430 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4T TT Mobile Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P4T TT Mobile RFID Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P630 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>P640 Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS4000 Print Servers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>PS4XXX Printer Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Photo Printer RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plastic Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL200 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL300 Printer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>QL400 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R110XiIII Plus UHF Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R170XiIII Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R2844Z%2FR402 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R3i Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>R4i Card Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW2 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RW4 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ400 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RZ600 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - P630%2FP640</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Perf - Oth Multi Panel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Perf - YMCKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Value - Oth Multi Panel</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ribbons - Value - YMCKO</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>S4M Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Labels Tabletop</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sample Ribbons</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Security Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Software</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Cartridge Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Desktop Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stock Tabletop Wristbands</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2824 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2824Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2844 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP2844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3842 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLP3844Z Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2000 Kiosk Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 2100 Kiosk Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTP 8000 Kiosk Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TTPM Series Ticket Printer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Accessories</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Maint%2FUpgrade Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Printer Repair</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Printhead Maint Kits</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop RM Parts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tabletop Service Contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>UHF RFID Cards</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Used and Refurbished Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM400 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZM600 Printers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ZebraNet Bridge Product</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Primary_UOM__c</picklist>
+            <values>
+                <fullName>Bag</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Kit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pack</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Roll</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Product_Conversion_Source__c</picklist>
+            <values>
+                <fullName>AIT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>EVM</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+</CustomObject>

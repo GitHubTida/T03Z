@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Used to enable and disable Triggers</description>
+    <fields>
+        <fullName>Deactivate_Triggers__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Deactivate_Triggers</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Trigger Inactive Check</label>
+</CustomObject>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Vocative</caseType>
+        <value>Material complementario de partner</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Vocative</caseType>
+        <plural>true</plural>
+        <value>Materialy partnera</value>
+    </caseValues>
+    <fields>
+        <label>Konto</label>
+        <name>Account__c</name>
+        <relationshipLabel>Materiały partnera</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Załącznik</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Sprawa</label>
+        <name>Case__c</name>
+        <relationshipLabel>Materiały partnera</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Opis</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Rodzaj dokumentu</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>Plan biznesowy/marketingowy</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>Studium przypadku</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>Informacje dot. klienta</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Inne</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>Informacje dot. rozwiązania firmy Zebra</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Nazwa pliku</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>Widok</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>Logo?</label>
+        <name>isLogo__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Partner Collateral No --></nameFieldLabel>
+    <webLinks>
+        <label>Wyślij dokument</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>Wyślij logo/dokument</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>Wyślij logo</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

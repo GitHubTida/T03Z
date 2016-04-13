@@ -1,0 +1,137 @@
+<apex:page standardController="Addendum_Program_Contracts__c" extensions="ZEBLegalAddendumAcceptDecline" showHeader="false" sidebar="false" cache="false" tabstyle="Addendum_Program_Contracts__c" action="{!onLoad}" language="{!Andm.Language__c}" title="{!$Label.Application_Head}">
+  <!-- Begin CSS Style Cascading -->
+  <!--  Replaced Andm.Account__r.Name to Andm.Account__r.Name -->
+  <!--  replaced by Nimesh to accomodate Partner account name to be displayed in the UI and not Company legal Name-->
+    <style>
+        .bPageBlock .requiredInput {
+            display: inline;
+        }
+    </style>
+    
+    <div class="ztopbanner">
+        <apex:define name="header">
+            <c:testheader />
+        </apex:define>
+    </div>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+    <!-- Show Section Header -->
+   <!-- <div style="width: 960px; margin: 0 auto;"> 
+        <apex:sectionHeader title="{!$Label.Legal_Title}"/>
+    </div> -->
+    
+    <div class="zmainbody">
+<!--    <div style="width: 960px; margin: 0 auto;"> -->
+        <!-- Show page messages -->
+        <apex:pageMessages />
+        
+        <apex:form >
+        
+          <apex:pageBlock > 
+            
+            <apex:pageBlockButtons location="bottom"><apex:outputText />
+                <apex:commandButton action="{!back}" value="{!$Label.App_Previous}" />
+                <apex:commandButton id="ENTER_BUTTON" action="{!saveAndm}" value="{!$Label.Submit}" />
+            </apex:pageBlockButtons>
+            
+            <!--Agreement to Terms and Conditions-->
+            <apex:pageBlockSection title="{!$Label.Terms_Conditions}" collapsible="false" columns="1" rendered="{!OR(IF(contains(Andm.Name,'Terms & Conditions'), true, false),IF(contains(Andm.Name,'MR Master Agreement'), true, false))}">
+                <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">              
+                <apex:outputPanel > 
+                    <p><apex:outputText value="{!$Label.TC_Addendum_Part1}" escape="false"/> <b><U><apex:outputText value="{!Andm.Account__r.Name}" rendered="{!NOT(ISNULL(Andm.Account__c))}"/><apex:outputText value="{!Andm.Partner_Application__r.Company_Legal_Name__c}" rendered="{!NOT(ISNULL(Andm.Partner_Application__c))}"/></U></b> (“{!$Label.Andm_Company}”).<br/><br/></p>
+                    <apex:outputLink value="{!Andm.PDF_Link__c}" target="_blank" style="font-weight:bold;color: #07F;">{!Andm.Legal_Document_Name__c}</apex:outputLink>
+                </apex:outputPanel>
+               </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">                                          
+                   <apex:selectRadio value="{!andmAccept}" immediate="true" layout="pageDirection">    
+                       <apex:selectOption itemLabel="{!$Label.I_ACCEPT}" itemValue="Accepted"/>                            
+                       <apex:outputLabel >
+                       {!$Label.TC_Addendum}. 
+                       <br/><br/>
+                       {!$Label.Full_Legal_Name_of_Signatory} &nbsp;&nbsp;<apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="Approver" styleClass="inlineField" value="{!Andm.Approver__c}"/>
+                        </apex:outputPanel>
+                       </apex:outputLabel>                          
+                           <br/> 
+                       <apex:outputLabel > 
+                       {!$Label.Title_of_Signatory} &nbsp;&nbsp;<apex:outputPanel layout="block" styleClass="requiredInput">
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="Title" styleClass="inlineField" style="width:23%" value="{!Andm.Title__c}"/>
+                        </apex:outputPanel>
+                       </apex:outputLabel>                           
+                       <apex:selectOption itemLabel="{!$Label.I_DECLINE}" itemValue="Declined" />                           
+                   </apex:selectRadio> 
+              </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <!--Agreement to Technology Addendum-->
+            <!--<apex:pageBlockSection title="{!$Label.Technology_Addendum}" collapsible="false" columns="1" rendered="{!NOT(OR(IF(contains(Andm.Name,'Terms & Conditions'), true, false),IF(contains(Andm.Name,'Federal Addendum'), true, false),IF(contains(Andm.Name,'Value Added Reseller'), true, false),IF(contains(Andm.Name,'Application Partner'), true, false),IF(contains(Andm.Name,'Federal MR'), true, false),IF(contains(Andm.Name,'MR Master Agreement'), true, false)))}">-->
+                <apex:pageBlockSection title="{!$Label.Technology_Addendum}" collapsible="false" columns="1" rendered="{!NOT(OR(IF(contains(Andm.Name,'Terms & Conditions'), true, false),IF(contains(Andm.Name,'Federal Addendum'), true, false),IF(contains(Andm.Name,'Value Added Reseller'), true, false),IF(contains(Andm.Name,'Application Partner'), true, false),IF(contains(Andm.Name,'Federal MR'), true, false),IF(contains(Andm.Name,'MR Master Agreement'), true, false),IF(contains(Andm.Name,'State and Local MR'), true, false)))}">
+                <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">
+       
+                    <apex:outputPanel >                   
+                        <p><apex:outputText value="{!$Label.Technology_Addendum_part1}" escape="false"/><b>&nbsp;{!Andm.Legal_Document_Name__c}&nbsp;</b> <apex:outputText value="{!$Label.Technology_Addendum_part2}" escape="false"/> <b><U><apex:outputText value="{!Andm.Account__r.Name}" rendered="{!NOT(ISNULL(Andm.Account__c))}"/><apex:outputText value="{!Andm.Partner_Application__r.Company_Legal_Name__c}" rendered="{!NOT(ISNULL(Andm.Partner_Application__c))}"/></U></b> ( “{!$Label.Andm_Company}”).<br/><br/> </p>
+                        <apex:outputLink value="{!Andm.PDF_Link__c}" target="_blank"  style="font-weight:bold;color: #07F;"><apex:outputField value="{!Andm.Legal_Document_Name__c}"/></apex:outputLink>
+                    </apex:outputPanel>
+                                                
+                </apex:pageBlockSectionItem>
+                  
+                <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">                                          
+                    <apex:selectRadio value="{!andmAccept}" immediate="true" layout="pageDirection">    
+                        <apex:selectOption itemLabel="{!$Label.I_ACCEPT}" itemValue="Accepted"/> 
+                         <apex:outputLabel >
+                           <apex:outputText value="{!$Label.Technology_Addendum_part3}" rendered="{!IF(contains(Andm.Category__c,'Reseller'),true,false)}"/>
+                           <apex:outputText value="{!$Label.Technology_Addendum_part4}" rendered="{!IF(contains(Andm.Category__c,'Complementary Partner'),true,false)}"/>
+                           <apex:outputText value="{!$Label.Technology_Addendum_part5}" rendered="{!IF(contains(Andm.Category__c,'Specialization'),true,false)}"/>
+                           <br/>
+                           <br/>
+                           {!$Label.Full_Legal_Name_of_Signatory} &nbsp;&nbsp;<apex:outputPanel layout="block" styleClass="requiredInput">
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputField id="Approver" styleClass="inlineField" value="{!Andm.Approver__c}"/>
+                            </apex:outputPanel>
+                         </apex:outputLabel>                            
+                           <br/> 
+                         <apex:outputLabel >                           
+                           {!$Label.Title_of_Signatory} &nbsp;&nbsp;<apex:outputPanel layout="block" styleClass="requiredInput">
+                                <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                                <apex:inputField id="Title" styleClass="inlineField" style="width:23%" value="{!Andm.Title__c}"/>
+                            </apex:outputPanel>
+                         </apex:outputLabel>                         
+                        <apex:selectOption itemLabel="{!$Label.I_DECLINE}" itemValue="Declined" />                                                      
+                    </apex:selectRadio> 
+                </apex:pageBlockSectionItem>   
+                
+            </apex:pageBlockSection>
+                        
+          </apex:pageBlock>
+    
+        </apex:form>
+    </div>
+    
+    <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+    </div>
+    
+  <!-- End CSS Style Cascading -->
+</apex:page>

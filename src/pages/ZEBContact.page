@@ -1,0 +1,313 @@
+<apex:page standardController="Partner_Application__c" extensions="ZEBPartnerController" showHeader="false" sidebar="false" cache="false" title="{!$Label.Application_Title}" tabstyle="Partner_Application__c" action="{!onLoad}" language="{!languageLocale}">
+        
+        <head>
+        <!-- <title>{!$Label.Application_Title}</title> -->
+        </head>
+               
+      
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+        <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>               
+        <apex:includeScript value="{!URLFOR($Resource.appprocess,'appprocess.js')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.JQueryDataTable,'DataTables-1.10.7/media/js/jquery-1.11.1.js')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.JQueryDataTable,'DataTables-1.10.7/media/css/jquery.dataTables.css')}" />
+        <apex:includeScript value="{!URLFOR($Resource.JQueryDataTable,'DataTables-1.10.7/media/js/jquery.dataTables.min.js')}"/>
+        <!-- <apex:includeScript value="{!URLFOR($Resource.JQueryDataTable,'DataTables-1.10.7/media/js/alt-string.js')}"/> -->
+       
+        <style>
+      
+        .apexp{
+            width: 1160px;
+            position: relative;
+        }
+    
+        </style>
+        <script>
+            j$ = jQuery.noConflict();
+            j$.extend( j$.fn.dataTableExt.oSort, {
+                "alt-string-pre": function ( a ) {
+                    return a.match(/alt="(.*?)"/)[1].toLowerCase();
+                },
+             
+                "alt-string-asc": function( a, b ) {
+                    return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+                },
+             
+                "alt-string-desc": function(a,b) {
+                    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+                }
+            } );
+            j$.extend( j$.fn.dataTableExt.oSort, {
+                "alt-string-pre": function ( a ) {
+                    return a.match(/alt="(.*?)"/)[1].toLowerCase();
+                },
+             
+                "alt-string-asc": function( a, b ) {
+                    return ((a < b) ? -1 : ((a > b) ? 1 : 0));
+                },
+             
+                "alt-string-desc": function(a,b) {
+                    return ((a < b) ? 1 : ((a > b) ? -1 : 0));
+                }
+            } );
+            j$(document).ready( function () {
+                var contactTable = j$('[id$="contacttable"]').DataTable({
+                    columnDefs: [
+                        { "searchable": false, targets: 0 },
+                        { "orderable": false, targets: 0 },
+                        { type: 'alt-string', targets: 6 },
+                        { type: 'alt-string', targets: 7 },
+                        { type: 'alt-string', targets: 8 },
+                        { "searchable": false, targets: 6 },
+                        { "searchable": false, targets: 7 },
+                        { "searchable": false, targets: 8 }
+                     ],
+                      "oLanguage": {
+                        "sLengthMenu": '{!$Label.Show} <select>'+
+                            '<option value="5">5</option>'+
+                            '<option value="10">10</option>'+
+                            '<option value="25">25</option>'+
+                            '<option value="50">50</option>'+
+                            '<option value="-1">{!$Label.All}</option>'+
+                            '</select> {!$Label.entries}',
+                        "sInfoEmpty": "{!$Label.Search_results_returned_no_rows}",
+                        "sInfo": "{!$Label.Showing} _START_ {!$Label.to} _END_ {!$Label.PRM_of} _TOTAL_ {!$Label.records}",
+                        "sZeroRecords": "{!$Label.No_data_available}",
+                        "sInfoFiltered": "({!$Label.filtered_from} _MAX_ {!$Label.total_records})",
+                        "sSearch": "{!$Label.Search}",
+                        "oPaginate": {"sPrevious": "{!$Label.App_Previous}", "sNext": "{!$Label.App_Next}"}
+                    },          
+                    "lengthMenu": [[5,10,25,50,-1], [5,10,25,50,"All"]],
+                    "order": [[ 1, "asc" ]],
+                    "bAutoWidth": false
+                });
+            });
+        </script>
+        
+        <script type="text/javascript">
+        
+            function findSelectedChkbox()
+            {
+           
+                var checkboxs = document.getElementsByTagName('input');                         
+                var okay=false;
+                //alert(okay);
+                 //alert(checkboxs.length);
+                for(var i=0,l=checkboxs.length;i<l;i++)
+                {               
+                    if(checkboxs[i].name.indexOf('chk1') !=-1){
+                        if(checkboxs[i].checked)
+                        {
+                            okay=true;
+                            break;                          
+                        }
+                    }
+                }
+                
+                if (okay == true) {
+                   //alert('check box selected');
+                   //need to set the hidden field to 1 based on this command button block need to be rerender.
+                }else {
+                  //alert('check box not selected');
+                  //need to set hidden field to 0 based on this command button block need to be rerender.
+                }    
+            }
+            
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        
+        <!--Highlight styles start-->
+            <style>
+            li.done1,li.done2,li.done3,li.done4,li.done5{
+                background: #0077FF ! Important;
+                color: #FFFFFF ! Important;
+            }
+            #crumbs li.done1:after,#crumbs li.done2:after,#crumbs li.done3:after,#crumbs li.done4:after,#crumbs li.done5:after {
+                  content: "";
+                  border-top: 20px solid transparent;
+                  border-bottom: 20px solid transparent;
+                  border-left: 40px solid #0077FF;
+                  position: absolute;
+                  right: -40px;
+                  top: 0;
+                  z-index: 1;
+            }
+             
+            th,td{
+            max-width:130px !important;           
+            word-wrap:break-word;
+            white-space:normal;
+            }
+          
+          .bPageBlock .pbTitle{
+          width: 0% ! important;
+          }
+          
+          <!--body .bPageBlock .pbTitle{
+              width:10% !important;             
+          }-->
+
+         </style>  
+         <!--Highlight styles End-->
+        
+        <div class="ztopbanner">
+        <apex:define name="header">
+        <c:testheader />
+        </apex:define>
+        </div>
+        
+         <!--Chevron styles start-->
+        <div class="chevron">
+            <apex:define name="Chevron">
+                <c:ChevronComponent />
+            </apex:define>
+        </div>
+        <!--Chevron styles end-->
+        
+        <div class="zmainbody">
+        <!-- <apex:sectionHeader title="{!$Label.Application_Title}"/> -->
+        <apex:form id="theForm">
+       <apex:inputHidden value="{!checkValue}" id="theHiddenInput"/>
+        <apex:pageBlock Title="{!$Label.Contact_Details}" id="pageBlk" tabStyle="Account" helptitle="{!$Label.Help_Title}" helpUrl="{!ZEB.MPE_Help_PDF__c}">
+                                     
+                <apex:pageBlockButtons location="bottom" id="a1">
+                        <apex:commandButton value="{!$Label.App_Previous}" immediate="true" action="{!prevPage7}"/> 
+                        <apex:commandButton value="{!$Label.App_Finish_Later}" immediate="true" action="{!FinishLater}" onclick="if(!confirm('{!$Label.PopUp_Finish_Later}')){return false;}" 
+                         title="{!$Label.OnMouse_Finish_Later}" onmouseover="{!$Label.OnMouse_Finish_Later}"/>                        
+                        <apex:commandButton value="{!$Label.New_Contact}" action="{!upsertContact}"/>
+                        <apex:commandButton id="ENTER_BUTTON" value="{!$Label.App_Next}" action="{!nextPage9}" rendered="{!AND(subFlag,PartAdmnCount>=1)}"/> 
+                </apex:pageBlockButtons>
+                
+                <apex:pageBlockSection columns="1">
+                    <apex:pageblockSectionItem >
+                        <apex:outputPanel >
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message}" style="font-weight:bold;"></apex:outputLabel><apex:outputText value="." style="font-weight:bold;" rendered="{!NOT(ZEB.ISV_Only__c)}"></apex:outputText>
+                            <apex:outputText value="," style="font-weight:bold;" rendered="{!ZEB.ISV_Only__c}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Developer}" style="font-weight:bold;" rendered="{!ZEB.ISV_Only__c}"> </apex:outputLabel>
+                            <apex:outputText value="." style="font-weight:bold;" rendered="{!ZEB.ISV_Only__c}"></apex:outputText>
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message1}" style="font-weight:bold;" rendered="{!appDevFlag}"> </apex:outputLabel>
+                            <br/>
+                            <apex:outputLabel value="{!$Label.Optional_Training_Role}" style="font-weight:bold;" rendered="{!TrainFlag}" >
+                                <img src="/s.gif" alt="Help" class="helpIcon" title="{!$Label.Training_Coordinator_Title}"/>
+                            </apex:outputLabel>
+                            <br/>
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message2} {!$Label.Trans_Page6_message3}" style="font-weight:bold;"> </apex:outputLabel> <br/><br/>
+                            <apex:outputText value="{!$Label.Role_Instruction}" escape="false">
+                                <apex:param value="{!ZEB.ZEB_Role_Instruction_PDF__c}"/>
+                            </apex:outputText><br/>
+                            
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+            
+                    <apex:pageblockSectionItem >    
+                    
+                        <apex:outputPanel >
+                            <table id="contacttable" class="display" border="1">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>{!$Label.Contact}</th>
+                                        <th>{!$Label.Email}</th>
+                                        <th>{!$Label.Primary_Role}</th>
+                                        <th>{!$Label.Secondary_Role}</th>
+                                        <th>{!$Label.Address}&nbsp;&nbsp;&nbsp;</th>
+                                        <th align="justify"><apex:outputText value="{!$Label.Missing_Key_Info}" escape="false"/></th>
+                                        <th align="justify"><apex:outputText value="{!$Label.Partner_Administrator}" escape="false"/></th>
+                                        <th align="justify"><apex:outputText value="{!$Label.Mark_For_Deletion}" escape="false"/></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <apex:repeat value="{!AllCT}" var="contact">
+                                        <tr>
+                                            <td><apex:outputLink value="ZEBContactUpsert?id={!contact.Partner_Application__c}&cid={!contact.id}">{!$Label.Edit}</apex:outputLink></td>              
+                                            <td>{!contact.First_Name__c}&nbsp;{!contact.Last_Name__c}</td>
+                                            <td><apex:outputFIeld value="{!contact.Email__c}" /></td>
+                                            <td><apex:outputField value="{!contact.Primary_Role__c}" />  </td>
+                                            <td><apex:outputField value="{!contact.Secondary_Role__c}" /> </td>
+                                            <td><apex:outputField value="{!contact.State__c}" rendered="{!contact.State__c != null}"/><apex:outputText value=", " rendered="{!contact.State__c != null}"/><apex:outputField value="{!contact.Country__c}"/></td>
+                                            <!-- <td><apex:outputText value="{!IF((contact.State__c == null),contact.Country__c,contact.State__c+', '+contact.Country__c)}" /> </td> -->
+                                            <td align="center"><apex:outputField value="{!contact.Missing_Key_Info__c}" /></td>
+                                            <td align="center"><apex:outputField value="{!contact.Partner_Administrator__c}" /> </td>
+                                            <td align="center"><apex:outputField value="{!contact.Selected__c}"  id="chk1" /></td>                                            
+                                        </tr>
+                                    </apex:repeat>
+                                </tbody>
+                            </table>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageBlockSection> 
+                
+                <apex:pageBlockSection columns="1" rendered="{!AND(subFlag,PartAdmnCount>=1)}">
+                    <apex:pageblockSectionItem >
+                        <apex:outputPanel >
+                        <apex:outputLabel value="{!$Label.Trans_Page6_message4}" style="font-weight:bold;color:red" rendered="{!AND(subFlag,PartAdmnCount>=1)}"> </apex:outputLabel>
+                            <apex:outputLabel rendered="{!AND(subFlag,PartAdmnCount>=1)}"><br/></apex:outputLabel>
+                            <apex:outputLabel value="{!$Label.Trans_Page6_message5}" style="font-weight:bold;color:red" rendered="{!AND(subFlag,PartAdmnCount>=1)}"> </apex:outputLabel>
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageBlockSection> 
+                  
+                <apex:pageBlockSection columns="1" >
+                    <apex:outputPanel >
+                       <apex:outputLabel value="{!$Label.Trans_Page6_message8}" style="font-weight:bold;color:red" >
+                       </apex:outputLabel>
+                    </apex:outputPanel> 
+                    <apex:pageblockSectionItem rendered="{!Not(subflag)}">
+                        <apex:outputPanel >
+                            <apex:outputText value="{!$Label.Contact_For_Each_Role}" style="font-weight:bold;color:red" rendered="{!Not(subflag)}"> </apex:outputText>
+                            <apex:outputText rendered="{!Not(subflag)}"><br/></apex:outputText>
+                            <apex:outputText value="{!$Label.Contact_For_Following_Role}" style="font-weight:bold;color:red" rendered="{!Not(subflag)}"> </apex:outputText>
+                            <apex:outputText rendered="{!Not(subflag)}"><br/></apex:outputText>
+                            <!-- <apex:outputText value="{!unMappedRoles}" style="font-weight:bold;color:red" rendered="{!Not(subflag)}"> </apex:outputText> -->
+                           <!-- <apex:outputText value="{!unMappedRoles}" style="font-weight:bold;color:red"> </apex:outputText><br/> -->
+                            <apex:outputLabel value="{!$Label.Contact_Executive}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Executive'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(unMappedRolesList.size>1,CONTAINS(unMappedRoles,'Executive')),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Finance}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Finance'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(CONTAINS(unMappedRoles,'Finance'),OR(CONTAINS(unMappedRoles,'Key Contact'),CONTAINS(unMappedRoles,'Marketing'),CONTAINS(unMappedRoles,'Sales'),CONTAINS(unMappedRoles,'Services'),CONTAINS(unMappedRoles,'Technical'),CONTAINS(unMappedRoles,'Developer'))),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Key_Contact}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Key Contact'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(CONTAINS(unMappedRoles,'Key Contact'),OR(CONTAINS(unMappedRoles,'Marketing'),CONTAINS(unMappedRoles,'Sales'),CONTAINS(unMappedRoles,'Services'),CONTAINS(unMappedRoles,'Technical'),CONTAINS(unMappedRoles,'Developer'))),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Marketing}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Marketing'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(CONTAINS(unMappedRoles,'Marketing'),OR(CONTAINS(unMappedRoles,'Sales'),CONTAINS(unMappedRoles,'Services'),CONTAINS(unMappedRoles,'Technical'),CONTAINS(unMappedRoles,'Developer'))),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Sales}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Sales'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(CONTAINS(unMappedRoles,'Sales'),OR(CONTAINS(unMappedRoles,'Services'),CONTAINS(unMappedRoles,'Technical'),CONTAINS(unMappedRoles,'Developer'))),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Services}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Services'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(CONTAINS(unMappedRoles,'Services'),OR(CONTAINS(unMappedRoles,'Technical'),CONTAINS(unMappedRoles,'Developer'))),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Technical}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Technical'),true,false)}"> </apex:outputLabel>
+                            <apex:outputText value="," style="font-weight:bold;color:red" rendered="{!IF(AND(CONTAINS(unMappedRoles,'Technical'),CONTAINS(unMappedRoles,'Developer')),true,false)}"> </apex:outputText>
+                            <apex:outputLabel value="{!$Label.Contact_Developer}" style="font-weight:bold;color:red" rendered="{!IF(CONTAINS(unMappedRoles,'Developer'),true,false)}"> </apex:outputLabel> 
+                            
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+                </apex:pageBlockSection>                
+                
+                <!-- Show page messages -->
+                <apex:PageMessages />
+                
+        </apex:pageBlock>
+        </apex:form>
+        </div>
+        
+        <div class="zbottombanner">
+        <apex:define name="footer">
+        <c:testfooter />
+        </apex:define>
+        </div> 
+        
+</apex:page>

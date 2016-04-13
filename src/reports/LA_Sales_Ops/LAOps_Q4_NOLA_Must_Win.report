@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Opportunity_Number__c</field>
+    </columns>
+    <columns>
+        <field>Opportunity$StageName</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Amount</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Opportunity_Number__c</column>
+            <operator>equals</operator>
+            <value>Z-0000065867,Z-0000012711,Z-0000004279,Z-0000121346,Z-0000114487,Z-0000120511,Z-0000007900,Z-0000024194,Z-0000142995,Z-0000077222,Z-0000010097,Z-0000121431,Z-0000140821,Z-0000014029,Z-0000134543,Z-0000004023,Z-0000066405,Z-0000111264,Z-0000139147,Z-0000014027,Z-0000053209,Z-0000025446,Z-0000100253,Z-0000014036,Z-0000150430,Z-0000135077,Z-0000067972,Z-0000054385</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>%LAOps Q4 NOLA Must Win</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Historical_Trending__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Opportunity$StageName</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_CURNEXT3</interval>
+    </timeFrameFilter>
+</Report>

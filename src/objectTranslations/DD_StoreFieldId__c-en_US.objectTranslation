@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>DD_StoreFieldId</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DD_StoreFieldId</value>
+    </caseValues>
+    <fields>
+        <label><!-- Id Value --></label>
+        <name>Id_Value__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

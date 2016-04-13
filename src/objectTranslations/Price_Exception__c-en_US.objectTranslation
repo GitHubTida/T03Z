@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>EVM Price Concession</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>EVM Price Concessions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approved Date --></label>
+        <name>Approved_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Load Check --></label>
+        <name>Data_Load_Check__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Count --></label>
+        <name>Line_Item_Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Line Item Zero Qty --></label>
+        <name>Line_Item_Zero_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity_Name --></label>
+        <name>Opportunity_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- EVM Price Concessions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PC EVM Final Approver Comments --></label>
+        <name>PC_EVM_Final_Approver_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC EVM Hardware Only Margin --></label>
+        <name>PC_EVM_Hardware_Only_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC EVM Margin --></label>
+        <name>PC_EVM_Margin__c</name>
+    </fields>
+    <fields>
+        <label><!-- SB EVM PC Submitter Comments --></label>
+        <name>PC_EVM_Submitter_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC EVM Total Oracle --></label>
+        <name>PC_EVM_Total_Oracle__c</name>
+    </fields>
+    <fields>
+        <label><!-- PC EVM Total Sell --></label>
+        <name>PC_EVM_Total_Sell__c</name>
+    </fields>
+    <fields>
+        <label><!-- Legacy SB Created By --></label>
+        <name>PC_Legacy_SB_Created_By__c</name>
+        <relationshipLabel><!-- EVM Price Concessions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- PE Deal ID --></label>
+        <name>PE_Deal_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary --></label>
+        <name>Primary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote Amount --></label>
+        <name>Quote_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- SB Quote ID --></label>
+        <name>Quote_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Selected --></label>
+        <name>Selected__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <layouts>
+        <layout>Price Concession Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Go_To_Solution_Builder --></label>
+        <name>Go_To_Solution_Builder</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Promote --></label>
+        <name>Promote</name>
+    </webLinks>
+</CustomObjectTranslation>

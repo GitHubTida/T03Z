@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Siebel Partner Program Org Map</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Siebel Partner Program Org Map</value>
+    </caseValues>
+    <fields>
+        <label><!-- Organization --></label>
+        <name>Organization__c</name>
+        <picklistValues>
+            <masterLabel>Zebra APAC RMB</masterLabel>
+            <translation><!-- Zebra APAC RMB --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra APAC USD</masterLabel>
+            <translation><!-- Zebra APAC USD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra EMEA</masterLabel>
+            <translation><!-- Zebra EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra NALA</masterLabel>
+            <translation><!-- Zebra NALA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Partner Program Name --></label>
+        <name>Partner_Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Program --></label>
+        <name>Partner_Program__c</name>
+        <relationshipLabel><!-- Siebel Partner Program Org Map --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Region --></label>
+        <name>Partner_Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Siebel Partner Program Id --></label>
+        <name>Siebel_Partner_Program_Id__c</name>
+    </fields>
+    <layouts>
+        <layout>Siebel Partner Program Org Map Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

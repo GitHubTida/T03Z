@@ -1,0 +1,27 @@
+<apex:page standardController="Contact" extensions="PC_AccountAndContactVFTabExtension" tabStyle="My_Profile__tab">
+    <apex:includeScript value="https://code.jquery.com/jquery-latest.min.js"/>
+    <script type="text/javascript">
+        $(function(){
+            $('.bFilterView').hide();
+            var admin = '{!adminflag}';
+            console.log('Admin-->',admin);
+            if(!admin){
+                $(".actionLink").css("display","none");
+            }
+        });
+    </script>
+    <!--apex:detail subject="{!ContactIdofUser}" relatedList="true" title="false" rendered="{!!adminflag}"/>
+    <apex:enhancedList type="Contact" height="400" rendered="{!adminflag}" rowsPerPage="25" id="ContactList">
+        <apex:facet name="Header">&nbsp;</apex:facet>
+    </apex:enhancedList-->
+    <apex:pageBlock >
+        <apex:pageBlockButtons location="top" rendered="{!adminflag}">
+            <apex:form >
+                <apex:commandButton action="{!newContact}" value="New Contact" />
+            </apex:form>
+        </apex:pageBlockButtons>
+        <apex:listViews id="ContactList" type="Contact">
+            <apex:facet name="header">&nbsp;</apex:facet>
+        </apex:listViews>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Demo Pool</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Demo Pools</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Pool Number --></label>
+        <name>Demo_Pool_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pool Location Alternative (Text) --></label>
+        <name>Pool_Location_Alternative_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pool Location --></label>
+        <name>Pool_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Code/ZIP --></label>
+        <name>Post_Code_ZIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Admin --></label>
+        <name>Program_Admin__c</name>
+        <relationshipLabel><!-- Demo Pools --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <layouts>
+        <layout>Demo Pool Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Demo Pool Address --></label>
+            <section>Demo Pool Address</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Upload_Accessory_products --></label>
+        <name>Upload_Accessory_products</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Upload_Serialized_Products --></label>
+        <name>Upload_Serialized_Products</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,193 @@
+<!--
+**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Nikhil Kumar
+    Date        : 07-AUG-15
+    Revision History
+    Ver       Date        Author            Modification
+    ---       ---------   -----------       -------------------------
+    V0.1      07-AUG-15   Nikhil Kumar         Initial Code  
+ ***************************************************************
+ -->
+<apex:page controller="DD_demoProductSelectionController" tabStyle="DD_Demo__c">   
+<!-- Javascript function to check all rows in the table -->
+    <script>
+        function checkAll(cb)
+        {
+           var inputElem = document.getElementsByTagName("input");
+           for(var i=0;i<inputElem.length;i++)
+             {
+                     if(inputElem[i].id.indexOf("selectLine1")!=-1)
+                           inputElem[i].checked = cb.checked;
+              }
+        }
+        <!--
+        function validateAll()
+        {
+           var inputElem = document.getElementsByTagName("input");
+           var temp=true;
+           for(var i=0;i<inputElem.length;i++)
+             {       
+             alert(Boolean(inputElem[i].checked));
+                     if(inputElem[i].id.indexOf("selectLine1")!=-1 && Boolean(inputElem[i].checked))
+                     {  
+                        alert('test');
+                        temp=false; 
+                        break;
+                     }     
+              }
+           if(temp==true)
+           alert('Please select atleast one row');
+        }-->
+    </script>
+<!-- End of Javascript function --> 
+    <style>
+        div.scroll {
+        width: 100%;
+        max-height:300px;
+        overflow: auto;
+        }
+    
+    </style>
+    <apex:form >
+        <apex:sectionHeader title="Select Products for the Demo Request"/>
+        <!-- <apex:commandButton value="Select" action="{!selectproduct}" style="margin-left:440px;margin-bottom:20px"/>-->
+        <center><apex:commandButton value="Back to Demo Request" action="{!Cancel}" style="margin-bottom:20px;"/></center>
+        <apex:pageBlock title="Find Material">
+        <apex:messages Styleclass="pbError" style="list-style-type: none;" id="showerror"/>
+        <div class="searchFilterFieldsHolder searchFilterFieldsHolderFirst">
+            <table class="searchFilterFields">
+                <tbody>
+                    <tr>
+                        <td class="keywordElement" style="width:0.6%">
+                            <span style="font-weight: bold">By Keyword</span><br></br>
+                            <apex:inputText value="{!materialName}" title="Search"/> 
+                        </td>
+                        <td class="keywordElement" >
+                            <span style="font-weight: bold;margin-bottom:10px">Product Category</span><br></br>
+                            
+                            <apex:selectList value="{!ProductCategory}" size="1" style="margin-top: 5px" >
+                                <apex:selectOptions value="{!ProductCategpry}"/>
+                            </apex:selectList>
+                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <apex:commandButton value="Search" action="{!productsearch}" rerender="productSection,changebutton" status="ProductSearch" id="Prdselection"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>  
+        </div>      
+        </apex:pageBlock> 
+        <!-- this block will show the selected products(start)-->
+        <apex:pageblock title="Selected Products">
+            <apex:pageblockTable value="{!SelectedProducts}" var="pro">
+                <apex:column headervalue="Material" title="Material" style="width:30%;">
+                    <apex:outputLink value="/{!pro.Material__c}" target="_blank">
+                        <apex:outputfield value="{!pro.Material__r.Name}"/>
+                    </apex:outputLink>    
+                </apex:column>                  
+                <apex:column headervalue="Quantity" title="Total" style="width:20%;">
+                    <apex:outputfield value="{!pro.Quantity__c}"/>
+                </apex:column>
+                
+            <!-- ******Introduced on 25th Aug (Prabhata).....Start******* --->
+                <apex:column headervalue="Description" title="Description" style="width:30%;">
+                    <apex:outputfield value="{!pro.Material__r.Description__c}"/>
+                </apex:column>
+            <!-- ******Introduced on 25th Aug (Prabhata).....End******* --->
+            <apex:column headervalue="Material Type" title="Material Type" style="width:10%;">
+                        <apex:outputfield value="{!pro.Material__r.Product_Type__c}"/>
+                </apex:column>
+                <apex:column headervalue="Remove Product" style="width:10%;" title="Remove">
+                    <apex:commandLink action="{!Removeproduct}" style="color:blue;margin-right: 30px;padding-right: 30px;">
+                    Remove
+                        <apex:param assignTo="{!delReservePrd}" value="{!pro.id}" name="delReservePrd"/>
+                    </apex:commandlink>
+                </apex:column>
+            </apex:pageblockTable>            
+        </apex:pageblock>
+        <apex:pageBlock > 
+       <!-- Selected product block end --> 
+            <apex:facet name="header">
+                <Apex:outputPanel >
+                     <h1 style="margin-left:1%;">Demo Pool Inventory</h1>
+                     <apex:commandButton value="Add Parts" action="{!selectproduct}" style="margin-left:34%;"/> 
+                 </Apex:outputPanel>   
+           </apex:facet> 
+           <center> 
+                 <div > 
+                    <apex:actionStatus id="ProductSearch">
+                        <apex:facet name="start" >
+                            <img src="/img/loading.gif" class="waitingImage" title="Please Wait..."/>
+                            <span class="waitingDescription">Loading...</span>
+                        </apex:facet>
+                    </apex:actionStatus>
+                </div>
+            </center> 
+            <div class="scroll" style="position: relative;"> 
+                    <apex:pageblockTable value="{!lstWrapDemoProd}" var="pro" id="productSection" styleclass="dataTable">
+                      <!--
+                            <apex:facet name="header">
+                                <apex:inputCheckbox onclick="checkAll(this)"/>
+                            </apex:facet> 
+                      -->
+                    <!--********Commented on 25th Aug(Prabhata)******
+                        <apex:column headervalue="Select"> 
+                            <apex:inputCheckbox value="{!pro.selected}" id="selectLine1"/>    
+                        </apex:column>
+                     -->       
+                        <apex:column headervalue="Material" title="Material" style="width:20%;">
+                            <apex:outputLink value="/{!pro.demoProd.id}" target="_blank">
+                                <apex:outputfield value="{!pro.demoProd.Name}"/>
+                            </apex:outputLink>
+                        </apex:column>
+                         <apex:column headervalue="Total" title="Total" style="width:15%;">
+                            <apex:outputfield value="{!pro.demoProd.Total_Quantity__c}"/>
+                        </apex:column>
+                        <apex:column headervalue="Available" title="Available" style="width:15%;">
+                            <apex:outputfield value="{!pro.demoProd.Available_Quantity__c}"/>
+                        </apex:column>
+                        <apex:column headervalue="Select quantity" title="Select quantity" style="width:20%;">
+                            <apex:selectList value="{!pro.quan}" size="1" rendered="{!Not(pro.demoProd.Available_Quantity__c<=0)}">
+                                <apex:selectOptions value="{!pro.Quantity}"/>
+                            </apex:selectList>
+                            <apex:outputLink rendered="{!pro.demoProd.Available_Quantity__c<=0}" target="_blank" 
+                            value="/apex/DD_Unavailable_Products?retURL=/apex/DD_DemoProductsSearch?id={!pro.demo.id}&demoid={!pro.demo.id}&Materialid={!pro.demoProd.id}" >
+                            <span style="color:blue;margin-right: 30px;padding-right: 30px;">
+                            Register for an interest</span></apex:outputLink>
+                        </apex:column>
+                        <apex:column headervalue="Description" title="Description" style="width:20%;">
+                            <apex:outputfield value="{!pro.demoProd.Description__c}"/>
+                        </apex:column>
+                        <apex:column headervalue="Material Type" style="width:10%;">
+                            <apex:outputfield value="{!pro.demoProd.Product_Type__c}"/>
+                        </apex:column> 
+                        <apex:column headervalue="Status" style="width:10%;">
+                            <apex:outputfield value="{!pro.demoProd.Product_Indicator__c}"/>
+                        </apex:column>   
+                        
+                    </apex:PageblockTable>
+            </div>  
+          
+            <center> 
+            <!--    <apex:panelGrid columns="5" id="changebutton"> -->
+                <apex:outputPanel id="changebutton">
+                    <apex:commandbutton action="{!first}" status="ProductSearch" reRender="productSection,changebutton" value="First" disabled="{!!Con.hasPrevious}"/>
+                    <apex:commandbutton action="{!previous}" status="ProductSearch" reRender="productSection,changebutton" value="Previous" disabled="{!!Con.hasPrevious}"/>
+                    <apex:commandbutton action="{!next}" reRender="productSection,changebutton" status="ProductSearch" value="Next" disabled="{!!Con.hasNext}" />
+                    <apex:commandbutton action="{!last}" status="ProductSearch" reRender="productSection,changebutton" value="Last" disabled="{!!Con.hasNext}"/><br/><br/> 
+                    <!-- <apex:outputText>{!noOfRecordsdis}-{!noOfRecords} of {!Con.ResultSize}</apex:outputText>  
+                    </apex:panelGrid>    
+                    <apex:outputText >({!(pageNumber * list_size)+1-list_size}-{!IF((pageNumber * list_size)>total_size, total_size,(pageNumber* list_size))}) of {!total_size} Records</apex:outputText> -->
+                    <apex:outputText >({!IF(total_size = 0,0,(pageNumber * list_size)+1-list_size)}-{!IF((pageNumber * list_size)>total_size, total_size,(pageNumber * list_size))}) of {!total_size} Records</apex:outputText>
+                </apex:outputPanel>
+            </center>
+           
+        </apex:pageBlock>   
+         
+    </apex:form>
+    
+</apex:page>

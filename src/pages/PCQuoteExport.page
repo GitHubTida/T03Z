@@ -1,0 +1,183 @@
+<apex:page standardController="Quote" extensions="PCExportController" action="{!quoteLineList}"   cache="true" contentType="application/vnd.ms-excel#Quote_Export_Data.xls"  language="en-US">
+  <head>
+  </head>
+  <body>
+  <apex:form id="formRelatedList">
+    <apex:stylesheet value="{!$Resource.PCCommonStyles}" /> 
+    <apex:includeScript value="{!$Resource.PCQuoteExport}"/>
+            
+    <apex:pageBlock >
+    
+    <table  border="1">
+       <tr>
+        <td><apex:outputText Value="Price Concession Name"/></td>
+        <td> <apex:outputField value="{!quote.Name}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Price Concession No."/></td>
+        <td> <apex:outputField value="{!quote.PC__c}"/></td>
+       </tr>  
+       <tr>
+        <td><apex:outputText Value="Opportunity Name"/></td>
+        <td> <apex:outputField value="{!quote.Opportunity.Name}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Quote ID"/></td>
+        <td><apex:outputText Value="&nbsp;{!quote.QuoteNumber}&nbsp;" escape="false"/></td>
+       <!-- <td> <apex:outputField value="{!quote.QuoteNumber}"/></td>-->
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Status"/></td>
+        <td> <apex:outputField value="{!quote.Status}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Revision"/></td>
+        <td> <apex:outputField value="{!quote.Revision__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Reason"/></td>
+        <td> <apex:outputField value="{!quote.Reason__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="End User"/></td>
+        <td> <apex:outputField value="{!quote.End_User__c}"/></td>
+       </tr>
+        <tr>
+        <td><apex:outputText Value="Start Date"/></td>
+        <td> <apex:outputField value="{!quote.Start_Date__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Expiration Date"/></td>
+        <td> <apex:outputField value="{!quote.ExpirationDate}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Direct EndUser"/></td>
+        <td> <apex:outputText rendered="{!quote.Direct_EndUser__c==False}" value="False"/>
+             <apex:outputText rendered="{!quote.Direct_EndUser__c==True}" value="True"/>
+        </td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Reseller"/></td>
+        <td> <apex:outputField value="{!quote.Reseller__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Account Price List"/></td>
+        <td> <apex:outputField value="{!quote.Account_Price_List__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Direct Reseller"/></td>
+        <td> <apex:outputText rendered="{!quote.Direct_Reseller__c==False}" value="False"/>
+             <apex:outputText rendered="{!quote.Direct_Reseller__c==True}" value="True"/>
+        </td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Justification"/></td>
+        <td> <apex:outputField value="{!quote.Justification__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Distributor"/></td>
+        <td> <apex:outputField value="{!quote.Distributor__c}"/></td>
+       </tr>
+        <tr>
+        <td><apex:outputText Value="Display PCs on Partner Portal"/></td>
+        <td> <apex:outputText rendered="{!quote.Show_PC_to_Partners__c==False}" value="False"/>
+             <apex:outputText rendered="{!quote.Show_PC_to_Partners__c==True}" value="True"/>
+        </td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Direct Distributor"/></td>
+        <td> <apex:outputText rendered="{!quote.Direct_Distributor__c==False}" value="False"/>
+             <apex:outputText rendered="{!quote.Direct_Distributor__c==True}" value="True"/>
+        </td>
+       </tr>
+        <tr>
+        <td><apex:outputText Value="Account Currency"/></td>
+        <td> <apex:outputField value="{!quote.Direct_Account_Currency__c}"/></td>
+       </tr>
+        <tr>
+        <td><apex:outputText Value="Is Questionnaire Filled"/></td>
+        <td> <apex:outputField value="{!quote.Is_Questionnaire_Filled__c}"/></td>
+       </tr>
+       <tr>
+        <td><apex:outputText Value="Cancellation Reason"/></td>
+        <td> <apex:outputField value="{!quote.Cancellation_Reason__c}"/></td>
+       </tr>
+    </table>
+    <table>
+     <tr ></tr>
+     </table>
+    
+            <!--<apex:pageBlockTable value="{!quoteLineItemList}" var="quoteLineItem" rendered="{!quoteLineItemList.size==0}" >
+            <apex:column headerValue="No records to display" headerClass="headerStyle" />
+        </apex:pageBlocktable>-->
+        
+           
+            <apex:pageBlockTable value="{!quoteLineItemList}" rendered="{!quoteLineItemList.size!=0}"  var="quoteLineItem" border="10px" >
+             
+                <apex:column headerValue="Product">
+                <apex:outputText Value="&nbsp;{!quoteLineItem.Name}&nbsp;" escape="false"/>
+                 </apex:column>
+<!--                <apex:column headerValue="Min First Order" value="{!quoteLineItem.Min_First_Order__c}"/>-->
+                <apex:column headerValue="Min First Order"  >
+                <apex:outputText value="Y" rendered="{!if(quoteLineItem.Min_First_Order__c==true,true,false)}"/>
+                <apex:outputText value="N" rendered="{!if(quoteLineItem.Min_First_Order__c==false,true,false)}"/>
+                </apex:column>
+                <apex:column headerValue="Min Qty" value="{!quoteLineItem.Min_Qty__c}"/>
+                <apex:column headerValue="Max Qty" value="{!quoteLineItem.Max_Qty__c}"/>
+                <apex:column headerValue="Available Qty" value="{!quoteLineItem.Available_Quantity__c}"/>
+                <apex:column headerValue="Siebel List Price" value="{!quoteLineItem.List_Price__c}"/>
+                <apex:column headerValue="Discount" value="{!quoteLineItem.Discount__c}"/>
+                <apex:column headerValue="PE1" value="{!quoteLineItem.PC_PE1__c}" rendered="{!fieldVisibleFlag}"/>
+                <apex:column headerValue="PE2" value="{!quoteLineItem.PC_PE2__c}" rendered="{!fieldVisibleFlag}"/>
+                <apex:column headerValue="Std Net Price" value="{!quoteLineItem.Standard_Net_Price__c}"/>
+                <apex:column headerValue="Extra Discount" value="{!quoteLineItem.Extra_Disc__c}" />
+                <apex:column headerValue="Total Discount" value="{!quoteLineItem.Total_Discount__c}" />
+                <apex:column headerValue="Unit Special Price" value="{!quoteLineItem.Unit_Special_Price__c}"/>
+                <apex:column headerValue="Uplifted Cost" value="{!quoteLineItem.Uplifted_Cost__c}" rendered="{!fieldVisibleFlag}"/>
+                <apex:column headerValue="PC Margin" value="{!quoteLineItem.PC_Margin__c}" rendered="{!fieldVisibleFlag}"/>
+                <apex:column headerValue="Total Net Price" value="{!quoteLineItem.Total_Net_Price__c}"/>
+                <apex:column headerValue="Siebel Error Msg" value="{!quoteLineItem.PC_Error_Message__c}"/>
+                <!--<apex:column headerValue="Currency" value="{!quoteLineItem.CurrencyIsoCode}"/>
+                <apex:column headerValue="Decremented Qty" value="{!quoteLineItem.Decremented_Qty__c}"/>
+                <apex:column headerValue="Disti Std. Discount" value="{!quoteLineItem.Disti_Standard_Discount__c}"/>
+                <apex:column headerValue="Disti Margin" value="{!quoteLineItem.Distributor_Margin__c}"/>
+                <apex:column headerValue="Extra Disc Modified" value="{!quoteLineItem.Extra_Disc_Modified__c}"/>
+                <apex:column headerValue="Incremented Qty" value="{!quoteLineItem.Incremented_Qty__c}"/>
+                <apex:column headerValue="Line #" value="{!quoteLineItem.Line_Number__c}"/>                
+                <apex:column headerValue="Net Price" value="{!quoteLineItem.Net_Price__c}"/>
+                <apex:column headerValue="Order Placed on Line" value="{!quoteLineItem.Order_Placed_on_Line__c}"/>
+                <apex:column headerValue="PC Disc" value="{!quoteLineItem.PC_Discount__c}"/>
+                <apex:column headerValue="PC Margin Display" value="{!quoteLineItem.PC_Margin_Display__c}"/>
+                <apex:column headerValue="PC Name" value="{!quoteLineItem.PC_Name__c}"/>
+                <apex:column headerValue="PC Price" value="{!quoteLineItem.PC_Price__c}"/>
+                <apex:column headerValue="Pricing Date" value="{!quoteLineItem.Pricing_Date__c}"/>
+                <apex:column headerValue="Product Category" value="{!quoteLineItem.Product_Category__c}"/>
+                <apex:column headerValue="Product Family" value="{!quoteLineItem.Product_Family__c}"/>
+                <apex:column headerValue="Product Line" value="{!quoteLineItem.Product_Line__c}"/>              
+                <apex:column headerValue="Reseller Margin" value="{!quoteLineItem.Reseller_Margin__c}"/>
+                <apex:column headerValue="Price Id" value="{!quoteLineItem.Siebel_Line_Id__c}"/>
+                <apex:column headerValue="Std Disti Price" value="{!quoteLineItem.Standard_Distributor_Price__c}"/>
+                <apex:column headerValue="Std Margin" value="{!quoteLineItem.Standard_Margin__c}"/>
+                <apex:column headerValue="Std Net Price" value="{!quoteLineItem.Standard_Net_Price__c}"/>
+                <apex:column headerValue="Std Margin Display" value="{!quoteLineItem.Std_Margin_Display__c}"/>
+                <apex:column headerValue="Suggested EndUser Price" value="{!quoteLineItem.Suggested_End_User_Price__c}"/>
+                <apex:column headerValue="Suggested Reseller Buy Price" value="{!quoteLineItem.Suggested_Reseller_Buy_Price__c}"/>
+                <apex:column headerValue="Total Cost" value="{!quoteLineItem.Total_Cost__c}"/>
+                <apex:column headerValue="Total PC Cost" value="{!quoteLineItem.Total_PC_Cost__c}"/>
+                <apex:column headerValue="Unit Special Price" value="{!quoteLineItem.Unit_Special_Price__c}"/>
+                
+                <apex:column headerValue="Zero Total Disc" value="{!quoteLineItem.Zero_Total_Discount__c}"/>-->
+              </apex:pageBlockTable>
+               
+                     
+              
+            
+          </apex:pageBlock>
+          <apex:page >
+    <script type="text/javascript">
+        window.close();
+    </script>
+</apex:page>
+       </apex:form>
+       </body> 
+</apex:page>

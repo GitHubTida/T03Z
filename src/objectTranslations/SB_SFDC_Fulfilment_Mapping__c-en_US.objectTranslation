@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SB SFDC Fulfilment Mapping</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SB SFDC Fulfilment Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- SB Fulfillment --></label>
+        <name>SB_Fulfillment__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,18 @@
+<apex:page standardController="quote" extensions="PCQuestionnaireController" sidebar="false" action="{!checkQuestionnaire}">
+<style type="text/css">
+         .hypLink{
+            color:black;
+            font-size:1em;
+            font-weight:bold;
+           
+          }
+ </style>
+ <apex:form >
+ <apex:outputPanel rendered="{!errorFlag}">
+<apex:pagemessages />
+  <apex:commandLink action="{!navigatePCQuestionnaire}" value="Click here to Fill the Questionnaire" id="theButton" styleClass="hypLink"/> 
+ </apex:outputPanel>
+  </apex:form>
+
+ 
+</apex:page>

@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SSO Customer Workflow</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SSO Customer Workflow</value>
+    </caseValues>
+    <fields>
+        <label><!-- Alternate Phone Number --></label>
+        <name>Alternate_Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Alternate Phone Type --></label>
+        <name>Alternate_Phone_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Source --></label>
+        <name>Application_Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Application Status --></label>
+        <name>Application_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Approval</masterLabel>
+            <translation><!-- In Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provisioned</masterLabel>
+            <translation><!-- Provisioned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revoked</masterLabel>
+            <translation><!-- Revoked --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Approval Type --></label>
+        <name>Approval_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+        <relationshipLabel><!-- SSO Customer Workflow (Approver) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 10 --></label>
+        <name>Attribute_Name_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 11 --></label>
+        <name>Attribute_Name_11__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 12 --></label>
+        <name>Attribute_Name_12__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 13 --></label>
+        <name>Attribute_Name_13__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 14 --></label>
+        <name>Attribute_Name_14__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 15 --></label>
+        <name>Attribute_Name_15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 16 --></label>
+        <name>Attribute_Name_16__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 17 --></label>
+        <name>Attribute_Name_17__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 18 --></label>
+        <name>Attribute_Name_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 19 --></label>
+        <name>Attribute_Name_19__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 1 --></label>
+        <name>Attribute_Name_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 20 --></label>
+        <name>Attribute_Name_20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 2 --></label>
+        <name>Attribute_Name_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 3 --></label>
+        <name>Attribute_Name_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 4 --></label>
+        <name>Attribute_Name_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 5 --></label>
+        <name>Attribute_Name_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 6 --></label>
+        <name>Attribute_Name_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 7 --></label>
+        <name>Attribute_Name_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 8 --></label>
+        <name>Attribute_Name_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Name 9 --></label>
+        <name>Attribute_Name_9__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 10 --></label>
+        <name>Attribute_Value_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 11 --></label>
+        <name>Attribute_Value_11__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 12 --></label>
+        <name>Attribute_Value_12__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 13 --></label>
+        <name>Attribute_Value_13__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 14 --></label>
+        <name>Attribute_Value_14__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 15 --></label>
+        <name>Attribute_Value_15__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 16 --></label>
+        <name>Attribute_Value_16__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 17 --></label>
+        <name>Attribute_Value_17__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 18 --></label>
+        <name>Attribute_Value_18__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 19 --></label>
+        <name>Attribute_Value_19__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 1 --></label>
+        <name>Attribute_Value_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 20 --></label>
+        <name>Attribute_Value_20__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 2 --></label>
+        <name>Attribute_Value_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 3 --></label>
+        <name>Attribute_Value_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 4 --></label>
+        <name>Attribute_Value_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 5 --></label>
+        <name>Attribute_Value_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 6 --></label>
+        <name>Attribute_Value_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 7 --></label>
+        <name>Attribute_Value_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 8 --></label>
+        <name>Attribute_Value_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Value 9 --></label>
+        <name>Attribute_Value_9__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company Number --></label>
+        <name>Company_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Attribute 1 --></label>
+        <name>Extra_Attribute_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Attribute 2 --></label>
+        <name>Extra_Attribute_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Attribute 3 --></label>
+        <name>Extra_Attribute_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Attribute 4 --></label>
+        <name>Extra_Attribute_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra Attribute 5 --></label>
+        <name>Extra_Attribute_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fax --></label>
+        <name>Fax__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maps to Application --></label>
+        <name>Maps_to_Application__c</name>
+        <relationshipLabel><!-- SSO Customer Workflow --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Password --></label>
+        <name>Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Type --></label>
+        <name>Phone_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Preferred Language --></label>
+        <name>Preferred_Language__c</name>
+    </fields>
+    <fields>
+        <label><!-- Process Error --></label>
+        <name>Process_Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioned/Rejected Date --></label>
+        <name>Provisioned_Rejected_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Provisioner --></label>
+        <name>Provisioner__c</name>
+        <relationshipLabel><!-- SSO Customer Workflow (Provisioner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Provisioning Type --></label>
+        <name>Provisioning_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Ready for Approval --></label>
+        <name>Ready_for_Approval__c</name>
+    </fields>
+    <fields>
+        <label><!-- Request Type --></label>
+        <name>Request_Type__c</name>
+        <picklistValues>
+            <masterLabel>Additional Application Access</masterLabel>
+            <translation><!-- Additional Application Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Grant Access</masterLabel>
+            <translation><!-- Application Grant Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Revoke Access</masterLabel>
+            <translation><!-- Application Revoke Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Create User</masterLabel>
+            <translation><!-- Create User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivate User</masterLabel>
+            <translation><!-- Deactivate User --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update User</masterLabel>
+            <translation><!-- Update User --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Requested Date --></label>
+        <name>Requested_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requestor ID --></label>
+        <name>Requestor_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSO Request Id --></label>
+        <name>SSO_Request_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Question 1 --></label>
+        <name>Security_Question_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Question 2 --></label>
+        <name>Security_Question_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Response 1 --></label>
+        <name>Security_Response_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Response 2 --></label>
+        <name>Security_Response_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timezone --></label>
+        <name>Timezone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- User ID --></label>
+        <name>User_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Status --></label>
+        <name>User_Status__c</name>
+        <picklistValues>
+            <masterLabel>Create User Failed</masterLabel>
+            <translation><!-- Create User Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Created</masterLabel>
+            <translation><!-- Created --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivate User Failed</masterLabel>
+            <translation><!-- Deactivate User Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deactivated</masterLabel>
+            <translation><!-- Deactivated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Update User Failed</masterLabel>
+            <translation><!-- Update User Failed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Updated</masterLabel>
+            <translation><!-- Updated --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User Type --></label>
+        <name>User_Type__c</name>
+        <picklistValues>
+            <masterLabel>Customer</masterLabel>
+            <translation><!-- Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ZUID --></label>
+        <name>ZUID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Zip Code --></label>
+        <name>Zip_Code__c</name>
+    </fields>
+    <layouts>
+        <layout>SSO Customer Workflow Layout</layout>
+        <sections>
+            <label><!-- Application Attributes --></label>
+            <section>Application Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Extra Attributes --></label>
+            <section>Extra Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- IT Attributes --></label>
+            <section>IT Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- SSO Attributes --></label>
+            <section>SSO Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- Security Attributes --></label>
+            <section>Security Attributes</section>
+        </sections>
+        <sections>
+            <label><!-- User Details --></label>
+            <section>User Details</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

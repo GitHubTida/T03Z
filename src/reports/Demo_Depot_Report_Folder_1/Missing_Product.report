@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User$Email</field>
+    </columns>
+    <columns>
+        <field>User*User$Area__c</field>
+    </columns>
+    <columns>
+        <field>User.DD_Demo1__r$Name</field>
+    </columns>
+    <columns>
+        <field>User.DD_Demo1__r$Evaulation_End_Date__c</field>
+    </columns>
+    <columns>
+        <field>User.DD_Demo1__r.Reserved_Products__r$Material__c</field>
+    </columns>
+    <columns>
+        <field>User.DD_Demo1__r.Reserved_Products__r$Serialnumber__c</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Missing Product details per Account Manager.</description>
+    <filter>
+        <criteriaItems>
+            <column>User.DD_Demo1__r.Reserved_Products__r$Received_Date__c</column>
+            <operator>equals</operator>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>User.DD_Demo1__r$Account_Manager__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Missing Products</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>DemoRequest_with_user_with_reserved_product__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>User$ChatterAdoptionStageModifiedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

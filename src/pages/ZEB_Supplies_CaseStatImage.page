@@ -1,0 +1,7 @@
+<apex:page standardController="Case">
+  <!-- Case Closed Announcement -->
+  <center>
+    <apex:outputField value="{!Case.Supplies_Overall_Status_Chevron__c}"/>  
+  </center>
+
+</apex:page>

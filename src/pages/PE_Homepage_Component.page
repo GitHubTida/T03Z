@@ -1,0 +1,319 @@
+<apex:page controller="PEHomePageComponentController">
+<apex:form >
+<html>
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">-->
+<head> 
+
+<link href="/dCSS/Theme2/default/common.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" /> 
+<link href="/dCSS/Theme2/default/custom.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" /> 
+<link href="/dCSS/Theme2/default/setup.css" type="text/css" media="handheld,print,projection,screen,tty,tv" rel="stylesheet" /> 
+<link href="/css/assistive.css" type="text/css" media="aural,braille,embossed" rel="stylesheet" /> 
+
+<apex:includeScript value="/soap/ajax/29.0/connection.js"/>
+<apex:includeScript value="{!URLFOR($Resource.jqwidget,  '/scripts/jquery-1.11.1.min.js')}"  />
+
+<style> 
+.titlebar{background:rgb(140,140,140); height:20px; font-size:10pt; font-family:verdana; color:white} 
+.status{font-size:8pt; font-family:arial} 
+.color{font-size:9pt; color:white} 
+</style> 
+
+<script>
+function buildTable(){
+ //alert('Inside Table');
+ var checkboxs= document.getElementsByTagName('input');
+ //alert(checkboxs);
+ var okay=false;
+                //alert(okay);
+                 //alert(checkboxs.length);
+                for(var i=0,l=checkboxs.length;i<l;i++)
+                {               
+                    if(checkboxs[i].name.indexOf('clop') !=-1){
+                        if(checkboxs[i].checked)
+                        {
+                            okay=true;
+                            document.getElementById('{!$Component.j_id0.j_id1.rendertable.whoid}').value = true;
+                            //alert(document.getElementById('{!$Component.j_id0.j_id1.rendertable.whoid}').value);
+                            break;                          
+                        }else{
+                            document.getElementById('{!$Component.j_id0.j_id1.rendertable.whoid}').value = false;
+                           // alert(document.getElementById('{!$Component.j_id0.j_id1.rendertable.whoid}').value);
+                        }
+                    }
+                }
+ 
+    // assuming "val" contains id
+    //$j = jQuery.noConflict();          
+   // var val1 = $j("[id$='clop']").val();
+    //$j("[id$='whoid']").val(val1); // dthis will assign i
+    
+    //alert(val1);
+     rerenderTopPanel();
+}
+</script>
+<apex:include pageName="Shared_Homepage_Functions" />
+<!--{!INCLUDE($Page.Shared_Homepage_Functions)}-->
+
+</head> 
+
+
+<body>
+
+<div class="bodyDiv"> 
+<table class="outer" width="100%" border="0" cellspacing="0" cellpadding="0"> 
+<tr> 
+<td id="bodyCell"> 
+
+<div class="bMyTask"> 
+<div class="bPageBlock secondaryPalette"> 
+
+<div class="pbHeader"> 
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="rgb(238,236,209)"> 
+<tr> 
+<td class="pbTitle"> 
+<h3>Next Price Concessions to Expire</h3> 
+</td> 
+<td class="pbButton"> 
+<input value="View EVM" class="btn" name="viewAll" onclick="openAllEVM();" title="View All Expiring PEs in New Window" type="button" /> 
+<input value="View AIT" class="btn" name="viewAll" onclick="openAllAIT();" title="View All Expiring PEs in New Window" type="button" /> 
+</td> 
+<apex:actionFunction name="rerenderTopPanel" rerender="rendertable" />
+<td class="pbHelp">
+<input type="checkbox" id="clop" name="clop" onChange="buildTable();" /> 
+<font style="font-size:9pt;color:white;font-weight:bold">Include Closed Opps</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <apex:selectList value="{!selectedOptionTest}" multiselect="false" size="1" onchange="{!QuoteRecord}">
+                   
+                    <apex:selectOptions value="{!options}"/>
+                    <!--<apex:selectOption itemValue="My Price Exceptions" itemLabel="My Price Exceptions"/>
+                    <apex:selectOption itemValue="All Price Exceptions" itemLabel="All Price Exceptions"/>-->
+               <apex:actionSupport rerender="rendertable" event="onchange" />
+                    
+    </apex:selectList>
+  
+ 
+    <!--<select id="myorall" name="myorall" onchange="changer();" onload="changer();"> 
+<option value="1" >Select An Option</option>    <option value="2" selected="selected" >My Price Exceptions</option> 
+<option value="3">All Price Exceptions</option> 
+</select> -->
+</td>
+</tr> 
+</table> 
+</div> 
+
+<div class="pbFooter secondaryPalette"> 
+<div class="bg"> 
+</div> 
+</div> 
+</div> 
+</div> 
+<div class="listElementBottomNav"> 
+</div> 
+
+<div class="footer"> 
+</div> 
+</td> 
+</tr> 
+</table> 
+</div> 
+
+<script>
+
+function openAllEVM(){ 
+var mywin = window.open("/00Oi0000006Hpba","report","location=yes,menubar=yes,scrollbars=yes,toolbar=yes,resizable=yes,height=600,width=800,directories=yes"); 
+}
+function openAllAIT(){ 
+var mywin2 = window.open("/00Oi0000006Hpbb","report","location=yes,menubar=yes,scrollbars=yes,toolbar=yes,resizable=yes,height=600,width=800,directories=yes");
+}
+</script>
+
+<apex:pageblock id="rendertable">
+<apex:inputHidden value="{!checkb}" id="whoid" />
+<apex:pageblocktable value="{!MyQuoteWrapperList}" var="qtw" id="theTable1" rowClasses="odd,even" styleClass="tableClass" rendered="{!IF(checkb && selectedOptionTest ='My Price Concessions',true,false)}">
+    <apex:column >
+        <apex:facet name="header">PE Expiration Date</apex:facet>
+        <apex:outputText value="{0,date, dd-MMM-yyyy}">
+            <apex:param value="{!qtw.ExpirationDate}" /> 
+        </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Number</apex:facet>
+        <apex:outputText value="{!qtw.QuoteId}"> </apex:outputText>
+    </apex:column>  
+    <apex:column >
+        <apex:facet name="header">PE Deal ID</apex:facet>
+        <apex:outputText value="{!qtw.DealId}"> </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Amount</apex:facet>
+        <apex:outputText value="{!qtw.Amount}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Currency</apex:facet>
+        <apex:outputText value="{!qtw.currencyName}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Account</apex:facet>
+        <apex:outputText value="{!qtw.acc}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Opportunity Name</apex:facet>
+        <apex:outputLink target="_blank" value="/{!qtw.oppId}">{!qtw.opp}
+        </apex:outputLink>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Booking Owner</apex:facet>
+        <apex:outputText value="{!qtw.bookingOwner}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Stage</apex:facet>
+        <apex:outputText value="{!qtw.oppStage}"/>
+    </apex:column>  
+    <apex:column >
+        <apex:facet name="header">Type</apex:facet>
+        <apex:outputText value="{!qtw.type}"/>
+    </apex:column>      
+</apex:pageblocktable>
+
+<apex:pageblocktable value="{!MyClosedQuoteWrapperList}" var="qtw" id="theTable2" rowClasses="odd,even" styleClass="tableClass" rendered="{!IF(!checkb && selectedOptionTest ='My Price Concessions',true,false)}">
+    <apex:column >
+        <apex:facet name="header">PE Expiration Date</apex:facet>
+        <apex:outputText value="{0,date, dd-MMM-yyyy}">
+            <apex:param value="{!qtw.ExpirationDate}" /> 
+        </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Number</apex:facet>
+        <apex:outputText value="{!qtw.QuoteId}"> </apex:outputText>
+    </apex:column>      
+    <apex:column >
+        <apex:facet name="header">PE Deal ID</apex:facet>
+        <apex:outputText value="{!qtw.DealId}"> </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Amount</apex:facet>
+        <apex:outputText value="{!qtw.Amount}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Currency</apex:facet>
+        <apex:outputText value="{!qtw.currencyName }"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Account</apex:facet>
+        <apex:outputText value="{!qtw.acc}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Opportunity Name</apex:facet>
+        <apex:outputLink target="_blank" value="/{!qtw.oppId}">{!qtw.opp}
+        </apex:outputLink>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Booking Owner</apex:facet>
+        <apex:outputText value="{!qtw.bookingOwner}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Stage</apex:facet>
+        <apex:outputText value="{!qtw.oppStage}"/>
+    </apex:column>  
+    <apex:column >
+        <apex:facet name="header">Type</apex:facet>
+        <apex:outputText value="{!qtw.type}"/>
+    </apex:column>      
+</apex:pageblocktable>
+
+<apex:pageblocktable value="{!AllQuoteWrapperList}" var="qtw" id="theTable3" rowClasses="odd,even" styleClass="tableClass" rendered="{!IF(checkb && selectedOptionTest ='All Price Concessions',true,false)}">
+    <apex:column >
+        <apex:facet name="header">PE Expiration Date</apex:facet>
+        <apex:outputText value="{0,date, dd-MMM-yyyy}">
+            <apex:param value="{!qtw.ExpirationDate}" /> 
+        </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Number</apex:facet>
+        <apex:outputText value="{!qtw.QuoteId}"> </apex:outputText>
+    </apex:column>      
+    <apex:column >
+        <apex:facet name="header">PE Deal ID</apex:facet>
+        <apex:outputText value="{!qtw.DealId}"> </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Amount</apex:facet>
+        <apex:outputText value="{!qtw.Amount}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Currency</apex:facet>
+        <apex:outputText value="{!qtw.currencyName }"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Account</apex:facet>
+        <apex:outputText value="{!qtw.acc}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Opportunity Name</apex:facet>
+        <apex:outputLink target="_blank" value="/{!qtw.oppId}">{!qtw.opp}
+        </apex:outputLink>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Booking Owner</apex:facet>
+        <apex:outputText value="{!qtw.bookingOwner}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Stage</apex:facet>
+        <apex:outputText value="{!qtw.oppStage}"/>
+    </apex:column>  
+    <apex:column >
+        <apex:facet name="header">Type</apex:facet>
+        <apex:outputText value="{!qtw.type}"/>
+    </apex:column>      
+</apex:pageblocktable>
+
+<apex:pageblocktable value="{!AllClosedQuoteWrapperList}" var="qtw" id="theTable4" rowClasses="odd,even" styleClass="tableClass" rendered="{!IF(!checkb && selectedOptionTest ='All Price Concessions',true,false)}">
+    <apex:column >
+        <apex:facet name="header">PE Expiration Date</apex:facet>
+        <apex:outputText value="{0,date, dd-MMM-yyyy}">
+            <apex:param value="{!qtw.ExpirationDate}" /> 
+        </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Number</apex:facet>
+        <apex:outputText value="{!qtw.QuoteId}"> </apex:outputText>
+    </apex:column>      
+    <apex:column >
+        <apex:facet name="header">PE Deal ID</apex:facet>
+        <apex:outputText value="{!qtw.DealId}"> </apex:outputText>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Quote Amount</apex:facet>
+        <apex:outputText value="{!qtw.Amount}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Currency</apex:facet>
+        <apex:outputText value="{!qtw.currencyName }"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Account</apex:facet>
+        <apex:outputText value="{!qtw.acc}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Opportunity Name</apex:facet>
+        <apex:outputLink target="_blank" value="/{!qtw.oppId}">{!qtw.opp}
+        </apex:outputLink>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Booking Owner</apex:facet>
+        <apex:outputText value="{!qtw.bookingOwner}"/>
+    </apex:column>
+    <apex:column >
+        <apex:facet name="header">Stage</apex:facet>
+        <apex:outputText value="{!qtw.oppStage}"/>
+    </apex:column>  
+    <apex:column >
+        <apex:facet name="header">Type</apex:facet>
+        <apex:outputText value="{!qtw.type}"/>
+    </apex:column>      
+</apex:pageblocktable>
+</apex:pageblock>
+</body> 
+</html>
+</apex:form>
+</apex:page>

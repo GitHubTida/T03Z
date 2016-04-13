@@ -1,0 +1,94 @@
+<!--**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Ragamalika Mohanraj
+    Date        : 07-May-15 
+    Revision History
+    Ver       Date        Author                Modification
+    ---       ---------   -----------           -------------------------
+    V0.1      07-May-15   Ragamalika Mohanraj     Initial Code
+   
+ ***************************************************************-->
+ 
+ <apex:page standardController="Outbound_Telecall_Questionnaire__c"  tabStyle="Lead" extensions="PopulateName">
+    <apex:sectionHeader title="Outbound Telecall Questionnaire"/>
+    <style>
+     body .bPageTitle .ptBody h1.noSecondHeader{
+        font-size: 40px;
+     }
+    </style>
+    <style>
+    .bPageBlock .labelCol, body .print .topics-label {
+    text-align: left;    
+    }
+    </style>
+      <style>
+      td.data2Col.first.last{
+       text-align: center;    
+      }
+      
+ 
+    
+   .bPageBlock .detailList .labelCol{
+    width:60%;
+    
+    }
+    </style>
+    <apex:form >
+    <center>
+        <apex:pageBlock id="step1" mode="edit">
+        
+               <apex:pageBlockButtons location="top" rendered="true">
+                   <apex:commandButton id="saveButton" value="Save" action="{!save}" />
+                   <apex:commandButton id="cancelButton" value="Cancel" action="{!cancel}" />
+               </apex:pageBlockButtons>
+
+            <apex:pageBlockSection columns="1">   
+             <apex:actionRegion >      
+            
+           
+            <apex:outputLabel value="{!$Label.OTQ_Q1_SelectVertical}" for="{!Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c}"   />        
+            &nbsp;
+            &nbsp; 
+            &nbsp;
+            &nbsp; 
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c}" label="{!$Label.OTQ_Q1_SelectVertical}"   >
+             <apex:actionSupport event="onchange" action="{!OTQName}" rerender="step1" />
+              </apex:inputField>
+                
+                  </apex:actionRegion>
+             </apex:pageBlockSection>
+              
+                 
+                
+            <apex:pageBlockSection id="Healthcare" rendered="true" columns="1">
+           
+            <apex:inputTextArea value="{!Outbound_Telecall_Questionnaire__c.Q2_What_is_your_understanding_of_what_Z__c}"   label="{!$Label.OTQ_Q1_HealthCare_Mfg_Retail_Q2}" style="width:350px; height:60px" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c=="Healthcare",true,false))}"  />
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q3_How_many_beds_do_you_have__c}" label="{!$Label.OTQ_Q1_HealthCare_Q3}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Healthcare",true,false))}"/>
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q3_In_what_areas_are_you_looking_to_imp__c}" label="{!$Label.OTQ_Q1_HealthCare_Q4}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Healthcare",true,false))}"/>
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q5_How_do_you_physically_identify_patie__c}" label="{!$Label.OTQ_Q1_HealthCare_Q5}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Healthcare",true,false))}"/>
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q6_How_do_you_currently_identify_specim__c}" label="{!$Label.OTQ_Q1_HealthCare_Q6}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Healthcare",true,false))}"/>
+           
+            </apex:pageBlockSection>
+           
+            <apex:pageBlockSection id="Manufacturing" rendered="true" columns="1">
+           
+      
+         <apex:inputTextArea value="{!Outbound_Telecall_Questionnaire__c.Q2_What_is_your_understanding_of_what_Z__c}" label="{!$Label.OTQ_Q1_HealthCare_Mfg_Retail_Q2}" style="width:350px; height:60px" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c=="Manufacturing",true,false))}"  />
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q4_In_what_areas_are_you_looking_to_imp__c}" label="{!$Label.OTQ_Q1_Mfg_Q3}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Manufacturing",true,false))}"/>
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q4_How_do_you_track_and_identify_the_co__c}" label="{!$Label.OTQ_Q1_Mfg_Q4}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Manufacturing",true,false))}"/>
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q5_How_many_production_sites_do_you_hav__c}" label="{!$Label.OTQ_Q1_Mfg_Q5}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Manufacturing",true,false))}"/>
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q7_Which_part_of_the_supply_chain_do_yo__c}" label="{!$Label.OTQ_Q1_Mfg_Q7}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Manufacturing",true,false))}"/>
+               
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="Retail" rendered="true" columns="1">
+     <apex:inputTextArea value="{!Outbound_Telecall_Questionnaire__c.Q2_What_is_your_understanding_of_what_Z__c}" label="{!$Label.OTQ_Q1_HealthCare_Mfg_Retail_Q2}" style="width:350px; height:60px" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c=="Retail",true,false))}"  />
+
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q3_How_many_stores_do_you_have_in_EMEA__c}" label="{!$Label.OTQ_Q1_Ret_Q3}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Retail",true,false))}" />
+            <apex:inputField value="{!Outbound_Telecall_Questionnaire__c.Q4_In_what_areas_are_you_to_imp_cust__c}" label="{!$Label.OTQ_Q1_Ret_Q4}" rendered="{!(IF(Outbound_Telecall_Questionnaire__c.Q1_Select_Vertical__c="Retail",true,false))}" />
+            </apex:pageBlockSection>
+</apex:pageBlock>
+  </center>
+  </apex:form>
+
+</apex:page>

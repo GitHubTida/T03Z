@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Created For RMA POC</description>
+    <fields>
+        <fullName>Accessory_Qty_Received__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Accessory Qty Received</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Accessory_Qty_Ship_Date__c</fullName>
+        <label>Accessory Qty Ship Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Accessory__c</fullName>
+        <label>Accessory</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BATTERY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CABLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHARGER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRADLE BRACKET</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GROCERY CRADLE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>POWER SUPPLY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PRICE SCANNER</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RADIO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SCANNER GUN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Commision_ID__c</fullName>
+        <label>Commision ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Commissioning_Value_Open__c</fullName>
+        <label>Commissioning Value Open</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Commissioning_Value_Recieved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Commissioning Value Recieved</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Commissioning_Value_Ship_Date__c</fullName>
+        <label>Commissioning Value Ship Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>ErrorDescription__c</fullName>
+        <label>ErrorDescription</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Hold_Comment__c</fullName>
+        <label>Hold Comment</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Hold_Date__c</fullName>
+        <label>Hold Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Hold_Type__c</fullName>
+        <label>Hold Type</label>
+        <length>150</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Hold_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Hold User</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Note_Comment__c</fullName>
+        <label>Note Comment</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Note_Date__c</fullName>
+        <label>Note Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Note_Type__c</fullName>
+        <label>Note Type</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ProcessStatus__c</fullName>
+        <label>ProcessStatus</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>RMAReturnLine_External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>RMAReturnLine External ID</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RMA_Return__c</fullName>
+        <label>RMA Return</label>
+        <referenceTo>RMA_Return__c</referenceTo>
+        <relationshipLabel>RMA ReturnLines</relationshipLabel>
+        <relationshipName>RMA_ReturnLines</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>ReturnLines_Type__c</fullName>
+        <label>ReturnLines Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Accessory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commision</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hold</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Note</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_LineId__c</fullName>
+        <label>Siebel LineId</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <label>RMA ReturnLine</label>
+    <nameField>
+        <displayFormat>A-{000}</displayFormat>
+        <label>RMA ReturnLine#</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>RMA ReturnLines</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

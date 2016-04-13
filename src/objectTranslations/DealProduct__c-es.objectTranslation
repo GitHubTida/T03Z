@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Deal Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Deal Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Deal Registration --></label>
+        <name>Deal_Registration__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- EVM Deal Product Id --></label>
+        <name>EVM_Deal_Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- DR Discount Percentage --></label>
+        <name>F_DR_Discount_Percentage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Service Product? --></label>
+        <name>Is_Service_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please add the US $ list price of the unit multiplied by the volume of the units. --></help>
+        <label><!-- Estimated List Price --></label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label><!-- PRM ProductEntry --></label>
+        <name>PRMProductEntry__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Threshold Amount --></label>
+        <name>Threshold_Amount__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel><!-- DealProduct ID --></nameFieldLabel>
+</CustomObjectTranslation>

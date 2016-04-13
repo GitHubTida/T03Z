@@ -1,0 +1,5 @@
+<apex:page standardController="Account" extensions="PC_AccountAndContactVFTabExtension" tabStyle="Company_Profile__tab">
+   
+    <apex:detail subject="{!AccountIdofUser}" relatedList="true" title="false"  />
+    
+</apex:page>

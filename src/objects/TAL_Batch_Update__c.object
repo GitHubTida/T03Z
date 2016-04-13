@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Added_Accounts__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Added Accounts</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Batch_Job_Id__c</fullName>
+        <label>Batch Job Id</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Created_Accounts__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Created Accounts</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Date_Processed__c</fullName>
+        <label>Date Processed</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Dropped_Accounts__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Dropped Accounts</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Dropped_Zip_Codes__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Dropped Zip Codes</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Modified_Accounts__c</fullName>
+        <defaultValue>0</defaultValue>
+        <label>Modified Accounts</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>TAL Batch Update</label>
+    <nameField>
+        <displayFormat>TAL-{00000}</displayFormat>
+        <label>TAL Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>TAL Batch Updates</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Date_Processed__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Created_Accounts__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Dropped_Accounts__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Dropped_Zip_Codes__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Modified_Accounts__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OWNER.LAST_NAME</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

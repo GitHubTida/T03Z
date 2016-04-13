@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SSO Country Codes</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SSO Country Codes</value>
+    </caseValues>
+    <fields>
+        <label><!-- SFDC Code --></label>
+        <name>SFDC_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- SSO Code --></label>
+        <name>SSO_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Universal Country Name --></label>
+        <name>Universal_Country_Name__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

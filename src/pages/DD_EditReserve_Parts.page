@@ -1,0 +1,70 @@
+<!--
+**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Nikhil Kumar
+    Date        : 20-Aug-15
+    Revision History
+    Ver       Date        Author            Modification
+    ---       ---------   -----------       -------------------------
+    V0.1      20-Aug-15   Nikhil Kumar         Initial Code  
+ ***************************************************************
+ -->
+<apex:page controller="DD_EditReservedPart" tabstyle="DD_Reserved_Product__c" >
+    <apex:form >
+        <apex:actionFunction name="writeOffAll" action="{!WriteoffAll}" reRender="valerr"/>
+        <apex:sectionHeader title="Selected Parts Edit" Subtitle="Selected products"/>
+        <apex:pageMessages id="valerr"/>
+        <apex:pageBlock title="Selected Products Edit">
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Update" action="{!save}" reRender="valerr"/>
+                <apex:commandButton value="Cancel" action="{!Cancel}" />
+                 <apex:commandButton value="Write Off"  onclick="var d=confirm('Do you really want to Write Off all the products?');if(d){
+                 writeOffAll();return false;
+                 }else{return false;}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Tracking Information" collapsible="false">
+            <apex:inputfield value="{!demo.Shipped_Date__c}"/>
+            <apex:inputfield value="{!demo.Tracking_Number__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Reserve Products" columns="1" collapsible="false">
+                <apex:pageblockTable value="{!Lwarp}" var="tempRes">
+                    <apex:column headerValue="Material Name">
+                        <apex:outputLink value="/{!tempRes.DDRes.Material__c}">
+                            <apex:outputfield value="{!tempRes.DDRes.Material__r.name}"/>
+                        </apex:outputLink>    
+                    </apex:column>    
+                    <apex:column headerValue="Material Type">
+                            <apex:outputfield value="{!tempRes.DDRes.Material__r.Product_Type__c}"/>
+                    </apex:column>  
+                    <apex:column headerValue="Serial Number">
+                        <apex:inputfield value="{!tempRes.DDRes.Serialnumber__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Return Serial#">
+                        <apex:inputfield value="{!tempRes.DDRes.Return_Serial__c}"/>
+                    </apex:column>
+                    <!--
+                    <apex:column headerValue="Product status">
+                        <apex:inputfield value="{!tempRes.DDRes.Product_Status__c}"/>
+                    </apex:column>
+                    -->
+                    <apex:column headerValue="Received Date">
+                        <apex:inputfield value="{!tempRes.DDRes.Received_Date__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Completion Date">
+                        <apex:inputfield value="{!tempRes.DDRes.Completion_Date__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Product Status">
+                        <apex:selectList value="{!tempRes.selectedstatus}" size="1" style="margin-top: 5px" >
+                            <apex:selectOptions value="{!tempRes.ProductStatus}"/>
+                        </apex:selectList>
+                    </apex:column>
+                    <apex:column headerValue="Quantity">
+                        <apex:outputfield value="{!tempRes.DDRes.Quantity__c}"/>
+                    </apex:column>
+                </apex:pageblockTable>
+           </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+  
+</apex:page>

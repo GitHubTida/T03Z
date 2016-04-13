@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Opportunity.Opportunity_Line_Item_Schedule_Clone__r$Weighted_Amount_LA__c</field>
+    </columns>
+    <currency>USD</currency>
+    <filter>
+        <criteriaItems>
+            <column>Opportunity$Owner_Theater__c</column>
+            <operator>equals</operator>
+            <value>LATAM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Product_Source__c</column>
+            <operator>equals</operator>
+            <value>EVM</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity.Opportunity_Line_Item_Schedule_Clone__r$SKU__c.Is_Service_Product__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Amount</column>
+            <operator>greaterOrEqual</operator>
+            <value>USD 100000</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Fulfillment_Type__c</column>
+            <operator>notEqual</operator>
+            <value>Distributor Sales In</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$RecordType</column>
+            <operator>equals</operator>
+            <value>Opportunity.Zebra_Opportunity</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Opportunity$Forecast_Stage__c</column>
+            <operator>equals</operator>
+            <value>Identify,Qualify,Validate,Secure,Closed - Won</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$StageName</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Owner_Region__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>%LAOps EVM &gt;100k Weighted</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>Opportunities_with_Products_and_Revenue_Forecast__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity$CloseDate</dateColumn>
+        <interval>INTERVAL_NEXT1</interval>
+    </timeFrameFilter>
+</Report>

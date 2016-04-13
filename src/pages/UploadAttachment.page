@@ -1,0 +1,293 @@
+<apex:page standardController="Account" tabStyle="Account" extensions="ctrlUploadAttachment" id="top" >
+    <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+    <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>    
+    <style>
+    /* Styling for the standard button */
+ 
+    .ChooseFileContainer {
+            position:relative;
+            display: inline;
+            word-break: break-word;
+          }
+ 
+/*Styling for the custom button that would overlay on top of the standard choose file button */
+ 
+    .OverlayButton {
+            position:absolute;
+            left:0px;
+            right:0px;
+            word-wrap:break-word;
+            text-align:center;
+        } 
+    .fileType {
+    display: block;
+    position: relative;
+    width: 2000px;
+    margin: auto;
+    cursor: pointer;
+    border: 0;
+    height: 60px;
+    border-radius: 5px;
+    outline: 0;
+}
+.fileType:hover:after {
+    background: #FF1111;
+}
+    .fileType:after {
+    transition: 200ms all ease;
+    border-bottom: 3px solid rgba(0,0,0,.2);
+    background: #000000;
+    background-image:url('http://i.stack.imgur.com/CVpp3.jpg');
+    text-shadow: 0 2px 0 rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: 'Upload Something';
+    line-height: 60px;
+    border-radius: 5px;
+}
+    </style>
+    <script>   
+    var _URL = window.URL || window.webkitURL;
+    function active_desactive(element)  {
+        var file, img;
+        if ((file = element.files[0])) {
+       // alert("file :"+element.value);
+            var size = file.size;
+            var blnValid = false;
+            var sFileName = element.value; 
+            img = new Image();
+            img.onload = function() {
+                console.log("width:"+this.width+"&height:"+this.height);
+                if((this.width != 150 || this.height != 60)&& blnValid ) {
+                    var msg = "{!$Label.Image_criteria}";        
+                    alert(msg);
+                    element.value = "";
+                    window.location.reload();
+ 
+                }
+                 return false;  
+            };           
+            img.src = _URL.createObjectURL(file);
+            
+             var _validFileExtensions = [".jpg", ".jpeg", ".gif"];
+            var sFileName = element.value;
+            if (sFileName.length > 0) {
+                var blnValid = false;
+                for (var j = 0; j < _validFileExtensions.length; j++) {
+                    var sCurExtension = _validFileExtensions[j];
+                    if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+                        blnValid = true;
+                        break;
+                    }
+                }
+            }
+            if (!blnValid) {
+                var msg = "{!$Label.Please_select_an_image_of_type_GIF_JPG}";        
+                alert(msg);           
+                window.location.reload();             
+                return false;
+            }                
+                
+        }
+ 
+    }
+    </script>
+    <script>
+    j$ = jQuery.noConflict();
+    j$(function(){
+ 
+                    // script that triggers the click of the standard
+                    // choose file button 
+                    j$('#CustomChooseFileButton').click( 
+                    function(e) {
+                                    j$('input[type="file"]').click(); 
+ 
+                                });
+ 
+                   // script to hide the blinking cursor 
+                    j$('input[type="text"]').mousedown(
+                    function(e) { 
+                                    e.preventDefault();
+                                    j$(this).blur();
+                                    return false;
+                    });         
+ 
+    });
+     window.onload=function()  {   
+        if({!(!isChecked)}) {
+            document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.color = "transparent";  
+            //document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.width = "300px";
+            document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.wordWrap = "break-word";
+            //document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.margin = "100px";
+        }
+        else {
+            document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi3.File_File_Image}').style.color = "transparent";  
+            //document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi3.File_File_Image}').style.wordBreak = "break-all";
+            //document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.margin = "100px";
+        }
+        //document.getElementById('{!$Component.top:frm:pBlock:pbSection:j_id44:File_File}').style.color = "#00ff00";       
+    }
+    function check(obj) {
+        if({!(!isChecked)}) {
+            if(document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').value == '')   { 
+                document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.color = "transparent";  
+                //document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.wordBreak = "break-all";
+            }
+            else {  
+                    var fileNameprinted = document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').value;                  
+                    var onlyname = fileNameprinted.split(/(\\|\/)/g).pop();
+                    document.getElementById('top:frm:pBlock:pbSection:pbsi4:printFileName').innerHTML=onlyname;
+                document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.color = "black";
+                //document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi4.File_File}').style.wordBreak = "break-all";
+                }
+        }
+        else {
+        //alert(' checked');
+            if(document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi3.File_File_Image}').value == '')   { 
+                
+                document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi3.File_File_Image}').style.color = "transparent";  
+                
+            }
+            else {  
+                var fileNameprinted = document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi3.File_File_Image}').value;  
+                var onlyname = fileNameprinted.split(/(\\|\/)/g).pop();
+                document.getElementById('top:frm:pBlock:pbSection:pbsi3:printFileName1').innerHTML=onlyname;    
+                document.getElementById('{!$Component.top.frm.pBlock.pbSection.pbsi3.File_File_Image}').style.color = "black";
+                
+            }
+        }
+     }   
+    </script>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+    <apex:sectionHeader title="{!Account.Name}" subtitle="{!$Label.Upload_Logo}" rendered="{!isChecked}"/>
+    <apex:sectionHeader title="{!Account.Name}" subtitle="{!$Label.Upload_Document}" rendered="{!!isChecked}"/>
+ 
+    <apex:form rendered="{!(exists && isChecked)}">
+    <apex:pageBlock >
+    <apex:pageBlockButtons >
+    <apex:actionRegion id="aRegion">
+    <apex:commandButton action="{!back}" value="{!$Label.Back}"/>
+     
+                    </apex:actionRegion>
+                    
+    </apex:pageBlockButtons> 
+    <apex:pageMessages />
+    </apex:pageBlock>
+    </apex:form>
+ 
+    <apex:form id="frm" rendered="{!!(exists && isChecked)}">
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+        <apex:pageMessages />
+ 
+ 
+ 
+ 
+ 
+ 
+        <apex:pageBlock id="pBlock" rendered="{!!uploadSuccess}">
+ 
+ 
+            <apex:pageBlockButtons id="pbb">
+                <apex:actionRegion id="aRegion">
+ 
+                    <apex:commandButton id="LogoBtn" action="{!processUploadLogo}" value="{!$Label.Upload_Logo}" rendered="{!isChecked}" />
+                    <apex:commandButton id="AtcnBtn" action="{!processUpload}" value="{!$Label.Upload_Document}" rendered="{!!isChecked}" />
+                   <apex:commandButton action="{!back}" value="{!$Label.Cancel}"/>
+                </apex:actionRegion>
+            </apex:pageBlockButtons>            
+            <apex:pageBlockSection columns="1" id="pbSection">
+                <apex:pageBlockSectionItem rendered="{!isChecked}">
+                    <apex:outputLabel value="{!$Label.Logo_Description}" style="fontcolor:blue"></apex:outputLabel>                    
+                </apex:pageBlockSectionItem>
+                <!--<apex:pageBlockSectionItem rendered="{!!exists}" >
+                    <apex:outputLabel value="{!$Label.Upload_Company_Logo}" for="my_chk_bx"/>
+                    <apex:inputCheckbox value="{!isChecked}" id="my_chk_bx" >
+                        <apex:actionSupport event="onclick"  action="{!checkIfLogoAlreadyExists}" />
+                    </apex:inputCheckbox>                
+                </apex:pageBlockSectionItem>-->
+                
+                <apex:pageblockSectionItem rendered="{!!isChecked}">
+                        <apex:outputLabel value="{!$Label.Document_Type}" rendered="{!!isChecked}"/>
+                      <apex:selectList id="docType" value="{!docType}" size="1" rendered="{!!isChecked}" disabled="{!uploadedDoc}">
+                          <apex:selectOptions value="{!DocumentTypeOptions}"/>
+                      </apex:selectList>                  
+                </apex:pageblockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!isChecked}" id="pbsi3" >
+                    <apex:outputLabel value="{!$Label.Upload_Logo}" for="File_File_Image"/>
+                     <apex:outputPanel >
+                    <div class = "ChooseFileContainer" >
+                    <apex:inputFile id="File_File_Image" value="{!fileBody}" fileName="{!fileName}" onchange="check(this);active_desactive(this); " size="10" style="width:0"/>                   
+                    
+                    <input id="CustomChooseFileButton"  type="text"  size="15" name="CustomChooseFileButton" value="{!$Label.Choose_File}" class="OverlayButton btn" styleclass="fileType"/>
+                    
+                </div> <apex:outputText value="" id="printFileName1" style="width:100px;left:100px;margin-left:119px;"/>
+                </apex:outputPanel>
+                
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!!isChecked}" id="pbsi4" >
+                    <apex:outputLabel value="{!$Label.Upload_Document}" for="File_File"/>
+                    <apex:outputPanel >
+                    <div class = "ChooseFileContainer" >
+                    <apex:inputFile id="File_File" value="{!fileBody}" fileName="{!fileName}" disabled="{!uploadedDoc}" onchange="check(this);" size="10" style="width:0" />
+                    <input id="CustomChooseFileButton"  type="text"  size="15" name="CustomChooseFileButton" value="{!$Label.Choose_File}" class="OverlayButton btn" styleclass="fileType"/>
+                   
+                    </div> 
+                    <apex:outputText value="" id="printFileName" style="width:100px;left:100px;margin-left:119px;"/>
+                    </apex:outputPanel>
+                   
+                    </apex:pageBlockSectionItem>
+                
+ 
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="{!$Label.Description}" for="Desc"/>
+                    <apex:inputTextarea id="Desc" value="{!description}" rows="4" cols="50" disabled="{!uploadedDoc}"/>
+                </apex:pageBlockSectionItem> 
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+         <apex:pageBlock rendered="{!uploadSuccess}" >
+             <apex:pageBlockButtons id="pbb">
+                <apex:actionRegion id="aRegion">                   
+                   <apex:commandButton action="{!back}" value="{!$Label.Back}"/>
+                </apex:actionRegion>
+            </apex:pageBlockButtons>            
+            
+            <apex:pageBlockSection showHeader="false" columns="1" id="display" >
+                <apex:outputField value="{!partnerCollateral.Account__c}" rendered="{!!caseAttachment}"/>
+                <apex:outputField value="{!partnerCollateral.Document_Type__c}" rendered="{!if(uploadedDoc,true,false)}" />
+ 
+                <apex:outputField value="{!partnerCollateral.File_Name__c}"/>
+                <apex:outputField value="{!partnerCollateral.View__c}"/>
+                <apex:outputField value="{!partnerCollateral.Case__c}" rendered="{!caseAttachment}" />
+                <!--<apex:outputField value="{!partnerCollateral.Document_Type__c}" rendered="{!(!logoFlag && !caseAttachment)}"/> -->
+                <apex:outputField value="{!partnerCollateral.Description__c}"/>  
+                <apex:pageBlockSectionItem >
+                <apex:outputLabel value="{!$Label.Created_By}"/>
+                <apex:outputPanel >
+                    <apex:outputField value="{!partnerCollateral.CreatedBy.name}"/>
+                    ,&nbsp;
+                    <apex:outputField value="{!partnerCollateral.CreatedDate}"/>
+                </apex:outputPanel>
+            </apex:pageBlockSectionItem>             
+            </apex:pageBlockSection>             
+        </apex:pageBlock>
+ 
+    </apex:form>
+</apex:page>

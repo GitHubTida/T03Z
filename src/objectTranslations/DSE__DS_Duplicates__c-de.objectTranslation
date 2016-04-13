@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <value><!-- Accountdublette --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Accountdubletten --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <value><!-- Accountdublette --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Accountdubletten --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <value><!-- Accountdublette --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Accountdubletten --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <value><!-- Accountdublette --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Accountdubletten --></value>
+    </caseValues>
+    <gender><!-- Feminine --></gender>
+    <nameFieldLabel><!-- Duplicate Name --></nameFieldLabel>
+</CustomObjectTranslation>

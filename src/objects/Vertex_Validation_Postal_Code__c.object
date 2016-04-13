@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>City__c</fullName>
+        <label>City</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <label>County</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <label>Postal Code</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Siebel_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>Siebel ID</label>
+        <length>40</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <label>State Code</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <label>Vertex Validation Postal Code</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>City__c</columns>
+        <columns>County__c</columns>
+        <columns>State__c</columns>
+        <columns>Postal_Code__c</columns>
+        <columns>Siebel_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Puerto_Rico</fullName>
+        <columns>NAME</columns>
+        <columns>City__c</columns>
+        <columns>County__c</columns>
+        <columns>Postal_Code__c</columns>
+        <columns>State__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>State__c</field>
+            <operation>equals</operation>
+            <value>PR</value>
+        </filters>
+        <label>Puerto Rico</label>
+    </listViews>
+    <nameField>
+        <label>Vertex Validation Postal Code Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Vertex Validation Postal Code</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>City__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>County__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>State__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Postal_Code__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>City__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>County__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Postal_Code__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>State__c</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>City__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>County__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Postal_Code__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

@@ -1,0 +1,7 @@
+<!--
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author: Dhruthi_S@infosys.com
+Date: 06-Mar-2015
+Description: This Page is used to invoke the clone redirection class.
+-->
+<apex:page standardController="Opportunity" extensions="OpportunityCloneRedirectExtension" action="{!whereTo}"/>

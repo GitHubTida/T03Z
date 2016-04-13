@@ -1,0 +1,69 @@
+<apex:page tabStyle="Target_Account__c" controller="ZEBTargetAccountCreateController" id="NewTargetAccount">
+	<apex:sectionHeader title="Target Account" subtitle="New Account Request"/>
+	<apex:messages style="color:red"/>
+	<apex:form id="Information">
+		<apex:pageBlock mode="edit" title="New Target Account">
+			<apex:pageBlockSection title="Information" columns="2">
+				<apex:inputField required="true" value="{!targetRecord.Name}"/>
+				<apex:pageBlockSectionItem >
+					<apex:outputText >Record Type</apex:outputText>
+					<apex:outputText >Customer Account</apex:outputText>
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!targetRecord.Street__c}"/>
+				<apex:inputField value="{!targetRecord.Parent_Target_Account__c}"/>
+				<apex:inputField required="true" value="{!targetRecord.City__c}"/>
+				<apex:inputField required="true" value="{!targetRecord.Effective_Date__c}"/>
+				<apex:inputField required="true" value="{!targetRecord.State_Province__c}" rendered="{!displayforNAMRUsers}" />
+				<apex:inputField value="{!targetRecord.End_Date__c}"/>
+				<apex:inputField required="true" value="{!targetRecord.Zip_Postal_Code__c}"/>
+				<apex:inputField required="false" value="{!targetRecord.State_Local_Account_Manager__c}" rendered="{!displayforNAMRUsers}"/>
+
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Country" />
+					<apex:outputPanel layout="block" styleClass="requiredInput" >
+						<apex:outputPanel layout="block" styleClass="requiredBlock" />
+						<apex:selectList required="true" value="{!selectedCountry}" size="1"  id="Country">
+							<apex:selectOptions value="{!Countries}"/>
+						</apex:selectList>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>				
+				
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="AccountType" />
+					<apex:outputPanel layout="block" styleClass="requiredInput" >
+						<apex:outputPanel layout="block" styleClass="requiredBlock" />
+						<apex:selectList required="true" value="{!selectedAccountType}" size="1"  id="AccountType">
+							<apex:selectOptions value="{!AccountTypes}"/>
+						</apex:selectList>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!targetRecord.Vertical__c}"></apex:inputField>
+				<apex:inputField required="false" value="{!targetRecord.SIC_Code__c}" rendered="{!displayforNAMRUsers}"/>
+				<apex:inputField required="false" value="{!targetRecord.Primary_Account__c}" rendered="{!displayforNAMRUsers}"/>
+			</apex:pageBlockSection>
+
+			<apex:pageBlockSection title="Ownership / Split Definitions" columns="2">
+				<apex:pageBlockSectionItem >
+					<apex:outputText >Owner</apex:outputText>
+					<apex:outputText >{!$User.FirstName} {!$User.LastName}</apex:outputText>
+				</apex:pageBlockSectionItem>
+				<apex:inputField required="true" value="{!targetRecord.Owner_Percentage__c}" />
+				<apex:inputField value="{!targetRecord.Owner2__c}"  rendered="{!displayforNAMRUsers }"/>
+				<apex:inputField value="{!targetRecord.Owner2_Percentage__c}" rendered="{!displayforNAMRUsers}"/>
+				<apex:inputField value="{!targetRecord.Owner3__c}" rendered="{!displayforNAMRUsers}" />
+				<apex:inputField value="{!targetRecord.Owner3_Percentage__c}" rendered="{!displayforNAMRUsers}" />
+				<apex:inputField value="{!targetRecord.Owner4__c}"  rendered="{!displayforNAMRUsers}"  />
+				<apex:inputField value="{!targetRecord.Owner4_Percentage__c}"  rendered="{!displayforNAMRUsers}" />
+			</apex:pageBlockSection>
+
+			<apex:pageBlockSection title="Additional Request Information" columns="1">
+				<apex:inputField value="{!modRecord.Comments__c}" style="width:450px"/>
+			</apex:pageBlockSection>
+
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Submit Request" action="{!onSubmit}" />
+				<apex:commandButton value="Cancel" action="{!onCancel}" immediate="true"/>
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

@@ -1,0 +1,283 @@
+<apex:page >
+
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <apex:includeScript value="/support/console/23.0/integration.js"/>
+    <apex:includeScript value="/support/console/28.0/integration.js"/>    
+
+    <script type="text/javascript">
+
+            sforce.console.setTabTitle('ZPL Viewer');
+    
+            var callCloseTab= function callCloseTab(result) {
+                sforce.console.closeTab(result.id);
+            }
+        
+            function closeTab() {
+                
+                sforce.console.getEnclosingTabId(callCloseTab);
+                
+                if (sforce.console.isInConsole()) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+    
+    </script>    
+    
+
+    <!-- ZPL Code Rendering written and developed by Kevin Coyle: kcoyle@zebra.com -->
+
+        <title>ZPL Viewer</title>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"/>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+
+        <!-- Custom styling -->
+        <style type="text/css">
+            div.pull-left {
+                padding-right: 1em;
+            }
+        </style>
+
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"/>
+
+
+<div class="container">
+
+        <h2>ZPL Viewer</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form>
+            <textarea id="zpl" cols="80" rows="25" spellcheck="false">^XA
+^FO280,50^ADN,36,20^FDSomeones Name^FS
+^FO125,120^ADN,36,20^FDZebra Technical Support^FS
+^FO280,220^BY3
+^B3N,N,100,Y,N
+^FDZPL^FS
+^FO10,10
+^GB800,400,20^FS
+^XZ
+
+
+
+</textarea>
+            <div class="controls">
+                <button type="button" class="btn btn-default" id="redraw"><i class="fa fa-pencil-square-o"></i> Redraw</button>
+                <button type="button" class="btn btn-default" id="addImage"><i class="fa fa-picture-o"></i> Add image</button>
+                <br/>
+                <label for="density">Print Density:</label>
+                <select name="density" id="density" required="required">
+                    <option value="6">6 dpmm (152 dpi)</option>
+                    <option value="8" selected="selected">8 dpmm (203 dpi)</option>
+                    <option value="12">12 dpmm (300 dpi)</option>
+                    <option value="24">24 dpmm (600 dpi)</option>
+                </select>
+                <br/>
+                <label for="width">Label Size:</label>
+                <input type="number" placeholder="width" min="0.1" step="any" required="required" name="width" id="width" value="4"/>
+                <span>x</span>
+                <input type="number" placeholder="height" min="0.1" step="any" required="required" name="height" id="height" value="6"/>
+                <select name="units" id="units" required="required">
+                    <option value="1" selected="selected">inches</option>
+                    <option value="0.393701">cm</option>
+                    <option value="0.0393701">mm</option>
+                </select>
+                <input type="file" id="file" accept="image/*"/>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-6">
+        <img id="label" alt="Label" onload="adjustImageSize(this, 400, 600)" width="400"/>
+    </div>
+</div>
+
+<script>
+
+    function refreshLabel() {
+        var density = $('#density').val();
+        var width = $('#width').val() * $('#units').val();
+        var height = $('#height').val() * $('#units').val();
+        var zpl = encodeURIComponent($('#zpl').val());
+        $('#label').attr('src', 'http://api.labelary.com/v1/printers/' + density + 'dpmm/labels/' + width + 'x' + height + '/0/' + zpl);
+    }
+
+    function adjustImageSize(img, maxWidth, maxHeight) {
+        if (img.naturalWidth / maxWidth > img.naturalHeight / maxHeight) {
+            img.removeAttribute('height');
+            img.width = maxWidth;
+        } else {
+            img.removeAttribute('width');
+            img.height = maxHeight;
+        }
+    }
+
+    function refreshPermalink() {
+        var density = $('#density').val();
+        var width = $('#width').val();
+        var height = $('#height').val();
+        var units = $('#units option:selected').text();
+        var zpl = encodeURIComponent($('#zpl').val());
+        $('#permalink').attr('href', '?density=' + density + '&width=' + width + '&height=' + height + '&units=' + units + '&zpl=' + zpl);
+    }
+
+    function setSelectionRange(input, selectionStart, selectionEnd) {
+        if (input.setSelectionRange) {
+            input.focus();
+            input.setSelectionRange(selectionStart, selectionEnd);
+        } else if (input.createTextRange) {
+            var range = input.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', selectionEnd);
+            range.moveStart('character', selectionStart);
+            range.select();
+        }
+    }
+
+    // http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results == null ? null : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    // http://stackoverflow.com/questions/166221/how-can-i-upload-files-asynchronously-with-jquery
+    function uploadImage() {
+        var formData = new FormData();
+        formData.append('file', $('#file')[0].files[0]);
+        $.ajax({
+            url: 'http://api.labelary.com/v1/graphics',
+            type: 'POST',
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(data) {
+                var zpl = $('#zpl').val();
+                var index = zpl.toUpperCase().indexOf('^XA');
+                var cmd =
+                      '\n'
+                    + '\n'
+                    + '~DGR:000.GRF,' + data.totalBytes + ',' + data.rowBytes + ',' + data.data + '\n'
+                    + '\n'
+                    + '^FO50,50^XG000.GRF^FS' + '\n'
+                    + '\n'
+                    + '^IDR:000.GRF' + '\n'
+                    + '\n'
+                    + '\n';
+                if (index == -1) {
+                    zpl = cmd + zpl;
+                } else {
+                    zpl = zpl.substring(0, index + 3) + cmd + zpl.substring(index + 3);
+                }
+                $('#zpl').val(zpl);
+                refreshLabel();
+                refreshPermalink();
+            }
+        });
+    }
+
+    function track(event) {
+        ga('send', 'event', 'Viewer', event.data.action);
+    }
+
+    // http://stackoverflow.com/questions/572768/styling-an-input-type-file-button
+    $('#addImage').on('click', function() { $('#file').click(); });
+    $('#file').on('change', uploadImage).on('change', { action: 'Add Image' }, track);
+    $('#zpl').on('change keyup paste', refreshPermalink);
+    $('#redraw').on('click', refreshLabel).on('click', { action: 'Redraw' }, track);
+    $('#density').on('change', refreshLabel).on('change', refreshPermalink).on('change', { action: 'Change Density' }, track);
+    $('#width').on('change', refreshLabel).on('change', refreshPermalink).on('change', { action: 'Change Width' }, track);
+    $('#height').on('change', refreshLabel).on('change', refreshPermalink).on('change', { action: 'Change Height' }, track);
+    $('#units').on('change', refreshLabel).on('change', refreshPermalink).on('change', { action: 'Change Units' }, track);
+
+    $(document).ready(function() {
+
+        var zpl = getParameterByName('zpl');
+        if (zpl) {
+            // custom ZPL requested via query string
+            $('#zpl').val(zpl);
+        } else {
+            // select recipient name in standard sample ZPL, if it's there
+            var input = document.getElementById('zpl');
+            var index = input.value.indexOf('John Doe');
+            if (index >= 0) {
+                setSelectionRange(input, 414, 422);
+            }
+        }
+
+        var density = getParameterByName('density');
+        if (density) {
+            // custom print density requested via query string
+            $('#density').val(density);
+        }
+
+        var width = getParameterByName('width');
+        if (width) {
+            // custom width requested via query string
+            $('#width').val(width);
+        }
+
+        var height = getParameterByName('height');
+        if (height) {
+            // custom height requested via query string
+            $('#height').val(height);
+        }
+
+        var units = getParameterByName('units');
+        if (units) {
+            // custom label size units requested via query string
+            $('#units option').filter(function () { return $(this).html() == units; }).prop('selected', true);
+        }
+
+        refreshLabel();
+        refreshPermalink();
+    });
+
+</script>
+
+<style>
+    #label {
+        border: 1px solid darkgray;
+    }
+    .controls {
+        margin-top: 1em;
+    }
+    .controls > * {
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+    input[type="number"] {
+        width: 5em;
+    }
+    #file {
+        display: none;
+    }
+</style>
+
+<p>
+    
+    
+<ul>
+    <li>Currently supported ZPL commands: <a href="http://labelary.com/docs.html" target="_blank">http://labelary.com/docs.html</a></li> 
+    <li>ZPL manual: <a href="https://support.zebra.com/cpws/docs/zpl/zpl_manual.pdf" target="_blank">https://support.zebra.com/cpws/docs/zpl/zpl_manual.pdf</a></li>
+</ul>
+
+</p>
+    
+</div>  
+
+
+
+</apex:page>

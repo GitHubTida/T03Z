@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <fields>
+        <fullName>EndpointURL__c</fullName>
+        <label>EndpointURL</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Password__c</fullName>
+        <label>Password</label>
+        <length>30</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>SourceSystemIdentifier__c</fullName>
+        <label>SourceSystemIdentifier</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>TargetSystemIdentifier__c</fullName>
+        <label>TargetSystemIdentifier</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Timeout__c</fullName>
+        <description>Timeout for Webservice Call (in milliseconds).</description>
+        <label>Timeout</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Username__c</fullName>
+        <label>Username</label>
+        <length>30</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <label>Mashup Connection</label>
+</CustomObject>

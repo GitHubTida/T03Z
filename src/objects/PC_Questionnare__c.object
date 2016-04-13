@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Storing Quetionnaires for Price Concession</description>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Approved_Credit_Line_Comments__c</fullName>
+        <label>Approved Credit Line Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Approved_Credit_Line__c</fullName>
+        <label>Approved Credit Line</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Exist__c</fullName>
+        <label>Contract Exist</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Under_Negotiation_Comments__c</fullName>
+        <label>Contract Under Negotiation Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Under_Negotiation__c</fullName>
+        <label>Contract Under Negotiation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Penalities_Performance_Comments__c</fullName>
+        <label>Customer Penalities Performance Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Penalities_Performance__c</fullName>
+        <label>Customer Penalities Performance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Planning_Lease_Equipment_Commen__c</fullName>
+        <label>Customer Planning Lease Equipment Commen</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Planning_Lease_Equipment__c</fullName>
+        <label>Customer Planning Lease Equipment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Request_Acceptance__c</fullName>
+        <label>Customer Request Acceptance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Delivery_Terms_Comme__c</fullName>
+        <label>Customer Requesting_Delivery Terms Comme</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Delivery_Terms__c</fullName>
+        <label>Customer Requesting Delivery Terms</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Hardware_Comments__c</fullName>
+        <label>Customer Requesting Hardware Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Hardware__c</fullName>
+        <label>Customer Requesting Hardware</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Lease__c</fullName>
+        <label>Customer Requesting Lease</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Payment_Terms_Commen__c</fullName>
+        <label>Customer Requesting Payment Terms Commen</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Payment_Terms__c</fullName>
+        <label>Customer Requesting Payment Terms</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Terms_Comments__c</fullName>
+        <label>Customer Requesting Terms Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Requesting_Terms__c</fullName>
+        <label>Customer Requesting Terms</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Required_Transaction_Comments__c</fullName>
+        <label>Customer Required Transaction Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Required_Transaction__c</fullName>
+        <label>Customer Required Transaction</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Seeking_Warranty_Comments__c</fullName>
+        <label>Customer Seeking Warranty Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Seeking_Warranty__c</fullName>
+        <label>Customer Seeking Warranty</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Executed_Contract_Comments__c</fullName>
+        <label>Executed Contract Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Executed_Contract__c</fullName>
+        <label>Executed Contract</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>MultiNational_or_Global_Account_Comments__c</fullName>
+        <label>MultiNational or Global Account Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>MultiNational_or_Global_Account__c</fullName>
+        <label>MultiNational or Global Account</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_Commitments_Comments__c</fullName>
+        <label>Non Standard Commitments Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Non_Standard_Commitments__c</fullName>
+        <label>Non Standard Commitments</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Non_Symbol_Banded_Product_Comments__c</fullName>
+        <label>Non Symbol_Banded Product Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Non_Symbol_Banded_Product__c</fullName>
+        <label>Non Symbol Banded Product</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Transaction_Reengaged_Commen__c</fullName>
+        <label>Opportunity Transaction Reengaged Commen</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Transaction_Reengaged__c</fullName>
+        <label>Opportunity Transaction Reengaged</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>PC_Exception_Pricing__c</fullName>
+        <label>PC Exception Pricing</label>
+        <length>10</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Questionnaire_Filled__c</fullName>
+        <label>Questionnaire Filled</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Quote__c</fullName>
+        <label>Quote</label>
+        <referenceTo>Quote</referenceTo>
+        <relationshipLabel>PC Questionnaire</relationshipLabel>
+        <relationshipName>PC_Questionnaire</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Service_Contract_Specialterms__c</fullName>
+        <label>Service Contract Specialterms</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Service_Customized_Invoice__c</fullName>
+        <label>Service Customized Invoice</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Service_Customized_Invoice_comments__c</fullName>
+        <label>Service Customized Invoice comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Service_Include_Integration_Comments__c</fullName>
+        <label>Service Include Integration Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Service_Include_Integration__c</fullName>
+        <label>Service Include Integration</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Solution_Reward_Associated_Comments__c</fullName>
+        <label>Solution Reward Associated Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Solution_Reward_Associated__c</fullName>
+        <label>Solution Reward Associated</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tradein_3rdParty_Products_Comments__c</fullName>
+        <label>Tradein 3rdParty Products Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Tradein_3rdParty_Products__c</fullName>
+        <label>Tradein 3rdParty Products</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tradein_Other_Financial_Incentive__c</fullName>
+        <label>Tradein Other Financial Incentive</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Tradein_product_Reused_Service_Comments__c</fullName>
+        <label>Tradein product Reused Service Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Tradein_product_Reused_Service__c</fullName>
+        <label>Tradein product Reused Service</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Unreleased_Products_Comments__c</fullName>
+        <label>Unreleased Products Comments</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Unreleased_Products__c</fullName>
+        <label>Unreleased Products</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Answered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>PC Questionnaire</label>
+    <nameField>
+        <displayFormat>PCQ-{0000}</displayFormat>
+        <label>PC Questionnare Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>PC Questionnaire</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

@@ -1,0 +1,89 @@
+<apex:page standardController="Opportunity" extensions="PCEVMPriceConcessionsController" action="{!priceConcessionsList}">
+<apex:stylesheet value="{!$Resource.PCCommonStyles}" /> 
+<script> 
+    function confirmReg(prm,ltm,prURL) {
+   
+      if(prm == 0){
+              alert("Please select atleast one Price Concession record to promote."); }
+      else             
+      if(prm >= 2){
+              alert("Please select only one Price Concession Record to promote."); }
+      else
+      if(ltm <1) { 
+        alert("The Quote has no Line items added and cannot be promoted"); 
+        }  
+      else
+      if(ltm >=1)  {
+         var url = prURL;
+        if(url != "null")
+             window.open(url, "_top");
+            }
+      
+     }
+ 
+</script>
+  <head>
+  </head>
+  <body>
+  <apex:form id="formRelatedList">
+ 
+   <apex:actionFunction name="Promote" action="{!onSelected}" oncomplete="Check"/>
+    <apex:pageBlock rendered="{!if((Opportunity.Owner_Theater__c=='APAC'),false,true)}" title="EVM Price Concessions">
+            <apex:pageBlockButtons location="top">
+           <apex:commandLink styleClass="btn" style="text-decoration: none;" value="Go To Solution Builder" action="{!addRedirectPage}" target="_blank" rendered="{!NOT(readOnlyFlag)}"/>
+            <apex:commandLink styleClass="btn"  style="text-decoration: none;" value="Promote" target="_top"  action="{!processSelected}" oncomplete="confirmReg('{!promoteSize}','{!lineItemSize}','{!promoteURL}');"  rendered="{!NOT(readOnlyFlag)}"/> 
+            <!-- <oncomplete="confirmReg({!promoteSize});"/>-->
+         
+        </apex:pageBlockButtons>
+        <div style="overflow:scroll;width:100%;height:180px;" > 
+        <apex:pageBlockTable value="{!pclist}" var="pcItem" rendered="{!pcList.size==0}">
+           <apex:column headerValue="No records to display" headerClass="headerStyle" />
+        </apex:pageBlocktable>
+            <apex:pageBlockTable value="{!pclist}" var="pcItem" rendered="{!priceConList.size > 0}" >
+             <apex:column rendered="{!NOT(readOnlyFlag)}"><apex:inputCheckbox value="{!pcItem.Selected}" id="Check"  >
+             <!--<apex:actionSupport event="onclick" action="{!onSelected}"/>-->
+             </apex:inputcheckbox>
+              </apex:column>
+               
+              <apex:column headerValue="Action" styleClass="width" rendered="{!NOT(readOnlyFlag)}">
+                    <apex:outputLink style="color:#015ba7;" styleclass="actionLink" value="/{!pcItem.pclst.Id}/e?retURL={!oppID}" target="_top">Edit</apex:outputLink>&nbsp;|
+                    <apex:commandLink style="color:#015ba7;"  styleclass="actionLink" action="{!deletePriceConcession}" onclick="if(!confirm('Are you sure?')) return false;" value="Del">
+                        <apex:param value="{!pcItem.pclst.Id}" name="idToDel" assignTo="{!delID }"/>
+                    </apex:commandLink>
+                </apex:column>
+               <apex:column headerValue="SB Quote ID">
+                    <apex:outputLink value="/{!pcItem.pclst.Id}" title="{!pcItem.pclst.Name}" target="_top">{!pcItem.pclst.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="PE Deal ID" value="{!pcItem.pclst.PE_Deal_ID__c}"/>
+                <apex:column headerValue="Quote Amount" value="{!pcItem.pclst.Quote_Amount__c}"/>
+              <!--  <apex:column headerValue="Opportunity" value="{!pcItem.Opportunity__c}"/>
+               <apex:column headerValue="Opportunity">
+                    <apex:outputlink value="/{!pcItem.pclst.Opportunity__c}"  target="_top">{!pcItem.pclst.Opportunity_Name__c}</apex:outputLink>
+                </apex:column> -->
+                <apex:column headerValue="Start Date" value="{!pcItem.pclst.Start_Date__c}"/>
+                <apex:column headerValue="End Date" value="{!pcItem.pclst.End_Date__c}"/>
+                <apex:column headerValue="Status" value="{!pcItem.pclst.Status__c}"/>
+                <apex:column headerValue="Primary" value="{!pcItem.pclst.Primary__c}"/>
+                
+              </apex:pageBlockTable>
+               </div> 
+           <!--  <apex:pageblockButtons location="bottom" rendered="{!AllowShowMore}" >
+                <apex:commandButton value="First Page" rerender="formRelatedList" action="{!FirstPage}" disabled="{!prev}"/>
+                <apex:commandButton value="Previous" rerender="formRelatedList" action="{!previous}" disabled="{!prev}"/>
+                <apex:commandButton value="Next" rerender="formRelatedList" action="{!next}" disabled="{!nxt}"/>
+                <apex:commandButton value="Last Page" rerender="formRelatedList" action="{!LastPage}" disabled="{!nxt}"/>
+            </apex:pageblockButtons> -->
+             <apex:outputPanel style="float:right;margin-top:20px;" rendered="{!AllowShowMore}">
+                <apex:commandButton value="First" rerender="formRelatedList" action="{!FirstPage}" disabled="{!prev}"/> &nbsp;
+                <apex:commandButton value="Previous" rerender="formRelatedList" action="{!previous}" disabled="{!prev}"/> &nbsp;
+                 <apex:outputLabel Value="{!counter}" style="display: inline-block;width: 2em;
+                                                            margin: 0 3px;font-size: 98%; text-align: center;vertical-align: 
+                                                            middle;border: 1px inset;background-color: white;"/>
+               <b> <apex:outputLabel Value="of {!totalPages}"/></b>&nbsp;
+                <apex:commandButton value="Next" rerender="formRelatedList" action="{!next}" disabled="{!nxt}"/>&nbsp;
+                <apex:commandButton value="Last" rerender="formRelatedList" action="{!lastPage}" disabled="{!nxt}"/>
+                </apex:outputPanel>
+          </apex:pageBlock>
+       </apex:form>
+       </body>
+</apex:page>

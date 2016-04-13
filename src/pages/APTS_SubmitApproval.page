@@ -1,0 +1,7 @@
+<apex:page controller="APTS_PreApprovalController" action="{!Validate}">
+    <apex:form >
+       
+        <apex:pagemessages escape="False" />
+        <center><apex:commandButton action="{!goback}" value="Go Back" title="Go Back" />    </center>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,1945 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>AIT_User_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is used to identify Siebel User</description>
+        <externalId>true</externalId>
+        <label>AIT User ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>AIT_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>It is a flag to check if user exists in Siebel</description>
+        <label>AIT User?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>APTS_Approval_Tier__c</fullName>
+        <description>This field is created to support the Apttus Approval Process for Procurement and Sales contracts.</description>
+        <label>APTS Approval Tier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>0</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>7</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>APTS_Manager__c</fullName>
+        <description>APTS Manager</description>
+        <inlineHelpText>APTS Manager</inlineHelpText>
+        <label>APTS Manager</label>
+        <relationshipName>APTSManager</relationshipName>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Access_Status__c</fullName>
+        <label>Access Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Locked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_Approval__Approval_Level__c</fullName>
+        <description>Field moved to Approval Matrix table</description>
+        <label>Approval Level_OBSOLETE</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Level 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Level 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Apttus_Approval__Next_Level_Approver__c</fullName>
+        <description>Field moved to Approval Matrix table</description>
+        <label>Next Level Approver_OBSOLETE</label>
+        <relationshipName>Users</relationshipName>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Area_Controller__c</fullName>
+        <label>Region Controller</label>
+        <relationshipName>Users</relationshipName>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Area__c</fullName>
+        <label>Area</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sample Area</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DD_Financial_Controller__c</fullName>
+        <label>Financial Controller</label>
+        <relationshipName>User_FinancialController</relationshipName>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>DSE__DS_Data_Scout_Profile__c</fullName>
+        <description>Cloud MDM: enter the name of the Cloud MDM profile for this user. If no Cloud MDM Profile is specified, the default profile will be used</description>
+        <inlineHelpText>Cloud MDM: enter the name of the Cloud MDM profile for this user. If no Cloud MDM Profile is specified, the default profile will be used</inlineHelpText>
+        <label>Cloud MDM Profile</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Auto_Approval__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Demo_Auto_Approval</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Pool__c</fullName>
+        <label>Demo Pool</label>
+        <picklist>
+            <controllingField>Theater__c</controllingField>
+            <picklistValues>
+                <fullName>Texas</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Germany</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>EVM_Core_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field stores the Core id of the user migrated from MSI SFDC.</description>
+        <externalId>true</externalId>
+        <label>EVM Core ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>EVM_SF_User_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>This field is used as a MSI E SFDC User Id</description>
+        <externalId>true</externalId>
+        <label>EVM SF User ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>EVM_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>It is a flag which checks if user exists in MSI SFDC</description>
+        <label>EVM User?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Employee_R3_Number__c</fullName>
+        <label>Employee R3 Number</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Login_ID__c</fullName>
+        <description>Stores the login ID info for integration purpose</description>
+        <externalId>true</externalId>
+        <label>Login ID</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Manager1__c</fullName>
+        <inlineHelpText>Manager to approve the Target Accounts and Credit Claims</inlineHelpText>
+        <label>Compensation Manager</label>
+        <relationshipName>User</relationshipName>
+        <type>Hierarchy</type>
+    </fields>
+    <fields>
+        <fullName>Manager_Level__c</fullName>
+        <label>Level</label>
+        <length>5</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Manager_Report_Purpose__c</fullName>
+        <formula>Manager.FirstName +&apos; &apos;+ Manager.LastName</formula>
+        <label>Manager (Report Purpose)</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Position__c</fullName>
+        <label>Position</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CHAM - Channel Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DCAM - Distribution Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DMAR - Distributed Marketing Account Rep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IBDM - Inside Business Development Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ICHAM - Inside Channel Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NAM - Named Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Region Controller</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Regional Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sales Operations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SE - Sales Engineer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vertical Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VP - Vice President</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>R11i_User_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>ID of the user from R11i System</description>
+        <externalId>true</externalId>
+        <label>R11i User ID</label>
+        <length>20</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>R11i_User__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This Field is created to Check if the user is a R11i user or not</description>
+        <label>R11i User?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_update_insert__c</fullName>
+        <label>Reason for Update/ Insert</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <description>Region field is dependent on the Theater Field</description>
+        <label>Region</label>
+        <picklist>
+            <controllingField>Theater__c</controllingField>
+            <picklistValues>
+                <fullName>South</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>North</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DACH</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Central</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>East</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Product Solution Sales</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail &amp; Hospitality</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare &amp; Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation &amp; Logistics</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Sales</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inside Sales</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mexico</fullName>
+                <controllingFieldValues>LATAM</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NoLA</fullName>
+                <controllingFieldValues>LATAM</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SoLA</fullName>
+                <controllingFieldValues>LATAM</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Brazil</fullName>
+                <controllingFieldValues>LATAM</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distribution</fullName>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <controllingFieldValues>LATAM</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japan Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korea Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South East Asia Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australia/New Zealand Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Distribution</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US OEM</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>WLAN</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Printer</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State &amp; Local</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Supplies</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greater China</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japan</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korea</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South East Asia</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australia/New Zealand</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Federal</fullName>
+                <controllingFieldValues>NA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OEM</fullName>
+                <controllingFieldValues>APAC</controllingFieldValues>
+                <controllingFieldValues>EMEA</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Office__c</fullName>
+        <description>The values of this field is populated for Users that have access to SB. Picklist LOVs should match with MSI SFDC</description>
+        <label>EVM Sales Office</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AT01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ATIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AU01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AUIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BE02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BEIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BR01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CN01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZ01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DEIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DK01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DKIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ES01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ESIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FIIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FRIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HK01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HQIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IDC1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IDIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN03</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN05</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN20</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN21</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN22</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN23</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN25</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN26</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN27</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN28</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN29</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN31</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN32</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN33</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN34</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN35</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IN44</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ITIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JP01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JPIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MX01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MX30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MXIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MY01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NL01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NLIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NZ01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SE01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SEIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SG01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SGIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UKIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US04</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US07</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US08</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US09</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US10</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US11</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US12</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US13</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US14</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US15</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US16</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US17</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US18</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US19</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US30</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US31</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US32</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US33</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US34</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US35</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US37</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US38</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US39</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US40</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US41</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US42</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US43</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZA01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZAIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sales_Org__c</fullName>
+        <description>The values of this field is populated for Users that have access to SB. Picklist LOVs should match with MSI SFDC</description>
+        <label>EVM Sales Org</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AT01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AU01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BE02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BR01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CA01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CN01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZ01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DE01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DK01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ES01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FR01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HK01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IDC1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>IT01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JP01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MX01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MY01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NL01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NZ01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SE01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SG01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US02</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZA01</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Short_R3__c</fullName>
+        <label>Short R3#</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Region__c</fullName>
+        <description>Sub-Region field is a dependent field on Region</description>
+        <label>Sub-Region</label>
+        <picklist>
+            <controllingField>Region__c</controllingField>
+            <picklistValues>
+                <fullName>Spain</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Italy</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greece</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Middle East</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Africa &amp; Israel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ireland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nordics</fullName>
+                <controllingFieldValues>North</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Germany</fullName>
+                <controllingFieldValues>DACH</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Austria &amp; Switzerland</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>France</fullName>
+                <controllingFieldValues>Central</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Benelux</fullName>
+                <controllingFieldValues>Central</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russia</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Turkey</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CE &amp; CEE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Sales Central</fullName>
+                <controllingFieldValues>Channel Sales</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Sales East</fullName>
+                <controllingFieldValues>Channel Sales</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel Sales West</fullName>
+                <controllingFieldValues>Channel Sales</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Ambulatory</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Canada</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Central</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare East</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare Managed Partner</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare West</fullName>
+                <controllingFieldValues>Healthcare</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inside Sales Central</fullName>
+                <controllingFieldValues>India Sales</controllingFieldValues>
+                <controllingFieldValues>Inside Sales</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inside Sales East</fullName>
+                <controllingFieldValues>India Sales</controllingFieldValues>
+                <controllingFieldValues>Inside Sales</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MFG Central &amp; West</fullName>
+                <controllingFieldValues>Manufacturing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MFG East</fullName>
+                <controllingFieldValues>Manufacturing</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R&amp;H North</fullName>
+                <controllingFieldValues>Retail &amp; Hospitality</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R&amp;H South</fullName>
+                <controllingFieldValues>Retail &amp; Hospitality</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R&amp;H Walmart</fullName>
+                <controllingFieldValues>Retail &amp; Hospitality</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>R&amp;H West</fullName>
+                <controllingFieldValues>Retail &amp; Hospitality</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L East</fullName>
+                <controllingFieldValues>T&amp;L</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L Mid-Atlantic</fullName>
+                <controllingFieldValues>T&amp;L</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L UPS</fullName>
+                <controllingFieldValues>T&amp;L</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L West</fullName>
+                <controllingFieldValues>T&amp;L</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Distribution</fullName>
+                <controllingFieldValues>US Distribution</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US Federal</fullName>
+                <controllingFieldValues>US Federal</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US OEM</fullName>
+                <controllingFieldValues>US OEM</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China</fullName>
+                <controllingFieldValues>Greater China</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hong Kong</fullName>
+                <controllingFieldValues>Greater China</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Taiwan</fullName>
+                <controllingFieldValues>Greater China</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Japan</fullName>
+                <controllingFieldValues>Japan</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Korea</fullName>
+                <controllingFieldValues>Korea</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India</fullName>
+                <controllingFieldValues>India</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singapore</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Malaysia</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Thailand</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vietnam</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Philippines</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Indonesia</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emerging Countries</fullName>
+                <controllingFieldValues>South East Asia</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Australia</fullName>
+                <controllingFieldValues>Australia/New Zealand</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Zealand</fullName>
+                <controllingFieldValues>Australia/New Zealand</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inside Sales West</fullName>
+                <controllingFieldValues>Inside Sales</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENC</fullName>
+                <controllingFieldValues>DACH</controllingFieldValues>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Austria</fullName>
+                <controllingFieldValues>DACH</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Switzerland</fullName>
+                <controllingFieldValues>DACH</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Adriatics</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Baltic</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CE&amp;Israel</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CIS,Poland,SEE Distribution</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Czech Republic &amp; Slovakia</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hungary</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Israel</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poland</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Romania</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Russia &amp; CIS ENC</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stans</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ukraine, Belarus &amp; Armenia</fullName>
+                <controllingFieldValues>East</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Denmark</fullName>
+                <controllingFieldValues>North</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finland</fullName>
+                <controllingFieldValues>North</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norway</fullName>
+                <controllingFieldValues>North</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sweden</fullName>
+                <controllingFieldValues>North</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UKI</fullName>
+                <controllingFieldValues>North</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Africa</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Iberia &amp; Meds</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portugal</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Saudi Arabia</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>South Africa</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sub Sahara Africa</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UAE</fullName>
+                <controllingFieldValues>South</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Card</fullName>
+                <controllingFieldValues>Printer</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Team__c</fullName>
+        <description>Used Only by EMEA</description>
+        <label>Team</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Retail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L Industry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Distribution</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ENC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other Market</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail, Manuf., Utilities</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T&amp;L</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channel</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Markets</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Strategic Accounts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Theater_Code__c</fullName>
+        <formula>IF(ISPICKVAL(Theater__c,&quot;APAC&quot;),&quot;APAC&quot;,
+IF(ISPICKVAL(Theater__c,&quot;NA&quot;),&quot;NA&quot;,
+IF(ISPICKVAL(Theater__c,&quot;LATAM&quot;),&quot;LACR&quot;,
+IF(ISPICKVAL(Theater__c,&quot;EMEA&quot;),&quot;EMEA&quot;,
+IF(ISPICKVAL(Theater__c,&quot;WORLDWIDE&quot;),&quot;WORLDWIDE&quot;,
+&quot;Unknown&quot;)))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Theater Code</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Theater__c</fullName>
+        <description>The value of this field should match with SB expected values. Picklist LOVs should match with MSI SFDC</description>
+        <label>Theater</label>
+        <picklist>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>User_Id_18_Digit__c</fullName>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+    IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
+    +IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
+    +IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
+    +IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
+    +IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+    )+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+    IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
+    +IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
+    +IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
+    +IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
+    +IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+    )+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+    IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
+    +IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
+    +IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
+    +IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
+    +IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+    )+1,1)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User Id 18 Digit</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>User_License_Type__c</fullName>
+        <formula>Profile.UserLicense.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User License Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Zebra_Currency__c</fullName>
+        <description>Custom field to hold a currency value. Used as a stop-gap in the absence of a multi-currency solution.</description>
+        <label>Zebra Currency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>AED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ARS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AUD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BDT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BRL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CHF</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CNY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CZK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DKK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EUR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GBP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HKD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ILS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>INR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>JPY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KRW</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>KWD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MXN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MYR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NOK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NZD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OMR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PHP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PLN</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RUR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SEK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SGD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>THB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TWD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>USD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VND</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ZAR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Zebra_Organization__c</fullName>
+        <description>User&apos;s organization. This LOV should match the current organization definition in Siebel.</description>
+        <label>Zebra Organization</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Zebra NALA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zebra EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zebra APAC USD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Zebra APAC RMB</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Default Organization</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>briefingedge__Briefing_Edge_Password__c</fullName>
+        <label>BriefingEdge Password</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>briefingedge__Briefing_Edge_Username__c</fullName>
+        <label>BriefingEdge Username</label>
+        <length>100</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <validationRules>
+        <fullName>User_LoginId_Validation</fullName>
+        <active>false</active>
+        <description>Validation rule to check if the Login Id is populated on the record</description>
+        <errorConditionFormula>AND(ISPICKVAL( Profile.UserType,  &apos;Standard&apos;),  ISBLANK(Login_ID__c))</errorConditionFormula>
+        <errorDisplayField>Login_ID__c</errorDisplayField>
+        <errorMessage>Please enter Login Id</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>User_Organization_Validation</fullName>
+        <active>false</active>
+        <description>Validation rule to check if the Login Id is populated on the record</description>
+        <errorConditionFormula>AND(ISPICKVAL( Profile.UserType,  &apos;Standard&apos;),  ISBLANK( text( Zebra_Organization__c ) ))</errorConditionFormula>
+        <errorDisplayField>Zebra_Organization__c</errorDisplayField>
+        <errorMessage>Please enter Zebra Organization</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>User_Theater_Validation</fullName>
+        <active>false</active>
+        <description>Validation rule to check if the Login Id is populated on the record</description>
+        <errorConditionFormula>AND(ISPICKVAL( Profile.UserType,  &apos;Standard&apos;),  ISBLANK( text(Theater__c) ))</errorConditionFormula>
+        <errorDisplayField>Theater__c</errorDisplayField>
+        <errorMessage>Please enter Theater</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Apttus_Approval__ChangeNextLevelApprover</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Change Next Level Approver_OBSOLETE</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>Apttus_Approval__aptsApproverChangeNextLevel</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Apttus_Approval__GenerateApprovalMatrix</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Generate Approval Matrix_OBSOLETE</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>Apttus_Approval__aptsApprovalMatrixValidate</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Apttus_Approval__GetBackupApprover</fullName>
+        <availability>online</availability>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Set Backup Approver (Deprecated)</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>Apttus_Approval__aptsApprovalBackupApprover</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Apttus_Approval__InactivateUserApprovalMatrix</fullName>
+        <availability>online</availability>
+        <description>Inactivates the current user&apos;s approval matrix and transfers all inflight requests to the next level approver or backup admin user.  This action will happen automatically if a user is inactivated by unchecking the Active flag in the user record.</description>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>sControl</linkType>
+        <masterLabel>Inactivate User Approval Matrix</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <scontrol>Apttus_Approval__aptsApprovalInactivateUser</scontrol>
+    </webLinks>
+    <webLinks>
+        <fullName>Apttus_Approval__SetBackupApprover</fullName>
+        <availability>online</availability>
+        <description>Set Backup/Delegate Approver</description>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Set Backup/Delegate Approver</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/Apttus_Approval__BackupApprover?userId={!User.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Apttus_Approval__ViewApprovalMatrix</fullName>
+        <availability>online</availability>
+        <description>View approval matrix for the user</description>
+        <displayType>link</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>View Approval Matrix</masterLabel>
+        <openType>sidebar</openType>
+        <page>Apttus_Approval__ApprovalMatrixView</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>XactlyCorp__Assign_Business</fullName>
+        <availability>online</availability>
+        <description>For Assigning Business to the User.</description>
+        <displayType>link</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>250</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Assign Business</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>/apex/XactlyCorp__ChooseBusiness?editUserId={!User.Id}</url>
+        <width>500</width>
+    </webLinks>
+</CustomObject>

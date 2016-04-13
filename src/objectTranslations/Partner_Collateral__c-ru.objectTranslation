@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <value>Дополнительная информация о партнёре</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Дополнительные сведения о партнёрах</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <value>Дополнительная информация о партнёре</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Дополнительные сведения о партнёрах</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <value>Дополнительная информация о партнёре</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Дополнительные сведения о партнёрах</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <value>Partner Collateral</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Дополнительные сведения о партнёрах</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <value>Partner Collateral</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Дополнительные сведения о партнёрах</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <value>Дополнительная информация о партнёре</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value>Дополнительные сведения о партнёрах</value>
+    </caseValues>
+    <fields>
+        <label>Учётная запись</label>
+        <name>Account__c</name>
+        <relationshipLabel>Дополнительные сведения о партнёрах</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Вложенный файл</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Обращение</label>
+        <name>Case__c</name>
+        <relationshipLabel>Дополнительные сведения о партнёрах</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Описание</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Тип документа</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>Бизнес-план / маркетинговый план</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>История успеха</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>Отзыв клиента</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Другое</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>Ссылка на решение Zebra</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Название файла</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>Просмотр</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>Логотип?</label>
+        <name>isLogo__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel>Дополнительная информация о партнёре</nameFieldLabel>
+    <webLinks>
+        <label>Загрузить документ</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>Загрузить логотип/документ</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>Загрузить логотип</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

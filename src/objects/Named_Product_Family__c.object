@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom object shall be used to leverage All product families of E and Z</description>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Is_Service_Product__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field determines whether Product is a Service Product or not.</description>
+        <label>Is Service Product?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Description__c</fullName>
+        <description>Holds the description of Product Family</description>
+        <label>Product Family Description</label>
+        <length>4000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Source__c</fullName>
+        <description>Identifies if a Product family is a MSI E (EVM)  or Zebra ( PTZ.)</description>
+        <label>Product Family Source</label>
+        <picklist>
+            <picklistValues>
+                <fullName>EVM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AIT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Line__c</fullName>
+        <label>Product Line</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <label>Named Product Family</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Product_Family_Description__c</columns>
+        <columns>Product_Family_Source__c</columns>
+        <columns>Product_Line__c</columns>
+        <columns>Is_Service_Product__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Named Product Family Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Named Product Families</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Product_Family_Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Family_Source__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Family_Description__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Family_Source__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Is_Service_Product__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Family_Description__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Family_Source__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

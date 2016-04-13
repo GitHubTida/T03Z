@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SB Catalog Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SB Catalog Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Attribute Mapping 1 --></label>
+        <name>Attribute_Mapping_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Mapping 2 --></label>
+        <name>Attribute_Mapping_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute Mapping 3 --></label>
+        <name>Attribute_Mapping_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Line Item ID --></label>
+        <name>Opportunity_Line_Item_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- SB Catalog Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Product --></label>
+        <name>Related_Product__c</name>
+        <relationshipLabel><!-- SB Catalog Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SB List Price --></label>
+        <name>SB_List_Price__c</name>
+    </fields>
+    <layouts>
+        <layout>SB Catalog Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

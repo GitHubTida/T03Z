@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Selected Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Selected Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- CALL__T --></label>
+        <name>CALL_T__c</name>
+    </fields>
+    <fields>
+        <label><!-- Completion Date --></label>
+        <name>Completion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Request --></label>
+        <name>Demo_Request__c</name>
+        <relationshipLabel><!-- Selected Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Due Date(DFW) --></label>
+        <name>Due_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- IR Number (External Id) --></label>
+        <name>IR_Number_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- IR Number --></label>
+        <name>IR_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- IR Status(DFW) --></label>
+        <name>IR_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Material --></label>
+        <name>Material__c</name>
+        <relationshipLabel><!-- Selected Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product Family(DFW) --></label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name (DFW) --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Status --></label>
+        <name>Product_Status__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ordered</masterLabel>
+            <translation><!-- Ordered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repair</masterLabel>
+            <translation><!-- Repair --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Return In Progress</masterLabel>
+            <translation><!-- Return In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Returned</masterLabel>
+            <translation><!-- Returned --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scrapped</masterLabel>
+            <translation><!-- Scrapped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipped</masterLabel>
+            <translation><!-- Shipped --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>With Services</masterLabel>
+            <translation><!-- With Services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Write Off</masterLabel>
+            <translation><!-- Write Off --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product WrittenOff --></label>
+        <name>Product_WrittenOff__c</name>
+        <relationshipLabel><!-- Selected Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- RB_ITEM_NO --></label>
+        <name>RB_ITEM_NO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received Date --></label>
+        <name>Received_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Serial # --></label>
+        <name>Return_Serial__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial number --></label>
+        <name>Serialnumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipped Date --></label>
+        <name>Shipped_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Synced Time --></label>
+        <name>SyncedTime__c</name>
+    </fields>
+    <fields>
+        <label><!-- Theater --></label>
+        <name>Theater__c</name>
+    </fields>
+    <layouts>
+        <layout>DD_Reserved Product Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Add_Parts --></label>
+        <name>Add_Parts</name>
+    </webLinks>
+</CustomObjectTranslation>

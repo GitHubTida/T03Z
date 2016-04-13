@@ -1,0 +1,494 @@
+<apex:page standardController="Partner_Application__c" extensions="ZEBPartnerController" showHeader="false" sidebar="false" cache="false" title="{!$Label.Application_Head}" tabstyle="Partner_Application__c" action="{!onLoad}" language="{!languageLocale}">
+       
+       <head>
+       <!--<title>{!$Label.Application_Title}</title>-->
+       </head>
+       
+         <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery.min.js')}"/>        
+         <apex:includeScript value="{!URLFOR($Resource.jqueryui,'js/jquery-ui.custom.min.js')}"/>
+                     
+         <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+        
+        <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+        
+        <!--Highlight styles start-->
+        <style>
+            li.done1,li.done2,li.done3{
+                background: #0077FF ! Important; 
+                color: #FFFFFF ! Important;
+            }
+            #crumbs li.done1:after,#crumbs li.done2:after,#crumbs li.done3:after {
+                  content: "";
+                  border-top: 20px solid transparent;
+                  border-bottom: 20px solid transparent;
+                  border-left: 40px solid #0077FF;
+                  color: #FFFFFF ! Important;
+                  position: absolute;
+                  right: -40px;
+                  top: 0;
+                  z-index: 1;
+            }
+            .done1,.done2,.done3{
+            color: #FFFFFF ! Important;
+            }
+           
+         </style>
+         <!--Highlight styles End-->
+        
+      <!--  <style>
+        .pbBottomButtons .btn {
+        background:#E8E8E9 url("{!URLFOR($Resource.partnerResources,'/images/buttons/find.partners.gif')}")  no-repeat scroll left top;
+        height: 31px;
+        padding: 0 27px 0 16px;
+        color: #FFFFFF;
+        font: bold 1.4em/31px Arial,Helvetica,sans-serif;
+        text-decoration: none;
+        border: none;
+        }
+        
+        .chevDivider {
+        float: left;
+        background: url("{!URLFOR($Resource.partnerResources,'chevrondivider.png')}") no-repeat scroll;
+        display: block;
+        width: 40px;
+        height: 40px;
+        }
+        
+        .otherDivider {
+        float: left;
+        background: url("{!URLFOR($Resource.partnerResources,'otherdivider.png')}") no-repeat scroll;
+        display: block;
+        width: 40px;
+        height: 40px;
+        }                
+        </style> -->
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10; IE=10; IE=9; IE=8; IE=7; IE=EDGE; chrome=1;" />
+        
+        <div class="ztopbanner">
+        <apex:define name="header">
+          <c:testheader />
+        </apex:define>
+        </div>
+        
+        <!--Chevron styles start-->
+        <div class="chevron">
+            <apex:define name="Chevron">
+                <c:ChevronComponent />
+            </apex:define>
+        </div>
+        <!--Chevron styles end-->
+        
+        <div class="zmainbody">
+        
+        <!--<apex:sectionHeader title="{!$Label.Application_Title}"/>-->
+        
+        <!--<div style="margin-left: 1px; height: 40px; padding-bottom: 10px; float:left ">
+        <div class="currStep"> {!$Label.Trans_Step1}</div>
+        <div class="chevDivider">&nbsp; </div>
+        <div class="futStep"> {!$Label.Trans_Step2}</div><div class="otherDivider">&nbsp; </div>
+        <div class="futStep"> {!$Label.Trans_Step3}</div>
+        <apex:outputPanel rendered="{!NOT(RelType)}">
+        <div class="otherDivider">&nbsp; </div>
+        <div class="futStep"> {!$Label.Trans_Step4}</div>
+        </apex:outputPanel>
+        </div>-->
+        
+        <script type="text/javascript">
+            function isNumber(evt) {
+                evt = (evt) ? evt : window.event;
+                var charCode = (evt.which) ? evt.which : evt.keyCode;
+                if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        
+        <script type="text/javascript">
+            function fixElements(tagn,attrib) {
+                var tags = document.getElementsByTagName(tagn);
+                var ti;
+                var pos;
+                // Since Salesforce builds a complex Id using the Id's of previous elements, we need
+                // to find the one that we want.
+                // Note: this means we're searching for tags like:
+                // apex:inputfield id="tabIndex4" ....>
+                var pat = /:tabIndex[0-9]+/; 
+                for (var i=0; i < tags.length; i++) {
+                    if (tags[i].getAttribute(attrib) != null) {
+                        pos = tags[i].getAttribute(attrib).search(pat);
+                        if (pos != -1) {
+                            ti = tags[i].getAttribute(attrib).slice(pos+9);
+                            tags[i].setAttribute('tabIndex',ti);
+                            
+                        }
+                    }
+                }
+            }   
+            
+            
+            jQuery(document).ready(function(){
+           fixElements("input","id");
+            fixElements("select","id");
+         });
+        </script>  
+        
+        <apex:form >
+        <apex:pageBlock id="pageblock" tabStyle="Account" helptitle="{!$Label.Help_Title}" helpUrl="{!ZEB.MPE_Help_PDF__c}">              
+                
+                <apex:outputPanel >
+                    <apex:outputLabel value="{!$Label.Required_Fields}" style="font-weight:bold; font-size: 1.3em; color: #000000;"> </apex:outputLabel>
+                </apex:outputPanel>
+                
+                <!-- Show page messages -->
+                 <apex:PageMessages /> 
+                <!-- <apex:message for="Field_Having_Validation_Rule" styleClass="errorMessage" /> -->
+                <apex:pageBlockButtons location="bottom">
+                        <apex:commandButton value="{!$Label.App_Previous}" immediate="true" action="{!prevPage3}"/>
+                        <apex:commandButton value="{!$Label.App_Finish_Later}" immediate="true" action="{!FinishLater}" onclick="if(!confirm('{!$Label.PopUp_Finish_Later}')){return false;}" 
+                            title="{!$Label.OnMouse_Finish_Later}" onmouseover="{!$Label.OnMouse_Finish_Later}"/>
+                        <apex:commandButton id="ENTER_BUTTON" value="{!$Label.App_Next}" action="{!nextPage5}"/>
+                </apex:pageBlockButtons>                                                      
+                <br></br>
+                <apex:outputPanel id="CmpyInfoSection" rendered="{!NOT(RelType)}">
+                <apex:pageBlockSection showHeader="true" title="{!$Label.Company_Info}" columns="2"   collapsible="false">
+                
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px">                     
+                            <apex:outputLabel value="{!$Label.Company_Id_Type}" for="tabIndex1"/>    
+                            <apex:actionRegion > 
+                            <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                             <apex:outputPanel layout="block" styleClass="requiredBlock"/>                          
+                            <apex:inputField id="tabIndex1" value="{!ZEB.Company_Id_Type__c}" style="width:77%" >  
+                             <apex:actionsupport event="onchange" rerender="companytype"/>
+                             </apex:inputField> </apex:outputPanel> 
+                             </apex:actionRegion>
+                        
+                        </apex:pageblockSectionItem>
+                        <br/>
+                      <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Company_Tax_Registration_ID}" for="tabIndex1"/> 
+                            <apex:outputPanel id="companytype"> 
+                            <apex:outputPanel id="outputPanel1" layout="block" styleClass="{!IF(!OR(CONTAINS(ZEB.Company_Id_Type__c,'Not Applicable'),ISNULL(ZEB.Company_Id_Type__c)),'requiredInput', '')}"> 
+                             <apex:outputPanel layout="block" styleClass="requiredBlock"/> 
+                                              
+                            <apex:inputField id="tabIndex1" value="{!ZEB.Company_Tax_Registration_ID__c}" style="width:77%" />  
+                            </apex:outputPanel> 
+                            </apex:outputPanel>
+                        </apex:pageblockSectionItem> 
+
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Company_Government_Tax_Registration_ID}" for="tabIndex2"/>
+                            <apex:outputPanel layout="block" styleClass="requiredInput" >
+                            <apex:inputField id="tabIndex2" value="{!ZEB.Company_Government_ID__c}" style="width:77%"/>
+                             </apex:outputPanel>
+                        </apex:pageblockSectionItem>                                               
+                                                                        
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Form_Of_Organization}" for="tabIndex3"/> 
+                            <apex:actionRegion >                           
+                                <apex:inputField id="tabIndex3" value="{!ZEB.Form_Of_Organization__c}" required="true" style="width:78.5%">
+                                    <apex:actionsupport event="onchange" rerender="CntySection"/>
+                                </apex:inputField>
+                            </apex:actionRegion>
+                        </apex:pageblockSectionItem>
+                        
+                       
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Dun_Bradstreet}" for="tabIndex4"/>
+                             <!-- <apex:inputText id="tabIndex4" value="{!DunBradstreet}" style="width:77%" onkeypress="return isNumber(event)"/> -->
+                             <apex:inputText id="tabIndex4" value="{!ZEB.Dun_Bradstreet__c}" style="width:77%" onkeypress="return isNumber(event)"/>
+                        </apex:pageblockSectionItem>
+                      
+                                                                                                                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Company_Owned_Type}" for="tabIndex4"/>
+                           <apex:inputField id="tabIndex4" value="{!ZEB.Company_Owned_Type__c}" required="true" style="width:78.5%"/>
+                        </apex:pageBlockSectionItem>
+                        
+                                             
+                    <apex:pageblockSectionItem >
+                        <apex:outputLabel style="display:none;visibility:hidden" value="Region" for="Region_Requested__c"/>
+                        <apex:outputPanel style="display:none;visibility:hidden" layout="block">
+                            <apex:inputField id="regionrequested" value="{!ZEB.Region_Requested__c}" />
+                        </apex:outputPanel>
+                    </apex:pageblockSectionItem>
+
+                </apex:pageBlockSection>
+                 </apex:outputPanel>               
+                <apex:outputPanel id="CntySection" rendered="{!NOT(RelType)}">
+                    <apex:pageBlockSection columns="2">
+                                                                                                                       
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Incorporation_Country}" for="tabIndex5"/>
+                            <apex:inputField id="tabIndex5" value="{!ZEB.Incorporation_Country__c}" style="width:75%" required="{!IF(contains(ZEB.Form_Of_Organization__c,'Corporation'),true,false)}"/>
+                        </apex:pageblockSectionItem>
+                        
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Incorporation_State_Province}" for="tabIndex6"/>
+                            <apex:inputField id="tabIndex6" value="{!ZEB.Incorporation_State_Province__c}" style="width:75%" />
+                        </apex:pageblockSectionItem>
+
+                    </apex:pageBlockSection>
+                </apex:outputPanel>                
+                
+                <apex:pageBlockSection columns="1" rendered="{!NOT(RelType)}">
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Divison_of_or_Owned_by_Another_Company}" for="tabIndex7" />
+                        </apex:pageBlockSectionItem>
+                                                                                              
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">                            
+                            <apex:actionRegion >
+                                <apex:selectRadio id="tabIndex7" value="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}" required="true">
+                                    <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true" />
+                                    <apex:selectOption itemLabel="{!$Label.No}" itemValue="false" />
+                                    <apex:actionsupport event="onchange" rerender="ParentCorpSection"/>
+                                </apex:selectRadio>
+                            </apex:actionRegion>
+                        </apex:pageBlockSectionItem>                                                                                                                   
+                
+                </apex:pageBlockSection>  
+                
+             <!--   <apex:outputPanel id="ParentCorpSection" rendered="{!NOT(RelType)}"> -->
+                    <apex:outputPanel id="ParentCorpSection" rendered="{!transitionFlag}">
+                    <apex:pageBlockSection columns="2">
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corp_GovtTax_Registration_ID}"  for="tabIndex8"/>
+                            <apex:inputField id="tabIndex8" value="{!ZEB.Company_Tax_Registration_ID__c}" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation}"  for="tabIndex9" />
+                            <apex:inputField id="tabIndex9" value="{!ZEB.Parent_Corporation__c}" required="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation_Street_Address_1}"  for="tabIndex10" />
+                            <apex:inputField id="tabIndex10" value="{!ZEB.Parent_Corporation_Street_Address_1__c}" required="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation_Street_Address_2}"  for="tabIndex11" />
+                            <apex:inputField id="tabIndex11" value="{!ZEB.Parent_Corporation_Street_Address_2__c}"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation_City_Town}"  for="tabIndex12" />
+                            <apex:inputField id="tabIndex12" value="{!ZEB.Parent_Corporation_City_Town__c}" required="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}" />
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation_Country}"  for="tabIndex13" />
+                            <apex:inputField id="tabIndex13" value="{!ZEB.Parent_Corporation_Country__c}" style="width:75%" required="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}"/>
+                        </apex:pageBlockSectionItem> 
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation_State_Province}" for="tabIndex14" />
+                            <apex:inputField id="tabIndex14" value="{!ZEB.Parent_Corporation_State_Province__c}" style="width:75%"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Parent_Corporation_Postal_Code}"  for="tabIndex15" />
+                            <apex:inputField id="tabIndex15" value="{!ZEB.Parent_Corporation_Postal_Code__c}" required="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.of_Ownership}"  for="tabIndex15" />
+                            <apex:inputField id="tabIndex15" value="{!ZEB.of_Ownership__c}" required="{!ZEB.Divison_of_or_Owned_by_Another_Company__c}"/>
+                        </apex:pageBlockSectionItem>
+                                               
+                    </apex:pageBlockSection>
+                </apex:outputPanel> 
+                 <!--  EMEA APP Comm will not see below ques  -->  
+                <apex:pageBlockSection title="{!$Label.Company_Info}" rendered="{!NOT(AND(appDevFlag,IF(contains(ZEB.Region_Requested__c,'EMEA'),true,false)))}" collapsible="false">
+                 
+                        
+                     <!--   <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!NOT(RelType)}">
+                            <apex:outputLabel value="{!$Label.Years_In_Business}" for="tabIndex18" />                            
+                        </apex:pageBlockSectionItem>   -->                                            
+                      <!--  <apex:outputPanel id="outputPanel33" layout="block" style="text-align: left; font-weight:bold; width:100%;" styleClass="requiredInput"  rendered="{!NOT(ZEB.ISV_Only__c)}"> -->
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!NOT(ZEB.ISV_Only__c)}">
+                            <apex:outputLabel value="{!$Label.Business_Model_1}" for="tabIndex19" />                            
+                        </apex:pageBlockSectionItem> 
+                        
+                       <!-- <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!NOT(RelType)}">
+                            <apex:inputField id="tabIndex18" value="{!PP.Years_In_Business__c}" required="true"/>
+                        </apex:pageBlockSectionItem>  -->
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!NOT(ZEB.ISV_Only__c)}">
+                        <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField id="tabIndex19" value="{!ZEB.Business_Model__c}" />
+                            </apex:outputPanel> 
+                        </apex:pageBlockSectionItem>   
+                         <!-- </apex:outputPanel>  -->
+                          <apex:outputPanel id="outputPanel3" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput"  rendered="{!NOT(ZEB.ISV_Only__c)}">                                             
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                             <apex:outputLabel value="{!$Label.Company_Develops_Software_Firmware}" for="tabIndex20" />                             
+                         </apex:pageBlockSectionItem>                                                
+                        
+                        <!-- <apex:pageBlockSectionItem /> -->
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left;"  rendered="{!NOT(ZEB.ISV_Only__c)}">
+                        <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:selectRadio id="tabIndex20" label="" value="{!ZEB.Company_Develops_Software_Firmware__c}" >
+                                <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="Yes" />
+                                <apex:selectOption itemLabel="{!$Label.No}" itemValue="No" />
+                            </apex:selectRadio></apex:outputPanel>
+                        </apex:pageBlockSectionItem> <br/>
+                         </apex:outputPanel> 
+                </apex:pageBlockSection>                 
+                 
+                 <!-- Onboarding enhacements, The below pageBlockSection should not be rendered for Application partners -->
+                <apex:pageBlockSection columns="1" rendered="{!NOT(appDevFlag)}"  collapsible="false">
+                        
+                          <!-- <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Categories_of_Product}" for="tabIndex24"/>
+                          </apex:pageBlockSectionItem>
+
+                       <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:inputField id="tabIndex24" value="{!ZEB.Category_Product__c}" />
+                        </apex:pageBlockSectionItem>
+                        -->
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Revenue_Sale_Returned_Used_Product}" for="tabIndex21" />                            
+                        </apex:pageBlockSectionItem> 
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:inputField id="tabIndex21" value="{!ZEB.Revenue_Sale_Returned_Used_Product__c}" required="true"/>
+                        </apex:pageBlockSectionItem>                                               
+                                                
+                       <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Moto_Returned_Prod_Refurbished_Partner}"  for="tabIndex22"/>                            
+                        </apex:pageBlockSectionItem>                                               
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:inputField id="tabIndex22" value="{!ZEB.Moto_Returned_Prod_Refurbished_Partner__c}" required="true"/>
+                        </apex:pageBlockSectionItem>
+                                              
+                         <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Percentage_Revenue_Repair_or_Break_Fix}" for="tabIndex23"/>                            
+                        </apex:pageBlockSectionItem>                                                                      
+                                                
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                                <apex:inputField id="tabIndex23" value="{!ZEB.Percentage_Revenue_Repair_or_Break_Fix__c}" required="true">
+                                </apex:inputField>
+                        </apex:pageBlockSectionItem>
+                        
+                          <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:outputLabel value="{!$Label.Product_Break_Fix}" for="tabIndex25"/>                            
+                        </apex:pageBlockSectionItem> 
+                        
+                         <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!transitionFlag}">
+                            <apex:inputField id="tabIndex25" value="{!ZEB.Products_In_Repair_Break_Fix_Service__c}"/>
+                        </apex:pageBlockSectionItem> <!-- -->
+
+                 </apex:pageBlockSection> 
+                 
+                 
+                    
+                 <apex:pageBlockSection columns="1" collapsible="false">    
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!IF(ZEB.Region_Requested__c='NA',true,false)}">
+                            <apex:outputLabel value="{!$Label.E_Commerce_Websites}"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!IF(ZEB.Region_Requested__c='NA',true,false)}">
+                            <apex:inputField value="{!ZEB.E_Commerce_Websites__c}" style="width:40%;" taborderhint="4"/>                            
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!IF(ZEB.Region_Requested__c='NA',true,false)}">
+                            <apex:outputLabel value="{!$Label.X3rd_Party_Market_Place}"/>
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!IF(ZEB.Region_Requested__c='NA',true,false)}">
+                            <apex:inputField value="{!ZEB.X3rd_Party_Market_Place_Websites__c}" taborderhint="5"/>                            
+                        </apex:pageBlockSectionItem>   
+                 
+                 <apex:pageBlockSection columns="2" collapsible="false">  
+                    <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputLabel value="{!$Label.Company_Website}"/>
+                             <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField value="{!ZEB.Company_Website__c}" id="Field_Having_Validation_Rule" taborderhint="3"/>
+                            </apex:outputPanel>                      
+
+                    </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                 
+                        <apex:pageBlockSection columns="1" collapsible="false">
+                        
+                    <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" >
+                            <apex:outputLabel value="{!$Label.Additional_Company_Websites}" />                            
+                        </apex:pageBlockSectionItem>
+                        
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:inputField value="{!ZEB.Additional_Company_Websites__c}" style="width:40%;" taborderhint="6"/>
+                        </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false">
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px;" rendered="{!NOT(RelType)}">                            
+                            <apex:outputLabel value="{!$Label.Company_Description}"/>                                                        
+                        </apex:pageBlockSectionItem>                                           
+                                                                         
+                        <apex:pageBlockSectionItem labelStyle="text-align: left; padding-bottom: 15px" rendered="{!NOT(RelType)}">
+                         <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput"> 
+                            <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:inputField value="{!ZEB.Company_Description__c}" style="width:40%;" taborderhint="7"/>
+                        </apex:outputPanel>
+                        </apex:pageBlockSectionItem>
+                       
+                 </apex:pageBlockSection>
+                        
+                                                                        
+                </apex:pageBlockSection>
+                 <apex:pageBlockSection columns="1">
+                 <apex:outputPanel id="outputPanel3" layout="block" style="text-align: left; font-weight:bold;" styleClass="requiredInput">
+                        <apex:pageblockSectionItem labelStyle="text-align: left; padding-bottom: 15px">
+                            <apex:outputlabel value="{!$Label.Partner_Locator_Permisson_Granted}" style="font-weight:bold;font-size:10pt;color:blue"/>
+                        </apex:pageblockSectionItem>
+                        
+                        <apex:pageBlockSectionItem />
+                                                                                                               
+                        <apex:pageblockSectionItem labelStyle="text-align: left;">
+                        <apex:outputPanel id="outputPanel1" layout="block" styleClass="requiredInput">                          
+                        <apex:outputPanel layout="block" styleClass="requiredBlock"/>
+                            <apex:selectRadio label="" value="{!ZEB.Partner_Locator_Permisson_Granted__c}" tabindex="8">
+                                <apex:selectOption itemLabel="{!$Label.Yes}" itemValue="true" />
+                                <apex:selectOption itemLabel="{!$Label.No}" itemValue="false" />
+                            </apex:selectRadio>
+                        </apex:outputPanel>
+                        </apex:pageblockSectionItem>
+                </apex:outputPanel>     
+                </apex:pageBlockSection>      
+        </apex:pageBlock>
+        </apex:form>
+        </div>
+        
+       
+       <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+        </div>
+        
+</apex:page>

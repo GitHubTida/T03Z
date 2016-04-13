@@ -1,0 +1,23 @@
+<apex:page standardcontroller="DD_Demo__c" extensions="DD_TermsAndCondition">
+<apex:pageMessages />
+    <apex:form >
+        <apex:pageblock >                       
+           <apex:pageBlockSection columns="1">
+           
+            <br/><b>Requestor :</b> {!demo.CreatedBy.Name}
+            <br/><b>Date: </b> {!requestedDate}   
+               <br/>
+               <br/>
+               
+             <b> Terms and Condition statement : </b> {!$Label.DD_Terms_and_Condition}
+               <br/>   
+                <br/>          
+                <!--<apex:inputCheckbox value="{!demo.Accept__c}" disabled="{!IF(demo.Demo_Status__c != 'Awaiting AM Submission', true,false)}"> -->
+               <!-- <apex:inputCheckbox value="{!demo.Accept__c}" disabled="{!disableAccept}">
+                  <apex:actionSupport event="onchange"  action="{!saveAccept}"/>
+               </apex:inputCheckbox> -->
+             
+             </apex:pageBlockSection>
+        </apex:pageblock>    
+    </apex:form>
+</apex:page>

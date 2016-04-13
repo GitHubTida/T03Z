@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Partner_Profile__c</fullName>
+        <label>Partner Profile</label>
+        <referenceTo>Partner_Profile_PC__c</referenceTo>
+        <relationshipLabel>Vertical Hierarchy Information</relationshipLabel>
+        <relationshipName>Vertical_Hierarchy_Informations_del</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Vertical_Segment__c</fullName>
+        <label>Vertical Segment</label>
+        <picklist>
+            <controllingField>Vertical__c</controllingField>
+            <picklistValues>
+                <fullName>Acute Care: Hospitals - Mental Health</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Acute Care: Hospitals - Physical Health</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Agriculture</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Air</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Blood Banks and Donation Centers</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Dialysis</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Emergency and Ambulatory Services</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Out Patient Surgery</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Physician Offices and Clinics</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Reference and Diagnostic Labs</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ambulatory Care: Urgent Care</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amusement Parks, Museums, and Zoos</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Associations</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Chemicals</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Communications and Entertainment</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Construction</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Consumer Products</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Electronics</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Federal</fullName>
+                <controllingFieldValues>Government</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Financial Services</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Food and Beverage</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forestry</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Higher Education</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Health</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Industrial Machinery</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Library</fullName>
+                <controllingFieldValues>Government</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lodging</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Long Term Care: Assisted Living</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Long Term Care: Nursing Homes</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Long Term Care: Skilled Nursing / Intermediate Care</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marine</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Metal Products</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mining</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Patient Care: Medical Device Manufacture / OEM</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Patient Care: Pharmaceutical Repackager</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Patient Care: Pharmacy</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-Store Front Retailers</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oil and Gas</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parking Lots/Garages</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharmaceutical and Medical Devices</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plastic, Glass, and Pottery</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Post</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Primary Education</fullName>
+                <controllingFieldValues>Education</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional Services</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Administration and Safety</fullName>
+                <controllingFieldValues>Government</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Transit</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Publishing</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Railroad</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Restaurants and Bars</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Department Stores and Apparel</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Drug Stores/Retail Pharmacy</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Electronics and Entertainment</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Gas and Convenience Stations</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Grocery/Supermarket</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Home Improvement</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Mass Merchants/Superstores</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail Storefront: Specialty Stores</fullName>
+                <controllingFieldValues>Retail (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Bureaus</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports and Entertainment: Players and Player Unions</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sports and Entertainment: Venues</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State and Local Government</fullName>
+                <controllingFieldValues>Government</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Textiles</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Theaters and Cinemas</fullName>
+                <controllingFieldValues>Hospitality (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Third-party Logistics</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation Equipment - Auto Manufacturing</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation Equipment - Other</fullName>
+                <controllingFieldValues>Manufacturing (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Utilities</fullName>
+                <controllingFieldValues>Service Providers</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Veterinary Services</fullName>
+                <controllingFieldValues>Healthcare (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warehousing and Distribution Centers</fullName>
+                <controllingFieldValues>Transportation and Logistics (core)</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Vertical__c</fullName>
+        <label>Vertical</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Education</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Government</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Healthcare (core)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospitality (core)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manufacturing (core)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retail (core)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Providers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transportation and Logistics (core)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Vertical Hierarchy Information</label>
+    <nameField>
+        <displayFormat>VH-{0000}</displayFormat>
+        <label>Vertical Hierarchy Information Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Vertical Hierarchy Information</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

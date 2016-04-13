@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>项目产品</value>
+    </caseValues>
+    <fields>
+        <label>总额</label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label>项目报备</label>
+        <name>Deal_Registration__c</name>
+        <relationshipLabel>项目产品</relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- EVM Deal Product Id --></label>
+        <name>EVM_Deal_Product_Id__c</name>
+    </fields>
+    <fields>
+        <label>项目报备折扣百分比</label>
+        <name>F_DR_Discount_Percentage__c</name>
+    </fields>
+    <fields>
+        <label>是否是服务产品？</label>
+        <name>Is_Service_Product__c</name>
+    </fields>
+    <fields>
+        <help>请添加单位列表价乘以设备量得出的结果。</help>
+        <label>预估列表价</label>
+        <name>ListPrice__c</name>
+    </fields>
+    <fields>
+        <label>PRM 产品输入</label>
+        <name>PRMProductEntry__c</name>
+        <relationshipLabel><!-- Deal Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label>产品系列名称</label>
+        <name>Product_Family__c</name>
+    </fields>
+    <fields>
+        <label>数量</label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label>最低门槛金额</label>
+        <name>Threshold_Amount__c</name>
+    </fields>
+    <nameFieldLabel>项目产品 ID</nameFieldLabel>
+</CustomObjectTranslation>

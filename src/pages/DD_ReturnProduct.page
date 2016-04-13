@@ -1,0 +1,40 @@
+<apex:page controller="DD_Returnproducts">
+<head>
+<style>
+    .paginationid td:nth-child(5) {
+    padding-top:6px;
+}
+</style>
+</head>
+    <apex:form >
+        <apex:pageBlock id="pb">
+            <apex:pageblockTable value="{!demos}" var="temp">
+                <apex:column headerValue="Demo Ref:">
+                    <apex:outputLink value="/{!temp.id}" target="_blank">
+                        <apex:outputField Value="{!temp.Name}"/>
+                    </apex:outputLink>
+                </apex:column>    
+                <apex:column headerValue="Demo Ref:" Value="{!temp.Customer_Name__c}"/>
+                <apex:column headerValue="Demo Status:" Value="{!temp.Demo_Status__c}"/>
+                <apex:column headerValue="Return by" Value="{!temp.Evaulation_End_Date__c}"/>
+                <apex:column headerValue="Return Now">
+                    <apex:commandbutton value="Return Now" action="{!RedirecttoDemoReuqeut}" reRender="None">
+                        <apex:param value="{!temp.id}" assignTo="{!Demoid}" name="demoid"/>
+                    </apex:commandbutton>
+                </apex:column>
+            </apex:pageblockTable>
+            <apex:panelGrid columns="7" style="margin-left:40%" styleclass="paginationid">
+                <apex:commandButton status="fetchStatus" reRender="pb" value="First" action="{!setCon.first}" disabled="{!!setCon.hasPrevious}" title="First Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pb" value="Previous" action="{!setCon.previous}" disabled="{!!setCon.hasPrevious}" title="Previous Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pb" value="Next" action="{!setCon.next}" disabled="{!!setCon.hasNext}" title="Next Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pb" value="Last" action="{!setCon.last}" disabled="{!!setCon.hasNext}" title="Last Page"/>
+                <apex:outputText >{!(setCon.pageNumber * size)+1-size}-{!IF((setCon.pageNumber * size)>noOfRecords, noOfRecords,(setCon.pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                <apex:commandButton status="fetchStatus" reRender="pb" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:pageBlock>
+    </apex:form> 
+     
+</apex:page>

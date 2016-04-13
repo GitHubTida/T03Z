@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Updated report with new report type - Opportunities with Products and Revenue Forecast</description>
+    <format>MultiBlock</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity$Reason_for_Win_Loss__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Opportunities Won - Revised</name>
+    <params>
+        <name>lsk</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Products_and_Revenue_Forecast__c</reportType>
+    <showDetails>true</showDetails>
+</Report>

@@ -1,0 +1,2 @@
+<apex:page controller="SSOMyApprovalController" action="{!itemsToApprove}" sidebar="false">
+</apex:page>

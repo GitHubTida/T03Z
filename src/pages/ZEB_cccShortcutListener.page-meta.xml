@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>30.0</apiVersion>
+    <description>Custom VF Page, used to listen on keyboard shortcuts on the Service Console</description>
+    <label>ZEB_cccShortcutListener</label>
+</ApexPage>

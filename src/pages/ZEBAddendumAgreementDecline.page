@@ -1,0 +1,106 @@
+<apex:page standardController="Addendum_Program_Contracts__c" extensions="ZEBLegalAddendumAcceptDecline" showHeader="false" sidebar="false" cache="false" tabstyle="Addendum_Program_Contracts__c" action="{!onLoad}" language="{!Andm.Language__c}" title="{!$Label.Application_Head}">
+  <!-- Begin CSS Style Cascading -->
+  <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    <style>
+        .bPageBlock .requiredInput {
+            display: inline;
+        }
+    </style>
+    <script type="text/javascript">
+            function replaceEnter(evt){
+              var e = evt || window.event;
+              if (e.keyCode == 13){
+                var allElements = document.getElementsByTagName('*');
+                for (var i = 0; i < allElements.length; i++){
+                  if (allElements[i].id.indexOf("ENTER_BUTTON") !=-1){
+                    allElements[i].click();
+                  }
+                }
+                return false;
+              }else{
+                return true;
+              }
+            }
+            document.onkeypress = replaceEnter;
+        </script>
+    
+        <div class="ztopbanner">
+            <apex:define name="header">
+                <c:testheader />
+            </apex:define>
+        </div>
+        
+    <!-- Show Section Header -->
+   <!-- <div style="width: 960px; margin: 0 auto;">
+       <apex:sectionHeader title="{!$Label.Legal_Title}"/>
+    </div>      -->
+    
+        <div class="zmainbody"> 
+        <!-- Show page messages -->
+        <apex:pageMessages />
+        
+        <apex:form >
+        
+          <apex:pageBlock >
+            
+            <apex:pageBlockButtons location="bottom"><apex:outputText />
+                <apex:commandButton id="ENTER_BUTTON" action="{!saveAndm}" value="{!$Label.Submit}" />
+            </apex:pageBlockButtons>
+            
+            <!--Decline of Master Terms and Conditions-->
+            <apex:pageBlockSection title="{!$Label.Declining_T_Cs}" collapsible="false" columns="1" rendered="{!(IF(contains(Andm.Name,'Terms & Conditions'), true, false))}">            
+              <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">
+                   <apex:outputPanel >
+                         <p style="font-weight:bold;"></p>
+                         <p style="color:black">
+                           {!$Label.Declining_T_C_Part1}                           
+                         </p>
+                         
+                         <p style="color:black">
+                           <apex:outputLabel value="{!$Label.Declining_T_C_Part2}" escape="false"/>
+                         </p>
+                         
+                   </apex:outputPanel>               
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">                                          
+                   <apex:selectRadio value="{!andmAccept}" immediate="true" layout="pageDirection">    
+                       <apex:selectOption itemLabel="{!$Label.I_ACCEPT}" itemValue="Accepted"/>                            
+                       <apex:selectOption itemLabel="{!$Label.I_DECLINE}" itemValue="Declined"/>                                                        
+                   </apex:selectRadio> 
+              </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            
+            <!--Decline of Technology Addendum-->
+            <apex:pageBlockSection title="{!$Label.Warning_Declining_Technology_Addendum}" collapsible="false" columns="1" rendered="{!NOT(OR(IF(contains(Andm.Name,'Terms & Conditions'), true, false),IF(contains(Andm.Name,'Federal Addendum'), true, false),IF(contains(Andm.Name,'Service Specialization'), true, false)))}">
+              <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">
+                   <apex:outputPanel >
+                         <!-- <p style="font-weight:bold;"> {!$Label.Warning}</p> -->
+                         <p style="color:black">
+                         <apex:outputText value="{!$Label.Declining_Addendum}" escape="false">
+                            <apex:param value="{!Andm.Legal_Document_Name__c}"/> </apex:outputText>
+                         </p>
+                   </apex:outputPanel>               
+              </apex:pageBlockSectionItem>
+              
+              <apex:pageBlockSectionItem labelStyle="width:50%; text-align: left; color: #333333; padding: 5px ">                                          
+                   <apex:selectRadio value="{!andmAccept}" immediate="true" layout="pageDirection">    
+                       <apex:selectOption itemLabel="{!$Label.I_ACCEPT}" itemValue="Accepted"/>                            
+                       <apex:selectOption itemLabel="{!$Label.I_DECLINE}" itemValue="Declined"/>                                                        
+                   </apex:selectRadio> 
+              </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+                                                                        
+          </apex:pageBlock>
+    
+        </apex:form>
+    </div>
+    
+    <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+    </div>
+    
+  <!-- End CSS Style Cascading -->
+</apex:page>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>OPP.AMOUNT</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_End_User__c</field>
+    </columns>
+    <columns>
+        <field>OPP.OWNER_NAME</field>
+    </columns>
+    <columns>
+        <field>OPP.CLOSE_DATE</field>
+    </columns>
+    <columns>
+        <field>OPP.NAME</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Matrix</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>OPP.STAGE_NAME</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Opportunity.Vertical__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>WLAN Install - Opportunity Info</name>
+    <params>
+        <name>scopeid</name>
+        <value>701i00000018kdj</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CampaignInfluence</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+</Report>

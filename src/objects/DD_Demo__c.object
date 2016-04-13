@@ -1,0 +1,1066 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***Demo Depot application***
+This will store Demo Requests.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Accept__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>I Agree</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DD_Demo1</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Action__c</fullName>
+        <formula>IF(  Theater__c == &apos;NA&apos; &amp;&amp; (Today() &gt;  Evaulation_End_Date__c + 30),
+
+CASE( Demo_Status__c ,
+&apos;Awaiting AM Submission&apos;,  IF(ISPICKVAL(Approval_Status__c,&apos;Rejected&apos;),&apos;Rejected&apos; ,&apos;Not Submitted&apos;), 
+&apos;Awaiting SE Validation&apos;, &apos;Pending Approval&apos;,
+&apos;Awaiting Manager Approval&apos;,&apos;Pending Approval&apos;,
+&apos;Awaiting Admin Approval&apos;,&apos;Pending Approval&apos;,
+&apos;Awaiting Service Action&apos;,IF(ISBLANK(Picked_Date__c ) ,&apos;With Services&apos;,&apos;Picked&apos;),
+&apos;In Progress with Services&apos;,IF(ISBLANK(Picked_Date__c ) ,&apos;With Services&apos;,&apos;Picked&apos;),
+&apos;Shipped&apos;,&apos;Awaiting Write Off&apos;,
+&apos;Return In Progress&apos;,&apos;Awaiting Write Off&apos;,
+&apos;Closed&apos;,IF(  Write_Off_Count__c &gt; 0,&apos;Write Off&apos;,&apos;Closed&apos;),
+&apos;Closed&apos;
+)
+
+,  IF(Theater__c != &apos;NA&apos; &amp;&amp; (Today() &gt; Evaulation_End_Date__c),
+
+CASE( Demo_Status__c ,
+&apos;Awaiting AM Submission&apos;,  IF(ISPICKVAL(Approval_Status__c,&apos;Rejected&apos;),&apos;Rejected&apos; ,&apos;Not Submitted&apos;), 
+&apos;Awaiting SE Validation&apos;, &apos;Pending Approval&apos;,
+&apos;Awaiting Manager Approval&apos;,&apos;Pending Approval&apos;,
+&apos;Awaiting Admin Approval&apos;,&apos;Pending Approval&apos;,
+&apos;Awaiting Service Action&apos;,IF(ISBLANK(Picked_Date__c ) ,&apos;With Services&apos;,&apos;Picked&apos;),
+&apos;In Progress with Services&apos;,IF(ISBLANK(Picked_Date__c ) ,&apos;With Services&apos;,&apos;Picked&apos;),
+&apos;Shipped&apos;,&apos;Awaiting Write Off&apos;,
+&apos;Return In Progress&apos;,&apos;Awaiting Write Off&apos;,
+&apos;Closed&apos;,IF(  Write_Off_Count__c &gt; 0,&apos;Write Off&apos;,&apos;Closed&apos;),
+&apos;Closed&apos;
+), 
+CASE( Demo_Status__c ,
+&apos;Awaiting AM Submission&apos;,  IF(ISPICKVAL(Approval_Status__c,&apos;Rejected&apos;),&apos;Rejected&apos; ,&apos;Not Submitted&apos;), 
+&apos;Awaiting SE Validation&apos;, &apos;Pending Approval&apos;,
+&apos;Awaiting Manager Approval&apos;,&apos;Pending Approval&apos;,
+&apos;Awaiting Admin Approval&apos;,&apos;Pending Approval&apos;,
+&apos;Awaiting Service Action&apos;,IF(ISBLANK(Picked_Date__c ) ,&apos;With Services&apos;,&apos;Picked&apos;),
+&apos;In Progress with Services&apos;,IF(ISBLANK(Picked_Date__c ) ,&apos;With Services&apos;,&apos;Picked&apos;),
+&apos;Shipped&apos;,&apos;Shipped&apos;,
+&apos;Return In Progress&apos;,&apos;Return In Progress&apos;,
+&apos;Closed&apos;,IF(  Write_Off_Count__c &gt; 0,&apos;Write Off&apos;,&apos;Closed&apos;),
+&apos;Closed&apos;
+)
+)
+
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Action</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Information__c</fullName>
+        <label>Additional Information</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line1__c</fullName>
+        <label>Return Address Line 1</label>
+        <length>250</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_2__c</fullName>
+        <label>Return Address Line 2</label>
+        <length>250</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_3__c</fullName>
+        <label>Return Address Line 3</label>
+        <length>250</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_4__c</fullName>
+        <label>Return Address Line 4</label>
+        <length>250</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Address_Line_5__c</fullName>
+        <label>Return Address Line 5</label>
+        <length>250</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Barcode__c</fullName>
+        <formula>&apos;http://www.barcodesinc.com/generator/image.php?code=name&apos;</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Barcode</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>CENTRE_KEY__c</fullName>
+        <description>used for Integration for NA</description>
+        <label>CENTRE__KEY</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Carrier_Account__c</fullName>
+        <label>Carrier Account</label>
+        <picklist>
+            <controllingField>Carrier__c</controllingField>
+            <picklistValues>
+                <fullName>234267</fullName>
+                <controllingFieldValues>FedEx</controllingFieldValues>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3456778</fullName>
+                <controllingFieldValues>TNT</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>35673473</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Carrier__c</fullName>
+        <label>Carrier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>FedEx</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TNT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UPS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <label>City</label>
+        <length>50</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>City_demopool__c</fullName>
+        <formula>Demo_Pool_Lookup__r.City__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demopool City</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Date_Difference__c</fullName>
+        <formula>Closed_Date__c  -  DATEVALUE(CreatedDate)</formula>
+        <label>Closed Date Difference</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Closed_Date__c</fullName>
+        <label>Closed Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Confirm_checkbox__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This will confirm that Account manager has recieve all the products.</description>
+        <label>Confirm checkbox</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Confirm_date__c</fullName>
+        <description>This will store when the parts has been recieved by Account manager</description>
+        <label>Confirm date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact1__c</fullName>
+        <description>This will store the contact information</description>
+        <label>Customer Contact</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Contact_Email__c</fullName>
+        <label>Contact Email</label>
+        <required>true</required>
+        <type>Email</type>
+    </fields>
+    <fields>
+        <fullName>Count_Address__c</fullName>
+        <description>This will count the number of address assocaited with Demo Request.</description>
+        <label>Count Address</label>
+        <summaryForeignKey>DD_Shipping_Address__c.Demo__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <label>Country</label>
+        <length>50</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Name__c</fullName>
+        <label>Customer Name</label>
+        <length>80</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>DD_Demo_Approved_Date__c</fullName>
+        <label>Approved Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>DD_Program_Admin__c</fullName>
+        <description>This will store program admin for demo request.</description>
+        <label>Program Admin</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Demo_Request</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DeleteReservedProducts__c</fullName>
+        <label>Delete Parts Not Submitted</label>
+        <picklist>
+            <picklistValues>
+                <fullName>True</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>False</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Delete_Parts_On_Reject__c</fullName>
+        <label>Delete Parts On Reject</label>
+        <picklist>
+            <picklistValues>
+                <fullName>True</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>False</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Period__c</fullName>
+        <label>Demo Period</label>
+        <precision>2</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Pool_Lookup__c</fullName>
+        <description>This is look-up to demo pool.</description>
+        <label>Demo Pool</label>
+        <referenceTo>DD_Demo_Pool__c</referenceTo>
+        <relationshipLabel>Demo Request</relationshipLabel>
+        <relationshipName>Demo_Request</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Ref__c</fullName>
+        <description>This will store the demo reference number.</description>
+        <displayFormat>{000000}</displayFormat>
+        <label>Sequence number</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Status__c</fullName>
+        <label>Demo Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Awaiting AM Submission</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting SE Validation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Manager Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Admin Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Service Action</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress With Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Return In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed With Missing Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Detail_about_WriteOff__c</fullName>
+        <description>This will store details about Write Off products.</description>
+        <label>Detail about WriteOff</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <description>This field is created for integration</description>
+        <label>Due Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>END_DATE__c</fullName>
+        <description>This field is created for Integration</description>
+        <label>END_DATE</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Evaluation_Start_Date__c</fullName>
+        <defaultValue>Today() + 7</defaultValue>
+        <label>Evaluation Start Date</label>
+        <required>true</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Evaulation_End_Date__c</fullName>
+        <description>This is the Sum of  Evaluation start date and demo period</description>
+        <formula>Evaluation_Start_Date__c   +  Demo_Period__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Evaluation End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <label>External Id</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Fax__c</fullName>
+        <label>Fax</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Controller_Name__c</fullName>
+        <formula>Account_Manager__r.DD_Financial_Controller__r.FirstName +&apos; &apos;+  Account_Manager__r.DD_Financial_Controller__r.LastName</formula>
+        <label>Financial Controller(Name)</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Financial_Controller__c</fullName>
+        <label>Financial Controller</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Demo_Request1_del</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IR_Status__c</fullName>
+        <description>This field is created for Integration</description>
+        <label>IR Status</label>
+        <length>15</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Manager__c</fullName>
+        <label>Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DD_Demo2</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <label>Opportunity Name</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Demo Request</relationshipLabel>
+        <relationshipName>DD_Demo</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PRINT_DATE__c</fullName>
+        <description>This field is created for integration</description>
+        <label>PRINT_DATE</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Packed_By__c</fullName>
+        <label>Packed By</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Packed_Date__c</fullName>
+        <label>Packed Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Parts_Reserved__c</fullName>
+        <label>Parts Reserved</label>
+        <summaryForeignKey>DD_Reserved_Product__c.Demo_Request__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Picked_Date__c</fullName>
+        <label>Picked Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Post_Code_ZIP__c</fullName>
+        <label>Post Code/ZIP</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Post_Code_ZIP_demopool__c</fullName>
+        <formula>Demo_Pool_Lookup__r.Post_Code_ZIP__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demopool Post Code/ZIP</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <description>Field Used For Integration</description>
+        <label>Product Family</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <description>Field used for Integration</description>
+        <label>Product Name</label>
+        <length>60</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RB_Service_Order__c</fullName>
+        <formula>&apos;DR00&apos; + RIGHT(Name, 6)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>RB Service Order</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Reason_Code__c</fullName>
+        <label>Reason Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Application Development</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bake Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Satisfaction</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pilot</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Show and Tell</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Testing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TradeShow</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Reason_for_Demo__c</fullName>
+        <label>Reason for Demo</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Received_By__c</fullName>
+        <description>For EMEA region, it will store the name of user who has receieve the parts.</description>
+        <label>Item Received By</label>
+        <length>250</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Record_Indicator__c</fullName>
+        <formula>If( AND (Today() &gt; Evaulation_End_Date__c ,OR(ISPICKVAL(Demo_Status__c,&apos;Return In Progress&apos;), ISPICKVAL(Demo_Status__c,&apos;Shipped&apos;))), 
+IMAGE(&quot;/resource/1446904840000/DD_Unavailable&quot;, &quot;red&quot;),
+IMAGE(&quot;/resource/1446904840000/DD_Available&quot;, &quot;green&quot;) 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Indicator</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Return_Address__c</fullName>
+        <description>this field will store retrun Address</description>
+        <label>Return Address</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Return_Air_Bill__c</fullName>
+        <label>Return Air Bill</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Ship_to_Site__c</fullName>
+        <description>This field is created for integration</description>
+        <label>Ship to Site</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_Date_Difference__c</fullName>
+        <formula>Shipped_Date__c - DATEVALUE(CreatedDate)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipped Date Difference</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_Date__c</fullName>
+        <label>Shipped Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Shipping_Location__c</fullName>
+        <label>Ship to Address</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Alternative Address</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Site_Name__c</fullName>
+        <label>Site Name</label>
+        <length>60</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>StateProvince_demopool__c</fullName>
+        <formula>Demo_Pool_Lookup__r.State_Province__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demopool State/Province</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <label>State/Province</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <label>Street</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Street_demopool__c</fullName>
+        <formula>Demo_Pool_Lookup__r.Street__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demopool Street</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>System_Engineer__c</fullName>
+        <label>System Engineer</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>DD_Demo</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Telephone__c</fullName>
+        <description>Fetches Contact&apos;s Telephone number</description>
+        <label>Contact Telephone</label>
+        <required>true</required>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Theater__c</fullName>
+        <description>This will store Account Manager&apos;s theater</description>
+        <formula>Text( Account_Manager__r.Theater__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Theater</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Theater_for_Sharing__c</fullName>
+        <description>This is being used for sharing rule.</description>
+        <label>Theater</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Tracking_Number__c</fullName>
+        <label>Tracking Number</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Transaction_Number__c</fullName>
+        <description>contains Opportunity Number</description>
+        <formula>Opportunity__r.Opportunity_Number__c</formula>
+        <label>Opportunity Number</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Write_Off_Count__c</fullName>
+        <description>This will count the Write Off products count</description>
+        <label>Write Off Count</label>
+        <summaryFilterItems>
+            <field>DD_Reserved_Product__c.Product_Status__c</field>
+            <operation>equals</operation>
+            <value>Write Off</value>
+        </summaryFilterItems>
+        <summaryForeignKey>DD_Reserved_Product__c.Demo_Request__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>X1st_Audit_By__c</fullName>
+        <label>1st Audit By</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>X1st_Audit_Date__c</fullName>
+        <label>1st Audit Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_Audit_Date__c</fullName>
+        <label>2nd Audit Date</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>X2nd_audit_By__c</fullName>
+        <label>2nd Audit By</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>country_demopool__c</fullName>
+        <formula>Demo_Pool_Lookup__r.Country__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Demopool Country</label>
+        <type>Text</type>
+    </fields>
+    <label>Demo Request</label>
+    <listViews>
+        <fullName>APAC</fullName>
+        <columns>NAME</columns>
+        <columns>Demo_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Theater__c</field>
+            <operation>equals</operation>
+            <value>APAC</value>
+        </filters>
+        <label>APAC</label>
+    </listViews>
+    <listViews>
+        <fullName>All8</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>System_Engineer__c</columns>
+        <columns>Manager__c</columns>
+        <columns>DD_Program_Admin__c</columns>
+        <columns>Demo_Status__c</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>Demo_Pool_Lookup__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>DD_My_Demo_Request</fullName>
+        <columns>NAME</columns>
+        <columns>Customer_Name__c</columns>
+        <columns>Evaluation_Start_Date__c</columns>
+        <columns>Demo_Status__c</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>Reason_Code__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>My Demo Request</label>
+    </listViews>
+    <listViews>
+        <fullName>EMEA</fullName>
+        <columns>NAME</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>Manager__c</columns>
+        <columns>DD_Program_Admin__c</columns>
+        <columns>Demo_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Theater__c</field>
+            <operation>equals</operation>
+            <value>EMEA</value>
+        </filters>
+        <label>EMEA</label>
+    </listViews>
+    <listViews>
+        <fullName>LATAM</fullName>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Theater__c</field>
+            <operation>equals</operation>
+            <value>LATAM</value>
+        </filters>
+        <label>LATAM</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Active_Demo_Requests</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Demo_Status__c</columns>
+        <columns>Evaluation_Start_Date__c</columns>
+        <columns>Evaulation_End_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Demo_Status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting AM Submission,Awaiting SE Validation,Awaiting Manager Approval</value>
+        </filters>
+        <filters>
+            <field>Demo_Status__c</field>
+            <operation>equals</operation>
+            <value>Awaiting Admin Approval,Awaiting Service Action,In Progress With Services</value>
+        </filters>
+        <filters>
+            <field>Demo_Status__c</field>
+            <operation>equals</operation>
+            <value>Shipped,Return In Progress</value>
+        </filters>
+        <label>My Active Demo Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>NA</fullName>
+        <columns>NAME</columns>
+        <columns>Demo_Status__c</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>Manager__c</columns>
+        <columns>DD_Program_Admin__c</columns>
+        <columns>Approval_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Theater__c</field>
+            <operation>equals</operation>
+            <value>NA</value>
+        </filters>
+        <label>NA</label>
+    </listViews>
+    <nameField>
+        <label>Demo Ref #</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Demo Request</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Account_Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>System_Engineer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Manager__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DD_Program_Admin__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Approval_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>DD_Demo_Approved_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer_Name__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Account_Manager__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>DD_Demo_Approved_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>System_Engineer__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account_Manager__c</searchFilterFields>
+        <searchFilterFields>System_Engineer__c</searchFilterFields>
+        <searchFilterFields>Approval_Status__c</searchFilterFields>
+        <searchFilterFields>DD_Demo_Approved_Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>DD_Demo_Approved_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Contact1__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Account_Manager__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>System_Engineer__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <sharingReasons>
+        <fullName>Demo_Access__c</fullName>
+        <label>Demo Access</label>
+    </sharingReasons>
+    <validationRules>
+        <fullName>DD_Reason_for_Code_mendatory</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND($Profile.Name!=&apos;System Administrator&apos;,ISPICKVAL( Reason_Code__c,&quot;&quot;))</errorConditionFormula>
+        <errorMessage>&quot;Reason code&quot; is mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DD_Reason_of_Demo_is_required</fullName>
+        <active>true</active>
+        <description>Reason of demo is mandatory, if Reason Code is Others</description>
+        <errorConditionFormula>AND($Profile.Name!=&apos;System Administrator&apos;,ISPICKVAL(Reason_Code__c,&apos;Others&apos;), ISBLANK(Reason_for_Demo__c) )</errorConditionFormula>
+        <errorMessage>Reason of demo is mandatory, if Reason Code is Others</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>DD_state_mendatory</fullName>
+        <active>true</active>
+        <description>state is mendatory when country is USA and Canada</description>
+        <errorConditionFormula>AND($Profile.Name!=&apos;System Administrator&apos;,OR( Country__c=&apos;United States&apos;, Country__c=&apos;Canada&apos;), ISBLANK( State_Province__c ))</errorConditionFormula>
+        <errorMessage>State is mandatory when country selected is USA OR CANADA</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Accept_and_Submit</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Accept and Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var validSubmitUser= sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;isValidSubmitUser&quot;,{demoRequestId:&quot;{!DD_Demo__c.Id}&quot;});
+
+if(validSubmitUser==&apos;false&apos;){
+alert(&apos;You cannot submit this request for approval&apos;);
+}
+else if (&apos;{!DD_Demo__c.Demo_Status__c}&apos; != &apos;Awaiting AM Submission&apos;) {
+alert(&apos;Demo Request status must be Awaiting AM Submission to submit for approval&apos;);
+
+}else if(&apos;{!DD_Demo__c.Parts_Reserved__c}&apos; == 0){
+alert(&apos;Select parts before submitting for approval&apos;);
+
+}else if(&apos;{!DD_Demo__c.Count_Address__c}&apos; == 0){
+alert(&apos;Select Shipping Address before submitting for approval&apos;);
+}else{
+if(&apos;{!DD_Demo__c.Opportunity__c}&apos;==&apos;&apos;){
+alert(&apos;You have chosen to submit a demo request without an opportunity. This will require additional approval steps and review from the program administrator&apos;);
+}
+var result = sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;submitForApproval&quot;,{demoRequestId:&quot;{!DD_Demo__c.Id}&quot;});
+
+if(result){
+window.open(&apos;/{!DD_Demo__c.Id}&apos;,&apos;_top&apos;); 
+}
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_Parts</fullName>
+        <availability>online</availability>
+        <description>This button will redirect to add part builder page</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Add/Delete Parts</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/apex.js&quot;)}
+
+
+var show = sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;Adminval&quot;,{demoid:&quot;{!DD_Demo__c.Id}&quot;});
+if(show==&apos;true&apos;){
+window.open(&apos;/apex/DD_DemoProductsSearch?id={!DD_Demo__c.Id}&apos;,&apos;_top&apos;);
+}
+else{
+alert (&quot;You can not add parts at this stage, please contact your Admin.&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/apex.js&quot;)} 
+
+
+var currentUserID =  window.UserContext.userId;
+
+if(&apos;{!DD_Demo__c.DD_Program_AdminId__c}&apos; != currentUserID || &apos;{!DD_Demo__c.Account_ManagerId__c}&apos; != currentUserID){
+if(&apos;{!DD_Demo__c.System_EngineerId__c}&apos; == currentUserID || &apos;{!DD_Demo__c.ManagerId__c}&apos; == currentUserID ){
+alert(&apos;You do not have permission to clone&apos;);
+ this.disabled = true;
+ this.className = &apos;btnDisabled&apos;;
+}else{
+window.open(&apos;/apex/DD_DemoRequest?cloneid={!DD_Demo__c.Id}&amp;retURL={!DD_Demo__c.Id}&apos;,&apos;_top&apos;); 
+}
+}else{
+window.open(&apos;/apex/DD_DemoRequest?cloneid={!DD_Demo__c.Id}&amp;retURL={!DD_Demo__c.Id}&apos;,&apos;_top&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Oppty_New_Demo_Request</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>New Demo Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var validRequestUser= sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;isValidRequestUser&quot;,{}); 
+
+if(validRequestUser==&apos;true&apos;){
+window.open(&apos;/apex/DD_UserDemoPool?oppid={!Opportunity.Id}&amp;retURL={!Opportunity.Id}&apos;,&apos;_top&apos;);
+}
+else{
+alert(&apos;Insufficient Privilege, You do not have required permission to create a New Demo Request&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Overview_and_Information</fullName>
+        <availability>online</availability>
+        <description>Used for downloading Overview and Information PDf from Demo detail page</description>
+        <displayType>button</displayType>
+        <hasScrollbars>true</hasScrollbars>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Overview and Information</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <url>/apex/DD_OverviewAndInformation?id={!DD_Demo__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Print_Return_Address</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Print Return Address</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if ((&apos;{!DD_Demo__c.Theater__c}&apos;==&apos;EMEA&apos; &amp;&amp; &apos;{!DD_Demo__c.Demo_Status__c}&apos;==&apos;Shipped&apos; || &apos;{!DD_Demo__c.Demo_Status__c}&apos;==&apos;Return In Progress&apos; || &apos;{!DD_Demo__c.Demo_Status__c}&apos;==&apos;Closed&apos; || &apos;{!DD_Demo__c.Demo_Status__c}&apos;==&apos;Closed With Missing Product&apos; || &apos;{!DD_Demo__c.Demo_Status__c}&apos;==&apos;Repair&apos; ) || &apos;{!DD_Demo__c.Theater__c}&apos;!=&apos;EMEA&apos;) {
+    
+window.open(&apos;/apex/DD_redirecttoPrintAddress?id={!DD_Demo__c.Id}&amp;retURL={!DD_Demo__c.Id}&apos;,&apos;_blank&apos;);
+}
+else {
+     alert(&apos;You can print the return address only once the status is Shipped&apos;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Track_Shipment</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Track Shipment</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>if (&apos;{!DD_Demo__c.Tracking_Number__c}&apos;!=&apos;&apos; &amp;&amp; &apos;{!DD_Demo__c.Tracking_Number__c}&apos;.substring(0,2)==&apos;1Z&apos;) { 
+window.open(&apos;http://wwwapps.ups.com/WebTracking/track?track=yes&amp;trackNums={!DD_Demo__c.Tracking_Number__c}&apos;,&apos;_blank&apos;); 
+} 
+else if (&apos;{!DD_Demo__c.Tracking_Number__c}&apos;!=&apos;&apos; &amp;&amp; &apos;{!DD_Demo__c.Theater__c}&apos;==&apos;NA&apos;) { 
+window.open(&apos;https://www.fedex.com/apps/fedextrack/?action=track&amp;trackingnumber={!DD_Demo__c.Tracking_Number__c}&apos;,&apos;_blank&apos;); 
+} 
+else if (&apos;{!DD_Demo__c.Tracking_Number__c}&apos;!=&apos;&apos; &amp;&amp; &apos;{!DD_Demo__c.Theater__c}&apos;!=&apos;NA&apos;) { 
+window.open(&apos;http://www.tnt.com/express/en_us/site/home/applications/tracking.html&apos;,&apos;_blank&apos;); 
+} 
+else { 
+alert(&apos;Tracking Information not available&apos;); 
+}</url>
+    </webLinks>
+</CustomObject>

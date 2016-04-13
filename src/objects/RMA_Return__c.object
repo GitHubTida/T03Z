@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Created For RMA POC - Related to case</description>
+    <fields>
+        <fullName>Additional_Problem_Description__c</fullName>
+        <label>Additional Problem Description</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Case__c</fullName>
+        <label>Case</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>RMA Returns</relationshipLabel>
+        <relationshipName>RMA_Returns</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>true</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Contract_End_Date__c</fullName>
+        <description>It captures the Contract End Date</description>
+        <label>Contract End Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Number__c</fullName>
+        <label>Contract Number</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Contract_Start_Date__c</fullName>
+        <description>It captures the Contract Start Date</description>
+        <label>Contract Start Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Depot_Location__c</fullName>
+        <label>Depot Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Australia, Melbourne {10 Wesley Court, Burwood}</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>China, Shanghai {No18 Zijin Road, Zhangpu Town, Kunshan Jiangsu Providence}</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>India, Bangalore {#4,5 Maruthi Industrial Estate, Whitefield Road}</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Singapore {49 Jalan Pemimpin #03-11 APS Industrial Building Singapore}</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Price_Currency__c</fullName>
+        <label>Estimated Price Currency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Test1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Repair_price__c</fullName>
+        <label>Estimated Repair price</label>
+        <precision>18</precision>
+        <scale>4</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Filter_By_Problem1__c</fullName>
+        <label>Filter By</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BATTERY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Filter_By_Problem2__c</fullName>
+        <label>Filter By</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ERROR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Model_Number__c</fullName>
+        <label>Model Number</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Orderline_Source_Reference__c</fullName>
+        <label>Orderline Source Reference</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>OutBound_Tracking_Number__c</fullName>
+        <label>OutBound Tracking Number</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Outbound_Carrier__c</fullName>
+        <label>Outbound Carrier</label>
+        <length>150</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Problem_Code_1__c</fullName>
+        <label>Problem #1</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BATTERY; BACKUP</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BATTERY; DAMAGE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BATTERY; DRAIN PROBLEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Problem_Code_2__c</fullName>
+        <label>Problem #2</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ERROR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Problem_Description__c</fullName>
+        <label>Problem Description</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <label>Product Family</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <label>Product Name</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product__c</fullName>
+        <label>Product</label>
+        <length>200</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Purchase_Order__c</fullName>
+        <label>Purchase Order</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RMAReturn_External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>RMAReturn External ID</label>
+        <length>40</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RMA_LineNumber__c</fullName>
+        <label>RMA LineNumber</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>RMA_SiebelLineId__c</fullName>
+        <label>RMA SiebelLineId</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Repair_Status__c</fullName>
+        <label>Repair Status</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Return_Entitlement__c</fullName>
+        <label>Return Entitlement</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Commision</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Select_Primary_Symptom__c</fullName>
+        <label>Select Primary Symptom</label>
+        <picklist>
+            <picklistValues>
+                <fullName>BATTERY; PROBLEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BOOT: COLD/WARM/REPEATED</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CABLE; PROBLEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAMERA MODULE; INTERMITTENT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAMERA MODULE; NO DECODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAMERA MODULE; NO FLASH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CAMERA; PROBLEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>COMMUNICATIONS; PROBLEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Serial_Number__c</fullName>
+        <label>Serial Number</label>
+        <length>80</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Service_Entitlement__c</fullName>
+        <description>Line Type ( Service_Entitlement)</description>
+        <label>Service Entitlement</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>T &amp; M</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard Warranty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Extended Warranty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Warranty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warranty</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_Address__c</fullName>
+        <label>ShipTo Address</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_AttentionLine__c</fullName>
+        <label>ShipTo AttentionLine</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_Building__c</fullName>
+        <label>ShipTo Building</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_City__c</fullName>
+        <label>ShipTo City</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_ContactId__c</fullName>
+        <label>ShipTo ContactId</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_Country__c</fullName>
+        <label>ShipTo Country</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_Email__c</fullName>
+        <label>ShipTo Email</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_FirstName__c</fullName>
+        <label>ShipTo FirstName</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_LastName__c</fullName>
+        <label>ShipTo LastName</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_PhoneNumber__c</fullName>
+        <label>ShipTo PhoneNumber</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_PostalCode__c</fullName>
+        <label>ShipTo PostalCode</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_State__c</fullName>
+        <label>ShipTo State</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ShipTo_Street__c</fullName>
+        <label>ShipTo Street</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_End__c</fullName>
+        <label>Warranty End</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Start__c</fullName>
+        <label>Warranty Start</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Warranty_Type__c</fullName>
+        <label>Warranty Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>STANDARD WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EXTENDED WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SERVICE WARRANTY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>RMA Return</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>A-{00000}</displayFormat>
+        <label>RMA Return #</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>RMA Returns</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Product</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Add Product</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <url>/apex/ZEB_RMA_FindProduct?CaseId={!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Add_RMA_Product</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Add RMA Product</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/repair/apex/ZEB_RMA_FindProduct?CaseId={!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Checkout</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Checkout</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/ZEB_RMA_Checkout?caseId={!Case.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Checkout_RMA</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>url</linkType>
+        <masterLabel>Checkout RMA</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/repair/apex/ZEB_RMA_Checkout?caseId={!Case.Id}</url>
+    </webLinks>
+</CustomObject>

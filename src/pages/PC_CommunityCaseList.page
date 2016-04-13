@@ -1,0 +1,75 @@
+<apex:page standardController="Case" extensions="PC_CaseRelatedListExtension" showHeader="true" sidebar="true"  tabStyle="Cases_Partner__tab">
+    
+  
+    <apex:pageBlock >
+    
+        <apex:pageBlockButtons location="top">
+            <apex:form >
+                <apex:commandButton action="{!newCase}" value="{!$Label.New_Case}"/>
+                <apex:outputPanel id="newCase">
+                    <apex:outputText rendered="{!shouldRedirect}">
+                        <script type="text/javascript">
+                            window.top.location.href = '{!caseCreationURL}';
+                        </script>
+                    </apex:outputText>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:pageBlockButtons>
+            <apex:listViews id="lstView" type="Case" >
+                <apex:facet name="header">&nbsp;</apex:facet>
+            </apex:listViews>
+    </apex:pageBlock>
+       
+   <script>
+   
+        var listVal = document.getElementById("j_id0:j_id1:lstView:fcf");
+        console.log(listVal);
+        if( listVal ) {
+            var options = listVal.options;
+            console.log("Options length",options.length);
+            var val = "My Open Cases";
+            var selIndex=-1;
+            var recentselected = false;
+            var _recentListViewTranslations = ["Dossiers consultées récemment", "Zuletzt angezeigte Kundenvorgänge", "Casos Mostrados Recientemente", "Casi recentemente visualizzati", "最近参照したリクエスト", "최근에 본 요청", "最近已查看个案", "最近已查看案例", "Casos Exibidos Recentemente", "Недавно просмотренные обращения", "Ostatnio wyświetlone sprawy", "Son Dönemde Görüntülenmiş Vakalar","最近已查看事项"];
+            for(i=0; i<options.length;i++){
+                console.log(options[i]);
+                console.log("options[i].value",options[i].value);
+                console.log("options[i].text",options[i].text);
+                if(options[i] && options[i].text == '{!$Label.Recently_Viewed_Cases}' && options.length != 1){
+                    if(options[i].selected)
+                       recentselected = true; 
+                    options.remove(i);                    
+                }     
+                
+                for (var j = 0; j < _recentListViewTranslations.length; j++) {
+                    var viewName= _recentListViewTranslations[j];
+                    if (options[i] && options[i].text==viewName && options.length != 1) {
+                        if(options[i].selected)
+                           recentselected = true; 
+                        options.remove(i);
+                        break;
+                    }
+                }               
+                
+                 
+            }
+            for(i=0; i<options.length;i++){                
+                //if(options[i] && options[i].text == '{!$Label.Cases_Created_by_me_Open}')
+                if(options[i].text == '{!$Label.Cases_Created_by_me_Open}'){                
+                    selIndex = i;
+                }
+            }
+            console.log("recentselected",recentselected);
+            
+            if(recentselected == true){
+                console.log("Inside final if");
+                var form = document.getElementById("filter_element");
+                listVal.selectedIndex = selIndex;
+                form.submit();
+            }
+       }
+    </script>
+      <style type="text/css">
+        .actionColumn {display:none; visibility:hidden}
+    </style>
+</apex:page>

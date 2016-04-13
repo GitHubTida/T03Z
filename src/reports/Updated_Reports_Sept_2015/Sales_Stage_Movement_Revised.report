@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Opportunity$Account</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Name</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Owner</field>
+    </columns>
+    <columns>
+        <field>Opportunity$Sales_Stage_Amount__c.CONVERT</field>
+    </columns>
+    <columns>
+        <field>Opportunity$LastStageChangeDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity$CloseDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Line_Item_Schedule_Clone__r$LastModifiedDate</field>
+    </columns>
+    <columns>
+        <field>Opportunity.Opportunity_Line_Item_Schedule_Clone__r$LastModifiedBy</field>
+    </columns>
+    <currency>USD</currency>
+    <description>Report updated with new report type:  Opportunities with Products and Revenue Forecast</description>
+    <format>Tabular</format>
+    <name>Sales Stage Movement - Revised</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Products_and_Revenue_Forecast__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Opportunity.Opportunity_Line_Item_Schedule_Clone__r$Opportunity_Closed_Date__c</dateColumn>
+        <interval>INTERVAL_CURY</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to capture the Weekly stats of the Opportunity data.This data will be used to run analytics snapshots on Opportunity</description>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Name__c</fullName>
+        <description>Account on which the Opportunity is created on</description>
+        <label>Account Name</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunity Weekly Stats</relationshipLabel>
+        <relationshipName>Opportunity_Weekly_Stats</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <description>Opportunity Amount</description>
+        <label>Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Forecast_Category__c</fullName>
+        <description>Opportunity&apos;s Forecast category</description>
+        <label>Forecast Category</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Fulfillment_Type__c</fullName>
+        <description>Populate the the Fulfillment_Type__c from Opportunity</description>
+        <label>Fulfillment Type</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Has_Line_Item_Entry__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field provides the information if the Oppty has a Line item or not ?</description>
+        <label>Has Line Item Entry</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Quantity_Scheduled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To verify if the Quantity is scheduled for this line item</description>
+        <label>Is Quantity Scheduled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Revenue_Scheduled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To verify if Revenue is Scheduled for the Oppty line item</description>
+        <label>Is Revenue Scheduled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Last_Updated_By__c</fullName>
+        <description>Opportunity last Updated by</description>
+        <label>Last Updated By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunity_Weekly_Stats</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Last_Updated_On__c</fullName>
+        <description>Opportunity Last Updated on</description>
+        <label>Last Updated On</label>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Id__c</fullName>
+        <description>Opportunity Record Id</description>
+        <label>Opportunity Id</label>
+        <length>18</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Record_Type__c</fullName>
+        <description>This field will display the Oppty record Type</description>
+        <label>Opportunity Record Type</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Revenue_Date__c</fullName>
+        <description>This field captures the Opportunity Revenue Date for OpptySchedule Lineitems or CloseDate for non scheduled line items</description>
+        <label>Opportunity Revenue Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <description>Opportunity Record</description>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunity Weekly Stats</relationshipLabel>
+        <relationshipName>Opportunity_Weekly_Stats</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Id__c</fullName>
+        <description>Opportunity Owner Id</description>
+        <label>Owner Id</label>
+        <length>18</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Role__c</fullName>
+        <description>Opportunity Owner&apos;s Role</description>
+        <label>Owner Role</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Owner_Theater__c</fullName>
+        <description>Opportunity owner theatre</description>
+        <label>Owner Theater</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family_Name__c</fullName>
+        <description>Product Family name of the Oppty Line item</description>
+        <label>Product Family Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <description>SKU name of the Oppty Line item</description>
+        <label>Product Name</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Stage__c</fullName>
+        <description>Opportunity Stage</description>
+        <label>Stage</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <label>Opportunity Weekly Stats</label>
+    <nameField>
+        <displayFormat>OWS-{00000000}</displayFormat>
+        <label>Opportunity Weekly Stats</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity Weekly Stats</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

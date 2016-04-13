@@ -1,0 +1,57 @@
+<!-- Created by JG, 12-May-2014 -->
+<!-- This page will hold all of the custom shortcuts on the Zebra TS Service console -->
+
+<apex:page >
+    <script type="text/javascript">  
+
+    <apex:includeScript value="/soap/ajax/26.0/connection.js"/>
+    <apex:includeScript value="/support/console/26.0/integration.js"/>
+        
+        // Create New Account Shortcut
+        var ZEBCreateNewAccountConsole = function() {
+            sforce.console.openPrimaryTab(null, '/001/e', true);
+            //sforce.console.openPrimaryTab(null, '/apex/ZEBNewAccountPageRoute', true);
+        }
+        
+		// Search Products dedicated tab Shortcut
+        var ZEBSearchProductsConsole = function() {
+            sforce.console.openPrimaryTab(null, '/ui/product/Search?search=', true);
+            
+            /***** Temporarily commented out by JG 30-Sep-2014 *****
+            //START - Added By - Shakti Mehtani 09/03/2014
+            var url;
+
+            sforce.connection.sessionId = "{!$Api.Session_ID}";
+			sforce.connection.query( 
+			   "SELECT Zebra_Organization__c FROM User WHERE Id = '" + window.UserContext.userId + "'", 
+			   { 
+				onSuccess: 
+					function(result){ 
+						url = 'ui/product/Search?search=&Product2col0=00Ni000000ElF65&Product2oper0=e&Product2fval0=' + result.records.Zebra_Organization__c;
+						sforce.console.openPrimaryTab(null, url, true);
+					}, 
+				 onFailure: 
+					function(result){
+						url = '/ui/product/Search?search=';
+						sforce.console.openPrimaryTab(null, url, true);
+					} 
+			   } 
+		   );
+          //END - Added By - Shakti Mehtani 09/03/2014
+          ********/
+
+        }
+        
+
+        // ZPL Viewer Shortcut
+        var ZEBZPLViewerConsole = function() {
+            sforce.console.openPrimaryTab(null, '/apex/ZEB_ZPL1', true);
+        }        
+        
+        sforce.console.addEventListener('customShortcut.NewAccount', ZEBCreateNewAccountConsole);           
+        sforce.console.addEventListener('customShortcut.SearchProduct', ZEBSearchProductsConsole );
+    	sforce.console.addEventListener('customShortcut.ZPLViewer', ZEBZPLViewerConsole );         
+      
+    </script>
+    
+</apex:page>

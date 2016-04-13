@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>Deal Registration Request Extension based on Region</description>
+    <fields>
+        <fullName>DR_recordtype__c</fullName>
+        <label>DR_recordtype</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Days_Extended_for_Solution_Partners__c</fullName>
+        <label>Days Extended for Solution Partners</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Days_Extended__c</fullName>
+        <label>Number of Days Extended</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <label>DR_RequestExtension</label>
+</CustomObject>

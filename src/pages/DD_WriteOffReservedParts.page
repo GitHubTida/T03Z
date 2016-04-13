@@ -1,0 +1,45 @@
+<!--
+**************************************************************
+    Copyright © 2015 Zebra Technologies. All rights reserved.
+    Author      : Nikhil Kumar
+    Date        : 28-Aug-15
+    Revision History
+    Ver       Date        Author            Modification
+    ---       ---------   -----------       -------------------------
+    V0.1      28-Aug-15   Nikhil Kumar         Initial Code  
+ ***************************************************************
+ -->
+<apex:page controller="DD_WriteOffReservedParts" tabstyle="DD_Reserved_Product__c">
+    <apex:form >
+        <apex:sectionHeader title="Selected Product Edit" Subtitle="Selected products"/>
+        <apex:pageBlock title="Selected Product Edit">
+            <apex:pageBlockButtons >
+                 <apex:commandButton onclick="return confirm('Do you really want to Write Off all the products?');" value="Write Off" action="{!WriteoffAll}" />
+                <apex:commandButton value="Cancel" action="{!Cancel}" />                 
+            </apex:pageBlockButtons>
+            <apex:pageblockTable value="{!LisRese}" var="tempRes">
+                <apex:column headerValue="Material Name">
+                    <apex:outputLink value="tempRes.Material__c">
+                        <apex:outputfield value="{!tempRes.Material__r.name}"/>
+                    </apex:outputLink>    
+                </apex:column>    
+                <apex:column headerValue="Serial Number">
+                    <apex:outputfield value="{!tempRes.Serialnumber__c}"/>
+                </apex:column> 
+                  <apex:column headerValue="Product status">
+                    <apex:outputfield value="{!tempRes.Product_Status__c}"/>
+                </apex:column>
+                <apex:column headerValue="Received Date">
+                    <apex:outputfield value="{!tempRes.Received_Date__c}"/>
+                </apex:column>
+                <apex:column headerValue="Completion Date">
+                    <apex:outputfield value="{!tempRes.Completion_Date__c}"/>
+                </apex:column>
+                <apex:column headerValue="Quantity">
+                    <apex:outputfield value="{!tempRes.Quantity__c}"/>
+                </apex:column>
+            </apex:pageblockTable>
+        </apex:pageBlock>
+    </apex:form>
+  
+</apex:page>

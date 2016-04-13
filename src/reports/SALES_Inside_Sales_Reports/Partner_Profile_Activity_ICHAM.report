@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>User.Partner_Profile__c$LastModifiedById$Name</field>
+    </columns>
+    <columns>
+        <field>User$Account</field>
+    </columns>
+    <columns>
+        <field>User$Name</field>
+    </columns>
+    <columns>
+        <field>User$LastPasswordChangeDate</field>
+    </columns>
+    <columns>
+        <field>User$LastLoginDate</field>
+    </columns>
+    <columns>
+        <field>User.Partner_Profile__c$LastModifiedById$Partner_First_ID__c</field>
+    </columns>
+    <columns>
+        <field>User.Partner_Profile__c$LastModifiedById$PF_Program_Name__c</field>
+    </columns>
+    <columns>
+        <field>User.Partner_Profile__c$LastModifiedById$PF_Program_Type__c</field>
+    </columns>
+    <columns>
+        <field>User.Partner_Profile__c$LastModifiedById$Information_enclosed_herein_is_accurate__c</field>
+    </columns>
+    <description>This report indicates Partner Profiles that have been completed but not necessarily submitted.</description>
+    <filter>
+        <criteriaItems>
+            <column>User$Profile</column>
+            <operator>contains</operator>
+            <value>Reseller,Application Specialist</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>User$Account</column>
+            <operator>notEqual</operator>
+            <value>sample</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Partner Profile Activity- ICHAM</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Partner_User_Activity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>User$LastPasswordChangeDate</dateColumn>
+        <interval>INTERVAL_CURPREV1</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>External App URL&apos;s settings</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>External App URL&apos;s settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Solution Builder --></label>
+        <name>Solution_Builder__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting will hold email ids separated by semi-colon to download the contact extract of partner transition</description>
+    <fields>
+        <fullName>Contact_Region__c</fullName>
+        <label>Contact Region</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>ExtractEmail__c</fullName>
+        <label>ExtractEmail</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <label>ZEBContactExtractEmail</label>
+</CustomObject>

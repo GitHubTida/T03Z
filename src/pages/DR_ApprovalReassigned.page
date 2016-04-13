@@ -1,0 +1,3 @@
+<apex:page standardController="Deal_Registration__c" showHeader="false" extensions="DR_Deal_ReassignedExtension" action="{!initUpdate}"  > 
+ 
+</apex:page>

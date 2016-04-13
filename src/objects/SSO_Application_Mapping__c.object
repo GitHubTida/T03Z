@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This Object will store all the details about the applications a user can have access to</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Application_Description__c</fullName>
+        <label>Application Description</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Application_Home_URL__c</fullName>
+        <label>Application Home URL</label>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Application_ID__c</fullName>
+        <label>Application ID</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application_Label__c</fullName>
+        <label>Application Label</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application_Local_Name__c</fullName>
+        <label>Application Local Name</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application_Name__c</fullName>
+        <description>Name of the application</description>
+        <label>Application Name</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Application_Owner__c</fullName>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>User_Access_Application_Mappings</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_Status__c</fullName>
+        <label>Application Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inactive</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not in Use</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Obsolete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Support_API__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Application Support API?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Application_Type__c</fullName>
+        <label>Application Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Application_Webservice_URL__c</fullName>
+        <label>Application Webservice URL</label>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Type__c</fullName>
+        <label>Approval Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Auto Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Administrator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto Provisioning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>API</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Can_be_delegated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is created to check if an application request can be created by Partner Admin on behalf of his company contacts.</description>
+        <label>Can be delegated?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Communication_to_App__c</fullName>
+        <label>Communication to App</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approval Process</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>API - Auto Provisioning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Provisioner__c</fullName>
+        <label>Provisioner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>SSO_Application_Mappings</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Provisioning_Type__c</fullName>
+        <label>Provisioning Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Application Owner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Account Administrator</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Auto Provisioning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>API</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Global</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Requestor__c</fullName>
+        <label>Requestor</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Self</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Admin</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>SSO Application Mapping</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Application_Name__c</columns>
+        <columns>Application_Type__c</columns>
+        <columns>Application_Status__c</columns>
+        <columns>Application_Owner__c</columns>
+        <columns>Approval_Type__c</columns>
+        <columns>Application_Support_API__c</columns>
+        <columns>Region__c</columns>
+        <columns>Communication_to_App__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Customer_Applications</fullName>
+        <columns>NAME</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Application_Name__c</columns>
+        <columns>Approval_Type__c</columns>
+        <columns>Application_Owner__c</columns>
+        <columns>Provisioning_Type__c</columns>
+        <columns>Provisioner__c</columns>
+        <columns>Application_Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>equals</operation>
+            <value>Customer</value>
+        </filters>
+        <filters>
+            <field>Application_ID__c</field>
+            <operation>notContain</operation>
+            <value>001</value>
+        </filters>
+        <label>Customer Applications</label>
+    </listViews>
+    <listViews>
+        <fullName>Partner_Applications</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Application_ID__c</columns>
+        <columns>Application_Name__c</columns>
+        <columns>Approval_Type__c</columns>
+        <columns>Application_Status__c</columns>
+        <columns>Application_Owner__c</columns>
+        <columns>Provisioning_Type__c</columns>
+        <columns>Provisioner__c</columns>
+        <columns>Region__c</columns>
+        <columns>Requestor__c</columns>
+        <columns>Communication_to_App__c</columns>
+        <columns>Can_be_delegated__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Application_Type__c</field>
+            <operation>equals</operation>
+            <value>Partner</value>
+        </filters>
+        <filters>
+            <field>Application_ID__c</field>
+            <operation>contains</operation>
+            <value>001</value>
+        </filters>
+        <label>Partner Applications</label>
+    </listViews>
+    <nameField>
+        <displayFormat>AM-{000000}</displayFormat>
+        <label>SSO Application Mapping</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>SSO Application Mappings</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

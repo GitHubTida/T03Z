@@ -1,0 +1,83 @@
+<!-- Custom VF page VF page for Contacts. Shows a subset of Contact data, plus Vertex logic for Contact Address -->
+<!-- JG, 1-May-2014 -->
+
+<apex:page standardController="Contact" extensions="ZEBVertexController">
+    
+    <img src="{!$Resource.zeblogotopdecor}"/>
+    
+    <apex:sectionHeader title="Contact Edit" subtitle="{!contact.Salutation} {!contact.Name}"/>
+
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <apex:includeScript value="/support/console/23.0/integration.js"/>
+    <apex:includeScript value="/support/console/28.0/integration.js"/>    
+
+    <script type="text/javascript">
+            sforce.console.setTabTitle('{!contact.Name}');
+            sforce.console.setTabUnsavedChanges(true);
+    </script>
+    
+  
+    <apex:form >
+    
+        <apex:pageBlock mode="edit" title="Contact Edit">
+            
+           <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>    
+            
+            <apex:pageBlockSection title="Contact Information" columns="1" >
+                <apex:inputField value="{!contact.Salutation}"/>
+                <apex:inputField value="{!contact.FirstName}" required="true"/>
+                <apex:inputField value="{!contact.LastName}"/>
+                <apex:inputField value="{!contact.Title}"/>
+                <!--<apex:outputField value="{!contact.LastName}"/>-->
+                <!--<apex:inputField value="{!contact.AccountId}"/>-->
+                
+                <apex:inputField value="{!contact.Phone}"/>
+                <apex:inputField value="{!contact.Extension__c}"/>
+                <apex:inputField value="{!contact.MobilePhone}"/>                
+                <apex:inputField value="{!contact.Email}"/>
+                <apex:inputField value="{!contact.DoNotCall}"/>
+                <apex:inputField value="{!contact.HasOptedOutOfEmail}"/>                  
+                
+                
+                <apex:actionRegion >
+                    <apex:pageBlockSection columns="1">
+                        <apex:inputField value="{!contact.AccountId}">
+                            <apex:actionSupport event="onchange" action="{!AccountPopulated}" rerender="thePageBlock"/>
+                        </apex:inputField>                                                 
+                    </apex:pageBlockSection>
+
+                </apex:actionRegion>                  
+
+            </apex:pageBlockSection>
+ 
+          
+         <apex:pageBlock id="thePageBlock" mode="edit">
+                <apex:pageMessages />
+                <apex:actionRegion >
+                        <apex:pageBlockSection title="Contact Address Information" columns="1">
+                            <apex:inputField value="{!contact.MailingCountryCode}">
+                                <apex:actionSupport event="onchange" action="{!ZEBResetState}" rerender="thePageBlock" status="status"/> 
+                            </apex:inputField>
+                        </apex:pageBlockSection>
+                </apex:actionRegion>   
+                <apex:pageBlockSection columns="1" >
+                     <apex:inputField value="{!contact.MailingStreet}"/>   
+                    <apex:inputField value="{!contact.MailingCity}"/>
+                    <apex:inputField value="{!contact.MailingPostalCode}"/>
+                    <apex:inputField value="{!contact.MailingStateCode}"/>      
+                                     
+                </apex:pageBlockSection>
+            </apex:pageBlock>            
+        </apex:pageBlock>        
+
+             
+    </apex:form>
+
+        <div style="position:relative; bottom: 190px; float:right; right: -5px;">
+            <img align="left" src="{!$Resource.zprinter2}"/>
+        </div>    
+
+</apex:page>

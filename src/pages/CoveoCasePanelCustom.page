@@ -1,0 +1,76 @@
+<apex:page standardController="Case" extensions="CaseExtension" standardStylesheets="false" showheader="false" sidebar="false">
+  <script>
+    $(function() {
+      CoveoGetCookie = function(data) {
+            return "{!$Api.Session_ID}";      
+              
+      }
+    });
+  </script>
+  
+  <style>
+      .CoveoResultLink {
+          color: #0065cb;
+          font-size: 15px;
+          text-decoration: underline;
+      }
+  </style>
+  <CoveoSolutions:CoveoPanel type="case" record="{!record}" recordId="{!record.Id}" useCookieSessionId="true"/>
+  <script type="text/javascript">
+      Coveo.Rest.SearchEndpoint.endpoints["default"].caller.options.queryStringArguments.wildcards = 1
+
+      var caseContext = {
+        id: "{!case.Id}",
+        subject: "{!JSENCODE(case.Subject)}",
+        number: "{!case.CaseNumber}",
+      };
+      $('.CoveoPanel').on('changeAnalyticsCustomData', function(e, args) {
+        args.metaObject.metaDataAsString.caseid = caseContext.id;
+        args.metaObject.metaDataAsString.casesubject = caseContext.subject;
+        args.metaObject.metaDataAsString.casenumber = caseContext.number;
+      });
+            
+      $('.CoveoPanel').on('doneBuildingQuery', function(e, args){
+        /* var productModelName = '{!case.ZEB_Product_Model_Name__c}';
+        if (productModelName !== '') {
+            var productFiltering = '((NOT @sfkbid) OR (@sfkbdcproducthierarchyexpanded = "' + productModelName + '"))';
+            args.queryBuilder.advancedExpression.add(productFiltering);
+        } */
+        });
+      
+      $('.CoveoPanel').on('newResultDisplayed', function(e, args) {
+        if(args.result.raw.syssource=="SIEBEL" || args.result.raw.syscollection=="Oracle") {
+            
+            $(args.item).find('.CoveoResultLink').replaceWith(function() {
+                return $('<span>' + args.result.title + '</span>').addClass('CoveoResultLink').click(function(event) {
+                    window.open(Coveo.Rest.SearchEndpoint.endpoints["default"].options.restUri + '/html?uniqueId=' + encodeURIComponent(args.result.uniqueId),'_blank');
+                    return false;
+                });
+            });
+        } else if(args.result.raw.syssource=="Zebra.com" && args.result.raw.sysfiletype=="pdf") {
+            $(args.item).find('.CoveoResultLink').replaceWith(function() {
+                return $('<span>' + args.result.title + '</span>').addClass('CoveoResultLink').click(function(event) {
+                    window.open(args.result.ClickUri + '#search="' + encodeURI("{!CaseSubject}") +'"' ,'_blank');
+                    return false;
+                });
+            });
+        }
+      });
+    //Refresh tabs after Attach/Detach article from case.
+    $('.CoveoPanel').on('afterInitialization', function(e, args) {
+        $('.CoveoPanel').on('deferredQuerySuccess', function(){
+          var url = $('.coveo-more').attr('href');
+          url = url.split('/Coveo#').join('/Coveo?caseid={!record.Id}#');
+          $('.coveo-more').attr('href', url);
+            $('.CoveoAttachToCase').on('click', function(){
+                sforce.console.getEnclosingTabId(function(result) {
+                    sforce.console.refreshSubtabById(result.id, true);
+                });
+            });
+        }); 
+    });
+    $('.CoveoPanel').on('beforeInitialization', function (e, data) {
+        $('.CoveoPanel').attr('data-enable-history', true);
+    });
+  </script>
+</apex:page>

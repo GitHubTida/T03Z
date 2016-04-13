@@ -1,0 +1,48 @@
+<apex:page standardController="Target_Account__c" recordSetVar="dR" extensions="ZEBTargetAccountMassDropExtension">
+
+    <apex:sectionHeader title="Target Account" subtitle="Drop Zip Codes"/>
+    
+    <apex:messages style="color:red"/>
+
+    <apex:form >
+
+    <apex:outputPanel rendered="{!NOT(didDrop) && display}">
+
+        <apex:outputText >You are about to drop the following zip codes:</apex:outputText>
+        <br/><b>
+        {!dropName_CSV}
+        </b>
+        <br/>
+        <br/>
+        <apex:outputText >Lookup the <b>new owner</b> below and click 'Drop', if the new owner is unknown just click 'Drop' and the records will be assigned to your RSM.</apex:outputText>
+        <br/>
+        <br/>
+        <apex:inputField value="{!tempRecord.New_Owner__c}">
+            <apex:actionSupport reRender="outputter" event="onmouseover"/>
+        </apex:inputField>
+        <br/>
+        <apex:commandButton value="Drop" action="{!onDrop}" immediate="true"/>
+
+    </apex:outputPanel>           
+    <apex:outputText rendered="{!NOT(display)}">
+        <a href="/apex/ZEBTargetAccountTab">Click Here</a> to return to the Target Account Tab.
+        <!-- <a href="{!currentURL}">Back</a> -->
+    </apex:outputText>
+    <apex:outputPanel rendered="{!didDrop}">
+    
+        <apex:outputText >
+            <br/>
+            Request(s) have been submitted to drop {!howMany} zip code(s) from your Target Account list.
+            <br/><br/>
+            <a href="/apex/ZEBTargetAccountTab">Click Here</a> to return to the Target Account Tab.
+        </apex:outputText>    
+
+    </apex:outputPanel>
+    
+    <apex:outputPanel style="color:white">
+        {!tempRecord.New_Owner__c}
+    </apex:outputPanel>
+    
+    </apex:form>
+
+</apex:page>

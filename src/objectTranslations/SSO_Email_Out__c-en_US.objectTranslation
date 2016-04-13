@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>SSO Email Out</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SSO Email Out</value>
+    </caseValues>
+    <fields>
+        <label><!-- Application ID --></label>
+        <name>Application_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 10 --></label>
+        <name>Attribute_10__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 1 --></label>
+        <name>Attribute_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 2 --></label>
+        <name>Attribute_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 3 --></label>
+        <name>Attribute_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 4 --></label>
+        <name>Attribute_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 5 --></label>
+        <name>Attribute_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 6 --></label>
+        <name>Attribute_6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 7 --></label>
+        <name>Attribute_7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 8 --></label>
+        <name>Attribute_8__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attribute 9 --></label>
+        <name>Attribute_9__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Address --></label>
+        <name>Email_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email Sent --></label>
+        <name>Email_Sent__c</name>
+    </fields>
+    <fields>
+        <label><!-- First Name --></label>
+        <name>First_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Name --></label>
+        <name>Last_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Login URL --></label>
+        <name>Login_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Security Token --></label>
+        <name>Security_Token__c</name>
+    </fields>
+    <fields>
+        <label><!-- Temporary Password --></label>
+        <name>Temporary_Password__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>AVP Welcome Kit</masterLabel>
+            <translation><!-- AVP Welcome Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>AVP Welcome Kit For Migration</masterLabel>
+            <translation><!-- AVP Welcome Kit For Migration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Transfer</masterLabel>
+            <translation><!-- Case Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deal Registration Transfer</masterLabel>
+            <translation><!-- Deal Registration Transfer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deal Registration Welcome Kit</masterLabel>
+            <translation><!-- Deal Registration Welcome Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Generate Token</masterLabel>
+            <translation><!-- Generate Token --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Password Assistance</masterLabel>
+            <translation><!-- Password Assistance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Password Changed</masterLabel>
+            <translation><!-- Password Changed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Siebel Welcome Kit</masterLabel>
+            <translation><!-- Siebel Welcome Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suppliers Welcome Kit</masterLabel>
+            <translation><!-- Suppliers Welcome Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome Kit</masterLabel>
+            <translation><!-- Welcome Kit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Welcome Kit For Migration</masterLabel>
+            <translation><!-- Welcome Kit For Migration --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>SSO Email Out Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

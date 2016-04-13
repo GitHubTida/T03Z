@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>PC Questionnaire</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>PC Questionnaire</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approved Credit Line Comments --></label>
+        <name>Approved_Credit_Line_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approved Credit Line --></label>
+        <name>Approved_Credit_Line__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Exist --></label>
+        <name>Contract_Exist__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Contract Under Negotiation Comments --></label>
+        <name>Contract_Under_Negotiation_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Under Negotiation --></label>
+        <name>Contract_Under_Negotiation__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Penalities Performance Comments --></label>
+        <name>Customer_Penalities_Performance_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Penalities Performance --></label>
+        <name>Customer_Penalities_Performance__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Planning Lease Equipment Commen --></label>
+        <name>Customer_Planning_Lease_Equipment_Commen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Planning Lease Equipment --></label>
+        <name>Customer_Planning_Lease_Equipment__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Request Acceptance --></label>
+        <name>Customer_Request_Acceptance__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting_Delivery Terms Comme --></label>
+        <name>Customer_Requesting_Delivery_Terms_Comme__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Delivery Terms --></label>
+        <name>Customer_Requesting_Delivery_Terms__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Hardware Comments --></label>
+        <name>Customer_Requesting_Hardware_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Hardware --></label>
+        <name>Customer_Requesting_Hardware__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Lease --></label>
+        <name>Customer_Requesting_Lease__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Payment Terms Commen --></label>
+        <name>Customer_Requesting_Payment_Terms_Commen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Payment Terms --></label>
+        <name>Customer_Requesting_Payment_Terms__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Terms Comments --></label>
+        <name>Customer_Requesting_Terms_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Requesting Terms --></label>
+        <name>Customer_Requesting_Terms__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Required Transaction Comments --></label>
+        <name>Customer_Required_Transaction_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Required Transaction --></label>
+        <name>Customer_Required_Transaction__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Customer Seeking Warranty Comments --></label>
+        <name>Customer_Seeking_Warranty_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Seeking Warranty --></label>
+        <name>Customer_Seeking_Warranty__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Executed Contract Comments --></label>
+        <name>Executed_Contract_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Executed Contract --></label>
+        <name>Executed_Contract__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- MultiNational or Global Account Comments --></label>
+        <name>MultiNational_or_Global_Account_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- MultiNational or Global Account --></label>
+        <name>MultiNational_or_Global_Account__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Non Standard Commitments Comments --></label>
+        <name>Non_Standard_Commitments_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Standard Commitments --></label>
+        <name>Non_Standard_Commitments__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Non Symbol_Banded Product Comments --></label>
+        <name>Non_Symbol_Banded_Product_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non Symbol Banded Product --></label>
+        <name>Non_Symbol_Banded_Product__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Transaction Reengaged Commen --></label>
+        <name>Opportunity_Transaction_Reengaged_Commen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Transaction Reengaged --></label>
+        <name>Opportunity_Transaction_Reengaged__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- PC Exception Pricing --></label>
+        <name>PC_Exception_Pricing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Questionnaire Filled --></label>
+        <name>Questionnaire_Filled__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- PC Questionnaire --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Contract Specialterms --></label>
+        <name>Service_Contract_Specialterms__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Customized Invoice --></label>
+        <name>Service_Customized_Invoice__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Customized Invoice comments --></label>
+        <name>Service_Customized_Invoice_comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Include Integration Comments --></label>
+        <name>Service_Include_Integration_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Include Integration --></label>
+        <name>Service_Include_Integration__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Solution Reward Associated Comments --></label>
+        <name>Solution_Reward_Associated_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Reward Associated --></label>
+        <name>Solution_Reward_Associated__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tradein 3rdParty Products Comments --></label>
+        <name>Tradein_3rdParty_Products_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tradein 3rdParty Products --></label>
+        <name>Tradein_3rdParty_Products__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tradein Other Financial Incentive --></label>
+        <name>Tradein_Other_Financial_Incentive__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tradein product Reused Service Comments --></label>
+        <name>Tradein_product_Reused_Service_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tradein product Reused Service --></label>
+        <name>Tradein_product_Reused_Service__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Unreleased Products Comments --></label>
+        <name>Unreleased_Products_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unreleased Products --></label>
+        <name>Unreleased_Products__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Answered</masterLabel>
+            <translation><!-- Not Answered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

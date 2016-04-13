@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>RMA ReturnLine</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>RMA ReturnLines</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accessory Qty Received --></label>
+        <name>Accessory_Qty_Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessory Qty Ship Date --></label>
+        <name>Accessory_Qty_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Accessory --></label>
+        <name>Accessory__c</name>
+        <picklistValues>
+            <masterLabel>BATTERY</masterLabel>
+            <translation><!-- BATTERY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CABLE</masterLabel>
+            <translation><!-- CABLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CHARGER</masterLabel>
+            <translation><!-- CHARGER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CRADLE BRACKET</masterLabel>
+            <translation><!-- CRADLE BRACKET --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GROCERY CRADLE</masterLabel>
+            <translation><!-- GROCERY CRADLE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POWER SUPPLY</masterLabel>
+            <translation><!-- POWER SUPPLY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PRICE SCANNER</masterLabel>
+            <translation><!-- PRICE SCANNER --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RADIO</masterLabel>
+            <translation><!-- RADIO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SCANNER GUN</masterLabel>
+            <translation><!-- SCANNER GUN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Commision ID --></label>
+        <name>Commision_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commissioning Value Open --></label>
+        <name>Commissioning_Value_Open__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commissioning Value Recieved --></label>
+        <name>Commissioning_Value_Recieved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commissioning Value Ship Date --></label>
+        <name>Commissioning_Value_Ship_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- ErrorDescription --></label>
+        <name>ErrorDescription__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Comment --></label>
+        <name>Hold_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Date --></label>
+        <name>Hold_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold Type --></label>
+        <name>Hold_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hold User --></label>
+        <name>Hold_User__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note Comment --></label>
+        <name>Note_Comment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note Date --></label>
+        <name>Note_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note Type --></label>
+        <name>Note_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- ProcessStatus --></label>
+        <name>ProcessStatus__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- RMAReturnLine External ID --></label>
+        <name>RMAReturnLine_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- RMA Return --></label>
+        <name>RMA_Return__c</name>
+        <relationshipLabel><!-- RMA ReturnLines --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- ReturnLines Type --></label>
+        <name>ReturnLines_Type__c</name>
+        <picklistValues>
+            <masterLabel>Accessory</masterLabel>
+            <translation><!-- Accessory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commision</masterLabel>
+            <translation><!-- Commision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hold</masterLabel>
+            <translation><!-- Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Note</masterLabel>
+            <translation><!-- Note --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Siebel LineId --></label>
+        <name>Siebel_LineId__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

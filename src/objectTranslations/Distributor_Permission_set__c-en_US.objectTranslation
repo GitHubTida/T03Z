@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Distributor Permission set</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Distributor Permission set</value>
+    </caseValues>
+    <fields>
+        <label><!-- Permission set Name --></label>
+        <name>Permission_set_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Public Group Name --></label>
+        <name>Public_Group_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Solution Incentives Applicable --></label>
+        <name>Solution_Incentives_Applicable__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

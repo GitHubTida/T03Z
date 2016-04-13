@@ -1,0 +1,20 @@
+<apex:page controller="DD_UploadAccessory">
+   <apex:form >
+        <apex:pagemessages />
+        <apex:pageBlock title="Bulk Upload">
+                <apex:outputLabel style="Font-size:13px;"><Strong>1. Browse and Select the File.</Strong></apex:outputLabel>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b>( 
+                <a href="/servlet/servlet.FileDownload?file={!productOrderTemplateID}" target="_top" style="color:rgb(0,0,255"> Click here</a>&nbsp;to download the template.) </b> <Br/><Br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:inputFile value="{!csvFileContent}" filename="{!csvFileName}" accept=".csv"/><Br/><Br/>
+                
+                <apex:outputLabel style="Font-size:13px;"><Strong>2. Click the "Upload" button.</Strong></apex:outputLabel><Br/><Br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton action="{!importCSVFile}" value="Upload" id="UploadButton" style="width:70px;"/>
+                <br/><br/>
+            
+                <apex:outputLabel style="Font-size:13px;"><Strong>3. Click the "Return" button to go to previous page.</Strong></apex:outputLabel><Br/><Br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:commandButton action="{!returnBack}" value="Return" id="ReturnButton" style="width:70px;"/>
+                <br/><br/>
+                  
+        </apex:pageBlock>
+    </apex:form>   
+</apex:page>

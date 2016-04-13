@@ -1,0 +1,59 @@
+<apex:page standardController="DD_Demo__c" extensions="DD_ReservedPRDInfoOnDemo">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<style>
+td.show-row{
+     display: block !important;
+}
+
+.hide-row{
+    display: none;
+}
+</style>
+<script>
+$(document).ready(function(){
+     $j = jQuery.noConflict();  
+    // $j("[id$=hidetable]").hide(); 
+    $j("[id$=hideimage]").click(function(event){
+        var currentEl = event.target;
+        $j(currentEl).closest("tr").next("tr").children('td').toggleClass("show-row");
+        if($j(currentEl).closest("tr").next("tr").children('td').hasClass("show-row")){
+            $j(currentEl).attr("src","/resource/1440274068000/DD_DemodepotImage/details_close.png");
+        }else{
+            $j(currentEl).attr("src","/resource/1440274068000/DD_DemodepotImage/details_open.png");
+        }
+    });
+    
+});
+</script>
+</head>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!LisWrap}" var="tempRes" id="mytable">
+                <apex:column headerValue="Parts" >
+                <apex:image value="{!URLFOR($Resource.DD_DemodepotImage, '/details_open.png')}" style="cursor: pointer;" id="hideimage"/>
+                    <Apex:outputLink value="/{!tempRes.MastrPRD.id}" target="_blank" style="margin-left:20px;">
+                        {!tempRes.MastrPRD.Name}
+                    </Apex:outputLink>
+                </apex:column>
+                <apex:column headerValue="Quantity" value="{!tempRes.Quant}"/> 
+                <!-- <apex:column headerValue="Bin" value="{!tempRes.MastrPRD.Bin__c}"/> --> 
+                <apex:column headerValue="Description" value="{!tempRes.MastrPRD.Description__c}"/> 
+                <apex:column rendered="{!EnableEdit}">
+                        <apex:facet name="header" ><apex:commandLink value="Edit Shipping/Return Details"  style="color:blue;" onclick="window.open('/apex/DD_EditReserve_Parts?Demoid='+'{!demoid}','_parent');"/></apex:facet>
+                </apex:column>
+                <apex:column rendered="{!EnableWriteOff}">
+                        <apex:facet name="header" ><apex:commandLink value="Write Off"  style="color:blue;" onclick="window.open('/apex/DD_WriteOffReservedParts?Demoid='+'{!demoid}','_parent');"/></apex:facet>
+                </apex:column>
+                <apex:column breakBefore="true"  id="hidetable" styleClass="hide-row">
+                    <apex:pageBlockTable value="{!tempRes.LisRes}" var="res" >
+                        <apex:column value="{!res.Serialnumber__c}" headerValue="Serial Number"/>
+                        <apex:column value="{!res.Product_Status__c}" headerValue="Product Status"/>
+                        <apex:column value="{!res.Product_Type__c}" headerValue="Product Type"/>
+                        
+                    </apex:pageBlockTable>  
+                </apex:column> 
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

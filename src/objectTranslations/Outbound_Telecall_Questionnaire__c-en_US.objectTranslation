@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Outbound Telecall Questionnaire</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Outbound Telecall Questionnaire</value>
+    </caseValues>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Outbound Telecall Questionnaire --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Select Vertical --></label>
+        <name>Q1_Select_Vertical__c</name>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- What can Zebra offer your business? --></label>
+        <name>Q2_What_is_your_understanding_of_what_Z__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of beds? --></label>
+        <name>Q3_How_many_beds_do_you_have__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of stores in EMEA? --></label>
+        <name>Q3_How_many_stores_do_you_have_in_EMEA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Areas of upgrade to supply chain? --></label>
+        <name>Q3_In_what_areas_are_you_looking_to_imp__c</name>
+        <picklistValues>
+            <masterLabel>Asset tracking</masterLabel>
+            <translation><!-- Asset tracking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bedside labelling</masterLabel>
+            <translation><!-- Bedside labelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blood component labelling</masterLabel>
+            <translation><!-- Blood component labelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laboratory sample labelling</masterLabel>
+            <translation><!-- Laboratory sample labelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical record identification</masterLabel>
+            <translation><!-- Medical record identification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medication labelling</masterLabel>
+            <translation><!-- Medication labelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (please specify in notes)</masterLabel>
+            <translation><!-- Other (please specify in notes) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient Identification</masterLabel>
+            <translation><!-- Patient Identification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Radiology film labelling</masterLabel>
+            <translation><!-- Radiology film labelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sterile equipment processing</masterLabel>
+            <translation><!-- Sterile equipment processing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ultrasound /ECG results labelling</masterLabel>
+            <translation><!-- Ultrasound /ECG results labelling --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- How do you ID components/tools/equipment --></label>
+        <name>Q4_How_do_you_track_and_identify_the_co__c</name>
+        <picklistValues>
+            <masterLabel>1D barcodes</masterLabel>
+            <translation><!-- 1D barcodes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2D barcodes</masterLabel>
+            <translation><!-- 2D barcodes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Internet of things</masterLabel>
+            <translation><!-- Internet of things --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual tracking (paper based)</masterLabel>
+            <translation><!-- Manual tracking (paper based) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RFID</masterLabel>
+            <translation><!-- RFID --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Real-time location based services</masterLabel>
+            <translation><!-- Real-time location based services --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WLAN</masterLabel>
+            <translation><!-- WLAN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Areas of upgrade to patient id/safety? --></label>
+        <name>Q4_In_what_areas_are_you_looking_to_imp__c</name>
+        <picklistValues>
+            <masterLabel>Better visibility over supply chain</masterLabel>
+            <translation><!-- Better visibility over supply chain --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compliance</masterLabel>
+            <translation><!-- Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost reductions</masterLabel>
+            <translation><!-- Cost reductions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise asset management</masterLabel>
+            <translation><!-- Enterprise asset management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error reductions</masterLabel>
+            <translation><!-- Error reductions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Industrial wireless</masterLabel>
+            <translation><!-- Industrial wireless --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inventory and materials management</masterLabel>
+            <translation><!-- Inventory and materials management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobility</masterLabel>
+            <translation><!-- Mobility --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (please specify in notes)</masterLabel>
+            <translation><!-- Other (please specify in notes) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plant communications</masterLabel>
+            <translation><!-- Plant communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Productivity</masterLabel>
+            <translation><!-- Productivity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quality &amp; traceability</masterLabel>
+            <translation><!-- Quality &amp; traceability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safety and compliance</masterLabel>
+            <translation><!-- Safety and compliance --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Areas to improve customer experience? --></label>
+        <name>Q4_In_what_areas_are_you_to_imp_cust__c</name>
+        <picklistValues>
+            <masterLabel>Customer Loyalty</masterLabel>
+            <translation><!-- Customer Loyalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer deliveries – click and collect</masterLabel>
+            <translation><!-- Customer deliveries – click and collect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer deliveries – home delivery</masterLabel>
+            <translation><!-- Customer deliveries – home delivery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer experience</masterLabel>
+            <translation><!-- Customer experience --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Merchandise and stock level management</masterLabel>
+            <translation><!-- Merchandise and stock level management --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (please specify in bye screen)</masterLabel>
+            <translation><!-- Other (please specify in bye screen) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy labelling</masterLabel>
+            <translation><!-- Pharmacy labelling --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sales and promotions in store</masterLabel>
+            <translation><!-- Sales and promotions in store --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- How do you physically identify patients? --></label>
+        <name>Q5_How_do_you_physically_identify_patie__c</name>
+        <picklistValues>
+            <masterLabel>No formal ID process</masterLabel>
+            <translation><!-- No formal ID process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (please specify in notes)</masterLabel>
+            <translation><!-- Other (please specify in notes) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient name on bed</masterLabel>
+            <translation><!-- Patient name on bed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient name on case notes</masterLabel>
+            <translation><!-- Patient name on case notes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Verbal ID only</masterLabel>
+            <translation><!-- Verbal ID only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wristbands</masterLabel>
+            <translation><!-- Wristbands --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number of production sites worldwide? --></label>
+        <name>Q5_How_many_production_sites_do_you_hav__c</name>
+    </fields>
+    <fields>
+        <label><!-- How do you ID specimens taken at bedside --></label>
+        <name>Q6_How_do_you_currently_identify_specim__c</name>
+        <picklistValues>
+            <masterLabel>Hand write labels</masterLabel>
+            <translation><!-- Hand write labels --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mobile printer printing labels at bedside</masterLabel>
+            <translation><!-- Mobile printer printing labels at bedside --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other (please specify in notes)</masterLabel>
+            <translation><!-- Other (please specify in notes) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-printed labels</masterLabel>
+            <translation><!-- Pre-printed labels --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Area of supply chain you work in? --></label>
+        <name>Q7_Which_part_of_the_supply_chain_do_yo__c</name>
+        <picklistValues>
+            <masterLabel>Field Delivery/Service</masterLabel>
+            <translation><!-- Field Delivery/Service --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plant</masterLabel>
+            <translation><!-- Plant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warehousing</masterLabel>
+            <translation><!-- Warehousing --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Outbound Telecall Questionnaire Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Generic Questionaire --></label>
+            <section>Generic Questionaire</section>
+        </sections>
+        <sections>
+            <label><!-- Healthcare --></label>
+            <section>Healthcare</section>
+        </sections>
+        <sections>
+            <label><!-- Manufacturing --></label>
+            <section>Manufacturing</section>
+        </sections>
+        <sections>
+            <label><!-- Retail --></label>
+            <section>Retail</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

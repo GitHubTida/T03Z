@@ -1,0 +1,3 @@
+<apex:page showHeader="true" tabstyle="SSO_Workflow__c"> 
+    <apex:ListViews type="SSO_Workflow__c" /> 
+</apex:page>

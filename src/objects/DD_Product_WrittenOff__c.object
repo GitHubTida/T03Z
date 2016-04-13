@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***Demo Depot application*** 
+This will store details of products written off.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <formula>HYPERLINK(&apos;/&apos;+Demo_Request__r.Account_Manager__c,  Demo_Request__r.Account_Manager__r.FirstName +Demo_Request__r.Account_Manager__r.LastName, &quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Manager</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Billing_Status__c</fullName>
+        <label>Billing Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>To Sales Office</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>To Demo Pool</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Close_date__c</fullName>
+        <description>This will store evaluation end date from demo request.</description>
+        <formula>Demo_Request__r.Evaulation_End_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Close Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Contact__c</fullName>
+        <description>this will store the contact name from demo request</description>
+        <formula>Demo_Request__r.Contact1__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Contact</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Cost__c</fullName>
+        <label>Cost</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <description>This will store the customer name</description>
+        <formula>Demo_Request__r.Customer_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Customer</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <label>Lost Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Request__c</fullName>
+        <description>This is look up to demo request</description>
+        <label>Demo Request</label>
+        <referenceTo>DD_Demo__c</referenceTo>
+        <relationshipName>Product_WrittenOff</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Material__c</fullName>
+        <description>This will store the material from Reserve product</description>
+        <formula>HYPERLINK(&apos;/&apos;+Reserved_Product__r.Material__c,Reserved_Product__r.Material__r.Name,&quot;_blank&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Material</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Office__c</fullName>
+        <description>This will Account Manger Sales Office</description>
+        <formula>TEXT(Demo_Request__r.Account_Manager__r.Sales_Office__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Office</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Reserved_Product__c</fullName>
+        <label>Reserved Product</label>
+        <referenceTo>DD_Reserved_Product__c</referenceTo>
+        <relationshipName>Products_Written_Off</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Serial_No__c</fullName>
+        <label>Serial No.</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Telephone__c</fullName>
+        <description>This will store telephone from demo request.</description>
+        <formula>Demo_Request__r.Telephone__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Telephone</label>
+        <type>Text</type>
+    </fields>
+    <label>Product Write Off</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Demo_Request__c</columns>
+        <columns>Quantity__c</columns>
+        <columns>Date__c</columns>
+        <columns>Cost__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>WO-{00000}</displayFormat>
+        <label>Written Off Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Product Write Off</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Demo_Request__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Billing_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cost__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Date__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Demo_Request__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Billing_Status__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Cost__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Date__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Demo_Request__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Billing_Status__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Cost__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Date__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Demo_Request__c</searchFilterFields>
+        <searchFilterFields>Billing_Status__c</searchFilterFields>
+        <searchFilterFields>Cost__c</searchFilterFields>
+        <searchFilterFields>Date__c</searchFilterFields>
+        <searchResultsAdditionalFields>Demo_Request__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Billing_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cost__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Quantity__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

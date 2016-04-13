@@ -1,0 +1,40 @@
+<apex:page standardController="Deal_Registration__c" extensions="DR_dealToOppExtension" >
+
+    <apex:sectionHeader title="Deal Registration" subtitle="{!$Label.Zeb_DR_Link_to_Existing_Opportunity}"/>
+
+    <apex:messages style="color:red"/>
+
+    <apex:form >
+    <apex:pageBlock >
+   <!-- <apex:pageBlockSection columns="2">
+     <apex:outputPanel rendered="{!NOT(theDeal.Approval_Status__c='Approved Final')}">
+    <br/>
+    This Deal Registration has not been approved yet.  It must be approved in order to create and manage an Opportunity.<br/>
+    <apex:commandLink action="{!cancel}" value="Click here"/>&nbsp;to return to the record.
+    <br/>
+    <br/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!theDeal.Opportunity__c<>null}">
+    <br/>
+    An Opportunity has already been created for this Deal Registration record, another one cannot be created.<br/>
+    <apex:commandLink action="{!cancel}" value="Click here"/>&nbsp;to return to the record.<br/>
+    <br/>
+    If you have access to it, you may view the Opportunity by <a href="/{!theDeal.Opportunity__c}" target="_self">clicking here</a>.
+    <br/>
+    <br/>
+    </apex:outputPanel>
+   </apex:pageBlockSection>   -->
+    <apex:outputPanel id="SampleView1">
+                
+                 <apex:inputField value="{!theDeal.Opportunity__c}"  >
+                
+                
+                </apex:inputField>
+                <apex:commandButton value="{!$Label.DR_Submit}" action="{!existingopp}" />
+                   <apex:commandButton value="{!$Label.DR_Cancel}" action="{!onCancel}" />
+
+                </apex:outputPanel>
+           </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

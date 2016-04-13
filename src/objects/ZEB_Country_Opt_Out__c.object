@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This custom object will store the default opt-out flags by country</description>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <label>Country Code</label>
+        <length>100</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Do_Not_Call__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Do not Call Flag</description>
+        <label>Do Not Call</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Do_Not_Email__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This is the Do Not Email flag</description>
+        <label>Do Not Email</label>
+        <trackHistory>true</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <label>Country Opt Out</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Country_Code__c</columns>
+        <columns>Do_Not_Call__c</columns>
+        <columns>Do_Not_Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Country Opt Out Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Countries Opt Out</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

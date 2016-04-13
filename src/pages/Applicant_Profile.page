@@ -1,0 +1,4 @@
+<apex:page standardController="Partner_Profile__c" sidebar="false" tabStyle="Applicant_Profile__tab">
+ <apex:enhancedList type="Partner_Profile__c" height="400" rowsPerPage="50" Listid="00Bi0000005XIwn" customizable="False">
+  </apex:enhancedList>
+</apex:page>

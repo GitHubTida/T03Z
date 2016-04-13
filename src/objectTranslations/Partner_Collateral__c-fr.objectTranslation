@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Documents complémentaires du partenaire</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Documents complémentaires du partenaire</value>
+    </caseValues>
+    <fields>
+        <label>Compte</label>
+        <name>Account__c</name>
+        <relationshipLabel>Documents complémentaires du partenaire</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Pièce jointe</label>
+        <name>Attachment__c</name>
+    </fields>
+    <fields>
+        <label>Dossier</label>
+        <name>Case__c</name>
+        <relationshipLabel>Documents complémentaires du partenaire</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Description</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label>Type de document</label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Business / Marketing Plan</masterLabel>
+            <translation>Plan d´affaires/de marketing</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation>Étude de cas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Customer Reference</masterLabel>
+            <translation>Référence client</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Autre</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zebra Solution Reference</masterLabel>
+            <translation>Référence solution Zebra</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Nom du fichier</label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reviewed? --></label>
+        <name>Reviewed__c</name>
+    </fields>
+    <fields>
+        <label>Afficher</label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label>Logo ?</label>
+        <name>isLogo__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <layouts>
+        <layout>Partner Collateral Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Partner Collateral No --></nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label>Télécharger le document</label>
+        <name>Upload_Attachment</name>
+    </webLinks>
+    <webLinks>
+        <label>Télécharger le document</label>
+        <name>Upload_Document</name>
+    </webLinks>
+    <webLinks>
+        <label>Télécharger le logo</label>
+        <name>Upload_Logo_Attachment</name>
+    </webLinks>
+</CustomObjectTranslation>

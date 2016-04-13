@@ -1,0 +1,79 @@
+<!--********************************************************************************
+PAGE            : ZEBRedirectorAccount
+PURPOSE         : Redirects the incoming request for Account Edit/New to other pages
+CREATED BY      : Shakti Mehtani
+CREATED DATE    : 08/25/2014 (MM/DD/YYYY)
+
+--------------------------------------------------------------------------------
+MODIFICATION HISTORY
+
+MODIFICATION DATE   MODIFIED BY     REASON
+06-Nov-2014         Gaurish Goel    JavaScript code to detect the mediaType, 
+                                    Calling handleRedirection using actionFunction 
+07-Jan-2015         Gaurish Goel    JavaScript code to detect the console mode. Line #20-38
+--------------------------------------------------------------------------------
+*********************************************************************************-->
+<apex:page StandardController="Account" extensions="ZEBRedirectAccountController">
+<apex:includeScript value="/soap/ajax/26.0/connection.js"/>
+<apex:includeScript value="/support/console/26.0/integration.js"/>   
+    <script type="text/javascript">
+        function testOpenSubtab()
+        {
+            sforce.console.getEnclosingPrimaryTabId(openSubtab);
+        }
+    
+        var openSubtab = function openSubtab(result)
+        {
+            var primaryTabId = result.id;
+            sforce.console.openSubtab(primaryTabId,'/001/e',false,'salesforce',null,openSuccess,
+                                        'salesforceSubtab');
+        };
+    
+        var openSuccess = function openSuccess(result) {
+            if (result.success == true) {
+                alert('subtab successfully opened');
+            } else {
+                alert('subtab cannot be opened');
+            }
+        };
+        
+        function checkMediaType() 
+        { 
+            if(sforce.one == 'undefined' || sforce.one == null) 
+            {
+                var mediaType = 'desktop';
+                setmediatype(mediaType);
+            }
+            else if(sforce.console.isInConsole())
+            {
+                testOpenSubtab();
+            }
+            else
+            {
+                var mediaType = 'salesforce1';
+                setmediatype(mediaType);
+            }
+        }
+        window.onload = checkMediaType;
+        
+        function setmediatype(mediaType)
+        {
+            var mediaType = mediaType;
+            setmediatype1(mediaType);
+        }
+        
+        function callRedirectorMethod()
+        {           
+            handleRedirection();
+        }
+    </script>
+    
+    <apex:form id="formid">
+    
+        <apex:actionfunction name="setmediatype1" action="{!determineMediaType}" rerender="formid" oncomplete="callRedirectorMethod();">
+            <apex:param name="mediaType" value="" assignTo="{!mediaType}"/>
+        </apex:actionFunction>
+        
+        <apex:actionfunction name="handleRedirection" action="{!handleRedirection}"/>
+    </apex:form>
+</apex:page>

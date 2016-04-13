@@ -1,0 +1,59 @@
+<!-- This custom VF page will be used to limit the fields that a user can edit on the Account -->
+<!-- Created JG, 16-May-2014 -->
+<apex:page standardController="Account" >
+
+    <img src="{!$Resource.zeblogotopdecor}"/>
+    
+    <apex:sectionHeader title="Account Edit"  subtitle="{!Account.Name}" />
+
+    <apex:includeScript value="/support/console/20.0/integration.js"/>
+    <apex:includeScript value="/support/console/23.0/integration.js"/>
+    <apex:includeScript value="/support/console/28.0/integration.js"/>      
+    
+    <script type="text/javascript">
+            sforce.console.setTabTitle('{!Account.Name}');
+            sforce.console.setTabUnsavedChanges(true);
+    </script>        
+
+  
+    <apex:form >
+    
+        <apex:pageBlock mode="edit" title="Account Edit">
+        
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel" />
+            </apex:pageBlockButtons>
+                        
+            <apex:pageBlockSection title="Account Information" columns="2" >
+                <apex:outputField value="{!Account.Name}"/>
+                <apex:outputField value="{!Account.Account_Type__c}"/>
+                <apex:outputField value="{!Account.Account_Number__c}"/>
+                <apex:outputField value="{!Account.Account_Status__c}"/>
+                <apex:outputField value="{!Account.Phone}"/>
+                <apex:outputField value="{!Account.Financial_Customer_Flag__c}"/>
+                <apex:outputField value="{!Account.Orderable_Flag__c}"/>
+                <apex:outputField value="{!Account.Fax}"/>
+                <apex:outputField value="{!Account.ParentId}"/>
+                <!--<apex:inputField value="{!Account.Website}"/>-->
+                <!--<apex:inputField value="{!Account.RecordTypeId}"/> -->
+                
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection columns="1" >                
+                <apex:outputField value="{!Account.BillingCountry}"/>
+                <apex:outputField value="{!Account.BillingStreet}"/>
+                <apex:outputField value="{!Account.BillingCity}"/>
+                <apex:outputField value="{!Account.BillingState}"/>
+                <apex:outputField value="{!Account.BillingPostalCode}"/>
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+    </apex:form>
+    
+    <div style="position:relative; float:right; bottom: 245px; right: 1px;">
+        <img align="left" src="{!$Resource.z_prodavail}"/>
+    </div>
+
+</apex:page>

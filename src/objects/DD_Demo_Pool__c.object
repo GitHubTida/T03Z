@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***** Demo Depot Application****
+Hold the details of all the demo pool region wise</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>City__c</fullName>
+        <label>City</label>
+        <length>50</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Country__c</fullName>
+        <label>Country</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Pool_Number__c</fullName>
+        <displayFormat>DEMO-POOL-{0000}</displayFormat>
+        <label>Demo Pool Number</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <trackHistory>true</trackHistory>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Pool_Location_Alternative_Text__c</fullName>
+        <label>Pool Location Alternative (Text)</label>
+        <length>25</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Pool_Location__c</fullName>
+        <label>Pool Location</label>
+        <length>250</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Post_Code_ZIP__c</fullName>
+        <label>Post Code/ZIP</label>
+        <length>10</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Program_Admin__c</fullName>
+        <label>Program Admin</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Demo_Pools</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Region__c</fullName>
+        <label>Region</label>
+        <picklist>
+            <picklistValues>
+                <fullName>NA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LATAM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>APAC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EMEA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>State_Province__c</fullName>
+        <label>State/Province</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Street__c</fullName>
+        <label>Street</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <label>Demo Pool</label>
+    <listViews>
+        <fullName>APAC_Demo_Pools</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>APAC</value>
+        </filters>
+        <label>APAC Demo Pools</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Program_Admin__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Demo Pools</label>
+    </listViews>
+    <listViews>
+        <fullName>EMEA_Demo_Pools</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>EMEA</value>
+        </filters>
+        <label>EMEA Demo Pools</label>
+    </listViews>
+    <listViews>
+        <fullName>LATAM_Demo_Pools</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>LATAM</value>
+        </filters>
+        <label>LATAM Demo Pools</label>
+    </listViews>
+    <listViews>
+        <fullName>NA_Demo_Pools</fullName>
+        <columns>Region__c</columns>
+        <columns>NAME</columns>
+        <columns>Pool_Location__c</columns>
+        <columns>Description__c</columns>
+        <columns>OWNER.FIRST_NAME</columns>
+        <columns>OWNER.LAST_NAME</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>NAME</field>
+            <operation>startsWith</operation>
+            <value>NA</value>
+        </filters>
+        <label>NA Demo Pools</label>
+    </listViews>
+    <nameField>
+        <label>Demo Pool Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Demo Pools</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Region__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Pool_Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Region__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Pool_Location__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Description__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Region__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Pool_Location__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Description__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Region__c</searchFilterFields>
+        <searchFilterFields>Pool_Location__c</searchFilterFields>
+        <searchFilterFields>Description__c</searchFilterFields>
+        <searchResultsAdditionalFields>Region__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Pool_Location__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Description__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Upload_Accessory_products</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Upload Accessory Products</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var validProductUploadUser= sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;isValidProductUploadUser&quot;,{}); 
+
+if(&apos;{!DD_Demo_Pool__c.Region__c}&apos;== &apos;NA&apos; || &apos;{!DD_Demo_Pool__c.Region__c}&apos; == &apos;EMEA&apos;){ 
+alert(&apos;You cannot upload the Products for NA/EMEA using this feature, Product for NA/EMEA are uploaded directly from DFW and Tesseract systems.&apos;); 
+} 
+else if(validProductUploadUser==&apos;true&apos;){
+window.open(&apos;/apex/DD_UploadAccessory?id={!DD_Demo_Pool__c.Id}&apos;,&apos;_top&apos;);
+}else{
+alert(&apos;Insufficient Privilege, You do not have required permission to upload products.&apos;); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Upload_Serialized_Products</fullName>
+        <availability>online</availability>
+        <description>This will be used to upload serialized products</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Upload Serialized Products</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/apex.js&quot;)} 
+
+var validProductUploadUser= sforce.apex.execute(&quot;DD_ValidateButtonClick&quot;,&quot;isValidProductUploadUser&quot;,{}); 
+
+if(&apos;{!DD_Demo_Pool__c.Region__c}&apos;== &apos;NA&apos; || &apos;{!DD_Demo_Pool__c.Region__c}&apos; == &apos;EMEA&apos;){ 
+alert(&apos;You cannot upload the Products for NA/EMEA using this feature, Product for NA/EMEA are uploaded directly from DFW and Tesseract systems.&apos;); 
+} 
+else if(validProductUploadUser==&apos;true&apos;){
+window.open(&apos;/apex/DD_UploadSerializedParts?id={!DD_Demo_Pool__c.Id}&apos;,&apos;_top&apos;);
+
+}else{
+alert(&apos;Insufficient Privilege, You do not have required permission to upload products.&apos;); 
+}</url>
+    </webLinks>
+</CustomObject>

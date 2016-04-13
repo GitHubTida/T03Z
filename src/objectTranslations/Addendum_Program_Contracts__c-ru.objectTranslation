@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <caseValues>
+        <caseType>Prepositional</caseType>
+        <plural>true</plural>
+        <value><!-- Addendum / Program Contract --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Addendum / Program Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Complementary Partner</masterLabel>
+            <translation><!-- Complementary Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overall T&amp;C</masterLabel>
+            <translation><!-- Overall T&amp;C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialization</masterLabel>
+            <translation><!-- Specialization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date Approved --></label>
+        <name>Date_Approved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Commercial T&amp;C</masterLabel>
+            <translation><!-- Commercial T&amp;C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Overall T&amp;C</masterLabel>
+            <translation><!-- Overall T&amp;C --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Program</masterLabel>
+            <translation><!-- Program --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialization</masterLabel>
+            <translation><!-- Specialization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>de</masterLabel>
+            <translation><!-- de --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>en_US</masterLabel>
+            <translation><!-- en_US --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>es</masterLabel>
+            <translation><!-- es --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>es_MX</masterLabel>
+            <translation><!-- es_MX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>fr</masterLabel>
+            <translation><!-- fr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>in</masterLabel>
+            <translation><!-- in --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>it</masterLabel>
+            <translation><!-- it --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ja</masterLabel>
+            <translation><!-- ja --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ko</masterLabel>
+            <translation><!-- ko --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pl</masterLabel>
+            <translation><!-- pl --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pt_BR</masterLabel>
+            <translation><!-- pt_BR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ru</masterLabel>
+            <translation><!-- ru --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>tr</masterLabel>
+            <translation><!-- tr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>zh_CN</masterLabel>
+            <translation><!-- zh_CN --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Legal Document Name --></label>
+        <name>Legal_Document_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDF Link --></label>
+        <name>PDF_Link_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- PDF Link --></label>
+        <name>PDF_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Application --></label>
+        <name>Partner_Application__c</name>
+        <relationshipLabel><!-- Addendum / Program Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Partner Program --></label>
+        <name>Partner_Program__c</name>
+        <relationshipLabel><!-- Addendum / Program Contracts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+        <picklistValues>
+            <masterLabel>APAC</masterLabel>
+            <translation><!-- APAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EMEA</masterLabel>
+            <translation><!-- EMEA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LATAM</masterLabel>
+            <translation><!-- LATAM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NA</masterLabel>
+            <translation><!-- NA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sort_Order --></label>
+        <name>Sort_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation>Принимаю</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation>Не принимаю</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tier --></label>
+        <name>Tier__c</name>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level1</masterLabel>
+            <translation><!-- Level1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Level2</masterLabel>
+            <translation><!-- Level2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid-tier</masterLabel>
+            <translation><!-- Mid-tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier</masterLabel>
+            <translation><!-- Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered</masterLabel>
+            <translation><!-- Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top-tier</masterLabel>
+            <translation><!-- Top-tier --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Addendum / Program Contract Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Addendum / Program Contracts Name --></nameFieldLabel>
+</CustomObjectTranslation>

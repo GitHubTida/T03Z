@@ -1,0 +1,2 @@
+<apex:page StandardController="Contact" extensions="ZEBContactPageRouteNew"
+    action="{!newcontactroute}"/>

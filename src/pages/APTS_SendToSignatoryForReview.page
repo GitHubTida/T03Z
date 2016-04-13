@@ -1,0 +1,53 @@
+<apex:page controller="APTS_SendToSignatoryForReviewController" action="{!initSend}">
+<script type="text/javascript">
+    function checkAll(cb,cbid)
+        {
+            var inputElem = document.getElementsByTagName("input");                    
+            for(var i=0; i<inputElem.length; i++)
+            {            
+                 if(inputElem[i].id.indexOf(cbid)!=-1){                                       
+                    inputElem[i].checked = cb.checked;
+                }
+            }
+        }
+</script>
+
+<apex:form > 
+    <apex:PageMessages id="errorMsg"> </apex:pageMessages>
+
+    <apex:pageblock title="Select Attachments">
+     
+        <apex:pageBlockButtons location="Both">
+            <apex:commandButton value="Send email" action="{!SendEmail}" Disabled="{!sendDisable}"/>
+            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+        </apex:pageBlockButtons>
+        <apex:pageBlockSection >
+     
+       </apex:pageBlockSection>
+        <apex:pageBlockTable value="{!lstWrapper}" var="wrapper" id="AttachmentTable">                    
+            <apex:column >
+                <apex:facet name="header">   
+                    <apex:inputCheckbox onclick="checkAll(this,'checkedone')"/>
+                </apex:facet>
+                <apex:inputCheckbox value="{!wrapper.selected}" id="checkedone"/>           
+            </apex:column>  
+            <apex:column headerValue="File Name">
+                <apex:outputText value="{!wrapper.attach.Name}"/>           
+            </apex:column>  
+            <apex:column headervalue="Agreement Name">
+                <apex:outputText value="{!wrapper.AgreementName}"/>                    
+            </apex:column>  
+            <apex:column headerValue="Agreement Number">
+                <apex:outputText value="{!wrapper.AgreementNumber}"/>           
+            </apex:column>  
+            <apex:column headervalue="Type">
+                <apex:outputText value="{!wrapper.Type}"/>                    
+            </apex:column>  
+            <apex:column headervalue="Status">
+                <apex:outputText value="{!wrapper.Status}"/>                    
+            </apex:column>  
+        </apex:pageBlockTable>
+    </apex:pageblock>
+    
+</apex:form>
+</apex:page>

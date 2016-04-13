@@ -1,0 +1,31 @@
+<apex:page tabStyle="Target_Account__c" controller="ZEBTargetAccountDropController">
+    <apex:sectionHeader title="Target Account" subtitle="Request Account Drop"/>
+    <apex:messages style="color:red"/>
+    <apex:form >
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockSection columns="1" showHeader="true" title="Drop Request Details">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >
+                        Target Account
+                    </apex:outputLabel>
+                    <apex:outputField value="{!TargetRecord.Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >
+                        Record Type
+                    </apex:outputLabel>
+                    <apex:outputText >
+                        Drop
+                    </apex:outputText>
+                </apex:pageBlockSectionItem>
+                <apex:inputField value="{!modRecord.Comments__c}" style="width:350px"/>
+                <apex:inputField value="{!modRecord.Effective_Date__c}" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Request Account Drop" action="{!onSave}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+
+    </apex:form>
+</apex:page>

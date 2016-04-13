@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Opportunity Product Family</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunity Product Families</value>
+    </caseValues>
+    <fields>
+        <label><!-- EVM Opportunity Product Family ID --></label>
+        <name>EVM_Opportunity_Product_Family_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Named Product Family --></label>
+        <name>Named_Product_Family__c</name>
+        <relationshipLabel><!-- Opportunity Product Families --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opportunity Product Families --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales Price --></label>
+        <name>Sales_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total Price --></label>
+        <name>Total_Price__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Product Families Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- The CurrencyCode should be same as Opportunity Currency --></errorMessage>
+        <name>CurrencyCode_should_be_same_as_Oppty</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Product Families can be added only till the Opportunity Stage is &apos;Qualify&apos; --></errorMessage>
+        <name>Product_Family_Opportunity_Stage</name>
+    </validationRules>
+</CustomObjectTranslation>

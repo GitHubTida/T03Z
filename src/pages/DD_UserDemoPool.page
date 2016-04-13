@@ -1,0 +1,26 @@
+<apex:page standardController="DD_Demo__c" extensions="DD_UserDemoPool"  action="{!onLoad}" >
+
+    <apex:form >
+    <apex:pageBlock >
+    <apex:PageMessages id="showmsg"></apex:PageMessages>
+  
+        <apex:pageBlock title="Select Demo Pool" rendered="{!valOk}">
+         
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem id="dr"  >
+                    Demo Pools:
+                    <apex:selectList size="1" value="{!Selectedvalue}" >
+                        <apex:selectOptions value="{!demoPoolList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Save" action="{!onSave}"/>
+            <apex:commandButton value="Cancel" action="{!onCancel}" />
+       </apex:pageblock>
+        
+       <apex:commandButton value="OK" action="{!Ok}" rendered="{!val}"/>
+      <!--<apex:commandButton value="OK" action="{!Ok}" rendered="{!isbuttonVisible}"/> -->
+        
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Competitor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Competitors</value>
+    </caseValues>
+    <fields>
+        <label><!-- Competitor External ID --></label>
+        <name>Competitor_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitor Name --></label>
+        <name>Competitor_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitor Product --></label>
+        <name>Competitor_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Competitors --></label>
+        <name>Competitors__c</name>
+        <relationshipLabel><!-- Competitors --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- End User Price --></label>
+        <name>End_User_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Note --></label>
+        <name>Note__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quote --></label>
+        <name>Quote__c</name>
+        <relationshipLabel><!-- Competitors --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reseller Price --></label>
+        <name>Reseller_Price__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

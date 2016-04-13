@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Informação de Afiliação do programa</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Informações de Afiliação do Programa</value>
+    </caseValues>
+    <fields>
+        <label>conta</label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Program Membership Information --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- BO Error --></label>
+        <name>BO_Error__c</name>
+    </fields>
+    <fields>
+        <label><!-- BO Synch Status --></label>
+        <name>BO_Synch_Status__c</name>
+    </fields>
+    <fields>
+        <label>Categoria</label>
+        <name>Category__c</name>
+        <picklistValues>
+            <masterLabel>Certified Product</masterLabel>
+            <translation><!-- Certified Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complementary Partner</masterLabel>
+            <translation><!-- Complementary Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Distributor</masterLabel>
+            <translation><!-- Distributor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reseller</masterLabel>
+            <translation><!-- Reseller --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialization</masterLabel>
+            <translation><!-- Specialization --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Status --></label>
+        <name>Member_Status__c</name>
+        <picklistValues>
+            <masterLabel>Current Member</masterLabel>
+            <translation><!-- Current Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Data de ativição da afiliação</label>
+        <name>Membership_Activation_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Membership End Date --></label>
+        <name>Membership_End_Date__c</name>
+    </fields>
+    <fields>
+        <label>Nome do Programa de Parceiros</label>
+        <name>Partner_Program_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Program Name / Product Access --></label>
+        <name>Partner_Program__c</name>
+        <relationshipLabel><!-- Program Membership Informations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Program Status --></label>
+        <name>Program_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label>Método de compras</label>
+        <name>Purchasing_Method__c</name>
+        <picklistValues>
+            <masterLabel>Direct</masterLabel>
+            <translation>Direto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indirect</masterLabel>
+            <translation>Indireto</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- SFDCSiebel Sync Status --></label>
+        <name>SFDCSiebel_Sync_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Membership ID --></label>
+        <name>Siebel_Membership_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Siebel Membership Number --></label>
+        <name>Siebel_Membership_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Eligible</masterLabel>
+            <translation>Elegível</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Eligible</masterLabel>
+            <translation>Não elegível</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiver</masterLabel>
+            <translation>Renúncia</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tier Change? --></label>
+        <name>Tier_Change__c</name>
+    </fields>
+    <fields>
+        <label>nível</label>
+        <name>Tier_Level__c</name>
+        <picklistValues>
+            <masterLabel>Advanced</masterLabel>
+            <translation><!-- Advanced --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Authorized</masterLabel>
+            <translation><!-- Authorized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Eligible</masterLabel>
+            <translation><!-- Eligible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Eligible</masterLabel>
+            <translation><!-- Not Eligible --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier</masterLabel>
+            <translation><!-- Premier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered</masterLabel>
+            <translation><!-- Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Waiver</masterLabel>
+            <translation><!-- Waiver --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Updated by Certification Batch? --></label>
+        <name>Updated_by_Certification_Batch__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Certified Products</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Interface Details --></label>
+            <section>Interface Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Details --></label>
+            <section>System Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Program</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Interface Details --></label>
+            <section>Interface Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Details --></label>
+            <section>System Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Program Membership Information Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Interface Details --></label>
+            <section>Interface Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Details --></label>
+            <section>System Details</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Specialization</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Interface Details --></label>
+            <section>Interface Details</section>
+        </sections>
+        <sections>
+            <label><!-- System Details --></label>
+            <section>System Details</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Program Membership Information Name --></nameFieldLabel>
+    <recordTypes>
+        <label>Produto certificado</label>
+        <name>Certified_Product</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Programa</label>
+        <name>Program</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Especialização</label>
+        <name>Specialization</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Status cannot be changed from Eligible to Waiver. --></errorMessage>
+        <name>Access_Status_Restriction_Specialization</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The selected product requiring product access training is not applicable for this region. --></errorMessage>
+        <name>Certified_Product_Region</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Update Tier field with None. --></errorMessage>
+        <name>Developer_and_SI_Tier_Restriction</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The selected program cannot be created for the EMEA region. --></errorMessage>
+        <name>EMEA_Broadline_Technology</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Expiration Date should not be blank when the Status is listed as Waiver. --></errorMessage>
+        <name>ExpDate_Cannot_be_null_for_Waiver</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Expiration Date must not precede today&apos;s date. --></errorMessage>
+        <name>ExpDate_Validation_for_Waiver</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Expiration Date should be blank when the Status is Eligible or Not Eligible. --></errorMessage>
+        <name>ExpDate_blank_Specialization</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Expiration Date cannot be changed. --></errorMessage>
+        <name>ExpDate_changed_Certified_Product</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Update Tier with Premier or None for ISV Partner Programs --></errorMessage>
+        <name>ISV_Partner_Tier_Restriction</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Update Tier with Registered for ISV Programs --></errorMessage>
+        <name>ISV_Tier_Restriction</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To create a record for &apos;Independent Service Provider&apos; specialization, the partner must have the ZISP flag checked --></errorMessage>
+        <name>Independent_ServiceProvider_Restriction</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To create a new membership, Member Status must be Current Member. --></errorMessage>
+        <name>Member_Status_Expired</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A record already exists for the selected community. --></errorMessage>
+        <name>Program_Category_Unique</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The Program and Category fields are not editable. --></errorMessage>
+        <name>Program_Category_can_not_be_changed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Siebel record must be Financial to select Direct as the Purchasing Method for this account. --></errorMessage>
+        <name>Purchasing_Method_Direct_Non_Financial</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Update Tier with Advanced for RFID Specialists. --></errorMessage>
+        <name>RFID_Specialist</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- To create a record for specialization or product access, the partner must be a distributor / reseller / complementary  partner type. --></errorMessage>
+        <name>Specialization_Record_Restriction</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Update Tier field with None. --></errorMessage>
+        <name>Tier_Validations</name>
+    </validationRules>
+</CustomObjectTranslation>

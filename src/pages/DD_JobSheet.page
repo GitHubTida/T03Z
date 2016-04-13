@@ -1,0 +1,349 @@
+<apex:page standardController="DD_Demo__c" applyBodyTag="false" extensions="DD_JobController" tabStyle="DD_Pending_Shipment__tab"  showHeader="false" >
+<apex:form >
+
+    <head>   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> 
+    <script>
+        var $ = jQuery.noConflict();
+        function btnClick() {    
+              
+            $('input[id*=confirmBtn]').hide();
+            $('input[id*=testhide]').hide();
+            window.print();   
+            
+        }
+        
+        function btnComplete(){
+            $('input[id*=testhide]').show();
+            $('input[id*=confirmBtn]').show();  
+        }
+    </script>
+        <style>
+            body { font-family: 'Arial Unicode MS';font-weight:normal;font-size:16px;}
+            .section1{
+                background-color:#E6E6E6;
+                width:100%;
+                height:55px;
+                
+            }
+            
+            .section{
+                background-color:#E6E6E6;
+                width:100%;
+                height:22px;
+                margin-bottom:5px;
+            }
+            
+         
+            th, td {
+            padding: 10px;
+            text-align: left;
+            }
+          .table,th,td {
+                border: 0px solid black;
+                border-collapse: collapse;
+            }
+            
+          
+           table{
+           
+               table-layout:fixed;
+              
+           }
+           th.shrink{
+               padding: 20px;
+               white-space:nowrap;
+               
+           }
+           
+           th.wrap{
+           white-space: normal;
+           word-wrap:break-word;
+           word-break: break-all;
+           line-height: 100%;
+           text-align: left;
+           
+           }
+        </style>    
+    </head>
+<!--  <head>
+  </head>    -->
+<body>
+<div id="First">
+   
+        <div style="width:100%;padding-top:4px;color:green;background-color:#E6E6E6;font-weight:bolder;font-size:17px;border:1px solid black">
+                     &nbsp;Demo Request Job Creation Information for : &nbsp;
+                       <B>&nbsp;{!demo.Name}</B>  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+                                           &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <apex:commandButton style="padding-top:2px;color:green;background-color:#E6E6E6; font-weight:bolder;
+            font-size:16px;border:1px solid black" id="testhide" value="Print"  rendered="{!showThis}"  onclick="btnClick();" oncomplete="btnComplete();" reRender="First">
+            </apex:commandButton>
+            
+                            
+         
+    </div>  
+<br/><br/>
+    
+    
+    <table style="width: 100%" column="3">
+        <tr >
+            <th  style="width: 30%;">Demo Ref</th>
+            <th  style="width: 30%; font-size:16px;font-weight:normal;">{!demo.name}</th>
+            <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">
+            <apex:outputText rendered="{!demo.name != null}" value="*{!demo.name}*" /></th>
+        </tr>
+        <tr >
+            <th  style="width: 30%;">Account Manager</th>
+            <th  class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">{!demo.Account_Manager__r.name}</th>
+            <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">
+            <apex:outputText rendered="{!demo.Account_Manager__r.name != null}" value="*{!demo.Account_Manager__r.name}*" /></th>
+        </tr>
+        <tr >
+            <th  style="width: 30%;">Account Manager Email</th>
+            <th  class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">{!demo.Account_Manager__r.Email }</th>
+            <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">
+            <apex:outputText rendered="{!demo.Account_Manager__r.Email!= null}" value="*{!demo.Account_Manager__r.Email }*" /></th>
+        </tr>
+        <tr >
+            <th  style="width: 30%;">Evaluation Start Date</th>
+            <th  class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">{!evaluationStartDate}</th>
+            <th style="font-size:24px;font-weight:normal; width:40%;  font-family: '3 of 9 Barcode';">
+            <apex:outputText rendered="{!evaluationStartDate  != null}" value="*{!evaluationStartDate}*" /></th>
+        </tr>
+    </table>
+    
+    <hr></hr>
+    <div style="width: 100%;font-size:15px;font-weight:bolder;padding-top:2px;background-color:#E6E6E6;border: 1px solid  black">
+                                    &nbsp; Customer Details &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    
+    <br/>
+    <table style="border: 0px; width: 100%" column="3" class="test">
+    
+       <tr >
+            <th  style="width: 30%;">Customer Name</th>
+            <th  class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">{!demo.Customer_Name__c }</th>
+            <th style="font-size:24px;font-weight:normal; width: 40%;font-family: '3 of 9 Barcode';">
+            <apex:outputText rendered="{!demo.Customer_Name__c!= null}" value="*{!demo.Customer_Name__c}*" /></th>
+        </tr>
+      
+        <tr>
+            <th style="width: 30%;">Customer Address</th>
+            
+            <th class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">
+                        <br style="line-height: 100%;">
+                                    {!demo.Street__c}</br><br style="line-height: 100%;">{!demo.City__c}
+                                    </br><br style="line-height: 100%;">{!demo.State_Province__c}
+                                    </br><br style="line-height: 100%;">{!demo.Country__c}
+                                    </br><br style="line-height: 100%;">{!demo.Post_Code_ZIP__c}</br>
+            </th>
+            
+            <th style="font-size:24px;font-weight:normal; width: 40%; font-family: '3 of 9 Barcode';">
+                    
+                    <br style="line-height: 100%;"><apex:outputText rendered="{!demo.Street__c != null}" 
+                                value="*{!demo.Street__c}*" /></br>
+                    <br style="line-height: 100%;"><apex:outputText rendered="{!demo.City__c != null}" 
+                                value="*{!demo.City__c}*" /></br>
+                    <br style="line-height: 100%;"><apex:outputText rendered="{!demo.State_Province__c != null}" 
+                                value="*{!demo.State_Province__c}*" /></br>
+                    <br style="line-height: 100%;"> <apex:outputText rendered="{!demo.Country__c!= null}" 
+                                value="*{!demo.Country__c}*" /></br>
+                     <br style="line-height: 100%;"> <apex:outputText rendered="{!demo.Post_Code_ZIP__c!= null}" 
+                                value="*{!demo.Post_Code_ZIP__c}*" /></br>
+                    
+                    </th>
+        </tr>
+        <tr>
+            <th style="width: 30%;">Customer Contact Name</th>
+            <th class = "wrap" style="width: 40%; font-size:16px;font-weight:normal;">{!demo.Contact1__c} </th>
+            <th style="font-size:24px;font-weight:normal; width: 30%;  font-family: '3 of 9 Barcode';">   
+            <apex:outputText rendered="{!demo.Contact1__c != null}" 
+                                value="*{!demo.Contact1__c}*" /></th> 
+        </tr>
+        <tr>
+            <th style="width: 30%;">Customer Contact Phone</th>
+            <!-- <th style="width: 30%; font-size:16px;font-weight:normal">{!postalMatch} </th> -->
+            <th class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">{!demo.Telephone__c}</th> 
+            <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">   
+            <apex:outputText rendered="{!demo.Telephone__c!= null}" 
+                                value="*{!demo.Telephone__c}*"/></th> 
+        </tr>
+        <tr>
+            <th style="width: 30%;">Customer Contact Email</th>
+            <th class = "wrap" style="width: 30%; font-size:16px;font-weight:normal;">{!demo.Contact_Email__c}</th> 
+            <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">   
+            <apex:outputText rendered="{!demo.Contact_Email__c!= null}" 
+                                value="*{!demo.Contact_Email__c}*"/></th> 
+        </tr>
+    </table>
+    
+    <hr></hr>
+    <div style="width: 100%; font-size:15px;font-weight:bolder;padding-top:2px;background-color:#E6E6E6;border: 1px solid  black">
+                                    &nbsp; Ship To Information &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        
+     
+    <table style="width: 100%;" column="3" >
+        <tr>
+            <th style=" width: 30%;">Company</th>
+            <th class = "wrap" style=" width: 30%; font-size:16px;font-weight:normal;">
+                        {!lst_ShippingAddress[0].Company__c}</th>
+            <th style="font-size:24px;font-weight:normal; width: 40%; font-family: '3 of 9 Barcode';">   
+            <apex:outputText rendered="{!lst_ShippingAddress[0].Company__c!= null}" 
+                                value="*{!lst_ShippingAddress[0].Company__c}*"/></th> 
+        </tr>
+        <tr>
+            <th style=" width: 30%;">ATTN</th>
+            <th class = "wrap" style="font-size:16px;font-weight:normal;">
+                {!lst_ShippingAddress[0].Contact__c}
+            </th>
+            <th style="font-size:24px;font-weight:normal; width: 40%;;font-family: '3 of 9 Barcode';">   
+            <apex:outputText rendered="{!lst_ShippingAddress[0].Contact__c!= null}" 
+                                value="*{!lst_ShippingAddress[0].Contact__c}*"/></th> 
+        </tr>
+        <tr>
+            <th style=" width: 30%;">Shipping Address</th>
+            <th class = "wrap" style="width: 30%;font-size:16px;font-weight:normal;">
+                                                
+                                                <br style="line-height: 100%;width: 40%;font-size:16px;font-weight:normal;">
+                                                {!lst_ShippingAddress[0].Street__c}</br>
+                                                
+                                                <br style="line-height: 100%;width: 40%;">{!lst_ShippingAddress[0].City__c}</br>
+                                                <br style="line-height: 100%;width: 40%;">{!lst_ShippingAddress[0].State_Province__c}</br>
+                                                <br style="line-height: 100%;width: 40%;">{!lst_ShippingAddress[0].Country__c}</br>
+                                                <br style="line-height: 100%;width: 40%;">{!lst_ShippingAddress[0].Post_Code_ZIP__c}</br>
+            </th>
+            <th style="font-size:20px; width: 40%; font-size:24px;font-weight:normal;font-family: '3 of 9 Barcode';">
+                                             <br style="line-height: 100%;"> <apex:outputText rendered="{!lst_ShippingAddress[0].Street__c!= null}" 
+                                                value="*{!lst_ShippingAddress[0].Street__c}*"/></br>
+                                                 <br style="line-height: 100%;"> <apex:outputText rendered="{!lst_ShippingAddress[0].City__c!= null}" 
+                                                value="*{!lst_ShippingAddress[0].City__c}*"/></br>
+                                                <br style="line-height: 100%;"> <apex:outputText rendered="{!lst_ShippingAddress[0].State_Province__c!= null}" 
+                                                value="*{!lst_ShippingAddress[0].State_Province__c}*"/></br>
+                                                 <br style="line-height: 100%;"> <apex:outputText rendered="{!lst_ShippingAddress[0].Country__c!= null}" 
+                                                value="*{!lst_ShippingAddress[0].Country__c}*"/></br>
+                                                <br style="line-height: 100%;"> <apex:outputText rendered="{!lst_ShippingAddress[0].Post_Code_ZIP__c!= null}" 
+                                                value="*{!lst_ShippingAddress[0].Post_Code_ZIP__c}*"/></br>
+                                            
+            </th>
+        </tr>
+        <tr>
+            <th style=" width: 30%;">Shipping Contact</th>
+            <th class = "wrap" style=" width: 30%; font-size:16px;font-weight:normal;">
+                    {!lst_ShippingAddress[0].Phone__c}</th>
+            <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">   
+            <apex:outputText rendered="{!lst_ShippingAddress[0].Phone__c!= null}" 
+                                value="*{!lst_ShippingAddress[0].Phone__c}*"/></th>
+        </tr>
+        <tr>
+            <th style=" width: 30%;">Express Pool id</th>
+            <th class = "wrap" style=" width: 30%; font-size:16px;font-weight:normal;">{!expid}</th>
+           <th style="font-size:24px;font-weight:normal; width: 40%;  font-family: '3 of 9 Barcode';">  <apex:outputText rendered="{!expid!= null}" 
+                                value="*{!expid}*"/></th> 
+        </tr>
+    </table>
+   
+    <hr></hr>
+     
+    <br/>
+    <table style="width: 100%" column="3">
+        
+        <tr>   
+            <th style="width: 30%;">Job Type</th>
+            <th style="width: 30%; font-size:16px;font-weight:normal; text-align: left;">D1</th>
+            <th style="font-size:20px; font-size:24px;font-weight:normal;width: 40%;   font-family: '3 of 9 Barcode';">*D1*</th>
+        </tr>
+        <tr>
+            <th style="width: 30%;">Area Code</th>
+            <th style="width: 30%; font-size:16px;font-weight:normal">DEMO</th>
+            <th style="font-size:24px; width: 40%;   font-weight:normal; font-family: '3 of 9 Barcode';">*DEMO*</th>
+        </tr>
+        <tr>
+            <th style="width: 30%;">Problem Code</th>
+            <th style="width: 30%; font-size:16px;font-weight:normal">N1</th>
+            <th style="font-size:24px; width: 40%;   font-weight:normal;  font-family: '3 of 9 Barcode';">*N1*</th>
+        </tr>
+    </table>
+
+    
+    
+    <hr></hr>
+ 
+    <div >
+        <div style="width: 100%;font-size:15px;font-weight:bolder;padding-top:2px;background-color:#E6E6E6;border: 1px solid  black">
+                                    &nbsp;Creation of Part Request &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        
+        <div style="width: 100%; padding-top:4px;font-weight:bolder;font-size:16px">
+            <br/>
+               &nbsp; Job Details&nbsp;&nbsp;<br/>
+                
+            
+        </div>
+    </div>
+    
+
+    <table cellspacing="0" column="6">
+    <tr>
+                        <th sclass="shrink">Site</th>
+                        <th class="shrink" style="font-size:16px;font-weight:normal">
+                            CZDEMO
+                        </th>
+                       
+                    </tr>
+        <tr>
+            <th class="shrink">Material</th>
+            <th class="shrink">Quantity</th>
+            <th class="shrink">Bin</th>
+             <th class="shrink">Material Barcode</th>
+            <th class="shrink">IR Number</th>       
+            <th class="shrink">IR # Barcode</th>
+        </tr>
+        <apex:repeat value="{!lst_ResProd}" var="res">
+            <tr>
+                <th class="shrink" style="font-weight:normal;">{!res.Material__r.Name}</th>
+                <th class="shrink" style="font-weight:normal;">{!res.Quantity__c}</th>
+                <th class="shrink" style="font-weight:normal;">{!res.Material__r.Bin__c}</th>
+               <th  class="shrink" style="font-family: '3 of 9 Barcode';font-size:24px;font-weight:normal;"><apex:outputText rendered="{!res.Material__r.Name != null}" 
+                                value="*{!res.Material__r.Name}*" /></th>
+                <th class="shrink" style="font-weight:normal;">{!res.IR_Number__c}</th>
+                 <th class="shrink" style="font-family: '3 of 9 Barcode';font-size:24px;font-weight:normal;"><apex:outputText rendered="{!res.IR_Number__c != null}" 
+                                value="*{!res.IR_Number__c}*" /></th>
+                 
+                
+            </tr>      
+                    
+               
+        </apex:repeat>
+        
+    </table><br/>
+</div>
+ <div style="width: 100%; font-size:15px;font-weight:bolder;padding-top:2px;background-color:#E6E6E6;border: 1px solid  black">
+                                    &nbsp;Audit Details &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+    <apex:pageBlock >
+   
+    <div id="Second">
+        <apex:pageBlockSection >
+       
+           <apex:inputField style="font-size:14px;font-weight:normal;text-align: left;" value="{!demo.X1st_Audit_By__c}"/>
+            <apex:inputField style="font-size:14px;font-weight:normal;text-align: left;" value="{!demo.X1st_Audit_Date__c}"/>
+            <apex:inputField style="font-size:14px;font-weight:normal;text-align: left;"  value="{!demo.X2nd_audit_By__c}"/>
+            <apex:inputField style="font-size:14px;font-weight:normal;text-align: left;" value="{!demo.X2nd_Audit_Date__c}"/>
+            <apex:inputField style="font-size:14px;font-weight:normal;text-align: left;" value="{!demo.Packed_By__c}"/>
+            <apex:inputField style="font-size:14px;font-weight:normal;text-align: left;" value="{!demo.Packed_Date__c}"/>
+           
+        </apex:pageBlockSection>
+    </div>
+     
+        <apex:commandButton action="{!RedirecttoShip}" value="Save" id="confirmBtn"/>  
+    </apex:pageBlock>
+</body>
+ 
+</apex:form>
+
+</apex:page>

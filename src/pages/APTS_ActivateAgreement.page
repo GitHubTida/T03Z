@@ -1,0 +1,12 @@
+<apex:page controller="APTS_PreActivateController" action="{!Validate}">
+    <apex:form >
+        <!-- 
+Name : APT_preGenerate_Validation
+Description : This Page is calling from generate, preview and regenerate button from Agreement object 
+Controller : Apts_PreGenerate_Controller
+Created By : Apttus
+-->
+        <apex:pagemessages escape="False" />
+        <center><apex:commandButton action="{!goback}" value="Go Back" title="Go Back" />    </center>
+    </apex:form>
+</apex:page>

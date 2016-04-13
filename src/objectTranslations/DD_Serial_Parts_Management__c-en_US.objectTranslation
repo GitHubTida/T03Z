@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Serial Parts Management</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Serial Parts Management</value>
+    </caseValues>
+    <fields>
+        <label><!-- Bin Location --></label>
+        <name>Bin_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo Pool --></label>
+        <name>Demo_Pool__c</name>
+        <relationshipLabel><!-- Serial Parts Management --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExternalId --></label>
+        <name>ExternalId__c</name>
+    </fields>
+    <fields>
+        <label><!-- FlagSerializedButton --></label>
+        <name>FlagSerializedButton__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Status --></label>
+        <name>STATUS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Serial # --></label>
+        <name>Serialnumber__c</name>
+    </fields>
+    <layouts>
+        <layout>Serial Parts Management Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- This serial number is already used in other demo pool. --></errorMessage>
+        <name>DD_Validation_to_change_the_demo_Pool</name>
+    </validationRules>
+</CustomObjectTranslation>

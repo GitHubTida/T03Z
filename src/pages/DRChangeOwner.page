@@ -1,0 +1,136 @@
+<apex:page standardController="Deal_Registration__c" extensions="DRChangeOwnerExtension" tabStyle="Deal_Registration__c" >
+    <!--<apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/> -->
+    <script>
+    var url = location.href;
+    var match = url.match(/inline=1/);
+    if (match != null) { 
+        var newUrl = url.replace(/inline=1/, '');
+        window.top.location=newUrl;
+    }
+  
+function changeValue(input, textid) {
+    document.getElementById(textid).value = input.value;
+}  
+
+    </script>
+    <style>
+        .required{
+        color:grey;
+        fon:bold;
+        }
+        .pbSubheader{
+        background-color: #E5E8E8!important;
+        border-color: none !important;
+        height:8px;
+        color:black!important;
+        }
+        .rowColor {
+        background-color:#BFBFBF;       
+        }
+        .activeTab {
+        background-color:grey!important;
+        color:white !important;
+        tab-color:yellow !important;
+        background-image:none;
+        height:25px;
+        cursor:pointer;
+        }
+        .inactiveTab {
+        background-color:#EAEAEA!important;
+        color:#0063BB!important;
+        background-image:none;
+        }
+        .pagenation
+        {
+        background:transparent !important;
+        border:0px solid transparent;
+        color:#666 !important;
+        box-shadow:none !important;
+        }
+        .multiSelectPicklistTable select
+        {
+        width:180px !important;
+        }
+        .pbTitle
+        {
+        display:none;
+        }
+
+        .outer td {
+            vertical-align: middle;
+        }
+
+
+        .bPageBlock .detailList .data2Col
+        {
+        padding-left:0px !important;
+        }
+       
+
+        .bPageBlock .detailList .data2Col
+        {
+        padding-left:0px !important;
+        }
+        
+    </style>
+    <apex:form >
+    <apex:pagemessages ></apex:pagemessages>
+    <apex:tabPanel width="100%"   immediate="true"   switchType="server"   id="theAccessTabs" tabClass="activeTab" inactiveTabClass="inactiveTab">
+    <apex:tab status="stat"     label="{!$Label.DRChangeOwner}" name="{!$Label.DRChangeOwner}" id="tabChangeOwnership" 
+                      style="cursor:pointer"      >
+                     
+        <apex:pageblock >
+         <br/><br/> 
+            <div style="font-size: 14px;">
+                <apex:pageBlockSection columns="1">
+                 <apex:outputText value="{!dr.Name}"/>
+                 <apex:outputText label="{!$Label.DRCurrentOwner}" value="{!dr.Owner.Name}"/>                 
+                   
+                    
+                    
+                </apex:pageBlockSection>
+                </div>
+                
+                
+                <!-- <apex:outputField value="{!dr.New_Owner_clone__c}"/> -->
+                <br></br>
+           
+            <br></br>
+            <div style="font-size: 13px;">
+            
+            <apex:pageBlockTable value="{!UserstobeDisplayed}" var="a" id="pbRegTable"  >                                
+                <apex:column headerValue="{!$Label.Contact_Name}" value="{!a.name}"/>                
+                <apex:column headerValue="{!$Label.Is_Partner_Administrator}" value="{!a.Contact.Partner_Administrator__c}"/>
+
+                
+                <apex:column headerValue="{!$Label.DRAssignOwnership}" >
+                    
+                        <input type ="radio" name="chosen" id="{!a.id}" VALUE="{!a.id}" onclick="changeValue(this,'{!$Component.RadioButtonValue}');">
+                        <apex:actionsupport action="{!selectUser}" event="onclick" rerender="btn1">
+                        <apex:param name="uid" value="{!a.Id}"/>
+                        </apex:actionsupport>
+                        </input>
+                        
+                    
+                    
+                </apex:column>
+                
+            </apex:pageBlockTable>
+            
+            </div>
+            <br/><br/>
+        
+           <center>
+            <apex:outputPanel id="btn1">
+             <apex:commandButton rendered="{!selectUserId <> null}"  style="font-size: 12px;" value="{!$Label.DRChangeOwner}" action="{!saveowner}"/>
+             </apex:outputPanel>
+             <apex:outputPanel >
+             <apex:commandButton style="font-size: 12px;" value="{!$Label.DR_Cancel}" action="{!cancel}"/>
+             </apex:outputPanel>
+             </center>
+
+    </apex:pageblock>
+    </apex:tab>
+    </apex:tabPanel>
+</apex:form>
+</apex:page>

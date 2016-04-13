@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Campaign$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.OpportunityContactRoles.OpportunityLineItems$Named_Product_Family__c.Product_Line__c</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers$Name</field>
+    </columns>
+    <columns>
+        <field>Campaign.ContactCampaignMembers.OpportunityContactRoles$Name</field>
+    </columns>
+    <currency>USD</currency>
+    <format>Tabular</format>
+    <name>[TEST] WLAN Opp Report</name>
+    <params>
+        <name>scopeid</name>
+        <value>701i00000018kdj</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Opportunities_with_Campaign_History_Custom__c</reportType>
+    <scope>one</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Campaign.ContactCampaignMembers.OpportunityContactRoles.OpportunityLineItems$Named_Product_Family__c.Product_Line__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Campaign$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

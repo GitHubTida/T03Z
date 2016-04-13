@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>DD_UpdateReserveProductStatus</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DD_UpdateReserveProductStatus</value>
+    </caseValues>
+    <fields>
+        <label><!-- Product Status --></label>
+        <name>Product_Status__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

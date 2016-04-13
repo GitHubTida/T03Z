@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This custom setting is used to fetch Currency</description>
+    <fields>
+        <fullName>CurrencyIsoCode__c</fullName>
+        <description>Contains Currency Iso Code</description>
+        <label>CurrencyIsoCode</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <label>Currencies</label>
+</CustomObject>

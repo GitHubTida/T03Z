@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object is created to capture all the Opportunity Line Item Schedule information</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>It captures a description of the Opportunity Line Item Schedule</description>
+        <label>Description</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Month__c</fullName>
+        <formula>IF(AND(ScheduleDate__c&gt;=DATE(2015,01,01), ScheduleDate__c&lt;=DATE(2015,01,31)), &quot;Jan&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,02,01), ScheduleDate__c&lt;=DATE(2015,02,28)), &quot;Feb&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,03,01), ScheduleDate__c&lt;=DATE(2015,04,04)), &quot;Mar&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,04,05), ScheduleDate__c&lt;=DATE(2015,05,02)), &quot;Apr&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,05,03), ScheduleDate__c&lt;=DATE(2015,05,30)), &quot;May&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,05,31), ScheduleDate__c&lt;=DATE(2015,07,04)), &quot;Jun&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,07,05), ScheduleDate__c&lt;=DATE(2015,08,01)), &quot;Jul&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,08,02), ScheduleDate__c&lt;=DATE(2015,08,29)), &quot;Aug&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,08,30), ScheduleDate__c&lt;=DATE(2015,10,03)), &quot;Sep&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,10,04), ScheduleDate__c&lt;=DATE(2015,10,31)), &quot;Oct&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,11,01), ScheduleDate__c&lt;=DATE(2015,11,28)), &quot;Nov&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2015,11,29), ScheduleDate__c&lt;=DATE(2015,12,31)), &quot;Dec&quot;,
+
+IF(AND(ScheduleDate__c&gt;=DATE(2016,01,01), ScheduleDate__c&lt;=DATE(2016,01,30)), &quot;Jan&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,01,31), ScheduleDate__c&lt;=DATE(2016,02,27)), &quot;Feb&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,02,08), ScheduleDate__c&lt;=DATE(2016,04,02)), &quot;Mar&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,04,03), ScheduleDate__c&lt;=DATE(2016,04,30)), &quot;Apr&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,05,01), ScheduleDate__c&lt;=DATE(2016,05,28)), &quot;May&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,05,29), ScheduleDate__c&lt;=DATE(2016,07,02)), &quot;Jun&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,07,03), ScheduleDate__c&lt;=DATE(2016,07,30)), &quot;Jul&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,07,31), ScheduleDate__c&lt;=DATE(2016,08,27)), &quot;Aug&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,08,28), ScheduleDate__c&lt;=DATE(2016,10,01)), &quot;Sep&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,10,02), ScheduleDate__c&lt;=DATE(2016,10,29)), &quot;Oct&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,10,30), ScheduleDate__c&lt;=DATE(2016,11,26)), &quot;Nov&quot;, 
+IF(AND(ScheduleDate__c&gt;=DATE(2016,11,27), ScheduleDate__c&lt;=DATE(2016,12,31)), &quot;Dec&quot;,
+
+
+
+(CASE(MONTH(ScheduleDate__c), 
+1, &quot;Jan&quot; , 
+2, &quot;Feb&quot;, 
+3, &quot;Mar&quot;, 
+4, &quot;Apr&quot;, 
+5, &quot;May&quot;, 
+6, &quot;Jun&quot;, 
+7, &quot;Jul&quot;, 
+8, &quot;Aug&quot;, 
+9, &quot;Sep&quot;, 
+10,&quot;Oct&quot;, 
+11,&quot;Nov&quot;, 
+12,&quot;Dec&quot;, 
+&quot;None&quot;)))))))))))))) 
+
+))))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fiscal Period</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Quarter__c</fullName>
+        <formula>IF(AND(ScheduleDate__c&gt;=DATE(2015,01,01), ScheduleDate__c&lt;=DATE(2015,04,04)), &quot;2015-Q1&quot;,
+  IF(AND(ScheduleDate__c&gt;=DATE(2015,04,05), ScheduleDate__c&lt;=DATE(2015,07,04)), &quot;2015-Q2&quot;,
+    IF(AND(ScheduleDate__c&gt;=DATE(2015,07,05), ScheduleDate__c&lt;=DATE(2015,10,03)), &quot;2015-Q3&quot;,
+      IF(AND(ScheduleDate__c&gt;=DATE(2015,10,04), ScheduleDate__c&lt;=DATE(2015,12,31)), &quot;2015-Q4&quot;, 
+
+IF(AND(ScheduleDate__c&gt;=DATE(2016,01,01), ScheduleDate__c&lt;=DATE(2016,04,02)), &quot;2016-Q1&quot;,
+  IF(AND(ScheduleDate__c&gt;=DATE(2016,04,03), ScheduleDate__c&lt;=DATE(2016,07,02)), &quot;2016-Q2&quot;,
+    IF(AND(ScheduleDate__c&gt;=DATE(2016,07,03), ScheduleDate__c&lt;=DATE(2016,10,01)), &quot;2016-Q3&quot;,
+      IF(AND(ScheduleDate__c&gt;=DATE(2016,10,02), ScheduleDate__c&lt;=DATE(2016,12,31)), &quot;2016-Q4&quot;,
+
+
+(TEXT (YEAR(ScheduleDate__c)) &amp; &quot;-&quot; &amp; CASE(MONTH(ScheduleDate__c), 
+1, &quot;Q1&quot; , 
+2, &quot;Q1&quot;, 
+3, &quot;Q1&quot;, 
+4, &quot;Q2&quot;, 
+5, &quot;Q2&quot;, 
+6, &quot;Q2&quot;, 
+7, &quot;Q3&quot;, 
+8, &quot;Q3&quot;, 
+9, &quot;Q3&quot;, 
+10, &quot;Q4&quot;, 
+11, &quot;Q4&quot;, 
+12, &quot;Q4&quot;, 
+&quot;None&quot;))))))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Fiscal Quarter</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Fiscal_Week__c</fullName>
+        <formula>Floor((ScheduleDate__c - DATE(YEAR(ScheduleDate__c), 01, 01))/7) + 1</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Week</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>IDtoClone__c</fullName>
+        <label>IDtoClone</label>
+        <length>18</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Named_Product_Family__c</fullName>
+        <label>Named Product Family</label>
+        <referenceTo>Named_Product_Family__c</referenceTo>
+        <relationshipLabel>Opportunity Revenue Forecast</relationshipLabel>
+        <relationshipName>Opportunity_Revenue_Forecast</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityLineItemId15__c</fullName>
+        <description>This field gives 15 digit opportunity product id.</description>
+        <formula>left(OpportunityLineItemId__c ,15)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>OpportunityLineItemId15</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityLineItemId__c</fullName>
+        <externalId>true</externalId>
+        <label>OpportunityLineItemId</label>
+        <length>18</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityLineItemScheduleId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>OpportunityLineItemScheduleId</label>
+        <length>18</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Closed_Date__c</fullName>
+        <formula>Opportunity__r.CloseDate</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Closed Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <description>This field describes that Opportunity Line Item is related to which Opportunity</description>
+        <label>Opportunity</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunity Revenue Forecast</relationshipLabel>
+        <relationshipName>Opportunity_Line_Item_Schedule_Clone</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <description>The total number of units to be scheduled in a quantity schedule.</description>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Revenue__c</fullName>
+        <description>The revenue that should be recognized, or the quantity that should be shipped, or both - depending upon the value of Type.</description>
+        <label>Revenue</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>SKU__c</fullName>
+        <label>Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipName>OpportunityLineItemScheduleClone</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ScheduleDate__c</fullName>
+        <description>The date the associated OpportunityLineItem is to be scheduled for an event: delivery, shipping, or any other date you wish to track.</description>
+        <label>ScheduleDate</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>The type of the schedule. Required when inserting an OpportunityLineItemSchedule. Valid values include Quantity, Revenue, or Both.</description>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Revenue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quantity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Both</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Line Item</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clone - Line Item</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Clone - Opportunity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Weighted_Amount_AIT_LA__c</fullName>
+        <formula>(Opportunity__r.AIT_Sales_Stage_Order_LA__c/100) * Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Weighted Amount AIT LA</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Weighted_Amount_LA__c</fullName>
+        <description>A Makwana Weighted Amount LA</description>
+        <formula>(Opportunity__r.Sales_Stage_Order_LA__c/100) * Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Weighted Amount EVM LA</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Weighted_Amount__c</fullName>
+        <description>A Makwana - Weighted Amount</description>
+        <formula>(Opportunity__r.Sales_Stage_Order__c/100) * Revenue__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Weighted Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Workflow_Kick_Off_Date__c</fullName>
+        <formula>LastModifiedDate - (1/24/60 * 55)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Workflow Kick-Off Date</label>
+        <type>DateTime</type>
+    </fields>
+    <label>Opportunity Revenue Forecast</label>
+    <listViews>
+        <fullName>All1</fullName>
+        <columns>Type__c</columns>
+        <columns>Opportunity__c</columns>
+        <columns>OpportunityLineItemId__c</columns>
+        <columns>OpportunityLineItemScheduleId__c</columns>
+        <columns>Quantity__c</columns>
+        <columns>Revenue__c</columns>
+        <columns>ScheduleDate__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Fiscal_Month__c</columns>
+        <columns>Fiscal_Quarter__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>OLIS-{0000000}</displayFormat>
+        <label>Line Item Schedule Clone Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Opportunity Revenue Forecast</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

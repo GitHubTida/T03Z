@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Shipping Address</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Shipping Addresses</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Contact Name --></label>
+        <name>Contact__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demo --></label>
+        <name>Demo__c</name>
+        <relationshipLabel><!-- Shipping Addresses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Telephone # --></label>
+        <name>Office_Telephone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Contact Telephone # --></label>
+        <name>Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Post Code/ZIP --></label>
+        <name>Post_Code_ZIP__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Address --></label>
+        <name>Shipping_Address__c</name>
+        <relationshipLabel><!-- Shipping Addresses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <layouts>
+        <layout>Shipping Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

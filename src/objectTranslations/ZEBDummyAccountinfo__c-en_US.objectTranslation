@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>ZEB Dummy Account info</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ZEB Dummy Account info</value>
+    </caseValues>
+    <fields>
+        <label><!-- Dummy Account Id --></label>
+        <name>Dummy_Account_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Owner Id --></label>
+        <name>Owner_Id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

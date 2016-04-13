@@ -1,0 +1,566 @@
+<apex:page standardstylesheets="false" sidebar="false" docType="html-5.0" standardController="Case">
+    <CoveoSolutions:CoveoAttachToCase useCookieSessionId="true" recordId="{!$CurrentPage.parameters.caseId}"/>
+    <CoveoSolutions:CoveoJsSearch stylesheet="CoveoFullSearch.css" />
+    <apex:includeScript value="/support/console/29.0/integration.js"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js"/>
+    <script type="text/javascript">
+      CoveoGetCookie = function(data) {
+          return "{!$Api.Session_ID}";      
+      }
+      $(function () {
+        $('#search').coveo('init', {
+         
+        });
+      });
+
+    </script>
+    
+    <style>
+        .QuickViewLink {
+            margin-right: 5px;
+            display: inline;
+            overflow: hidden;
+            white-space: normal;
+            color: #0066cc !important;
+            text-decoration: none;
+        }
+        .QuickViewLink:hover {
+            color: #f47f24 !important;
+        }
+        div[id^="quickview-"] > .coveo-icon-for-quickview {
+            display:none;
+        }
+        div[id^="quickviewcontent-"] > h1 {
+            font-size:xx-large;
+        }
+        div[id^="quickviewcontent-"] > table > tbody > tr:nth-child(odd) {
+            background-color:#CCC;
+        }
+        div[id^="quickviewcontent-"] > table {
+            width:100%;
+        }
+        div[id^="quickviewcontent-"] > table > tbody > tr > td {
+            text-align:left;
+        }
+        
+        .coveo-modalBox.coveo-quick-view > .coveo-wrapper > .coveo-body {
+            overflow-y:auto;        
+        }
+    </style>
+
+    <div id="search" class="CoveoSearchInterface" data-hide-until-first-query="true" data-enable-history="true" data-hidden-expression='(@syslanguage==english OR NOT @syslanguage) AND (NOT @systitle = "End User License Agreement") AND (NOT @syssource == "Salesforce DEV") AND (NOT @syssource == "Salesforce DEV - Knowledge")'>
+      <span class="CoveoAnalytics"></span>
+      <span class="CoveoTopAnalyticsSuggestions"></span>
+      <div class="coveo-tab-section">
+        
+        <a 
+          class="CoveoTab" 
+          data-id='KB' 
+          data-expression='@sfinterfaceid == "kb"'  
+          data-icon="objecttype Solution">KB</a>
+        <a 
+          class="CoveoTab" 
+          data-id='Cases' 
+          data-expression='@objecttype=("Case") OR @syssource=="Oracle Tech Data"' 
+          data-icon="coveo-sprites-fileType-objectType-kb">Cases</a>
+        <a 
+          class="CoveoTab" 
+          data-id='Repairs' 
+          data-expression='@syssource=="Siebel" OR @syssource=="Oracle Repair Data"' 
+          data-icon="coveo-sprites-documentType-faq">Repairs</a>
+        <a 
+          class="CoveoTab" 
+          data-id='Zebra.com' 
+          data-expression='@syssource=="Zebra.com"' 
+          data-icon="coveo-sprites-documentType-video">Zebra.com</a>
+        <a 
+          class="CoveoTab" 
+          data-id='Youtube' 
+          data-expression='@syscollection=="Youtube"' 
+          data-icon="coveo-sprites-documentType-video">Youtube</a>
+        <a 
+          class="CoveoTab" 
+          data-id='All' 
+          data-expression='@objecttype=("Case") OR @syssource=="Siebel" OR @syssource=="Zebra.com" OR @syscollection=="Oracle" OR @syscollection=="Youtube"' 
+          data-icon="coveo-sprites-documentType-all-content">All</a>
+      </div>
+
+      <div class="coveo-search-section">
+
+        <div class="coveo-logo-column">
+          <div class="coveo-logo"></div>
+        </div>
+
+        <div class="coveo-searchBox-column">
+          <div class="coveo-search-section-wrapper">
+            <div class="CoveoSettings" data-include-in-menu=".CoveoShareQuery"></div>
+            <div class="CoveoSearchBox" data-activate-omnibox="true"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="coveo-results-section">
+        <div class="coveo-facet-column">
+          <div class='CoveoFacetRange' 
+            id="DateFacet"
+            data-title="Date"
+            data-field='@sysdate' 
+            data-date-field="true"
+            data-range-slider='true' 
+            data-slider-graph-steps='12'
+            data-tab-not="People"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Type" 
+            data-field="@objecttype" 
+            data-allow-toggling-operator="true" 
+            data-show-icon="true" 
+            data-tab="All"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Account" 
+            data-field="@sfaccountname" 
+            data-tab="All,Cases,Opportunities"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Account Type" 
+            data-field="@sfaccounttype" 
+            data-tab="Accounts"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Status" 
+            data-field="@sfcasestatus" 
+            data-tab="Cases"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Priority" 
+            data-field="@sfcasepriority" 
+            data-tab="Cases"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Contact" 
+            data-field="@sfcontactname" 
+            data-tab="Cases"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Stage" 
+            data-field="@Sfopportunitystagename" 
+            data-tab="Opportunities"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Fore Cast" 
+            data-field="@sfopportunitytype" 
+            data-tab="Opportunity Type"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Fore Cast" 
+            data-field="@sfopportunityforecastcategory" 
+            data-tab="Opportunities"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Lead Source" 
+            data-field="@sfleadsource" 
+            data-tab="Opportunities"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Country" 
+            data-field="@sfcountry" 
+            data-tab="Accounts,People"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="City" 
+            data-field="@sfcity" 
+            data-tab="People,Accounts"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="State" 
+            data-field="@sfstate" 
+            data-tab="People"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Industry" 
+            data-field="@sfindustry" 
+            data-tab="Accounts"></div>
+
+          <div 
+            class="CoveoFacet"
+            data-title="Department" 
+            data-field="@sfuserdepartment" 
+            data-tab="People"></div>
+
+          <div 
+            class="CoveoFacet" 
+            data-title="Division" 
+            data-field="@sfuserdivision" 
+            data-tab="People"></div>
+            
+          <div 
+            class="CoveoHierarchicalFacet" 
+            data-title="Products" 
+            data-field="@sfkbdcproducthierarchyexpanded"
+            data-level-start="1"
+            data-tab="All,KB"></div>
+                      
+          <div 
+            class="CoveoFacet" 
+            data-title="Account Name" 
+            data-field="@ACCOUNTNAME" 
+            data-tab="Repairs"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Product Family" 
+            data-field="@PRODUCTFAMILY" 
+            data-tab="Repairs"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="RMA Type" 
+            data-field="@RMATYPE" 
+            data-tab="Repairs"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Repair Part Number" 
+            data-field="@repairpartnum" 
+            data-tab="Repairs"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Customer" 
+            data-field="@CUSTOMER" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Item number" 
+            data-field="@ITEMNUMBER" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Job status" 
+            data-field="@JOBSTATUS" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Problem code" 
+            data-field="@PROBLEMCODE" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Repair number" 
+            data-field="@REPAIRNUMBER" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Resolution code" 
+            data-field="@RESOLUTIONCODE" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Serial number" 
+            data-field="@SERIALNUMBER" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="SR Number" 
+            data-field="@SRNUMBER" 
+            data-tab="11iCases"></div>
+            
+          <div 
+            class="CoveoFacet" 
+            data-title="Language" 
+            data-field="@syslanguage"
+            data-tab="All"></div>
+          
+            <div 
+            class="CoveoFacet" 
+            data-title="File type" 
+            data-field="@sysfiletype"
+            data-tab="All,Zebracom"></div>
+        </div>
+
+        <div class="coveo-results-column">
+          <div class="CoveoShareQuery"></div>
+          <div class="CoveoBreadcrumb"></div>
+
+          <div class="coveo-results-header">
+            <span class="CoveoQuerySummary"></span>
+            <span class="CoveoQueryDuration"></span>
+            <span class="coveo-sort-section">
+              <span class="CoveoSort" data-sort-criteria="relevancy">Relevance</span>
+              <span class="CoveoSort" data-sort-criteria="date descending,date ascending">Date</span>
+            </span>
+          </div>
+
+          <div class="CoveoHiddenQuery"></div>
+          <div class="CoveoDidYouMean"></div>
+          <div class="CoveoErrorReport" data-pop-up='true'></div>
+
+          <div class="CoveoResultList" data-wait-animation="fade">
+
+            <script class="result-template" type="text/x-underscore-template">
+              
+              <% if (raw.sfkbid) { %>
+                  <div class="coveo-icon objecttype <%-raw.objecttype%>"></div>
+              <%}%>
+              <div class="coveo-date"><%=raw.ZebraDate%></div>
+
+              <% if (raw.syssource == "SIEBEL") { %>
+                
+                <div class="coveo-title">
+                  <a href="javascript:void(0)" onclick="$('#quickview-<%=raw.sysrowid%>').coveo('open'); return false;" class="QuickViewLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                  <div class="CoveoQuickView" id="quickview-<%=raw.sysrowid%>">
+                      <div style="text-align:center"> 
+                          <div style="display: inline-block;white-space: pre-wrap;" id="quickviewcontent-<%=raw.sysrowid%>">    
+                              <h1><%= Title %></h1>
+                              <table class="CoveoFieldTable">
+                                  <tr data-field="@REPAIRSERIALNUM" data-caption="Repair Serial Number" />
+                                  <tr data-field="@RMA" data-caption="RMA Number" />
+                                  <tr data-field="@RMATYPE" data-caption="RMA Type" />
+                                  <tr data-field="@ACTIVITYCOMMENTS" data-caption="Comments" />
+                                  <tr data-field="@INSCTRUCTION" data-caption="Notes" />
+                                  <tr data-field="@SYMPTOM" data-caption="Symptom" />
+                                  <tr data-field="@ROOTCAUSE" data-caption="Root Cause" />
+                                  <tr data-field="@RESOLUTION" data-caption="Resolution" />
+                                  <tr data-field="@FAULTDESC" data-caption="Fault desc" />
+                                  <tr data-field="@FAILURERESOLUTION" data-caption="Failure Resolution" />
+                                  <tr data-field="@PARTNUM" data-caption="Used parts no." />
+                                  <tr data-field="@PARTPRODDESC" data-caption="Used parts" />
+                                  <tr data-field="@PARTSERIALNUM" data-caption="Used parts serials" />
+                                  <tr data-field="@NOTES" data-caption="Line item notes" />
+                                  <tr data-field="@RMACOMMENTS" data-caption="RMA Comments" />
+                                  <tr data-field="@REPAIRTRACKINGNUM" data-caption="Repair Tracking Number" />
+                                  <tr data-field="@CONTRACTNUM" data-caption="Contract Number" />
+                                  <tr data-field="@ENTITLEMENT" data-caption="Entitlement" />
+                                  <tr data-field="@REPAIRLINETYPE" data-caption="Repair Line Type" />
+                                  <tr data-field="@ACTIVITYCREATEDBY" data-caption="Activity Created By" />
+                                  <tr data-field="@ACCOUNTNAME" data-caption="Account Name" />
+                                  <tr data-field="@ACCOUNTNUM" data-caption="Account Number" />
+                              </table> 
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                <table class="CoveoFieldTable">
+                  <tr data-field="@ACCOUNTNAME" data-caption="Account Name" />
+                  <tr data-field="@ACCOUNTNUM" data-caption="Account Number" />
+                  <tr data-field="@RMA" data-caption="RMA Number" />
+                  <tr data-field="@REPAIRSERIALNUM" data-caption="Repair Serial Number" />
+                  <tr data-field="@REPAIRPARTNUM" data-caption="Repair Part Number" />
+                </table>
+              
+              <% } else if (raw.syscollection == "Oracle") { %>
+                   <div class="coveo-title">
+                  <a href="javascript:void(0)" onclick="$('#quickview-<%=raw.sysrowid%>').coveo('open'); return false;" class="QuickViewLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                  <div class="CoveoQuickView" id="quickview-<%=raw.sysrowid%>">
+                      <div style="text-align:center"> 
+                          <div style="display: inline-block;white-space: pre-wrap;" id="quickviewcontent-<%=raw.sysrowid%>">    
+                              <h1><%= Title %></h1>
+                              <table class="CoveoFieldTable">
+                                <tr data-field="@SERIALNUMBER" data-caption="Serial number" />
+                                <tr data-field="@REPAIRNUMBER" data-caption="Repair number" />
+                                <tr data-field="@SRNUMBER" data-caption="SR Number" />
+                                <tr data-field="@MODEL" data-caption="Product model" />
+                                <tr data-field="@JOBSTATUS" data-caption="Job status" />
+                                <tr data-field="@NOTES" data-caption="Notes" />
+                                <tr data-field="@SYMPTOM1" data-caption="Symptom 1" />
+                                <tr data-field="@SYMPTOM2" data-caption="Symptom 2" />
+                                <tr data-field="@SYMPTOM3" data-caption="Symptom 3" />
+                                <tr data-field="@RESOLUTION1" data-caption="Resulution 1" />
+                                <tr data-field="@RESOLUTION2" data-caption="Resolution 2" />
+                                <tr data-field="@REPLACEMENTREASON" data-caption="Replacement reason" />
+                                <tr data-field="@PARTREPLACED" data-caption="Part replaced" />   
+                                <tr data-field="@PROBLEMSUMMARY" data-caption="Problem summary" />
+                                <tr data-field="@PROBLEMCODE" data-caption="Problem code" />
+                                <tr data-field="@RESOLUTIONSUMMARY" data-caption="Resolution summary" />
+                                <tr data-field="@RESOLUTIONCODE" data-caption="Resolution code" />
+                                <tr data-field="@CUSTOMER" data-caption="Customer" />
+                                <tr data-field="@LASTUPDATEDATE" data-caption="Last update date" data-caption="Date" data-helper="dateTime" />                                
+                              </table> 
+                          </div> 
+                      </div>
+                  </div>
+                </div>
+                   <div class="coveo-excerpt">
+                      <%=highlight(Excerpt, excerptHighlights)%>
+                   </div>
+                   <table class="CoveoFieldTable">
+                      <tr data-field="@CUSTOMER" data-caption="Customer" />
+                      <tr data-field="@MODEL" data-caption="Product model" />
+                      <tr data-field="@JOBSTATUS" data-caption="Job status" />
+                      <tr data-field="@KITID" data-caption="Kit ID" />
+                      <tr data-field="@PROBLEMCODE" data-caption="Problem code" />
+                      <tr data-field="@REPAIRNUMBER" data-caption="Repair number" />
+                      <tr data-field="@RESOLUTIONCODE" data-caption="Resolution code" />
+                      <tr data-field="@SERIALNUMBER" data-caption="Serial number" />
+                      <tr data-field="@SRNUMBER" data-caption="SR Number" />
+                   </table>
+                  
+              <% } else if (raw.syscollection == "Zebra.com" || raw.syscollection == "Youtube") { %>
+                   <div class="coveo-title">
+                      <a class="CoveoResultLink" target="_blank"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                      <div class="CoveoQuickView">     <h1><%= Title %></h1>    <div class='CoveoQuickViewDocument'></div> </div>
+                   </div>
+                   <div class="coveo-excerpt">
+                      <%=highlight(Excerpt, excerptHighlights)%>
+                   </div>
+              <% } else if (raw.objecttype == "Account") { %>
+                <div class="coveo-title">
+                  <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                </div>
+                <table class="CoveoFieldTable">
+                  <tr data-field="@sfownername" data-caption="Owner" />
+                  <tr data-field="@sfaccounttype" data-caption="Account Type" />
+                  <tr data-field="@sfcity" data-caption="City" />
+                  <tr data-field="@sfaccountwebsite" data-caption="Website" />
+                  <tr data-field="@sfaccountphone" data-caption="Account Phone" />
+                  <tr data-field="@sffax" data-caption="Fax" />
+                  <tr data-field="@sfstreet" data-caption="Street" />
+                  <tr data-field="@sfcountry" data-caption="Country" />
+                </table>
+                <div class="coveo-excerpt">
+                  <%=highlight(Excerpt, excerptHighlights)%>
+                </div>
+
+              <% } else if (raw.objecttype == "Case") { %>
+                <div class="coveo-title">
+                  <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                </div>
+                <table class="CoveoFieldTable">
+                  <tr data-field="@sfownername" data-caption="Owner" />
+                  <tr data-field="@sfaccountname" data-caption="Account" />
+                  <tr data-field="@sfcasestatus" data-caption="Status" />
+                  <tr data-field="@sfcasepriority" data-caption="Priority" />
+                  <tr data-field="@sfcontactname" data-caption="Contact" />
+                </table> 
+
+              <% } else if (raw.objecttype == "Opportunity") { %>
+                <div class="coveo-title">
+                  <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                </div>
+                <table class="CoveoFieldTable">
+                  <tr data-field="@sfaccountname" data-caption="Account" />
+                  <tr data-field="@sfownername" data-caption="Owner" />
+                  <tr data-field="@sfleadsource" data-caption="Lead Source" />
+                  <tr data-field="@SfOpportunityStageName" data-caption="Stage" />
+                  <tr data-field="@sfopportunitytype" data-caption="Opportunity Type" />
+                  <tr data-field="@sfopportunityforecastcategory" data-caption="Fore Cast Category" />
+                </table>
+                <div class="coveo-excerpt">
+                  <%=highlight(Excerpt, excerptHighlights)%>
+                </div>
+
+              <% } else if (raw.objecttype == "Contact") { %>
+                <div class="coveo-title">
+                  <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                </div>
+                <table class="CoveoFieldTable">
+                  <tr data-field="@objecttype" data-caption="Type" />
+                  <tr data-field="@sfcontactname" data-caption="Contact" />
+                  <tr data-field="@sfdepartment" data-caption="Department" />
+                  <tr data-field="@sfemail" data-caption="Email" data-helper="email" data-html-value="true" />
+                  <tr data-field="@sfcontactphone" data-caption="Contact Phone" />
+                  <tr data-field="@sffax" data-caption="Fax" />
+
+                  <tr data-field="@sfstreet" data-caption="Address Street" />
+                  <tr data-field="@sfstate" data-caption="State" />
+                  <tr data-field="@sfcountry" data-caption="Country" />
+                  <tr data-field="@sfpostalcode" data-caption="Postal Code" />
+                </table>
+
+              <% } else if(raw.objecttype == "User") { %>
+
+                <table class="CoveoFieldTable">
+                  <tr>
+                    <td><img src="<%= raw.sfsmallphotourl %>" /></td>
+                    <td>
+                      <div class="coveo-title">
+                        <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr data-field="@objecttype" data-caption="Type" />
+                  <tr data-field="@sfuserdepartment" data-caption="Department" />
+                  <tr data-field="@sfuserdivision" data-caption="Division" />
+                  <tr data-field="@sfusertitle" data-caption="Title" />
+
+                  <tr data-field="@sfemail" data-caption="Email" data-helper="email" data-html-value="true" />
+                  <tr data-field="@sfcontactphone" data-caption="Contact Phone" />
+                  <tr data-field="@sffax" data-caption="Fax" />
+
+                  <tr data-field="@sfstreet" data-caption="Address Street" />
+                  <tr data-field="@sfstate" data-caption="State" />
+                  <tr data-field="@sfcountry" data-caption="Country" />
+                  <tr data-field="@sfpostalcode" data-caption="Postal Code" />
+                </table>
+
+              <% } else if(raw.objecttype == "Event" || raw.objecttype == "Tasks") { %>
+                <div class="coveo-title">
+                  <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                </div>
+
+              <% } else { %>
+                <div class="coveo-title">
+                      <a class="CoveoResultLink"><%=Title?highlight(Title, titleHighlights):ClickUri%></a>
+                      <div class="CoveoQuickView">     <h1><%= Title %></h1>    <div class='CoveoQuickViewDocument'></div> </div>
+                   </div>
+                <div class="coveo-excerpt">
+                  <%=highlight(Excerpt, excerptHighlights)%>
+                </div>
+                <% if (raw.sfkbid) { %>
+                  <div class="CoveoAttachToCase"></div>
+                <% } %>
+              <% } %>
+              
+            </script>
+          </div>
+          <div class="CoveoPager"></div>
+        </div>
+      </div>
+       
+    </div>
+    <CoveoSolutions:CoveoOpenTabHandler selector=".CoveoResultList" openInSameBrowserTab="true" />
+    <script type="text/javascript">
+        var tabId;
+        //Refresh tabs after Attach/Detach article from case.
+        $('#search').on('newResultsDisplayed',  function(e, args) {
+            $('.CoveoAttachToCase').on('click', function(e){
+                
+                var refreshPrimaryTab = function showTabId(result) {
+                    var tabId = result.id;
+                    sforce.console.refreshPrimaryTabById(tabId, true);
+                };
+                
+                function doPrimaryTabRefresh() {
+                    sforce.console.getEnclosingPrimaryTabId(refreshPrimaryTab);            
+                }
+                
+                doPrimaryTabRefresh();
+                
+            });
+           
+        });
+    </script>
+</apex:page>

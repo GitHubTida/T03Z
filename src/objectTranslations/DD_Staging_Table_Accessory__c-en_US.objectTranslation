@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Staging Table Accessory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Staging Table Accessorys</value>
+    </caseValues>
+    <fields>
+        <label><!-- Call_Num --></label>
+        <name>Call_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Bad_Qty --></label>
+        <name>FSRL_Bad_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Call_Num --></label>
+        <name>FSRL_Call_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_FSR_Num --></label>
+        <name>FSRL_FSR_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_ID_Num --></label>
+        <name>FSRL_ID_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Last_Update --></label>
+        <name>FSRL_Last_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Part_Desc --></label>
+        <name>FSRL_Part_Desc__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Part_Num --></label>
+        <name>FSRL_Part_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Qty --></label>
+        <name>FSRL_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Ret_Bad --></label>
+        <name>FSRL_Ret_Bad__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Ret_ID --></label>
+        <name>FSRL_Ret_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Ret_Part_Num --></label>
+        <name>FSRL_Ret_Part_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Ret_Qty --></label>
+        <name>FSRL_Ret_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSRL_Stock_Site_Num --></label>
+        <name>FSRL_Stock_Site_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Area_Code --></label>
+        <name>FSR_Area_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Call_Num --></label>
+        <name>FSR_Call_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Complete_Date --></label>
+        <name>FSR_Complete_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Last_Update --></label>
+        <name>FSR_Last_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Num --></label>
+        <name>FSR_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Part_Num --></label>
+        <name>FSR_Part_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Prod_Num --></label>
+        <name>FSR_Prod_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Ref_Num --></label>
+        <name>FSR_Ref_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Ser_Num --></label>
+        <name>FSR_Ser_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Solution --></label>
+        <name>FSR_Solution__c</name>
+    </fields>
+    <fields>
+        <label><!-- FSR_Start_Date --></label>
+        <name>FSR_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Job Preapproval Part Num --></label>
+        <name>Job_Preapproval_Part_Num__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last modified date(Custom) --></label>
+        <name>Last_modified_date_Custom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Part Description --></label>
+        <name>Part_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Record Processed By Batch Class --></label>
+        <name>Record_Processed_By_Batch_Class__c</name>
+    </fields>
+    <fields>
+        <label><!-- Return Quantity --></label>
+        <name>Return_Quantity__c</name>
+    </fields>
+    <layouts>
+        <layout>Staging Table Accessory Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

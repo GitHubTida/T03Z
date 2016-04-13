@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <value>Named Product Family</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Named Product Families</value>
+    </caseValues>
+    <fields>
+        <label><!-- Is Service Product? --></label>
+        <name>Is_Service_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family Description --></label>
+        <name>Product_Family_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Family Source --></label>
+        <name>Product_Family_Source__c</name>
+        <picklistValues>
+            <masterLabel>AIT</masterLabel>
+            <translation><!-- AIT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EVM</masterLabel>
+            <translation><!-- EVM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Line --></label>
+        <name>Product_Line__c</name>
+    </fields>
+    <layouts>
+        <layout>Named Product Family Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

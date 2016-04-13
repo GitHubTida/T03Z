@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>***Demo Depot application*** 
+This will store Reserved Products detail for a Demo Request.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>CALL_T__c</fullName>
+        <description>Created for Integration</description>
+        <label>CALL__T</label>
+        <length>16</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Completion_Date__c</fullName>
+        <description>This will store when product actually avaiable again. Value of this field will be updated from DFW/Tesseract</description>
+        <label>Completion Date</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Demo_Request__c</fullName>
+        <label>Demo Request</label>
+        <referenceTo>DD_Demo__c</referenceTo>
+        <relationshipName>Reserved_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Due_Date__c</fullName>
+        <label>Due Date(DFW)</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>IR_Number_External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>IR Number (External Id)</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>IR_Number__c</fullName>
+        <displayFormat>IR{000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>IR Number</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>IR_Status__c</fullName>
+        <label>IR Status(DFW)</label>
+        <length>255</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Material__c</fullName>
+        <label>Material</label>
+        <referenceTo>DD_Master_Demo_Products__c</referenceTo>
+        <relationshipName>Reserved_Products</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <trackHistory>true</trackHistory>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <label>Product Family(DFW)</label>
+        <length>255</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name__c</fullName>
+        <label>Product Name (DFW)</label>
+        <length>255</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_Status__c</fullName>
+        <label>Product Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ordered</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Delivered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Write Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>With Services</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Repair</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Return In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Scrapped</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <formula>text(Material__r.Product_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Product Type</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Product_WrittenOff__c</fullName>
+        <description>This is look up to Product writtenOff.  When  status =&quot;write off&quot; then this field should be filled.</description>
+        <label>Product WrittenOff</label>
+        <referenceTo>DD_Product_WrittenOff__c</referenceTo>
+        <relationshipName>Reserved_Products</relationshipName>
+        <trackHistory>true</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>RB_ITEM_NO__c</fullName>
+        <displayFormat>{00000}</displayFormat>
+        <label>RB_ITEM_NO</label>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Received_Date__c</fullName>
+        <description>This will store recieve date for the product. value will be updated from DFW/tesseract</description>
+        <label>Received Date</label>
+        <trackHistory>true</trackHistory>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Return_Serial__c</fullName>
+        <label>Return Serial #</label>
+        <length>50</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Serialnumber__c</fullName>
+        <label>Serial number</label>
+        <length>50</length>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Shipped_Date__c</fullName>
+        <formula>Demo_Request__r.Shipped_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipped Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>SyncedTime__c</fullName>
+        <label>Synced Time</label>
+        <trackHistory>true</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Theater__c</fullName>
+        <description>This will store theater information from  demo Account&apos;s manager</description>
+        <formula>TEXT( Demo_Request__r.Account_Manager__r.Theater__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Theater</label>
+        <type>Text</type>
+    </fields>
+    <label>Selected Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Material__c</columns>
+        <columns>Demo_Request__c</columns>
+        <columns>Product_Status__c</columns>
+        <columns>Quantity__c</columns>
+        <columns>NAME</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>RES-PART-{00000}</displayFormat>
+        <label>Part Number</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Selected Products</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Demo_Request__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Material__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Status__c</customTabListAdditionalFields>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <lookupDialogsAdditionalFields>Demo_Request__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Material__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Status__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Demo_Request__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Material__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Product_Status__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>Completion_Date__c</searchFilterFields>
+        <searchFilterFields>Demo_Request__c</searchFilterFields>
+        <searchFilterFields>Material__c</searchFilterFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchResultsAdditionalFields>Demo_Request__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Material__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Add_Parts</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Add Parts</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>/apex/DD_DemoProductsSearch?id={!DD_Demo__c.Id}</url>
+    </webLinks>
+</CustomObject>

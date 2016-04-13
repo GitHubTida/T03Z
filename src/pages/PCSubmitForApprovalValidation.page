@@ -1,0 +1,18 @@
+<apex:page standardController="quote" extensions="PCApprovalController" sidebar="false" action="{!checkValidations}" >
+<style type="text/css">
+         .hypLink{
+            color:black;
+            font-size:1em;
+            font-weight:bold;
+           
+          }
+ </style>
+ <apex:form >
+ <apex:outputPanel >
+<apex:pagemessages />
+  <apex:commandLink action="{!navigateQuote}" value="Click here to go back to the Quote" id="theButton" styleClass="hypLink"/> 
+ </apex:outputPanel>
+  </apex:form>
+
+ 
+</apex:page>

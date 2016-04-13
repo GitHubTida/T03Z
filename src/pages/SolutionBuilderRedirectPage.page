@@ -1,0 +1,56 @@
+<!--
+Copyright © 2015 Zebra Technologies. All rights reserved.
+Author: Nimesh_Sharma01@infosys.com
+Date: 04-Mar-2015
+Description: This Page is used to punch into Solution Builder.
+-->
+<apex:page action="{!redirectToSolutionBuilder}" controller="SolutionBuilderRedirectController" showHeader="false" standardStylesheets="false">
+    <br/>
+    <apex:outputPanel rendered="{!AND(hasErrors)}">
+        <table style="color:red" width="90%">
+            <tr>
+                <td style="border-bottom:3px solid black; font-size:14pt; font-weight:bold">
+                    The following errors occurred and must be fixed to proceed:
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left:30px; padding-top:15px">
+                    <apex:repeat value="{!AllErrors}" var="e">
+                        <li>{!e}</li>
+                    </apex:repeat>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <br/>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{!AND(hasWarnings)}">
+        <table style="color:orange" width="90%">
+            <tr>
+                <td style="border-bottom:3px solid black; font-size:14pt; font-weight:bold">
+                    The following are warnings you should be aware of:
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left:30px; padding-top:15px">
+                    <apex:repeat value="{!AllWarnings}" var="w">
+                        <li>{!w}</li>
+                    </apex:repeat>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <br/>
+    </apex:outputPanel>
+    <apex:form >
+        <apex:commandButton action="{!goAnyway}" value="Proceed to Solution Builder" rendered="{!AND(hasWarnings,NOT(hasErrors))}"/>
+    </apex:form>
+    
+    <apex:outputText rendered="{!AND(hasErrors,NOT(stageFlag))}">
+        <div style="font-weight:bold; font-family:Calibri; width:90%">
+            Please close this window, address the issues and hit the Go To Solution Builder button again.
+        </div>
+    </apex:outputText>
+</apex:page>

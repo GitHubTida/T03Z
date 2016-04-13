@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>To maintain the product line items associated to DRs</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Amount__c</fullName>
+        <formula>ListPrice__c  *  Quantity__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Deal_Registration__c</fullName>
+        <label>Deal Registration</label>
+        <referenceTo>Deal_Registration__c</referenceTo>
+        <relationshipLabel>Deal Products</relationshipLabel>
+        <relationshipName>Deal_Products</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>EVM_Deal_Product_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>EVM Deal Product Id</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>F_DR_Discount_Percentage__c</fullName>
+        <formula>IF( Deal_Registration__r.Discount_Percentage_Legacy_Program__c &gt; 0,Deal_Registration__r.Discount_Percentage_Legacy_Program__c, PRMProductEntry__r.Deal_Discount__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DR Discount Percentage</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Is_Service_Product__c</fullName>
+        <formula>PRMProductEntry__r.Named_Product_Family__r.Is_Service_Product__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Is Service Product?</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ListPrice__c</fullName>
+        <defaultValue>1</defaultValue>
+        <inlineHelpText>Please add the US $ list price of the unit multiplied by the volume of the units.</inlineHelpText>
+        <label>Estimated List Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PRMProductEntry__c</fullName>
+        <label>PRM ProductEntry</label>
+        <referenceTo>PRMProductEntry__c</referenceTo>
+        <relationshipLabel>Deal Products</relationshipLabel>
+        <relationshipName>Deal_Products</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Product_Family__c</fullName>
+        <formula>PRMProductEntry__r.Product_Family__c</formula>
+        <label>Product Family</label>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Threshold_Amount__c</fullName>
+        <formula>PRMProductEntry__r.Threshold_Amount__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Threshold Amount</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <label>Deal Product</label>
+    <nameField>
+        <displayFormat>DR-{00000000}</displayFormat>
+        <label>DealProduct ID</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Deal Products</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

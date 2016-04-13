@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Data_Load_Check__c</fullName>
+        <label>Data Load Check</label>
+        <length>20</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PC_Discount__c</fullName>
+        <label>PC Discount</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Legacy_SB_PC_Created_By__c</fullName>
+        <label>Legacy SB PC Created By</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>EVM_Price_Concession_Line_Items</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PC_Legacy_SB_Quote_ID__c</fullName>
+        <label>Legacy SB Quote ID</label>
+        <length>255</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PC_Oracle_Price__c</fullName>
+        <label>PC Oracle Price</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_PE1__c</fullName>
+        <label>PE1</label>
+        <precision>7</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_PE2__c</fullName>
+        <label>PE2</label>
+        <precision>7</precision>
+        <scale>2</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>PC_Product_Family__c</fullName>
+        <label>PC Product Family</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>PC_Total_Cost__c</fullName>
+        <label>PC Total Cost</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>PC_Total_Margin__c</fullName>
+        <label>PC Total Margin</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Price_Exception__c</fullName>
+        <label>Price Exception</label>
+        <referenceTo>Price_Exception__c</referenceTo>
+        <relationshipName>Price_Exception_Line_Items1</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Promote_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This flag is used for EVM Promote Logic</description>
+        <label>Promote Flag</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <label>Quantity</label>
+        <precision>12</precision>
+        <scale>2</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Quote_Line_Item_ID__c</fullName>
+        <description>Quote line item ID for maintaining the external ID</description>
+        <externalId>true</externalId>
+        <label>Quote Line Item ID</label>
+        <length>50</length>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>SKU_Name__c</fullName>
+        <label>SKU Name</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_List_Price__c</fullName>
+        <label>Unit List Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Sell_Price__c</fullName>
+        <label>Unit Sell Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Unit_Std_Price__c</fullName>
+        <label>Unit Std Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <label>EVM Price Concession Line Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>OBJECT_ID</columns>
+        <columns>NAME</columns>
+        <columns>SKU_Name__c</columns>
+        <columns>Quote_Line_Item_ID__c</columns>
+        <columns>Total_Price__c</columns>
+        <columns>Unit_List_Price__c</columns>
+        <columns>Unit_Sell_Price__c</columns>
+        <columns>Unit_Std_Price__c</columns>
+        <columns>Price_Exception__c</columns>
+        <columns>Quantity__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>EVMPELI-{000000}</displayFormat>
+        <label>Id #</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>EVM Price Concession Line Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

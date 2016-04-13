@@ -1,0 +1,32 @@
+<apex:page showHeader="false"  sidebar="false"  language="{!appLang}" controller="ZEBThankYouController">
+    <apex:pageMessages />
+     <apex:stylesheet value="{!URLFOR($Resource.appprocess_jg,'appprocess.css')}"/>
+    <div class="ztopbanner">
+            <apex:define name="header">
+              <c:testheader />
+            </apex:define>
+        </div>
+     
+     <!--<div style="width: 960px; margin: 0 auto;">-->
+     <div class="zmainbody">
+        
+        
+        <apex:outputText >
+        <apex:outputtext value="{!$Label.Partner_Transition_Expired3}" style="font-size:2em;margin: 1px 2px 1 1;text-align:center" escape="false"/>
+        <!--<p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center"><b>{!$Label.Partner_Transition_Expired3} </b> </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Partner_Transition_Expired}  </p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Partner_Transition_Expired2}&nbsp;<a href="https://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted7}</a></p>
+        <p class="warningM4" style="font-size:2em;margin: 1px 2px 1 1;text-align:center">{!$Label.Legal_Already_Submitted1} <br/><a href="https://www.zebra.com/partnerinteractioncenter" target="_blank" style="font-weight:bold;color: #07F;">{!$Label.Legal_Already_Submitted2}</a> {!$Label.Legal_Already_Submitted3}        
+        </p>-->
+        </apex:outputText>
+        <br></br><br></br>
+        
+       
+    </div>
+    <div class="zbottombanner">
+        <apex:define name="footer">
+            <c:testfooter />
+        </apex:define>
+    
+    </div>
+</apex:page>
